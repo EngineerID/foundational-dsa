@@ -1,4 +1,5 @@
 # playground
+ For testing GitHub Desktop.
 
  Also used for storing information on courses and projects.
 
