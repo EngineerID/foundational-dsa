@@ -2,7 +2,6 @@ import java.util.*;
 
 class Program {
   public static int binarySearch(int[] array, int target) {
-    // Write your code here.
 		
 		int leftIndex = 0;
 		int rightIndex = array.length;
