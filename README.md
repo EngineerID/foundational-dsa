@@ -1,5 +1,5 @@
 # CS-Reference
-For testing GitHub Desktop
+Overview of fundamental computing concepts
 
 1. Hardware
     1. Processor
