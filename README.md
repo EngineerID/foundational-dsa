@@ -1,20 +1,18 @@
 # Algorithms
 Some essential algorithms
 
-Essential Algorithms:
+**Searching**
+* Binary Search
+* Linear Search
 
-Searching
-+ Binary Search
-+ Linear Search
+**Sorting**
+* BubbleSort
+* SelectionSort
+* InsertionSort
+* MergeSort
+* QuickSort
+* HeapSort
 
-Sorting
-+ BubbleSort
-+ SelectionSort
-+ InsertionSort
-+ MergeSort
-+ QuickSort
-+ HeapSort
-
-Graph Algorithms
-+ Depth-first Search (DFS)
-+ Breadth-first Search (BFS)
+**Graph Algorithms**
+* Depth-first Search (DFS)
+* Breadth-first Search (BFS)
