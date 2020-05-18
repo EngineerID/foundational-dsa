@@ -1,5 +1,5 @@
-# Algorithms
-Some essential algorithms
+# Algorithms and Data Structures
+Some essential algorithms and data structures
 
 **Searching**
 * Binary Search
@@ -16,3 +16,10 @@ Some essential algorithms
 **Graph Algorithms**
 * Depth-first Search (DFS)
 * Breadth-first Search (BFS)
+
+**Data Structures
+* Arrays
+* Linked Lists
+* Stacks and Queues
+* Trees
+* Graphs
