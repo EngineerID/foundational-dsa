@@ -9,7 +9,7 @@
 public class TopThree {
 
     public static void main(String[] args) {
-        int[] array = {-1, -2, -3, -7, -17, -27, -18, -541, -8, -7, 7};
+        int[] array = {-1, 35, -3, -7, 18, -27, -18, -505, -8, -7, 99};
 
         int min = java.util.Arrays.stream(array).min().getAsInt();
         int[] outArray = new int[3];
