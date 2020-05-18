@@ -17,7 +17,7 @@ Some essential algorithms and data structures
 * Depth-first Search (DFS)
 * Breadth-first Search (BFS)
 
-**Data Structures
+**Data Structures**
 * Arrays
 * Linked Lists
 * Stacks and Queues
