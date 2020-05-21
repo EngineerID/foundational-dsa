@@ -8,14 +8,13 @@ Author: EngineerID
 """
 
 def insertionSort(array):
-    
     print(array)
 
 
 
 
 if __name__ == "__main__":
-    array = [8, 5, 2, 9, 5, 6, 3]
+    array = [32, 53, 7, 40, 51, 90, 64, 52]
     insertionSort(array)
 
 
