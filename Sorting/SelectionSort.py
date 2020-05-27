@@ -14,26 +14,25 @@ Space Complexity:
 """
 
 def selectionSort(array):
-    print(array)
     
     for i in range(0, len(array),1):
-        print("i is: " + str(i))
-        key = array[i]
-        print(array[i])
+        #print("i is: " + str(i))
+        min = array[i]
+        #print(array[i])
         
-        for j in range(i+1, len(array)-1, 1):
-            print("j is: " + str(j))
-            print(array[j])
-            if (array[j] < key):
-                key = array[j]
-                index = j
+        for j in range(i+1, len(array), 1):
+            #print("j is: " + str(j))
+            #print(array[j])
+            if (array[j] < min):
+                min = array[j]
+                array[j] = array[i]
+                array[i] = min
         
-        array[index] = array[i]
-        array[i] = key   
-        print(array)
+  
+        #print(array)
     
 
-    print(array)
+    #print(array)
     return(array)
 
 
@@ -41,4 +40,5 @@ def selectionSort(array):
 
 if __name__ == "__main__":
     array = [32, 53, 7, 40, 51, 90, 64, 52]
-    selectionSort(array)
+    print(array)
+    print(selectionSort(array))
