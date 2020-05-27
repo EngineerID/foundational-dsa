@@ -6,9 +6,9 @@ Selection Sort
 Date: May 25, 2020
 Author: EngineerID
 
-Time Complexity:
+Time Complexity: O(n^2)
 
-Space Complexity:
+Space Complexity: O(1)
     
 
 """
@@ -24,18 +24,17 @@ def selectionSort(array):
             #print("j is: " + str(j))
             #print(array[j])
             if (array[j] < min):
-                min = array[j]
-                array[j] = array[i]
-                array[i] = min
+                swap(i, j, array)
+
         
-  
         #print(array)
     
-
-    #print(array)
     return(array)
 
-
+def swap(i, j, array):
+    min = array[j]
+    array[j] = array[i]
+    array[i] = min
     
 
 if __name__ == "__main__":
