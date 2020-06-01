@@ -21,5 +21,6 @@ Some essential algorithms and data structures
 * Arrays
 * Linked Lists
 * Stacks and Queues
+* Hash Tables
 * Trees
 * Graphs
