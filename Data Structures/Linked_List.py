@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -29,16 +28,16 @@ class DoublyLinkedList:
 
 	# Assign a head node
 	# O(1) time | O(1) space
-	"""
 	def setHead(self, node):
-        if self.head is None:
+		if self.head is None:
 			self.head = node
 			self.tail = node
 			return
-        self.insertBefore(self.head,node)
-	"""
+        self.insertBefore(self.head, node)
+	
 	
 	# Assigns a tail node
+	# O(1) time | O(1) space
     def setTail(self, node):
         if self.tail is None:
 			self.setHead(node)
@@ -46,14 +45,15 @@ class DoublyLinkedList:
         self.insertAfter(self.tail, node)
 
 	# Inserts new node before a given node (and adjusts pointers)
+	# O(1) time | O(1) space
     def insertBefore(self, node, nodeToInsert):
         
 		# Check if there is only one node in the list --> nothing to do
-		if nodeToInsert == self.head and nodeToInsert == self.tail:
+        if nodeToInsert == self.head and nodeToInsert == self.tail:
 			return
 		
 		# Remove the node
-		self.remove(nodeToInsert)
+        self.remove(nodeToInsert)
 		
 		# Update adjacent nodes
 		nodeToInsert.prev = node.prev
@@ -67,6 +67,7 @@ class DoublyLinkedList:
 		node.prev = nodeToInsert
         
 	# Similar to InsertBefore but insert after a given node
+	# O(1) time | O(1) space
     def insertAfter(self, node, nodeToInsert):
 		
 		# Check edge case: node is the tail node
@@ -74,7 +75,7 @@ class DoublyLinkedList:
 			return
         
 		# The switcharoo
-		self.remove(nodeToInsert)
+        self.remove(nodeToInsert)
 		nodeToInsert.prev = node
 		nodeToInsert.next = node.next
 		
@@ -86,18 +87,19 @@ class DoublyLinkedList:
 		node.next = nodeToInsert
 
 	# Inserts a node at a specific position using other methods
+	# O(n) time | O(1) space
     def insertAtPosition(self, position, nodeToInsert):
         
 		# If we are first position --> set head method
 		if position == 1:
-			self.SetHead(nodeToInsert)
+			self.setHead(nodeToInsert)
 			return
 		node = self.head
 		currentPosition = 1
 		
-		while node is not None and CurrentPosition != position:
+		while node is not None and currentPosition != position:
 			node = node.next
-			CurrentPosition += 1
+			currentPosition += 1
 		if node is not None:
 			self.insertBefore(node, nodeToInsert)
 		else:
@@ -105,6 +107,7 @@ class DoublyLinkedList:
 
 	# Removes all nodes with a given value
 	# Combination of searching method and removal method
+	# O(n) time | O(1) spac
     def removeNodesWithValue(self, value):
         node = self.head
 		
@@ -113,30 +116,32 @@ class DoublyLinkedList:
 			# remove the node with a given value
 			# use the ol' switcheroo to update sequence
 			nodeToRemove = node
-			node = node.next # continue the traversal
+			node = node.next
 			if nodeToRemove.value == value:
 				self.remove(nodeToRemove)
 
 	# This remove method can be used to help methods so it is written first
+	# O(1) time | O(1) space
     def remove(self, node):
 		# Check Head or Tail edge cases
-		if (node == self.head):
+        if node == self.head:
 			self.head = self.head.next
-		if (node == self.tail):
+		if node == self.tail:
 			self.tail = self.tail.prev
 		
 		# Call sub-method to remove the pointers
 		# (i.e., change the pointers of the node)
 		self.removeNodeBindings(node)
 
+	# Method tranverses the tree to see if there is a node that matches the given value
+	# O(n) time | O(1) space
     def containsNodeWithValue(self, value):
-        # Tranverse a linked list to see if there is a node that matches the given value
-		node = self.head
+        
+        node = self.head
 		
 		while node is not None and node.value != value:
 			node = node.next
-		
-		return node is not None
+        return node is not None
 
 	# Method helper method to remove "bindings" (pointers adjacent to the node)
 	def removeNodeBindings(self, node):
@@ -150,3 +155,6 @@ class DoublyLinkedList:
 		node.prev = None
 		node.next = None
 		
+		
+	
+	
