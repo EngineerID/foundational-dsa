@@ -4,14 +4,13 @@
 Linked List
 Goals:
 	Construct a linked list
-	Create methods for manaing the list
+	Create methods for managing the list
 
 Date: June 2, 2020
 Author: EngineerID
 
 Time Complexity: depends on method    
-Space Complexity: depends on method
-    
+Space Complexity: depends on method   
 """
 
 # This is an input class. Do not edit.
