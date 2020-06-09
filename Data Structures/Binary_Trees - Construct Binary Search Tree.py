@@ -6,8 +6,7 @@ Binary Search Tree (BST)
 Goals: construct BST with three methods (insertion, searching, deletion (hardest of the three))
 Date: June 9, 2020
 Author: EngineerID
-Time and Space Complexity depend on the method
-    
+Time and Space Complexity depend on the method 
 """ 
 
 class BST:
