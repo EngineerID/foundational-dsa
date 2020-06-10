@@ -2,11 +2,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Binary Search Tree (BST)
-Goals: construct BST with three methods (insertion, searching, deletion (hardest of the three))
+Algorithm Name: Binary Search Tree (BST) Construction
+Data structure: Binary Search Tree (BST)
+Goal:
+	Construct BST with three methods (insertion, searching, deletion (hardest of the three))
+
 Date: June 9, 2020
 Author: EngineerID
-Time and Space Complexity depend on the method 
+
+Time Complexity: depends on method    
+Space Complexity: depends on method
 """ 
 
 class BST:
