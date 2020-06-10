@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Binary Trees
+Algorithm Name: Branch Sums
+Data structure: Binary Search Tree (BST)
+
 Goals:
 	Calculate sum of each Branch (from root node to leaf node)
 	Return array that has a sum for each branch
+
 Date: June 1, 2020
 Author: EngineerID
+
 Time Complexity: O(N)    
 Space Complexity: O(N)
-    
 """
 
 class BinaryTree:
