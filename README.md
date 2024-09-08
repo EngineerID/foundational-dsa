@@ -1,5 +1,9 @@
-# Algorithms and Data Structures
+# Summary of Coding Examples
 Some essential algorithms and data structures
+
+**Arrays**
+* Two Number Sum
+* Validate Subsequence
 
 **Searching**
 * Binary Search

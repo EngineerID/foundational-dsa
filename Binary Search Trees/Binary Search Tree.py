@@ -25,7 +25,7 @@ class BST:
 	# Worst: O(n) time | O(1) space
     def insert(self, value):
 		# initialize the current location of the node
-		currentNode = self
+	currentNode = self
 		
 		while True:
 			# explore left subtree
