@@ -114,14 +114,29 @@ _Examples coming soon._
 
 ## 🌐 Ambient Systems Relevance
 
-This repository is designed for use cases involving Ambient Systems — systems that are **context-aware, distributed, and resource-constrained**, such as:
+This repository powers [Ambient Systems](https://www.ambientsystems.ai) in building **context-aware**, **distributed**, and **resource-efficient intelligent systems** across web development, cloud infrastructure, AI & data science, economics, and the financial sector.
 
-- **Sensor networks** (e.g., DFS/BFS for graph-based routing)
-- **Real-time schedulers** (e.g., heaps for time-priority tasks)
-- **Streaming pattern recognition** (e.g., tries or Bloom filters)
-- **Low-latency edge computation** (e.g., minimal-space dynamic programming)
+It provides the algorithmic backbone for:
 
-By implementing DSA in both Python (for prototyping) and JavaScript (for frontend/IoT use cases), this library supports a broad range of ambient computing applications.
+- **IoT & Sensor Networks**  
+  **DFS** and **BFS** optimize routing and topology in distributed networks.
+
+- **Edge Computing**  
+  **Heaps** and **Greedy Algorithms** (e.g., Task Assignment) enable low-latency task prioritization on constrained devices.
+
+- **Streaming Data**  
+  **Tries** and (planned) **Bloom Filters** support real-time pattern matching for NLP pipelines and economic web scraping.
+
+- **Cloud Systems**  
+  **Dijkstra’s** and (planned) **Bellman-Ford** improve routing and load balancing across platforms like Google Cloud, AWS, Firebase, and OVH.
+
+- **AI & Data Science**  
+  **Dynamic Programming** (e.g., Knapsack) and **Trees** (e.g., BSTs, AVLs) drive optimization and search in ML/NLP systems.
+
+- **Financial Applications**  
+  **Graph Algorithms** and **DP techniques** power fraud detection, transaction modeling, and portfolio strategy.
+
+Implemented in **Python** (for AI, prototyping, backend) and **JavaScript** (for frontend, IoT, and real-time apps), this repository enables scalable, adaptive, and production-ready ambient solutions.
 
 
 ## License
