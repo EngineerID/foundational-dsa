@@ -1,4 +1,6 @@
-# Summary of Coding Examples
+# Ambient Systems DSA – Data Structures & Algorithms
+
+Curated Python and JavaScript implementations of essential data structures and algorithms for Ambient Systems use cases.
 
 ## Data Structures
 
