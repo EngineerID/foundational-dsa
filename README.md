@@ -40,13 +40,13 @@ _Examples coming soon._
 **[Queues](./Data-Structures/Queues)**
 _Examples coming soon._
 
-**[Sets](./Data-Structures/Queues)**
+**[Sets](./Data-Structures/Sets)**
 _Examples coming soon._
 
 **[Stacks](./Data-Structures/Stacks)**
 * Min Max Stack Construction
 
-**[Trees - Binary & Search Trees)](./Data-Structures/Trees)**
+**[Trees - Binary & Search Trees](./Data-Structures/Trees)**
 * Binary Trees - Branch Sum
 * Binary Search Tree Construction
 
@@ -110,3 +110,20 @@ _Examples coming soon._
 **[NP Completeness](./Algorithm-Analysis/NP_Completeness.md)** _Coming soon._
 
 **[Amortized Analysis](./Algorithm-Analysis/Amortized_Analysis.md)** _Coming soon._
+
+
+## 🌐 Ambient Systems Relevance
+
+This repository is designed for use cases involving Ambient Systems — systems that are **context-aware, distributed, and resource-constrained**, such as:
+
+- **Sensor networks** (e.g., DFS/BFS for graph-based routing)
+- **Real-time schedulers** (e.g., heaps for time-priority tasks)
+- **Streaming pattern recognition** (e.g., tries or Bloom filters)
+- **Low-latency edge computation** (e.g., minimal-space dynamic programming)
+
+By implementing DSA in both Python (for prototyping) and JavaScript (for frontend/IoT use cases), this library supports a broad range of ambient computing applications.
+
+
+## License
+This project is licensed under the **Apache License 2.0**.
+See the [LICENSE](./LICENSE) file for details.
