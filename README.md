@@ -1,7 +1,5 @@
 # Ambient Systems DSA – Data Structures & Algorithms
 
-# Ambient Systems DSA – Data Structures & Algorithms
-
 [![License](https://img.shields.io/github/license/EngineerID/Ambient-Systems-DSA)](./LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/EngineerID/Ambient-Systems-DSA)](https://github.com/EngineerID/Ambient-Systems-DSA/commits/master)
 [![Languages](https://img.shields.io/github/languages/top/EngineerID/Ambient-Systems-DSA)](https://github.com/EngineerID/Ambient-Systems-DSA)
