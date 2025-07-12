@@ -58,11 +58,11 @@ _Examples coming soon._
 
 ## [Algorithms](./Algorithms)
 
-**[Divide & Conqeur](./Algorithms/Divide%20&%20Conqeur)** _Examples coming soon._
-* Divide & Conquer (New Section)
-* Closest Pair of Points
-* Strassen’s Matrix Multiplication
-* Binary Search
+**[Divide & Conqeur](./Algorithms/Divide%20&%20Conqeur)**
+* Divide & Conquer (_Coming soon._)
+* Closest Pair of Points (_Coming soon._)
+* Strassen’s Matrix Multiplication (_Coming soon._)
+* Binary Search (_Coming soon._)
 
 **[Dynamic Programming](./Algorithms/Dynamic%20Programming)** _Examples coming soon._
 * Knapsack Problem (_Coming soon._)
