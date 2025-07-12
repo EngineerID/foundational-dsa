@@ -36,7 +36,7 @@ _Examples coming soon._
 **Dynamic Programming**
 _Examples coming soon._
 
-**Greedy Algorithms**
+**Famous Algorithms**
 _Examples coming soon._
 
 **[Graph Algorithms](./Algorithms/Graphs)**
