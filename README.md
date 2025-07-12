@@ -21,9 +21,9 @@ _Examples coming soon._
 _Examples coming soon._
 
 **[Hash Tables](./Data-Structures/Hash%20Tables)**
-* Hash Table with Chaining
-* Hash Table with Open Addressing (_Coming soon._)
-* Bloom Filters (_Coming soon._)
+* Hash Table with Chaining (Python)
+* Hash Table with Open Addressing  (Python)
+* Bloom Filters (Python)
 
 **[Heaps](./Data-Structures/Heaps)**
 * Min Heap Construction (Python)
