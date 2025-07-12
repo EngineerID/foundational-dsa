@@ -14,27 +14,27 @@ Curated Python and JavaScript implementations of essential data structures and a
 * Validate Subsequence (Python)
 * Sorted Squared Array (Python, JavaScript)
 
-**[Disjointed Sets](./Data-Structures/Disjointed%20Sets)**
+**[Disjoint Sets](./Data-Structures/Disjoint%20Sets)**
 _Examples coming soon._
 
 **[Graphs](./Data-Structures/Graphs)**
 _Examples coming soon._
 
-**[Hash Tables](./Data-Structures/Hash%20Tables)** _Examples coming soon._
-* Hash Table with Chaining  
-* Hash Table with Open Addressing  
-* Bloom Filters
+**[Hash Tables](./Data-Structures/Hash%20Tables)**
+* Hash Table with Chaining (_Coming soon._)
+* Hash Table with Open Addressing (_Coming soon._)
+* Bloom Filters (_Coming soon._)
 
-**[Heaps](./Data-Structures/Heaps)** _Examples coming soon._
-* Min Heap Construction  
-* Merge Sorted Arrays  
-* Laptop Rentals  
-* Continuous Median
+**[Heaps](./Data-Structures/Heaps)**
+* Min Heap Construction (_Coming soon._)
+* Merge Sorted Arrays (_Coming soon._)
+* Laptop Rentals  (_Coming soon._)
+* Continuous Median (_Coming soon._)
 
 **[Linked Lists](./Data-Structures/Linked%20Lists)**
 * Linked List Construction
 
-**[Matrices & Grids](./Data-Structures/Matrics%20&%20Grids)**
+**[Matrices & Grids](./Data-Structures/Matrices%20&%20Grids)**
 _Examples coming soon._
 
 **[Queues](./Data-Structures/Queues)**
@@ -46,25 +46,25 @@ _Examples coming soon._
 **[Stacks](./Data-Structures/Stacks)**
 * Min Max Stack Construction
 
-**[Trees (inc. Binary Trees and Binary Search Trees)](./Data-Structures/Trees)**
+**[Trees - Binary & Search Trees)](./Data-Structures/Trees)**
 * Binary Trees - Branch Sum
 * Binary Search Tree Construction
 
-**[Trees (Advanced)](./Data-Structures/Advanced%20Trees)** _Examples coming soon._
-* AVL Trees  
-* Tries  
-* (a,b)-Trees  
-* Skip Lists
+**[Trees (Advanced)](./Data-Structures/Advanced%20Trees)**
+* AVL Trees (_Coming soon._)
+* Tries (_Coming soon._)
+* (a,b)-Trees (_Coming soon._)
+* Skip Lists (_Coming soon._)
 
 ## [Algorithms](./Algorithms)
 
-**[Divide & Conqeur](./Algorithms/Divide%20&%20Conqeur)**
+**[Divide & Conquer](./Algorithms/Divide%20&%20Conquer)**
 * Divide & Conquer (_Coming soon._)
 * Closest Pair of Points (_Coming soon._)
 * Strassen’s Matrix Multiplication (_Coming soon._)
 * Binary Search (_Coming soon._)
 
-**[Dynamic Programming](./Algorithms/Dynamic%20Programming)** _Examples coming soon._
+**[Dynamic Programming](./Algorithms/Dynamic%20Programming)**
 * Knapsack Problem (_Coming soon._)
 * Longest Common Subsequence (_Coming soon._)
 * Matrix Chain Multiplication (_Coming soon._)
@@ -77,7 +77,7 @@ _Examples coming soon._
 * Cycle Detection (_Coming soon._)
 * Topological Sort (_Coming soon._)
 
-**[Greedy Algorithms](./Algorithms/Greedy%20Algorithms)** _Examples coming soon._
+**[Greedy Algorithms](./Algorithms/Greedy%20Algorithms)**
 * Minimum Waiting Time  
 * Class Photos  
 * Task Assignment  
