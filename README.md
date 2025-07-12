@@ -8,51 +8,54 @@
 
 Curated Python and JavaScript implementations of essential data structures and algorithms for Ambient Systems use cases.
 
-## Data Structures
+## [Data Structures] (./Data-Structures)
 
-**Arrays**
+**[Arrays](./Data-Structures/Arrays)**
 * Two Number Sum (Python, JavaScript)
 * Validate Subsequence (Python)
 * Sorted Squared Array (Python, JavaScript)
 
-**Linked Lists**
-* Linked List Construction
+**Hash Tables**
+_Examples coming soon._
 
-**Stacks**
-* Min Max Stack Construction
+**[Linked-Lists](./Data-Structures/Linked%20Lists)**
+* Linked List Construction
 
 **Queues**
 _Examples coming soon._
 
-**Trees (inc. Binary Trees and Binary Search Trees)**
+**[Stacks](./Data-Structures/Stacks)**
+* Min Max Stack Construction
+
+**[Trees (inc. Binary Trees and Binary Search Trees)](./Data-Structures/Trees)**
 * Binary Trees - Branch Sum
 * Binary Search Tree Construction
 
-**Hash Tables**
-_Examples coming soon._
-
-## Algorithms
-
-**Searching**
-* Binary Search
-* Linear Search
+## [Algorithms] (./Algorithms)
 
 **Dynamic Programming**
 _Examples coming soon._
 
-**Sorting**
-* BubbleSort
-* InsertionSort
-* SelectionSort
-
-**Graph Algorithms**
+**[Graph Algorithms](./Algorithms/Graphs)**
 * Depth-first Search (DFS)
 * Breadth-first Search (BFS)
 
 **Greedy Algorithms**
 _Examples coming soon._
 
-**Strings**
+**[Recursion](./Algorithms/Recursion)**
+* Product Sum
+
+**[Searching](./Algorithms/Searching)**
+* Binary Search
+* Linear Search
+
+**[Sorting](./Algorithms/Sorting)**
+* BubbleSort
+* InsertionSort
+* SelectionSort
+
+**[Strings](./Algorithms/Strings)**
 * Palindrome Check
 
 
