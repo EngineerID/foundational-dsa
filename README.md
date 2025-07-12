@@ -8,7 +8,7 @@
 
 Curated Python and JavaScript implementations of essential data structures and algorithms for Ambient Systems use cases.
 
-## [Data Structures] (./Data-Structures)
+## [Data Structures](./Data-Structures)
 
 **[Arrays](./Data-Structures/Arrays)**
 * Two Number Sum (Python, JavaScript)
@@ -31,9 +31,12 @@ _Examples coming soon._
 * Binary Trees - Branch Sum
 * Binary Search Tree Construction
 
-## [Algorithms] (./Algorithms)
+## [Algorithms](./Algorithms)
 
 **Dynamic Programming**
+_Examples coming soon._
+
+**Greedy Algorithms**
 _Examples coming soon._
 
 **[Graph Algorithms](./Algorithms/Graphs)**
