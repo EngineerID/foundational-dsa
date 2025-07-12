@@ -14,6 +14,12 @@ Curated Python and JavaScript implementations of essential data structures and a
 * Validate Subsequence (Python)
 * Sorted Squared Array (Python, JavaScript)
 
+**[Disjointed Sets](./Data-Structures/Disjointed%20Sets)**
+_Examples coming soon._
+
+**[Graphs](./Data-Structures/Graphs)**
+_Examples coming soon._
+
 **[Hash Tables](./Data-Structures/Hash%20Tables)** _Examples coming soon._
 * Hash Table with Chaining  
 * Hash Table with Open Addressing  
@@ -25,10 +31,16 @@ Curated Python and JavaScript implementations of essential data structures and a
 * Laptop Rentals  
 * Continuous Median
 
-**[Linked-Lists](./Data-Structures/Linked%20Lists)**
+**[Linked Lists](./Data-Structures/Linked%20Lists)**
 * Linked List Construction
 
+**[Matrices & Grids](./Data-Structures/Matrics%20&%20Grids)**
+_Examples coming soon._
+
 **[Queues](./Data-Structures/Queues)**
+_Examples coming soon._
+
+**[Sets](./Data-Structures/Queues)**
 _Examples coming soon._
 
 **[Stacks](./Data-Structures/Stacks)**
@@ -38,7 +50,7 @@ _Examples coming soon._
 * Binary Trees - Branch Sum
 * Binary Search Tree Construction
 
-**[Advanced Trees](./Data-Structures/Advanced%20Trees)** _Examples coming soon._
+**[Trees (Advanced)](./Data-Structures/Advanced%20Trees)** _Examples coming soon._
 * AVL Trees  
 * Tries  
 * (a,b)-Trees  
@@ -46,15 +58,24 @@ _Examples coming soon._
 
 ## [Algorithms](./Algorithms)
 
-**[Dynamic Programming](./Algorithms/Dynamic%20Programming)**
-_Examples coming soon._
+**[Divide & Conqeur](./Algorithms/Divide%20&%20Conqeur)** _Examples coming soon._
+* Divide & Conquer (New Section)
+* Closest Pair of Points
+* Strassen’s Matrix Multiplication
+* Binary Search
 
-**[Famous Algorithms](./Algorithms/Famous%20Algorithms)**
-_Examples coming soon._
+**[Dynamic Programming](./Algorithms/Dynamic%20Programming)** _Examples coming soon._
+* Knapsack Problem (_Coming soon._)
+* Longest Common Subsequence (_Coming soon._)
+* Matrix Chain Multiplication (_Coming soon._)
 
 **[Graph Algorithms](./Algorithms/Graphs)**
 * Depth-first Search (DFS)
 * Breadth-first Search (BFS)
+* Dijkstra’s Algorithm (_Coming soon._)
+* Bellman-Ford (_Coming soon._)
+* Cycle Detection (_Coming soon._)
+* Topological Sort (_Coming soon._)
 
 **[Greedy Algorithms](./Algorithms/Greedy%20Algorithms)** _Examples coming soon._
 * Minimum Waiting Time  
@@ -85,5 +106,7 @@ _Examples coming soon._
 **[Recurrence Relations](./Algorithm-Analysis/Recurrence_Relations.md)** _Coming soon._
 
 **[Loop Invariants](./Algorithm-Analysis/Loop_Invariants.md)** _Coming soon._
+
+**[NP Completeness](./Algorithm-Analysis/NP_Completeness.md)** _Coming soon._
 
 **[Amortized Analysis](./Algorithm-Analysis/Amortized_Analysis.md)** _Coming soon._
