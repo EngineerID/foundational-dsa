@@ -21,12 +21,12 @@ _Examples coming soon._
 _Examples coming soon._
 
 **[Hash Tables](./Data-Structures/Hash%20Tables)**
-* Hash Table with Chaining (_Coming soon._)
+* Hash Table with Chaining
 * Hash Table with Open Addressing (_Coming soon._)
 * Bloom Filters (_Coming soon._)
 
 **[Heaps](./Data-Structures/Heaps)**
-* Min Heap Construction (_Coming soon._)
+* Min Heap Construction (Python)
 * Merge Sorted Arrays (_Coming soon._)
 * Laptop Rentals  (_Coming soon._)
 * Continuous Median (_Coming soon._)
