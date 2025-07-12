@@ -14,7 +14,7 @@ Curated Python and JavaScript implementations of essential data structures and a
 * Validate Subsequence (Python)
 * Sorted Squared Array (Python, JavaScript)
 
-**[Hash Tables](./Data-Structures/Hash%Tables)** _Examples coming soon._
+**[Hash Tables](./Data-Structures/Hash%20Tables)** _Examples coming soon._
 * Hash Table with Chaining  
 * Hash Table with Open Addressing  
 * Bloom Filters
@@ -79,8 +79,11 @@ _Examples coming soon._
 * Palindrome Check
 
 ## [Algorithm Analysis](./Algorithm-Analysis)
-_Coming soon._
-**[Big-O Complexity](./Algorithm-Analysis/BigO_TimeSpace.md)** 
-**[Recurrence Relations](./Algorithm-Analysis/Recurrence_Relations.md)** 
-**[Loop Invariants](./Algorithm-Analysis/Loop_Invariants.md)** 
-**[Amortized Analysis](./Algorithm-Analysis/Amortized_Analysis.md)**
+
+**[Big-O Complexity](./Algorithm-Analysis/BigO%20TimeSpace.md)** _Coming soon._
+
+**[Recurrence Relations](./Algorithm-Analysis/Recurrence_Relations.md)** _Coming soon._
+
+**[Loop Invariants](./Algorithm-Analysis/Loop_Invariants.md)** _Coming soon._
+
+**[Amortized Analysis](./Algorithm-Analysis/Amortized_Analysis.md)** _Coming soon._
