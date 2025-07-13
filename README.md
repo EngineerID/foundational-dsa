@@ -14,6 +14,8 @@ Curated Python and JavaScript implementations of essential data structures and a
 * Three Number Sum (Python)
 * Validate Subsequence (Python)
 * Sorted Squared Array (Python, JavaScript)
+* Merge Overalapping Intervals (Python)
+* Array of Products (Python)
 
 **[Disjoint Sets](./Data-Structures/Disjoint%20Sets)**
 _Examples coming soon._
@@ -67,9 +69,10 @@ _Examples coming soon._
 
 **[Dynamic Programming](./Algorithms/Dynamic%20Programming)**
 * Knapsack Problem (Python)
-* Kadane's Algorithm (_Coming soon._)
+* Kadane's Algorithm (Python)
 * Longest Common Subsequence (_Coming soon._)
 * Matrix Chain Multiplication (_Coming soon._)
+* Min Number of Jumps (Python)
 
 **[Graph Algorithms](./Algorithms/Graphs)**
 * Depth-first Search (DFS) (Python)
@@ -78,6 +81,7 @@ _Examples coming soon._
 * Bellman-Ford (_Coming soon._)
 * Cycle Detection (_Coming soon._)
 * Topological Sort (_Coming soon._)
+* Detect Arbitrage (Python)
 
 **[Greedy Algorithms](./Algorithms/Greedy%20Algorithms)**
 * Minimum Waiting Time  (_Coming soon._)
