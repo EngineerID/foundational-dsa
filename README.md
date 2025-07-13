@@ -11,6 +11,7 @@ Curated Python and JavaScript implementations of essential data structures and a
 
 **[Arrays](./Data-Structures/Arrays)**
 * Two Number Sum (Python, JavaScript)
+* Two Number Sum (Python)
 * Validate Subsequence (Python)
 * Sorted Squared Array (Python, JavaScript)
 
@@ -22,7 +23,7 @@ _Examples coming soon._
 
 **[Hash Tables](./Data-Structures/Hash%20Tables)**
 * Hash Table with Chaining (Python)
-* Hash Table with Open Addressing  (Python)
+* Hash Table with Open Addressing (Python)
 * Bloom Filters (Python)
 
 **[Heaps](./Data-Structures/Heaps)**
@@ -65,14 +66,14 @@ _Examples coming soon._
 * Binary Search (_Coming soon._)
 
 **[Dynamic Programming](./Algorithms/Dynamic%20Programming)**
-* Knapsack Problem (_Coming soon._)
+* Knapsack Problem (Python)
 * Longest Common Subsequence (_Coming soon._)
 * Matrix Chain Multiplication (_Coming soon._)
 
 **[Graph Algorithms](./Algorithms/Graphs)**
 * Depth-first Search (DFS)
 * Breadth-first Search (BFS)
-* Dijkstra’s Algorithm (_Coming soon._)
+* Dijkstra’s Algorithm (Python)
 * Bellman-Ford (_Coming soon._)
 * Cycle Detection (_Coming soon._)
 * Topological Sort (_Coming soon._)
