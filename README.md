@@ -11,7 +11,7 @@ Curated Python and JavaScript implementations of essential data structures and a
 
 **[Arrays](./Data-Structures/Arrays)**
 * Two Number Sum (Python, JavaScript)
-* Two Number Sum (Python)
+* Three Number Sum (Python)
 * Validate Subsequence (Python)
 * Sorted Squared Array (Python, JavaScript)
 
@@ -33,7 +33,7 @@ _Examples coming soon._
 * Continuous Median (_Coming soon._)
 
 **[Linked Lists](./Data-Structures/Linked%20Lists)**
-* Linked List Construction
+* Linked List Construction (Python)
 
 **[Matrices & Grids](./Data-Structures/Matrices%20&%20Grids)**
 _Examples coming soon._
@@ -45,7 +45,7 @@ _Examples coming soon._
 _Examples coming soon._
 
 **[Stacks](./Data-Structures/Stacks)**
-* Min Max Stack Construction
+* Min Max Stack Construction (Python)
 
 **[Trees - Binary & Search Trees](./Data-Structures/Trees)**
 * Binary Trees - Branch Sum
@@ -67,38 +67,39 @@ _Examples coming soon._
 
 **[Dynamic Programming](./Algorithms/Dynamic%20Programming)**
 * Knapsack Problem (Python)
+* Kadane's Algorithm (_Coming soon._)
 * Longest Common Subsequence (_Coming soon._)
 * Matrix Chain Multiplication (_Coming soon._)
 
 **[Graph Algorithms](./Algorithms/Graphs)**
-* Depth-first Search (DFS)
-* Breadth-first Search (BFS)
+* Depth-first Search (DFS) (Python)
+* Breadth-first Search (BFS) (Python)
 * Dijkstra’s Algorithm (Python)
 * Bellman-Ford (_Coming soon._)
 * Cycle Detection (_Coming soon._)
 * Topological Sort (_Coming soon._)
 
 **[Greedy Algorithms](./Algorithms/Greedy%20Algorithms)**
-* Minimum Waiting Time  
-* Class Photos  
-* Task Assignment  
-* Optimal Freelancing  
-* Tandem Bicycle
+* Minimum Waiting Time  (_Coming soon._)
+* Class Photos  (_Coming soon._)
+* Task Assignment  (_Coming soon._)
+* Optimal Freelancing  (_Coming soon._)
+* Tandem Bicycle (_Coming soon._)
 
 **[Recursion](./Algorithms/Recursion)**
-* Product Sum
+* Product Sum  (Python)
 
 **[Searching](./Algorithms/Searching)**
-* Binary Search
-* Linear Search
+* Binary Search (Python)
+* Linear Search (Python)
 
 **[Sorting](./Algorithms/Sorting)**
-* Bubble Sort
-* Insertion Sort
-* Selection Sort
+* Bubble Sort (Python)
+* Insertion Sort (Python)
+* Selection Sort (Python)
 
 **[Strings](./Algorithms/Strings)**
-* Palindrome Check
+* Palindrome Check (Python)
 
 ## [Algorithm Analysis](./Algorithm-Analysis)
 
