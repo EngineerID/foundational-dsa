@@ -14,8 +14,9 @@ Curated Python and JavaScript implementations of essential data structures and a
 * Three Number Sum (Python)
 * Validate Subsequence (Python)
 * Sorted Squared Array (Python, JavaScript)
-* Merge Overalapping Intervals (Python)
+* Merge Overlapping Intervals (Python)
 * Array of Products (Python)
+* Largest Range (_Coming soon._)
 
 **[Disjoint Sets](./Data-Structures/Disjoint%20Sets)**
 _Examples coming soon._
@@ -59,6 +60,7 @@ _Examples coming soon._
 * Suffix Trie (Python)
 * (a,b)-Trees (_Coming soon._)
 * Skip Lists (_Coming soon._)
+* Multi String Search (_Coming soon._)
 
 ## [Algorithms](./Algorithms)
 
@@ -80,6 +82,7 @@ _Examples coming soon._
 * Breadth-first Search (BFS) (Python)
 * Dijkstra’s Algorithm (Python)
 * Bellman-Ford (_Coming soon._)
+* A* Algorithm (_Coming soon._)
 * Cycle Detection (_Coming soon._)
 * Topological Sort (_Coming soon._)
 * Detect Arbitrage (Python)
@@ -121,27 +124,23 @@ _Examples coming soon._
 
 ## 🌐 Ambient Systems Relevance
 
-This repository powers [Ambient Systems](https://www.ambientsystems.ai) in building **context-aware**, **distributed**, and **resource-efficient intelligent systems** across web development, cloud infrastructure, AI & data science, economics, and the financial sector.
+This repository powers [Ambient Systems](https://www.ambientsystems.ai) in building **context-aware**, **distributed**, and **resource-efficient intelligent systems** across web development, cloud infrastructure, AI & data science
+
+Use cases range from economics, finance, infrastrucutre, real estate, contruction, transportation, and agriculture.
 
 It provides the algorithmic backbone for:
 
-- **IoT & Sensor Networks**  
-  **DFS** and **BFS** optimize routing and topology in distributed networks.
+- **IoT & Sensor Networks**: **DFS** and **BFS** optimize routing and topology in distributed networks.
 
-- **Edge Computing**  
-  **Heaps** and **Greedy Algorithms** (e.g., Task Assignment) enable low-latency task prioritization on constrained devices.
+- **Edge Computing**: **Heaps** and **Greedy Algorithms** (e.g., Task Assignment) enable low-latency task prioritization on constrained devices.
 
-- **Streaming Data**  
-  **Tries** and (planned) **Bloom Filters** support real-time pattern matching for NLP pipelines and economic web scraping.
+- **Streaming Data**: **Tries** and **Bloom Filters** support real-time pattern matching for NLP pipelines and economic web scraping.
 
-- **Cloud Systems**  
-  **Dijkstra’s** and (planned) **Bellman-Ford** improve routing and load balancing across platforms like Google Cloud, AWS, Firebase, and OVH.
+- **Cloud Systems**: **Dijkstra’s** and **Bellman-Ford** improve routing and load balancing across platforms like Google Cloud, AWS, Firebase, and OVH.
 
-- **AI & Data Science**  
-  **Dynamic Programming** (e.g., Knapsack) and **Trees** (e.g., BSTs, AVLs) drive optimization and search in ML/NLP systems.
+- **AI & Data Science**: **Dynamic Programming** (e.g., Knapsack) and **Trees** (e.g., BSTs, AVLs) drive optimization and search in ML/NLP systems.
 
-- **Financial Applications**  
-  **Graph Algorithms** and **DP techniques** power fraud detection, transaction modeling, and portfolio strategy.
+- **Financial Applications**: **Graph Algorithms** and **DP techniques** power fraud detection, transaction modeling, and portfolio strategy.
 
 Implemented in **Python** (for AI, prototyping, backend) and **JavaScript** (for frontend, IoT, and real-time apps), this repository enables scalable, adaptive, and production-ready ambient solutions.
 
