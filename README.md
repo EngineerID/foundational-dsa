@@ -32,10 +32,11 @@ _Examples coming soon._
 * Min Heap Construction (Python)
 * Merge Sorted Arrays (_Coming soon._)
 * Laptop Rentals  (_Coming soon._)
-* Continuous Median (_Coming soon._)
+* Continuous Median (Python)
 
 **[Linked Lists](./Data-Structures/Linked%20Lists)**
 * Linked List Construction (Python)
+* LRU (Least Recently Used) Cache (Python)
 
 **[Matrices & Grids](./Data-Structures/Matrices%20&%20Grids)**
 _Examples coming soon._
@@ -50,12 +51,12 @@ _Examples coming soon._
 * Min Max Stack Construction (Python)
 
 **[Trees - Binary & Search Trees](./Data-Structures/Trees)**
-* Binary Trees - Branch Sum
-* Binary Search Tree Construction
+* Binary Trees - Branch Sum (Python)
+* Binary Search Tree Construction (Python)
 
 **[Trees (Advanced)](./Data-Structures/Advanced%20Trees)**
 * AVL Trees (_Coming soon._)
-* Tries (_Coming soon._)
+* Suffix Trie (Python)
 * (a,b)-Trees (_Coming soon._)
 * Skip Lists (_Coming soon._)
 
