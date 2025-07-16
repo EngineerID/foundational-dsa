@@ -16,7 +16,7 @@ Curated Python and JavaScript implementations of essential data structures and a
 * Sorted Squared Array (Python, JavaScript)
 * Merge Overlapping Intervals (Python)
 * Array of Products (Python)
-* Largest Range (_Coming soon._)
+* Largest Range (Python)
 
 **[Disjoint Sets](./Data-Structures/Disjoint%20Sets)**
 _Examples coming soon._
@@ -60,7 +60,7 @@ _Examples coming soon._
 * Suffix Trie (Python)
 * (a,b)-Trees (_Coming soon._)
 * Skip Lists (_Coming soon._)
-* Multi String Search (_Coming soon._)
+* Multi String Search (Python)
 
 ## [Algorithms](./Algorithms)
 
@@ -126,8 +126,6 @@ _Examples coming soon._
 
 This repository powers [Ambient Systems](https://www.ambientsystems.ai) in building **context-aware**, **distributed**, and **resource-efficient intelligent systems** across web development, cloud infrastructure, AI & data science
 
-Use cases range from economics, finance, infrastrucutre, real estate, contruction, transportation, and agriculture.
-
 It provides the algorithmic backbone for:
 
 - **IoT & Sensor Networks**: **DFS** and **BFS** optimize routing and topology in distributed networks.
@@ -144,6 +142,7 @@ It provides the algorithmic backbone for:
 
 Implemented in **Python** (for AI, prototyping, backend) and **JavaScript** (for frontend, IoT, and real-time apps), this repository enables scalable, adaptive, and production-ready ambient solutions.
 
+Industry use cases range from economics, finance, infrastrucutre, real estate, contruction, transportation, and agriculture.
 
 ## License
 This project is licensed under the **Apache License 2.0**.
