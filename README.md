@@ -82,13 +82,14 @@ _Examples coming soon._
 * Breadth-first Search (BFS) (Python)
 * Dijkstra’s Algorithm (Python)
 * Bellman-Ford (_Coming soon._)
-* A* Algorithm (_Coming soon._)
+* A* Algorithm (Python)
 * Cycle Detection (_Coming soon._)
+* Cycle in Graph (Python)
 * Topological Sort (_Coming soon._)
 * Detect Arbitrage (Python)
 
 **[Greedy Algorithms](./Algorithms/Greedy%20Algorithms)**
-* Minimum Waiting Time  (_Coming soon._)
+* Minimum Waiting Time (Python)
 * Class Photos  (_Coming soon._)
 * Task Assignment  (_Coming soon._)
 * Optimal Freelancing  (_Coming soon._)
