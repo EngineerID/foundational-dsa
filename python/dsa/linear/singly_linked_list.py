@@ -1,8 +1,10 @@
 # Linear — Singly Linked List
 
-"""Singly linked list.
+"""Singly linked list with head insertion and traversal.
 
-addFirst/addLast O(1); get/remove at index O(n); reverse O(n).
+Technique: Singly linked list
+Invariant: Each node next points to successor or null.
+prepend/search: Time O(1)/O(n); Space O(n).
 """
 
 

@@ -1,8 +1,10 @@
 # Graphs — Dijkstra's Algorithm
 
-"""Single-source shortest paths for non-negative weights using indexed heap.
+"""Single-source shortest paths on non-negative edge weights.
 
-Time: O((V+E) log V); Space: O(V).
+Technique: Dijkstra's algorithm (indexed min-heap)
+Invariant: Extracted distances are final when weights nonnegative.
+shortestPaths: Time O(E log V); Space O(V).
 """
 
 from dsa.graphs.graph import Graph

@@ -40,13 +40,21 @@ coverage/
 .project
 .settings/
 
+# --- AI / workflow scaffolding: never publish ---
+docs/governance/
+**/CURSOR*.md
+**/cursor*.md
+*.plan.md
+*.prompt.md
+repomix-output*.md
+repomix.config.json
+.repomixignore
+
 # Cursor IDE
 .cursor/
 .cursorrules
 .cursorignore
 .cursorindexingignore
-**/CURSOR*.md
-**/cursor*.md
 
 # AI coding assistants
 .aider*

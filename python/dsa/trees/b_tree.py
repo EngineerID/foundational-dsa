@@ -1,8 +1,10 @@
 # Trees — B-Tree
 
-"""B-tree with minimum degree t (each node has at most 2t-1 keys).
+"""Disk-oriented multi-way search tree with bounded node fanout.
 
-search/insert O(log n).
+Technique: B-tree
+Invariant: All leaves same depth; keys per node between t and 2t-1 (except root).
+search/insert/delete: Time O(log_t n); Space O(n).
 """
 
 

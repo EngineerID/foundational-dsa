@@ -1,4 +1,4 @@
-from dsa.sorting.merge_sort import sort
+from dsa.sorting.merge_sort import sort, sort_bottom_up
 
 
 def test_typical_array():
@@ -15,3 +15,7 @@ def test_duplicates():
 
 def test_null_returns_empty():
     assert sort(None) == []
+
+
+def test_bottom_up():
+    assert sort_bottom_up([4, 2, 1, 3]) == [1, 2, 3, 4]

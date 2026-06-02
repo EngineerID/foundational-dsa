@@ -1,8 +1,10 @@
 # Union-Find (Disjoint Set)
 
-"""Disjoint-set union with weighted union (by rank) and path compression.
+"""Disjoint-set connectivity with union and find.
 
-union and find ~O(α(n)) amortized.
+Technique: Union-find (path compression, union by rank)
+Invariant: Parent pointers form forest; ranks approximate tree height.
+find/union/connected: Time O(α(n)) amortized; Space O(n).
 """
 
 

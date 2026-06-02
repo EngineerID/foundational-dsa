@@ -3,8 +3,10 @@
 package com.dsa.examples.hashing;
 
 /**
- * Hash table with open addressing and swappable probing strategies.
- * Average insert/lookup O(1); clustering varies by strategy.
+ * Hash map with probing collision resolution and tombstones.
+ * Technique: Open addressing (linear/quadratic/double hashing)
+ * Invariant: Load factor <= 0.7; deleted slots tombstoned.
+ * put/get/remove: Time O(1) average; Space O(n) slots.
  */
 public class HashTableOpenAddressing<K, V> {
 

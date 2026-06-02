@@ -1,6 +1,11 @@
 // Hashing — Bloom Filter
 
-/** Probabilistic set membership: no false negatives, possible false positives. */
+/**
+ * Probabilistic set membership with false positives possible.
+ * Technique: Bloom filter (k hash functions)
+ * Invariant: All bits for an element set on insert; negative lookup => definitely absent.
+ * add/mightContain: Time O(k); Space O(m) bits.
+ */
 
 class BloomFilter {
   constructor(expectedItems, falsePositiveRate) {

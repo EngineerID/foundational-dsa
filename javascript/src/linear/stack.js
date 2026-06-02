@@ -1,7 +1,10 @@
 // Linear — Stack (linked-list backed)
 
-/** LIFO stack backed by SinglyLinkedList.
- * push/pop/peek O(1); Space: O(n).
+/**
+ * LIFO stack backed by dynamic array.
+ * Technique: Array stack
+ * Invariant: Top index is size-1; pop only when non-empty.
+ * push/pop/peek: Time O(1) amortized; Space O(n).
  */
 
 const { SinglyLinkedList } = require('./singlyLinkedList');

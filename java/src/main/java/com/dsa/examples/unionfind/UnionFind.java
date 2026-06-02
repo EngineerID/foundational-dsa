@@ -3,11 +3,10 @@
 package com.dsa.examples.unionfind;
 
 /**
- * Disjoint-set union with weighted union (by rank) and path compression.
- *
- * <p>Naive Quick-Find: union O(n), find O(1) — every union scans all elements.
- * Naive Quick-Union: union O(1), find O(n) worst — deep trees without balancing.
- * This implementation: union and find ~O(α(n)) amortized.
+ * Disjoint-set connectivity with union and find.
+ * Technique: Union-find (path compression, union by rank)
+ * Invariant: Parent pointers form forest; ranks approximate tree height.
+ * find/union/connected: Time O(α(n)) amortized; Space O(n).
  */
 public class UnionFind {
 

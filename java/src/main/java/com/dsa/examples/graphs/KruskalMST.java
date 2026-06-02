@@ -9,8 +9,10 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * Minimum spanning tree via Kruskal (sort edges + union-find).
- * Time: O(E log E); Space: O(E).
+ * Minimum spanning tree via sorted edges and union-find.
+ * Technique: Kruskal's MST
+ * Invariant: Selected edges form forest until connected; greedy safe for MST.
+ * mstWeight: Time O(E log E); Space O(V).
  */
 public final class KruskalMST {
 

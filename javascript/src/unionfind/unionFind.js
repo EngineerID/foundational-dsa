@@ -1,6 +1,11 @@
 // Union-Find (Disjoint Set)
 
-/** Disjoint-set union with weighted union and path compression. */
+/**
+ * Disjoint-set connectivity with union and find.
+ * Technique: Union-find (path compression, union by rank)
+ * Invariant: Parent pointers form forest; ranks approximate tree height.
+ * find/union/connected: Time O(α(n)) amortized; Space O(n).
+ */
 
 class UnionFind {
   constructor(n) {

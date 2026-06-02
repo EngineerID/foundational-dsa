@@ -1,5 +1,12 @@
 // Graphs — Floyd-Warshall
 
+/**
+ * All-pairs shortest paths via dynamic programming.
+ * Technique: Floyd-Warshall
+ * Invariant: dist[k][i][j] = shortest path using vertices {1..k} as intermediates.
+ * allPairs: Time O(V³); Space O(V²).
+ */
+
 const INF = Math.floor(Number.MAX_SAFE_INTEGER / 4);
 
 function allPairsShortestPaths(graph) {

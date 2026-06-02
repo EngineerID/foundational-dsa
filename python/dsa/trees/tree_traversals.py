@@ -1,8 +1,10 @@
 # Trees — Traversals (recursive + iterative)
 
-"""Tree traversal utilities for binary trees.
+"""In-order, pre-order, post-order, and level-order tree walks.
 
-Time: O(n) per traversal; Space: O(h) recursive, O(n) level-order.
+Technique: DFS and BFS traversals
+Invariant: In-order visits left, node, right.
+Each traversal: Time O(n); Space O(h) stack or O(w) queue.
 """
 
 from __future__ import annotations

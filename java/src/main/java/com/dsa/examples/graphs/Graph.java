@@ -6,7 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Graph with adjacency list (default). Adjacency matrix uses O(V²) space — less common for sparse graphs.
+ * Adjacency-list directed/undirected weighted graph representation.
+ * Technique: Adjacency list
+ * Invariant: Edges stored from source to neighbors with weights.
+ * addEdge/neighbors: Time O(1) amortized; Space O(V+E).
  */
 public class Graph {
 

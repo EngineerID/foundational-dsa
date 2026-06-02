@@ -7,8 +7,10 @@ import com.dsa.examples.linear.Queue;
 import java.util.Arrays;
 
 /**
- * BFS for unweighted shortest paths and level-order distances.
- * Time: O(V+E); Space: O(V).
+ * Breadth-first traversal and unweighted shortest paths.
+ * Technique: BFS
+ * Invariant: Queue processes nodes in nondecreasing distance from source.
+ * distances/traverse: Time O(V+E); Space O(V).
  */
 public final class BFS {
 

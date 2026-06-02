@@ -1,6 +1,11 @@
 // Hashing — Open Addressing
 
-/** Hash table with open addressing and swappable probing strategies. */
+/**
+ * Hash map with probing collision resolution and tombstones.
+ * Technique: Open addressing (linear/quadratic/double hashing)
+ * Invariant: Load factor <= 0.7; deleted slots tombstoned.
+ * put/get/remove: Time O(1) average; Space O(n) slots.
+ */
 
 const LOAD_FACTOR = 0.7;
 const DELETED = Symbol('deleted');

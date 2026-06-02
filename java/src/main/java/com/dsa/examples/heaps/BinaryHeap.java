@@ -7,8 +7,10 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Array-based binary min-heap.
- * insert/extractMin/decreaseKey O(log n); heapify O(n); peek O(1).
+ * Array-based binary heap (min or max) with heapify operations.
+ * Technique: Binary heap
+ * Invariant: Parent <= children (min-heap) or >= (max-heap) at all indices.
+ * insert/extract/peek: Time O(log n); buildHeap O(n); Space O(n).
  */
 public class BinaryHeap<T extends Comparable<T>> {
 

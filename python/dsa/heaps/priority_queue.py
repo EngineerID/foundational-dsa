@@ -1,8 +1,10 @@
 # Heaps — Priority Queue (min)
 
-"""Min-priority queue backed by BinaryHeap.
+"""Min-priority queue for scheduling by priority.
 
-insert/extract_min/decrease_key O(log n); peek O(1).
+Technique: Binary min-heap priority queue
+Invariant: Heap property on underlying BinaryHeap.
+insert/extractMin/peek: Time O(log n); Space O(n).
 """
 
 from __future__ import annotations

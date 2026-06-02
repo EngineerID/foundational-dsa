@@ -1,8 +1,10 @@
 # Hashing — Separate Chaining
 
-"""Hash table with separate chaining (bucket linked lists).
+"""Hash map with linked-list buckets and load-factor resize.
 
-Average insert/lookup/remove O(1); resize O(n).
+Technique: Separate chaining
+Invariant: Load factor <= 0.75 before resize.
+put/get/remove: Time O(1) average; resize O(n); Space O(n).
 """
 
 from __future__ import annotations

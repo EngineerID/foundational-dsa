@@ -1,8 +1,10 @@
 # Hashing — Open Addressing
 
-"""Hash table with open addressing and swappable probing strategies.
+"""Hash map with probing collision resolution and tombstones.
 
-Average insert/lookup O(1); clustering varies by strategy.
+Technique: Open addressing (linear/quadratic/double hashing)
+Invariant: Load factor <= 0.7; deleted slots tombstoned.
+put/get/remove: Time O(1) average; Space O(n) slots.
 """
 
 from __future__ import annotations

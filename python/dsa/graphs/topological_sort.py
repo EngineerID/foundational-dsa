@@ -1,8 +1,10 @@
 # Graphs — Topological Sort
 
-"""Topological ordering of a DAG (Kahn's algorithm).
+"""Linear ordering of a DAG respecting all edges.
 
-Time: O(V+E); Space: O(V).
+Technique: Kahn topological sort (BFS in-degree)
+Invariant: Output order: for each edge u->v, pos[u] < pos[v].
+sort: Time O(V+E); Space O(V).
 """
 
 from dsa.graphs.graph import Graph

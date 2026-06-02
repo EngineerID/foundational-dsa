@@ -1,8 +1,10 @@
 # Graphs — Bellman-Ford
 
-"""Single-source shortest paths with negative edges; detects negative cycles.
+"""Single-source shortest paths with negative edges; detect negative cycles.
 
-Time: O(V·E); Space: O(V).
+Technique: Bellman-Ford relaxation
+Invariant: After i passes, shortest paths using <= i edges are correct.
+shortestPaths: Time O(VE); Space O(V).
 """
 
 from __future__ import annotations

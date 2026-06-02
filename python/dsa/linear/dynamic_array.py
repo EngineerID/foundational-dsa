@@ -1,8 +1,10 @@
 # Linear — Dynamic Array
 
-"""Resizable array (doubling growth).
+"""Resizable array-backed list with amortized append.
 
-add amortized O(1); get/set O(1); remove O(n); Space: O(n).
+Technique: Dynamic array doubling
+Invariant: size <= capacity; length tracks element count.
+append/get/set: Time O(1) amortized; resize O(n); Space O(n).
 """
 
 _DEFAULT_CAPACITY = 4

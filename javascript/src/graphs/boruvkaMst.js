@@ -1,5 +1,12 @@
 // Graphs — Boruvka MST
 
+/**
+ * Minimum spanning tree via repeated cheapest outgoing edge per component.
+ * Technique: Borůvka's MST
+ * Invariant: Each phase adds safe minimum edge per component.
+ * mstWeight: Time O(E log V); Space O(V).
+ */
+
 const { UnionFind } = require('../unionfind/unionFind');
 
 const INF = Math.floor(Number.MAX_SAFE_INTEGER / 4);

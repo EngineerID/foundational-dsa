@@ -1,4 +1,4 @@
-const { sort } = require('../../src/sorting/quickSort');
+const { sort, sort3Way } = require('../../src/sorting/quickSort');
 
 function assertSorted(input, randomizedPivot = false) {
   const arr = input.slice();
@@ -19,5 +19,11 @@ describe('quickSort', () => {
 
   test('deterministic pivot', () => {
     assertSorted([5, 1, 4, 2, 3]);
+  });
+
+  test('three-way duplicates', () => {
+    const arr = [2, 2,  2, 1, 1];
+    sort3Way(arr);
+    expect(arr).toEqual([1, 1, 2, 2, 2]);
   });
 });

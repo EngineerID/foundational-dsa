@@ -1,6 +1,11 @@
 // Graphs — Adjacency list representation
 
-/** Graph with adjacency list representation. */
+/**
+ * Adjacency-list directed/undirected weighted graph representation.
+ * Technique: Adjacency list
+ * Invariant: Edges stored from source to neighbors with weights.
+ * addEdge/neighbors: Time O(1) amortized; Space O(V+E).
+ */
 
 class Edge {
   constructor(to, weight) {

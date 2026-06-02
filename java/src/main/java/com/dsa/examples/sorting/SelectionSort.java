@@ -3,8 +3,10 @@
 package com.dsa.examples.sorting;
 
 /**
- * Selection sort.
- * Time: O(n²); Space: O(1).
+ * Sort an array in ascending order in place.
+ * Technique: Selection sort
+ * Invariant: Prefix [0..i) is sorted and contains the i smallest elements.
+ * sort: Time O(n²); Space O(1).
  */
 public final class SelectionSort {
 

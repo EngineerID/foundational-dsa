@@ -8,8 +8,10 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Minimum spanning tree via Boruvka's algorithm.
- * Time: O(E log V); Space: O(V).
+ * Minimum spanning tree via repeated cheapest outgoing edge per component.
+ * Technique: Borůvka's MST
+ * Invariant: Each phase adds safe minimum edge per component.
+ * mstWeight: Time O(E log V); Space O(V).
  */
 public final class BoruvkaMST {
 

@@ -1,8 +1,10 @@
 # Graphs — Kruskal MST
 
-"""Minimum spanning tree via Kruskal (sort edges + union-find).
+"""Minimum spanning tree via sorted edges and union-find.
 
-Time: O(E log E); Space: O(E).
+Technique: Kruskal's MST
+Invariant: Selected edges form forest until connected; greedy safe for MST.
+mstWeight: Time O(E log E); Space O(V).
 """
 
 from __future__ import annotations

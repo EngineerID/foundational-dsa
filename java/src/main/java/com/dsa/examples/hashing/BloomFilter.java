@@ -3,8 +3,10 @@
 package com.dsa.examples.hashing;
 
 /**
- * Probabilistic set membership: no false negatives, possible false positives.
- * add/contains O(k) where k is the number of hash functions.
+ * Probabilistic set membership with false positives possible.
+ * Technique: Bloom filter (k hash functions)
+ * Invariant: All bits for an element set on insert; negative lookup => definitely absent.
+ * add/mightContain: Time O(k); Space O(m) bits.
  */
 public class BloomFilter {
 

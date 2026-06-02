@@ -1,6 +1,11 @@
 // Hashing — Separate Chaining
 
-/** Hash table with separate chaining and load-factor resizing. */
+/**
+ * Hash map with linked-list buckets and load-factor resize.
+ * Technique: Separate chaining
+ * Invariant: Load factor <= 0.75 before resize.
+ * put/get/remove: Time O(1) average; resize O(n); Space O(n).
+ */
 
 const LOAD_FACTOR = 0.75;
 

@@ -1,8 +1,10 @@
 # Graphs — Depth-First Search
 
-"""DFS with discovery and finish times.
+"""Depth-first traversal, cycle detection, and connectivity.
 
-Time: O(V+E); Space: O(V).
+Technique: DFS
+Invariant: Recursive/stack visit marks discovered nodes until backtrack.
+traverse/hasCycle: Time O(V+E); Space O(V).
 """
 
 from __future__ import annotations

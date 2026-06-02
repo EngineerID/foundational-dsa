@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/github/license/EngineerID/foundational-dsa)](./LICENSE)
 
-Personal practice repo for **37 data structures and algorithms**, implemented in **Java**, **Python**, and **JavaScript**.
+Personal practice repo for **41 data structures and algorithms** (**123** implementations: 41 × Java, Python, and JavaScript).
 
 **Maintainer:** Ivan Damnjanovic
 
@@ -14,17 +14,17 @@ foundational-dsa/
   python/         pytest (dsa package)
   javascript/     Jest (src/ + test/)
   tools/          stub check, coverage matrix, demo runner
-  docs/           per-item READMEs, analysis notes
+  docs/           per-item READMEs, canonical API
   COVERAGE.md     generated trilingual status (npm run matrix)
 ```
 
 | Area | Purpose |
 |------|---------|
-| [`java/`](java/) | Canonical Java reference (37 topics) |
+| [`java/`](java/) | Canonical Java reference (41 topics) |
+| [`docs/API.md`](docs/API.md) | Cross-language canonical API |
 | [`python/dsa/`](python/dsa/) | Python ports |
 | [`javascript/src/`](javascript/src/) | JavaScript ports |
 | [`docs/items/`](docs/items/) | Per-algorithm README with source links |
-| [`docs/analysis/`](docs/analysis/) | Big-O, amortized analysis notes |
 
 **Coverage:** [COVERAGE.md](COVERAGE.md) (run `npm run matrix` to regenerate)
 
@@ -59,12 +59,13 @@ npm run demo -- dijkstra
 npm run demo -- binary-search python
 ```
 
-## Topics (37)
+## Topics (41)
 
 | Package | Items |
 |---------|-------|
 | Searching | linear-search, binary-search, quick-select |
-| Sorting | bubble, selection, insertion, merge, quick |
+| Sorting | bubble, selection, insertion, merge, quick, heapsort, counting-sort, radix-sort |
+| Strings | kmp |
 | Linear | dynamic-array, singly/doubly-linked-list, stack, queue, deque |
 | Heaps | binary-heap, priority-queue |
 | Trees | bst, tree-traversals, avl-tree, order-statistic-tree, interval-tree, trie, b-tree |
@@ -72,7 +73,7 @@ npm run demo -- binary-search python
 | Union-Find | union-find |
 | Graphs | graph, bfs, dfs, topological-sort, dijkstra, bellman-ford, floyd-warshall, kruskal/prim/boruvka-mst |
 
-Big-O and analysis notes: [docs/analysis/](docs/analysis/)
+Complexity and invariants are documented in each implementation’s module doc block and in [docs/API.md](docs/API.md).
 
 ## License
 

@@ -6,8 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Interval tree (augmented BST by low endpoint, stores maxEnd).
- * overlapSearch O(log n + k) typical.
+ * Store intervals and query overlaps with a point or interval.
+ * Technique: Centered interval tree
+ * Invariant: Intervals crossing center stored at node; left/right subtrees partition by center.
+ * insert/query: Time O(log n + k) reported; Space O(n).
  */
 public class IntervalTree {
 

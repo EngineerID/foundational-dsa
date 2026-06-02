@@ -1,8 +1,10 @@
 # Trees — Interval Tree
 
-"""Interval tree (augmented BST by low endpoint, stores maxEnd).
+"""Store intervals and query overlaps with a point or interval.
 
-overlap_search O(log n + k) typical.
+Technique: Centered interval tree
+Invariant: Intervals crossing center stored at node; left/right subtrees partition by center.
+insert/query: Time O(log n + k) reported; Space O(n).
 """
 
 from __future__ import annotations

@@ -1,8 +1,10 @@
 # Heaps — Binary Min-Heap
 
-"""Array-based binary min-heap.
+"""Array-based binary heap (min or max) with heapify operations.
 
-insert/extract_min/decrease_key O(log n); heapify O(n); peek O(1).
+Technique: Binary heap
+Invariant: Parent <= children (min-heap) or >= (max-heap) at all indices.
+insert/extract/peek: Time O(log n); buildHeap O(n); Space O(n).
 """
 
 from __future__ import annotations

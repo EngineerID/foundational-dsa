@@ -1,5 +1,12 @@
 // Graphs — Depth-First Search
 
+/**
+ * Depth-first traversal, cycle detection, and connectivity.
+ * Technique: DFS
+ * Invariant: Recursive/stack visit marks discovered nodes until backtrack.
+ * traverse/hasCycle: Time O(V+E); Space O(V).
+ */
+
 const { Stack } = require('../linear/stack');
 
 function traverseRecursive(graph, source) {
