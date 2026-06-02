@@ -1,15 +1,17 @@
 {
-  "name": "foundational-dsa",
-  "version": "1.0.0",
-  "description": "Core data structures and algorithms for interview prep (Python, JavaScript, Java)",
+  "name": "dsa-trilingual",
+  "private": true,
+  "description": "37 data structures and algorithms in Java, Python, and JavaScript",
   "scripts": {
-    "test": "npm run test:python && npm run test:js && npm run test:java",
-    "test:js": "jest",
-    "test:python": "powershell -ExecutionPolicy Bypass -File scripts/run-python-tests.ps1",
-    "test:java": "powershell -ExecutionPolicy Bypass -File scripts/run-java.ps1",
-    "repomix": "npx repomix"
+    "test": "npm run check:stubs && npm run test:java && npm run test:py && npm run test:js && npm run matrix:check",
+    "test:java": "node tools/run-java-test.mjs",
+    "test:py": "node tools/run-py-test.mjs",
+    "test:js": "jest --config javascript/jest.config.js",
+    "demo": "node tools/demo.mjs",
+    "matrix": "node tools/matrix.mjs",
+    "matrix:check": "node tools/matrix.mjs --check --strict",
+    "check:stubs": "node tools/check-stubs.mjs"
   },
-  "keywords": ["dsa", "algorithms", "data-structures", "interview-prep"],
   "author": "Ivan Damnjanovic",
   "license": "Apache-2.0",
   "devDependencies": {

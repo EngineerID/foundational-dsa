@@ -1,8 +1,74 @@
+# Dependencies
 node_modules/
+
+# Python
 __pycache__/
-*.pyc
-.DS_Store
-.idea/
-repomix-output.*
+*.py[cod]
+*$py.class
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.eggs/
+dist/
+*.egg
+.venv/
+venv/
+env/
+
+# Java / Maven
 *.class
+java/target/
+target/
 build/
+out/
+bin/
+lib/
+*.log
+hs_err_pid*.log
+
+# Node / Jest
+coverage/
+.nyc_output/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+.classpath
+.project
+.settings/
+
+# Cursor IDE
+.cursor/
+.cursorrules
+.cursorignore
+.cursorindexingignore
+**/CURSOR*.md
+**/cursor*.md
+
+# AI coding assistants
+.aider*
+.continue/
+.windsurf/
+.codeium/
+.tabnine/
+.cline/
+.clinerules
+.roo/
+.cody/
+.devin/
+.ai/
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+**/ambient-transfer-note.md
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Project
+repomix-output.*

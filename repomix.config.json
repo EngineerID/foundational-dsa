@@ -12,6 +12,9 @@
     "useDefaultPatterns": true,
     "customPatterns": [
       "node_modules/**",
+      "target/**",
+      "lib/**",
+      "build/**",
       "repomix-output.*",
       "**/__pycache__/**",
       ".idea/**"
