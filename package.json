@@ -1,14 +1,17 @@
 {
-  "name": "reference-data-structure-and-algorithms",
+  "name": "foundational-dsa",
   "version": "1.0.0",
-  "description": "Some essential algorithms and data structures",
-  "main": "index.js",
+  "description": "Core data structures and algorithms for interview prep (Python, JavaScript, Java)",
   "scripts": {
-    "test": "jest"
+    "test": "npm run test:python && npm run test:js && npm run test:java",
+    "test:js": "jest",
+    "test:python": "powershell -ExecutionPolicy Bypass -File scripts/run-python-tests.ps1",
+    "test:java": "powershell -ExecutionPolicy Bypass -File scripts/run-java.ps1",
+    "repomix": "npx repomix"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["dsa", "algorithms", "data-structures", "interview-prep"],
+  "author": "Ivan Damnjanovic",
+  "license": "Apache-2.0",
   "devDependencies": {
     "jest": "^30.0.4"
   }

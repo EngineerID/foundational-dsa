@@ -1,11 +1,62 @@
-# Ambient Systems DSA – Data Structures & Algorithms
+# foundational-dsa
 
-[![License](https://img.shields.io/github/license/EngineerID/Ambient-Systems-DSA)](./LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/EngineerID/Ambient-Systems-DSA)](https://github.com/EngineerID/Ambient-Systems-DSA/commits/master)
-[![Languages](https://img.shields.io/github/languages/top/EngineerID/Ambient-Systems-DSA)](https://github.com/EngineerID/Ambient-Systems-DSA)
-[![Stars](https://img.shields.io/github/stars/EngineerID/Ambient-Systems-DSA?style=social)](https://github.com/EngineerID/Ambient-Systems-DSA/stargazers)
+[![License](https://img.shields.io/github/license/EngineerID/foundational-dsa)](./LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/EngineerID/foundational-dsa)](https://github.com/EngineerID/foundational-dsa/commits/master)
+[![Languages](https://img.shields.io/github/languages/top/EngineerID/foundational-dsa)](https://github.com/EngineerID/foundational-dsa)
+[![Stars](https://img.shields.io/github/stars/EngineerID/foundational-dsa?style=social)](https://github.com/EngineerID/foundational-dsa/stargazers)
 
-Curated Python and JavaScript implementations of essential data structures and algorithms for Ambient Systems use cases.
+Personal practice repo for core data structures and algorithms (interview prep). Python is primary; JavaScript and Java are included where present. Implementations are kept readable and testable, not production-polished.
+
+**About:** This is foundational DSA practice material maintained by Ivan Damnjanovic — useful for general interview preparation and demonstrating algorithmic fundamentals.
+
+Prior Ambient Systems context is archived in [docs/ambient-transfer-note.md](./docs/ambient-transfer-note.md).
+
+## Prerequisites
+
+- **Python** 3.8+
+- **Node.js** 18+
+- **JDK** 11+ (for Java samples)
+
+## Running code
+
+Install Node dependencies once:
+
+```bash
+npm ci
+```
+
+Run all tests (Python, JavaScript, Java):
+
+```bash
+npm test
+```
+
+Run per language:
+
+```bash
+npm run test:python    # Python unit tests (per-problem folders)
+npm run test:js        # Jest
+npm run test:java      # Compile and run Java files with main()
+```
+
+**Python:** Tests live next to each solution (`unit_test.py` or `unit-test.py`). On Windows use `py`; on macOS/Linux use `python3`. You can also run a single folder manually:
+
+```bash
+cd "Data-Structures/Arrays/01-TwoNumberSum"
+py -m unittest unit_test.py -v
+```
+
+**JavaScript:** Jest discovers `**/*.test.js` under the repo (excluding `node_modules`).
+
+**Java:** Samples are reference implementations. Only files with a `public static void main` method are executed by the runner (currently `TopThree.java`).
+
+## Repomix export
+
+Generate a single markdown bundle for AI review:
+
+```bash
+npm run repomix   # writes repomix-output.md
+```
 
 ## [Data Structures](./Data-Structures)
 
@@ -67,7 +118,7 @@ _Examples coming soon._
 **[Divide & Conquer](./Algorithms/Divide%20&%20Conquer)**
 * Divide & Conquer (_Coming soon._)
 * Closest Pair of Points (_Coming soon._)
-* Strassen’s Matrix Multiplication (_Coming soon._)
+* Strassen's Matrix Multiplication (_Coming soon._)
 * Binary Search (_Coming soon._)
 
 **[Dynamic Programming](./Algorithms/Dynamic%20Programming)**
@@ -80,7 +131,7 @@ _Examples coming soon._
 **[Graph Algorithms](./Algorithms/Graphs)**
 * Depth-first Search (DFS) (Python)
 * Breadth-first Search (BFS) (Python)
-* Dijkstra’s Algorithm (Python)
+* Dijkstra's Algorithm (Python)
 * Bellman-Ford (_Coming soon._)
 * A* Algorithm (Python)
 * Cycle in Graph (Python)
@@ -98,7 +149,7 @@ _Examples coming soon._
 * Product Sum  (Python)
 
 **[Searching](./Algorithms/Searching)**
-* Binary Search (Python)
+* Binary Search (Python, Java)
 * Linear Search (Python)
 
 **[Sorting](./Algorithms/Sorting)**
@@ -111,7 +162,7 @@ _Examples coming soon._
 
 ## [Algorithm Analysis](./Algorithm-Analysis)
 
-**[Big-O Complexity](./Algorithm-Analysis/BigO%20TimeSpace.md)** _Coming soon._
+**[Big-O Complexity](./Algorithm-Analysis/Big-O_Complexity.md)** _Coming soon._
 
 **[Recurrence Relations](./Algorithm-Analysis/Recurrence_Relations.md)** _Coming soon._
 
@@ -121,29 +172,7 @@ _Examples coming soon._
 
 **[Amortized Analysis](./Algorithm-Analysis/Amortized_Analysis.md)** _Coming soon._
 
-
-## 🌐 Ambient Systems Relevance
-
-This repository powers [Ambient Systems](https://www.ambientsystems.ai) in building **context-aware**, **distributed**, and **resource-efficient intelligent systems** across web development, cloud infrastructure, AI & data science
-
-It provides the algorithmic backbone for:
-
-- **IoT & Sensor Networks**: **DFS** and **BFS** optimize routing and topology in distributed networks.
-
-- **Edge Computing**: **Heaps** and **Greedy Algorithms** (e.g., Task Assignment) enable low-latency task prioritization on constrained devices.
-
-- **Streaming Data**: **Tries** and **Bloom Filters** support real-time pattern matching for NLP pipelines and economic web scraping.
-
-- **Cloud Systems**: **Dijkstra’s** and **Bellman-Ford** improve routing and load balancing across platforms like Google Cloud, AWS, Firebase, and OVH.
-
-- **AI & Data Science**: **Dynamic Programming** (e.g., Knapsack) and **Trees** (e.g., BSTs, AVLs) drive optimization and search in ML/NLP systems.
-
-- **Financial Applications**: **Graph Algorithms** and **DP techniques** power fraud detection, transaction modeling, and portfolio strategy.
-
-Implemented in **Python** (for AI, prototyping, backend) and **JavaScript** (for frontend, IoT, and real-time apps), this repository enables scalable, adaptive, and production-ready ambient solutions.
-
-Industry use cases range from economics, finance, infrastrucutre, real estate, contruction, transportation, and agriculture.
-
 ## License
+
 This project is licensed under the **Apache License 2.0**.
 See the [LICENSE](./LICENSE) file for details.
