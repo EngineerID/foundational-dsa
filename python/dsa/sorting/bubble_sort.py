@@ -1,8 +1,10 @@
 # Sorting — Bubble Sort
 
-"""Bubble sort with early-exit when no swaps occur.
+"""Sort an array in ascending order in place.
 
-Time: O(n²) worst/average, O(n) best; Space: O(1).
+Technique: Bubble sort
+Invariant: After pass i, last i elements are in final sorted positions.
+sort: Time O(n²); Space O(1).
 """
 
 

@@ -1,8 +1,10 @@
 # Hashing — Bloom Filter
 
-"""Probabilistic set membership: no false negatives, possible false positives.
+"""Probabilistic set membership with false positives possible.
 
-add/might_contain O(k) where k is the number of hash functions.
+Technique: Bloom filter (k hash functions)
+Invariant: All bits for an element set on insert; negative lookup => definitely absent.
+add/mightContain: Time O(k); Space O(m) bits.
 """
 
 from __future__ import annotations

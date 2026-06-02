@@ -4,7 +4,9 @@ package com.dsa.examples.graphs;
 
 /**
  * All-pairs shortest paths via dynamic programming.
- * Time: O(V³); Space: O(V²).
+ * Technique: Floyd-Warshall
+ * Invariant: dist[k][i][j] = shortest path using vertices {1..k} as intermediates.
+ * allPairs: Time O(V³); Space O(V²).
  */
 public final class FloydWarshall {
 

@@ -1,8 +1,10 @@
 # Trees — AVL Tree (balanced BST)
 
-"""AVL tree with height balancing via rotations.
+"""Self-balancing BST with height-balance after insert/delete.
 
-insert/delete/search O(log n) guaranteed.
+Technique: AVL tree (rotations)
+Invariant: Balance factor in {-1,0,1} at every node.
+search/insert/delete: Time O(log n); Space O(n).
 """
 
 from __future__ import annotations

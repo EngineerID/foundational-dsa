@@ -1,8 +1,10 @@
 // Searching — Binary Search
 
 /**
- * Iterative binary search on sorted arrays, including duplicate boundary variants.
- * Time: O(log n); Space: O(1).
+ * Find a key in a sorted array, including first/last duplicate boundaries.
+ * Technique: Binary search
+ * Invariant: If key exists, it lies in [lo, hi]; bounds shrink each step.
+ * search/firstOccurrence/lastOccurrence: Time O(log n); Space O(1).
  */
 
 /**

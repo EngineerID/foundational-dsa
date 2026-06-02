@@ -6,8 +6,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Hash table with separate chaining (bucket linked lists).
- * Average insert/lookup/remove O(1); resize O(n).
+ * Hash map with linked-list buckets and load-factor resize.
+ * Technique: Separate chaining
+ * Invariant: Load factor <= 0.75 before resize.
+ * put/get/remove: Time O(1) average; resize O(n); Space O(n).
  */
 public class HashTableChaining<K, V> {
 

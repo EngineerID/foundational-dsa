@@ -1,8 +1,10 @@
 // Sorting — Insertion Sort
 
 /**
- * Insertion sort — efficient on nearly sorted input (O(n) best case).
- * Time: O(n²) worst/average, O(n) best; Space: O(1).
+ * Sort an array in ascending order in place (efficient on nearly sorted input).
+ * Technique: Insertion sort
+ * Invariant: Prefix [0..i) is sorted.
+ * sort: Time O(n²) worst, O(n) best; Space O(1).
  */
 
 /**

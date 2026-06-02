@@ -6,8 +6,10 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Single-source shortest paths with negative edges; detects negative cycles.
- * Time: O(V·E); Space: O(V).
+ * Single-source shortest paths with negative edges; detect negative cycles.
+ * Technique: Bellman-Ford relaxation
+ * Invariant: After i passes, shortest paths using <= i edges are correct.
+ * shortestPaths: Time O(VE); Space O(V).
  */
 public final class BellmanFord {
 

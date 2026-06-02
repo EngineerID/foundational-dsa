@@ -1,8 +1,10 @@
 // Searching — QuickSelect (order statistics)
 
 /**
- * k-th smallest element via partition (QuickSelect).
- * Average time: O(n); worst O(n²); Space: O(1) excluding input copy.
+ * Find the k-th smallest element in an unordered array.
+ * Technique: Quickselect (Hoare partition)
+ * Invariant: Pivot partition places pivot at final rank; recurse on one side only.
+ * select: Time O(n) average, O(n²) worst; Space O(1).
  */
 
 /**

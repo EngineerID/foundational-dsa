@@ -1,5 +1,12 @@
 // Graphs — Kruskal MST
 
+/**
+ * Minimum spanning tree via sorted edges and union-find.
+ * Technique: Kruskal's MST
+ * Invariant: Selected edges form forest until connected; greedy safe for MST.
+ * mstWeight: Time O(E log E); Space O(V).
+ */
+
 const { UnionFind } = require('../unionfind/unionFind');
 
 function mst(graph) {

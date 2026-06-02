@@ -1,5 +1,12 @@
 // Graphs — Topological Sort
 
+/**
+ * Linear ordering of a DAG respecting all edges.
+ * Technique: Kahn topological sort (BFS in-degree)
+ * Invariant: Output order: for each edge u->v, pos[u] < pos[v].
+ * sort: Time O(V+E); Space O(V).
+ */
+
 const { Queue } = require('../linear/queue');
 
 function kahn(graph) {

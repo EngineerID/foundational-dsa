@@ -1,8 +1,10 @@
 # Linear — Doubly Linked List
 
-"""Doubly linked list with forward and backward traversal.
+"""Doubly linked list supporting O(1) removal given a node reference.
 
-addFirst/addLast O(1); get/remove at index O(n).
+Technique: Doubly linked list
+Invariant: prev/next links consistent on both sides of each node.
+prepend/append/remove: Time O(1) at known node; Space O(n).
 """
 
 

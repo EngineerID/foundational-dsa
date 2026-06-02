@@ -1,8 +1,10 @@
 # Graphs — Breadth-First Search
 
-"""BFS for unweighted shortest paths and level-order distances.
+"""Breadth-first traversal and unweighted shortest paths.
 
-Time: O(V+E); Space: O(V).
+Technique: BFS
+Invariant: Queue processes nodes in nondecreasing distance from source.
+distances/traverse: Time O(V+E); Space O(V).
 """
 
 from dsa.graphs.graph import Graph

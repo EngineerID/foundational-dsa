@@ -1,22 +1,33 @@
 # Sorting — QuickSort
 
-"""QuickSort with optional randomized pivot to avoid O(n²) on sorted input.
+"""Sort in place via Lomuto partition, optional random pivot, or 3-way partition.
 
-Time: O(n log n) average, O(n²) worst; Space: O(log n) stack.
+Technique: Lomuto partition; randomized pivot; 3-way Dutch national flag
+Invariant: 3-way: arr[lo..lt-1] < v, arr[lt..gt] == v, arr[gt+1..hi] > v.
+sort/sort3Way: Time O(n log n) average; Space O(log n).
 """
 
 import random
 
 
 def sort(arr: list[int] | None, randomized_pivot: bool = False) -> None:
-    """Sorts arr in ascending order in place.
+    """Sorts arr in ascending order in place (Lomuto, last-element pivot by default).
 
-    If randomized_pivot is True, picks a random pivot — avoids worst-case on sorted arrays.
     Time: O(n log n) average; Space: O(log n).
     """
     if arr is None or len(arr) < 2:
         return
     _quick_sort(arr, 0, len(arr) - 1, randomized_pivot)
+
+
+def sort_3way(arr: list[int] | None) -> None:
+    """Sorts arr in place using 3-way partition (duplicate-heavy inputs).
+
+    Time: O(n log n) average, O(n) with few distinct values; Space: O(log n).
+    """
+    if arr is None or len(arr) < 2:
+        return
+    _sort_3way(arr, 0, len(arr) - 1)
 
 
 def _quick_sort(arr: list[int], left: int, right: int, randomized_pivot: bool) -> None:
@@ -28,6 +39,25 @@ def _quick_sort(arr: list[int], left: int, right: int, randomized_pivot: bool) -
     p = _partition(arr, left, right)
     _quick_sort(arr, left, p - 1, randomized_pivot)
     _quick_sort(arr, p + 1, right, randomized_pivot)
+
+
+def _sort_3way(arr: list[int], lo: int, hi: int) -> None:
+    if lo >= hi:
+        return
+    v = arr[lo]
+    lt, gt, i = lo, hi, lo + 1
+    while i <= gt:
+        if arr[i] < v:
+            arr[lt], arr[i] = arr[i], arr[lt]
+            lt += 1
+            i += 1
+        elif arr[i] > v:
+            arr[i], arr[gt] = arr[gt], arr[i]
+            gt -= 1
+        else:
+            i += 1
+    _sort_3way(arr, lo, lt - 1)
+    _sort_3way(arr, gt + 1, hi)
 
 
 def _partition(arr: list[int], left: int, right: int) -> int:

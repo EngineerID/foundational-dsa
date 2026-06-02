@@ -7,8 +7,10 @@ import com.dsa.examples.linear.Stack;
 import java.util.Arrays;
 
 /**
- * DFS with discovery and finish times.
- * Time: O(V+E); Space: O(V).
+ * Depth-first traversal, cycle detection, and connectivity.
+ * Technique: DFS
+ * Invariant: Recursive/stack visit marks discovered nodes until backtrack.
+ * traverse/hasCycle: Time O(V+E); Space O(V).
  */
 public final class DFS {
 

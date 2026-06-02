@@ -1,7 +1,10 @@
 // Linear — Deque (doubly-linked)
 
-/** Double-ended queue backed by DoublyLinkedList.
- * insert/remove at both ends O(1); Space: O(n).
+/**
+ * Double-ended queue with O(1) push/pop at both ends.
+ * Technique: Circular buffer deque
+ * Invariant: head/tail wrap in fixed or growing buffer.
+ * pushFront/pushBack/pop: Time O(1) amortized; Space O(n).
  */
 
 const { DoublyLinkedList } = require('./doublyLinkedList');

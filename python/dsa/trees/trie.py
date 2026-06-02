@@ -1,8 +1,10 @@
 # Trees — Trie (prefix tree)
 
-"""Trie for lowercase string keys.
+"""Prefix tree for string keys with prefix search.
 
-insert/search/starts_with O(L) where L is key length.
+Technique: Trie (R-way tree)
+Invariant: Path characters spell prefix to node.
+insert/search/startsWith: Time O(L) key length; Space O(total chars).
 """
 
 

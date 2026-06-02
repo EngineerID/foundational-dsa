@@ -1,8 +1,10 @@
 # Graphs — Boruvka MST
 
-"""Minimum spanning tree via Boruvka's algorithm.
+"""Minimum spanning tree via repeated cheapest outgoing edge per component.
 
-Time: O(E log V); Space: O(V).
+Technique: Borůvka's MST
+Invariant: Each phase adds safe minimum edge per component.
+mstWeight: Time O(E log V); Space O(V).
 """
 
 from dsa.graphs.graph import Graph

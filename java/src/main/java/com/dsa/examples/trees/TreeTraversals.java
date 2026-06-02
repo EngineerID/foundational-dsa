@@ -11,8 +11,10 @@ import java.util.Queue;
 import java.util.function.Function;
 
 /**
- * Tree traversal utilities for binary trees.
- * Time: O(n) per traversal; Space: O(h) recursive, O(n) level-order.
+ * In-order, pre-order, post-order, and level-order tree walks.
+ * Technique: DFS and BFS traversals
+ * Invariant: In-order visits left, node, right.
+ * Each traversal: Time O(n); Space O(h) stack or O(w) queue.
  */
 public final class TreeTraversals {
 

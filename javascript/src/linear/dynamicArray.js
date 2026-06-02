@@ -1,7 +1,10 @@
 // Linear — Dynamic Array
 
-/** Resizable array (doubling growth).
- * add amortized O(1); get/set O(1); remove O(n); Space: O(n).
+/**
+ * Resizable array-backed list with amortized append.
+ * Technique: Dynamic array doubling
+ * Invariant: size <= capacity; length tracks element count.
+ * append/get/set: Time O(1) amortized; resize O(n); Space O(n).
  */
 
 const DEFAULT_CAPACITY = 4;

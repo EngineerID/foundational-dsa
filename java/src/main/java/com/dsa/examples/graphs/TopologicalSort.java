@@ -8,8 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Topological ordering of a DAG (Kahn's algorithm).
- * Time: O(V+E); Space: O(V).
+ * Linear ordering of a DAG respecting all edges.
+ * Technique: Kahn topological sort (BFS in-degree)
+ * Invariant: Output order: for each edge u->v, pos[u] < pos[v].
+ * sort: Time O(V+E); Space O(V).
  */
 public final class TopologicalSort {
 

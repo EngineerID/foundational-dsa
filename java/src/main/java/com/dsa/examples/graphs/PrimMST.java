@@ -7,8 +7,10 @@ import com.dsa.examples.heaps.PriorityQueue;
 import java.util.Arrays;
 
 /**
- * Minimum spanning tree via Prim's algorithm (priority queue).
- * Time: O((V+E) log V); Space: O(V).
+ * Minimum spanning tree growing from a start vertex.
+ * Technique: Prim's MST (priority queue)
+ * Invariant: Cut property: min edge crossing cut is safe to add.
+ * mstWeight: Time O(E log V); Space O(V).
  */
 public final class PrimMST {
 

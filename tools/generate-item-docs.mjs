@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/** Generate docs/items/<topic>/<id>.md for all 37 canonical items. */
+/** Generate docs/items/<topic>/<id>.md for all canonical items. */
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';

@@ -1,7 +1,10 @@
 // Linear — Queue (linked-list backed)
 
-/** FIFO queue backed by SinglyLinkedList.
- * enqueue/dequeue/peek O(1); Space: O(n).
+/**
+ * FIFO queue backed by circular buffer.
+ * Technique: Circular array queue
+ * Invariant: head/tail delimit elements modulo capacity.
+ * enqueue/dequeue: Time O(1) amortized; Space O(n).
  */
 
 const { SinglyLinkedList } = require('./singlyLinkedList');

@@ -1,5 +1,12 @@
 // Graphs — Prim MST
 
+/**
+ * Minimum spanning tree growing from a start vertex.
+ * Technique: Prim's MST (priority queue)
+ * Invariant: Cut property: min edge crossing cut is safe to add.
+ * mstWeight: Time O(E log V); Space O(V).
+ */
+
 const { PriorityQueue } = require('../heaps/priorityQueue');
 
 const INF = Math.floor(Number.MAX_SAFE_INTEGER / 4);

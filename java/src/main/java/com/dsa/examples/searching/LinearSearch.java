@@ -3,8 +3,10 @@
 package com.dsa.examples.searching;
 
 /**
- * Linear search over an array.
- * Time: O(n) per search; Space: O(1).
+ * Find a target value in an array by sequential scan.
+ * Technique: Linear search
+ * Invariant: Scan index increases; all indices before current are not the target (if searching for first match).
+ * search: Time O(n); Space O(1).
  */
 public final class LinearSearch {
 

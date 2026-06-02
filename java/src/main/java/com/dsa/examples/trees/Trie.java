@@ -3,8 +3,10 @@
 package com.dsa.examples.trees;
 
 /**
- * Trie for lowercase string keys.
- * insert/search/startsWith O(L) where L is key length.
+ * Prefix tree for string keys with prefix search.
+ * Technique: Trie (R-way tree)
+ * Invariant: Path characters spell prefix to node.
+ * insert/search/startsWith: Time O(L) key length; Space O(total chars).
  */
 public class Trie {
 

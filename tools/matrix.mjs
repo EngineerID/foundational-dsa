@@ -21,6 +21,10 @@ const ITEMS = [
   { topic: 'sorting', id: 'insertion-sort', java: 'InsertionSort', py: 'insertion_sort', js: 'insertionSort' },
   { topic: 'sorting', id: 'merge-sort', java: 'MergeSort', py: 'merge_sort', js: 'mergeSort' },
   { topic: 'sorting', id: 'quick-sort', java: 'QuickSort', py: 'quick_sort', js: 'quickSort' },
+  { topic: 'sorting', id: 'heapsort', java: 'HeapSort', py: 'heap_sort', js: 'heapSort' },
+  { topic: 'sorting', id: 'counting-sort', java: 'CountingSort', py: 'counting_sort', js: 'countingSort' },
+  { topic: 'sorting', id: 'radix-sort', java: 'RadixSort', py: 'radix_sort', js: 'radixSort' },
+  { topic: 'strings', id: 'kmp', java: 'KMP', py: 'kmp', js: 'kmp' },
   { topic: 'linear', id: 'dynamic-array', java: 'DynamicArray', py: 'dynamic_array', js: 'dynamicArray' },
   { topic: 'linear', id: 'singly-linked-list', java: 'SinglyLinkedList', py: 'singly_linked_list', js: 'singlyLinkedList' },
   { topic: 'linear', id: 'doubly-linked-list', java: 'DoublyLinkedList', py: 'doubly_linked_list', js: 'doublyLinkedList' },
@@ -195,7 +199,8 @@ if (checkMode || strictMode) {
     }
   }
   if (failed) process.exit(1);
-  console.log(strictMode ? 'Strict matrix check passed (111/111).' : 'Phased matrix check passed.');
+  const totalCells = rows.length * 3;
+  console.log(strictMode ? `Strict matrix check passed (${totalCells}/${totalCells}).` : 'Phased matrix check passed.');
 }
 
 export { ITEMS, javaPath, pyPath, jsPath, pyTestPath, jsTestPath };

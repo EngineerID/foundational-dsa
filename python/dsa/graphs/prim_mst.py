@@ -1,8 +1,10 @@
 # Graphs — Prim MST
 
-"""Minimum spanning tree via Prim's algorithm (priority queue).
+"""Minimum spanning tree growing from a start vertex.
 
-Time: O((V+E) log V); Space: O(V).
+Technique: Prim's MST (priority queue)
+Invariant: Cut property: min edge crossing cut is safe to add.
+mstWeight: Time O(E log V); Space O(V).
 """
 
 from __future__ import annotations

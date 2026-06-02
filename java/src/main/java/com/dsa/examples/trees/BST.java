@@ -6,8 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Binary search tree.
- * insert/delete/search/successor O(h); traversals O(n).
+ * Binary search tree for ordered key storage.
+ * Technique: Binary search tree
+ * Invariant: Left subtree keys < node < right subtree keys.
+ * search/insert/delete: Time O(h) height; Space O(n).
  */
 public class BST<K extends Comparable<K>, V> {
 

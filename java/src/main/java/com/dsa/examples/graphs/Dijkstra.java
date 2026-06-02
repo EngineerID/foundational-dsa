@@ -7,8 +7,10 @@ import com.dsa.examples.heaps.IndexedMinHeap;
 import java.util.Arrays;
 
 /**
- * Single-source shortest paths for non-negative weights using indexed heap decreaseKey.
- * Time: O((V+E) log V); Space: O(V).
+ * Single-source shortest paths on non-negative edge weights.
+ * Technique: Dijkstra's algorithm (indexed min-heap)
+ * Invariant: Extracted distances are final when weights nonnegative.
+ * shortestPaths: Time O(E log V); Space O(V).
  */
 public final class Dijkstra {
 

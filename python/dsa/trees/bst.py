@@ -1,8 +1,10 @@
 # Trees — Binary Search Tree
 
-"""Binary search tree.
+"""Binary search tree for ordered key storage.
 
-insert/delete/search/successor O(h); traversals O(n).
+Technique: Binary search tree
+Invariant: Left subtree keys < node < right subtree keys.
+search/insert/delete: Time O(h) height; Space O(n).
 """
 
 from __future__ import annotations

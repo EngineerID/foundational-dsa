@@ -1,5 +1,12 @@
 // Graphs — Dijkstra's Algorithm
 
+/**
+ * Single-source shortest paths on non-negative edge weights.
+ * Technique: Dijkstra's algorithm (indexed min-heap)
+ * Invariant: Extracted distances are final when weights nonnegative.
+ * shortestPaths: Time O(E log V); Space O(V).
+ */
+
 const { IndexedMinHeap } = require('../heaps/indexedMinHeap');
 
 const INF = Math.floor(Number.MAX_SAFE_INTEGER / 4);

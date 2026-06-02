@@ -1,5 +1,12 @@
 // Graphs — Bellman-Ford
 
+/**
+ * Single-source shortest paths with negative edges; detect negative cycles.
+ * Technique: Bellman-Ford relaxation
+ * Invariant: After i passes, shortest paths using <= i edges are correct.
+ * shortestPaths: Time O(VE); Space O(V).
+ */
+
 const INF = Math.floor(Number.MAX_SAFE_INTEGER / 4);
 
 function shortestPaths(graph, source) {

@@ -3,8 +3,10 @@
 package com.dsa.examples.trees;
 
 /**
- * BST augmented with subtree sizes for order statistics.
- * select/rank O(log n) when balanced.
+ * BST augmented with subtree sizes for rank and select.
+ * Technique: Order-statistic tree augmentation
+ * Invariant: size field equals 1 + left.size + right.size.
+ * rank/select/insert/delete: Time O(log n); Space O(n).
  */
 public class OrderStatisticTree<K extends Comparable<K>, V> {
 

@@ -1,8 +1,10 @@
 # Graphs — Adjacency list representation
 
-"""Graph with adjacency list (default).
+"""Adjacency-list directed/undirected weighted graph representation.
 
-Adjacency matrix uses O(V²) space — less common for sparse graphs.
+Technique: Adjacency list
+Invariant: Edges stored from source to neighbors with weights.
+addEdge/neighbors: Time O(1) amortized; Space O(V+E).
 """
 
 from __future__ import annotations

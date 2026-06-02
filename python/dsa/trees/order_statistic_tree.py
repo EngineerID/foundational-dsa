@@ -1,8 +1,10 @@
 # Trees — Order-Statistic Tree
 
-"""BST augmented with subtree sizes for order statistics.
+"""BST augmented with subtree sizes for rank and select.
 
-select/rank O(log n) when balanced.
+Technique: Order-statistic tree augmentation
+Invariant: size field equals 1 + left.size + right.size.
+rank/select/insert/delete: Time O(log n); Space O(n).
 """
 
 from __future__ import annotations

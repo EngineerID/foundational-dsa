@@ -1,7 +1,10 @@
 // Heaps — Priority Queue (min)
 
-/** Min-priority queue backed by BinaryHeap.
- * insert/extractMin/decreaseKey O(log n); peek O(1).
+/**
+ * Min-priority queue for scheduling by priority.
+ * Technique: Binary min-heap priority queue
+ * Invariant: Heap property on underlying BinaryHeap.
+ * insert/extractMin/peek: Time O(log n); Space O(n).
  */
 
 const { BinaryHeap } = require('./binaryHeap');

@@ -1,5 +1,12 @@
 // Graphs — Breadth-First Search
 
+/**
+ * Breadth-first traversal and unweighted shortest paths.
+ * Technique: BFS
+ * Invariant: Queue processes nodes in nondecreasing distance from source.
+ * distances/traverse: Time O(V+E); Space O(V).
+ */
+
 const { Queue } = require('../linear/queue');
 
 function distances(graph, source) {

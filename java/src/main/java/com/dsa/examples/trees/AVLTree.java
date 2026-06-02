@@ -3,8 +3,10 @@
 package com.dsa.examples.trees;
 
 /**
- * AVL tree with height balancing via rotations.
- * insert/delete/search O(log n) guaranteed.
+ * Self-balancing BST with height-balance after insert/delete.
+ * Technique: AVL tree (rotations)
+ * Invariant: Balance factor in {-1,0,1} at every node.
+ * search/insert/delete: Time O(log n); Space O(n).
  */
 public class AVLTree<K extends Comparable<K>, V> extends BST<K, V> {
 
