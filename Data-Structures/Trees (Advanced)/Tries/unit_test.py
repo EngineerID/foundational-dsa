@@ -3,8 +3,7 @@ from tries import SuffixTrie
 
 class TestSuffixTrie(unittest.TestCase):
     def setUp(self):
-        self.trie = SuffixTrie()
-        self.trie.populateSuffixTrieFrom("babc")
+        self.trie = SuffixTrie("babc")
 
     def test_trie_structure(self):
         expected = {

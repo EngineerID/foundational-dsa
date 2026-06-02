@@ -1,0 +1,20 @@
+{
+  "$schema": "https://repomix.com/schemas/latest/schema.json",
+  "output": {
+    "style": "markdown",
+    "filePath": "repomix-output.md",
+    "fileSummary": true,
+    "directoryStructure": true,
+    "showLineNumbers": true
+  },
+  "ignore": {
+    "useGitignore": true,
+    "useDefaultPatterns": true,
+    "customPatterns": [
+      "node_modules/**",
+      "repomix-output.*",
+      "**/__pycache__/**",
+      ".idea/**"
+    ]
+  }
+}
