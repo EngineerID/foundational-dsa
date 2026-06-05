@@ -9,7 +9,9 @@ const ROOT = path.resolve(__dirname, '..');
 
 function pythonCmd() {
   for (const cmd of ['python', 'py', 'python3']) {
-    const r = spawnSync(cmd, ['--version'], { shell: true, encoding: 'utf8' });
+    // Pass the full command as one string (not args + shell:true, which is
+    // deprecated under DEP0190); shell:true keeps Windows .cmd/py launcher resolution.
+    const r = spawnSync(`${cmd} --version`, { shell: true, encoding: 'utf8' });
     if (r.status === 0) return cmd;
   }
   return 'python';
