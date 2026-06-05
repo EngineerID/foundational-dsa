@@ -1,23 +1,41 @@
 {
   "$schema": "https://repomix.com/schemas/latest/schema.json",
   "output": {
-    "style": "markdown",
     "filePath": "repomix-output.md",
+    "style": "markdown",
+    "parsableStyle": false,
+    "compress": false,
     "fileSummary": true,
     "directoryStructure": true,
-    "showLineNumbers": true
+    "files": true,
+    "showLineNumbers": true,
+    "removeComments": false,
+    "removeEmptyLines": false,
+    "topFilesLength": 20,
+    "headerText": "foundational-dsa — a trilingual reference implementing 41 data structures & algorithms in Java (canonical), Python, and JavaScript, with 1:1 parity across all three (123 = 41x3) plus per-item docs.\n\nLayout: java/ (Maven + JUnit 5, com.dsa.examples) is the canonical reference; python/ (pytest, dsa package) and javascript/ (Jest, src/ + test/) are ports; docs/ holds API.md (cross-language canonical API) and per-item READMEs; tools/ holds the parity/matrix/stub checks and test runners.\n\nReading guide: every algorithm exists in all three languages with mirrored names; tools/parity.mjs and tools/matrix.mjs enforce that coverage, so to understand one item compare its Java/Python/JS files side by side. Complexity and invariants live in each implementation's module doc-block and in docs/API.md.",
+    "git": {
+      "sortByChanges": true,
+      "sortByChangesMaxCommits": 100
+    }
   },
   "ignore": {
     "useGitignore": true,
     "useDefaultPatterns": true,
     "customPatterns": [
       "node_modules/**",
-      "target/**",
+      "**/target/**",
+      "**/build/**",
+      "**/out/**",
+      "**/bin/**",
       "lib/**",
-      "build/**",
       "repomix-output.*",
       "**/__pycache__/**",
-      ".idea/**"
+      ".idea/**",
+      "**/package-lock.json",
+      "**/*.lock",
+      "**/.mvn/**",
+      "**/mvnw",
+      "**/mvnw.cmd"
     ]
   }
 }

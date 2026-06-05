@@ -1,6 +1,6 @@
-.PHONY: test test-java test-py test-js demo matrix matrix-check check-stubs
+.PHONY: test test-java test-py test-js demo matrix matrix-check check-stubs check-parity
 
-test: check-stubs test-java test-py test-js matrix-check
+test: check-stubs test-java test-py test-js check-parity matrix-check
 
 test-java:
 	node tools/run-java-test.mjs
@@ -22,3 +22,6 @@ matrix-check:
 
 check-stubs:
 	node tools/check-stubs.mjs
+
+check-parity:
+	node tools/parity.mjs
