@@ -1,10 +1,13 @@
 # foundational-dsa
 
+[![CI](https://github.com/EngineerID/foundational-dsa/actions/workflows/ci.yml/badge.svg)](https://github.com/EngineerID/foundational-dsa/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](./LICENSE)
 
-Reference implementations of **41 data structures and algorithms**, each written in **Java, Python, and JavaScript** (123 implementations). Every topic has tests and a short doc that links to the three sources.
+**foundational-dsa** is a trilingual reference library: **41 classic data structures and algorithms**, each with matching implementations in **Java**, **Python**, and **JavaScript** (123 implementations in total). Every topic ships with tests, a short doc page under [`docs/items/`](docs/items/), and entries in [`docs/API.md`](docs/API.md) so you can compare APIs and idioms across languages.
 
-**Maintainer:** Ivan Damnjanovic
+Use it to study implementations side by side, prepare for interviews, or teach DSA with runnable code rather than pseudocode.
+
+**Maintainer:** [Ivan Damnjanovic](https://github.com/EngineerID)  
 **License:** Apache License 2.0 ([LICENSE](LICENSE))
 
 ## Layout
@@ -36,7 +39,7 @@ foundational-dsa/
 
 `reference/` is study notes only. The runnable code is under `java/`, `python/`, and `javascript/`.
 
-Names differ by toolchain: the repo and the Java artifact are `foundational-dsa`, the root npm package is the private test runner `dsa-trilingual`, the Python project is `dsa`, and the JavaScript package is `dsa-javascript`. None of these packages are published.
+Names differ by toolchain: the repo and the Java artifact are `foundational-dsa`, the root npm package is the private test runner `dsa-trilingual`, the Python project is `dsa`, and the JavaScript package is `dsa-javascript`. None of these packages are published to a registry.
 
 ## Prerequisites
 
@@ -52,7 +55,7 @@ Install dependencies and compile the Java tests once:
 bash .cursor/install.sh
 ```
 
-That runs `npm ci`, `python3 -m pip install --user pytest`, and a Maven Wrapper test-compile. Toolchains above must already be installed.
+That runs `npm ci`, `python3 -m pip install --user pytest`, and a Maven Wrapper test-compile. The toolchains above must already be on your machine.
 
 Run the full check (stub scan, Java, Python, JavaScript, cross-language parity, and the coverage matrix):
 
@@ -66,7 +69,7 @@ The same sequence via Make:
 make test
 ```
 
-One language:
+One language only:
 
 ```bash
 npm run test:java
@@ -76,7 +79,7 @@ npm run test:js
 
 Make equivalents: `make test-java`, `make test-py`, `make test-js`.
 
-One topic, in all three languages or in one of `java`, `python`, or `js`:
+Run one topic in all three languages, or in a single language (`java`, `python`, or `js`):
 
 ```bash
 npm run demo -- dijkstra
@@ -87,14 +90,16 @@ Topic ids are the first column of [COVERAGE.md](COVERAGE.md), such as `dijkstra`
 
 ### What `npm test` runs
 
-1. `npm run check:stubs` fails if a source or test file still contains a stub marker.
-2. `npm run test:java` runs `sh java/mvnw test` (JUnit 5).
-3. `npm run test:py` runs pytest on `python/`.
-4. `npm run test:js` runs Jest with `javascript/jest.config.js`.
-5. `npm run check:parity` checks that the three languages expose the same topics.
-6. `npm run matrix:check` checks that [COVERAGE.md](COVERAGE.md) matches the tree.
+1. `npm run check:stubs` — fails if a source or test file still contains a stub marker.
+2. `npm run test:java` — `sh java/mvnw test` (JUnit 5).
+3. `npm run test:py` — pytest on `python/`.
+4. `npm run test:js` — Jest with `javascript/jest.config.js`.
+5. `npm run check:parity` — same topics exposed in all three languages.
+6. `npm run matrix:check` — [COVERAGE.md](COVERAGE.md) matches the tree.
 
-After adding a topic, regenerate the matrix with `npm run matrix` (or `make matrix`). `npm run matrix:check` does not rewrite the file.
+After adding a topic, regenerate the matrix with `npm run matrix` (or `make matrix`). `npm run matrix:check` only verifies; it does not rewrite the file.
+
+Continuous integration runs the same steps on every push and pull request (see [`.github/workflows/ci.yml`](.github/workflows/ci.yml)).
 
 ## Topics (41)
 
@@ -110,7 +115,7 @@ After adding a topic, regenerate the matrix with `npm run matrix` (or `make matr
 | Union-Find | union-find |
 | Graphs | graph, bfs, dfs, topological-sort, dijkstra, bellman-ford, floyd-warshall, kruskal-mst, prim-mst, boruvka-mst |
 
-Complexity and invariants are in each implementation's module comment and in [docs/API.md](docs/API.md).
+Complexity notes and invariants live in each implementation’s module comment and in [docs/API.md](docs/API.md).
 
 ## License
 
