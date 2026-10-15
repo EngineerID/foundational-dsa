@@ -51,7 +51,10 @@ repomix.config.json
 .repomixignore
 
 # Cursor IDE
-.cursor/
+# Ignore local editor state. Track Cloud Agent setup only.
+.cursor/*
+!.cursor/environment.json
+!.cursor/install.sh
 .cursorrules
 .cursorignore
 .cursorindexingignore
@@ -68,7 +71,6 @@ repomix.config.json
 .cody/
 .devin/
 .ai/
-AGENTS.md
 CLAUDE.md
 GEMINI.md
 **/ambient-transfer-note.md

@@ -1,0 +1,4 @@
+{
+  "name": "foundational-dsa",
+  "install": "if [ -f .cursor/install.sh ]; then bash .cursor/install.sh; else npm ci && python3 -m pip install --user pytest; fi"
+}
