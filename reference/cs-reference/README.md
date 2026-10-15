@@ -54,6 +54,6 @@ Overview of fundamental computing concepts
         1. ERD
         2. Functional Dependencies and Normalization
 7. WWW
-    1. Apache: http://httpd.apache.org/
+    1. Apache: https://httpd.apache.org/
 8. Cybersecurity
 9. Algorithms
