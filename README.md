@@ -1,6 +1,6 @@
 # foundational-dsa
 
-[![License](https://img.shields.io/github/license/EngineerID/foundational-dsa)](./LICENSE)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue)](./LICENSE)
 
 Reference implementations of **41 data structures and algorithms**, each written in **Java, Python, and JavaScript** (123 implementations). Every topic has tests and a short doc that links to the three sources.
 
