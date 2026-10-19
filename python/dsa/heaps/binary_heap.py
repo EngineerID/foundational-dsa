@@ -9,7 +9,8 @@ insert/extract/peek: Time O(log n); buildHeap O(n); Space O(n).
 
 from __future__ import annotations
 
-from typing import Generic, Iterable, TypeVar
+from collections.abc import Iterable
+from typing import Generic, TypeVar
 
 T = TypeVar("T")
 

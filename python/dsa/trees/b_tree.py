@@ -90,6 +90,6 @@ class BTree:
                 new_node.children.append(full.children[j + t])
             del full.children[t:]
         mid = full.keys[t - 1]
-        del full.keys[t - 1:]
+        del full.keys[t - 1 :]
         parent.keys.insert(index, mid)
         parent.children.insert(index + 1, new_node)

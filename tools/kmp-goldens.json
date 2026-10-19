@@ -1,0 +1,9 @@
+[
+  { "text": "ababcababa", "pattern": "aba", "expected": 0 },
+  { "text": "ababcababa", "pattern": "cab", "expected": 4 },
+  { "text": "hello", "pattern": "world", "expected": -1 },
+  { "text": "abc", "pattern": "", "expected": 0 },
+  { "text": "", "pattern": "a", "expected": -1 },
+  { "text": "aaaaa", "pattern": "aa", "expected": 0 },
+  { "text": "mississippi", "pattern": "issi", "expected": 1 }
+]

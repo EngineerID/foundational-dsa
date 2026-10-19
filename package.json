@@ -4,6 +4,7 @@
   "description": "41 data structures and algorithms in Java, Python, and JavaScript",
   "scripts": {
     "test": "npm run check:stubs && npm run test:java && npm run test:py && npm run test:js && npm run check:parity && npm run matrix:check",
+    "test:ci": "npm run lint && npm run check:stubs && npm run test:java && PYTEST_COV=1 npm run test:py && npm run test:js && npm run check:parity && npm run check:edge-themes && node tools/coverage-report.mjs && npm run matrix && npm run matrix:check",
     "test:java": "node tools/run-java-test.mjs",
     "test:py": "node tools/run-py-test.mjs",
     "test:js": "jest --config javascript/jest.config.js",
@@ -12,8 +13,10 @@
     "matrix:check": "node tools/matrix.mjs --check --strict",
     "check:stubs": "node tools/check-stubs.mjs",
     "check:parity": "node tools/parity.mjs",
+    "check:edge-themes": "node tools/check-edge-themes.mjs",
+    "bench": "node tools/micro-bench.mjs",
     "coverage:report": "node tools/coverage-report.mjs --collect && node tools/matrix.mjs",
-    "lint": "eslint . && ruff check python",
+    "lint": "eslint . && ruff check python && ruff format --check python",
     "lint:js": "eslint .",
     "lint:py": "ruff check python"
   },

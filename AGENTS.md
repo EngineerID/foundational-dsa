@@ -13,7 +13,7 @@ It expects the toolchains already on the image, at the versions pinned by `.gith
 What the script installs:
 
 - Root npm dependencies from `package-lock.json` (`npm ci`, Jest 30).
-- `pytest`, unpinned, matching CI's `pip install pytest` (`python3 -m pip install --user pytest`).
+- Python test and lint packages unpinned, matching CI (`pytest`, `pytest-cov`, `hypothesis`, `ruff` via `python3 -m pip install --user`).
 - Maven Wrapper download plus main/test compile (`sh java/mvnw -q -DskipTests test-compile`), so Java tests do not cold-start the wrapper.
 
 There is no `start` command. This repo is a library: nothing needs to stay running.
@@ -26,7 +26,7 @@ bash .cursor/install.sh
 
 ## Verify
 
-CI and local verification are `npm test` (also `make test`). That runs, in order:
+**Default agent check:** `npm test` (also `make test`). That runs, in order:
 
 - `npm run check:stubs`
 - `npm run test:java` (JUnit 5 via Maven Wrapper)
@@ -34,6 +34,23 @@ CI and local verification are `npm test` (also `make test`). That runs, in order
 - `npm run test:js` (Jest)
 - `npm run check:parity`
 - `npm run matrix:check`
+
+**Full GitHub Actions parity** (lint, coverage, edge-theme scan, matrix regeneration):
+
+```bash
+npm run test:ci
+```
+
+Same via `make test-ci`. Step-by-step table: [`docs/running-ci-locally.md`](docs/running-ci-locally.md).
+
+Additional checks:
+
+```bash
+npm run lint
+npm run check:edge-themes
+```
+
+Optional local timing (not a CI gate): `npm run bench` (see `tools/micro-bench.mjs`).
 
 Per language:
 
@@ -49,15 +66,27 @@ One algorithm in the languages that implement it:
 npm run demo -- binary-search
 ```
 
+Worked walkthroughs: [`docs/worked-examples.md`](docs/worked-examples.md).
+
 ## Layout
 
 - `java/` — Maven + JUnit 5 (`com.dsa.examples`)
 - `python/` — pytest package `dsa`
 - `javascript/` — Jest sources in `src/`, tests in `test/`
-- `tools/` — stub check, parity check, coverage matrix, demo runner
-- `docs/` — per-item notes and `docs/API.md`
+- `tools/` — stub check, parity check, coverage matrix, demo runner, edge-case theme checker (`tools/edge-case-coverage.mjs`, `npm run check:edge-themes`)
+- `docs/` — per-item notes, `docs/API.md`, `docs/worked-examples.md`, and `docs/running-ci-locally.md`
 - `reference/` — imported CS and math reference trees
 - `COVERAGE.md` — generated trilingual status (`npm run matrix` rewrites it; `npm run matrix:check` only checks)
+
+**Edge-case catalog tests** (shared themes across topics) live at:
+
+- `python/tests/catalog/test_edge_case_themes.py`
+- `javascript/test/catalog/edgeCaseThemes.test.js`
+- `java/src/test/java/com/dsa/examples/catalog/EdgeCaseThemesTest.java`
+
+**Shared regression JSON** (trilingual tests): `tools/kmp-goldens.json`, `tools/binary-search-goldens.json`.
+
+Module-level complexity and invariants are centralized in `tools/doc-spec.mjs` and mirrored in source docstrings.
 
 ## Secrets
 

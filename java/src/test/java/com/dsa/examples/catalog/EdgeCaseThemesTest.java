@@ -15,6 +15,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/** Cross-item edge themes; KMP empty pattern returns 0 (vacuous match, like {@code String.indexOf("")}). */
 class EdgeCaseThemesTest {
 
     private static final int LARGE_N = 256;

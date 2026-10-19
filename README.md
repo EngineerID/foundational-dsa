@@ -5,7 +5,7 @@
 
 **foundational-dsa** is a trilingual reference library: **41 classic data structures and algorithms**, each with matching implementations in **Java**, **Python**, and **JavaScript** (123 implementations in total). Every topic ships with tests, a short doc page under [`docs/items/`](docs/items/), and entries in [`docs/API.md`](docs/API.md) so you can compare APIs and idioms across languages.
 
-Use it to study implementations side by side, prepare for interviews, or teach DSA with runnable code rather than pseudocode.
+Use it to study implementations side by side, prepare for interviews, or teach DSA with runnable code rather than pseudocode. Step-by-step walkthroughs for core algorithms are in [`docs/worked-examples.md`](docs/worked-examples.md).
 
 **Maintainer:** [Ivan Damnjanovic](https://github.com/EngineerID)  
 **License:** Apache License 2.0 ([LICENSE](LICENSE))
@@ -115,7 +115,57 @@ Continuous integration runs the same steps on every push and pull request (see [
 | Union-Find | union-find |
 | Graphs | graph, bfs, dfs, topological-sort, dijkstra, bellman-ford, floyd-warshall, kruskal-mst, prim-mst, boruvka-mst |
 
-Complexity notes and invariants live in each implementation’s module comment and in [docs/API.md](docs/API.md).
+## Complexity (primary operations)
+
+Typical time and auxiliary space for the main entry point of each topic (see module docstrings and [docs/API.md](docs/API.md) for per-method detail and invariants). `n` is input size, `m` pattern length, `V`/`E` vertices/edges, `h` tree height, `k` range or hash width as applicable.
+
+| Topic | Item | Time | Space |
+|-------|------|------|-------|
+| searching | linear-search | O(n) | O(1) |
+| searching | binary-search | O(log n) | O(1) |
+| searching | quick-select | O(n) avg, O(n²) worst | O(1) |
+| sorting | bubble-sort | O(n²) | O(1) |
+| sorting | selection-sort | O(n²) | O(1) |
+| sorting | insertion-sort | O(n²) worst, O(n) best | O(1) |
+| sorting | merge-sort | O(n log n) | O(n) |
+| sorting | quick-sort | O(n log n) avg | O(log n) |
+| sorting | heapsort | O(n log n) | O(1) |
+| sorting | counting-sort | O(n + k) | O(k) |
+| sorting | radix-sort | O(d · n) | O(n) |
+| strings | kmp | O(n + m) | O(m) |
+| linear | dynamic-array | O(1) amortized append/get | O(n) |
+| linear | singly-linked-list | O(1) prepend / O(n) search | O(n) |
+| linear | doubly-linked-list | O(1) at known node | O(n) |
+| linear | stack | O(1) amortized | O(n) |
+| linear | queue | O(1) amortized | O(n) |
+| linear | deque | O(1) amortized | O(n) |
+| heaps | binary-heap | O(log n) insert/extract | O(n) |
+| heaps | priority-queue | O(log n) | O(n) |
+| trees | bst | O(h) | O(n) |
+| trees | tree-traversals | O(n) | O(h) or O(w) |
+| trees | avl-tree | O(log n) | O(n) |
+| trees | order-statistic-tree | O(log n) | O(n) |
+| trees | interval-tree | O(log n + k) reported | O(n) |
+| trees | trie | O(L) key length | O(chars stored) |
+| trees | b-tree | O(log_t n) | O(n) |
+| hashing | separate-chaining | O(1) avg | O(n) |
+| hashing | open-addressing | O(1) avg | O(n) slots |
+| hashing | bloom-filter | O(k) | O(m) bits |
+| unionfind | union-find | O(α(n)) amortized | O(n) |
+| graphs | graph | O(1) amortized add edge | O(V + E) |
+| graphs | bfs | O(V + E) | O(V) |
+| graphs | dfs | O(V + E) | O(V) |
+| graphs | topological-sort | O(V + E) | O(V) |
+| graphs | dijkstra | O(E log V) | O(V) |
+| graphs | bellman-ford | O(V · E) | O(V) |
+| graphs | floyd-warshall | O(V³) | O(V²) |
+| graphs | kruskal-mst | O(E log E) | O(V) |
+| graphs | prim-mst | O(E log V) | O(V) |
+| graphs | boruvka-mst | O(E log V) | O(V) |
+
+For step-by-step walkthroughs of binary search, merge sort, and KMP, see [docs/worked-examples.md](docs/worked-examples.md).
+
+To mirror the GitHub Actions job locally, see [docs/running-ci-locally.md](docs/running-ci-locally.md).
 
 ## License
 
