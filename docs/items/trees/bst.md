@@ -2,6 +2,12 @@
 
 Topic: **trees** / `bst`
 
+Binary search tree for ordered key storage. search/insert/delete: Time O(h) height; Space O(n).
+
+Duplicate keys typically follow left-or-right policy defined in the implementation.
+
+**Worked example:** [Topic index](../../worked-examples.md#bst) (summary) · run `npm run demo -- bst` in all three languages.
+
 ## Implementations
 
 | Language | Source |
@@ -16,5 +22,9 @@ Topic: **trees** / `bst`
 |----------|------|
 | Python | [`test_bst`](../../../python/tests/trees/test_bst.py) |
 | JavaScript | [`bst.test.js`](../../../javascript/test/trees/bst.test.js) |
+| Java | [`TreesTest.java`](../../../java/src/test/java/com/dsa/examples/trees/TreesTest.java) |
 
-Java tests run via Maven in `java/src/test/java/com/dsa/examples/trees/`.
+**Property-style checks:** Java [`PropertyTreesTest`](../../../java/src/test/java/com/dsa/examples/property/PropertyTreesTest.java); Python [`test_property_trees`](../../../python/tests/test_property_trees.py); JavaScript [`property/trees.test.js`](../../../javascript/test/property/trees.test.js).
+
+
+Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/trees/`.
