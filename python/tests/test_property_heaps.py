@@ -1,8 +1,8 @@
 """Property tests: min-heap invariant and extract order (100 trials)."""
 
-from dsa.heaps.binary_heap import BinaryHeap
+from _property_helpers import PROPERTY_TRIALS, heap_min_invariant, seeded_rng
 
-from _property_helpers import PROPERTY_TRIALS, heap_min_invariant, random_int_array, seeded_rng
+from dsa.heaps.binary_heap import BinaryHeap
 
 
 def test_heap_property():

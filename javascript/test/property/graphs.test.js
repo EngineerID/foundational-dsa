@@ -62,7 +62,6 @@ describe('property graphs', () => {
   });
 
   test('Bellman-Ford negative cycle', () => {
-    const rng = seededRng();
     for (let t = 0; t < PROPERTY_TRIALS; t++) {
       const g = new Graph(3, true, true);
       g.addEdge(0, 1, 1);

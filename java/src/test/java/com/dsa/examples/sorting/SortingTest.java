@@ -50,6 +50,17 @@ class SortingTest {
     }
 
     @Test
+    void countingSortByDigit() {
+        int[] arr = {170, 45, 75, 90, 802, 24, 2, 66};
+        int[] expected = arr.clone();
+        java.util.Arrays.sort(expected);
+        for (int exp : new int[]{1, 10, 100}) {
+            CountingSort.sortByDigit(arr, exp);
+        }
+        assertArrayEquals(expected, arr);
+    }
+
+    @Test
     void radixSortCases() {
         int[] arr = {170, 45, 75, 90, 802, 24, 2, 66};
         int[] expected = arr.clone();

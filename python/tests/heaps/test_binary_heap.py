@@ -8,6 +8,7 @@ def test_insert_and_extract_min():
     heap.insert(5)
     heap.insert(2)
     heap.insert(8)
+    assert heap.size() == 3
     assert heap.extract_min() == 2
     assert heap.peek() == 5
 
@@ -16,6 +17,7 @@ def test_heapify_and_decrease_key():
     heap = BinaryHeap[int]()
     heap.heapify([9, 4, 7, 1, 3])
     assert heap.peek() == 1
+    assert heap.index_of(1) == 0
     heap.decrease_key(0, 0)
     assert heap.extract_min() == 0
 

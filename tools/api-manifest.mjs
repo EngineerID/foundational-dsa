@@ -1,7 +1,7 @@
 /**
  * Canonical public API per item: explicit java / python / javascript symbol names.
  */
-import { ITEMS } from './matrix.mjs';
+import { ITEMS } from './items.mjs';
 
 export const API_MANIFEST = {
   'linear-search': {

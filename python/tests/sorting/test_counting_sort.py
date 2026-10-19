@@ -1,6 +1,6 @@
 import pytest
 
-from dsa.sorting.counting_sort import sort
+from dsa.sorting.counting_sort import sort, sort_by_digit
 
 
 def test_typical():
@@ -18,3 +18,11 @@ def test_single():
 def test_negative_raises():
     with pytest.raises(ValueError):
         sort([-1, 0])
+
+
+def test_sort_by_digit():
+    arr = [170, 45, 75, 90, 802, 24, 2, 66]
+    expected = sorted(arr)
+    for exp in (1, 10, 100):
+        sort_by_digit(arr, exp)
+    assert arr == expected

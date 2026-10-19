@@ -27,6 +27,7 @@ class HashingTest {
         for (int i = 0; i < 20; i++) {
             ht.put(i, "v" + i);
         }
+        assertEquals(20, ht.size());
         assertEquals("v10", ht.get(10));
     }
 

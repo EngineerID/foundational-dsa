@@ -1,4 +1,3 @@
-import pytest
 
 from dsa.hashing.separate_chaining import HashTableChaining
 

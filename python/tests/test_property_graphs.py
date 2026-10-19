@@ -1,16 +1,17 @@
 """Property tests: graph algorithm oracles (100 seeded trials each)."""
 
+from _property_helpers import PROPERTY_TRIALS, brute_mst_weight, seeded_rng
+
 from dsa.graphs.bellman_ford import shortest_paths as bellman_ford
 from dsa.graphs.bfs import distances as bfs_distances
 from dsa.graphs.boruvka_mst import total_weight as boruvka_weight
-from dsa.graphs.dijkstra import _INF, shortest_paths as dijkstra
+from dsa.graphs.dijkstra import _INF
+from dsa.graphs.dijkstra import shortest_paths as dijkstra
 from dsa.graphs.floyd_warshall import all_pairs_shortest_paths
 from dsa.graphs.graph import Graph
 from dsa.graphs.kruskal_mst import total_weight as kruskal_weight
 from dsa.graphs.prim_mst import total_weight as prim_weight
 from dsa.graphs.topological_sort import kahn
-
-from _property_helpers import PROPERTY_TRIALS, brute_mst_weight, seeded_rng
 
 
 def _random_connected_graph(rng, n: int, weighted: bool, directed: bool) -> Graph:
@@ -59,7 +60,6 @@ def test_dijkstra_matches_bellman_ford_nonnegative():
 
 
 def test_bellman_ford_negative_cycle():
-    rng = seeded_rng()
     for _ in range(PROPERTY_TRIALS):
         g = Graph(3, directed=True, weighted=True)
         g.add_edge(0, 1, 1)

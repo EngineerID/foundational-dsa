@@ -15,6 +15,7 @@ class HeapTest {
         heap.insert(5);
         heap.insert(2);
         heap.insert(8);
+        assertEquals(3, heap.size());
         assertEquals(2, heap.extractMin());
         assertEquals(5, heap.peek());
     }
@@ -24,6 +25,7 @@ class HeapTest {
         BinaryHeap<Integer> heap = new BinaryHeap<>();
         heap.heapify(9, 4, 7, 1, 3);
         assertEquals(1, heap.peek());
+        assertEquals(0, heap.indexOf(1));
         heap.decreaseKey(0, 0);
         assertEquals(0, heap.extractMin());
     }
@@ -33,6 +35,7 @@ class HeapTest {
         PriorityQueue<String> pq = new PriorityQueue<>();
         pq.insert("b");
         pq.insert("a");
+        assertEquals(2, pq.size());
         assertEquals("a", pq.extractMin());
         assertEquals("b", pq.extractMin());
         assertTrue(pq.isEmpty());

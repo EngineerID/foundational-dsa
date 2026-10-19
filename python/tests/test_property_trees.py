@@ -1,11 +1,11 @@
 """Property tests: tree invariants (100 seeded trials)."""
 
+from _property_helpers import PROPERTY_TRIALS, is_sorted, seeded_rng
+
 from dsa.trees.avl_tree import AVLTree
 from dsa.trees.bst import BST
 from dsa.trees.interval_tree import Interval, IntervalTree
 from dsa.trees.order_statistic_tree import OrderStatisticTree
-
-from _property_helpers import PROPERTY_TRIALS, is_sorted, seeded_rng
 
 
 def _avl_balanced(tree: AVLTree, node) -> bool:

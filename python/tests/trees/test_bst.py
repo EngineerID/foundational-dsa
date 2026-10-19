@@ -8,6 +8,7 @@ def test_bst_operations():
     bst.insert(8, "eight")
     assert bst.search(5) == "five"
     assert bst.in_order() == [2, 5, 8]
+    assert bst.get_root() is not None
     assert bst.successor(5) == 8
     bst.delete(5)
     assert bst.search(5) is None

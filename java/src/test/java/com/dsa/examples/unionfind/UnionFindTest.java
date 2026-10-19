@@ -12,6 +12,8 @@ class UnionFindTest {
         assertEquals(5, uf.countComponents());
         uf.union(0, 1);
         uf.union(2, 3);
+        assertEquals(0, uf.find(0));
+        assertEquals(0, uf.find(1));
         assertTrue(uf.connected(0, 1));
         assertFalse(uf.connected(0, 2));
         uf.union(1, 2);

@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import random
 from collections import Counter, deque
-from typing import Callable, Iterable
 
 PROPERTY_TRIALS = 100
 PROPERTY_SEED = 42

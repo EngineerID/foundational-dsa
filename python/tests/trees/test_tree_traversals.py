@@ -1,5 +1,5 @@
-from dsa.trees.bst import BST
 from dsa.trees import tree_traversals as tt
+from dsa.trees.bst import BST
 
 
 def test_recursive_traversals():
