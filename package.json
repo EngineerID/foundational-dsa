@@ -14,6 +14,7 @@
     "check:stubs": "node tools/check-stubs.mjs",
     "check:parity": "node tools/parity.mjs",
     "check:edge-themes": "node tools/check-edge-themes.mjs",
+    "bench": "node tools/micro-bench.mjs",
     "coverage:report": "node tools/coverage-report.mjs --collect && node tools/matrix.mjs",
     "lint": "eslint . && ruff check python && ruff format --check python",
     "lint:js": "eslint .",
