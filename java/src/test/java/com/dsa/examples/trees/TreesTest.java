@@ -48,6 +48,34 @@ class TreesTest {
     }
 
     @Test
+    void avlRotationsAndDelete() {
+        AVLTree<Integer, String> avl = new AVLTree<>();
+        for (int i = 10; i >= 1; i--) {
+            avl.insert(i, "v" + i);
+        }
+        assertEquals(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), avl.inOrder());
+        avl.delete(8);
+        avl.delete(2);
+        assertNull(avl.search(8));
+        assertEquals(8, avl.inOrder().size());
+        avl.insert(2, "new");
+        assertEquals("new", avl.search(2));
+    }
+
+    @Test
+    void bstTwoChildDelete() {
+        BST<Integer, String> bst = new BST<>();
+        bst.insert(10, "");
+        bst.insert(5, "");
+        bst.insert(15, "");
+        bst.insert(3, "");
+        bst.insert(7, "");
+        bst.delete(5);
+        assertNull(bst.search(5));
+        assertEquals(List.of(3, 7, 10, 15), bst.inOrder());
+    }
+
+    @Test
     void orderStatistic() {
         OrderStatisticTree<Integer, String> ost = new OrderStatisticTree<>();
         ost.insert(5, "");

@@ -129,6 +129,7 @@ def test_kmp_edge_themes():
     assert kmp.search("aa", "a") == 0
     assert kmp.search("a" * LARGE_N, "a") == 0
     assert kmp.search("abc", "") == 0
+    assert kmp.search("", "") == 0
 
 
 def test_union_find_edge_themes():
