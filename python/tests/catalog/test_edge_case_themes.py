@@ -8,6 +8,7 @@ Conventions exercised here (not generic across all APIs):
 import pytest
 
 from dsa.graphs import bfs, graph
+from dsa.heaps import binary_heap
 from dsa.linear import dynamic_array, stack
 from dsa.searching import binary_search, linear_search, quick_select
 from dsa.sorting import bubble_sort, counting_sort, merge_sort, quick_sort
@@ -78,6 +79,24 @@ def test_dynamic_array_edge_themes():
         da.add(i)
     with pytest.raises(IndexError):
         da.get(-1)
+
+
+def test_binary_heap_edge_themes():
+    h = binary_heap.BinaryHeap()
+    assert h.size() == 0
+    with pytest.raises(RuntimeError):
+        h.peek()
+    h.insert(3)
+    assert h.peek() == 3
+    h.insert(3)
+    h.insert(1)
+    assert h.extract_min() == 1
+    large = binary_heap.BinaryHeap()
+    for i in range(LARGE_N, 0, -1):
+        large.insert(i)
+    assert large.extract_min() == 1
+    with pytest.raises(IndexError):
+        h.decrease_key(99, 0)
 
 
 def test_stack_edge_themes():
