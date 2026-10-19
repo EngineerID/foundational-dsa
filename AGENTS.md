@@ -16,6 +16,12 @@ What the script installs:
 - `pytest`, unpinned, matching CI's `pip install pytest` (`python3 -m pip install --user pytest`).
 - Maven Wrapper download plus main/test compile (`sh java/mvnw -q -DskipTests test-compile`), so Java tests do not cold-start the wrapper.
 
+For a **CI-equivalent** Python toolchain (property tests, coverage, Ruff), also run:
+
+```bash
+python3 -m pip install --user pytest pytest-cov hypothesis ruff
+```
+
 There is no `start` command. This repo is a library: nothing needs to stay running.
 
 Local setup is the same command from the repository root:
@@ -26,7 +32,7 @@ bash .cursor/install.sh
 
 ## Verify
 
-CI and local verification are `npm test` (also `make test`). That runs, in order:
+**Default agent check:** `npm test` (also `make test`). That runs, in order:
 
 - `npm run check:stubs`
 - `npm run test:java` (JUnit 5 via Maven Wrapper)
@@ -35,12 +41,20 @@ CI and local verification are `npm test` (also `make test`). That runs, in order
 - `npm run check:parity`
 - `npm run matrix:check`
 
+**Full GitHub Actions parity** (lint, coverage report, matrix regeneration) is documented in [`docs/running-ci-locally.md`](docs/running-ci-locally.md). CI additionally runs `npm run lint`, `PYTEST_COV=1 npm run test:py`, `node tools/coverage-report.mjs`, and `npm run matrix` before `matrix:check`.
+
 Per language:
 
 ```bash
 npm run test:java
 npm run test:py
 npm run test:js
+```
+
+Lint:
+
+```bash
+npm run lint
 ```
 
 One algorithm in the languages that implement it:
@@ -54,10 +68,18 @@ npm run demo -- binary-search
 - `java/` — Maven + JUnit 5 (`com.dsa.examples`)
 - `python/` — pytest package `dsa`
 - `javascript/` — Jest sources in `src/`, tests in `test/`
-- `tools/` — stub check, parity check, coverage matrix, demo runner
-- `docs/` — per-item notes and `docs/API.md`
+- `tools/` — stub check, parity check, coverage matrix, demo runner, edge-case theme checker (`tools/edge-case-coverage.mjs`)
+- `docs/` — per-item notes, `docs/API.md`, and `docs/running-ci-locally.md`
 - `reference/` — imported CS and math reference trees
 - `COVERAGE.md` — generated trilingual status (`npm run matrix` rewrites it; `npm run matrix:check` only checks)
+
+**Edge-case catalog tests** (shared themes across topics) live at:
+
+- `python/tests/catalog/test_edge_case_themes.py`
+- `javascript/test/catalog/edgeCaseThemes.test.js`
+- `java/src/test/java/com/dsa/examples/catalog/EdgeCaseThemesTest.java`
+
+Module-level complexity and invariants are centralized in `tools/doc-spec.mjs` and mirrored in source docstrings.
 
 ## Secrets
 
