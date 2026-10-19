@@ -1,0 +1,10 @@
+{
+  "kind": "edit_distance",
+  "cases": [
+    {
+      "a": "kitten",
+      "b": "sitting",
+      "expected": 3
+    }
+  ]
+}

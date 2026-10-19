@@ -274,6 +274,60 @@ export const API_MANIFEST = {
     python: ['total_weight'],
     javascript: ['totalWeight'],
   },
+  'segment-tree': {
+    type: 'instance',
+    java: ['update', 'rangeSum'],
+    python: ['update', 'range_sum'],
+    javascript: ['update', 'rangeSum'],
+  },
+  'fenwick-tree': {
+    type: 'instance',
+    java: ['add', 'prefixSum', 'rangeSum'],
+    python: ['add', 'prefix_sum', 'range_sum'],
+    javascript: ['add', 'prefixSum', 'rangeSum'],
+  },
+  'z-algorithm': {
+    type: 'static',
+    java: ['zArray', 'search'],
+    python: ['z_array', 'search'],
+    javascript: ['zArray', 'search'],
+  },
+  'rabin-karp': {
+    type: 'static',
+    java: ['search'],
+    python: ['search'],
+    javascript: ['search'],
+  },
+  lis: {
+    type: 'static',
+    java: ['length'],
+    python: ['length'],
+    javascript: ['length'],
+  },
+  lcs: {
+    type: 'static',
+    java: ['length'],
+    python: ['length'],
+    javascript: ['length'],
+  },
+  knapsack: {
+    type: 'static',
+    java: ['maxValue'],
+    python: ['max_value'],
+    javascript: ['maxValue'],
+  },
+  'edit-distance': {
+    type: 'static',
+    java: ['distance'],
+    python: ['distance'],
+    javascript: ['distance'],
+  },
+  'coin-change': {
+    type: 'static',
+    java: ['minCoins'],
+    python: ['min_coins'],
+    javascript: ['minCoins'],
+  },
 };
 
 export function expectedJavaSymbols(item) {

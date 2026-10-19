@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import pytest
 
+from dsa.dp import coin_change, edit_distance, knapsack, lcs, lis
 from dsa.graphs import (
     bellman_ford,
     boruvka_mst,
@@ -20,12 +21,15 @@ from dsa.heaps import priority_queue
 from dsa.linear import deque, doubly_linked_list, queue, singly_linked_list
 from dsa.searching import binary_search
 from dsa.sorting import heap_sort, insertion_sort, radix_sort, selection_sort
+from dsa.strings import rabin_karp, z_algorithm
 from dsa.trees import (
     avl_tree,
     b_tree,
     bst,
+    fenwick_tree,
     interval_tree,
     order_statistic_tree,
+    segment_tree,
     tree_traversals,
     trie,
 )
@@ -190,6 +194,24 @@ def test_trie_and_hashing_edge_themes():
     assert not bf.might_contain("missing")
     bf.add("x")
     assert bf.might_contain("x")
+
+
+def test_new_trees_strings_dp_edge_themes():
+    st = segment_tree.SegmentTree([1, 2, 3])
+    assert st.range_sum(0, 2) == 6
+    st.update(0, 5)
+    assert st.range_sum(0, 0) == 5
+    ft = fenwick_tree.FenwickTree(3)
+    ft.add(0, 1)
+    ft.add(1, 2)
+    assert ft.range_sum(0, 1) == 3
+    assert z_algorithm.search("abc", "") == 0
+    assert rabin_karp.search("abc", "b") == 1
+    assert lis.length([1, 2, 3]) == 3
+    assert lcs.length("ab", "a") == 1
+    assert knapsack.max_value([1], [5], 1) == 5
+    assert edit_distance.distance("a", "b") == 1
+    assert coin_change.min_coins([1], 0) == 0
 
 
 def test_graph_algorithms_edge_themes():

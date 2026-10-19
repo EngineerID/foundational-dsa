@@ -250,6 +250,60 @@ export const DOC_SPECS = {
     invariant: 'Each phase adds safe minimum edge per component.',
     complexity: 'mstWeight: Time O(E log V); Space O(V).',
   },
+  'segment-tree': {
+    purpose: 'Range aggregate queries with point updates on an array.',
+    technique: 'Segment tree',
+    invariant: 'Each node covers a disjoint index interval; parent stores sum of children.',
+    complexity: 'update/rangeSum: Time O(log n); Space O(n).',
+  },
+  'fenwick-tree': {
+    purpose: 'Prefix sums and range sums with point updates.',
+    technique: 'Fenwick tree (binary indexed tree)',
+    invariant: 'BIT stores cumulative deltas for responsible ranges.',
+    complexity: 'add/prefixSum/rangeSum: Time O(log n); Space O(n).',
+  },
+  'z-algorithm': {
+    purpose: 'Linear-time Z-array and pattern search.',
+    technique: 'Z-algorithm',
+    invariant: 'Z[i] equals longest prefix match of s with s[i:].',
+    complexity: 'zArray/search: Time O(n + m); Space O(n).',
+  },
+  'rabin-karp': {
+    purpose: 'Substring search via rolling hash.',
+    technique: 'Rabin-Karp',
+    invariant: 'Hash collision resolved by direct compare.',
+    complexity: 'search: Time O(n + m) average; Space O(1).',
+  },
+  lis: {
+    purpose: 'Length of longest strictly increasing subsequence.',
+    technique: 'Patience sorting / tails DP',
+    invariant: 'tails[k] is minimum tail of an increasing subsequence of length k+1.',
+    complexity: 'length: Time O(n log n); Space O(n).',
+  },
+  lcs: {
+    purpose: 'Longest common subsequence length between two strings.',
+    technique: '2D DP',
+    invariant: 'dp on prefixes yields optimal subsequence length.',
+    complexity: 'length: Time O(nm); Space O(min(n,m)).',
+  },
+  knapsack: {
+    purpose: '0/1 knapsack maximum value for a weight capacity.',
+    technique: '1D knapsack DP',
+    invariant: 'dp[w] is best value using capacity w.',
+    complexity: 'maxValue: Time O(n·W); Space O(W).',
+  },
+  'edit-distance': {
+    purpose: 'Levenshtein edit distance between two strings.',
+    technique: 'Edit distance DP',
+    invariant: 'dp[i][j] is min edits for prefixes.',
+    complexity: 'distance: Time O(nm); Space O(min(n,m)).',
+  },
+  'coin-change': {
+    purpose: 'Minimum coins to make an amount (unbounded supply).',
+    technique: 'Coin change DP',
+    invariant: 'dp[a] is min coins for amount a.',
+    complexity: 'minCoins: Time O(n·amount); Space O(amount).',
+  },
 };
 
 export function formatJavaDoc(spec) {

@@ -41,6 +41,15 @@ const ALIASES = {
   'kruskal-mst': ['KruskalMST', 'kruskal_mst', 'kruskalMst'],
   'prim-mst': ['PrimMST', 'prim_mst', 'primMst'],
   'boruvka-mst': ['BoruvkaMST', 'boruvka_mst', 'boruvkaMst'],
+  'segment-tree': ['SegmentTree', 'segment_tree', 'segmentTree'],
+  'fenwick-tree': ['FenwickTree', 'fenwick_tree', 'fenwickTree'],
+  'z-algorithm': ['ZAlgorithm', 'z_algorithm', 'zAlgorithm'],
+  'rabin-karp': ['RabinKarp', 'rabin_karp', 'rabinKarp'],
+  lis: ['LIS', 'lis', 'lis'],
+  lcs: ['LCS', 'lcs', 'lcs'],
+  knapsack: ['Knapsack01', 'knapsack', 'knapsack'],
+  'edit-distance': ['EditDistance', 'edit_distance', 'editDistance'],
+  'coin-change': ['CoinChange', 'coin_change', 'coinChange'],
 };
 
 function needlesFor(item) {

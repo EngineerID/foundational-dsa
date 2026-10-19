@@ -6,9 +6,18 @@ import com.dsa.examples.hashing.HashTableChaining;
 import com.dsa.examples.hashing.HashTableOpenAddressing;
 import com.dsa.examples.heaps.PriorityQueue;
 import com.dsa.examples.linear.*;
+import com.dsa.examples.dp.CoinChange;
+import com.dsa.examples.dp.EditDistance;
+import com.dsa.examples.dp.Knapsack01;
+import com.dsa.examples.dp.LCS;
+import com.dsa.examples.dp.LIS;
 import com.dsa.examples.searching.BinarySearch;
+import com.dsa.examples.strings.RabinKarp;
+import com.dsa.examples.strings.ZAlgorithm;
 import com.dsa.examples.sorting.*;
 import com.dsa.examples.trees.*;
+import com.dsa.examples.trees.FenwickTree;
+import com.dsa.examples.trees.SegmentTree;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -165,6 +174,23 @@ class CatalogItemEdgesTest {
         assertFalse(bf.mightContain("missing"));
         bf.add("x");
         assertTrue(bf.mightContain("x"));
+    }
+
+    @Test
+    void newTreesStringsDpEdgeThemes() {
+        SegmentTree st = new SegmentTree(new int[] {1, 2, 3});
+        assertEquals(6, st.rangeSum(0, 2));
+        FenwickTree ft = new FenwickTree(2);
+        ft.add(0, 1);
+        ft.add(1, 2);
+        assertEquals(3, ft.rangeSum(0, 1));
+        assertEquals(0, ZAlgorithm.search("abc", ""));
+        assertEquals(1, RabinKarp.search("abc", "b"));
+        assertEquals(3, LIS.length(new int[] {1, 2, 3}));
+        assertEquals(1, LCS.length("ab", "a"));
+        assertEquals(5, Knapsack01.maxValue(new int[] {1}, new int[] {5}, 1));
+        assertEquals(1, EditDistance.distance("a", "b"));
+        assertEquals(0, CoinChange.minCoins(new int[] {1}, 0));
     }
 
     @Test
