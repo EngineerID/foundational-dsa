@@ -4,6 +4,7 @@ from hypothesis import strategies as st
 from dsa.linear.stack import Stack
 from dsa.searching.binary_search import search as binary_search
 from dsa.searching.linear_search import index_of
+from dsa.searching.quick_select import kth_smallest
 from dsa.sorting.bubble_sort import sort as bubble_sort
 from dsa.sorting.merge_sort import sort as merge_sort
 
@@ -40,6 +41,15 @@ def test_linear_search_matches_scan(xs, target):
         assert xs[idx] == target
     else:
         assert target not in xs
+
+
+@given(
+    st.lists(st.integers(min_value=-25, max_value=25), min_size=1, max_size=20),
+    st.integers(min_value=1, max_value=20),
+)
+def test_quick_select_kth_matches_sorted(xs, k_raw):
+    k = min(k_raw, len(xs))
+    assert kth_smallest(list(xs), k) == sorted(xs)[k - 1]
 
 
 @given(st.lists(st.integers(min_value=0, max_value=10), max_size=20))
