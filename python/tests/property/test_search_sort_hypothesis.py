@@ -6,6 +6,7 @@ from dsa.searching.binary_search import search as binary_search
 from dsa.searching.linear_search import index_of
 from dsa.searching.quick_select import kth_smallest
 from dsa.sorting.bubble_sort import sort as bubble_sort
+from dsa.sorting.counting_sort import sort as counting_sort
 from dsa.sorting.merge_sort import sort as merge_sort
 
 
@@ -13,6 +14,13 @@ from dsa.sorting.merge_sort import sort as merge_sort
 def test_bubble_sort_is_sorted(xs):
     arr = list(xs)
     bubble_sort(arr)
+    assert arr == sorted(xs)
+
+
+@given(st.lists(st.integers(min_value=0, max_value=40), max_size=25))
+def test_counting_sort_matches_sorted(xs):
+    arr = list(xs)
+    counting_sort(arr)
     assert arr == sorted(xs)
 
 

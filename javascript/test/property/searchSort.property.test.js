@@ -1,8 +1,10 @@
 const fc = require('fast-check');
 const { sort: bubbleSort } = require('../../src/sorting/bubbleSort');
+const { sort: countingSort } = require('../../src/sorting/countingSort');
 const { sort: mergeSort } = require('../../src/sorting/mergeSort');
 const { indexOf } = require('../../src/searching/linearSearch');
 const { search: binarySearch } = require('../../src/searching/binarySearch');
+const { kthSmallest } = require('../../src/searching/quickSelect');
 const { Stack } = require('../../src/linear/stack');
 
 describe('property search/sort/core structures', () => {
@@ -11,6 +13,16 @@ describe('property search/sort/core structures', () => {
       fc.property(fc.array(fc.integer({ min: 0, max: 40 }), { maxLength: 25 }), (xs) => {
         const arr = [...xs];
         bubbleSort(arr);
+        expect(arr).toEqual([...xs].sort((a, b) => a - b));
+      }),
+    );
+  });
+
+  test('counting sort matches sorted on non-negative keys', () => {
+    fc.assert(
+      fc.property(fc.array(fc.integer({ min: 0, max: 40 }), { maxLength: 25 }), (xs) => {
+        const arr = [...xs];
+        countingSort(arr);
         expect(arr).toEqual([...xs].sort((a, b) => a - b));
       }),
     );
@@ -48,6 +60,19 @@ describe('property search/sort/core structures', () => {
           const idx = indexOf(xs, target);
           if (idx >= 0) expect(xs[idx]).toBe(target);
           else expect(xs.includes(target)).toBe(false);
+        },
+      ),
+    );
+  });
+
+  test('quick select kth matches sorted', () => {
+    fc.assert(
+      fc.property(
+        fc.array(fc.integer({ min: -25, max: 25 }), { minLength: 1, maxLength: 20 }),
+        fc.integer({ min: 1, max: 20 }),
+        (xs, kRaw) => {
+          const k = Math.min(kRaw, xs.length);
+          expect(kthSmallest([...xs], k)).toBe([...xs].sort((a, b) => a - b)[k - 1]);
         },
       ),
     );
