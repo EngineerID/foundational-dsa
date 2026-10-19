@@ -1,8 +1,8 @@
 """Property tests: union-find vs BFS components (100 trials)."""
 
-from dsa.unionfind.union_find import UnionFind
-
 from _property_helpers import PROPERTY_TRIALS, bfs_components, seeded_rng
+
+from dsa.unionfind.union_find import UnionFind
 
 
 def test_union_find_connected():

@@ -12,12 +12,18 @@
     "matrix:check": "node tools/matrix.mjs --check --strict",
     "check:stubs": "node tools/check-stubs.mjs",
     "check:parity": "node tools/parity.mjs",
-    "coverage:report": "node tools/coverage-report.mjs --collect && node tools/matrix.mjs"
+    "coverage:report": "node tools/coverage-report.mjs --collect && node tools/matrix.mjs",
+    "lint": "eslint . && ruff check python",
+    "lint:js": "eslint .",
+    "lint:py": "ruff check python"
   },
   "author": "Ivan Damnjanovic",
   "license": "Apache-2.0",
   "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "eslint": "^9.22.0",
     "fast-check": "^3.22.0",
+    "globals": "^16.0.0",
     "jest": "^30.0.4"
   }
 }

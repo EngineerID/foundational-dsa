@@ -1,4 +1,4 @@
-from dsa.graphs.dijkstra import shortest_paths, _INF
+from dsa.graphs.dijkstra import _INF, shortest_paths
 from dsa.graphs.graph import Graph
 
 

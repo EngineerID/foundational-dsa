@@ -1,9 +1,9 @@
 """Property tests: hash tables match dict oracle (100 trials)."""
 
+from _property_helpers import PROPERTY_TRIALS, seeded_rng
+
 from dsa.hashing.open_addressing import HashTableOpenAddressing, ProbingStrategy
 from dsa.hashing.separate_chaining import HashTableChaining
-
-from _property_helpers import PROPERTY_TRIALS, seeded_rng
 
 
 def _run_table_property(table_factory):

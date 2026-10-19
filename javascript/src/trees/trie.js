@@ -40,7 +40,7 @@ class Trie {
     return this._traverse(prefix, true) !== null;
   }
 
-  _traverse(s, prefixOnly) {
+  _traverse(s, _prefixOnly) {
     let cur = this._root;
     for (const c of s) {
       const idx = c.charCodeAt(0) - 'a'.charCodeAt(0);

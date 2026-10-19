@@ -55,18 +55,6 @@ function fileExists(p) {
   return fs.existsSync(p);
 }
 
-function pythonCmd() {
-  for (const cmd of ['python', 'py', 'python3']) {
-    try {
-      execSync(`${cmd} --version`, { stdio: 'pipe', shell: true });
-      return cmd;
-    } catch {
-      /* try next */
-    }
-  }
-  return 'python';
-}
-
 function runTests() {
   const results = { java: null, py: null, js: null };
   try {

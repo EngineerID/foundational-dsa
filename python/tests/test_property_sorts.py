@@ -2,17 +2,6 @@
 
 from copy import deepcopy
 
-from dsa.sorting.bubble_sort import sort as bubble_sort
-from dsa.sorting.insertion_sort import sort as insertion_sort
-from dsa.sorting.merge_sort import sort as merge_sort
-from dsa.sorting.merge_sort import sort_bottom_up
-from dsa.sorting.counting_sort import sort as counting_sort
-from dsa.sorting.heap_sort import sort as heap_sort
-from dsa.sorting.quick_sort import sort as quick_sort
-from dsa.sorting.quick_sort import sort_3way
-from dsa.sorting.radix_sort import sort as radix_sort
-from dsa.sorting.selection_sort import sort as selection_sort
-
 from _property_helpers import (
     PROPERTY_TRIALS,
     is_permutation,
@@ -20,6 +9,18 @@ from _property_helpers import (
     random_int_array,
     seeded_rng,
 )
+
+from dsa.sorting.bubble_sort import sort as bubble_sort
+from dsa.sorting.counting_sort import sort as counting_sort
+from dsa.sorting.heap_sort import sort as heap_sort
+from dsa.sorting.insertion_sort import sort as insertion_sort
+from dsa.sorting.merge_sort import sort as merge_sort
+from dsa.sorting.merge_sort import sort_bottom_up
+from dsa.sorting.quick_sort import sort as quick_sort
+from dsa.sorting.quick_sort import sort_3way
+from dsa.sorting.radix_sort import sort as radix_sort
+from dsa.sorting.selection_sort import sort as selection_sort
+
 
 def _non_negative(arr: list[int]) -> list[int]:
     return [abs(x) for x in arr]

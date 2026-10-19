@@ -9,7 +9,7 @@ Each traversal: Time O(n); Space O(h) stack or O(w) queue.
 
 from __future__ import annotations
 
-from typing import Generic, TypeVar
+from typing import TypeVar
 
 from dsa.trees.bst import BSTNode
 

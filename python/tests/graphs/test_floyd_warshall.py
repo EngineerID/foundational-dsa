@@ -1,4 +1,4 @@
-from dsa.graphs.floyd_warshall import all_pairs_shortest_paths, _INF
+from dsa.graphs.floyd_warshall import _INF, all_pairs_shortest_paths
 from dsa.graphs.graph import Graph
 
 
