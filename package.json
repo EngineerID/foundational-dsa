@@ -22,7 +22,7 @@
     "seed:goldens": "node tools/seed-goldens.mjs",
     "check:topic-goldens": "node tools/check-topic-goldens.mjs",
     "check:catalog-items": "node tools/check-catalog-items.mjs",
-    "check:types-py": "python3 -m mypy python/dsa/dp python/dsa/trees/segment_tree.py python/dsa/trees/fenwick_tree.py python/dsa/strings/z_algorithm.py python/dsa/strings/rabin_karp.py",
+    "check:types-py": "python3 -m mypy python/dsa/dp/matrix_chain.py python/dsa/dp/longest_palindromic_subsequence.py python/dsa/dp/partition_equal_subset.py python/dsa/dp/rod_cutting.py python/dsa/dp/tsp_bitmask.py python/dsa/graphs/a_star.py python/dsa/graphs/tarjan_scc.py python/dsa/graphs/kosaraju.py python/dsa/graphs/bipartite_check.py python/dsa/graphs/articulation_bridges.py python/dsa/graphs/edmonds_karp.py python/dsa/graphs/hungarian.py python/dsa/trees/lca_binary_lifting.py python/dsa/trees/sparse_table.py python/dsa/trees/treap.py python/dsa/strings/manacher.py python/dsa/strings/suffix_array.py python/dsa/strings/aho_corasick.py python/dsa/linear/sliding_window_maximum.py python/dsa/linear/lru_cache.py python/dsa/searching/reservoir_sampling.py",
     "check:types-js": "tsc -p jsconfig.json --noEmit",
     "bench": "node tools/micro-bench.mjs",
     "coverage:report": "node tools/coverage-report.mjs --collect && node tools/matrix.mjs",

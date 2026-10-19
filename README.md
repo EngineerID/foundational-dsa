@@ -3,7 +3,7 @@
 [![CI](https://github.com/EngineerID/foundational-dsa/actions/workflows/ci.yml/badge.svg)](https://github.com/EngineerID/foundational-dsa/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](./LICENSE)
 
-**foundational-dsa** is a trilingual reference library: **50 classic data structures and algorithms**, each with matching implementations in **Java**, **Python**, and **JavaScript** (150 implementations in total). Every topic ships with tests, a short doc page under [`docs/items/`](docs/items/), and entries in [`docs/API.md`](docs/API.md) so you can compare APIs and idioms across languages.
+**foundational-dsa** is a trilingual reference library: **72 classic data structures and algorithms**, each with matching implementations in **Java**, **Python**, and **JavaScript** (216 implementations in total). Every topic ships with tests, a short doc page under [`docs/items/`](docs/items/), and entries in [`docs/API.md`](docs/API.md) so you can compare APIs and idioms across languages.
 
 Use it to study implementations side by side, prepare for interviews, or teach DSA with runnable code rather than pseudocode. Step-by-step walkthroughs for core algorithms are in [`docs/worked-examples.md`](docs/worked-examples.md).
 
@@ -102,20 +102,20 @@ After adding a topic, regenerate the matrix with `npm run matrix` (or `make matr
 
 Continuous integration uses a [CI-minutes policy](docs/ci.md): push to `main` and pull requests (draft PRs skip heavy work until marked ready). See [`.github/workflows/ci.yml`](.github/workflows/ci.yml) and [docs/running-ci-locally.md](docs/running-ci-locally.md).
 
-## Topics (50)
+## Topics (72)
 
 | Area | Topics |
 |------|--------|
-| Searching | linear-search, binary-search, quick-select |
+| Searching | linear-search, binary-search, quick-select, reservoir-sampling |
 | Sorting | bubble-sort, selection-sort, insertion-sort, merge-sort, quick-sort, heapsort, counting-sort, radix-sort |
-| Strings | kmp, z-algorithm, rabin-karp |
-| Dynamic programming | lis, lcs, knapsack, edit-distance, coin-change |
-| Linear | dynamic-array, singly-linked-list, doubly-linked-list, stack, queue, deque |
+| Strings | kmp, z-algorithm, rabin-karp, manacher, suffix-array, aho-corasick |
+| Dynamic programming | lis, lcs, knapsack, edit-distance, coin-change, matrix-chain, longest-palindromic-subsequence, partition-equal-subset, rod-cutting, tsp-bitmask |
+| Linear | dynamic-array, singly-linked-list, doubly-linked-list, stack, queue, deque, sliding-window-maximum, lru-cache |
 | Heaps | binary-heap, priority-queue |
-| Trees | bst, tree-traversals, avl-tree, order-statistic-tree, interval-tree, trie, b-tree, segment-tree, fenwick-tree |
+| Trees | bst, tree-traversals, avl-tree, order-statistic-tree, interval-tree, trie, b-tree, segment-tree, fenwick-tree, red-black-tree, lca-binary-lifting, treap, sparse-table |
 | Hashing | separate-chaining, open-addressing, bloom-filter |
 | Union-Find | union-find |
-| Graphs | graph, bfs, dfs, topological-sort, dijkstra, bellman-ford, floyd-warshall, kruskal-mst, prim-mst, boruvka-mst |
+| Graphs | graph, bfs, dfs, topological-sort, dijkstra, bellman-ford, floyd-warshall, kruskal-mst, prim-mst, boruvka-mst, a-star, tarjan-scc, kosaraju, bipartite-check, articulation-bridges, edmonds-karp, hungarian |
 
 ## Complexity (primary operations)
 
@@ -126,6 +126,7 @@ Typical time and auxiliary space for the main entry point of each topic (see mod
 | searching | linear-search | O(n) | O(1) |
 | searching | binary-search | O(log n) | O(1) |
 | searching | quick-select | O(n) avg, O(n²) worst | O(1) |
+| searching | reservoir-sampling | O(n) | O(k) |
 | sorting | bubble-sort | O(n²) | O(1) |
 | sorting | selection-sort | O(n²) | O(1) |
 | sorting | insertion-sort | O(n²) worst, O(n) best | O(1) |
@@ -141,6 +142,8 @@ Typical time and auxiliary space for the main entry point of each topic (see mod
 | linear | stack | O(1) amortized | O(n) |
 | linear | queue | O(1) amortized | O(n) |
 | linear | deque | O(1) amortized | O(n) |
+| linear | sliding-window-maximum | O(n) | O(k) |
+| linear | lru-cache | O(1) get/put | O(capacity) |
 | heaps | binary-heap | O(log n) insert/extract | O(n) |
 | heaps | priority-queue | O(log n) | O(n) |
 | trees | bst | O(h) | O(n) |
@@ -150,6 +153,10 @@ Typical time and auxiliary space for the main entry point of each topic (see mod
 | trees | interval-tree | O(log n + k) reported | O(n) |
 | trees | trie | O(L) key length | O(total chars) |
 | trees | b-tree | O(log_t n) | O(n) |
+| trees | red-black-tree | O(log n) | O(n) |
+| trees | lca-binary-lifting | O(log n) query | O(n log n) |
+| trees | treap | O(log n) expected | O(n) |
+| trees | sparse-table | O(1) query | O(n log n) |
 | hashing | separate-chaining | O(1) avg | O(n) |
 | hashing | open-addressing | O(1) avg | O(n) slots |
 | hashing | bloom-filter | O(k) | O(m) bits |
@@ -164,15 +171,32 @@ Typical time and auxiliary space for the main entry point of each topic (see mod
 | graphs | kruskal-mst | O(E log E) | O(V) |
 | graphs | prim-mst | O(E log V) | O(V) |
 | graphs | boruvka-mst | O(E log V) | O(V) |
+| graphs | a-star | O(E log V) | O(V) |
+| graphs | tarjan-scc | O(V + E) | O(V) |
+| graphs | kosaraju | O(V + E) | O(V) |
+| graphs | bipartite-check | O(V + E) | O(V) |
+| graphs | articulation-bridges | O(V + E) | O(V) |
+| graphs | edmonds-karp | O(VE²) | O(V²) |
+| graphs | hungarian | O(n³) | O(n²) |
 | trees | segment-tree | O(log n) | O(n) |
 | trees | fenwick-tree | O(log n) | O(n) |
 | strings | z-algorithm | O(n + m) | O(n) |
 | strings | rabin-karp | O(n + m) avg | O(1) |
+| strings | manacher | O(n) | O(n) |
+| strings | suffix-array | O(n log n) | O(n) |
+| strings | aho-corasick | O(n + m + z) | O(m) |
 | dp | lis | O(n log n) | O(n) |
 | dp | lcs | O(nm) | O(min(n,m)) |
 | dp | knapsack | O(n·W) | O(W) |
 | dp | edit-distance | O(nm) | O(min(n,m)) |
 | dp | coin-change | O(n·amount) | O(amount) |
+| dp | matrix-chain | O(n³) | O(n²) |
+| dp | longest-palindromic-subsequence | O(n²) | O(n²) |
+| dp | partition-equal-subset | O(n·sum) | O(sum) |
+| dp | rod-cutting | O(n·length) | O(length) |
+| dp | tsp-bitmask | O(n²·2^n) | O(n·2^n) |
+
+Local asymptotic comparisons (not CI gates): `npm run bench` and [docs/benchmarks.md](docs/benchmarks.md).
 
 For step-by-step walkthroughs of binary search, merge sort, and KMP, see [docs/worked-examples.md](docs/worked-examples.md).
 

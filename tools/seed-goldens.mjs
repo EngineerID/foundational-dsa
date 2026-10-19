@@ -97,6 +97,32 @@ for (const item of ITEMS) {
     write(item.id, { kind: 'quick_select', cases: [{ arr: [3, 1, 4, 1, 5], k: 3, expected: 3 }] });
     continue;
   }
+  if (item.id === 'a-star') {
+    write(item.id, { kind: 'a_star', cases: [{ n: 2, edges: [[0, 1, 1]], source: 0, goal: 1, expected: 1 }] });
+    continue;
+  }
+  if (item.id === 'edmonds-karp') {
+    write(item.id, {
+      kind: 'max_flow',
+      cases: [{ n: 2, edges: [[0, 1, 5]], source: 0, sink: 1, expected: 5 }],
+    });
+    continue;
+  }
+  if (item.id === 'manacher') {
+    write(item.id, { kind: 'manacher', cases: [{ s: 'aa', expected: 2 }] });
+    continue;
+  }
+  if (item.id === 'matrix-chain') {
+    write(item.id, { kind: 'matrix_chain', cases: [{ dimensions: [1, 2, 3], expected: 6 }] });
+    continue;
+  }
+  if (item.id === 'sliding-window-maximum') {
+    write(item.id, {
+      kind: 'sliding_window_max',
+      cases: [{ nums: [1, 3, -1], k: 2, expected: [3, 3] }],
+    });
+    continue;
+  }
   write(item.id, { kind: 'smoke', cases: [{ note: 'dedicated tests cover behavior' }] });
 }
 

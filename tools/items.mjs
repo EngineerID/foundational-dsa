@@ -1,4 +1,4 @@
-/** Canonical catalog of 50 DSA items (shared by matrix, API manifest, coverage). */
+/** Canonical catalog of 72 DSA items (shared by matrix, API manifest, coverage). */
 export const ITEMS = [
   { topic: 'searching', id: 'linear-search', java: 'LinearSearch', py: 'linear_search', js: 'linearSearch' },
   { topic: 'searching', id: 'binary-search', java: 'BinarySearch', py: 'binary_search', js: 'binarySearch' },
@@ -50,4 +50,26 @@ export const ITEMS = [
   { topic: 'graphs', id: 'kruskal-mst', java: 'KruskalMST', py: 'kruskal_mst', js: 'kruskalMst' },
   { topic: 'graphs', id: 'prim-mst', java: 'PrimMST', py: 'prim_mst', js: 'primMst' },
   { topic: 'graphs', id: 'boruvka-mst', java: 'BoruvkaMST', py: 'boruvka_mst', js: 'boruvkaMst' },
+  { topic: 'graphs', id: 'a-star', java: 'AStar', py: 'a_star', js: 'aStar' },
+  { topic: 'graphs', id: 'tarjan-scc', java: 'TarjanSCC', py: 'tarjan_scc', js: 'tarjanScc' },
+  { topic: 'graphs', id: 'kosaraju', java: 'Kosaraju', py: 'kosaraju', js: 'kosaraju' },
+  { topic: 'graphs', id: 'bipartite-check', java: 'BipartiteCheck', py: 'bipartite_check', js: 'bipartiteCheck' },
+  { topic: 'graphs', id: 'articulation-bridges', java: 'ArticulationBridges', py: 'articulation_bridges', js: 'articulationBridges' },
+  { topic: 'graphs', id: 'edmonds-karp', java: 'EdmondsKarp', py: 'edmonds_karp', js: 'edmondsKarp' },
+  { topic: 'graphs', id: 'hungarian', java: 'Hungarian', py: 'hungarian', js: 'hungarian' },
+  { topic: 'trees', id: 'red-black-tree', java: 'RedBlackTree', py: 'red_black_tree', js: 'redBlackTree' },
+  { topic: 'trees', id: 'lca-binary-lifting', java: 'LCABinaryLifting', py: 'lca_binary_lifting', js: 'lcaBinaryLifting' },
+  { topic: 'trees', id: 'treap', java: 'Treap', py: 'treap', js: 'treap' },
+  { topic: 'trees', id: 'sparse-table', java: 'SparseTable', py: 'sparse_table', js: 'sparseTable' },
+  { topic: 'strings', id: 'manacher', java: 'Manacher', py: 'manacher', js: 'manacher' },
+  { topic: 'strings', id: 'suffix-array', java: 'SuffixArray', py: 'suffix_array', js: 'suffixArray' },
+  { topic: 'strings', id: 'aho-corasick', java: 'AhoCorasick', py: 'aho_corasick', js: 'ahoCorasick' },
+  { topic: 'dp', id: 'matrix-chain', java: 'MatrixChain', py: 'matrix_chain', js: 'matrixChain' },
+  { topic: 'dp', id: 'longest-palindromic-subsequence', java: 'LongestPalindromicSubsequence', py: 'longest_palindromic_subsequence', js: 'longestPalindromicSubsequence' },
+  { topic: 'dp', id: 'partition-equal-subset', java: 'PartitionEqualSubset', py: 'partition_equal_subset', js: 'partitionEqualSubset' },
+  { topic: 'dp', id: 'rod-cutting', java: 'RodCutting', py: 'rod_cutting', js: 'rodCutting' },
+  { topic: 'dp', id: 'tsp-bitmask', java: 'TSPBitmask', py: 'tsp_bitmask', js: 'tspBitmask' },
+  { topic: 'searching', id: 'reservoir-sampling', java: 'ReservoirSampling', py: 'reservoir_sampling', js: 'reservoirSampling' },
+  { topic: 'linear', id: 'sliding-window-maximum', java: 'SlidingWindowMaximum', py: 'sliding_window_maximum', js: 'slidingWindowMaximum' },
+  { topic: 'linear', id: 'lru-cache', java: 'LRUCache', py: 'lru_cache', js: 'lruCache' },
 ];
