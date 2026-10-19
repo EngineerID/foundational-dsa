@@ -13,14 +13,8 @@ It expects the toolchains already on the image, at the versions pinned by `.gith
 What the script installs:
 
 - Root npm dependencies from `package-lock.json` (`npm ci`, Jest 30).
-- `pytest`, unpinned, matching CI's `pip install pytest` (`python3 -m pip install --user pytest`).
+- Python test and lint packages unpinned, matching CI (`pytest`, `pytest-cov`, `hypothesis`, `ruff` via `python3 -m pip install --user`).
 - Maven Wrapper download plus main/test compile (`sh java/mvnw -q -DskipTests test-compile`), so Java tests do not cold-start the wrapper.
-
-For a **CI-equivalent** Python toolchain (property tests, coverage, Ruff), also run:
-
-```bash
-python3 -m pip install --user pytest pytest-cov hypothesis ruff
-```
 
 There is no `start` command. This repo is a library: nothing needs to stay running.
 

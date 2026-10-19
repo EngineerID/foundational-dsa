@@ -45,7 +45,8 @@ npm ci
 
 # User site-packages so this does not need root and can be repeated safely.
 # `python3 -m pytest` imports from the user site; the pytest script need not be on PATH.
-python3 -m pip install --user --disable-pip-version-check --no-warn-script-location pytest
+python3 -m pip install --user --disable-pip-version-check --no-warn-script-location \
+  pytest pytest-cov hypothesis ruff
 
 # Cache Maven Wrapper 3.9.9 and test dependencies without running the suite.
 # The wrapper resolves the project from its own directory; invoke it there,

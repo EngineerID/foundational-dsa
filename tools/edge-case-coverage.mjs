@@ -23,6 +23,20 @@ const JAVA_TOPIC_DIRS = {
   graphs: ['graphs'],
 };
 
+const fileTextCache = new Map();
+
+function readFileUtf8(filePath) {
+  if (!fs.existsSync(filePath)) {
+    return '';
+  }
+  let text = fileTextCache.get(filePath);
+  if (text === undefined) {
+    text = fs.readFileSync(filePath, 'utf8');
+    fileTextCache.set(filePath, text);
+  }
+  return text;
+}
+
 function listJavaTestsForItem(item) {
   const dirs = JAVA_TOPIC_DIRS[item.topic] ?? [item.topic];
   const files = [];
@@ -38,7 +52,7 @@ function listJavaTestsForItem(item) {
     for (const name of fs.readdirSync(propDir)) {
       if (!name.endsWith('Test.java')) continue;
       const full = path.join(propDir, name);
-      if (fs.readFileSync(full, 'utf8').includes(item.java)) files.push(full);
+      if (readFileUtf8(full).includes(item.java)) files.push(full);
     }
   }
   const catalog = path.join(ROOT, 'java', 'src', 'test', 'java', 'com', 'dsa', 'examples', 'catalog', 'EdgeCaseThemesTest.java');
@@ -57,7 +71,7 @@ const PATTERNS = {
 };
 
 function readCorpus(paths) {
-  return paths.map((p) => (fs.existsSync(p) ? fs.readFileSync(p, 'utf8') : '')).join('\n');
+  return paths.map((p) => readFileUtf8(p)).join('\n');
 }
 
 function pyTestFile(item) {
