@@ -2,6 +2,7 @@
 node_modules/
 
 # Python
+.coverage
 __pycache__/
 *.py[cod]
 *$py.class

@@ -31,7 +31,7 @@ Outputs **`run_heavy`**:
 | Situation | `run_heavy` |
 |-----------|-------------|
 | Push to `main` | `true` |
-| Draft pull request | `false` (live status from the GitHub API, not only the event payload) |
+| Draft pull request | `false` (live status from the GitHub API via env `is_draft`, not only the event payload) |
 | Ready PR, only docs/metadata changes | `false` |
 | Ready PR, heavy paths touched | `true` |
 | Ambiguous filter / large PR (>3000 files) | `true` (safe default) |

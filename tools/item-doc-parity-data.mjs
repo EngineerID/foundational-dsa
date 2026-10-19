@@ -25,6 +25,7 @@ export const GOLDEN_PY_TEST = {
 };
 
 /** Items exercised in catalog edge-theme tests (see EdgeCaseThemesTest / test_edge_case_themes). */
+/** @deprecated Use `npm run check:catalog-items` — catalog tests now cover all ITEMS. */
 export const EDGE_CATALOG_ITEMS = new Set([
   'bubble-sort',
   'merge-sort',
@@ -38,6 +39,7 @@ export const EDGE_CATALOG_ITEMS = new Set([
   'bfs',
   'kmp',
   'union-find',
+  'binary-heap',
 ]);
 
 export const EDGE_NOTES = {

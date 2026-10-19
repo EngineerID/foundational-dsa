@@ -1,4 +1,4 @@
-.PHONY: test test-ci test-java test-py test-js demo matrix matrix-check check-stubs check-parity check-edge-themes check-ci-policy lint bench
+.PHONY: test test-ci test-java test-py test-js demo matrix matrix-check inventory inventory-check check-stubs check-parity check-edge-themes check-ci-policy lint bench
 
 test: check-stubs test-java test-py test-js check-parity matrix-check
 
@@ -26,6 +26,12 @@ matrix:
 matrix-check:
 	node tools/matrix.mjs --check --strict
 
+inventory:
+	node tools/inventory.mjs
+
+inventory-check:
+	node tools/inventory.mjs --check
+
 check-stubs:
 	node tools/check-stubs.mjs
 
@@ -37,6 +43,15 @@ check-edge-themes:
 
 check-ci-policy:
 	npm run check:ci-policy
+
+check-readme-complexity:
+	npm run check:readme-complexity
+
+check-golden-parity:
+	npm run check:golden-parity
+
+check-catalog-items:
+	npm run check:catalog-items
 
 bench:
 	npm run bench

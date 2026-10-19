@@ -2,6 +2,7 @@ package com.dsa.examples.catalog;
 
 import com.dsa.examples.graphs.BFS;
 import com.dsa.examples.graphs.Graph;
+import com.dsa.examples.heaps.BinaryHeap;
 import com.dsa.examples.linear.DynamicArray;
 import com.dsa.examples.linear.Stack;
 import com.dsa.examples.searching.BinarySearch;
@@ -62,6 +63,24 @@ class EdgeCaseThemesTest {
         assertEquals(-1, BinarySearch.search(new int[]{3, 1}, 1));
         assertEquals(9, QuickSelect.kthSmallest(new int[]{9}, 1));
         assertThrows(IllegalArgumentException.class, () -> QuickSelect.kthSmallest(new int[]{}, 1));
+    }
+
+    @Test
+    void binaryHeapEdgeThemes() {
+        BinaryHeap<Integer> heap = new BinaryHeap<>();
+        assertEquals(0, heap.size());
+        assertThrows(IllegalStateException.class, heap::peek);
+        heap.insert(3);
+        assertEquals(3, heap.peek());
+        heap.insert(3);
+        heap.insert(1);
+        assertEquals(1, heap.extractMin());
+        BinaryHeap<Integer> large = new BinaryHeap<>();
+        for (int i = LARGE_N; i >= 1; i--) {
+            large.insert(i);
+        }
+        assertEquals(1, large.extractMin());
+        assertThrows(IndexOutOfBoundsException.class, () -> heap.decreaseKey(99, 0));
     }
 
     @Test

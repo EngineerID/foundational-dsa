@@ -1,0 +1,18 @@
+{
+  "kind": "max_flow",
+  "cases": [
+    {
+      "n": 2,
+      "edges": [
+        [
+          0,
+          1,
+          5
+        ]
+      ],
+      "source": 0,
+      "sink": 1,
+      "expected": 5
+    }
+  ]
+}

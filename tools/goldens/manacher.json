@@ -1,0 +1,9 @@
+{
+  "kind": "manacher",
+  "cases": [
+    {
+      "s": "aa",
+      "expected": 2
+    }
+  ]
+}
