@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '22'
       - run: npm ci
-      - run: pip install pytest pytest-cov
+      - run: pip install pytest pytest-cov hypothesis
       - run: npm run check:stubs
       - run: npm run test:java
       - run: PYTEST_COV=1 npm run test:py
