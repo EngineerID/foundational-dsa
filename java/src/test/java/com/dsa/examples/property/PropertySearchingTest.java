@@ -48,6 +48,31 @@ class PropertySearchingTest {
     }
 
     @Test
+    void binarySearchFirstAndLastOccurrence() {
+        Random rng = PropertyHelpers.seededRng();
+        for (int t = 0; t < PROPERTY_TRIALS; t++) {
+            int[] arr = PropertyHelpers.randomIntArray(rng, 30);
+            Arrays.sort(arr);
+            int key = arr.length == 0 ? 0 : arr[rng.nextInt(arr.length)];
+            int first = BinarySearch.firstOccurrence(arr, key);
+            int last = BinarySearch.lastOccurrence(arr, key);
+            if (first < 0) {
+                assertEquals(-1, last);
+                assertTrue(Arrays.stream(arr).noneMatch(v -> v == key));
+            } else {
+                assertTrue(first <= last);
+                assertEquals(key, arr[first]);
+                assertEquals(key, arr[last]);
+                for (int i = 0; i < arr.length; i++) {
+                    if (arr[i] == key) {
+                        assertTrue(i >= first && i <= last);
+                    }
+                }
+            }
+        }
+    }
+
+    @Test
     void quickSelectKthSmallest() {
         Random rng = PropertyHelpers.seededRng();
         for (int t = 0; t < PROPERTY_TRIALS; t++) {
