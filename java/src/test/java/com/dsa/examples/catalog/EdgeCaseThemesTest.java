@@ -95,6 +95,7 @@ class EdgeCaseThemesTest {
         assertEquals(-1, KMP.search("", "a"));
         assertEquals(0, KMP.search("a", "a"));
         assertEquals(0, KMP.search("abc", ""));
+        assertEquals(0, KMP.search("", ""));
         UnionFind uf = new UnionFind(1);
         assertEquals(0, uf.find(0));
         UnionFind uf2 = new UnionFind(3);

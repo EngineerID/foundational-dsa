@@ -16,6 +16,8 @@ class LinearStructuresTest {
         arr.set(1, 5);
         assertEquals(5, arr.remove(1));
         assertEquals(1, arr.size());
+        assertThrows(IndexOutOfBoundsException.class, () -> arr.get(5));
+        assertThrows(IndexOutOfBoundsException.class, () -> arr.remove(-1));
     }
 
     @Test
@@ -49,10 +51,15 @@ class LinearStructuresTest {
         assertEquals(2, stack.pop());
 
         Queue<String> q = new Queue<>();
+        assertTrue(q.isEmpty());
         q.enqueue("x");
         q.enqueue("y");
         assertEquals("x", q.peek());
         assertEquals("x", q.dequeue());
+        assertEquals("y", q.dequeue());
+        assertTrue(q.isEmpty());
+        assertThrows(IllegalStateException.class, q::dequeue);
+        assertThrows(IllegalStateException.class, q::peek);
     }
 
     @Test
@@ -63,5 +70,6 @@ class LinearStructuresTest {
         assertEquals(1, d.removeFirst());
         assertEquals(2, d.removeLast());
         assertTrue(d.isEmpty());
+        assertThrows(IllegalStateException.class, d::removeFirst);
     }
 }

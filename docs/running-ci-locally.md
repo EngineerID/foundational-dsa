@@ -1,6 +1,6 @@
 # Running CI locally
 
-GitHub Actions runs [`.github/workflows/ci.yml`](../.github/workflows/ci.yml) on every push and pull request. The [`secret-scan` workflow](../.github/workflows/secret-scan.yml) scans for leaked secrets on `main` and on pull requests.
+GitHub Actions runs [`.github/workflows/ci.yml`](../.github/workflows/ci.yml) on **push to `main`** and on pull requests (`opened`, `synchronize`, `reopened`, `ready_for_review`). Draft PRs and non-impacting changes skip heavy steps but the required **`build-test`** job still passes. See [CI policy](ci.md). The [`secret-scan` workflow](../.github/workflows/secret-scan.yml) scans for leaked secrets on `main` and on pull requests.
 
 ## Prerequisites
 
@@ -16,9 +16,17 @@ For a full CI-equivalent Python environment (property tests, coverage, lint), al
 python3 -m pip install --user pytest pytest-cov hypothesis ruff
 ```
 
+## CI policy (`ci-policy` job)
+
+| Step | Local command |
+|------|----------------|
+| Workflow lint | Install [actionlint](https://github.com/rhysd/actionlint) and run `actionlint -color` |
+| Policy script | `node scripts/ci-policy.mjs` |
+| Policy tests | `node --test scripts/ci-policy.test.mjs` |
+
 ## Main CI job (`build-test`)
 
-Run these from the repository root in order:
+When `run_heavy` is true, run these from the repository root in order:
 
 | Step | Local command |
 |------|----------------|

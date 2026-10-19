@@ -36,9 +36,24 @@ class HeapTest {
         pq.insert("b");
         pq.insert("a");
         assertEquals(2, pq.size());
+        assertEquals("a", pq.peek());
+        assertEquals(2, pq.size());
         assertEquals("a", pq.extractMin());
         assertEquals("b", pq.extractMin());
         assertTrue(pq.isEmpty());
+    }
+
+    @Test
+    void priorityQueueDecreaseKeyAndHeapView() {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        pq.insert(10);
+        pq.insert(5);
+        pq.insert(8);
+        int idx = pq.heap().indexOf(10);
+        pq.decreaseKey(idx, 1);
+        assertEquals(1, pq.peek());
+        assertEquals(3, pq.heap().size());
+        assertEquals(1, pq.extractMin());
     }
 
     @Test

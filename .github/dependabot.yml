@@ -4,14 +4,43 @@ updates:
     directory: /
     schedule:
       interval: weekly
-    open-pull-requests-limit: 3
+    open-pull-requests-limit: 2
+    groups:
+      npm-production:
+        patterns:
+          - "*"
+        exclude-patterns:
+          - "eslint*"
+          - "@eslint/*"
+          - "globals"
+          - "jest"
+          - "fast-check"
+      npm-eslint:
+        patterns:
+          - "eslint*"
+          - "@eslint/*"
+          - "globals"
+      npm-test:
+        patterns:
+          - "jest"
+          - "fast-check"
+
   - package-ecosystem: pip
     directory: /python
     schedule:
       interval: weekly
-    open-pull-requests-limit: 3
+    open-pull-requests-limit: 2
+    groups:
+      python-runtime:
+        patterns:
+          - "*"
+
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
-    open-pull-requests-limit: 3
+    open-pull-requests-limit: 2
+    groups:
+      github-actions:
+        patterns:
+          - "*"

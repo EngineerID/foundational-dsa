@@ -85,6 +85,7 @@ describe('catalog edge themes', () => {
     expect(kmpSearch('', 'a')).toBe(-1);
     expect(kmpSearch('a', 'a')).toBe(0);
     expect(kmpSearch('abc', '')).toBe(0);
+    expect(kmpSearch('', '')).toBe(0);
     const uf = new UnionFind(1);
     expect(uf.find(0)).toBe(0);
     const uf2 = new UnionFind(3);
