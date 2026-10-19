@@ -35,10 +35,16 @@ Run these from the repository root in order:
 | Upload artifact | *(CI only)* writes `coverage/` and uploads `line-coverage-report` |
 | Strict matrix check | `npm run matrix:check` |
 
-One-shot equivalent (skips coverage artifact upload and matrix rewrite side effects you may not want):
+One-shot equivalent (matches CI except artifact upload):
 
 ```bash
-npm run lint && npm run check:stubs && npm run test:java && PYTEST_COV=1 npm run test:py && npm run test:js && npm run check:parity && node tools/coverage-report.mjs && npm run matrix:check
+npm run test:ci
+```
+
+Or via Make:
+
+```bash
+make test-ci
 ```
 
 The default `npm test` / `make test` sequence matches CI except it does **not** run `npm run lint`, `node tools/coverage-report.mjs`, or `npm run matrix` (only `matrix:check`).

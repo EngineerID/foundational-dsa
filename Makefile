@@ -1,6 +1,12 @@
-.PHONY: test test-java test-py test-js demo matrix matrix-check check-stubs check-parity
+.PHONY: test test-ci test-java test-py test-js demo matrix matrix-check check-stubs check-parity lint
 
 test: check-stubs test-java test-py test-js check-parity matrix-check
+
+test-ci:
+	npm run test:ci
+
+lint:
+	npm run lint
 
 test-java:
 	node tools/run-java-test.mjs
