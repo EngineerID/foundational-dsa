@@ -131,7 +131,6 @@ def test_kmp_edge_themes():
     assert kmp.search("abc", "") == 0
 
 
-
 def test_union_find_edge_themes():
     uf = union_find.UnionFind(1)
     assert uf.find(0) == 0

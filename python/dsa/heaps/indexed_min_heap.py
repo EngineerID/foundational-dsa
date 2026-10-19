@@ -75,9 +75,15 @@ class IndexedMinHeap:
             left = 2 * i + 1
             right = 2 * i + 2
             smallest = i
-            if left < self._size and self._keys[self._heap[left]] < self._keys[self._heap[smallest]]:
+            if (
+                left < self._size
+                and self._keys[self._heap[left]] < self._keys[self._heap[smallest]]
+            ):
                 smallest = left
-            if right < self._size and self._keys[self._heap[right]] < self._keys[self._heap[smallest]]:
+            if (
+                right < self._size
+                and self._keys[self._heap[right]] < self._keys[self._heap[smallest]]
+            ):
                 smallest = right
             if smallest == i:
                 break
