@@ -163,6 +163,8 @@ Typical time and auxiliary space for the main entry point of each topic (see mod
 | graphs | prim-mst | O(E log V) | O(V) |
 | graphs | boruvka-mst | O(E log V) | O(V) |
 
+For step-by-step walkthroughs of binary search, merge sort, and KMP, see [docs/worked-examples.md](docs/worked-examples.md).
+
 To mirror the GitHub Actions job locally, see [docs/running-ci-locally.md](docs/running-ci-locally.md).
 
 ## License

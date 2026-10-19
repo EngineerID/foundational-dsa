@@ -3,6 +3,8 @@
 Per-language public symbols are defined in `tools/api-manifest.mjs` (source of truth).
 Null/empty: arrays may be `null` (Java/JS) or `None` (Python); sorts no-op; searches return `-1` or empty.
 
+Worked examples (binary search, merge sort, KMP): [worked-examples.md](worked-examples.md). Complexity summary: [README § Complexity](../README.md#complexity-primary-operations).
+
 ## linear-search
 
 Find a target value in an array by sequential scan.
