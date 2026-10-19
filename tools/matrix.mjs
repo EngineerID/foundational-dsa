@@ -9,52 +9,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { findApiTestGaps, formatGapsMarkdown } from './api-test-coverage.mjs';
+import { ITEMS } from './items.mjs';
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
-
-const ITEMS = [
-  { topic: 'searching', id: 'linear-search', java: 'LinearSearch', py: 'linear_search', js: 'linearSearch' },
-  { topic: 'searching', id: 'binary-search', java: 'BinarySearch', py: 'binary_search', js: 'binarySearch' },
-  { topic: 'searching', id: 'quick-select', java: 'QuickSelect', py: 'quick_select', js: 'quickSelect' },
-  { topic: 'sorting', id: 'bubble-sort', java: 'BubbleSort', py: 'bubble_sort', js: 'bubbleSort' },
-  { topic: 'sorting', id: 'selection-sort', java: 'SelectionSort', py: 'selection_sort', js: 'selectionSort' },
-  { topic: 'sorting', id: 'insertion-sort', java: 'InsertionSort', py: 'insertion_sort', js: 'insertionSort' },
-  { topic: 'sorting', id: 'merge-sort', java: 'MergeSort', py: 'merge_sort', js: 'mergeSort' },
-  { topic: 'sorting', id: 'quick-sort', java: 'QuickSort', py: 'quick_sort', js: 'quickSort' },
-  { topic: 'sorting', id: 'heapsort', java: 'HeapSort', py: 'heap_sort', js: 'heapSort' },
-  { topic: 'sorting', id: 'counting-sort', java: 'CountingSort', py: 'counting_sort', js: 'countingSort' },
-  { topic: 'sorting', id: 'radix-sort', java: 'RadixSort', py: 'radix_sort', js: 'radixSort' },
-  { topic: 'strings', id: 'kmp', java: 'KMP', py: 'kmp', js: 'kmp' },
-  { topic: 'linear', id: 'dynamic-array', java: 'DynamicArray', py: 'dynamic_array', js: 'dynamicArray' },
-  { topic: 'linear', id: 'singly-linked-list', java: 'SinglyLinkedList', py: 'singly_linked_list', js: 'singlyLinkedList' },
-  { topic: 'linear', id: 'doubly-linked-list', java: 'DoublyLinkedList', py: 'doubly_linked_list', js: 'doublyLinkedList' },
-  { topic: 'linear', id: 'stack', java: 'Stack', py: 'stack', js: 'stack' },
-  { topic: 'linear', id: 'queue', java: 'Queue', py: 'queue', js: 'queue' },
-  { topic: 'linear', id: 'deque', java: 'Deque', py: 'deque', js: 'deque' },
-  { topic: 'heaps', id: 'binary-heap', java: 'BinaryHeap', py: 'binary_heap', js: 'binaryHeap' },
-  { topic: 'heaps', id: 'priority-queue', java: 'PriorityQueue', py: 'priority_queue', js: 'priorityQueue' },
-  { topic: 'trees', id: 'bst', java: 'BST', py: 'bst', js: 'bst' },
-  { topic: 'trees', id: 'tree-traversals', java: 'TreeTraversals', py: 'tree_traversals', js: 'treeTraversals' },
-  { topic: 'trees', id: 'avl-tree', java: 'AVLTree', py: 'avl_tree', js: 'avlTree' },
-  { topic: 'trees', id: 'order-statistic-tree', java: 'OrderStatisticTree', py: 'order_statistic_tree', js: 'orderStatisticTree' },
-  { topic: 'trees', id: 'interval-tree', java: 'IntervalTree', py: 'interval_tree', js: 'intervalTree' },
-  { topic: 'trees', id: 'trie', java: 'Trie', py: 'trie', js: 'trie' },
-  { topic: 'trees', id: 'b-tree', java: 'BTree', py: 'b_tree', js: 'bTree' },
-  { topic: 'hashing', id: 'separate-chaining', java: 'HashTableChaining', py: 'separate_chaining', js: 'separateChaining' },
-  { topic: 'hashing', id: 'open-addressing', java: 'HashTableOpenAddressing', py: 'open_addressing', js: 'openAddressing' },
-  { topic: 'hashing', id: 'bloom-filter', java: 'BloomFilter', py: 'bloom_filter', js: 'bloomFilter' },
-  { topic: 'unionfind', id: 'union-find', java: 'UnionFind', py: 'union_find', js: 'unionFind' },
-  { topic: 'graphs', id: 'graph', java: 'Graph', py: 'graph', js: 'graph' },
-  { topic: 'graphs', id: 'bfs', java: 'BFS', py: 'bfs', js: 'bfs' },
-  { topic: 'graphs', id: 'dfs', java: 'DFS', py: 'dfs', js: 'dfs' },
-  { topic: 'graphs', id: 'topological-sort', java: 'TopologicalSort', py: 'topological_sort', js: 'topologicalSort' },
-  { topic: 'graphs', id: 'dijkstra', java: 'Dijkstra', py: 'dijkstra', js: 'dijkstra' },
-  { topic: 'graphs', id: 'bellman-ford', java: 'BellmanFord', py: 'bellman_ford', js: 'bellmanFord' },
-  { topic: 'graphs', id: 'floyd-warshall', java: 'FloydWarshall', py: 'floyd_warshall', js: 'floydWarshall' },
-  { topic: 'graphs', id: 'kruskal-mst', java: 'KruskalMST', py: 'kruskal_mst', js: 'kruskalMst' },
-  { topic: 'graphs', id: 'prim-mst', java: 'PrimMST', py: 'prim_mst', js: 'primMst' },
-  { topic: 'graphs', id: 'boruvka-mst', java: 'BoruvkaMST', py: 'boruvka_mst', js: 'boruvkaMst' },
-];
 
 const JAVA_SPECIAL = {
   'HashTableChaining': 'hashing/HashTableChaining',
@@ -171,7 +130,8 @@ const rows = ITEMS.map((item) => {
   };
 });
 
-const md = generateMarkdown(rows);
+const apiGaps = findApiTestGaps(ITEMS);
+const md = `${generateMarkdown(rows)}${formatGapsMarkdown(apiGaps)}`;
 fs.writeFileSync(path.join(ROOT, 'COVERAGE.md'), md);
 console.log('Wrote COVERAGE.md');
 
@@ -198,9 +158,19 @@ if (checkMode || strictMode) {
       }
     }
   }
+  if (apiGaps.length) {
+    console.error(`API test coverage gaps (${apiGaps.length}):`);
+    apiGaps.forEach((g) => console.error(`  - ${g.itemId}/${g.language}: ${g.symbol}`));
+    failed = true;
+  }
   if (failed) process.exit(1);
   const totalCells = rows.length * 3;
-  console.log(strictMode ? `Strict matrix check passed (${totalCells}/${totalCells}).` : 'Phased matrix check passed.');
+  const apiMsg = apiGaps.length ? '' : '; API manifest symbols covered in dedicated tests.';
+  console.log(
+    strictMode
+      ? `Strict matrix check passed (${totalCells}/${totalCells})${apiMsg}`
+      : `Phased matrix check passed${apiMsg}`,
+  );
 }
 
 export { ITEMS, javaPath, pyPath, jsPath, pyTestPath, jsTestPath };

@@ -8,6 +8,7 @@ describe('BST', () => {
     bst.insert(8, 'eight');
     expect(bst.search(5)).toBe('five');
     expect(bst.inOrder()).toEqual([2, 5, 8]);
+    expect(bst.getRoot()).not.toBeNull();
     expect(bst.successor(5)).toBe(8);
     bst.delete(5);
     expect(bst.search(5)).toBeNull();

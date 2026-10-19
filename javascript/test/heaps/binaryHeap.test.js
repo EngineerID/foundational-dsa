@@ -6,6 +6,7 @@ describe('BinaryHeap', () => {
     heap.insert(5);
     heap.insert(2);
     heap.insert(8);
+    expect(heap.size()).toBe(3);
     expect(heap.extractMin()).toBe(2);
     expect(heap.peek()).toBe(5);
   });
@@ -14,6 +15,7 @@ describe('BinaryHeap', () => {
     const heap = new BinaryHeap();
     heap.heapify([9, 4, 7, 1, 3]);
     expect(heap.peek()).toBe(1);
+    expect(heap.indexOf(1)).toBe(0);
     heap.decreaseKey(0, 0);
     expect(heap.extractMin()).toBe(0);
   });

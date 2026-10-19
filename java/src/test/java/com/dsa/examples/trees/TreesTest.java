@@ -17,6 +17,7 @@ class TreesTest {
         assertEquals("five", bst.search(5));
         assertEquals(List.of(2, 5, 8), bst.inOrder());
         assertEquals(Integer.valueOf(8), bst.successor(5));
+        assertEquals(Integer.valueOf(2), bst.predecessor(5));
         bst.delete(5);
         assertNull(bst.search(5));
     }
@@ -30,7 +31,10 @@ class TreesTest {
         var root = bst.getRoot();
         assertEquals(List.of(2, 4, 6), TreeTraversals.inOrderRecursive(root));
         assertEquals(List.of(4, 2, 6), TreeTraversals.preOrderRecursive(root));
+        assertEquals(List.of(2, 6, 4), TreeTraversals.postOrderRecursive(root));
         assertEquals(List.of(2, 4, 6), TreeTraversals.inOrderIterative(root));
+        assertEquals(List.of(4, 2, 6), TreeTraversals.preOrderIterative(root));
+        assertEquals(List.of(2, 6, 4), TreeTraversals.postOrderIterative(root));
         assertEquals(List.of(4, 2, 6), TreeTraversals.levelOrder(root));
     }
 

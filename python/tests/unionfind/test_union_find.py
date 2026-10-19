@@ -11,6 +11,7 @@ def test_union_and_connected():
     uf = UnionFind(5)
     uf.union(0, 1)
     uf.union(2, 3)
+    assert uf.find(0) == uf.find(1)
     assert uf.connected(0, 1) is True
     assert uf.count_components() == 3
     uf.union(1, 2)

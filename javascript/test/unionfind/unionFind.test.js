@@ -11,6 +11,7 @@ describe('UnionFind', () => {
     const uf = new UnionFind(5);
     uf.union(0, 1);
     uf.union(2, 3);
+    expect(uf.find(0)).toBe(uf.find(1));
     expect(uf.connected(0, 1)).toBe(true);
     expect(uf.countComponents()).toBe(3);
     uf.union(1, 2);

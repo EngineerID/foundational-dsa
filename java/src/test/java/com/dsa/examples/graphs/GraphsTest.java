@@ -14,6 +14,9 @@ class GraphsTest {
         g.addEdge(0, 1);
         g.addEdge(0, 2);
         g.addEdge(1, 3);
+        assertEquals(5, g.vertices());
+        assertFalse(g.isDirected());
+        assertFalse(g.isWeighted());
         int[] dist = BFS.distances(g, 0);
         assertEquals(0, dist[0]);
         assertEquals(2, dist[3]);
@@ -27,6 +30,7 @@ class GraphsTest {
         dag.addEdge(0, 2);
         dag.addEdge(1, 3);
         assertEquals(4, DFS.traverseRecursive(dag, 0).discovery().length);
+        assertEquals(4, DFS.traverseIterative(dag, 0).discovery().length);
         List<Integer> order = TopologicalSort.kahn(dag);
         assertEquals(4, order.size());
         assertEquals(0, order.get(0));
@@ -70,6 +74,7 @@ class GraphsTest {
         g.addEdge(2, 3, 3);
         g.addEdge(0, 3, 4);
         int kruskal = KruskalMST.totalWeight(g);
+        assertEquals(3, KruskalMST.mst(g).size());
         int prim = PrimMST.totalWeight(g);
         int boruvka = BoruvkaMST.totalWeight(g);
         assertEquals(6, kruskal);
