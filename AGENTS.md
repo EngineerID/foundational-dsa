@@ -35,7 +35,22 @@ bash .cursor/install.sh
 - `npm run check:parity`
 - `npm run matrix:check`
 
-**Full GitHub Actions parity** (lint, coverage report, matrix regeneration) is documented in [`docs/running-ci-locally.md`](docs/running-ci-locally.md). CI additionally runs `npm run lint`, `PYTEST_COV=1 npm run test:py`, `node tools/coverage-report.mjs`, and `npm run matrix` before `matrix:check`.
+**Full GitHub Actions parity** (lint, coverage, edge-theme scan, matrix regeneration):
+
+```bash
+npm run test:ci
+```
+
+Same via `make test-ci`. Step-by-step table: [`docs/running-ci-locally.md`](docs/running-ci-locally.md).
+
+Additional checks:
+
+```bash
+npm run lint
+npm run check:edge-themes
+```
+
+Optional local timing (not a CI gate): `npm run bench` (see `tools/micro-bench.mjs`).
 
 Per language:
 
@@ -45,25 +60,21 @@ npm run test:py
 npm run test:js
 ```
 
-Lint:
-
-```bash
-npm run lint
-```
-
 One algorithm in the languages that implement it:
 
 ```bash
 npm run demo -- binary-search
 ```
 
+Worked walkthroughs: [`docs/worked-examples.md`](docs/worked-examples.md).
+
 ## Layout
 
 - `java/` — Maven + JUnit 5 (`com.dsa.examples`)
 - `python/` — pytest package `dsa`
 - `javascript/` — Jest sources in `src/`, tests in `test/`
-- `tools/` — stub check, parity check, coverage matrix, demo runner, edge-case theme checker (`tools/edge-case-coverage.mjs`)
-- `docs/` — per-item notes, `docs/API.md`, and `docs/running-ci-locally.md`
+- `tools/` — stub check, parity check, coverage matrix, demo runner, edge-case theme checker (`tools/edge-case-coverage.mjs`, `npm run check:edge-themes`)
+- `docs/` — per-item notes, `docs/API.md`, `docs/worked-examples.md`, and `docs/running-ci-locally.md`
 - `reference/` — imported CS and math reference trees
 - `COVERAGE.md` — generated trilingual status (`npm run matrix` rewrites it; `npm run matrix:check` only checks)
 
@@ -72,6 +83,8 @@ npm run demo -- binary-search
 - `python/tests/catalog/test_edge_case_themes.py`
 - `javascript/test/catalog/edgeCaseThemes.test.js`
 - `java/src/test/java/com/dsa/examples/catalog/EdgeCaseThemesTest.java`
+
+**Shared regression JSON** (trilingual tests): `tools/kmp-goldens.json`, `tools/binary-search-goldens.json`.
 
 Module-level complexity and invariants are centralized in `tools/doc-spec.mjs` and mirrored in source docstrings.
 
