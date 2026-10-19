@@ -2,6 +2,12 @@
 
 Topic: **graphs** / `dijkstra`
 
+Single-source shortest paths on non-negative edge weights. shortestPaths: Time O(E log V); Space O(V).
+
+Edge weights must be **non-negative**; uses a min-heap / priority queue.
+
+**Worked example:** [Topic index](../../worked-examples.md#dijkstra) (summary) · run `npm run demo -- dijkstra` in all three languages.
+
 ## Implementations
 
 | Language | Source |
@@ -16,5 +22,9 @@ Topic: **graphs** / `dijkstra`
 |----------|------|
 | Python | [`test_dijkstra`](../../../python/tests/graphs/test_dijkstra.py) |
 | JavaScript | [`dijkstra.test.js`](../../../javascript/test/graphs/dijkstra.test.js) |
+| Java | [`GraphsTest.java`](../../../java/src/test/java/com/dsa/examples/graphs/GraphsTest.java) |
 
-Java tests run via Maven in `java/src/test/java/com/dsa/examples/graphs/`.
+**Property-style checks:** Java [`PropertyGraphsTest`](../../../java/src/test/java/com/dsa/examples/property/PropertyGraphsTest.java); Python [`test_property_graphs`](../../../python/tests/test_property_graphs.py); JavaScript [`property/graphs.test.js`](../../../javascript/test/property/graphs.test.js).
+
+
+Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/graphs/`.
