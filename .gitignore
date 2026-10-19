@@ -55,6 +55,8 @@ repomix.config.json
 .cursor/*
 !.cursor/environment.json
 !.cursor/install.sh
+!.cursor/rules/
+!.cursor/rules/ci.mdc
 .cursorrules
 .cursorignore
 .cursorindexingignore

@@ -99,7 +99,7 @@ Topic ids are the first column of [COVERAGE.md](COVERAGE.md), such as `dijkstra`
 
 After adding a topic, regenerate the matrix with `npm run matrix` (or `make matrix`). `npm run matrix:check` only verifies; it does not rewrite the file.
 
-Continuous integration runs the same steps on every push and pull request (see [`.github/workflows/ci.yml`](.github/workflows/ci.yml)).
+Continuous integration uses a [CI-minutes policy](docs/ci.md): push to `main` and pull requests (draft PRs skip heavy work until marked ready). See [`.github/workflows/ci.yml`](.github/workflows/ci.yml) and [docs/running-ci-locally.md](docs/running-ci-locally.md).
 
 ## Topics (41)
 

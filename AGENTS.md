@@ -48,6 +48,7 @@ Additional checks:
 ```bash
 npm run lint
 npm run check:edge-themes
+npm run check:ci-policy
 ```
 
 Optional local timing (not a CI gate): `npm run bench` (see `tools/micro-bench.mjs`).
@@ -87,6 +88,25 @@ Worked walkthroughs: [`docs/worked-examples.md`](docs/worked-examples.md).
 **Shared regression JSON** (trilingual tests): `tools/kmp-goldens.json`, `tools/binary-search-goldens.json`.
 
 Module-level complexity and invariants are centralized in `tools/doc-spec.mjs` and mirrored in source docstrings.
+
+## CI
+
+GitHub Actions workflow [`ci`](.github/workflows/ci.yml) uses an EngineerID **CI-minutes policy**:
+
+- Push triggers only on `main`; pull requests use `opened`, `synchronize`, `reopened`, and `ready_for_review`.
+- Jobs: **`changes`** (paths-filter + draft gate → `run_heavy`), **`ci-policy`** (actionlint + `scripts/ci-policy.mjs`), **`build-test`** (required check; heavy steps gated by `RUN_HEAVY`).
+- Draft PRs and docs-only diffs skip heavy work but **`build-test` still succeeds**.
+
+Policy docs: [`docs/ci.md`](docs/ci.md). Cursor rule: [`.cursor/rules/ci.mdc`](.cursor/rules/ci.mdc).
+
+Validate workflow policy locally:
+
+```bash
+node scripts/ci-policy.mjs
+node --test scripts/ci-policy.test.mjs
+```
+
+Full CI parity: `npm run test:ci` (see [`docs/running-ci-locally.md`](docs/running-ci-locally.md)).
 
 ## Secrets
 
