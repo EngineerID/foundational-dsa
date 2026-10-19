@@ -116,6 +116,8 @@ export function formatEdgeCaseMarkdown(gaps) {
     '',
     'Each item\'s dedicated tests should cover: empty, single-element, duplicates, large inputs, invalid arguments.',
     '',
+    '**Catalog conventions:** KMP `search(text, pattern)` — empty `pattern` returns `0` (vacuous match at index 0, same as Python `str.find`); empty `text` with non-empty `pattern` returns `-1`.',
+    '',
   ];
   if (!gaps.length) {
     lines.push('**Edge themes:** all five covered per item/language ✅', '');

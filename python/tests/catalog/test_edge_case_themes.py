@@ -1,4 +1,9 @@
-"""Standard edge themes (empty, single, duplicate, large, invalid) across the catalog."""
+"""Standard edge themes (empty, single, duplicate, large, invalid) across the catalog.
+
+Conventions exercised here (not generic across all APIs):
+- KMP ``search(text, pattern)``: empty ``pattern`` returns ``0`` (vacuous match at index 0),
+  matching Python ``str.find``; empty ``text`` with non-empty ``pattern`` returns ``-1``.
+"""
 
 import pytest
 
@@ -123,10 +128,7 @@ def test_kmp_edge_themes():
     assert kmp.search("a", "a") == 0
     assert kmp.search("aa", "a") == 0
     assert kmp.search("a" * LARGE_N, "a") == 0
-
-@pytest.mark.xfail(reason="empty pattern currently matches at index 0; do not change algorithm")
-def test_kmp_empty_pattern_invalid():
-    assert kmp.search("abc", "") == -1
+    assert kmp.search("abc", "") == 0
 
 
 

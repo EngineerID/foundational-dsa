@@ -1,3 +1,4 @@
+/** Cross-item edge themes; KMP empty pattern returns 0 (vacuous match, like String.indexOf('')). */
 const LARGE_N = 256;
 
 const { indexOf } = require('../../src/searching/linearSearch');
