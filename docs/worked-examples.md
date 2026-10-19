@@ -47,6 +47,8 @@ Scan highlights:
 
 ## Try it locally
 
+Run the demo runner (all three languages by default):
+
 ```bash
 npm run demo -- binary-search
 npm run demo -- merge-sort
@@ -54,3 +56,5 @@ npm run demo -- kmp
 ```
 
 Optional language filter: `npm run demo -- kmp python`.
+
+See also [`docs/running-ci-locally.md`](running-ci-locally.md) and [`AGENTS.md`](../AGENTS.md) for full verification commands.
