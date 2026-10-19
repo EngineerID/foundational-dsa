@@ -11,6 +11,7 @@ import { fileURLToPath } from 'node:url';
 
 import { findApiTestGaps, formatGapsMarkdown } from './api-test-coverage.mjs';
 import { formatLineCoverageMarkdown, getLineCoverageSummary } from './coverage-report.mjs';
+import { findEdgeCaseGaps, formatEdgeCaseMarkdown } from './edge-case-coverage.mjs';
 import { ITEMS } from './items.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -133,7 +134,8 @@ const rows = ITEMS.map((item) => {
 
 const apiGaps = findApiTestGaps(ITEMS);
 const lineSummary = getLineCoverageSummary();
-const md = `${generateMarkdown(rows)}${formatGapsMarkdown(apiGaps)}${formatLineCoverageMarkdown(lineSummary)}`;
+const edgeGaps = findEdgeCaseGaps();
+const md = `${generateMarkdown(rows)}${formatGapsMarkdown(apiGaps)}${formatEdgeCaseMarkdown(edgeGaps)}${formatLineCoverageMarkdown(lineSummary)}`;
 fs.writeFileSync(path.join(ROOT, 'COVERAGE.md'), md);
 console.log('Wrote COVERAGE.md');
 
@@ -163,6 +165,11 @@ if (checkMode || strictMode) {
   if (apiGaps.length) {
     console.error(`API test coverage gaps (${apiGaps.length}):`);
     apiGaps.forEach((g) => console.error(`  - ${g.itemId}/${g.language}: ${g.symbol}`));
+    failed = true;
+  }
+  if (edgeGaps.length) {
+    console.error(`Edge-case theme gaps (${edgeGaps.length}):`);
+    edgeGaps.forEach((g) => console.error(`  - ${g.itemId}/${g.language}: ${g.theme}`));
     failed = true;
   }
   if (failed) process.exit(1);
