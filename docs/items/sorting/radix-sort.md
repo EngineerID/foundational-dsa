@@ -2,6 +2,12 @@
 
 Topic: **sorting** / `radix-sort`
 
+LSD radix sort for non-negative integers using counting sort per digit. sort: Time O(d * n); Space O(n).
+
+**Non-negative integers**; behavior follows digit passes (see implementation).
+
+**Worked example:** [Topic index](../../worked-examples.md#radix-sort) (summary) · run `npm run demo -- radix-sort` in all three languages.
+
 ## Implementations
 
 | Language | Source |
@@ -16,5 +22,9 @@ Topic: **sorting** / `radix-sort`
 |----------|------|
 | Python | [`test_radix_sort`](../../../python/tests/sorting/test_radix_sort.py) |
 | JavaScript | [`radixSort.test.js`](../../../javascript/test/sorting/radixSort.test.js) |
+| Java | [`SortingTest.java`](../../../java/src/test/java/com/dsa/examples/sorting/SortingTest.java) |
 
-Java tests run via Maven in `java/src/test/java/com/dsa/examples/sorting/`.
+**Property-style checks:** Java [`PropertySortsTest`](../../../java/src/test/java/com/dsa/examples/property/PropertySortsTest.java); Python [`test_property_sorts`](../../../python/tests/test_property_sorts.py); JavaScript [`property/sorts.test.js`](../../../javascript/test/property/sorts.test.js).
+
+
+Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/sorting/`.
