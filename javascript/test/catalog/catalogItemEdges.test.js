@@ -1,0 +1,200 @@
+const LARGE_N = 256;
+
+const { firstOccurrence, lastOccurrence, search } = require('../../src/searching/binarySearch');
+const { sort: selectionSort } = require('../../src/sorting/selectionSort');
+const { sort: insertionSort } = require('../../src/sorting/insertionSort');
+const { sort: heapSort } = require('../../src/sorting/heapSort');
+const { sort: radixSort } = require('../../src/sorting/radixSort');
+const { SinglyLinkedList } = require('../../src/linear/singlyLinkedList');
+const { DoublyLinkedList } = require('../../src/linear/doublyLinkedList');
+const { Queue } = require('../../src/linear/queue');
+const { Deque } = require('../../src/linear/deque');
+const { PriorityQueue } = require('../../src/heaps/priorityQueue');
+const { BST } = require('../../src/trees/bst');
+const { inOrderRecursive } = require('../../src/trees/treeTraversals');
+const { AVLTree } = require('../../src/trees/avlTree');
+const { OrderStatisticTree } = require('../../src/trees/orderStatisticTree');
+const { IntervalTree, Interval } = require('../../src/trees/intervalTree');
+const { BTree } = require('../../src/trees/bTree');
+const { Trie } = require('../../src/trees/trie');
+const { HashTableChaining } = require('../../src/hashing/separateChaining');
+const { HashTableOpenAddressing } = require('../../src/hashing/openAddressing');
+const { BloomFilter } = require('../../src/hashing/bloomFilter');
+const { Graph } = require('../../src/graphs/graph');
+const { traverseRecursive, traverseIterative } = require('../../src/graphs/dfs');
+const { kahn } = require('../../src/graphs/topologicalSort');
+const { shortestPaths: dijkstra } = require('../../src/graphs/dijkstra');
+const { shortestPaths: bellmanFord } = require('../../src/graphs/bellmanFord');
+const { allPairsShortestPaths } = require('../../src/graphs/floydWarshall');
+const { totalWeight: kruskalWeight } = require('../../src/graphs/kruskalMst');
+const { totalWeight: primWeight } = require('../../src/graphs/primMst');
+const { totalWeight: boruvkaWeight } = require('../../src/graphs/boruvkaMst');
+const { distances } = require('../../src/graphs/bfs');
+
+function sortBattery(sortFn) {
+  const empty = [];
+  sortFn(empty);
+  expect(empty).toEqual([]);
+  const single = [7];
+  sortFn(single);
+  expect(single).toEqual([7]);
+  const dup = [2, 2, 1];
+  sortFn(dup);
+  expect(dup).toEqual([1, 2, 2]);
+  const large = Array.from({ length: LARGE_N }, (_, i) => LARGE_N - i);
+  sortFn(large);
+  expect(large).toEqual(Array.from({ length: LARGE_N }, (_, i) => i + 1));
+}
+
+describe('catalog item edges', () => {
+  test('remaining sorts', () => {
+    sortBattery(selectionSort);
+    sortBattery(insertionSort);
+    sortBattery(heapSort);
+    const radix = [170, 45, 75, 90, 802, 24, 2, 66];
+    radixSort(radix);
+    expect(radix).toEqual([2, 24, 45, 66, 75, 90, 170, 802]);
+  });
+
+  test('binary search boundaries', () => {
+    expect(firstOccurrence([], 1)).toBe(-1);
+    expect(firstOccurrence([2], 2)).toBe(0);
+    expect(firstOccurrence([1, 2, 2, 3], 2)).toBe(1);
+    expect(lastOccurrence([1, 2, 2, 3], 2)).toBe(2);
+    expect(search([3, 1], 1)).toBe(-1);
+  });
+
+  test('linear structures', () => {
+    const sll = new SinglyLinkedList();
+    expect(sll.size()).toBe(0);
+    sll.addFirst(1);
+    sll.addLast(1);
+    for (let i = 0; i < LARGE_N; i += 1) sll.addLast(i);
+    expect(() => sll.get(-1)).toThrow();
+
+    const dll = new DoublyLinkedList();
+    dll.addFirst(1);
+    dll.addLast(2);
+    expect(dll.remove(0)).toBe(1);
+    for (let i = 0; i < LARGE_N; i += 1) dll.addLast(i);
+    expect(() => dll.get(dll.size())).toThrow();
+
+    const q = new Queue();
+    q.enqueue(1);
+    q.enqueue(1);
+    expect(q.dequeue()).toBe(1);
+    for (let i = 0; i < LARGE_N; i += 1) q.enqueue(i);
+    expect(() => new Queue().dequeue()).toThrow();
+
+    const dq = new Deque();
+    dq.addLast(1);
+    dq.addFirst(2);
+    expect(dq.removeFirst()).toBe(2);
+    for (let i = 0; i < LARGE_N; i += 1) dq.addLast(i);
+    expect(() => new Deque().removeLast()).toThrow();
+  });
+
+  test('priority queue', () => {
+    const pq = new PriorityQueue();
+    pq.insert(3);
+    pq.insert(1);
+    expect(pq.peek()).toBe(1);
+    pq.insert(1);
+    expect(pq.extractMin()).toBe(1);
+    for (let i = 0; i < LARGE_N; i += 1) pq.insert(i);
+    expect(() => new PriorityQueue().extractMin()).toThrow();
+  });
+
+  test('trees and hashing', () => {
+    const tree = new BST();
+    expect(tree.search(1)).toBeNull();
+    tree.insert(5, 'v');
+    tree.insert(5, 'dup');
+    expect(tree.search(5)).toBe('dup');
+    for (let i = 0; i < 16; i += 1) tree.insert(i, 'v');
+    expect(inOrderRecursive(tree.getRoot()).length).toBeGreaterThan(0);
+
+    const avl = new AVLTree();
+    avl.insert(10, 'a');
+    avl.insert(5, 'dup');
+    expect(avl.search(5)).toBe('dup');
+
+    const ost = new OrderStatisticTree();
+    ost.insert(3, 'x');
+    expect(ost.select(1)).toBe(3);
+    expect(() => ost.select(0)).toThrow();
+
+    const it = new IntervalTree();
+    it.insert(new Interval(0, 10));
+    expect(it.overlapSearch(new Interval(5, 5)).length).toBeGreaterThan(0);
+
+    const bt = new BTree(2);
+    bt.insert(1);
+    expect(bt.search(1)).toBe(true);
+
+    const trie = new Trie();
+    expect(trie.search('')).toBe(false);
+    trie.insert('a');
+    const longWord = 'a'.repeat(8);
+    trie.insert(longWord);
+    expect(trie.search(longWord)).toBe(true);
+
+    const ht = new HashTableChaining();
+    ht.put('a', 1);
+    ht.put('a', 2);
+    expect(ht.get('a')).toBe(2);
+
+    const oa = new HashTableOpenAddressing();
+    oa.put('k', 1);
+    expect(oa.get('k')).toBe(1);
+
+    const bf = new BloomFilter(10, 0.01);
+    expect(bf.mightContain('missing')).toBe(false);
+    bf.add('x');
+    expect(bf.mightContain('x')).toBe(true);
+  });
+
+  test('graph algorithms', () => {
+    const g0 = new Graph(0, false, false);
+    expect(() => traverseRecursive(g0, 0)).toThrow();
+
+    const g1 = new Graph(1, false, false);
+    expect(traverseIterative(g1, 0).discovery.length).toBe(1);
+
+    const dag = new Graph(3, true, false);
+    dag.addEdge(0, 1);
+    dag.addEdge(1, 2);
+    expect(kahn(dag)).toEqual([0, 1, 2]);
+
+    const cyclic = new Graph(2, true, false);
+    cyclic.addEdge(0, 1);
+    cyclic.addEdge(1, 0);
+    expect(kahn(cyclic)).toEqual([]);
+
+    const wg = new Graph(3, false, true);
+    wg.addEdge(0, 1, 1);
+    wg.addEdge(1, 2, 2);
+    expect(dijkstra(wg, 0)[2]).toBe(3);
+
+    const neg = new Graph(2, true, true);
+    neg.addEdge(0, 1, -1);
+    const bf = bellmanFord(neg, 0);
+    expect(bf.hasNegativeCycle).toBe(false);
+    expect(bf.distances[1]).toBe(-1);
+
+    expect(allPairsShortestPaths(wg)[0][2]).toBe(3);
+
+    const mstG = new Graph(3, false, true);
+    mstG.addEdge(0, 1, 1);
+    mstG.addEdge(1, 2, 2);
+    mstG.addEdge(0, 2, 4);
+    expect(kruskalWeight(mstG)).toBe(3);
+    expect(primWeight(mstG)).toBe(3);
+    expect(boruvkaWeight(mstG)).toBe(3);
+
+    const gl = new Graph(LARGE_N, false, false);
+    for (let i = 0; i < LARGE_N - 1; i += 1) gl.addEdge(i, i + 1);
+    expect(distances(gl, 0)[LARGE_N - 1]).toBe(LARGE_N - 1);
+    expect(() => distances(g1, 5)).toThrow();
+  });
+});

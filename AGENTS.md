@@ -86,7 +86,9 @@ Worked walkthroughs: [`docs/worked-examples.md`](docs/worked-examples.md).
 - `javascript/test/catalog/edgeCaseThemes.test.js`
 - `java/src/test/java/com/dsa/examples/catalog/EdgeCaseThemesTest.java`
 
-**Shared regression JSON** (trilingual tests): `tools/kmp-goldens.json`, `tools/binary-search-goldens.json`.
+**Shared regression JSON** (trilingual tests): `tools/kmp-goldens.json`, `tools/binary-search-goldens.json`, `tools/binary-search-boundary-goldens.json` (first/last occurrence).
+
+**Catalog edge themes** (cross-item): `python/tests/catalog/`, `javascript/test/catalog/`, `java/.../catalog/`; `npm run check:catalog-items` verifies all 41 topic ids are referenced.
 
 Module-level complexity and invariants are centralized in `tools/doc-spec.mjs` and mirrored in source docstrings.
 

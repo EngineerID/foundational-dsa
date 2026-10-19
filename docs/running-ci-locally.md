@@ -43,6 +43,10 @@ When `run_heavy` is true, run these from the repository root in order:
 | Regenerate matrix | `npm run matrix` |
 | Upload artifact | *(CI only)* writes `coverage/` and uploads `line-coverage-report` |
 | Strict matrix check | `npm run matrix:check` |
+| Inventory freshness | `npm run inventory:check` |
+| README complexity vs doc-spec | `npm run check:readme-complexity` |
+| Shared golden fixture parity | `npm run check:golden-parity` |
+| Catalog mentions all 41 items | `npm run check:catalog-items` |
 
 One-shot equivalent (matches CI except artifact upload):
 
@@ -56,7 +60,7 @@ Or via Make:
 make test-ci
 ```
 
-The default `npm test` / `make test` sequence matches CI except it does **not** run `npm run lint`, `node tools/coverage-report.mjs`, or `npm run matrix` (only `matrix:check`).
+The default `npm test` / `make test` sequence matches CI except it does **not** run `npm run lint`, policy/golden/catalog checks, `node tools/coverage-report.mjs`, or `npm run matrix` (only `matrix:check`). `test:ci` runs line-coverage aggregation and writes `COVERAGE.md` line-coverage rows when `CI=true` (Jest) and `PYTEST_COV=1` (pytest).
 
 ## Secret scan (`gitleaks`)
 

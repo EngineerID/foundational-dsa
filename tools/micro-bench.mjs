@@ -10,7 +10,7 @@ const { sort: bubbleSort } = require('../javascript/src/sorting/bubbleSort.js');
 const { sort: mergeSort } = require('../javascript/src/sorting/mergeSort.js');
 
 function bench(name, fn, iterations = 50) {
-  const input = Array.from({ length: 200 }, (_, i) => (i * 17 + 3) % 97);
+  const input = Array.from({ length: 500 }, (_, i) => (i * 17 + 3) % 97);
   const warmup = () => fn([...input]);
   warmup();
   const start = performance.now();
@@ -22,11 +22,11 @@ function bench(name, fn, iterations = 50) {
 }
 
 const results = [
-  bench('bubble-sort n=200', (arr) => {
+  bench('bubble-sort n=500', (arr) => {
     bubbleSort(arr);
     return arr;
   }),
-  bench('merge-sort n=200', (arr) => mergeSort([...arr])),
+  bench('merge-sort n=500', (arr) => mergeSort([...arr])),
 ];
 
 for (const row of results) {
