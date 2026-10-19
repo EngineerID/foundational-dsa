@@ -44,9 +44,10 @@ When `run_heavy` is true, run these from the repository root in order:
 | Upload artifact | *(CI only)* writes `coverage/` and uploads `line-coverage-report` |
 | Strict matrix check | `npm run matrix:check` |
 | Inventory freshness | `npm run inventory:check` |
+| API doc freshness | `npm run api:check` |
 | README complexity vs doc-spec | `npm run check:readme-complexity` |
 | Shared golden fixture parity | `npm run check:golden-parity` |
-| Catalog mentions all 41 items | `npm run check:catalog-items` |
+| Catalog mentions all 72 items | `npm run check:catalog-items` |
 
 One-shot equivalent (matches CI except artifact upload):
 
