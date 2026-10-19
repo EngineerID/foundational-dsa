@@ -36,6 +36,7 @@ foundational-dsa/
 | [`reference/cs-reference/`](reference/cs-reference/) | Computing-topics outline, merged from CS-Reference. |
 | [`reference/math-reference/`](reference/math-reference/) | Math-topics outline, merged from Math-Reference. |
 | [`COVERAGE.md`](COVERAGE.md) | Generated matrix. Do not edit by hand. |
+| [`INVENTORY.md`](INVENTORY.md) | Topic index with source paths (`npm run inventory`). |
 
 `reference/` is study notes only. The runnable code is under `java/`, `python/`, and `javascript/`.
 

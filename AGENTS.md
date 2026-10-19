@@ -78,6 +78,7 @@ Worked walkthroughs: [`docs/worked-examples.md`](docs/worked-examples.md).
 - `docs/` — per-item notes, `docs/API.md`, `docs/worked-examples.md`, and `docs/running-ci-locally.md`
 - `reference/` — imported CS and math reference trees
 - `COVERAGE.md` — generated trilingual status (`npm run matrix` rewrites it; `npm run matrix:check` only checks)
+- `INVENTORY.md` — generated topic index with source paths (`npm run inventory`; `inventory:check` in `test:ci`)
 
 **Edge-case catalog tests** (shared themes across topics) live at:
 
