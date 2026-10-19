@@ -3,7 +3,11 @@ const { sort: bubbleSort } = require('../../src/sorting/bubbleSort');
 const { sort: countingSort } = require('../../src/sorting/countingSort');
 const { sort: mergeSort } = require('../../src/sorting/mergeSort');
 const { indexOf } = require('../../src/searching/linearSearch');
-const { search: binarySearch } = require('../../src/searching/binarySearch');
+const {
+  search: binarySearch,
+  firstOccurrence,
+  lastOccurrence,
+} = require('../../src/searching/binarySearch');
 const { kthSmallest } = require('../../src/searching/quickSelect');
 const { Stack } = require('../../src/linear/stack');
 
@@ -33,6 +37,39 @@ describe('property search/sort/core structures', () => {
       fc.property(fc.array(fc.integer({ min: 0, max: 40 }), { maxLength: 25 }), (xs) => {
         expect(mergeSort([...xs])).toEqual([...xs].sort((a, b) => a - b));
       }),
+    );
+  });
+
+  test('binary search first and last occurrence on sorted array', () => {
+    fc.assert(
+      fc.property(
+        fc.array(fc.integer({ min: -10, max: 10 }), { maxLength: 20 }),
+        fc.integer({ min: -10, max: 10 }),
+        (xs, key) => {
+          const arr = [...xs].sort((a, b) => a - b);
+          const first = firstOccurrence(arr, key);
+          const last = lastOccurrence(arr, key);
+          if (!arr.includes(key)) {
+            expect(first).toBe(-1);
+            expect(last).toBe(-1);
+          } else {
+            expect(first).toBeGreaterThanOrEqual(0);
+            expect(last).toBeGreaterThanOrEqual(first);
+            expect(arr[first]).toBe(key);
+            expect(arr[last]).toBe(key);
+            for (let i = 0; i < arr.length; i++) {
+              if (arr[i] === key) {
+                expect(i).toBeGreaterThanOrEqual(first);
+                expect(i).toBeLessThanOrEqual(last);
+              } else if (i < first) {
+                expect(arr[i]).toBeLessThan(key);
+              } else if (i > last) {
+                expect(arr[i]).toBeGreaterThan(key);
+              }
+            }
+          }
+        },
+      ),
     );
   });
 
