@@ -5,9 +5,17 @@ export default [
   {
     ignores: ['**/node_modules/**', 'java/target/**', 'coverage/**', 'reference/**'],
   },
+  {
+    files: ['eslint.config.js'],
+    languageOptions: {
+      ecmaVersion: 2022,
+      sourceType: 'module',
+      globals: globals.node,
+    },
+  },
   js.configs.recommended,
   {
-    files: ['javascript/**/*.js', 'tools/**/*.mjs'],
+    files: ['javascript/**/*.js', 'tools/**/*.mjs', 'scripts/**/*.mjs'],
     languageOptions: {
       ecmaVersion: 2022,
       sourceType: 'commonjs',
@@ -21,7 +29,7 @@ export default [
     },
   },
   {
-    files: ['tools/**/*.mjs'],
+    files: ['tools/**/*.mjs', 'scripts/**/*.mjs'],
     languageOptions: {
       sourceType: 'module',
     },
