@@ -4,7 +4,7 @@
   "description": "41 data structures and algorithms in Java, Python, and JavaScript",
   "scripts": {
     "test": "npm run check:stubs && npm run test:java && npm run test:py && npm run test:js && npm run check:parity && npm run matrix:check",
-    "test:ci": "npm run check:ci-policy && npm run check:readme-complexity && npm run check:golden-parity && npm run check:catalog-items && npm run lint && npm run check:stubs && npm run test:java && PYTEST_COV=1 npm run test:py && npm run test:js && npm run check:parity && npm run check:edge-themes && node tools/coverage-report.mjs && npm run matrix && npm run matrix:check && npm run inventory:check",
+    "test:ci": "npm run check:ci-policy && npm run check:readme-complexity && npm run check:golden-parity && npm run check:topic-goldens && npm run check:catalog-items && npm run check:types-py && npm run check:types-js && npm run lint && npm run check:stubs && npm run test:java && PYTEST_COV=1 npm run test:py && npm run test:js && npm run check:parity && npm run check:edge-themes && node tools/coverage-report.mjs && npm run matrix && npm run matrix:check && npm run inventory:check",
     "test:java": "node tools/run-java-test.mjs",
     "test:py": "node tools/run-py-test.mjs",
     "test:js": "jest --config javascript/jest.config.js",
@@ -19,7 +19,11 @@
     "check:ci-policy": "node scripts/ci-policy.mjs && node --test scripts/ci-policy.test.mjs",
     "check:readme-complexity": "node tools/check-readme-complexity.mjs",
     "check:golden-parity": "node tools/check-golden-parity.mjs",
+    "seed:goldens": "node tools/seed-goldens.mjs",
+    "check:topic-goldens": "node tools/check-topic-goldens.mjs",
     "check:catalog-items": "node tools/check-catalog-items.mjs",
+    "check:types-py": "python3 -m mypy python/dsa/dp python/dsa/trees/segment_tree.py python/dsa/trees/fenwick_tree.py python/dsa/strings/z_algorithm.py python/dsa/strings/rabin_karp.py",
+    "check:types-js": "tsc -p jsconfig.json --noEmit",
     "bench": "node tools/micro-bench.mjs",
     "coverage:report": "node tools/coverage-report.mjs --collect && node tools/matrix.mjs",
     "lint": "eslint . && ruff check python && ruff format --check python",
@@ -33,6 +37,7 @@
     "eslint": "^9.22.0",
     "fast-check": "^3.22.0",
     "globals": "^16.0.0",
-    "jest": "^30.0.4"
+    "jest": "^30.0.4",
+    "typescript": "^5.8.3"
   }
 }

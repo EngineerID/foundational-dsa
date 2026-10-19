@@ -2,10 +2,6 @@
 
 Topic: **heaps** / `priority-queue`
 
-Min-priority queue for scheduling by priority. insert/extractMin/peek: Time O(log n); Space O(n).
-
-**Worked example:** [Topic index](../../worked-examples.md#priority-queue) (summary) · run `npm run demo -- priority-queue` in all three languages.
-
 ## Implementations
 
 | Language | Source |
@@ -20,9 +16,5 @@ Min-priority queue for scheduling by priority. insert/extractMin/peek: Time O(lo
 |----------|------|
 | Python | [`test_priority_queue`](../../../python/tests/heaps/test_priority_queue.py) |
 | JavaScript | [`priorityQueue.test.js`](../../../javascript/test/heaps/priorityQueue.test.js) |
-| Java | [`HeapTest.java`](../../../java/src/test/java/com/dsa/examples/heaps/HeapTest.java) |
 
-**Property-style checks:** Java [`PropertyHeapsTest`](../../../java/src/test/java/com/dsa/examples/property/PropertyHeapsTest.java); Python [`test_property_heaps`](../../../python/tests/test_property_heaps.py); JavaScript [`property/heaps.test.js`](../../../javascript/test/property/heaps.test.js).
-
-
-Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/heaps/`.
+Java tests run via Maven in `java/src/test/java/com/dsa/examples/heaps/`.

@@ -3,7 +3,7 @@
 [![CI](https://github.com/EngineerID/foundational-dsa/actions/workflows/ci.yml/badge.svg)](https://github.com/EngineerID/foundational-dsa/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](./LICENSE)
 
-**foundational-dsa** is a trilingual reference library: **41 classic data structures and algorithms**, each with matching implementations in **Java**, **Python**, and **JavaScript** (123 implementations in total). Every topic ships with tests, a short doc page under [`docs/items/`](docs/items/), and entries in [`docs/API.md`](docs/API.md) so you can compare APIs and idioms across languages.
+**foundational-dsa** is a trilingual reference library: **50 classic data structures and algorithms**, each with matching implementations in **Java**, **Python**, and **JavaScript** (150 implementations in total). Every topic ships with tests, a short doc page under [`docs/items/`](docs/items/), and entries in [`docs/API.md`](docs/API.md) so you can compare APIs and idioms across languages.
 
 Use it to study implementations side by side, prepare for interviews, or teach DSA with runnable code rather than pseudocode. Step-by-step walkthroughs for core algorithms are in [`docs/worked-examples.md`](docs/worked-examples.md).
 
@@ -102,16 +102,17 @@ After adding a topic, regenerate the matrix with `npm run matrix` (or `make matr
 
 Continuous integration uses a [CI-minutes policy](docs/ci.md): push to `main` and pull requests (draft PRs skip heavy work until marked ready). See [`.github/workflows/ci.yml`](.github/workflows/ci.yml) and [docs/running-ci-locally.md](docs/running-ci-locally.md).
 
-## Topics (41)
+## Topics (50)
 
 | Area | Topics |
 |------|--------|
 | Searching | linear-search, binary-search, quick-select |
 | Sorting | bubble-sort, selection-sort, insertion-sort, merge-sort, quick-sort, heapsort, counting-sort, radix-sort |
-| Strings | kmp |
+| Strings | kmp, z-algorithm, rabin-karp |
+| Dynamic programming | lis, lcs, knapsack, edit-distance, coin-change |
 | Linear | dynamic-array, singly-linked-list, doubly-linked-list, stack, queue, deque |
 | Heaps | binary-heap, priority-queue |
-| Trees | bst, tree-traversals, avl-tree, order-statistic-tree, interval-tree, trie, b-tree |
+| Trees | bst, tree-traversals, avl-tree, order-statistic-tree, interval-tree, trie, b-tree, segment-tree, fenwick-tree |
 | Hashing | separate-chaining, open-addressing, bloom-filter |
 | Union-Find | union-find |
 | Graphs | graph, bfs, dfs, topological-sort, dijkstra, bellman-ford, floyd-warshall, kruskal-mst, prim-mst, boruvka-mst |
@@ -163,6 +164,15 @@ Typical time and auxiliary space for the main entry point of each topic (see mod
 | graphs | kruskal-mst | O(E log E) | O(V) |
 | graphs | prim-mst | O(E log V) | O(V) |
 | graphs | boruvka-mst | O(E log V) | O(V) |
+| trees | segment-tree | O(log n) | O(n) |
+| trees | fenwick-tree | O(log n) | O(n) |
+| strings | z-algorithm | O(n + m) | O(n) |
+| strings | rabin-karp | O(n + m) avg | O(1) |
+| dp | lis | O(n log n) | O(n) |
+| dp | lcs | O(nm) | O(min(n,m)) |
+| dp | knapsack | O(n·W) | O(W) |
+| dp | edit-distance | O(nm) | O(min(n,m)) |
+| dp | coin-change | O(n·amount) | O(amount) |
 
 For step-by-step walkthroughs of binary search, merge sort, and KMP, see [docs/worked-examples.md](docs/worked-examples.md).
 
