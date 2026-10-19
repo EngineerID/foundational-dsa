@@ -11,6 +11,15 @@ import com.dsa.examples.dp.EditDistance;
 import com.dsa.examples.dp.Knapsack01;
 import com.dsa.examples.dp.LCS;
 import com.dsa.examples.dp.LIS;
+import com.dsa.examples.dp.LongestPalindromicSubsequence;
+import com.dsa.examples.dp.MatrixChain;
+import com.dsa.examples.dp.PartitionEqualSubset;
+import com.dsa.examples.dp.RodCutting;
+import com.dsa.examples.dp.TSPBitmask;
+import com.dsa.examples.searching.ReservoirSampling;
+import com.dsa.examples.strings.AhoCorasick;
+import com.dsa.examples.strings.Manacher;
+import com.dsa.examples.strings.SuffixArray;
 import com.dsa.examples.searching.BinarySearch;
 import com.dsa.examples.strings.RabinKarp;
 import com.dsa.examples.strings.ZAlgorithm;
@@ -238,6 +247,49 @@ class CatalogItemEdgesTest {
         }
         assertEquals(LARGE_N - 1, BFS.distances(gl, 0)[LARGE_N - 1]);
         assertThrows(IndexOutOfBoundsException.class, () -> Dijkstra.shortestPaths(wg, 99));
+    }
+
+    @Test
+    void wave2CatalogItemEdges() {
+        Graph g = new Graph(2, true, true);
+        g.addEdge(0, 1, 1);
+        assertEquals(1, AStar.shortestPathLength(g, 0, 1));
+        Graph sccG = new Graph(3, true, false);
+        sccG.addEdge(0, 1);
+        sccG.addEdge(1, 2);
+        sccG.addEdge(2, 0);
+        assertEquals(3, TarjanSCC.stronglyConnectedComponents(sccG).get(0).size());
+        assertEquals(3, Kosaraju.stronglyConnectedComponents(sccG).get(0).size());
+        Graph bi = new Graph(2, false, false);
+        bi.addEdge(0, 1);
+        assertTrue(BipartiteCheck.isBipartite(bi));
+        Graph line = new Graph(3, false, false);
+        line.addEdge(0, 1);
+        line.addEdge(1, 2);
+        assertEquals(1, ArticulationBridges.find(line).articulationPoints().get(0));
+        assertEquals(5, EdmondsKarp.maxFlow(2, new int[][] {{0, 1, 5}}, 0, 1));
+        assertTrue(Hungarian.minCost(new int[][] {{1, 2}, {3, 4}}) >= 5);
+        RedBlackTree rb = new RedBlackTree();
+        rb.insert(1, 1);
+        assertEquals(1, rb.search(1));
+        assertEquals(0, new LCABinaryLifting(new int[] {0, 0}).query(1, 0));
+        Treap tr = new Treap(0);
+        tr.insert(2, 2);
+        assertEquals(2, tr.search(2));
+        assertEquals(1, new SparseTable(new int[] {2, 1}).query(0, 1));
+        assertEquals(2, Manacher.longestPalindromeLength("aa"));
+        assertEquals(0, SuffixArray.build("ab")[0]);
+        assertTrue(AhoCorasick.search("aba", new String[] {"a"}).contains(0));
+        assertEquals(6, MatrixChain.minMultiplications(new int[] {1, 2, 3}));
+        assertEquals(1, LongestPalindromicSubsequence.length("a"));
+        assertTrue(PartitionEqualSubset.canPartition(new int[] {2, 2}));
+        assertEquals(2, RodCutting.maxProfit(new int[] {2}, 1));
+        assertEquals(2, TSPBitmask.minCost(new int[][] {{0, 1}, {1, 0}}));
+        assertEquals(2, ReservoirSampling.sample(new int[] {1, 2, 3}, 2, 1).size());
+        assertEquals(2, SlidingWindowMaximum.maxSlidingWindow(new int[] {1, 2}, 1).size());
+        LRUCache cache = new LRUCache(1);
+        cache.put(1, 1);
+        assertEquals(1, cache.get(1));
     }
 
     private interface Sorter {

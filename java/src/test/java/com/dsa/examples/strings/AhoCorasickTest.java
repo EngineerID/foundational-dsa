@@ -10,7 +10,7 @@ class AhoCorasickTest {
 
     @Test
     void search() {
-        assertEquals(List.of(), AhoCorasick.search("abc", List.of()));
-        assertEquals(List.of(0, 1, 3), AhoCorasick.search("abcab", List.of("ab", "bc")));
+        assertEquals(List.of(), AhoCorasick.search("abc", new String[0]));
+        assertEquals(List.of(0, 1, 3), AhoCorasick.search("abcab", new String[] {"ab", "bc"}));
     }
 }

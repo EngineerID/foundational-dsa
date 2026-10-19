@@ -4,32 +4,61 @@ from __future__ import annotations
 
 import pytest
 
-from dsa.dp import coin_change, edit_distance, knapsack, lcs, lis
+from dsa.dp import (
+    coin_change,
+    edit_distance,
+    knapsack,
+    lcs,
+    lis,
+    longest_palindromic_subsequence,
+    matrix_chain,
+    partition_equal_subset,
+    rod_cutting,
+    tsp_bitmask,
+)
 from dsa.graphs import (
+    a_star,
+    articulation_bridges,
     bellman_ford,
+    bipartite_check,
     boruvka_mst,
     dfs,
     dijkstra,
+    edmonds_karp,
     floyd_warshall,
     graph,
+    hungarian,
+    kosaraju,
     kruskal_mst,
     prim_mst,
+    tarjan_scc,
     topological_sort,
 )
 from dsa.hashing import bloom_filter, open_addressing, separate_chaining
 from dsa.heaps import priority_queue
-from dsa.linear import deque, doubly_linked_list, queue, singly_linked_list
-from dsa.searching import binary_search
+from dsa.linear import (
+    deque,
+    doubly_linked_list,
+    lru_cache,
+    queue,
+    singly_linked_list,
+    sliding_window_maximum,
+)
+from dsa.searching import binary_search, reservoir_sampling
 from dsa.sorting import heap_sort, insertion_sort, radix_sort, selection_sort
-from dsa.strings import rabin_karp, z_algorithm
+from dsa.strings import aho_corasick, manacher, rabin_karp, suffix_array, z_algorithm
 from dsa.trees import (
     avl_tree,
     b_tree,
     bst,
     fenwick_tree,
     interval_tree,
+    lca_binary_lifting,
     order_statistic_tree,
+    red_black_tree,
     segment_tree,
+    sparse_table,
+    treap,
     tree_traversals,
     trie,
 )
@@ -250,3 +279,45 @@ def test_graph_algorithms_edge_themes():
         gl.add_edge(i, i + 1)
     with pytest.raises(IndexError):
         dijkstra.shortest_paths(wg, 99)
+
+
+def test_wave2_catalog_item_edges():
+    g = graph.Graph(2, True, True)
+    g.add_edge(0, 1, 1)
+    assert a_star.shortest_path_length(g, 0, 1) == 1
+    scc_g = graph.Graph(3, True, False)
+    scc_g.add_edge(0, 1)
+    scc_g.add_edge(1, 2)
+    scc_g.add_edge(2, 0)
+    assert len(tarjan_scc.strongly_connected_components(scc_g)[0]) == 3
+    assert len(kosaraju.strongly_connected_components(scc_g)[0]) == 3
+    bi = graph.Graph(2, False, False)
+    bi.add_edge(0, 1)
+    assert bipartite_check.is_bipartite(bi)
+    line = graph.Graph(3, False, False)
+    line.add_edge(0, 1)
+    line.add_edge(1, 2)
+    assert articulation_bridges.find(line).articulation_points == [1]
+    assert edmonds_karp.max_flow(2, [(0, 1, 5)], 0, 1) == 5
+    assert hungarian.min_cost([[1, 2], [3, 4]]) >= 5
+    rb = red_black_tree.RedBlackTree()
+    rb.insert(1, 1)
+    assert rb.search(1) == 1
+    assert lca_binary_lifting.LCABinaryLifting([0, 0]).query(1, 0) == 0
+    tr = treap.Treap(seed=0)
+    tr.insert(2, 2)
+    assert tr.search(2) == 2
+    assert sparse_table.SparseTable([2, 1]).query(0, 1) == 1
+    assert manacher.longest_palindrome_length("aa") == 2
+    assert suffix_array.build("ab")[0] == 0
+    assert aho_corasick.search("aba", ["a"]) == [0, 2]
+    assert matrix_chain.min_multiplications([1, 2, 3]) == 6
+    assert longest_palindromic_subsequence.length("a") == 1
+    assert partition_equal_subset.can_partition([2, 2])
+    assert rod_cutting.max_profit([2], 1) == 2
+    assert tsp_bitmask.min_cost([[0, 1], [1, 0]]) == 2
+    assert len(reservoir_sampling.sample([1, 2, 3], 2, seed=1)) == 2
+    assert sliding_window_maximum.max_sliding_window([1, 2], 1) == [1, 2]
+    cache = lru_cache.LRUCache(1)
+    cache.put(1, 1)
+    assert cache.get(1) == 1
