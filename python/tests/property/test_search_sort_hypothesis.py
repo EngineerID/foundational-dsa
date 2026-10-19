@@ -2,6 +2,7 @@ from hypothesis import given
 from hypothesis import strategies as st
 
 from dsa.linear.stack import Stack
+from dsa.searching.binary_search import search as binary_search
 from dsa.searching.linear_search import index_of
 from dsa.sorting.bubble_sort import sort as bubble_sort
 from dsa.sorting.merge_sort import sort as merge_sort
@@ -17,6 +18,19 @@ def test_bubble_sort_is_sorted(xs):
 @given(st.lists(st.integers(min_value=0, max_value=40), max_size=25))
 def test_merge_sort_is_sorted(xs):
     assert merge_sort(xs) == sorted(xs)
+
+
+@given(
+    st.lists(st.integers(min_value=-30, max_value=30), max_size=25, unique=True),
+    st.integers(min_value=-30, max_value=30),
+)
+def test_binary_search_on_sorted_unique(xs, target):
+    arr = sorted(xs)
+    idx = binary_search(arr, target)
+    if idx >= 0:
+        assert arr[idx] == target
+    else:
+        assert target not in arr
 
 
 @given(st.lists(st.integers(min_value=-20, max_value=20), max_size=30), st.integers())

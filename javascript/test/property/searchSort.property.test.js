@@ -2,6 +2,7 @@ const fc = require('fast-check');
 const { sort: bubbleSort } = require('../../src/sorting/bubbleSort');
 const { sort: mergeSort } = require('../../src/sorting/mergeSort');
 const { indexOf } = require('../../src/searching/linearSearch');
+const { search: binarySearch } = require('../../src/searching/binarySearch');
 const { Stack } = require('../../src/linear/stack');
 
 describe('property search/sort/core structures', () => {
@@ -20,6 +21,21 @@ describe('property search/sort/core structures', () => {
       fc.property(fc.array(fc.integer({ min: 0, max: 40 }), { maxLength: 25 }), (xs) => {
         expect(mergeSort([...xs])).toEqual([...xs].sort((a, b) => a - b));
       }),
+    );
+  });
+
+  test('binary search on sorted unique array', () => {
+    fc.assert(
+      fc.property(
+        fc.uniqueArray(fc.integer({ min: -30, max: 30 }), { maxLength: 25 }),
+        fc.integer({ min: -30, max: 30 }),
+        (xs, target) => {
+          const arr = [...xs].sort((a, b) => a - b);
+          const idx = binarySearch(arr, target);
+          if (idx >= 0) expect(arr[idx]).toBe(target);
+          else expect(arr.includes(target)).toBe(false);
+        },
+      ),
     );
   });
 
