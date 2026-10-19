@@ -1,4 +1,4 @@
-.PHONY: test test-ci test-java test-py test-js demo matrix matrix-check check-stubs check-parity lint
+.PHONY: test test-ci test-java test-py test-js demo matrix matrix-check check-stubs check-parity check-edge-themes lint bench
 
 test: check-stubs test-java test-py test-js check-parity matrix-check
 
@@ -31,3 +31,9 @@ check-stubs:
 
 check-parity:
 	node tools/parity.mjs
+
+check-edge-themes:
+	npm run check:edge-themes
+
+bench:
+	npm run bench

@@ -75,4 +75,6 @@ make test-java
 make test-py
 make test-js
 make matrix-check
+make check-edge-themes
+make bench
 ```
