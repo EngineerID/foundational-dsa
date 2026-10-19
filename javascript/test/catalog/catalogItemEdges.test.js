@@ -30,6 +30,15 @@ const { totalWeight: kruskalWeight } = require('../../src/graphs/kruskalMst');
 const { totalWeight: primWeight } = require('../../src/graphs/primMst');
 const { totalWeight: boruvkaWeight } = require('../../src/graphs/boruvkaMst');
 const { distances } = require('../../src/graphs/bfs');
+const { SegmentTree } = require('../../src/trees/segmentTree');
+const { FenwickTree } = require('../../src/trees/fenwickTree');
+const { search: zSearch } = require('../../src/strings/zAlgorithm');
+const { search: rkSearch } = require('../../src/strings/rabinKarp');
+const { length: lisLen } = require('../../src/dp/lis');
+const { length: lcsLen } = require('../../src/dp/lcs');
+const { maxValue: knapVal } = require('../../src/dp/knapsack');
+const { distance: editDist } = require('../../src/dp/editDistance');
+const { minCoins } = require('../../src/dp/coinChange');
 
 function sortBattery(sortFn) {
   const empty = [];
@@ -152,6 +161,22 @@ describe('catalog item edges', () => {
     expect(bf.mightContain('missing')).toBe(false);
     bf.add('x');
     expect(bf.mightContain('x')).toBe(true);
+  });
+
+  test('new trees strings dp', () => {
+    const st = new SegmentTree([1, 2, 3]);
+    expect(st.rangeSum(0, 2)).toBe(6);
+    const ft = new FenwickTree(2);
+    ft.add(0, 1);
+    ft.add(1, 2);
+    expect(ft.rangeSum(0, 1)).toBe(3);
+    expect(zSearch('abc', '')).toBe(0);
+    expect(rkSearch('abc', 'b')).toBe(1);
+    expect(lisLen([1, 2, 3])).toBe(3);
+    expect(lcsLen('ab', 'a')).toBe(1);
+    expect(knapVal([1], [5], 1)).toBe(5);
+    expect(editDist('a', 'b')).toBe(1);
+    expect(minCoins([1], 0)).toBe(0);
   });
 
   test('graph algorithms', () => {
