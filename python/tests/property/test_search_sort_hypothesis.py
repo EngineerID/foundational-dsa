@@ -2,7 +2,8 @@ from hypothesis import given
 from hypothesis import strategies as st
 
 from dsa.linear.stack import Stack
-from dsa.searching.binary_search import first_occurrence, last_occurrence, search as binary_search
+from dsa.searching.binary_search import first_occurrence, last_occurrence
+from dsa.searching.binary_search import search as binary_search
 from dsa.searching.linear_search import index_of
 from dsa.searching.quick_select import kth_smallest
 from dsa.sorting.bubble_sort import sort as bubble_sort
