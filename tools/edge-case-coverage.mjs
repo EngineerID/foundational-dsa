@@ -24,6 +24,7 @@ const JAVA_TOPIC_DIRS = {
 };
 
 const fileTextCache = new Map();
+let javaPropertyTestPathsCache = null;
 
 function readFileUtf8(filePath) {
   if (!fs.existsSync(filePath)) {
@@ -37,6 +38,23 @@ function readFileUtf8(filePath) {
   return text;
 }
 
+function javaPropertyTestPaths() {
+  if (javaPropertyTestPathsCache) {
+    return javaPropertyTestPathsCache;
+  }
+  const propDir = path.join(ROOT, 'java', 'src', 'test', 'java', 'com', 'dsa', 'examples', 'property');
+  const paths = [];
+  if (fs.existsSync(propDir)) {
+    for (const name of fs.readdirSync(propDir)) {
+      if (name.endsWith('Test.java')) {
+        paths.push(path.join(propDir, name));
+      }
+    }
+  }
+  javaPropertyTestPathsCache = paths;
+  return paths;
+}
+
 function listJavaTestsForItem(item) {
   const dirs = JAVA_TOPIC_DIRS[item.topic] ?? [item.topic];
   const files = [];
@@ -47,13 +65,8 @@ function listJavaTestsForItem(item) {
       if (name.endsWith('Test.java')) files.push(path.join(dir, name));
     }
   }
-  const propDir = path.join(ROOT, 'java', 'src', 'test', 'java', 'com', 'dsa', 'examples', 'property');
-  if (fs.existsSync(propDir)) {
-    for (const name of fs.readdirSync(propDir)) {
-      if (!name.endsWith('Test.java')) continue;
-      const full = path.join(propDir, name);
-      if (readFileUtf8(full).includes(item.java)) files.push(full);
-    }
+  for (const full of javaPropertyTestPaths()) {
+    if (readFileUtf8(full).includes(item.java)) files.push(full);
   }
   const catalog = path.join(ROOT, 'java', 'src', 'test', 'java', 'com', 'dsa', 'examples', 'catalog', 'EdgeCaseThemesTest.java');
   if (fs.existsSync(catalog)) files.push(catalog);
