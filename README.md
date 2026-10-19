@@ -5,7 +5,7 @@
 
 **foundational-dsa** is a trilingual reference library: **41 classic data structures and algorithms**, each with matching implementations in **Java**, **Python**, and **JavaScript** (123 implementations in total). Every topic ships with tests, a short doc page under [`docs/items/`](docs/items/), and entries in [`docs/API.md`](docs/API.md) so you can compare APIs and idioms across languages.
 
-Use it to study implementations side by side, prepare for interviews, or teach DSA with runnable code rather than pseudocode.
+Use it to study implementations side by side, prepare for interviews, or teach DSA with runnable code rather than pseudocode. Step-by-step walkthroughs for core algorithms are in [`docs/worked-examples.md`](docs/worked-examples.md).
 
 **Maintainer:** [Ivan Damnjanovic](https://github.com/EngineerID)  
 **License:** Apache License 2.0 ([LICENSE](LICENSE))
