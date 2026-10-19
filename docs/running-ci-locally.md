@@ -30,6 +30,7 @@ Run these from the repository root in order:
 | Python tests (with coverage in CI) | `PYTEST_COV=1 npm run test:py` |
 | JavaScript tests | `npm run test:js` |
 | Cross-language parity | `npm run check:parity` |
+| Edge-case theme scan | `npm run check:edge-themes` |
 | Line-coverage report | `node tools/coverage-report.mjs` |
 | Regenerate matrix | `npm run matrix` |
 | Upload artifact | *(CI only)* writes `coverage/` and uploads `line-coverage-report` |

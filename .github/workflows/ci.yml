@@ -35,6 +35,7 @@ jobs:
       - run: PYTEST_COV=1 npm run test:py
       - run: npm run test:js
       - run: npm run check:parity
+      - run: npm run check:edge-themes
       - run: node tools/coverage-report.mjs
       - run: npm run matrix
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
