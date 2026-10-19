@@ -11,7 +11,8 @@
     "matrix": "node tools/matrix.mjs",
     "matrix:check": "node tools/matrix.mjs --check --strict",
     "check:stubs": "node tools/check-stubs.mjs",
-    "check:parity": "node tools/parity.mjs"
+    "check:parity": "node tools/parity.mjs",
+    "coverage:report": "node tools/coverage-report.mjs --collect && node tools/matrix.mjs"
   },
   "author": "Ivan Damnjanovic",
   "license": "Apache-2.0",

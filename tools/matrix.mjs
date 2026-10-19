@@ -10,6 +10,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { findApiTestGaps, formatGapsMarkdown } from './api-test-coverage.mjs';
+import { formatLineCoverageMarkdown, getLineCoverageSummary } from './coverage-report.mjs';
 import { ITEMS } from './items.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -131,7 +132,8 @@ const rows = ITEMS.map((item) => {
 });
 
 const apiGaps = findApiTestGaps(ITEMS);
-const md = `${generateMarkdown(rows)}${formatGapsMarkdown(apiGaps)}`;
+const lineSummary = getLineCoverageSummary();
+const md = `${generateMarkdown(rows)}${formatGapsMarkdown(apiGaps)}${formatLineCoverageMarkdown(lineSummary)}`;
 fs.writeFileSync(path.join(ROOT, 'COVERAGE.md'), md);
 console.log('Wrote COVERAGE.md');
 

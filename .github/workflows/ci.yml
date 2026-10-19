@@ -3,6 +3,8 @@ on: [push, pull_request]
 jobs:
   build-test:
     runs-on: ubuntu-latest
+    env:
+      CI: true
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-java@v5
@@ -16,10 +18,16 @@ jobs:
         with:
           node-version: '22'
       - run: npm ci
-      - run: pip install pytest
+      - run: pip install pytest pytest-cov
       - run: npm run check:stubs
       - run: npm run test:java
-      - run: npm run test:py
+      - run: PYTEST_COV=1 npm run test:py
       - run: npm run test:js
       - run: npm run check:parity
+      - run: node tools/coverage-report.mjs
+      - run: npm run matrix
+      - uses: actions/upload-artifact@v4
+        with:
+          name: line-coverage-report
+          path: coverage/
       - run: npm run matrix:check

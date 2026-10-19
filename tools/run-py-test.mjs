@@ -18,4 +18,10 @@ function pythonCmd() {
 }
 
 const py = pythonCmd();
-execSync(`${py} -m pytest python -q`, { cwd: ROOT, stdio: 'inherit', shell: true });
+const covDir = path.join(ROOT, 'coverage');
+let covArgs = '';
+if (process.env.PYTEST_COV === '1') {
+  fs.mkdirSync(covDir, { recursive: true });
+  covArgs = ` --cov=dsa --cov-report=json:${path.join(covDir, 'python-coverage.json')}`;
+}
+execSync(`${py} -m pytest python -q${covArgs}`, { cwd: ROOT, stdio: 'inherit', shell: true });
