@@ -2,7 +2,7 @@ from hypothesis import given
 from hypothesis import strategies as st
 
 from dsa.linear.stack import Stack
-from dsa.searching.binary_search import search as binary_search
+from dsa.searching.binary_search import first_occurrence, last_occurrence, search as binary_search
 from dsa.searching.linear_search import index_of
 from dsa.searching.quick_select import kth_smallest
 from dsa.sorting.bubble_sort import sort as bubble_sort
@@ -27,6 +27,30 @@ def test_counting_sort_matches_sorted(xs):
 @given(st.lists(st.integers(min_value=0, max_value=40), max_size=25))
 def test_merge_sort_is_sorted(xs):
     assert merge_sort(xs) == sorted(xs)
+
+
+@given(
+    st.lists(st.integers(min_value=-10, max_value=10), min_size=0, max_size=20),
+    st.integers(min_value=-10, max_value=10),
+)
+def test_binary_search_bounds_on_sorted(xs, key):
+    arr = sorted(xs)
+    first = first_occurrence(arr, key)
+    last = last_occurrence(arr, key)
+    if key not in arr:
+        assert first == -1
+        assert last == -1
+    else:
+        assert 0 <= first <= last < len(arr)
+        assert arr[first] == key
+        assert arr[last] == key
+        for i in range(len(arr)):
+            if arr[i] == key:
+                assert first <= i <= last
+            elif i < first:
+                assert arr[i] < key
+            elif i > last:
+                assert arr[i] > key
 
 
 @given(
