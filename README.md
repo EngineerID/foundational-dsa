@@ -147,7 +147,7 @@ Typical time and auxiliary space for the main entry point of each topic (see mod
 | trees | avl-tree | O(log n) | O(n) |
 | trees | order-statistic-tree | O(log n) | O(n) |
 | trees | interval-tree | O(log n + k) reported | O(n) |
-| trees | trie | O(L) key length | O(chars stored) |
+| trees | trie | O(L) key length | O(total chars) |
 | trees | b-tree | O(log_t n) | O(n) |
 | hashing | separate-chaining | O(1) avg | O(n) |
 | hashing | open-addressing | O(1) avg | O(n) slots |
@@ -158,7 +158,7 @@ Typical time and auxiliary space for the main entry point of each topic (see mod
 | graphs | dfs | O(V + E) | O(V) |
 | graphs | topological-sort | O(V + E) | O(V) |
 | graphs | dijkstra | O(E log V) | O(V) |
-| graphs | bellman-ford | O(V · E) | O(V) |
+| graphs | bellman-ford | O(VE) | O(V) |
 | graphs | floyd-warshall | O(V³) | O(V²) |
 | graphs | kruskal-mst | O(E log E) | O(V) |
 | graphs | prim-mst | O(E log V) | O(V) |

@@ -44,5 +44,14 @@ check-edge-themes:
 check-ci-policy:
 	npm run check:ci-policy
 
+check-readme-complexity:
+	npm run check:readme-complexity
+
+check-golden-parity:
+	npm run check:golden-parity
+
+check-catalog-items:
+	npm run check:catalog-items
+
 bench:
 	npm run bench
