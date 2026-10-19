@@ -9,6 +9,8 @@ import java.util.List;
 
 /**
  * Maximum in each window of size k using a deque.
+ * Technique: Monotonic deque
+ * Invariant: Deque stores indices with decreasing values.
  * maxSlidingWindow: Time O(n); Space O(k).
  */
 public final class SlidingWindowMaximum {
@@ -16,6 +18,9 @@ public final class SlidingWindowMaximum {
     private SlidingWindowMaximum() {
     }
 
+    /**
+     * Time: O(n); Space O(k).
+     */
     public static List<Integer> maxSlidingWindow(int[] nums, int k) {
         if (k <= 0) {
             throw new IllegalArgumentException("k must be positive");

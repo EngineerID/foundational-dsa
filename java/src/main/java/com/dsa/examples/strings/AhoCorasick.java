@@ -20,12 +20,23 @@ public final class AhoCorasick {
     private AhoCorasick() {
     }
 
+    /**
+     * Returns sorted start indices where any pattern occurs.
+     * Time: O(|text| + sum|patterns| + matches); Space: O(sum|patterns|).
+     */
+    public static List<Integer> search(String text, List<String> patterns) {
+        if (patterns == null || patterns.isEmpty() || text == null || text.isEmpty()) {
+            return List.of();
+        }
+        return search(text, patterns.toArray(new String[0]));
+    }
+
     public static List<Integer> search(String text, String[] patterns) {
         if (patterns.length == 0 || text.isEmpty()) {
             return List.of();
         }
-        List<Map<Character, Integer>> goto = new ArrayList<>();
-        goto.add(new HashMap<>());
+        List<Map<Character, Integer>> trans = new ArrayList<>();
+        trans.add(new HashMap<>());
         List<List<Integer>> out = new ArrayList<>();
         out.add(new ArrayList<>());
         List<Integer> fail = new ArrayList<>();
@@ -38,11 +49,11 @@ public final class AhoCorasick {
             }
             int state = 0;
             for (char ch : pat.toCharArray()) {
-                Integer nxt = goto.get(state).get(ch);
+                Integer nxt = trans.get(state).get(ch);
                 if (nxt == null) {
-                    nxt = goto.size();
-                    goto.get(state).put(ch, nxt);
-                    goto.add(new HashMap<>());
+                    nxt = trans.size();
+                    trans.get(state).put(ch, nxt);
+                    trans.add(new HashMap<>());
                     out.add(new ArrayList<>());
                     fail.add(0);
                 }
@@ -52,20 +63,20 @@ public final class AhoCorasick {
         }
 
         Queue<Integer> q = new ArrayDeque<>();
-        for (Map.Entry<Character, Integer> e : goto.get(0).entrySet()) {
+        for (Map.Entry<Character, Integer> e : trans.get(0).entrySet()) {
             fail.set(e.getValue(), 0);
             q.add(e.getValue());
         }
         while (!q.isEmpty()) {
             int r = q.poll();
-            for (Map.Entry<Character, Integer> e : goto.get(r).entrySet()) {
+            for (Map.Entry<Character, Integer> e : trans.get(r).entrySet()) {
                 int s = e.getValue();
                 q.add(s);
                 int f = fail.get(r);
-                while (f != 0 && !goto.get(f).containsKey(e.getKey())) {
+                while (f != 0 && !trans.get(f).containsKey(e.getKey())) {
                     f = fail.get(f);
                 }
-                fail.set(s, goto.get(f).getOrDefault(e.getKey(), 0));
+                fail.set(s, trans.get(f).getOrDefault(e.getKey(), 0));
                 out.get(s).addAll(out.get(fail.get(s)));
             }
         }
@@ -74,10 +85,10 @@ public final class AhoCorasick {
         int state = 0;
         for (int i = 0; i < text.length(); i++) {
             char ch = text.charAt(i);
-            while (state != 0 && !goto.get(state).containsKey(ch)) {
+            while (state != 0 && !trans.get(state).containsKey(ch)) {
                 state = fail.get(state);
             }
-            state = goto.get(state).getOrDefault(ch, 0);
+            state = trans.get(state).getOrDefault(ch, 0);
             for (int pid : out.get(state)) {
                 hits.add(i - patterns[pid].length() + 1);
             }
