@@ -21,6 +21,7 @@ const JAVA_TOPIC_DIRS = {
   hashing: ['hashing'],
   unionfind: ['unionfind'],
   graphs: ['graphs'],
+  dp: ['dp'],
 };
 
 const fileTextCache = new Map();

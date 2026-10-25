@@ -1,0 +1,15 @@
+{
+  "kind": "string_search",
+  "cases": [
+    {
+      "text": "ababcababa",
+      "pattern": "aba",
+      "expected": 0
+    },
+    {
+      "text": "abc",
+      "pattern": "",
+      "expected": 0
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "kind": "binary_search",
+  "cases": [
+    {
+      "arr": [
+        1,
+        3,
+        5
+      ],
+      "key": 5,
+      "expected": 2
+    }
+  ]
+}

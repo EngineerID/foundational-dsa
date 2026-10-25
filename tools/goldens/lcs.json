@@ -1,0 +1,10 @@
+{
+  "kind": "lcs",
+  "cases": [
+    {
+      "a": "abcde",
+      "b": "ace",
+      "expected": 3
+    }
+  ]
+}

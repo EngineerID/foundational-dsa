@@ -1,0 +1,13 @@
+{
+  "kind": "matrix_chain",
+  "cases": [
+    {
+      "dimensions": [
+        1,
+        2,
+        3
+      ],
+      "expected": 2
+    }
+  ]
+}

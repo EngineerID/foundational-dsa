@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { ITEMS } from './matrix.mjs';
+import { ITEMS } from './items.mjs';
 import { API_MANIFEST } from './api-manifest.mjs';
 import { DOC_SPECS } from './doc-spec.mjs';
 

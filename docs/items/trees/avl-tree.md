@@ -2,10 +2,6 @@
 
 Topic: **trees** / `avl-tree`
 
-Self-balancing BST with height-balance after insert/delete. search/insert/delete: Time O(log n); Space O(n).
-
-**Worked example:** [Topic index](../../worked-examples.md#avl-tree) (summary) · run `npm run demo -- avl-tree` in all three languages.
-
 ## Implementations
 
 | Language | Source |
@@ -20,9 +16,5 @@ Self-balancing BST with height-balance after insert/delete. search/insert/delete
 |----------|------|
 | Python | [`test_avl_tree`](../../../python/tests/trees/test_avl_tree.py) |
 | JavaScript | [`avlTree.test.js`](../../../javascript/test/trees/avlTree.test.js) |
-| Java | [`TreesTest.java`](../../../java/src/test/java/com/dsa/examples/trees/TreesTest.java) |
 
-**Property-style checks:** Java [`PropertyTreesTest`](../../../java/src/test/java/com/dsa/examples/property/PropertyTreesTest.java); Python [`test_property_trees`](../../../python/tests/test_property_trees.py); JavaScript [`property/trees.test.js`](../../../javascript/test/property/trees.test.js).
-
-
-Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/trees/`.
+Java tests run via Maven in `java/src/test/java/com/dsa/examples/trees/`.

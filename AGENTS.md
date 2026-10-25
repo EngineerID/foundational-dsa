@@ -78,6 +78,7 @@ Worked walkthroughs: [`docs/worked-examples.md`](docs/worked-examples.md).
 - `docs/` — per-item notes, `docs/API.md`, `docs/worked-examples.md`, and `docs/running-ci-locally.md`
 - `reference/` — imported CS and math reference trees
 - `COVERAGE.md` — generated trilingual status (`npm run matrix` rewrites it; `npm run matrix:check` only checks)
+- `INVENTORY.md` — generated topic index with source paths (`npm run inventory`; `inventory:check` in `test:ci`)
 
 **Edge-case catalog tests** (shared themes across topics) live at:
 
@@ -85,7 +86,9 @@ Worked walkthroughs: [`docs/worked-examples.md`](docs/worked-examples.md).
 - `javascript/test/catalog/edgeCaseThemes.test.js`
 - `java/src/test/java/com/dsa/examples/catalog/EdgeCaseThemesTest.java`
 
-**Shared regression JSON** (trilingual tests): `tools/kmp-goldens.json`, `tools/binary-search-goldens.json`.
+**Shared regression JSON** (trilingual tests): `tools/kmp-goldens.json`, `tools/binary-search-goldens.json`, `tools/binary-search-boundary-goldens.json` (first/last occurrence).
+
+**Catalog edge themes** (cross-item): `python/tests/catalog/`, `javascript/test/catalog/`, `java/.../catalog/`; `npm run check:catalog-items` verifies all 41 topic ids are referenced.
 
 Module-level complexity and invariants are centralized in `tools/doc-spec.mjs` and mirrored in source docstrings.
 

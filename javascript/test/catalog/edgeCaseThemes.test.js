@@ -13,6 +13,7 @@ const { search: kmpSearch } = require('../../src/strings/kmp');
 const { UnionFind } = require('../../src/unionfind/unionFind');
 const { DynamicArray } = require('../../src/linear/dynamicArray');
 const { Stack } = require('../../src/linear/stack');
+const { BinaryHeap } = require('../../src/heaps/binaryHeap');
 
 function sortBattery(sortFn, allowNegative = true) {
   const empty = [];
@@ -53,6 +54,21 @@ describe('catalog edge themes', () => {
     expect(search([3, 1], 1)).toBe(-1);
     expect(kthSmallest([9], 1)).toBe(9);
     expect(() => kthSmallest([], 1)).toThrow();
+  });
+
+  test('binary heap edge themes', () => {
+    const heap = new BinaryHeap();
+    expect(heap.size()).toBe(0);
+    expect(() => heap.peek()).toThrow();
+    heap.insert(3);
+    expect(heap.peek()).toBe(3);
+    heap.insert(3);
+    heap.insert(1);
+    expect(heap.extractMin()).toBe(1);
+    const large = new BinaryHeap();
+    for (let i = LARGE_N; i >= 1; i -= 1) large.insert(i);
+    expect(large.extractMin()).toBe(1);
+    expect(() => heap.decreaseKey(99, 0)).toThrow();
   });
 
   test('structures and graphs edge themes', () => {

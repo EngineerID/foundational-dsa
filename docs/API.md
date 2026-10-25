@@ -3,8 +3,6 @@
 Per-language public symbols are defined in `tools/api-manifest.mjs` (source of truth).
 Null/empty: arrays may be `null` (Java/JS) or `None` (Python); sorts no-op; searches return `-1` or empty.
 
-Worked examples (binary search, merge sort, KMP): [worked-examples.md](worked-examples.md). Complexity summary: [README § Complexity](../README.md#complexity-primary-operations).
-
 ## linear-search
 
 Find a target value in an array by sequential scan.
@@ -416,6 +414,127 @@ Disk-oriented multi-way search tree with bounded node fanout.
 - `search` → Python `search`, JS `search`
 - `insert` → Python `insert`, JS `insert`
 
+## segment-tree
+
+Range aggregate queries with point updates on an array.
+
+| Language | Module |
+|----------|--------|
+| Java | `SegmentTree` |
+| Python | `segment_tree` |
+| JavaScript | `segmentTree` |
+
+**Operations:**
+- `update` → Python `update`, JS `update`
+- `rangeSum` → Python `range_sum`, JS `rangeSum`
+
+## fenwick-tree
+
+Prefix sums and range sums with point updates.
+
+| Language | Module |
+|----------|--------|
+| Java | `FenwickTree` |
+| Python | `fenwick_tree` |
+| JavaScript | `fenwickTree` |
+
+**Operations:**
+- `add` → Python `add`, JS `add`
+- `prefixSum` → Python `prefix_sum`, JS `prefixSum`
+- `rangeSum` → Python `range_sum`, JS `rangeSum`
+
+## z-algorithm
+
+Linear-time Z-array and pattern search.
+
+| Language | Module |
+|----------|--------|
+| Java | `ZAlgorithm` |
+| Python | `z_algorithm` |
+| JavaScript | `zAlgorithm` |
+
+**Operations:**
+- `zArray` → Python `z_array`, JS `zArray`
+- `search` → Python `search`, JS `search`
+
+## rabin-karp
+
+Substring search via rolling hash.
+
+| Language | Module |
+|----------|--------|
+| Java | `RabinKarp` |
+| Python | `rabin_karp` |
+| JavaScript | `rabinKarp` |
+
+**Operations:**
+- `search` → Python `search`, JS `search`
+
+## lis
+
+Length of longest strictly increasing subsequence.
+
+| Language | Module |
+|----------|--------|
+| Java | `LIS` |
+| Python | `lis` |
+| JavaScript | `lis` |
+
+**Operations:**
+- `length` → Python `length`, JS `length`
+
+## lcs
+
+Longest common subsequence length between two strings.
+
+| Language | Module |
+|----------|--------|
+| Java | `LCS` |
+| Python | `lcs` |
+| JavaScript | `lcs` |
+
+**Operations:**
+- `length` → Python `length`, JS `length`
+
+## knapsack
+
+0/1 knapsack maximum value for a weight capacity.
+
+| Language | Module |
+|----------|--------|
+| Java | `Knapsack01` |
+| Python | `knapsack` |
+| JavaScript | `knapsack` |
+
+**Operations:**
+- `maxValue` → Python `max_value`, JS `maxValue`
+
+## edit-distance
+
+Levenshtein edit distance between two strings.
+
+| Language | Module |
+|----------|--------|
+| Java | `EditDistance` |
+| Python | `edit_distance` |
+| JavaScript | `editDistance` |
+
+**Operations:**
+- `distance` → Python `distance`, JS `distance`
+
+## coin-change
+
+Minimum coins to make an amount (unbounded supply).
+
+| Language | Module |
+|----------|--------|
+| Java | `CoinChange` |
+| Python | `coin_change` |
+| JavaScript | `coinChange` |
+
+**Operations:**
+- `minCoins` → Python `min_coins`, JS `minCoins`
+
 ## separate-chaining
 
 Hash map with linked-list buckets and load-factor resize.
@@ -613,3 +732,292 @@ Minimum spanning tree via repeated cheapest outgoing edge per component.
 
 **Operations:**
 - `totalWeight` → Python `total_weight`, JS `totalWeight`
+
+## a-star
+
+Shortest path length with nonnegative weights (heuristic h=0).
+
+| Language | Module |
+|----------|--------|
+| Java | `AStar` |
+| Python | `a_star` |
+| JavaScript | `aStar` |
+
+**Operations:**
+- `shortestPathLength` → Python `shortest_path_length`, JS `shortestPathLength`
+
+## tarjan-scc
+
+Strongly connected components in a directed graph.
+
+| Language | Module |
+|----------|--------|
+| Java | `TarjanSCC` |
+| Python | `tarjan_scc` |
+| JavaScript | `tarjanScc` |
+
+**Operations:**
+- `stronglyConnectedComponents` → Python `strongly_connected_components`, JS `stronglyConnectedComponents`
+
+## kosaraju
+
+Strongly connected components via two-pass DFS.
+
+| Language | Module |
+|----------|--------|
+| Java | `Kosaraju` |
+| Python | `kosaraju` |
+| JavaScript | `kosaraju` |
+
+**Operations:**
+- `stronglyConnectedComponents` → Python `strongly_connected_components`, JS `stronglyConnectedComponents`
+
+## bipartite-check
+
+Test whether an undirected graph is 2-colorable.
+
+| Language | Module |
+|----------|--------|
+| Java | `BipartiteCheck` |
+| Python | `bipartite_check` |
+| JavaScript | `bipartiteCheck` |
+
+**Operations:**
+- `isBipartite` → Python `is_bipartite`, JS `isBipartite`
+
+## articulation-bridges
+
+Articulation points and bridges in an undirected graph.
+
+| Language | Module |
+|----------|--------|
+| Java | `ArticulationBridges` |
+| Python | `articulation_bridges` |
+| JavaScript | `articulationBridges` |
+
+**Operations:**
+- `find` → Python `find`, JS `find`
+
+## edmonds-karp
+
+Maximum s-t flow in a capacitated network.
+
+| Language | Module |
+|----------|--------|
+| Java | `EdmondsKarp` |
+| Python | `edmonds_karp` |
+| JavaScript | `edmondsKarp` |
+
+**Operations:**
+- `maxFlow` → Python `max_flow`, JS `maxFlow`
+
+## hungarian
+
+Minimum-cost assignment on a square cost matrix.
+
+| Language | Module |
+|----------|--------|
+| Java | `Hungarian` |
+| Python | `hungarian` |
+| JavaScript | `hungarian` |
+
+**Operations:**
+- `minCost` → Python `min_cost`, JS `minCost`
+
+## red-black-tree
+
+Balanced BST with red-black invariants.
+
+| Language | Module |
+|----------|--------|
+| Java | `RedBlackTree` |
+| Python | `red_black_tree` |
+| JavaScript | `redBlackTree` |
+
+**Operations:**
+- `search` → Python `search`, JS `search`
+- `insert` → Python `insert`, JS `insert`
+
+## lca-binary-lifting
+
+Lowest common ancestor on a rooted tree.
+
+| Language | Module |
+|----------|--------|
+| Java | `LCABinaryLifting` |
+| Python | `lca_binary_lifting` |
+| JavaScript | `lcaBinaryLifting` |
+
+**Operations:**
+- `query` → Python `query`, JS `query`
+
+## treap
+
+Randomized BST via heap priorities on keys.
+
+| Language | Module |
+|----------|--------|
+| Java | `Treap` |
+| Python | `treap` |
+| JavaScript | `treap` |
+
+**Operations:**
+- `search` → Python `search`, JS `search`
+- `insert` → Python `insert`, JS `insert`
+
+## sparse-table
+
+Static range minimum queries on an array.
+
+| Language | Module |
+|----------|--------|
+| Java | `SparseTable` |
+| Python | `sparse_table` |
+| JavaScript | `sparseTable` |
+
+**Operations:**
+- `query` → Python `query`, JS `query`
+
+## manacher
+
+Longest palindromic substring length.
+
+| Language | Module |
+|----------|--------|
+| Java | `Manacher` |
+| Python | `manacher` |
+| JavaScript | `manacher` |
+
+**Operations:**
+- `longestPalindromeLength` → Python `longest_palindrome_length`, JS `longestPalindromeLength`
+
+## suffix-array
+
+Lexicographically sorted suffix starting indices.
+
+| Language | Module |
+|----------|--------|
+| Java | `SuffixArray` |
+| Python | `suffix_array` |
+| JavaScript | `suffixArray` |
+
+**Operations:**
+- `build` → Python `build`, JS `build`
+
+## aho-corasick
+
+Find all occurrences of multiple patterns in text.
+
+| Language | Module |
+|----------|--------|
+| Java | `AhoCorasick` |
+| Python | `aho_corasick` |
+| JavaScript | `ahoCorasick` |
+
+**Operations:**
+- `search` → Python `search`, JS `search`
+
+## matrix-chain
+
+Minimum scalar multiplications for a matrix product chain.
+
+| Language | Module |
+|----------|--------|
+| Java | `MatrixChain` |
+| Python | `matrix_chain` |
+| JavaScript | `matrixChain` |
+
+**Operations:**
+- `minMultiplications` → Python `min_multiplications`, JS `minMultiplications`
+
+## longest-palindromic-subsequence
+
+Longest palindromic subsequence length.
+
+| Language | Module |
+|----------|--------|
+| Java | `LongestPalindromicSubsequence` |
+| Python | `longest_palindromic_subsequence` |
+| JavaScript | `longestPalindromicSubsequence` |
+
+**Operations:**
+- `length` → Python `length`, JS `length`
+
+## partition-equal-subset
+
+Partition array into two equal-sum subsets.
+
+| Language | Module |
+|----------|--------|
+| Java | `PartitionEqualSubset` |
+| Python | `partition_equal_subset` |
+| JavaScript | `partitionEqualSubset` |
+
+**Operations:**
+- `canPartition` → Python `can_partition`, JS `canPartition`
+
+## rod-cutting
+
+Maximum revenue cutting a rod of given length.
+
+| Language | Module |
+|----------|--------|
+| Java | `RodCutting` |
+| Python | `rod_cutting` |
+| JavaScript | `rodCutting` |
+
+**Operations:**
+- `maxProfit` → Python `max_profit`, JS `maxProfit`
+
+## tsp-bitmask
+
+Minimum Hamiltonian cycle from city 0 (small n).
+
+| Language | Module |
+|----------|--------|
+| Java | `TSPBitmask` |
+| Python | `tsp_bitmask` |
+| JavaScript | `tspBitmask` |
+
+**Operations:**
+- `minCost` → Python `min_cost`, JS `minCost`
+
+## reservoir-sampling
+
+Uniform random sample of size k from a stream.
+
+| Language | Module |
+|----------|--------|
+| Java | `ReservoirSampling` |
+| Python | `reservoir_sampling` |
+| JavaScript | `reservoirSampling` |
+
+**Operations:**
+- `sample` → Python `sample`, JS `sample`
+
+## sliding-window-maximum
+
+Maximum in each sliding window of size k.
+
+| Language | Module |
+|----------|--------|
+| Java | `SlidingWindowMaximum` |
+| Python | `sliding_window_maximum` |
+| JavaScript | `slidingWindowMaximum` |
+
+**Operations:**
+- `maxSlidingWindow` → Python `max_sliding_window`, JS `maxSlidingWindow`
+
+## lru-cache
+
+Least-recently-used cache with O(1) get and put.
+
+| Language | Module |
+|----------|--------|
+| Java | `LRUCache` |
+| Python | `lru_cache` |
+| JavaScript | `lruCache` |
+
+**Operations:**
+- `get` → Python `get`, JS `get`
+- `put` → Python `put`, JS `put`
