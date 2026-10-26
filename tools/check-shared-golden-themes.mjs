@@ -7,6 +7,12 @@ import { fileURLToPath } from 'node:url';
 import { CORE_GOLDENS, STATEFUL_GOLDENS } from './golden-fixtures.mjs';
 import { requiredThemes, themesInCases } from './shared-golden-themes.mjs';
 
+/** Stateful fixtures must include these keys on every case object. */
+const REQUIRED_CASE_KEYS = {
+  'reservoir-sampling-goldens.json': ['stream', 'k', 'seed', 'expected'],
+  'treap-goldens.json': ['seed', 'inserts', 'searchResults'],
+};
+
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 function allFixtures() {
@@ -34,6 +40,16 @@ function main() {
       if (!have.has(need)) {
         errors.push(`${id}: missing golden theme "${need}" in ${json}`);
       }
+    }
+    const requiredKeys = REQUIRED_CASE_KEYS[json];
+    if (requiredKeys) {
+      cases.forEach((c, i) => {
+        for (const key of requiredKeys) {
+          if (!(key in c)) {
+            errors.push(`${id}: case ${i} missing "${key}" in ${json}`);
+          }
+        }
+      });
     }
   }
   if (errors.length) {

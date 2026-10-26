@@ -33,7 +33,7 @@ bash .cursor/install.sh
 - `npm run check:item-doc-complexity`
 - `npm run check:golden-parity`, `check:golden-fixtures-doc`, `check:catalog-golden-coverage`, `check:shared-golden-themes`
 - `npm run check:stubs`
-- `npm run test:java` (JUnit 5 via Maven Wrapper)
+- `npm run test:java` (JUnit 5 via Maven Wrapper; default **2m per-test** timeout in `java/pom.xml` / `junit-platform.properties` so hangs fail with the test name)
 - `npm run test:py` (`python3 -m pytest`)
 - `npm run test:js` (Jest)
 - `npm run check:parity`

@@ -1,48 +1,43 @@
 package com.dsa.examples.searching;
 
+import com.dsa.examples.support.GoldenJson;
 import org.junit.jupiter.api.Test;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ReservoirSamplingGoldensTest {
 
-    private static final Pattern CASE = Pattern.compile(
-            "\"stream\":\\s*(\\[[^\\]]*\\])\\s*,\\s*\"k\":\\s*(\\d+)\\s*,\\s*\"seed\":\\s*(\\d+)\\s*,\\s*\"expected\":\\s*(\\[[^\\]]*\\])");
-
     @Test
     void sharedGoldensFromRepoJson() throws Exception {
         Path json = Path.of("..", "tools", "reservoir-sampling-goldens.json").toAbsolutePath().normalize();
-        String content = Files.readString(json);
-        Matcher matcher = CASE.matcher(content);
-        while (matcher.find()) {
-            int[] stream = parseIntArray(matcher.group(1));
-            int k = Integer.parseInt(matcher.group(2));
-            int seed = Integer.parseInt(matcher.group(3));
-            List<Integer> expected = parseIntList(matcher.group(4));
-            assertEquals(expected, ReservoirSampling.sample(stream, k, seed));
+        List<Map<String, Object>> cases = GoldenJson.parseArrayOfObjects(Files.readString(json));
+        for (Map<String, Object> c : cases) {
+            int[] stream = toIntArray(c.get("stream"));
+            int k = ((Number) c.get("k")).intValue();
+            int seed = ((Number) c.get("seed")).intValue();
+            List<Integer> expected = toIntList(c.get("expected"));
+            assertEquals(expected, ReservoirSampling.sample(stream, k, seed), c.toString());
         }
     }
 
-    private static int[] parseIntArray(String bracketed) {
-        return parseIntList(bracketed).stream().mapToInt(Integer::intValue).toArray();
-    }
-
-    private static List<Integer> parseIntList(String bracketed) {
-        String inner = bracketed.substring(1, bracketed.length() - 1).trim();
-        if (inner.isEmpty()) {
-            return List.of();
-        }
-        List<Integer> out = new ArrayList<>();
-        for (String p : inner.split(",")) {
-            out.add(Integer.parseInt(p.trim()));
+    @SuppressWarnings("unchecked")
+    private static int[] toIntArray(Object raw) {
+        List<Object> rows = (List<Object>) raw;
+        int[] out = new int[rows.size()];
+        for (int i = 0; i < rows.size(); i++) {
+            out[i] = ((Number) rows.get(i)).intValue();
         }
         return out;
+    }
+
+    @SuppressWarnings("unchecked")
+    private static List<Integer> toIntList(Object raw) {
+        List<Object> rows = (List<Object>) raw;
+        return rows.stream().map(n -> ((Number) n).intValue()).toList();
     }
 }
