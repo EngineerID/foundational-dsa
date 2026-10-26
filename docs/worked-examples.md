@@ -1003,6 +1003,62 @@ Scan left-to-right for **first** index of `target`:
 
 `npm run demo -- bubble-sort`
 
+## Insertion sort (sorted copy)
+
+**Input:** `[5, 2, 8, 1, 2]` → sorted copy **`[1, 2, 2, 5, 8]`** (matches `insertion-sort-goldens.json`).
+
+**API:** `sort(arr)` on a copy (see [insertion-sort](items/sorting/insertion-sort.md)).
+
+`npm run demo -- insertion-sort`
+
+## Selection sort (sorted copy)
+
+**Input:** `[5, 2, 8, 1, 2]` → sorted copy **`[1, 2, 2, 5, 8]`** (matches `selection-sort-goldens.json`).
+
+**API:** `sort(arr)` on a copy (see [selection-sort](items/sorting/selection-sort.md)).
+
+`npm run demo -- selection-sort`
+
+## Z-algorithm (pattern search)
+
+**Text:** `"aabaa"`, **pattern:** `"aa"` → first index **0**; Z-array **`[5, 1, 0, 2, 1]`** (see `z-algorithm-goldens.json`).
+
+**API:** `search(text, pattern)` and `zArray(text)` (see [z-algorithm](items/strings/z-algorithm.md)).
+
+`npm run demo -- z-algorithm`
+
+## Manacher (longest palindrome length)
+
+**Input:** `"babad"` → longest palindromic substring length **3** (`"bab"` or `"aba"`).
+
+**API:** `longestPalindromeLength(s)` (see [manacher](items/strings/manacher.md)).
+
+`npm run demo -- manacher`
+
+## Aho-Corasick (multi-pattern hits)
+
+**Text:** `"ushers"`, **patterns:** `he`, `she`, `his`, `hers` → hit start indices **`[1, 2]`** (matches `aho-corasick-goldens.json`).
+
+**API:** `search(text, patterns)` → list of indices (see [aho-corasick](items/strings/aho-corasick.md)).
+
+`npm run demo -- aho-corasick`
+
+## AVL tree (insert and search)
+
+Insert `(5,"a")`, `(2,"b")`, `(7,"c")`, `(1,"d")`, overwrite `(2,"e")` → in-order keys **`[1, 2, 5, 7]`**, `search(2)` → **`"e"`** (see `avl-tree-goldens.json`).
+
+**API:** `insert`, `inOrder`, `search` on `AVLTree` (see [avl-tree](items/trees/avl-tree.md)).
+
+`npm run demo -- avl-tree`
+
+## Red-black tree (insert and search)
+
+Insert keys **1, 2, 5, 7** with paired values; all searches hit; **`search(9)`** → **null** (see `red-black-tree-goldens.json`).
+
+**API:** `insert(key, value)`, `search(key)` (see [red-black-tree](items/trees/red-black-tree.md)).
+
+`npm run demo -- red-black-tree`
+
 ## Topic index
 
 One-line walkthroughs for every catalog topic. Step tables above cover interview-heavy patterns (search, graphs, DP, caches, strings).
@@ -1045,13 +1101,13 @@ See the [detailed walkthrough](#bubble-sort-in-place-ascending) above.
 
 ### selection-sort
 
-Sort an array in ascending order in place.
+See the [detailed walkthrough](#selection-sort-sorted-copy) above.
 
 `npm run demo -- selection-sort`
 
 ### insertion-sort
 
-Sort an array in ascending order in place (efficient on nearly sorted input).
+See the [detailed walkthrough](#insertion-sort-sorted-copy) above.
 
 `npm run demo -- insertion-sort`
 
@@ -1183,7 +1239,7 @@ See the [detailed walkthrough](#serialize-binary-tree-level-order-codec) above.
 
 ### avl-tree
 
-Self-balancing BST with height-balance after insert/delete.
+See the [detailed walkthrough](#avl-tree-insert-and-search) above.
 
 `npm run demo -- avl-tree`
 
@@ -1225,7 +1281,7 @@ See the [detailed walkthrough](#fenwick-tree-prefix-sums) above.
 
 ### z-algorithm
 
-Linear-time Z-array and pattern search.
+See the [detailed walkthrough](#z-algorithm-pattern-search) above.
 
 `npm run demo -- z-algorithm`
 
@@ -1429,7 +1485,7 @@ Minimum-cost assignment on a square cost matrix.
 
 ### red-black-tree
 
-Balanced BST with red-black invariants.
+See the [detailed walkthrough](#red-black-tree-insert-and-search) above.
 
 `npm run demo -- red-black-tree`
 
@@ -1453,7 +1509,7 @@ Static range minimum queries on an array.
 
 ### manacher
 
-Longest palindromic substring length.
+See the [detailed walkthrough](#manacher-longest-palindrome-length) above.
 
 `npm run demo -- manacher`
 
@@ -1465,7 +1521,7 @@ Lexicographically sorted suffix starting indices.
 
 ### aho-corasick
 
-Find all occurrences of multiple patterns in text.
+See the [detailed walkthrough](#aho-corasick-multi-pattern-hits) above.
 
 `npm run demo -- aho-corasick`
 

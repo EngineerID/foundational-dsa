@@ -658,6 +658,113 @@ class PracticeSharedGoldensTest {
     }
 
     @Test
+    void insertionSortPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("insertion-sort-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            assertArrayEquals(
+                    GoldenIntArrays.parse(c.get("sorted")),
+                    InsertionSortPractice.sort(GoldenIntArrays.parse(c.get("input"))));
+        }
+    }
+
+    @Test
+    void selectionSortPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("selection-sort-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            assertArrayEquals(
+                    GoldenIntArrays.parse(c.get("sorted")),
+                    SelectionSortPractice.sort(GoldenIntArrays.parse(c.get("input"))));
+        }
+    }
+
+    @Test
+    void zAlgorithmPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("z-algorithm-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            String text = (String) c.get("text");
+            String pattern = (String) c.get("pattern");
+            assertEquals(((Number) c.get("index")).intValue(), ZAlgorithmPractice.search(text, pattern));
+            @SuppressWarnings("unchecked")
+            List<Object> z = (List<Object>) c.get("z");
+            int[] expected = z.stream().mapToInt(n -> ((Number) n).intValue()).toArray();
+            assertArrayEquals(expected, ZAlgorithmPractice.zArray(text));
+        }
+    }
+
+    @Test
+    void manacherPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("manacher-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            assertEquals(
+                    ((Number) c.get("expected")).intValue(),
+                    ManacherPractice.longestPalindromeLength((String) c.get("s")));
+        }
+    }
+
+    @Test
+    void ahoCorasickPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("aho-corasick-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            String text = (String) c.get("text");
+            @SuppressWarnings("unchecked")
+            List<String> patterns = (List<String>) c.get("patterns");
+            @SuppressWarnings("unchecked")
+            List<Object> hits = (List<Object>) c.get("hits");
+            assertEquals(
+                    hits.stream().map(n -> ((Number) n).intValue()).toList(),
+                    AhoCorasickPractice.search(text, patterns));
+        }
+    }
+
+    @Test
+    void avlTreePracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("avl-tree-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            AvlTreePractice tree = new AvlTreePractice();
+            @SuppressWarnings("unchecked")
+            List<List<Object>> inserts = (List<List<Object>>) c.get("inserts");
+            for (List<Object> pair : inserts) {
+                tree.insert(((Number) pair.get(0)).intValue(), (String) pair.get(1));
+            }
+            assertEquals(
+                    ((List<?>) c.get("inOrderKeys"))
+                            .stream()
+                            .map(v -> ((Number) v).intValue())
+                            .toList(),
+                    tree.inOrderKeys());
+            assertEquals(c.get("searchValue"), tree.search(((Number) c.get("searchKey")).intValue()));
+        }
+    }
+
+    @Test
+    void redBlackTreePracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("red-black-tree-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            RedBlackTreePractice tree = new RedBlackTreePractice();
+            @SuppressWarnings("unchecked")
+            List<List<Object>> inserts = (List<List<Object>>) c.get("inserts");
+            for (List<Object> pair : inserts) {
+                tree.insert(((Number) pair.get(0)).intValue(), ((Number) pair.get(1)).intValue());
+            }
+            @SuppressWarnings("unchecked")
+            List<List<Object>> searches = (List<List<Object>>) c.get("searches");
+            for (List<Object> pair : searches) {
+                assertEquals(
+                        ((Number) pair.get(1)).intValue(),
+                        tree.search(((Number) pair.get(0)).intValue()));
+            }
+            assertEquals(null, tree.search(((Number) c.get("searchMiss")).intValue()));
+        }
+    }
+
+    @Test
     void bfsPracticeGoldens() throws Exception {
         List<Map<String, Object>> cases =
                 GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("practice-bfs-goldens.json")));

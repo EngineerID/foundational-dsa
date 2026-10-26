@@ -61,6 +61,13 @@ from dsa.practice.longest_palindromic_subsequence_practice import (
 from dsa.practice.dynamic_array_practice import DynamicArrayPractice
 from dsa.practice.linear_search_practice import find_index as linear_find_index
 from dsa.practice.bubble_sort_practice import sort_nums as bubble_sort_practice
+from dsa.practice.insertion_sort_practice import sort_nums as insertion_sort_practice
+from dsa.practice.selection_sort_practice import sort_nums as selection_sort_practice
+from dsa.practice.z_algorithm_practice import find_index as z_find_index
+from dsa.practice.manacher_practice import longest_palindrome_len
+from dsa.practice.aho_corasick_practice import find_hits
+from dsa.practice.avl_tree_practice import AvlTreePractice
+from dsa.practice.red_black_tree_practice import RedBlackTreePractice
 
 
 def test_two_sum_sorted():
@@ -369,3 +376,36 @@ def test_linear_search_practice():
 
 def test_bubble_sort_practice():
     assert bubble_sort_practice([5, 2, 8, 1, 2]) == [1, 2, 2, 5, 8]
+
+
+def test_insertion_sort_practice():
+    assert insertion_sort_practice([5, 2, 8, 1, 2]) == [1, 2, 2, 5, 8]
+
+
+def test_selection_sort_practice():
+    assert selection_sort_practice([5, 2, 8, 1, 2]) == [1, 2, 2, 5, 8]
+
+
+def test_z_algorithm_practice():
+    assert z_find_index("aabaa", "aa") == 0
+
+
+def test_manacher_practice():
+    assert longest_palindrome_len("babad") == 3
+
+
+def test_aho_corasick_practice():
+    assert find_hits("ushers", ["he", "she", "his", "hers"]) == [1, 2]
+
+
+def test_avl_tree_practice():
+    tree = AvlTreePractice()
+    tree.insert(5, "a")
+    tree.insert(2, "b")
+    assert tree.search(2) == "b"
+
+
+def test_red_black_tree_practice():
+    tree = RedBlackTreePractice()
+    tree.insert(1, 10)
+    assert tree.search(1) == 10

@@ -1,6 +1,6 @@
 # Practice problems (trilingual solutions)
 
-Sixty-one interview-style problems with reference solutions in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`. Each problem below links to a step-table **[worked example](worked-examples.md)** (CI: `npm run check:practice-walkthrough`).
+Sixty-eight interview-style problems with reference solutions in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`. Each problem below links to a step-table **[worked example](worked-examples.md)** (CI: `npm run check:practice-walkthrough`).
 
 | # | Problem | Signals | Catalog topics |
 |---|---------|---------|----------------|
@@ -65,6 +65,13 @@ Sixty-one interview-style problems with reference solutions in Java, Python, and
 | 59 | [Dynamic array operations](#59-dynamic-array-operations) | Append / get / size | `dynamic-array` |
 | 60 | [Linear search index](#60-linear-search-index) | First match scan | `linear-search` |
 | 61 | [Bubble sort](#61-bubble-sort) | Adjacent swap sort | `bubble-sort` |
+| 62 | [Insertion sort](#62-insertion-sort) | Growing sorted prefix | `insertion-sort` |
+| 63 | [Selection sort](#63-selection-sort) | Repeated minimum pick | `selection-sort` |
+| 64 | [Z-algorithm search](#64-z-algorithm) | Z-array pattern match | `z-algorithm` |
+| 65 | [Manacher palindrome length](#65-manacher) | Longest palindrome | `manacher` |
+| 66 | [Aho-Corasick hits](#66-aho-corasick) | Multi-pattern scan | `aho-corasick` |
+| 67 | [AVL tree](#67-avl-tree) | Balanced BST insert/search | `avl-tree` |
+| 68 | [Red-black tree](#68-red-black-tree) | RB insert/search | `red-black-tree` |
 
 Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --testPathPattern=practice`, Java `PracticeProblemsTest`.
 
@@ -557,3 +564,59 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 **Implementation:** `practice/bubble_sort*` / `bubbleSortPractice*` — catalog [`bubble-sort`](items/sorting/bubble-sort.md): `npm run demo -- bubble-sort`.
 
 **Walkthrough:** [Worked examples — Bubble sort](worked-examples.md#bubble-sort-in-place-ascending).
+
+## 62. Insertion sort
+
+**Statement:** Return a sorted copy of the input using insertion sort.
+
+**Implementation:** `practice/insertion_sort*` / `insertionSortPractice*` — catalog [`insertion-sort`](items/sorting/insertion-sort.md): `npm run demo -- insertion-sort`.
+
+**Walkthrough:** [Worked examples — Insertion sort](worked-examples.md#insertion-sort-sorted-copy).
+
+## 63. Selection sort
+
+**Statement:** Return a sorted copy of the input using selection sort.
+
+**Implementation:** `practice/selection_sort*` / `selectionSortPractice*` — catalog [`selection-sort`](items/sorting/selection-sort.md): `npm run demo -- selection-sort`.
+
+**Walkthrough:** [Worked examples — Selection sort](worked-examples.md#selection-sort-sorted-copy).
+
+## 64. Z-algorithm
+
+**Statement:** Given text and pattern, return the first match index (or **-1**) and validate the Z-array for the text.
+
+**Implementation:** `practice/z_algorithm*` / `zAlgorithmPractice*` — catalog [`z-algorithm`](items/strings/z-algorithm.md): `npm run demo -- z-algorithm`.
+
+**Walkthrough:** [Worked examples — Z-algorithm](worked-examples.md#z-algorithm-pattern-search).
+
+## 65. Manacher
+
+**Statement:** Return the length of the longest palindromic substring in `s`.
+
+**Implementation:** `practice/manacher*` / `manacherPractice*` — catalog [`manacher`](items/strings/manacher.md): `npm run demo -- manacher`.
+
+**Walkthrough:** [Worked examples — Manacher](worked-examples.md#manacher-longest-palindrome-length).
+
+## 66. Aho-Corasick
+
+**Statement:** Given text and multiple patterns, return sorted start indices where any pattern ends (catalog hit list).
+
+**Implementation:** `practice/aho_corasick*` / `ahoCorasickPractice*` — catalog [`aho-corasick`](items/strings/aho-corasick.md): `npm run demo -- aho-corasick`.
+
+**Walkthrough:** [Worked examples — Aho-Corasick](worked-examples.md#aho-corasick-multi-pattern-hits).
+
+## 67. AVL tree
+
+**Statement:** Insert key/value pairs into an AVL tree; report in-order keys and search a key.
+
+**Implementation:** `practice/avl_tree*` / `avlTreePractice*` — catalog [`avl-tree`](items/trees/avl-tree.md): `npm run demo -- avl-tree`.
+
+**Walkthrough:** [Worked examples — AVL tree](worked-examples.md#avl-tree-insert-and-search).
+
+## 68. Red-black tree
+
+**Statement:** Insert integer key/value pairs; search present keys and confirm a miss returns null/none.
+
+**Implementation:** `practice/red_black_tree*` / `redBlackTreePractice*` — catalog [`red-black-tree`](items/trees/red-black-tree.md): `npm run demo -- red-black-tree`.
+
+**Walkthrough:** [Worked examples — Red-black tree](worked-examples.md#red-black-tree-insert-and-search).

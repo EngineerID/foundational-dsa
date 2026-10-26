@@ -422,4 +422,44 @@ class PracticeProblemsTest {
     void bubbleSortPractice() {
         assertArrayEquals(new int[] { 1, 2, 2, 5, 8 }, BubbleSortPractice.sort(new int[] { 5, 2, 8, 1, 2 }));
     }
+
+    @Test
+    void insertionSortPractice() {
+        assertArrayEquals(new int[] { 1, 2, 2, 5, 8 }, InsertionSortPractice.sort(new int[] { 5, 2, 8, 1, 2 }));
+    }
+
+    @Test
+    void selectionSortPractice() {
+        assertArrayEquals(new int[] { 1, 2, 2, 5, 8 }, SelectionSortPractice.sort(new int[] { 5, 2, 8, 1, 2 }));
+    }
+
+    @Test
+    void zAlgorithmPractice() {
+        assertEquals(0, ZAlgorithmPractice.search("aabaa", "aa"));
+    }
+
+    @Test
+    void manacherPractice() {
+        assertEquals(3, ManacherPractice.longestPalindromeLength("babad"));
+    }
+
+    @Test
+    void ahoCorasickPractice() {
+        assertEquals(List.of(1, 2), AhoCorasickPractice.search("ushers", List.of("he", "she", "his", "hers")));
+    }
+
+    @Test
+    void avlTreePractice() {
+        AvlTreePractice tree = new AvlTreePractice();
+        tree.insert(5, "a");
+        tree.insert(2, "b");
+        assertEquals("b", tree.search(2));
+    }
+
+    @Test
+    void redBlackTreePractice() {
+        RedBlackTreePractice tree = new RedBlackTreePractice();
+        tree.insert(1, 10);
+        assertEquals(10, tree.search(1));
+    }
 }

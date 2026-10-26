@@ -46,6 +46,13 @@ from dsa.practice.longest_palindromic_subsequence_practice import (
 from dsa.practice.dynamic_array_practice import DynamicArrayPractice
 from dsa.practice.linear_search_practice import find_index as linear_find_index
 from dsa.practice.bubble_sort_practice import sort_nums as bubble_sort_practice
+from dsa.practice.insertion_sort_practice import sort_nums as insertion_sort_practice
+from dsa.practice.selection_sort_practice import sort_nums as selection_sort_practice
+from dsa.practice.z_algorithm_practice import find_index as z_find_index, z_values
+from dsa.practice.manacher_practice import longest_palindrome_len
+from dsa.practice.aho_corasick_practice import find_hits
+from dsa.practice.avl_tree_practice import AvlTreePractice
+from dsa.practice.red_black_tree_practice import RedBlackTreePractice
 
 TOOLS = Path(__file__).resolve().parents[3] / "tools"
 
@@ -354,3 +361,48 @@ def test_linear_search_practice_goldens():
 def test_bubble_sort_practice_goldens():
     for row in _cases("bubble-sort-goldens.json"):
         assert bubble_sort_practice(row["input"]) == row["sorted"]
+
+
+def test_insertion_sort_practice_goldens():
+    for row in _cases("insertion-sort-goldens.json"):
+        assert insertion_sort_practice(row["input"]) == row["sorted"]
+
+
+def test_selection_sort_practice_goldens():
+    for row in _cases("selection-sort-goldens.json"):
+        assert selection_sort_practice(row["input"]) == row["sorted"]
+
+
+def test_z_algorithm_practice_goldens():
+    for row in _cases("z-algorithm-goldens.json"):
+        assert z_find_index(row["text"], row["pattern"]) == row["index"]
+        assert z_values(row["text"]) == row["z"]
+
+
+def test_manacher_practice_goldens():
+    for row in _cases("manacher-goldens.json"):
+        assert longest_palindrome_len(row["s"]) == row["expected"]
+
+
+def test_aho_corasick_practice_goldens():
+    for row in _cases("aho-corasick-goldens.json"):
+        assert find_hits(row["text"], row["patterns"]) == row["hits"]
+
+
+def test_avl_tree_practice_goldens():
+    for row in _cases("avl-tree-goldens.json"):
+        tree = AvlTreePractice()
+        for key, value in row.get("inserts", []):
+            tree.insert(key, value)
+        assert tree.in_order_keys() == row["inOrderKeys"]
+        assert tree.search(row["searchKey"]) == row["searchValue"]
+
+
+def test_red_black_tree_practice_goldens():
+    for row in _cases("red-black-tree-goldens.json"):
+        tree = RedBlackTreePractice()
+        for key, value in row.get("inserts", []):
+            tree.insert(key, value)
+        for key, value in row.get("searches", []):
+            assert tree.search(key) == value
+        assert tree.search(row["searchMiss"]) is None

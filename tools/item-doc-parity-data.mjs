@@ -206,4 +206,11 @@ export const WORKED_EXAMPLES = {
   'dynamic-array': { anchor: 'dynamic-array-append-and-get', detailed: true },
   'linear-search': { anchor: 'linear-search-first-match-index', detailed: true },
   'bubble-sort': { anchor: 'bubble-sort-in-place-ascending', detailed: true },
+  'insertion-sort': { anchor: 'insertion-sort-sorted-copy', detailed: true },
+  'selection-sort': { anchor: 'selection-sort-sorted-copy', detailed: true },
+  'z-algorithm': { anchor: 'z-algorithm-pattern-search', detailed: true },
+  manacher: { anchor: 'manacher-longest-palindrome-length', detailed: true },
+  'aho-corasick': { anchor: 'aho-corasick-multi-pattern-hits', detailed: true },
+  'avl-tree': { anchor: 'avl-tree-insert-and-search', detailed: true },
+  'red-black-tree': { anchor: 'red-black-tree-insert-and-search', detailed: true },
 };

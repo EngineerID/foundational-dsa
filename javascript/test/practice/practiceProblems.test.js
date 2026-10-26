@@ -61,6 +61,13 @@ const {
 const { DynamicArrayPractice } = require('../../src/practice/dynamicArrayPractice');
 const { findIndex: linearFindIndex } = require('../../src/practice/linearSearchPractice');
 const { bubbleSort } = require('../../src/practice/bubbleSortPractice');
+const { insertionSort } = require('../../src/practice/insertionSortPractice');
+const { selectionSort } = require('../../src/practice/selectionSortPractice');
+const { findIndex: zFindIndex } = require('../../src/practice/zAlgorithmPractice');
+const { longestPalindromeLength } = require('../../src/practice/manacherPractice');
+const { findHits } = require('../../src/practice/ahoCorasickPractice');
+const { AvlTreePractice } = require('../../src/practice/avlTreePractice');
+const { RedBlackTreePractice } = require('../../src/practice/redBlackTreePractice');
 
 describe('practice problems', () => {
   test('two sum sorted', () => {
@@ -493,5 +500,38 @@ describe('practice problems', () => {
 
   test('bubble sort practice', () => {
     expect(bubbleSort([5, 2, 8, 1, 2])).toEqual([1, 2, 2, 5, 8]);
+  });
+
+  test('insertion sort practice', () => {
+    expect(insertionSort([5, 2, 8, 1, 2])).toEqual([1, 2, 2, 5, 8]);
+  });
+
+  test('selection sort practice', () => {
+    expect(selectionSort([5, 2, 8, 1, 2])).toEqual([1, 2, 2, 5, 8]);
+  });
+
+  test('z-algorithm practice', () => {
+    expect(zFindIndex('aabaa', 'aa')).toBe(0);
+  });
+
+  test('manacher practice', () => {
+    expect(longestPalindromeLength('babad')).toBe(3);
+  });
+
+  test('aho-corasick practice', () => {
+    expect(findHits('ushers', ['he', 'she', 'his', 'hers'])).toEqual([1, 2]);
+  });
+
+  test('avl tree practice', () => {
+    const tree = new AvlTreePractice();
+    tree.insert(5, 'a');
+    tree.insert(2, 'b');
+    expect(tree.search(2)).toBe('b');
+  });
+
+  test('red-black tree practice', () => {
+    const tree = new RedBlackTreePractice();
+    tree.insert(1, 10);
+    expect(tree.search(1)).toBe(10);
   });
 });

@@ -412,6 +412,13 @@ Every catalog topic links to its doc page under [docs/items/](docs/items/). Prac
 - [Dynamic array operations](docs/practice-problems.md#59-dynamic-array-operations)
 - [Linear search index](docs/practice-problems.md#60-linear-search-index)
 - [Bubble sort](docs/practice-problems.md#61-bubble-sort)
+- [Insertion sort](docs/practice-problems.md#62-insertion-sort)
+- [Selection sort](docs/practice-problems.md#63-selection-sort)
+- [Z-algorithm search](docs/practice-problems.md#64-z-algorithm)
+- [Manacher palindrome length](docs/practice-problems.md#65-manacher)
+- [Aho-Corasick hits](docs/practice-problems.md#66-aho-corasick)
+- [AVL tree](docs/practice-problems.md#67-avl-tree)
+- [Red-black tree](docs/practice-problems.md#68-red-black-tree)
 
 See also the generated [complexity cheat sheet](docs/complexity-cheatsheet.md) for all **87** catalog topics.
 

@@ -66,6 +66,13 @@ export const PRACTICE_TOPIC_TARGET = [
   'dynamic-array',
   'linear-search',
   'bubble-sort',
+  'insertion-sort',
+  'selection-sort',
+  'z-algorithm',
+  'manacher',
+  'aho-corasick',
+  'avl-tree',
+  'red-black-tree',
 ];
 
 const itemIds = new Set(ITEMS.map((i) => i.id));

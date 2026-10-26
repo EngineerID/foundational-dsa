@@ -74,6 +74,13 @@ export const PRACTICE_PROBLEMS = [
   { n: 59, docAnchor: '59-dynamic-array-operations', walkthroughSlug: 'dynamic-array-append-and-get', catalogTopic: 'dynamic-array' },
   { n: 60, docAnchor: '60-linear-search-index', walkthroughSlug: 'linear-search-first-match-index', catalogTopic: 'linear-search' },
   { n: 61, docAnchor: '61-bubble-sort', walkthroughSlug: 'bubble-sort-in-place-ascending', catalogTopic: 'bubble-sort' },
+  { n: 62, docAnchor: '62-insertion-sort', walkthroughSlug: 'insertion-sort-sorted-copy', catalogTopic: 'insertion-sort' },
+  { n: 63, docAnchor: '63-selection-sort', walkthroughSlug: 'selection-sort-sorted-copy', catalogTopic: 'selection-sort' },
+  { n: 64, docAnchor: '64-z-algorithm', walkthroughSlug: 'z-algorithm-pattern-search', catalogTopic: 'z-algorithm' },
+  { n: 65, docAnchor: '65-manacher', walkthroughSlug: 'manacher-longest-palindrome-length', catalogTopic: 'manacher' },
+  { n: 66, docAnchor: '66-aho-corasick', walkthroughSlug: 'aho-corasick-multi-pattern-hits', catalogTopic: 'aho-corasick' },
+  { n: 67, docAnchor: '67-avl-tree', walkthroughSlug: 'avl-tree-insert-and-search', catalogTopic: 'avl-tree' },
+  { n: 68, docAnchor: '68-red-black-tree', walkthroughSlug: 'red-black-tree-insert-and-search', catalogTopic: 'red-black-tree' },
 ];
 
 export const PRACTICE_DOC_ANCHORS = PRACTICE_PROBLEMS.map((p) => p.docAnchor);

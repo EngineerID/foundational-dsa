@@ -44,6 +44,13 @@ const {
 const { DynamicArrayPractice } = require('../../src/practice/dynamicArrayPractice');
 const { findIndex: linearFindIndex } = require('../../src/practice/linearSearchPractice');
 const { bubbleSort } = require('../../src/practice/bubbleSortPractice');
+const { insertionSort } = require('../../src/practice/insertionSortPractice');
+const { selectionSort } = require('../../src/practice/selectionSortPractice');
+const { findIndex: zFindIndex, zValues } = require('../../src/practice/zAlgorithmPractice');
+const { longestPalindromeLength } = require('../../src/practice/manacherPractice');
+const { findHits } = require('../../src/practice/ahoCorasickPractice');
+const { AvlTreePractice } = require('../../src/practice/avlTreePractice');
+const { RedBlackTreePractice } = require('../../src/practice/redBlackTreePractice');
 
 const tools = path.join(__dirname, '../../../tools');
 
@@ -412,6 +419,61 @@ describe('practice shared goldens', () => {
   test('bubble sort practice', () => {
     for (const row of cases('bubble-sort-goldens.json')) {
       expect(bubbleSort(row.input)).toEqual(row.sorted);
+    }
+  });
+
+  test('insertion sort practice', () => {
+    for (const row of cases('insertion-sort-goldens.json')) {
+      expect(insertionSort(row.input)).toEqual(row.sorted);
+    }
+  });
+
+  test('selection sort practice', () => {
+    for (const row of cases('selection-sort-goldens.json')) {
+      expect(selectionSort(row.input)).toEqual(row.sorted);
+    }
+  });
+
+  test('z-algorithm practice', () => {
+    for (const row of cases('z-algorithm-goldens.json')) {
+      expect(zFindIndex(row.text, row.pattern)).toBe(row.index);
+      expect(zValues(row.text)).toEqual(row.z);
+    }
+  });
+
+  test('manacher practice', () => {
+    for (const row of cases('manacher-goldens.json')) {
+      expect(longestPalindromeLength(row.s)).toBe(row.expected);
+    }
+  });
+
+  test('aho-corasick practice', () => {
+    for (const row of cases('aho-corasick-goldens.json')) {
+      expect(findHits(row.text, row.patterns)).toEqual(row.hits);
+    }
+  });
+
+  test('avl tree practice', () => {
+    for (const row of cases('avl-tree-goldens.json')) {
+      const tree = new AvlTreePractice();
+      for (const [key, value] of row.inserts ?? []) {
+        tree.insert(key, value);
+      }
+      expect(tree.inOrderKeys()).toEqual(row.inOrderKeys);
+      expect(tree.search(row.searchKey)).toBe(row.searchValue);
+    }
+  });
+
+  test('red-black tree practice', () => {
+    for (const row of cases('red-black-tree-goldens.json')) {
+      const tree = new RedBlackTreePractice();
+      for (const [key, value] of row.inserts ?? []) {
+        tree.insert(key, value);
+      }
+      for (const [key, value] of row.searches ?? []) {
+        expect(tree.search(key)).toBe(value);
+      }
+      expect(tree.search(row.searchMiss)).toBeNull();
     }
   });
 });
