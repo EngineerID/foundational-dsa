@@ -1,6 +1,6 @@
 # Practice problems (trilingual solutions)
 
-Twenty interview-style problems with reference solutions in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`. Each problem below links to a step-table **[worked example](worked-examples.md)** (CI: `npm run check:practice-walkthrough`).
+Twenty-six interview-style problems with reference solutions in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`. Each problem below links to a step-table **[worked example](worked-examples.md)** (CI: `npm run check:practice-walkthrough`).
 
 | # | Problem | Signals | Catalog topics |
 |---|---------|---------|----------------|
@@ -24,6 +24,12 @@ Twenty interview-style problems with reference solutions in Java, Python, and Ja
 | 18 | [Serialize binary tree](#18-serialize-and-deserialize-binary-tree) | Tree encoding | `serialize-binary-tree` |
 | 19 | [Network delay time](#19-network-delay-time) | Weighted graph, farthest reach | `dijkstra` |
 | 20 | [Sliding window maximum](#20-sliding-window-maximum) | Window max, deque | `sliding-window-maximum` |
+| 21 | [Binary search](#21-binary-search) | Sorted array, index | `binary-search` |
+| 22 | [0/1 Knapsack](#22-01-knapsack) | Weight limit, max value | `knapsack` |
+| 23 | [Longest common subsequence](#23-longest-common-subsequence) | Two strings, DP | `lcs` |
+| 24 | [KMP pattern search](#24-kmp-pattern-search) | Substring, linear | `kmp` |
+| 25 | [Trie prefix tree](#25-trie-prefix-tree) | Insert, search, prefix | `trie` |
+| 26 | [BFS shortest paths](#26-bfs-shortest-paths) | Unweighted graph | `bfs` |
 
 Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --testPathPattern=practice`, Java `PracticeProblemsTest`.
 
@@ -188,3 +194,51 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 **Implementation:** `practice/sliding_window_max*` / `slidingWindowMax*` — monotonic deque (catalog [`sliding-window-maximum`](items/linear/sliding-window-maximum.md): `npm run demo -- sliding-window-maximum`; related [`monotonic-stack`](items/linear/monotonic-stack.md): `npm run demo -- monotonic-stack`).
 
 **Walkthrough:** [Worked examples — Sliding window maximum](worked-examples.md#sliding-window-maximum) (see also [sliding window patterns](worked-examples.md#sliding-window-patterns-fixed-and-variable)).
+
+## 21. Binary search
+
+**Statement:** Given a sorted integer array and a target, return the index of the target or **-1** if it is not present.
+
+**Implementation:** `practice/binary_search*` / `binarySearchPractice*` — catalog [`binary-search`](items/searching/binary-search.md): `npm run demo -- binary-search`.
+
+**Walkthrough:** [Worked examples — Binary search](worked-examples.md#binary-search-on-a-sorted-array).
+
+## 22. 0/1 Knapsack
+
+**Statement:** Given item weights, values, and a capacity, return the maximum total value using each item at most once.
+
+**Implementation:** `practice/knapsack*` / `knapsackPractice*` — catalog [`knapsack`](items/dp/knapsack.md): `npm run demo -- knapsack`.
+
+**Walkthrough:** [Worked examples — Knapsack](worked-examples.md#knapsack-01-classic).
+
+## 23. Longest common subsequence
+
+**Statement:** Given strings `text1` and `text2`, return the length of their longest common subsequence.
+
+**Implementation:** `practice/lcs*` / `lcsPractice*` — catalog [`lcs`](items/dp/lcs.md): `npm run demo -- lcs`.
+
+**Walkthrough:** [Worked examples — LCS](worked-examples.md#longest-common-subsequence).
+
+## 24. KMP pattern search
+
+**Statement:** Given text and pattern, return the index of the first occurrence of pattern in text, or **-1**.
+
+**Implementation:** `practice/kmp*` / `kmpPractice*` — catalog [`kmp`](items/strings/kmp.md): `npm run demo -- kmp`.
+
+**Walkthrough:** [Worked examples — KMP](worked-examples.md#kmp-pattern-search).
+
+## 25. Trie prefix tree
+
+**Statement:** Implement a trie supporting `insert(word)`, `search(word)`, and `startsWith(prefix)`.
+
+**Implementation:** `practice/trie*` / `triePractice*` — catalog [`trie`](items/trees/trie.md): `npm run demo -- trie`.
+
+**Walkthrough:** [Worked examples — Trie](worked-examples.md#trie-prefix-search).
+
+## 26. BFS shortest paths
+
+**Statement:** Given `n` nodes, undirected edges `[u, v]`, and a source, return the unweighted shortest distance from source to every node (**-1** if unreachable).
+
+**Implementation:** `practice/bfs*` / `bfsPractice*` — catalog [`bfs`](items/graphs/bfs.md): `npm run demo -- bfs`.
+
+**Walkthrough:** [Worked examples — BFS](worked-examples.md#bfs-unweighted-shortest-paths).

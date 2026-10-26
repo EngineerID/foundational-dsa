@@ -39,10 +39,6 @@ export function checkPracticeWalkthroughCoverage(options = {}) {
   const workedSlugs = collectHeadingSlugs(fs.readFileSync(workedPath, 'utf8'));
   const errors = [];
 
-  if (!options.problems && PRACTICE_PROBLEMS.length !== 20) {
-    errors.push(`PRACTICE_PROBLEMS must list 20 entries (got ${PRACTICE_PROBLEMS.length})`);
-  }
-
   for (const row of problems) {
     const { body, error } = sectionForProblem(text, row.n, row.docAnchor);
     if (error) {

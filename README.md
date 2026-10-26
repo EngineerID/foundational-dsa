@@ -18,7 +18,7 @@ Use it to study implementations side by side, prepare for interviews, or teach D
 | 1 | Clone the repo and run `bash .cursor/install.sh` once (Node 20+, Python 3.10+, JDK 17+). |
 | 2 | Run `npm test` from the root — docs link scan, complexity checks, then Java, Python, JavaScript, parity, and matrix. |
 | 3 | Explore a topic: [COVERAGE.md](COVERAGE.md) lists all 87 ids; `npm run demo -- <id>` runs that topic’s tests in all three languages. |
-| 4 | Interview study: [docs/interview-prep.md](docs/interview-prep.md) maps prompts to ids; [docs/worked-examples.md](docs/worked-examples.md) has step tables; [docs/practice-problems.md](docs/practice-problems.md) has 20 trilingual problems. |
+| 4 | Interview study: [docs/interview-prep.md](docs/interview-prep.md) maps prompts to ids; [docs/worked-examples.md](docs/worked-examples.md) has step tables; [docs/practice-problems.md](docs/practice-problems.md) has 26 trilingual problems (expanding toward full catalog coverage). |
 | 5 | First PR: read [CONTRIBUTING.md](CONTRIBUTING.md) (scope, `npm test` vs `npm run test:ci`, issue templates). |
 | 6 | Security reports: [SECURITY.md](SECURITY.md). |
 
@@ -371,6 +371,12 @@ Every catalog topic links to its doc page under [docs/items/](docs/items/). Prac
 - [Serialize binary tree](docs/practice-problems.md#18-serialize-and-deserialize-binary-tree)
 - [Network delay time](docs/practice-problems.md#19-network-delay-time)
 - [Sliding window maximum](docs/practice-problems.md#20-sliding-window-maximum)
+- [Binary search](docs/practice-problems.md#21-binary-search)
+- [0/1 Knapsack](docs/practice-problems.md#22-01-knapsack)
+- [Longest common subsequence](docs/practice-problems.md#23-longest-common-subsequence)
+- [KMP pattern search](docs/practice-problems.md#24-kmp-pattern-search)
+- [Trie prefix tree](docs/practice-problems.md#25-trie-prefix-tree)
+- [BFS shortest paths](docs/practice-problems.md#26-bfs-shortest-paths)
 
 See also the generated [complexity cheat sheet](docs/complexity-cheatsheet.md) for all **87** catalog topics.
 

@@ -35,6 +35,7 @@ When `run_heavy` is true, run these from the repository root in order:
 | Lint | `npm run lint` |
 | Docs link scan | `npm run check:docs-links` |
 | Practice → walkthrough links | `npm run check:practice-walkthrough` |
+| Practice → catalog topic map | `npm run check:practice-catalog-topics` |
 | Stub scan | `npm run check:stubs` |
 | Java tests | `npm run test:java` (JUnit 5 default **2m** per-test timeout via Surefire) |
 | Python tests (with coverage in CI) | `PYTEST_COV=1 npm run test:py` |

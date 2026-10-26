@@ -18,6 +18,12 @@ const { editDistance } = require('../../src/practice/editDistancePractice');
 const { serialize, deserialize } = require('../../src/practice/treeCodec');
 const { networkDelay } = require('../../src/practice/networkDelay');
 const { maxSlidingWindow } = require('../../src/practice/slidingWindowMax');
+const { findIndex } = require('../../src/practice/binarySearchPractice');
+const { knapsackMaxValue } = require('../../src/practice/knapsackPractice');
+const { lcsLength } = require('../../src/practice/lcsPractice');
+const { firstIndex } = require('../../src/practice/kmpPractice');
+const { TriePractice } = require('../../src/practice/triePractice');
+const { bfsDistances } = require('../../src/practice/bfsPractice');
 
 describe('practice problems', () => {
   test('two sum sorted', () => {
@@ -153,5 +159,45 @@ describe('practice problems', () => {
 
   test('sliding window max', () => {
     expect(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3)).toEqual([3, 3, 5, 5, 6, 7]);
+  });
+
+  test('binary search practice', () => {
+    expect(findIndex([1, 3, 5, 7, 9, 11], 7)).toBe(3);
+    expect(findIndex([1, 3, 5, 7, 9, 11], 8)).toBe(-1);
+  });
+
+  test('knapsack practice', () => {
+    expect(knapsackMaxValue([1, 2, 3], [6, 10, 12], 5)).toBe(22);
+  });
+
+  test('lcs practice', () => {
+    expect(lcsLength('abcde', 'ace')).toBe(3);
+  });
+
+  test('kmp practice', () => {
+    expect(firstIndex('ababcababa', 'aba')).toBe(0);
+  });
+
+  test('trie practice', () => {
+    const trie = new TriePractice();
+    trie.insert('cat');
+    trie.insert('car');
+    expect(trie.search('cat')).toBe(true);
+    expect(trie.search('ca')).toBe(false);
+    expect(trie.startsWith('ca')).toBe(true);
+  });
+
+  test('bfs practice', () => {
+    expect(
+      bfsDistances(
+        5,
+        [
+          [0, 1],
+          [0, 2],
+          [1, 3],
+        ],
+        0,
+      ),
+    ).toEqual([0, 1, 1, 2, -1]);
   });
 });

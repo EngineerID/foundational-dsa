@@ -150,4 +150,42 @@ class PracticeProblemsTest {
                 new int[] { 3, 3, 5, 5, 6, 7 },
                 SlidingWindowMax.maxSlidingWindow(new int[] { 1, 3, -1, -3, 5, 3, 6, 7 }, 3));
     }
+
+    @Test
+    void binarySearchPractice() {
+        assertEquals(3, BinarySearchPractice.findIndex(new int[] { 1, 3, 5, 7, 9, 11 }, 7));
+        assertEquals(-1, BinarySearchPractice.findIndex(new int[] { 1, 3, 5, 7, 9, 11 }, 8));
+    }
+
+    @Test
+    void knapsackPractice() {
+        assertEquals(22, KnapsackPractice.maxValue(new int[] { 1, 2, 3 }, new int[] { 6, 10, 12 }, 5));
+    }
+
+    @Test
+    void lcsPractice() {
+        assertEquals(3, LcsPractice.length("abcde", "ace"));
+    }
+
+    @Test
+    void kmpPractice() {
+        assertEquals(0, KmpPractice.firstIndex("ababcababa", "aba"));
+    }
+
+    @Test
+    void triePractice() {
+        TriePractice trie = new TriePractice();
+        trie.insert("cat");
+        trie.insert("car");
+        assertTrue(trie.search("cat"));
+        assertFalse(trie.search("ca"));
+        assertTrue(trie.startsWith("ca"));
+    }
+
+    @Test
+    void bfsPractice() {
+        assertArrayEquals(
+                new int[] { 0, 1, 1, 2, -1 },
+                BfsPractice.distances(5, new int[][] { { 0, 1 }, { 0, 2 }, { 1, 3 } }, 0));
+    }
 }

@@ -18,6 +18,12 @@ from dsa.practice.tree_codec import deserialize, serialize
 from dsa.practice.two_sum import two_sum_sorted
 from dsa.practice.valid_parentheses import is_valid_parentheses
 from dsa.practice.word_search import word_search
+from dsa.practice.binary_search_practice import find_index
+from dsa.practice.knapsack_practice import max_value as knapsack_max_value
+from dsa.practice.lcs_practice import lcs_length
+from dsa.practice.kmp_practice import first_index
+from dsa.practice.trie_practice import TriePractice
+from dsa.practice.bfs_practice import distances as bfs_distances
 
 
 def test_two_sum_sorted():
@@ -117,3 +123,33 @@ def test_network_delay():
 
 def test_sliding_window_max_practice():
     assert max_sliding_window([1, 3, -1, -3, 5, 3, 6, 7], 3) == [3, 3, 5, 5, 6, 7]
+
+
+def test_binary_search_practice():
+    assert find_index([1, 3, 5, 7, 9, 11], 7) == 3
+    assert find_index([1, 3, 5, 7, 9, 11], 8) == -1
+
+
+def test_knapsack_practice():
+    assert knapsack_max_value([1, 2, 3], [6, 10, 12], 5) == 22
+
+
+def test_lcs_practice():
+    assert lcs_length("abcde", "ace") == 3
+
+
+def test_kmp_practice():
+    assert first_index("ababcababa", "aba") == 0
+
+
+def test_trie_practice():
+    trie = TriePractice()
+    trie.insert("cat")
+    trie.insert("car")
+    assert trie.search("cat")
+    assert not trie.search("ca")
+    assert trie.starts_with("ca")
+
+
+def test_bfs_practice():
+    assert bfs_distances(5, [[0, 1], [0, 2], [1, 3]], 0) == [0, 1, 1, 2, -1]

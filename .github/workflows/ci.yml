@@ -193,6 +193,9 @@ jobs:
       - run: npm run check:practice-walkthrough
         if: env.RUN_HEAVY == 'true'
 
+      - run: npm run check:practice-catalog-topics
+        if: env.RUN_HEAVY == 'true'
+
       - run: npm run check:complexity-cheatsheet
         if: env.RUN_HEAVY == 'true'
 

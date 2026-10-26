@@ -54,9 +54,10 @@ npm run lint
 npm run check:edge-themes
 npm run check:ci-policy
 npm run check:practice-walkthrough
+npm run check:practice-catalog-topics
 ```
 
-`check:practice-walkthrough` ensures every problem in `docs/practice-problems.md` links to a `worked-examples.md` walkthrough (or is listed in `tools/practice-walkthrough-data.mjs` `PRACTICE_WALKTHROUGH_EXEMPT`).
+`check:practice-walkthrough` ensures every problem in `docs/practice-problems.md` links to a `worked-examples.md` walkthrough (or is listed in `tools/practice-walkthrough-data.mjs` `PRACTICE_WALKTHROUGH_EXEMPT`). `check:practice-catalog-topics` validates `catalogTopic` metadata and the expanding `PRACTICE_TOPIC_TARGET` list in the same data module.
 
 Optional local timing (not a CI gate): `npm run bench` (see `tools/micro-bench.mjs`).
 
