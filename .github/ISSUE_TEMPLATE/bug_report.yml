@@ -1,0 +1,54 @@
+name: Bug report
+description: Incorrect behavior, test failure, or doc mismatch
+title: "[bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Please do not include secrets or personal contact information.
+  - type: input
+    id: topic-id
+    attributes:
+      label: Topic id (if applicable)
+      description: Catalog id from COVERAGE.md, e.g. `dijkstra`, `lru-cache`
+      placeholder: dijkstra
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Commands such as `npm run demo -- <id>` or `npm test`
+      placeholder: |
+        1. bash .cursor/install.sh
+        2. npm run demo -- binary-search
+    validations:
+      required: true
+  - type: dropdown
+    id: languages
+    attributes:
+      label: Affected languages
+      multiple: true
+      options:
+        - Java
+        - Python
+        - JavaScript
+        - All three
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues for duplicates
+          required: true

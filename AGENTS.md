@@ -28,6 +28,7 @@ bash .cursor/install.sh
 
 **Default agent check:** `npm test` (also `make test`). That runs, in order:
 
+- `npm run check:docs-links`
 - `npm run check:stubs`
 - `npm run test:java` (JUnit 5 via Maven Wrapper)
 - `npm run test:py` (`python3 -m pytest`)

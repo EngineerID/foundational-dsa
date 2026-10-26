@@ -1,0 +1,38 @@
+name: Feature or improvement
+description: New topic, docs, tests, or tooling
+title: "[feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For small doc fixes, a pull request without an issue is welcome. See [CONTRIBUTING.md](https://github.com/EngineerID/foundational-dsa/blob/main/CONTRIBUTING.md).
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or opportunity
+      description: What gap does this fill for learners or contributors?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+    validations:
+      required: true
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - Documentation only
+        - Single catalog topic (trilingual)
+        - Tooling / CI
+        - Other
+  - type: checkboxes
+    id: good-first
+    attributes:
+      label: Contributor fit
+      options:
+        - label: This could be labeled good first issue after triage
+        - label: I am willing to open a PR for this

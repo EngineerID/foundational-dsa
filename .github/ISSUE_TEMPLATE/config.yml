@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Discussions
+    url: https://github.com/EngineerID/foundational-dsa/discussions
+    about: Ask questions or suggest ideas before opening a tracked issue.
+  - name: Contributing guide
+    url: https://github.com/EngineerID/foundational-dsa/blob/main/CONTRIBUTING.md
+    about: Setup, tests, and good-first-issue pointers.
