@@ -45,7 +45,7 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Statement:** Given a string containing `(`, `)`, `{`, `}`, `[`, `]`, determine if brackets are balanced and correctly nested.
 
-**Implementation:** `practice/valid_parentheses*`.
+**Implementation:** `practice/valid_parentheses*` (catalog [`valid-parentheses`](items/linear/valid-parentheses.md): `npm run demo -- valid-parentheses`).
 
 ## 4. Meeting rooms II
 

@@ -1022,6 +1022,19 @@ Uniform random sample of size k from a stream.
 **Operations:**
 - `sample` → Python `sample`, JS `sample`
 
+## valid-parentheses
+
+Check balanced nesting of ()[]{} brackets.
+
+| Language | Module |
+|----------|--------|
+| Java | `ValidParentheses` |
+| Python | `valid_parentheses` |
+| JavaScript | `validParentheses` |
+
+**Operations:**
+- `isValidParentheses` → Python `is_valid_parentheses`, JS `isValidParentheses`
+
 ## monotonic-stack
 
 Next strictly greater element to the right for each index.

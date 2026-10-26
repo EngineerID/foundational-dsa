@@ -78,6 +78,7 @@ export const ITEMS = [
   { topic: 'dp', id: 'rod-cutting', java: 'RodCutting', py: 'rod_cutting', js: 'rodCutting' },
   { topic: 'dp', id: 'tsp-bitmask', java: 'TSPBitmask', py: 'tsp_bitmask', js: 'tspBitmask' },
   { topic: 'searching', id: 'reservoir-sampling', java: 'ReservoirSampling', py: 'reservoir_sampling', js: 'reservoirSampling' },
+  { topic: 'linear', id: 'valid-parentheses', java: 'ValidParentheses', py: 'valid_parentheses', js: 'validParentheses' },
   { topic: 'linear', id: 'monotonic-stack', java: 'MonotonicStack', py: 'monotonic_stack', js: 'monotonicStack' },
   { topic: 'linear', id: 'sliding-window-maximum', java: 'SlidingWindowMaximum', py: 'sliding_window_maximum', js: 'slidingWindowMaximum' },
   { topic: 'linear', id: 'lru-cache', java: 'LRUCache', py: 'lru_cache', js: 'lruCache' },

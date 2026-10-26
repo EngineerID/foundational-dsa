@@ -42,6 +42,7 @@ from dsa.linear import (
     doubly_linked_list,
     lru_cache,
     monotonic_stack,
+    valid_parentheses,
     queue,
     singly_linked_list,
     sliding_window_maximum,
@@ -253,6 +254,7 @@ def test_new_trees_strings_dp_edge_themes():
     assert coin_change.min_coins([1], 0) == 0
     assert max_subarray.max_subarray([1, -2, 3]) == 3
     assert monotonic_stack.next_greater_element([1, 2]) == [2, -1]
+    assert valid_parentheses.is_valid_parentheses("()") is True
 
 
 def test_graph_algorithms_edge_themes():

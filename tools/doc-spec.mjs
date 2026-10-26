@@ -438,6 +438,12 @@ export const DOC_SPECS = {
     invariant: 'Reservoir is uniform k-subset of items seen.',
     complexity: 'sample: Time O(n); Space O(k).',
   },
+  'valid-parentheses': {
+    purpose: 'Check balanced nesting of ()[]{} brackets.',
+    technique: 'Stack',
+    invariant: 'Stack holds unmatched open brackets in order.',
+    complexity: 'isValidParentheses: Time O(n); Space O(n).',
+  },
   'monotonic-stack': {
     purpose: 'Next strictly greater element to the right for each index.',
     technique: 'Monotonic decreasing stack',

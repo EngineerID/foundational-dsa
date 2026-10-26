@@ -16,6 +16,7 @@ const REQUIRED_CASE_KEYS = {
   'maximum-subarray-goldens.json': ['nums', 'expected'],
   'longest-substring-without-repeating-goldens.json': ['s', 'expected'],
   'monotonic-stack-goldens.json': ['nums', 'expected'],
+  'valid-parentheses-goldens.json': ['s', 'expected'],
   'reservoir-sampling-goldens.json': ['stream', 'k', 'seed', 'expected'],
   'treap-goldens.json': ['seed', 'inserts', 'searchResults'],
 };

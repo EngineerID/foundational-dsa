@@ -57,6 +57,7 @@ Trilingual tests for these scenarios: `WorkedInterviewExamplesTest`, `test_worke
 
 | Interview prompt | Topic id | Demo |
 |------------------|----------|------|
+| Valid parentheses / bracket matching | `valid-parentheses` | `npm run demo -- valid-parentheses` |
 | Stack / queue / deque | `stack`, `queue`, `deque` | `npm run demo -- stack` |
 | LRU cache (get/put O(1)) | `lru-cache` | `npm run demo -- lru-cache` |
 | Dynamic array / list growth | `dynamic-array` | `npm run demo -- dynamic-array` |

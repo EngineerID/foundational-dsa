@@ -460,6 +460,12 @@ export const API_MANIFEST = {
     python: ['sample'],
     javascript: ['sample'],
   },
+  'valid-parentheses': {
+    type: 'static',
+    java: ['isValidParentheses'],
+    python: ['is_valid_parentheses'],
+    javascript: ['isValidParentheses'],
+  },
   'monotonic-stack': {
     type: 'static',
     java: ['nextGreaterElement'],

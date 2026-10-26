@@ -1,6 +1,6 @@
 # Contributing to foundational-dsa
 
-Thank you for helping improve this trilingual DSA reference. The project keeps **75 topics** in sync across Java, Python, and JavaScript, with tests and docs for each.
+Thank you for helping improve this trilingual DSA reference. The project keeps **76 topics** in sync across Java, Python, and JavaScript, with tests and docs for each.
 
 ## First-time contributor checklist
 

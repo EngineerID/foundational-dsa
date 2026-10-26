@@ -510,6 +510,13 @@ export const STATEFUL_GOLDENS = [
     java: 'java/src/test/java/com/dsa/examples/strings/LongestSubstringWithoutRepeatingGoldensTest.java',
   },
   {
+    id: 'valid-parentheses',
+    json: 'valid-parentheses-goldens.json',
+    py: 'python/tests/linear/test_valid_parentheses_goldens.py',
+    js: 'javascript/test/linear/validParenthesesGoldens.test.js',
+    java: 'java/src/test/java/com/dsa/examples/linear/ValidParenthesesGoldensTest.java',
+  },
+  {
     id: 'monotonic-stack',
     json: 'monotonic-stack-goldens.json',
     py: 'python/tests/linear/test_monotonic_stack_goldens.py',

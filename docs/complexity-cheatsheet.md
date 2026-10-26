@@ -70,6 +70,7 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 | `singly-linked-list` | Time O(1) | Space O(n) | prepend/search: Time O(1)/O(n); Space O(n). |
 | `sliding-window-maximum` | Time O(n) | Space O(k) | maxSlidingWindow: Time O(n); Space O(k). |
 | `stack` | Time O(1) | Space O(n) | push/pop/peek: Time O(1) amortized; Space O(n). |
+| `valid-parentheses` | Time O(n) | Space O(n) | isValidParentheses: Time O(n); Space O(n). |
 
 ## searching
 
@@ -129,5 +130,5 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 |----------|------|-------|----------|
 | `union-find` | Time O(α(n) | Space O(n) | find/union/connected: Time O(α(n)) amortized; Space O(n). |
 
-**Topics:** 75
+**Topics:** 76
 
