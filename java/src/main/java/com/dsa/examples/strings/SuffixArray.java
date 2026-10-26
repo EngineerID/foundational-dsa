@@ -6,7 +6,9 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 /**
- * Suffix array construction by doubling ranks.
+ * Lexicographically sorted suffix starting indices.
+ * Technique: Suffix array doubling
+ * Invariant: Ranks sort prefixes of length 2^k.
  * build: Time O(n log n); Space O(n).
  */
 public final class SuffixArray {

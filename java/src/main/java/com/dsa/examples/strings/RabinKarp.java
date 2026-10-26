@@ -3,9 +3,9 @@
 package com.dsa.examples.strings;
 
 /**
- * Substring search with rolling polynomial hash.
- * Technique: Rabin-Karp rolling hash
- * Invariant: Hash of length-m window matches before char compare.
+ * Substring search via rolling hash.
+ * Technique: Rabin-Karp
+ * Invariant: Hash collision resolved by direct compare.
  * search: Time O(n + m) average; Space O(1).
  */
 public final class RabinKarp {

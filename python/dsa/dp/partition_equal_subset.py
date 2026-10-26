@@ -1,10 +1,10 @@
 # Dynamic Programming — Partition equal subset sum
 
-"""Whether nums can be partitioned into two equal-sum subsets.
+"""Partition array into two equal-sum subsets.
 
 Technique: Subset-sum DP
-Invariant: dp[s] reachable with elements processed so far.
-can_partition: Time O(n·sum); Space O(sum).
+Invariant: dp[s] reachable with elements processed.
+canPartition: Time O(n·sum); Space O(sum).
 """
 
 

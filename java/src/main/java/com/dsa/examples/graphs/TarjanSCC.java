@@ -8,7 +8,9 @@ import java.util.Deque;
 import java.util.List;
 
 /**
- * Strongly connected components via Tarjan's algorithm.
+ * Strongly connected components in a directed graph.
+ * Technique: Tarjan SCC
+ * Invariant: Lowlink identifies SCC roots on DFS stack.
  * stronglyConnectedComponents: Time O(V+E); Space O(V).
  */
 public final class TarjanSCC {

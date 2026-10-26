@@ -460,6 +460,12 @@ export const API_MANIFEST = {
     python: ['sample'],
     javascript: ['sample'],
   },
+  'monotonic-stack': {
+    type: 'static',
+    java: ['nextGreaterElement'],
+    python: ['next_greater_element'],
+    javascript: ['nextGreaterElement'],
+  },
   'sliding-window-maximum': {
     type: 'static',
     java: ['maxSlidingWindow'],

@@ -1,7 +1,7 @@
 // Dynamic Programming — Maximum subarray (Kadane)
 
 /**
- * Largest sum of any contiguous subarray.
+ * Largest sum of any contiguous subarray (Kadane).
  * Technique: Kadane's algorithm
  * Invariant: cur is the best sum ending at the current index.
  * maxSubarray: Time O(n); Space O(1).

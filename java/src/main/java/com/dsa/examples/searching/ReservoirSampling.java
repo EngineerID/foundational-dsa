@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Uniform random sample of size k from a stream (deterministic with seed).
+ * Uniform random sample of size k from a stream.
  * Technique: Reservoir sampling
- * Invariant: Reservoir holds uniform k-subset of items seen.
+ * Invariant: Reservoir is uniform k-subset of items seen.
  * sample: Time O(n); Space O(k).
  */
 public final class ReservoirSampling {

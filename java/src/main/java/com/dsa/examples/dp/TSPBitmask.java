@@ -4,7 +4,9 @@ package com.dsa.examples.dp;
 
 /**
  * Minimum Hamiltonian cycle from city 0 (small n).
- * minCost: Time O(n^2 2^n); Space O(n 2^n).
+ * Technique: Bitmask DP
+ * Invariant: dp[mask][i] is min cost ending at i.
+ * minCost: Time O(n²·2^n); Space O(n·2^n).
  */
 public final class TSPBitmask {
 

@@ -2,9 +2,9 @@
 
 """Longest palindromic substring length.
 
-Technique: Manacher's algorithm
+Technique: Manacher
 Invariant: Radius array mirrors palindrome centers.
-longest_palindrome_length: Time O(n); Space O(n).
+longestPalindromeLength: Time O(n); Space O(n).
 """
 
 

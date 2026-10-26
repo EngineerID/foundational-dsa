@@ -510,6 +510,13 @@ export const STATEFUL_GOLDENS = [
     java: 'java/src/test/java/com/dsa/examples/strings/LongestSubstringWithoutRepeatingGoldensTest.java',
   },
   {
+    id: 'monotonic-stack',
+    json: 'monotonic-stack-goldens.json',
+    py: 'python/tests/linear/test_monotonic_stack_goldens.py',
+    js: 'javascript/test/linear/monotonicStackGoldens.test.js',
+    java: 'java/src/test/java/com/dsa/examples/linear/MonotonicStackGoldensTest.java',
+  },
+  {
     id: 'maximum-subarray',
     json: 'maximum-subarray-goldens.json',
     py: 'python/tests/dp/test_max_subarray_goldens.py',

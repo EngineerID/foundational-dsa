@@ -1,6 +1,6 @@
 # Trees — LCA via binary lifting
 
-"""Lowest common ancestor on a rooted tree given parent pointers.
+"""Lowest common ancestor on a rooted tree.
 
 Technique: Binary lifting
 Invariant: up[k][v] is 2^k-th ancestor of v.

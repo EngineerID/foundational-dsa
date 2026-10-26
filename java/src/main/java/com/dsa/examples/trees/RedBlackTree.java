@@ -4,6 +4,8 @@ package com.dsa.examples.trees;
 
 /**
  * Balanced BST with red-black invariants.
+ * Technique: Red-black tree
+ * Invariant: Black-height equal; no consecutive red nodes.
  * search/insert: Time O(log n); Space O(n).
  */
 public class RedBlackTree {

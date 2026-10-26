@@ -1,10 +1,10 @@
 # Dynamic Programming — TSP (bitmask)
 
-"""Minimum Hamiltonian cycle cost (complete graph, start at 0).
+"""Minimum Hamiltonian cycle from city 0 (small n).
 
 Technique: Bitmask DP
-Invariant: dp[mask][i] is min cost to visit mask ending at i.
-min_cost: Time O(n^2 2^n); Space O(n 2^n).
+Invariant: dp[mask][i] is min cost ending at i.
+minCost: Time O(n²·2^n); Space O(n·2^n).
 """
 
 _INF = 10**15

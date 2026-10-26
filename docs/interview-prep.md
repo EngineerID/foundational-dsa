@@ -28,6 +28,7 @@ Trilingual tests for these scenarios: `WorkedInterviewExamplesTest`, `test_worke
 | Find index in sorted array | `binary-search` | `npm run demo -- binary-search` |
 | Kth smallest / quickselect | `quick-select` | `npm run demo -- quick-select` |
 | Reservoir sampling / stream pick | `reservoir-sampling` | `npm run demo -- reservoir-sampling` |
+| Next greater element / monotonic stack | `monotonic-stack` | `npm run demo -- monotonic-stack` |
 | Sliding window maximum | `sliding-window-maximum` | `npm run demo -- sliding-window-maximum` |
 
 ## Sorting

@@ -4,6 +4,8 @@ package com.dsa.examples.trees;
 
 /**
  * Static range minimum queries on an array.
+ * Technique: Sparse table
+ * Invariant: st[k][i] is min on length-2^k interval at i.
  * query: Time O(1); Space O(n log n).
  */
 public class SparseTable {

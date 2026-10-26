@@ -1,10 +1,10 @@
 # Graphs — Tarjan SCC
 
-"""Strongly connected components via Tarjan's algorithm.
+"""Strongly connected components in a directed graph.
 
 Technique: Tarjan SCC
 Invariant: Lowlink identifies SCC roots on DFS stack.
-components: Time O(V+E); Space O(V).
+stronglyConnectedComponents: Time O(V+E); Space O(V).
 """
 
 from dsa.graphs.graph import Graph

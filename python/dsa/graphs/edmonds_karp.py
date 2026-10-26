@@ -1,10 +1,10 @@
 # Graphs — Edmonds-Karp max flow
 
-"""Maximum flow via BFS augmenting paths (Edmonds-Karp).
+"""Maximum s-t flow in a capacitated network.
 
 Technique: Edmonds-Karp
-Invariant: Residual capacities decrease until no s-t path.
-maxFlow: Time O(VE^2); Space O(V^2).
+Invariant: BFS augmenting paths until saturated.
+maxFlow: Time O(VE²); Space O(V²).
 """
 
 from collections import deque

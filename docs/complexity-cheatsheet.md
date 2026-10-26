@@ -65,6 +65,7 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 | `doubly-linked-list` | Time O(1) | Space O(n) | prepend/append/remove: Time O(1) at known node; Space O(n). |
 | `dynamic-array` | Time O(1) | Space O(n) | append/get/set: Time O(1) amortized; resize O(n); Space O(n). |
 | `lru-cache` | Time O(1) | Space O(capacity) | get/put: Time O(1); Space O(capacity). |
+| `monotonic-stack` | Time O(n) | Space O(n) | nextGreaterElement: Time O(n); Space O(n). |
 | `queue` | Time O(1) | Space O(n) | enqueue/dequeue: Time O(1) amortized; Space O(n). |
 | `singly-linked-list` | Time O(1) | Space O(n) | prepend/search: Time O(1)/O(n); Space O(n). |
 | `sliding-window-maximum` | Time O(n) | Space O(k) | maxSlidingWindow: Time O(n); Space O(k). |
@@ -128,5 +129,5 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 |----------|------|-------|----------|
 | `union-find` | Time O(α(n) | Space O(n) | find/union/connected: Time O(α(n)) amortized; Space O(n). |
 
-**Topics:** 74
+**Topics:** 75
 

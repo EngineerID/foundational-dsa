@@ -3,9 +3,9 @@
 package com.dsa.examples.dp;
 
 /**
- * LCS length for two strings.
+ * Longest common subsequence length between two strings.
  * Technique: 2D DP
- * Invariant: dp[i][j] is LCS of prefixes a[:i], b[:j].
+ * Invariant: dp on prefixes yields optimal subsequence length.
  * length: Time O(nm); Space O(min(n,m)).
  */
 public final class LCS {

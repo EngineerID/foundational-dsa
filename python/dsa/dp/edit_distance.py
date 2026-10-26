@@ -1,9 +1,9 @@
 # Dynamic Programming — Edit Distance (Levenshtein)
 
-"""Minimum insert/delete/replace ops to match strings.
+"""Levenshtein edit distance between two strings.
 
-Technique: Levenshtein DP
-Invariant: dp[i][j] is edit distance between prefixes.
+Technique: Edit distance DP
+Invariant: dp[i][j] is min edits for prefixes.
 distance: Time O(nm); Space O(min(n,m)).
 """
 

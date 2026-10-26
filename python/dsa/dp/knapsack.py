@@ -1,10 +1,10 @@
 # Dynamic Programming — 0/1 Knapsack
 
-"""Maximum value with weight capacity (0/1 items).
+"""0/1 knapsack maximum value for a weight capacity.
 
 Technique: 1D knapsack DP
-Invariant: dp[w] is best value with capacity w.
-max_value: Time O(n·W); Space O(W).
+Invariant: dp[w] is best value using capacity w.
+maxValue: Time O(n·W); Space O(W).
 """
 
 

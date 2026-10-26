@@ -4,6 +4,8 @@ package com.dsa.examples.strings;
 
 /**
  * Longest palindromic substring length.
+ * Technique: Manacher
+ * Invariant: Radius array mirrors palindrome centers.
  * longestPalindromeLength: Time O(n); Space O(n).
  */
 public final class Manacher {

@@ -2,8 +2,8 @@
 
 """Length of longest strictly increasing subsequence.
 
-Technique: Patience sorting / DP with binary search
-Invariant: tails[k] is minimum tail of increasing subsequence of length k+1.
+Technique: Patience sorting / tails DP
+Invariant: tails[k] is minimum tail of an increasing subsequence of length k+1.
 length: Time O(n log n); Space O(n).
 """
 

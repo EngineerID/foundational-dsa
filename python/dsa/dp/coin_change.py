@@ -1,10 +1,10 @@
 # Dynamic Programming — Coin Change (fewest coins)
 
-"""Minimum coins to make amount (or -1).
+"""Minimum coins to make an amount (unbounded supply).
 
-Technique: Unbounded knapsack DP
+Technique: Coin change DP
 Invariant: dp[a] is min coins for amount a.
-min_coins: Time O(n·amount); Space O(amount).
+minCoins: Time O(n·amount); Space O(amount).
 """
 
 

@@ -1,11 +1,9 @@
 # Searching — Reservoir sampling
 
-"""Uniform random sample of size k from a stream (deterministic with seed).
-
-Uses the same LCG as the Java and JavaScript ports for cross-language goldens.
+"""Uniform random sample of size k from a stream.
 
 Technique: Reservoir sampling
-Invariant: Reservoir holds uniform k-subset of items seen.
+Invariant: Reservoir is uniform k-subset of items seen.
 sample: Time O(n); Space O(k).
 """
 

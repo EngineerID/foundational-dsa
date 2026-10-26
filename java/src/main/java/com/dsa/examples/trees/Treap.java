@@ -4,7 +4,9 @@ package com.dsa.examples.trees;
 
 /**
  * Randomized BST via heap priorities on keys.
- * search/insert: Time O(log n) expected; Space O(n).
+ * Technique: Treap
+ * Invariant: Heap order on priorities, BST order on keys.
+ * search/insert: Time O(log n); Space O(n).
  */
 public class Treap {
 

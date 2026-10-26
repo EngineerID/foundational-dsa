@@ -3,7 +3,9 @@
 package com.dsa.examples.trees;
 
 /**
- * Lowest common ancestor on a rooted tree (parent array).
+ * Lowest common ancestor on a rooted tree.
+ * Technique: Binary lifting
+ * Invariant: up[k][v] is 2^k-th ancestor of v.
  * query: Time O(log n); Space O(n log n).
  */
 public class LCABinaryLifting {

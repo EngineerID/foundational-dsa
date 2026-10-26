@@ -3,8 +3,10 @@
 package com.dsa.examples.graphs;
 
 /**
- * Minimum-cost assignment for a square cost matrix.
- * minCost: Time O(n^3); Space O(n^2).
+ * Minimum-cost assignment on a square cost matrix.
+ * Technique: Hungarian algorithm
+ * Invariant: Dual variables maintain reduced-cost optimality.
+ * minCost: Time O(n³); Space O(n²).
  */
 public final class Hungarian {
 

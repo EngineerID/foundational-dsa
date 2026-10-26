@@ -1,6 +1,6 @@
 # Strings — Suffix array (O(n log n))
 
-"""Suffix array construction by doubling ranks.
+"""Lexicographically sorted suffix starting indices.
 
 Technique: Suffix array doubling
 Invariant: Ranks sort prefixes of length 2^k.

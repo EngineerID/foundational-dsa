@@ -40,7 +40,13 @@ const NO_DUPLICATE = new Set([
   'matrix-chain',
 ]);
 
-const NEEDS_INVALID = new Set(['rod-cutting', 'interval-tree', 'b-tree', 'maximum-subarray']);
+const NEEDS_INVALID = new Set([
+  'rod-cutting',
+  'interval-tree',
+  'b-tree',
+  'maximum-subarray',
+  'monotonic-stack',
+]);
 
 const NO_BOUNDARY = new Set(['hungarian', 'quick-select']);
 

@@ -4,7 +4,7 @@
 
 Technique: Sliding window with last-seen index
 Invariant: Window [start, i] has all distinct characters.
-length_of_longest_substring: Time O(n); Space O(min(n, alphabet)).
+lengthOfLongestSubstring: Time O(n); Space O(min(n, alphabet)).
 """
 
 

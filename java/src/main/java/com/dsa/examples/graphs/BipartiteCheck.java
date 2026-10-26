@@ -7,6 +7,8 @@ import java.util.Queue;
 
 /**
  * Test whether an undirected graph is 2-colorable.
+ * Technique: BFS coloring
+ * Invariant: Bipartite iff no odd cycle.
  * isBipartite: Time O(V+E); Space O(V).
  */
 public final class BipartiteCheck {

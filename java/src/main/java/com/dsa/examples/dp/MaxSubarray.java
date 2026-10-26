@@ -3,9 +3,9 @@
 package com.dsa.examples.dp;
 
 /**
- * Largest sum of any contiguous subarray.
+ * Largest sum of any contiguous subarray (Kadane).
  * Technique: Kadane's algorithm
- * Invariant: {@code cur} is the best sum ending at the current index.
+ * Invariant: cur is the best sum ending at the current index.
  * maxSubarray: Time O(n); Space O(1).
  */
 public final class MaxSubarray {

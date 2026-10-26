@@ -3,9 +3,9 @@
 package com.dsa.examples.strings;
 
 /**
- * Z-array construction and pattern search.
+ * Linear-time Z-array and pattern search.
  * Technique: Z-algorithm
- * Invariant: Z[i] is LCP of s[i:] and s.
+ * Invariant: Z[i] equals longest prefix match of s with s[i:].
  * zArray/search: Time O(n + m); Space O(n).
  */
 public final class ZAlgorithm {

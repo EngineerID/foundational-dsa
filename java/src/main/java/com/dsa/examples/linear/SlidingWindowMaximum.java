@@ -8,9 +8,9 @@ import java.util.Deque;
 import java.util.List;
 
 /**
- * Maximum in each window of size k using a deque.
+ * Maximum in each sliding window of size k.
  * Technique: Monotonic deque
- * Invariant: Deque stores indices with decreasing values.
+ * Invariant: Deque indices have decreasing values.
  * maxSlidingWindow: Time O(n); Space O(k).
  */
 public final class SlidingWindowMaximum {

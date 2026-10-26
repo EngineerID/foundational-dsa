@@ -41,6 +41,7 @@ const { maxValue: knapVal } = require('../../src/dp/knapsack');
 const { distance: editDist } = require('../../src/dp/editDistance');
 const { minCoins } = require('../../src/dp/coinChange');
 const { maxSubarray } = require('../../src/dp/maxSubarray');
+const { nextGreaterElement } = require('../../src/linear/monotonicStack');
 const { shortestPathLength } = require('../../src/graphs/aStar');
 const { stronglyConnectedComponents: tarjanScc } = require('../../src/graphs/tarjanScc');
 const { stronglyConnectedComponents: kosarajuScc } = require('../../src/graphs/kosaraju');
@@ -203,6 +204,7 @@ describe('catalog item edges', () => {
     expect(editDist('a', 'b')).toBe(1);
     expect(minCoins([1], 0)).toBe(0);
     expect(maxSubarray([1, -2, 3])).toBe(3);
+    expect(nextGreaterElement([1, 2])).toEqual([2, -1]);
   });
 
   test('graph algorithms', () => {

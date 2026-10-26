@@ -1022,6 +1022,19 @@ Uniform random sample of size k from a stream.
 **Operations:**
 - `sample` → Python `sample`, JS `sample`
 
+## monotonic-stack
+
+Next strictly greater element to the right for each index.
+
+| Language | Module |
+|----------|--------|
+| Java | `MonotonicStack` |
+| Python | `monotonic_stack` |
+| JavaScript | `monotonicStack` |
+
+**Operations:**
+- `nextGreaterElement` → Python `next_greater_element`, JS `nextGreaterElement`
+
 ## sliding-window-maximum
 
 Maximum in each sliding window of size k.

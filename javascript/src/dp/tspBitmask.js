@@ -4,7 +4,7 @@
  * Minimum Hamiltonian cycle from city 0 (small n).
  * Technique: Bitmask DP
  * Invariant: dp[mask][i] is min cost ending at i.
- * minCost: Time O(n²2^n); Space O(n2^n).
+ * minCost: Time O(n²·2^n); Space O(n·2^n).
  */
 
 const INF = 10 ** 15;

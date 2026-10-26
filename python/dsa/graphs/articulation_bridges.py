@@ -1,9 +1,9 @@
 # Graphs — Articulation points and bridges
 
-"""Bridges and articulation points in undirected graphs.
+"""Articulation points and bridges in an undirected graph.
 
 Technique: Tarjan DFS lowlink
-Invariant: Bridge u-v when low[v] > disc[u].
+Invariant: Bridge when low[v] > disc[u].
 find: Time O(V+E); Space O(V).
 """
 

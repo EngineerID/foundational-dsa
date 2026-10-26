@@ -438,6 +438,12 @@ export const DOC_SPECS = {
     invariant: 'Reservoir is uniform k-subset of items seen.',
     complexity: 'sample: Time O(n); Space O(k).',
   },
+  'monotonic-stack': {
+    purpose: 'Next strictly greater element to the right for each index.',
+    technique: 'Monotonic decreasing stack',
+    invariant: 'Stack holds indices with strictly decreasing values.',
+    complexity: 'nextGreaterElement: Time O(n); Space O(n).',
+  },
   'sliding-window-maximum': {
     purpose: 'Maximum in each sliding window of size k.',
     technique: 'Monotonic deque',

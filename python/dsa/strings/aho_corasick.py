@@ -1,10 +1,10 @@
 # Strings — Aho-Corasick multi-pattern search
 
-"""Find all pattern occurrences in text.
+"""Find all occurrences of multiple patterns in text.
 
 Technique: Aho-Corasick automaton
 Invariant: Failure links preserve matched prefixes.
-search: Time O(n + m + z); Space O(m).
+search: Time O(n+m+z); Space O(m).
 """
 
 from __future__ import annotations

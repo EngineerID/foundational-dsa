@@ -204,6 +204,7 @@ class CatalogItemEdgesTest {
         assertEquals(1, EditDistance.distance("a", "b"));
         assertEquals(0, CoinChange.minCoins(new int[] {1}, 0));
         assertEquals(3, MaxSubarray.maxSubarray(new int[] {1, -2, 3}));
+        assertArrayEquals(new int[] {2, -1}, MonotonicStack.nextGreaterElement(new int[] {1, 2}));
     }
 
     @Test

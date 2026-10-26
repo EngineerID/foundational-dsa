@@ -56,6 +56,7 @@ const ALIASES = {
     'longest_substring_without_repeating',
     'longestSubstringWithoutRepeating',
   ],
+  'monotonic-stack': ['MonotonicStack', 'monotonic_stack', 'monotonicStack'],
   'a-star': ['AStar', 'a_star', 'aStar'],
   'tarjan-scc': ['TarjanSCC', 'tarjan_scc', 'tarjanScc'],
   kosaraju: ['Kosaraju', 'kosaraju', 'kosaraju'],
