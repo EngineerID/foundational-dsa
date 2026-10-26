@@ -10,6 +10,12 @@ export const CORE_GOLDENS = {
     js: 'javascript/test/searching/linearSearchGoldens.test.js',
     java: 'java/src/test/java/com/dsa/examples/searching/LinearSearchGoldensTest.java',
   },
+  'two-sum-ii': {
+    json: 'two-sum-ii-goldens.json',
+    py: 'python/tests/searching/test_two_sum_ii_goldens.py',
+    js: 'javascript/test/searching/twoSumIIGoldens.test.js',
+    java: 'java/src/test/java/com/dsa/examples/searching/TwoSumIIGoldensTest.java',
+  },
   'binary-search': {
     json: 'binary-search-goldens.json',
     py: 'python/tests/searching/test_binary_search_goldens.py',

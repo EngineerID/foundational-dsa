@@ -17,6 +17,7 @@ const REQUIRED_CASE_KEYS = {
   'longest-substring-without-repeating-goldens.json': ['s', 'expected'],
   'monotonic-stack-goldens.json': ['nums', 'expected'],
   'valid-parentheses-goldens.json': ['s', 'expected'],
+  'two-sum-ii-goldens.json': ['nums', 'target', 'expected'],
   'reservoir-sampling-goldens.json': ['stream', 'k', 'seed', 'expected'],
   'treap-goldens.json': ['seed', 'inserts', 'searchResults'],
 };

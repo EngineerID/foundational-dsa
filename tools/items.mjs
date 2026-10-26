@@ -2,6 +2,7 @@
 export const ITEMS = [
   { topic: 'searching', id: 'linear-search', java: 'LinearSearch', py: 'linear_search', js: 'linearSearch' },
   { topic: 'searching', id: 'binary-search', java: 'BinarySearch', py: 'binary_search', js: 'binarySearch' },
+  { topic: 'searching', id: 'two-sum-ii', java: 'TwoSumII', py: 'two_sum_ii', js: 'twoSumII' },
   { topic: 'searching', id: 'quick-select', java: 'QuickSelect', py: 'quick_select', js: 'quickSelect' },
   { topic: 'sorting', id: 'bubble-sort', java: 'BubbleSort', py: 'bubble_sort', js: 'bubbleSort' },
   { topic: 'sorting', id: 'selection-sort', java: 'SelectionSort', py: 'selection_sort', js: 'selectionSort' },

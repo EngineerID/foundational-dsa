@@ -46,9 +46,10 @@ const NEEDS_INVALID = new Set([
   'b-tree',
   'maximum-subarray',
   'monotonic-stack',
+  'two-sum-ii',
 ]);
 
-const NO_BOUNDARY = new Set(['hungarian', 'quick-select']);
+const NO_BOUNDARY = new Set(['hungarian', 'quick-select', 'two-sum-ii']);
 
 const NO_EMPTY_EXTRA = new Set(['quick-select', 'segment-tree']);
 

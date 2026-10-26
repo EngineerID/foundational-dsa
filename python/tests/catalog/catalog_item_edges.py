@@ -47,7 +47,7 @@ from dsa.linear import (
     singly_linked_list,
     sliding_window_maximum,
 )
-from dsa.searching import binary_search, reservoir_sampling
+from dsa.searching import binary_search, reservoir_sampling, two_sum_ii
 from dsa.sorting import heap_sort, insertion_sort, radix_sort, selection_sort
 from dsa.strings import (
     aho_corasick,
@@ -255,6 +255,7 @@ def test_new_trees_strings_dp_edge_themes():
     assert max_subarray.max_subarray([1, -2, 3]) == 3
     assert monotonic_stack.next_greater_element([1, 2]) == [2, -1]
     assert valid_parentheses.is_valid_parentheses("()") is True
+    assert two_sum_ii.two_sum_sorted([1, 2, 3], 3) == [1, 2]
 
 
 def test_graph_algorithms_edge_themes():

@@ -32,6 +32,19 @@ Find a key in a sorted array, including first/last duplicate boundaries.
 - `firstOccurrence` → Python `first_occurrence`, JS `firstOccurrence`
 - `lastOccurrence` → Python `last_occurrence`, JS `lastOccurrence`
 
+## two-sum-ii
+
+1-based indices of two numbers that sum to target in a sorted array.
+
+| Language | Module |
+|----------|--------|
+| Java | `TwoSumII` |
+| Python | `two_sum_ii` |
+| JavaScript | `twoSumII` |
+
+**Operations:**
+- `twoSumSorted` → Python `two_sum_sorted`, JS `twoSumSorted`
+
 ## quick-select
 
 Find the k-th smallest element in an unordered array.

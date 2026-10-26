@@ -51,6 +51,7 @@ const ALIASES = {
   'edit-distance': ['EditDistance', 'edit_distance', 'editDistance'],
   'coin-change': ['CoinChange', 'coin_change', 'coinChange'],
   'maximum-subarray': ['MaxSubarray', 'max_subarray', 'maxSubarray'],
+  'two-sum-ii': ['TwoSumII', 'two_sum_ii', 'twoSumII'],
   'longest-substring-without-repeating': [
     'LongestSubstringWithoutRepeating',
     'longest_substring_without_repeating',

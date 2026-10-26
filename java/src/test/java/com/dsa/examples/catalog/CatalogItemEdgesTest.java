@@ -22,6 +22,7 @@ import com.dsa.examples.strings.AhoCorasick;
 import com.dsa.examples.strings.Manacher;
 import com.dsa.examples.strings.SuffixArray;
 import com.dsa.examples.searching.BinarySearch;
+import com.dsa.examples.searching.TwoSumII;
 import com.dsa.examples.strings.LongestSubstringWithoutRepeating;
 import com.dsa.examples.strings.RabinKarp;
 import com.dsa.examples.strings.ZAlgorithm;
@@ -206,6 +207,7 @@ class CatalogItemEdgesTest {
         assertEquals(3, MaxSubarray.maxSubarray(new int[] {1, -2, 3}));
         assertArrayEquals(new int[] {2, -1}, MonotonicStack.nextGreaterElement(new int[] {1, 2}));
         assertTrue(ValidParentheses.isValidParentheses("()"));
+        assertArrayEquals(new int[] {1, 2}, TwoSumII.twoSumSorted(new int[] {1, 2, 3}, 3));
     }
 
     @Test

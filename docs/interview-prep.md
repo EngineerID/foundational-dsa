@@ -26,6 +26,7 @@ Trilingual tests for these scenarios: `WorkedInterviewExamplesTest`, `test_worke
 |------------------|----------|------|
 | Find element in unsorted array | `linear-search` | `npm run demo -- linear-search` |
 | Find index in sorted array | `binary-search` | `npm run demo -- binary-search` |
+| Two sum on sorted array (1-based indices) | `two-sum-ii` | `npm run demo -- two-sum-ii` |
 | Kth smallest / quickselect | `quick-select` | `npm run demo -- quick-select` |
 | Reservoir sampling / stream pick | `reservoir-sampling` | `npm run demo -- reservoir-sampling` |
 | Next greater element / monotonic stack | `monotonic-stack` | `npm run demo -- monotonic-stack` |

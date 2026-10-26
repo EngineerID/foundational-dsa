@@ -33,7 +33,7 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Statement:** Given a **sorted** array of integers and a target, return 1-based indices `[i, j]` (`i < j`) such that `nums[i-1] + nums[j-1] == target`. Exactly one solution exists.
 
-**Implementation:** `practice/two_sum*` — two pointers.
+**Implementation:** `practice/two_sum*` — two pointers (catalog [`two-sum-ii`](items/searching/two-sum-ii.md): `npm run demo -- two-sum-ii`).
 
 ## 2. Maximum subarray
 

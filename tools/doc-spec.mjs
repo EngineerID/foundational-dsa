@@ -12,6 +12,12 @@ export const DOC_SPECS = {
     invariant: 'Scan index increases; all indices before current are not the target (if searching for first match).',
     complexity: 'search: Time O(n); Space O(1).',
   },
+  'two-sum-ii': {
+    purpose: '1-based indices of two numbers that sum to target in a sorted array.',
+    technique: 'Two pointers',
+    invariant: 'If a solution exists, both indices lie in the current window.',
+    complexity: 'twoSumSorted: Time O(n); Space O(1).',
+  },
   'binary-search': {
     purpose: 'Find a key in a sorted array, including first/last duplicate boundaries.',
     technique: 'Binary search',

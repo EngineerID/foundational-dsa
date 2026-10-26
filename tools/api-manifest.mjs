@@ -16,6 +16,12 @@ export const API_MANIFEST = {
     python: ['search', 'first_occurrence', 'last_occurrence'],
     javascript: ['search', 'firstOccurrence', 'lastOccurrence'],
   },
+  'two-sum-ii': {
+    type: 'static',
+    java: ['twoSumSorted'],
+    python: ['two_sum_sorted'],
+    javascript: ['twoSumSorted'],
+  },
   'quick-select': {
     type: 'static',
     java: ['kthSmallest'],
