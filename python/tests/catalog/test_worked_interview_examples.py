@@ -1,10 +1,10 @@
 """Scenarios aligned with docs/worked-examples.md interview walkthroughs."""
 
+from dsa.dp.edit_distance import distance as edit_distance
+from dsa.graphs.bfs import distances as bfs_distances
 from dsa.graphs.graph import Graph
 from dsa.graphs.topological_sort import kahn
 from dsa.linear.sliding_window_maximum import max_sliding_window
-from dsa.dp.edit_distance import distance as edit_distance
-from dsa.graphs.bfs import distances as bfs_distances
 from dsa.searching.binary_search import first_occurrence
 
 
