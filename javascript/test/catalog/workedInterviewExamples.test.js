@@ -8,7 +8,17 @@ const { maxSubarray } = require('../../src/dp/maxSubarray');
 const { distance: editDistance } = require('../../src/dp/editDistance');
 const { distances: bfsDistances } = require('../../src/graphs/bfs');
 const { Graph } = require('../../src/graphs/graph');
+const { canFinish } = require('../../src/graphs/courseSchedule');
+const { traverseRecursive } = require('../../src/graphs/dfs');
+const { totalWeight: kruskalWeight } = require('../../src/graphs/kruskalMst');
+const { networkDelay } = require('../../src/graphs/networkDelay');
 const { numIslands } = require('../../src/graphs/numberOfIslands');
+const { wordSearch } = require('../../src/graphs/wordSearch');
+const { length: lisLength } = require('../../src/dp/lis');
+const { kthSmallest } = require('../../src/searching/quickSelect');
+const { BST } = require('../../src/trees/bst');
+const { levelOrder } = require('../../src/trees/levelOrderTraversal');
+const { deserialize, serialize } = require('../../src/trees/serializeBinaryTree');
 const { shortestPaths: dijkstraPaths } = require('../../src/graphs/dijkstra');
 const { kahn } = require('../../src/graphs/topologicalSort');
 const { minMeetingRooms } = require('../../src/heaps/meetingRoomsII');
@@ -144,5 +154,72 @@ describe('worked interview examples (docs parity)', () => {
 
   test('trapping rain water — classic heights', () => {
     expect(trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1])).toBe(6);
+  });
+
+  test('course schedule — cycle not finishable', () => {
+    expect(canFinish(2, [[1, 0], [0, 1]])).toBe(false);
+    expect(canFinish(2, [[1, 0]])).toBe(true);
+  });
+
+  test('word search — ABCCED on board', () => {
+    const board = [
+      ['A', 'B', 'C', 'E'],
+      ['S', 'F', 'C', 'S'],
+      ['A', 'D', 'E', 'E'],
+    ];
+    expect(wordSearch(board, 'ABCCED')).toBe(true);
+    expect(wordSearch(board, 'ABCD')).toBe(false);
+  });
+
+  test('network delay — max distance from source', () => {
+    expect(networkDelay(4, [[1, 0, 1], [1, 2, 1], [2, 3, 1]], 1)).toBe(2);
+  });
+
+  test('Kruskal MST — chain four vertices', () => {
+    const g = new Graph(4, false, true);
+    g.addEdge(0, 1, 1);
+    g.addEdge(1, 2, 2);
+    g.addEdge(2, 3, 3);
+    g.addEdge(0, 3, 4);
+    expect(kruskalWeight(g)).toBe(6);
+  });
+
+  test('level order — heap-style array', () => {
+    expect(levelOrder([3, 9, 20, null, null, 15, 7])).toEqual([[3], [9, 20], [15, 7]]);
+  });
+
+  test('serialize binary tree — round trip', () => {
+    const values = [1, 2, 3, null, null, 4, 5];
+    expect(deserialize(serialize(values))).toEqual(values);
+  });
+
+  test('quick select — k-th smallest and largest rank', () => {
+    const nums = [3, 1, 4, 1, 5];
+    expect(kthSmallest(nums, 2)).toBe(1);
+    expect(kthSmallest(nums, 4)).toBe(4);
+  });
+
+  test('DFS — discovery times from vertex 0', () => {
+    const g = new Graph(4, false, false);
+    g.addEdge(0, 1);
+    g.addEdge(0, 2);
+    g.addEdge(1, 3);
+    const r = traverseRecursive(g, 0);
+    expect(r.discovery).toEqual([0, 1, 5, 2]);
+    expect(r.finish).toEqual([7, 4, 6, 3]);
+  });
+
+  test('LIS — patience sorting classic', () => {
+    expect(lisLength([10, 9, 2, 5, 3, 7, 101, 18])).toBe(4);
+  });
+
+  test('BST — in-order after inserts', () => {
+    const tree = new BST();
+    tree.insert(5, 'a');
+    tree.insert(2, 'b');
+    tree.insert(7, 'c');
+    tree.insert(1, 'd');
+    expect(tree.inOrder()).toEqual([1, 2, 5, 7]);
+    expect(tree.search(2)).toBe('b');
   });
 });

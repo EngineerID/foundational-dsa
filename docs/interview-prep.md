@@ -18,6 +18,7 @@ Full topic list: [COVERAGE.md](../COVERAGE.md). Step-by-step walkthroughs: [work
 | Course schedule (topo sort), sliding window | [worked-examples.md](worked-examples.md#topological-sort-kahn-course-schedule) |
 | BFS unweighted, edit distance, knapsack, LCS | [worked-examples.md](worked-examples.md#bfs-unweighted-shortest-paths) |
 | Practice staples (two-sum, Kadane, islands, coin change, …) | [worked-examples.md](worked-examples.md#two-sum-ii-sorted-pair) |
+| Trees / graphs / DP batch 2 (course schedule, word search, MST, …) | [worked-examples.md](worked-examples.md#course-schedule-canfinish) |
 
 Trilingual tests for these scenarios: `WorkedInterviewExamplesTest`, `test_worked_interview_examples.py`, `workedInterviewExamples.test.js`.
 

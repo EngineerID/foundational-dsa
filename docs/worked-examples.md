@@ -1,6 +1,6 @@
 # Worked examples
 
-Short, language-neutral walkthroughs for twenty-three interview-heavy topics. Implementations live under `java/`, `python/dsa/`, and `javascript/src/` with the same behavior. For a broader interview map, see [interview-prep.md](interview-prep.md). Trilingual **catalog tests** mirror the step-table scenarios above (`WorkedInterviewExamplesTest`, `test_worked_interview_examples.py`, `workedInterviewExamples.test.js`).
+Short, language-neutral walkthroughs for thirty-three interview-heavy topics. Implementations live under `java/`, `python/dsa/`, and `javascript/src/` with the same behavior. For a broader interview map, see [interview-prep.md](interview-prep.md). Trilingual **catalog tests** mirror the step-table scenarios above (`WorkedInterviewExamplesTest`, `test_worked_interview_examples.py`, `workedInterviewExamples.test.js`).
 
 ## Binary search on a sorted array
 
@@ -406,6 +406,179 @@ Total trapped: **6** units (classic LeetCode trace).
 
 `npm run demo -- trapping-rain-water`
 
+## Course schedule (canFinish)
+
+**Input:** `numCourses = 2`, prerequisites `[[1,0],[0,1]]` (0 must come before 1 **and** 1 before 0).
+
+| Step | In-degree after build | Queue (zero in-degree) | Can finish all? |
+|------|----------------------|------------------------|-----------------|
+| init | `[0, 0]` (cycle) | `[]` | — |
+| Kahn | no vertex with in-degree 0 | — | **false** |
+
+For DAG `0→1`, in-degrees `[0,1]` → process `0`, then `1` → **true**.
+
+**API:** `canFinish(numCourses, prerequisites)` (see [course-schedule](items/graphs/course-schedule.md)).
+
+`npm run demo -- course-schedule`
+
+## Word search (grid backtracking)
+
+**Board:**
+
+```
+A B C E
+S F C S
+A D E E
+```
+
+**Word:** `ABCCED`
+
+| Step | Cell | Action |
+|------|------|--------|
+| 1 | (0,0) `A` | match, mark visited |
+| 2 | (0,1) `B` | match |
+| 3 | (0,2) `C` | match |
+| 4 | (1,2) `C` | match |
+| 5 | (2,2) `E` | match |
+| 6 | (2,3) `D` | match → **found** |
+
+Backtrack unmarks on failure; `ABCD` dies at `(0,3)` → **false**.
+
+**API:** `wordSearch(board, word)` (see [word-search](items/graphs/word-search.md)).
+
+`npm run demo -- word-search`
+
+## Network delay time
+
+**Graph:** `n = 4`, source **1**, edges `(1→0, w=1)`, `(1→2, w=1)`, `(2→3, w=1)`.
+
+| Node | Shortest time from 1 |
+|------|----------------------|
+| 0 | 1 |
+| 1 | 0 |
+| 2 | 1 |
+| 3 | 2 |
+
+Answer: max distance **2** (all nodes reached). Unreachable node → **-1**.
+
+**API:** `networkDelay(n, times, source)` (see [network-delay](items/graphs/network-delay.md)).
+
+`npm run demo -- network-delay`
+
+## Kruskal MST (union–find)
+
+**Undirected weighted edges:** `(0–1,1)`, `(1–2,2)`, `(2–3,3)`, `(0–3,4)`.
+
+Sort by weight, greedily add if endpoints not yet connected:
+
+| Edge | Weight | Union? | Running weight |
+|------|--------|--------|----------------|
+| 0–1 | 1 | yes | 1 |
+| 1–2 | 2 | yes | 3 |
+| 2–3 | 3 | yes | **6** |
+| 0–3 | 4 | skip (0 and 3 already connected) | 6 |
+
+**API:** `totalWeight(graph)` / `mst(graph)` (see [kruskal-mst](items/graphs/kruskal-mst.md)).
+
+`npm run demo -- kruskal-mst`
+
+## Level order traversal (heap array)
+
+**Level array:** `[3, 9, 20, null, null, 15, 7]` (`null` = missing child).
+
+| Level | Values (left → right) |
+|-------|------------------------|
+| 0 | 3 |
+| 1 | 9, 20 |
+| 2 | 15, 7 |
+
+BFS with level boundaries; empty or `values[0] == null` → `[]`.
+
+**API:** `levelOrder(values)` (see [level-order-traversal](items/trees/level-order-traversal.md)).
+
+`npm run demo -- level-order-traversal`
+
+## Serialize binary tree (level-order codec)
+
+**Input values:** `[1, 2, 3, null, null, 4, 5]`
+
+| Phase | Result |
+|-------|--------|
+| Serialize | `"1,2,3,#,#,4,5"` (`#` = null, trim trailing `#`) |
+| Deserialize + level-order | `[1, 2, 3, null, null, 4, 5]` |
+
+Round-trip restores the same heap-style level array.
+
+**API:** `serialize(values)`, `deserialize(data)` (see [serialize-binary-tree](items/trees/serialize-binary-tree.md)).
+
+`npm run demo -- serialize-binary-tree`
+
+## Quick select (k-th order statistic)
+
+**Array:** `[3, 1, 4, 1, 5]`, **k = 2** (1-based smallest rank).
+
+Partition around pivot until rank 2 lands:
+
+| Pivot pass | Partition around | k-th smallest |
+|------------|------------------|---------------|
+| … | … | **1** |
+
+For **k-th largest** with `k = 2`, use rank `n - k + 1 = 4` → **4** (second largest).
+
+**API:** `kthSmallest(arr, k)` (see [quick-select](items/searching/quick-select.md)).
+
+`npm run demo -- quick-select`
+
+## DFS discovery times
+
+**Graph:** 4 vertices, edges `0–1`, `0–2`, `1–3`, source **0** (undirected).
+
+| Vertex | Discovery time | Finish time |
+|--------|--------------|-------------|
+| 0 | 0 | 7 |
+| 1 | 1 | 4 |
+| 3 | 2 | 3 |
+| 2 | 5 | 6 |
+
+Tree edges explore deeper before backtracking; matches `DFS.traverseRecursive` stamps.
+
+**API:** `traverseRecursive(graph, source)` (see [dfs](items/graphs/dfs.md)).
+
+`npm run demo -- dfs`
+
+## Longest increasing subsequence
+
+**Array:** `[10, 9, 2, 5, 3, 7, 101, 18]`
+
+Patience-sorting **tails** table (length of LIS ending with ≤ tail):
+
+| i | x | tails after |
+|---|----|-------------|
+| … | … | … |
+| end | — | length **4** (e.g. `2, 3, 7, 18`) |
+
+**API:** `length(arr)` (see [lis](items/dp/lis.md)).
+
+`npm run demo -- lis`
+
+## BST search and in-order walk
+
+Insert keys **5, 2, 7, 1** (values arbitrary):
+
+```
+    5
+   / \
+  2   7
+ /
+1
+```
+
+In-order keys: **`[1, 2, 5, 7]`**; search **2** hits the left child of 5.
+
+**API:** `insert(key, value)`, `search(key)`, `inOrder()` (see [bst](items/trees/bst.md)).
+
+`npm run demo -- bst`
+
 ## Topic index
 
 One-line walkthroughs for every catalog topic. Step tables above cover interview-heavy patterns (search, graphs, DP, caches, strings, and practice-problem staples).
@@ -424,7 +597,7 @@ See the [detailed walkthrough](#binary-search-on-a-sorted-array) above.
 
 ### quick-select
 
-Array `[3, 1, 4, 1, 5]`, `k=2` (1-based): partition around a pivot until rank `2` is found → **1** (second smallest).
+See the [detailed walkthrough](#quick-select-k-th-order-statistic) above.
 
 `npm run demo -- quick-select`
 
@@ -532,7 +705,7 @@ Min-priority queue for scheduling by priority.
 
 ### bst
 
-Binary search tree for ordered key storage.
+See the [detailed walkthrough](#bst-search-and-in-order-walk) above.
 
 `npm run demo -- bst`
 
@@ -598,7 +771,7 @@ Substring search via rolling hash.
 
 ### lis
 
-Length of longest strictly increasing subsequence.
+See the [detailed walkthrough](#longest-increasing-subsequence) above.
 
 `npm run demo -- lis`
 
@@ -664,7 +837,7 @@ See the [detailed walkthrough](#bfs-unweighted-shortest-paths) above.
 
 ### dfs
 
-Depth-first traversal, cycle detection, and connectivity.
+See the [detailed walkthrough](#dfs-discovery-times) above.
 
 `npm run demo -- dfs`
 
@@ -694,7 +867,7 @@ All-pairs shortest paths via dynamic programming.
 
 ### kruskal-mst
 
-Minimum spanning tree via sorted edges and union-find.
+See the [detailed walkthrough](#kruskal-mst-unionfind) above.
 
 `npm run demo -- kruskal-mst`
 
