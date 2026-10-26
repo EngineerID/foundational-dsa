@@ -1,15 +1,25 @@
 package com.dsa.examples.catalog;
 
+import com.dsa.examples.dp.CoinChange;
 import com.dsa.examples.dp.EditDistance;
 import com.dsa.examples.dp.Knapsack01;
 import com.dsa.examples.dp.LCS;
+import com.dsa.examples.dp.MaxSubarray;
 import com.dsa.examples.graphs.BFS;
 import com.dsa.examples.graphs.Dijkstra;
 import com.dsa.examples.graphs.Graph;
+import com.dsa.examples.graphs.NumberOfIslands;
 import com.dsa.examples.graphs.TopologicalSort;
+import com.dsa.examples.heaps.MeetingRoomsII;
+import com.dsa.examples.heaps.TopKFrequentElements;
 import com.dsa.examples.linear.LRUCache;
 import com.dsa.examples.linear.SlidingWindowMaximum;
+import com.dsa.examples.linear.ValidParentheses;
 import com.dsa.examples.searching.BinarySearch;
+import com.dsa.examples.searching.TrappingRainWater;
+import com.dsa.examples.searching.TwoSumII;
+import com.dsa.examples.sorting.MergeIntervals;
+import com.dsa.examples.strings.LongestSubstringWithoutRepeating;
 import com.dsa.examples.unionfind.UnionFind;
 import org.junit.jupiter.api.Test;
 
@@ -105,5 +115,65 @@ class WorkedInterviewExamplesTest {
     @Test
     void lcsAbcdeAndAce() {
         assertEquals(3, LCS.length("abcde", "ace"));
+    }
+
+    @Test
+    void twoSumIiSortedPairTargetNine() {
+        assertArrayEquals(new int[] {1, 2}, TwoSumII.twoSumSorted(new int[] {2, 7, 11, 15}, 9));
+    }
+
+    @Test
+    void maximumSubarrayKadaneClassic() {
+        assertEquals(6, MaxSubarray.maxSubarray(new int[] {-2, 1, -3, 4, -1, 2, 1, -5, 4}));
+    }
+
+    @Test
+    void validParenthesesNestedBrackets() {
+        assertTrue(ValidParentheses.isValidParentheses("({[]})"));
+    }
+
+    @Test
+    void meetingRoomsIiOverlappingSchedule() {
+        assertEquals(2, MeetingRoomsII.minMeetingRooms(new int[][] {{0, 30}, {5, 10}, {15, 20}}));
+    }
+
+    @Test
+    void numberOfIslandsClassicGrid() {
+        char[][] grid = {
+            {'1', '1', '0', '0', '0'},
+            {'1', '1', '0', '0', '0'},
+            {'0', '0', '1', '0', '0'},
+            {'0', '0', '0', '1', '1'},
+        };
+        assertEquals(3, NumberOfIslands.numIslands(grid));
+    }
+
+    @Test
+    void topKFrequentElementsTwoKeys() {
+        assertEquals(List.of(1, 2), TopKFrequentElements.topKFrequent(new int[] {1, 1, 1, 2, 2, 3}, 2));
+    }
+
+    @Test
+    void longestSubstringWithoutRepeatingPwwkew() {
+        assertEquals(3, LongestSubstringWithoutRepeating.lengthOfLongestSubstring("pwwkew"));
+    }
+
+    @Test
+    void mergeIntervalsOverlapChain() {
+        assertArrayEquals(
+                new int[][] {{1, 6}, {8, 10}, {15, 18}},
+                MergeIntervals.mergeIntervals(new int[][] {{1, 3}, {2, 6}, {8, 10}, {15, 18}}));
+    }
+
+    @Test
+    void coinChangeMinCoinsEleven() {
+        assertEquals(3, CoinChange.minCoins(new int[] {1, 2, 5}, 11));
+    }
+
+    @Test
+    void trappingRainWaterClassicHeights() {
+        assertEquals(
+                6,
+                TrappingRainWater.trap(new int[] {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1}));
     }
 }

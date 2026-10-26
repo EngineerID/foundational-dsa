@@ -1,14 +1,22 @@
 """Scenarios aligned with docs/worked-examples.md interview walkthroughs."""
 
-from dsa.dp import knapsack, lcs
+from dsa.dp import coin_change, knapsack, lcs, max_subarray
 from dsa.dp.edit_distance import distance as edit_distance
 from dsa.graphs.bfs import distances as bfs_distances
 from dsa.graphs.dijkstra import shortest_paths as dijkstra_paths
 from dsa.graphs.graph import Graph
+from dsa.graphs.number_of_islands import num_islands
 from dsa.graphs.topological_sort import kahn
+from dsa.heaps.meeting_rooms_ii import min_meeting_rooms
+from dsa.heaps.top_k_frequent_elements import top_k_frequent
 from dsa.linear.lru_cache import LRUCache
 from dsa.linear.sliding_window_maximum import max_sliding_window
+from dsa.linear.valid_parentheses import is_valid_parentheses
 from dsa.searching.binary_search import first_occurrence, search
+from dsa.searching.trapping_rain_water import trap
+from dsa.searching.two_sum_ii import two_sum_sorted
+from dsa.sorting.merge_intervals import merge_intervals
+from dsa.strings.longest_substring_without_repeating import length_of_longest_substring
 from dsa.unionfind.union_find import UnionFind
 
 
@@ -80,3 +88,53 @@ def test_knapsack_zero_one_classic_capacity_five():
 
 def test_lcs_abcde_and_ace():
     assert lcs.length("abcde", "ace") == 3
+
+
+def test_two_sum_ii_sorted_pair_target_nine():
+    assert two_sum_sorted([2, 7, 11, 15], 9) == [1, 2]
+
+
+def test_maximum_subarray_kadane_classic():
+    assert max_subarray.max_subarray([-2, 1, -3, 4, -1, 2, 1, -5, 4]) == 6
+
+
+def test_valid_parentheses_nested_brackets():
+    assert is_valid_parentheses("({[]})") is True
+
+
+def test_meeting_rooms_ii_overlapping_schedule():
+    assert min_meeting_rooms([[0, 30], [5, 10], [15, 20]]) == 2
+
+
+def test_number_of_islands_classic_grid():
+    grid = [
+        ["1", "1", "0", "0", "0"],
+        ["1", "1", "0", "0", "0"],
+        ["0", "0", "1", "0", "0"],
+        ["0", "0", "0", "1", "1"],
+    ]
+    assert num_islands(grid) == 3
+
+
+def test_top_k_frequent_elements_two_keys():
+    assert top_k_frequent([1, 1, 1, 2, 2, 3], 2) == [1, 2]
+
+
+def test_longest_substring_without_repeating_pwwkew():
+    assert length_of_longest_substring("pwwkew") == 3
+
+
+def test_merge_intervals_overlap_chain():
+    assert merge_intervals([[1, 3], [2, 6], [8, 10], [15, 18]]) == [
+        [1, 6],
+        [8, 10],
+        [15, 18],
+    ]
+
+
+def test_coin_change_min_coins_eleven():
+    assert coin_change.min_coins([1, 2, 5], 11) == 3
+
+
+def test_trapping_rain_water_classic_heights():
+    assert trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]) == 6

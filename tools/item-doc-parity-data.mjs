@@ -154,4 +154,17 @@ export const WORKED_EXAMPLES = {
   'sliding-window-maximum': { anchor: 'sliding-window-maximum', detailed: true },
   bfs: { anchor: 'bfs-unweighted-shortest-paths', detailed: true },
   'edit-distance': { anchor: 'edit-distance-kitten-to-sitting', detailed: true },
+  'two-sum-ii': { anchor: 'two-sum-ii-sorted-pair', detailed: true },
+  'maximum-subarray': { anchor: 'maximum-subarray-kadane', detailed: true },
+  'valid-parentheses': { anchor: 'valid-parentheses-stack', detailed: true },
+  'meeting-rooms-ii': { anchor: 'meeting-rooms-ii-min-heap', detailed: true },
+  'number-of-islands': { anchor: 'number-of-islands-grid-dfs', detailed: true },
+  'top-k-frequent-elements': { anchor: 'top-k-frequent-elements', detailed: true },
+  'longest-substring-without-repeating': {
+    anchor: 'longest-substring-without-repeating',
+    detailed: true,
+  },
+  'merge-intervals': { anchor: 'merge-intervals-overlap', detailed: true },
+  'coin-change': { anchor: 'coin-change-min-coins', detailed: true },
+  'trapping-rain-water': { anchor: 'trapping-rain-water-two-pointers', detailed: true },
 };

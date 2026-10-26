@@ -1,16 +1,26 @@
 /**
  * Numeric scenarios aligned with docs/worked-examples.md interview walkthroughs.
  */
+const { minCoins } = require('../../src/dp/coinChange');
 const { maxValue: knapsackMaxValue } = require('../../src/dp/knapsack');
 const { length: lcsLength } = require('../../src/dp/lcs');
+const { maxSubarray } = require('../../src/dp/maxSubarray');
 const { distance: editDistance } = require('../../src/dp/editDistance');
 const { distances: bfsDistances } = require('../../src/graphs/bfs');
 const { Graph } = require('../../src/graphs/graph');
+const { numIslands } = require('../../src/graphs/numberOfIslands');
 const { shortestPaths: dijkstraPaths } = require('../../src/graphs/dijkstra');
 const { kahn } = require('../../src/graphs/topologicalSort');
+const { minMeetingRooms } = require('../../src/heaps/meetingRoomsII');
+const { topKFrequent } = require('../../src/heaps/topKFrequentElements');
 const { LRUCache } = require('../../src/linear/lruCache');
 const { maxSlidingWindow } = require('../../src/linear/slidingWindowMaximum');
+const { isValidParentheses } = require('../../src/linear/validParentheses');
 const { firstOccurrence, search } = require('../../src/searching/binarySearch');
+const { trap } = require('../../src/searching/trappingRainWater');
+const { twoSumSorted } = require('../../src/searching/twoSumII');
+const { mergeIntervals } = require('../../src/sorting/mergeIntervals');
+const { lengthOfLongestSubstring } = require('../../src/strings/longestSubstringWithoutRepeating');
 const { UnionFind } = require('../../src/unionfind/unionFind');
 
 describe('worked interview examples (docs parity)', () => {
@@ -84,5 +94,55 @@ describe('worked interview examples (docs parity)', () => {
 
   test('LCS — abcde and ace', () => {
     expect(lcsLength('abcde', 'ace')).toBe(3);
+  });
+
+  test('two sum II — sorted pair target 9', () => {
+    expect(twoSumSorted([2, 7, 11, 15], 9)).toEqual([1, 2]);
+  });
+
+  test('maximum subarray — Kadane classic', () => {
+    expect(maxSubarray([-2, 1, -3, 4, -1, 2, 1, -5, 4])).toBe(6);
+  });
+
+  test('valid parentheses — nested brackets', () => {
+    expect(isValidParentheses('({[]})')).toBe(true);
+  });
+
+  test('meeting rooms II — overlapping schedule', () => {
+    expect(minMeetingRooms([[0, 30], [5, 10], [15, 20]])).toBe(2);
+  });
+
+  test('number of islands — classic grid', () => {
+    const grid = [
+      ['1', '1', '0', '0', '0'],
+      ['1', '1', '0', '0', '0'],
+      ['0', '0', '1', '0', '0'],
+      ['0', '0', '0', '1', '1'],
+    ];
+    expect(numIslands(grid)).toBe(3);
+  });
+
+  test('top K frequent — two keys', () => {
+    expect(topKFrequent([1, 1, 1, 2, 2, 3], 2)).toEqual([1, 2]);
+  });
+
+  test('longest substring — pwwkew', () => {
+    expect(lengthOfLongestSubstring('pwwkew')).toBe(3);
+  });
+
+  test('merge intervals — overlap chain', () => {
+    expect(mergeIntervals([[1, 3], [2, 6], [8, 10], [15, 18]])).toEqual([
+      [1, 6],
+      [8, 10],
+      [15, 18],
+    ]);
+  });
+
+  test('coin change — min coins for 11', () => {
+    expect(minCoins([1, 2, 5], 11)).toBe(3);
+  });
+
+  test('trapping rain water — classic heights', () => {
+    expect(trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1])).toBe(6);
   });
 });

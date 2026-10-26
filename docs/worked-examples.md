@@ -1,6 +1,6 @@
 # Worked examples
 
-Short, language-neutral walkthroughs for thirteen interview-heavy topics. Implementations live under `java/`, `python/dsa/`, and `javascript/src/` with the same behavior. For a broader interview map, see [interview-prep.md](interview-prep.md). Trilingual **catalog tests** mirror the step-table scenarios above (`WorkedInterviewExamplesTest`, `test_worked_interview_examples.py`, `workedInterviewExamples.test.js`).
+Short, language-neutral walkthroughs for twenty-three interview-heavy topics. Implementations live under `java/`, `python/dsa/`, and `javascript/src/` with the same behavior. For a broader interview map, see [interview-prep.md](interview-prep.md). Trilingual **catalog tests** mirror the step-table scenarios above (`WorkedInterviewExamplesTest`, `test_worked_interview_examples.py`, `workedInterviewExamples.test.js`).
 
 ## Binary search on a sorted array
 
@@ -217,9 +217,198 @@ Longest subsequence appearing in both in order: **`ace`** (length **3**). Classi
 
 `npm run demo -- lcs`
 
+## Two Sum II (sorted pair)
+
+**Input:** sorted `nums = [2, 7, 11, 15]`, `target = 9` (1-based indices in the answer).
+
+| Step | `left` | `right` | `sum` | Action |
+|------|--------|---------|-------|--------|
+| 1 | 0 → 2 | 3 → 15 | 17 | `17 > 9` → move `right` left |
+| 2 | 0 → 2 | 2 → 11 | 13 | `13 > 9` → move `right` left |
+| 3 | 0 → 2 | 1 → 7 | **9** | match → return **`[1, 2]`** |
+
+Two pointers never cross; each index moves at most once → **O(n)** time, **O(1)** extra space.
+
+**API:** `twoSumSorted(nums, target)` → 1-based `[i, j]` (see [two-sum-ii](items/searching/two-sum-ii.md)).
+
+`npm run demo -- two-sum-ii`
+
+## Maximum subarray (Kadane)
+
+**Input:** `[-2, 1, -3, 4, -1, 2, 1, -5, 4]`
+
+Track running sum `cur` and best `best`:
+
+| Index | Value | `cur` after | `best` after |
+|-------|-------|-------------|--------------|
+| 0 | -2 | -2 | -2 |
+| 1 | 1 | 1 | 1 |
+| 2 | -3 | -2 | 1 |
+| 3 | 4 | 4 | 4 |
+| 4 | -1 | 3 | 4 |
+| 5 | 2 | 5 | 5 |
+| 6 | 1 | **6** | **6** |
+| 7 | -5 | 1 | 6 |
+| 8 | 4 | 5 | 6 |
+
+Maximum contiguous sum is **6** (subarray `[4, -1, 2, 1]`).
+
+**API:** `maxSubarray(nums)` (see [maximum-subarray](items/dp/maximum-subarray.md)).
+
+`npm run demo -- maximum-subarray`
+
+## Valid parentheses (stack)
+
+**Input:** `s = "({[]})"`
+
+| Step | Read | Stack (bottom → top) |
+|------|------|----------------------|
+| 1 | `(` | `(` |
+| 2 | `{` | `(`, `{` |
+| 3 | `[` | `(`, `{`, `[` |
+| 4 | `]` | `(`, `{` |
+| 5 | `}` | `(` |
+| 6 | `)` | *(empty)* |
+
+Stack empty at end → **valid**. For `"(]"`, step 2 leaves `(` vs `]` → **false**.
+
+**API:** `isValidParentheses(s)` (see [valid-parentheses](items/linear/valid-parentheses.md)).
+
+`npm run demo -- valid-parentheses`
+
+## Meeting rooms II (min heap)
+
+**Intervals:** `[0,30)`, `[5,10)`, `[15,20)` (classic LeetCode shape).
+
+Sort by start. Min-heap stores **end times** of meetings still in progress:
+
+| Interval | Heap before | Action | Heap after | rooms needed |
+|----------|-------------|--------|------------|--------------|
+| `[0,30)` | `[]` | start meeting | `[30]` | 1 |
+| `[5,10)` | `[30]` | `5 < 30` → need new room | `[10,30]` | 2 |
+| `[15,20)` | `[10,30]` | `15 ≥ 10` → reuse room ending at 10 | `[20,30]` | 2 |
+
+Answer: **2** concurrent rooms.
+
+**API:** `minMeetingRooms(intervals)` (see [meeting-rooms-ii](items/heaps/meeting-rooms-ii.md)).
+
+`npm run demo -- meeting-rooms-ii`
+
+## Number of islands (grid DFS)
+
+**Grid (4×5):** land `1`, water `0`; count connected 4-neighbor land components.
+
+```
+1 1 0 0 0
+1 1 0 0 0
+0 0 1 0 0
+0 0 0 1 1
+```
+
+| Flood from | Cells visited | New islands total |
+|------------|---------------|-------------------|
+| (0,0) | top-left 2×2 block | 1 |
+| (2,2) | single land | 2 |
+| (3,3) | right pair | **3** |
+
+Each unvisited `1` starts one DFS/BFS and marks its component.
+
+**API:** `numIslands(grid)` (see [number-of-islands](items/graphs/number-of-islands.md)).
+
+`npm run demo -- number-of-islands`
+
+## Top K frequent elements
+
+**Input:** `nums = [1,1,1,2,2,3]`, `k = 2`.
+
+| Phase | Result |
+|-------|--------|
+| Count frequencies | `1→3`, `2→2`, `3→1` |
+| Min-heap of size `k` by frequency | keep keys `{1,2}` |
+| Extract order (any tie ok) | **`[1, 2]`** |
+
+Frequency map is **O(n)**; heap operations **O(n log k)**.
+
+**API:** `topKFrequent(nums, k)` (see [top-k-frequent-elements](items/heaps/top-k-frequent-elements.md)).
+
+`npm run demo -- top-k-frequent-elements`
+
+## Longest substring without repeating
+
+**Input:** `s = "pwwkew"`
+
+| Step | Window | Set / map | Best length |
+|------|--------|-----------|-------------|
+| expand to `pw` | `pw` | `{p,w}` | 2 |
+| duplicate `w` | shrink from left → `w` | `{w}` | 2 |
+| expand `wk`, `wke` | `wke` | `{w,k,e}` | 3 |
+| duplicate `w` at end | shrink → `kew` | `{k,e,w}` | **3** |
+
+Answer: **3** (`"wke"`).
+
+**API:** `lengthOfLongestSubstring(s)` (see [longest-substring-without-repeating](items/strings/longest-substring-without-repeating.md)).
+
+`npm run demo -- longest-substring-without-repeating`
+
+## Merge intervals
+
+**Input:** `[[1,3],[2,6],[8,10],[15,18]]` (sorted by start).
+
+| Step | Current merged | Next interval | Action |
+|------|----------------|---------------|--------|
+| 1 | `[]` | `[1,3]` | append |
+| 2 | `[[1,3]]` | `[2,6]` | overlap → `[1,6]` |
+| 3 | `[[1,6]]` | `[8,10]` | append |
+| 4 | `[[1,6],[8,10]]` | `[15,18]` | append |
+
+Result: **`[[1,6],[8,10],[15,18]]`**.
+
+**API:** `mergeIntervals(intervals)` (see [merge-intervals](items/sorting/merge-intervals.md)).
+
+`npm run demo -- merge-intervals`
+
+## Coin change (min coins)
+
+**Coins:** `[1, 2, 5]`, **amount:** `11`.
+
+Unbounded knapsack DP — `dp[a]` = min coins to make amount `a`:
+
+| Amount `a` | Best last coin | `dp[a]` |
+|------------|----------------|---------|
+| 0 | — | 0 |
+| 1 | 1 | 1 |
+| 2 | 2 | 1 |
+| 3 | 1+2 | 2 |
+| … | … | … |
+| 11 | 5+5+1 | **3** |
+
+Impossible amounts stay at sentinel **-1** (e.g. coins `[2]`, amount `3`).
+
+**API:** `minCoins(coins, amount)` (see [coin-change](items/dp/coin-change.md)).
+
+`npm run demo -- coin-change`
+
+## Trapping rain water (two pointers)
+
+**Heights:** `[0,1,0,2,1,0,1,3,2,1,2,1]`
+
+Two pointers `left` / `right` with running prefix maxes; water at index `i` is `min(leftMax, rightMax) - height[i]` when positive.
+
+| Index | Height | `leftMax` | `rightMax` | Water at `i` |
+|-------|--------|-----------|------------|--------------|
+| 2 | 0 | 1 | 3 | 1 |
+| 5 | 0 | 2 | 3 | 2 |
+| … | … | … | … | … |
+
+Total trapped: **6** units (classic LeetCode trace).
+
+**API:** `trap(height)` (see [trapping-rain-water](items/searching/trapping-rain-water.md)).
+
+`npm run demo -- trapping-rain-water`
+
 ## Topic index
 
-One-line walkthroughs for every catalog topic. Step tables above cover interview-heavy patterns (search, graphs, DP, caches, strings).
+One-line walkthroughs for every catalog topic. Step tables above cover interview-heavy patterns (search, graphs, DP, caches, strings, and practice-problem staples).
 
 ### linear-search
 
@@ -433,7 +622,7 @@ See the [detailed walkthrough](#edit-distance-kitten-to-sitting) above.
 
 ### coin-change
 
-Minimum coins to make an amount (unbounded supply).
+See the [detailed walkthrough](#coin-change-min-coins) above.
 
 `npm run demo -- coin-change`
 
