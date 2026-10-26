@@ -5,8 +5,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath, pathToFileURL } from 'node:url';
-import { createRequire } from 'node:module';
+import { fileURLToPath } from 'node:url';
 
 import { CORE_GOLDENS, STATEFUL_GOLDENS } from './golden-fixtures.mjs';
 import { requiredThemes, themesInCases } from './shared-golden-themes.mjs';
@@ -14,8 +13,6 @@ import { requiredThemes, themesInCases } from './shared-golden-themes.mjs';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const TOOLS = path.join(ROOT, 'tools');
-const requireCjs = createRequire(import.meta.url);
-
 const INF = Math.floor(2147483647 / 4);
 
 function allFixtures() {
