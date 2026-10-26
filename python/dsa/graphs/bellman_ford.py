@@ -13,7 +13,7 @@ from dataclasses import dataclass
 
 from dsa.graphs.graph import Graph
 
-_INF = 2**30 - 1
+_INF = 2147483647 // 4
 
 
 @dataclass(frozen=True)
