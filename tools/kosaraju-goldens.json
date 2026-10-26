@@ -1,0 +1,25 @@
+[
+  {
+    "n": 3,
+    "directed": true,
+    "weighted": false,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "componentCount": 1,
+    "componentSizes": [
+      3
+    ]
+  }
+]

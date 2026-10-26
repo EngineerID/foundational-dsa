@@ -1,0 +1,15 @@
+[
+  {
+    "text": "ushers",
+    "patterns": [
+      "he",
+      "she",
+      "his",
+      "hers"
+    ],
+    "hits": [
+      1,
+      2
+    ]
+  }
+]

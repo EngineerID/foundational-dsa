@@ -37,7 +37,11 @@ for (const id of withIds) {
 lines.push('');
 lines.push(`## Catalog topics still without shared goldens (${missing.length})`, '');
 lines.push('');
-lines.push(missing.map((id) => `\`${id}\``).join(', ') + '.', '');
+if (missing.length) {
+  lines.push(missing.map((id) => `\`${id}\``).join(', ') + '.', '');
+} else {
+  lines.push('None — every catalog topic has shared JSON goldens and trilingual `*Goldens*` tests.', '');
+}
 lines.push(
   'Regenerate this page: `node tools/refresh-golden-fixtures-doc.mjs`. Gap list only: `node tools/list-golden-fixture-gaps.mjs`.',
   '',
