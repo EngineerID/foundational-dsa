@@ -3,6 +3,8 @@
  * Used by tools/apply-item-docs.mjs and item doc parity — do not copy textbook prose.
  */
 
+export { GRAPH_UNREACHABLE } from './graph-sentinel.mjs';
+
 export const DOC_SPECS = {
   'linear-search': {
     purpose: 'Find a target value in an array by sequential scan.',

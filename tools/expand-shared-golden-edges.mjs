@@ -8,12 +8,12 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { CORE_GOLDENS, STATEFUL_GOLDENS } from './golden-fixtures.mjs';
+import { GRAPH_UNREACHABLE as INF } from './graph-sentinel.mjs';
 import { requiredThemes, themesInCases } from './shared-golden-themes.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const TOOLS = path.join(ROOT, 'tools');
-const INF = Math.floor(2147483647 / 4);
 
 function allFixtures() {
   const out = [];

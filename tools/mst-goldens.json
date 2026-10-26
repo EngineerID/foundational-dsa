@@ -46,5 +46,20 @@
     "kruskalWeight": 0,
     "kruskalEdgeCount": 0,
     "primWeight": 0
+  },
+  {
+    "n": 3,
+    "directed": false,
+    "weighted": true,
+    "edges": [
+      [
+        0,
+        1,
+        7
+      ]
+    ],
+    "kruskalWeight": 7,
+    "kruskalEdgeCount": 1,
+    "primWeight": 7
   }
 ]

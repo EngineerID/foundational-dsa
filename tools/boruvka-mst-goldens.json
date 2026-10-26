@@ -40,5 +40,18 @@
     "weighted": true,
     "edges": [],
     "totalWeight": 0
+  },
+  {
+    "n": 3,
+    "directed": false,
+    "weighted": true,
+    "edges": [
+      [
+        0,
+        1,
+        7
+      ]
+    ],
+    "totalWeight": 7
   }
 ]

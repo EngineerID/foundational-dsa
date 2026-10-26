@@ -211,6 +211,9 @@ jobs:
       - run: npm run check:shared-golden-themes
         if: env.RUN_HEAVY == 'true'
 
+      - run: npm run check:graph-sentinel
+        if: env.RUN_HEAVY == 'true'
+
       - run: npm run check:stubs
         if: env.RUN_HEAVY == 'true'
 

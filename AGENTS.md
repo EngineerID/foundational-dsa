@@ -92,6 +92,8 @@ Worked walkthroughs: [`docs/worked-examples.md`](docs/worked-examples.md).
 
 **Shared regression JSON** (trilingual tests): `tools/kmp-goldens.json`, `tools/binary-search-goldens.json`, `tools/binary-search-boundary-goldens.json` (first/last occurrence). Java `*GoldensTest` classes load these via `GoldenJson` / `GoldenIntArrays` under `java/.../support/` (no regex parsing).
 
+**Graph unreachable sentinel:** `GRAPH_UNREACHABLE` (`536870911`) in `tools/graph-sentinel.mjs` / `doc-spec.mjs`; `npm run check:graph-sentinel`. Unweighted **BFS** goldens use **`-1`** for unreachable, not this sentinel.
+
 **Catalog edge themes** (cross-item): `python/tests/catalog/`, `javascript/test/catalog/`, `java/.../catalog/`; `npm run check:catalog-items` verifies all 41 topic ids are referenced.
 
 Module-level complexity and invariants are centralized in `tools/doc-spec.mjs` and mirrored in source docstrings.
