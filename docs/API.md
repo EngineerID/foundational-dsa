@@ -536,6 +536,19 @@ Minimum coins to make an amount (unbounded supply).
 **Operations:**
 - `minCoins` → Python `min_coins`, JS `minCoins`
 
+## maximum-subarray
+
+Largest sum of any contiguous subarray (Kadane).
+
+| Language | Module |
+|----------|--------|
+| Java | `MaxSubarray` |
+| Python | `max_subarray` |
+| JavaScript | `maxSubarray` |
+
+**Operations:**
+- `maxSubarray` → Python `max_subarray`, JS `maxSubarray`
+
 ## separate-chaining
 
 Hash map with linked-list buckets and load-factor resize.

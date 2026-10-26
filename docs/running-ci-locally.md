@@ -48,6 +48,7 @@ When `run_heavy` is true, run these from the repository root in order:
 | API doc freshness | `npm run api:check` |
 | README complexity vs doc-spec | `npm run check:readme-complexity` |
 | Shared golden fixture parity | `npm run check:golden-parity` |
+| Graph unreachable sentinel parity | `npm run check:graph-sentinel` |
 | Catalog mentions all 72 items | `npm run check:catalog-items` |
 
 One-shot equivalent (matches CI except artifact upload):

@@ -100,6 +100,7 @@ Trilingual tests for these scenarios: `WorkedInterviewExamplesTest`, `test_worke
 | 0/1 knapsack | `knapsack` | `npm run demo -- knapsack` |
 | Edit distance | `edit-distance` | `npm run demo -- edit-distance` |
 | Coin change (min coins) | `coin-change` | `npm run demo -- coin-change` |
+| Maximum subarray (Kadane) | `maximum-subarray` | `npm run demo -- maximum-subarray` |
 | Matrix chain multiplication | `matrix-chain` | `npm run demo -- matrix-chain` |
 | TSP (small n, bitmask) | `tsp-bitmask` | `npm run demo -- tsp-bitmask` |
 

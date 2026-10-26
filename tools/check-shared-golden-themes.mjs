@@ -13,6 +13,7 @@ const REQUIRED_CASE_KEYS = {
   'linear-search-goldens.json': ['arr', 'target', 'expected'],
   'binary-search-goldens.json': ['arr', 'key', 'expected'],
   'binary-search-boundary-goldens.json': ['arr', 'key', 'first', 'last'],
+  'maximum-subarray-goldens.json': ['nums', 'expected'],
   'reservoir-sampling-goldens.json': ['stream', 'k', 'seed', 'expected'],
   'treap-goldens.json': ['seed', 'inserts', 'searchResults'],
 };
@@ -49,6 +50,9 @@ function main() {
     if (requiredKeys) {
       cases.forEach((c, i) => {
         for (const key of requiredKeys) {
+          if (c.expectError && key === 'expected') {
+            continue;
+          }
           if (!(key in c)) {
             errors.push(`${id}: case ${i} missing "${key}" in ${json}`);
           }

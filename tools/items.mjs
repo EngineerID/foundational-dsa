@@ -1,4 +1,4 @@
-/** Canonical catalog of 72 DSA items (shared by matrix, API manifest, coverage). */
+/** Canonical catalog of DSA items (shared by matrix, API manifest, coverage). */
 export const ITEMS = [
   { topic: 'searching', id: 'linear-search', java: 'LinearSearch', py: 'linear_search', js: 'linearSearch' },
   { topic: 'searching', id: 'binary-search', java: 'BinarySearch', py: 'binary_search', js: 'binarySearch' },
@@ -36,6 +36,7 @@ export const ITEMS = [
   { topic: 'dp', id: 'knapsack', java: 'Knapsack01', py: 'knapsack', js: 'knapsack' },
   { topic: 'dp', id: 'edit-distance', java: 'EditDistance', py: 'edit_distance', js: 'editDistance' },
   { topic: 'dp', id: 'coin-change', java: 'CoinChange', py: 'coin_change', js: 'coinChange' },
+  { topic: 'dp', id: 'maximum-subarray', java: 'MaxSubarray', py: 'max_subarray', js: 'maxSubarray' },
   { topic: 'hashing', id: 'separate-chaining', java: 'HashTableChaining', py: 'separate_chaining', js: 'separateChaining' },
   { topic: 'hashing', id: 'open-addressing', java: 'HashTableOpenAddressing', py: 'open_addressing', js: 'openAddressing' },
   { topic: 'hashing', id: 'bloom-filter', java: 'BloomFilter', py: 'bloom_filter', js: 'bloomFilter' },

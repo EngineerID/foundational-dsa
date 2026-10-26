@@ -7,6 +7,7 @@ import com.dsa.examples.hashing.HashTableOpenAddressing;
 import com.dsa.examples.heaps.PriorityQueue;
 import com.dsa.examples.linear.*;
 import com.dsa.examples.dp.CoinChange;
+import com.dsa.examples.dp.MaxSubarray;
 import com.dsa.examples.dp.EditDistance;
 import com.dsa.examples.dp.Knapsack01;
 import com.dsa.examples.dp.LCS;
@@ -200,6 +201,7 @@ class CatalogItemEdgesTest {
         assertEquals(5, Knapsack01.maxValue(new int[] {1}, new int[] {5}, 1));
         assertEquals(1, EditDistance.distance("a", "b"));
         assertEquals(0, CoinChange.minCoins(new int[] {1}, 0));
+        assertEquals(3, MaxSubarray.maxSubarray(new int[] {1, -2, 3}));
     }
 
     @Test

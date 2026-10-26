@@ -15,6 +15,7 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 | `lis` | Time O(n log n) | Space O(n) | length: Time O(n log n); Space O(n). |
 | `longest-palindromic-subsequence` | Time O(n²) | Space O(n²) | length: Time O(n²); Space O(n²). |
 | `matrix-chain` | Time O(n³) | Space O(n²) | minMultiplications: Time O(n³); Space O(n²). |
+| `maximum-subarray` | Time O(n) | Space O(1) | maxSubarray: Time O(n); Space O(1). |
 | `partition-equal-subset` | Time O(n·sum) | Space O(sum) | canPartition: Time O(n·sum); Space O(sum). |
 | `rod-cutting` | Time O(n·length) | Space O(length) | maxProfit: Time O(n·length); Space O(length). |
 | `tsp-bitmask` | Time O(n²·2^n) | Space O(n·2^n) | minCost: Time O(n²·2^n); Space O(n·2^n). |
@@ -126,5 +127,5 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 |----------|------|-------|----------|
 | `union-find` | Time O(α(n) | Space O(n) | find/union/connected: Time O(α(n)) amortized; Space O(n). |
 
-**Topics:** 72
+**Topics:** 73
 

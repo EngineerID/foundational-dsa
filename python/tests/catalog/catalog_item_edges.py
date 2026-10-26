@@ -6,6 +6,7 @@ import pytest
 
 from dsa.dp import (
     coin_change,
+    max_subarray,
     edit_distance,
     knapsack,
     lcs,
@@ -241,6 +242,7 @@ def test_new_trees_strings_dp_edge_themes():
     assert knapsack.max_value([1], [5], 1) == 5
     assert edit_distance.distance("a", "b") == 1
     assert coin_change.min_coins([1], 0) == 0
+    assert max_subarray.max_subarray([1, -2, 3]) == 3
 
 
 def test_graph_algorithms_edge_themes():

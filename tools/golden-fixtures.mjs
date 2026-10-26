@@ -503,6 +503,13 @@ export const STATEFUL_GOLDENS = [
     java: 'java/src/test/java/com/dsa/examples/strings/AhoCorasickGoldensTest.java',
   },
   {
+    id: 'maximum-subarray',
+    json: 'maximum-subarray-goldens.json',
+    py: 'python/tests/dp/test_max_subarray_goldens.py',
+    js: 'javascript/test/dp/maxSubarrayGoldens.test.js',
+    java: 'java/src/test/java/com/dsa/examples/dp/MaxSubarrayGoldensTest.java',
+  },
+  {
     id: 'rod-cutting',
     json: 'rod-cutting-goldens.json',
     py: 'python/tests/dp/test_rod_cutting_goldens.py',

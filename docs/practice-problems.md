@@ -39,7 +39,7 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Statement:** Given an integer array, return the largest sum of any contiguous subarray (Kadane).
 
-**Implementation:** `practice/max_subarray*`.
+**Implementation:** `practice/max_subarray*` (same algorithm as catalog [`maximum-subarray`](items/dp/maximum-subarray.md): `npm run demo -- maximum-subarray`).
 
 ## 3. Valid parentheses
 

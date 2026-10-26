@@ -2,7 +2,7 @@
 
 Trilingual `*Goldens*` tests lock behavior against JSON under `tools/`. Registry: `tools/golden-fixtures.mjs` (`npm run check:golden-parity`).
 
-## Topics with shared goldens (73 catalog ids)
+## Topics with shared goldens (74 catalog ids)
 
 | Topic id | JSON |
 |----------|------|
@@ -49,6 +49,7 @@ Trilingual `*Goldens*` tests lock behavior against JSON under `tools/`. Registry
 | `lru-cache` | `lru-cache-goldens.json` |
 | `manacher` | `manacher-goldens.json` |
 | `matrix-chain` | `matrix-chain-goldens.json` |
+| `maximum-subarray` | `maximum-subarray-goldens.json` |
 | `merge-sort` | `merge-sort-goldens.json` |
 | `open-addressing` | `open-addressing-goldens.json` |
 | `order-statistic-tree` | `order-statistic-tree-goldens.json` |
@@ -84,11 +85,5 @@ Trilingual `*Goldens*` tests lock behavior against JSON under `tools/`. Registry
 
 
 None — every catalog topic has shared JSON goldens and trilingual `*Goldens*` tests.
-
-**Edge themes:** `npm run check:shared-golden-themes` requires standard empty/single/duplicate/boundary/invalid themes where applicable, and enforces required keys on stateful fixtures (for example every `reservoir-sampling-goldens.json` case must include `seed`).
-
-**Weighted-graph unreachable distance:** Shared JSON uses **`536870911`** (`Integer.MAX_VALUE / 4`, `2147483647 // 4`). Canonical export: `tools/graph-sentinel.mjs` (`GRAPH_UNREACHABLE`), re-exported from `tools/doc-spec.mjs`. JavaScript: `javascript/src/graphs/graphInf.js`. Gate: `npm run check:graph-sentinel`.
-
-**MST partial connectivity:** `mst-goldens.json` and `boruvka-mst-goldens.json` include a **3-vertex graph with one edge** (isolated vertex). Kruskal/Prim/Borůvka return the weight of the reachable component only, not a full spanning tree of all vertices.
 
 Regenerate this page: `node tools/refresh-golden-fixtures-doc.mjs`. Gap list only: `node tools/list-golden-fixture-gaps.mjs`.

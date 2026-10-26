@@ -306,6 +306,12 @@ export const DOC_SPECS = {
     invariant: 'dp[a] is min coins for amount a.',
     complexity: 'minCoins: Time O(n·amount); Space O(amount).',
   },
+  'maximum-subarray': {
+    purpose: 'Largest sum of any contiguous subarray (Kadane).',
+    technique: "Kadane's algorithm",
+    invariant: 'cur is the best sum ending at the current index.',
+    complexity: 'maxSubarray: Time O(n); Space O(1).',
+  },
   'a-star': {
     purpose: 'Shortest path length with nonnegative weights (heuristic h=0).',
     technique: 'A* search',

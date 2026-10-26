@@ -328,6 +328,12 @@ export const API_MANIFEST = {
     python: ['min_coins'],
     javascript: ['minCoins'],
   },
+  'maximum-subarray': {
+    type: 'static',
+    java: ['maxSubarray'],
+    python: ['max_subarray'],
+    javascript: ['maxSubarray'],
+  },
   'a-star': {
     type: 'static',
     java: ['shortestPathLength'],
