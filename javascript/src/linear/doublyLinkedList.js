@@ -93,16 +93,15 @@ class DoublyLinkedList {
    */
   reverse() {
     let cur = this._head;
-    let tmp = null;
     while (cur !== null) {
-      tmp = cur.prev;
+      const prev = cur.prev;
       cur.prev = cur.next;
-      cur.next = tmp;
-      cur = cur.prev;
+      cur.next = prev;
+      cur = prev;
     }
-    tmp = this._head;
+    const oldHead = this._head;
     this._head = this._tail;
-    this._tail = tmp;
+    this._tail = oldHead;
   }
 
   _nodeAt(index) {
