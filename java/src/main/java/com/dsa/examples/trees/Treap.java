@@ -2,8 +2,6 @@
 
 package com.dsa.examples.trees;
 
-import java.util.Random;
-
 /**
  * Randomized BST via heap priorities on keys.
  * search/insert: Time O(log n) expected; Space O(n).
@@ -24,7 +22,7 @@ public class Treap {
         }
     }
 
-    private final Random rng;
+    private long lcgState;
     private Node root;
 
     public Treap() {
@@ -32,7 +30,12 @@ public class Treap {
     }
 
     public Treap(long seed) {
-        rng = new Random(seed);
+        lcgState = seed & 0xffffffffL;
+    }
+
+    private int nextPriority() {
+        lcgState = (1664525L * lcgState + 1013904223L) & 0xffffffffL;
+        return (int) (lcgState % (1L << 30));
     }
 
     public Integer search(int key) {
@@ -52,7 +55,7 @@ public class Treap {
 
     private Node insert(Node node, int key, int value) {
         if (node == null) {
-            return new Node(key, value, rng.nextInt(1 << 30));
+            return new Node(key, value, nextPriority());
         }
         if (key == node.key) {
             node.value = value;

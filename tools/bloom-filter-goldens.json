@@ -1,0 +1,12 @@
+[
+  {
+    "expectedItems": 100,
+    "falsePositiveRate": 0.01,
+    "add": ["alpha", "beta", "gamma"],
+    "queries": [
+      { "item": "alpha", "expected": true },
+      { "item": "delta", "expected": false },
+      { "item": "beta", "expected": true }
+    ]
+  }
+]

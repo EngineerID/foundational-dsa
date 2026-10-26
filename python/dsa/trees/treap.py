@@ -9,8 +9,6 @@ search/insert: Time O(log n) expected; Space O(n).
 
 from __future__ import annotations
 
-import random
-
 
 class _Node:
     __slots__ = ("key", "value", "prio", "left", "right")
@@ -27,8 +25,12 @@ class Treap:
     """Treap with integer keys."""
 
     def __init__(self, seed: int | None = None) -> None:
-        self._rng = random.Random(seed)
+        self._state = (0 if seed is None else seed) & 0xFFFFFFFF
         self.root: _Node | None = None
+
+    def _rand(self) -> int:
+        self._state = (1664525 * self._state + 1013904223) & 0xFFFFFFFF
+        return self._state % (1 << 30)
 
     def search(self, key: int) -> int | None:
         cur = self.root
@@ -43,7 +45,7 @@ class Treap:
 
     def _insert(self, node: _Node | None, key: int, value: int) -> _Node | None:
         if node is None:
-            return _Node(key, value, self._rng.randrange(1 << 30))
+            return _Node(key, value, self._rand())
         if key == node.key:
             node.value = value
             return node

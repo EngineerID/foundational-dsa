@@ -1,0 +1,12 @@
+[
+  {
+    "seed": 0,
+    "inserts": [[3, 30], [1, 10], [5, 50], [1, 99]],
+    "searchResults": [
+      { "key": 3, "value": 30 },
+      { "key": 1, "value": 99 },
+      { "key": 5, "value": 50 },
+      { "key": 9, "value": null }
+    ]
+  }
+]

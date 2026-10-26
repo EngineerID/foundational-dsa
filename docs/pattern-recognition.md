@@ -33,13 +33,18 @@ Map **problem signals** in interview statements to catalog **topic ids**. Pair t
 
 Shared JSON goldens and catalog tests lock behavior across Java, Python, and JavaScript:
 
-- `tools/*-goldens.json` with matching `*Goldens*` tests (e.g. `binary-search`, `reservoir-sampling`).
+- `tools/*-goldens.json` with matching `*Goldens*` tests (see `tools/golden-fixtures.mjs` for the full list, including randomized/stateful topics such as `treap`, `bloom-filter`, `lru-cache`, `reservoir-sampling`).
 - `WorkedInterviewExamplesTest` / `test_worked_interview_examples.py` / `workedInterviewExamples.test.js` for walkthrough scenarios.
 
 When extending an algorithm, add edge cases (empty, single element, duplicates, invalid input, large n) in **all three** dedicated test files unless catalog tests already cover them.
 
+## Practice problems
+
+Five standalone problems with trilingual solutions (Two Sum II, max subarray, valid parentheses, meeting rooms II, number of islands): [practice-problems.md](practice-problems.md).
+
 ## Next steps
 
 - [Interview prep map](interview-prep.md)
+- [Practice problems](practice-problems.md)
 - [API.md](API.md) for method names per language
 - [CONTRIBUTING.md](../CONTRIBUTING.md) for parity and test expectations
