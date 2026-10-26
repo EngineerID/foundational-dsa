@@ -1,6 +1,6 @@
 /**
  * Module-level documentation specs for canonical DSA items (purpose, technique, invariant, complexity).
- * Used by tools/apply-item-docs.mjs — do not copy textbook prose.
+ * Used by tools/apply-item-docs.mjs and item doc parity — do not copy textbook prose.
  */
 
 export const DOC_SPECS = {
