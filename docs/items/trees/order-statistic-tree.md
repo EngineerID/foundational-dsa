@@ -2,13 +2,18 @@
 
 Topic: **trees** / `order-statistic-tree`
 
-BST augmented with subtree sizes for rank and select.
+## Overview
 
-**Complexity:** rank/select/insert/delete: Time O(log n); Space O(n).
+BST augmented with subtree sizes for rank and select.
 
 **Worked example:** [Topic index](../../worked-examples.md#order-statistic-tree) (summary) · run `npm run demo -- order-statistic-tree` in all three languages.
 
-## Implementations
+## Complexity
+
+rank/select/insert/delete: Time O(log n); Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

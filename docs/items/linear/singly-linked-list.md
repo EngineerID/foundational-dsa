@@ -2,13 +2,18 @@
 
 Topic: **linear** / `singly-linked-list`
 
-Singly linked list with head insertion and traversal.
+## Overview
 
-**Complexity:** prepend/search: Time O(1)/O(n); Space O(n).
+Singly linked list with head insertion and traversal.
 
 **Worked example:** [Topic index](../../worked-examples.md#singly-linked-list) (summary) · run `npm run demo -- singly-linked-list` in all three languages.
 
-## Implementations
+## Complexity
+
+prepend/search: Time O(1)/O(n); Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

@@ -2,13 +2,18 @@
 
 Topic: **trees** / `segment-tree`
 
-Range aggregate queries with point updates on an array.
+## Overview
 
-**Complexity:** update/rangeSum: Time O(log n); Space O(n).
+Range aggregate queries with point updates on an array.
 
 **Worked example:** [Topic index](../../worked-examples.md#segment-tree) (summary) · run `npm run demo -- segment-tree` in all three languages.
 
-## Implementations
+## Complexity
+
+update/rangeSum: Time O(log n); Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

@@ -2,15 +2,21 @@
 
 Topic: **linear** / `lru-cache`
 
+## Overview
+
 Least-recently-used cache with O(1) get and put.
 
-**Complexity:** get/put: Time O(1); Space O(capacity).
 
 Capacity must be **positive**; `get` returns **-1** for missing keys.
 
 **Walkthrough:** [Worked examples — Lru Cache](../../worked-examples.md#lru-cache-capacity-2).
 
-## Implementations
+## Complexity
+
+get/put: Time O(1); Space O(capacity).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

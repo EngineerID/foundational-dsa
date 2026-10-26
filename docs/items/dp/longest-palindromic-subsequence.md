@@ -2,13 +2,18 @@
 
 Topic: **dp** / `longest-palindromic-subsequence`
 
-Longest palindromic subsequence length.
+## Overview
 
-**Complexity:** length: Time O(n²); Space O(n²).
+Longest palindromic subsequence length.
 
 **Worked example:** [Topic index](../../worked-examples.md#longest-palindromic-subsequence) (summary) · run `npm run demo -- longest-palindromic-subsequence` in all three languages.
 
-## Implementations
+## Complexity
+
+length: Time O(n²); Space O(n²).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

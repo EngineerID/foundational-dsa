@@ -2,13 +2,18 @@
 
 Topic: **linear** / `doubly-linked-list`
 
-Doubly linked list supporting O(1) removal given a node reference.
+## Overview
 
-**Complexity:** prepend/append/remove: Time O(1) at known node; Space O(n).
+Doubly linked list supporting O(1) removal given a node reference.
 
 **Worked example:** [Topic index](../../worked-examples.md#doubly-linked-list) (summary) · run `npm run demo -- doubly-linked-list` in all three languages.
 
-## Implementations
+## Complexity
+
+prepend/append/remove: Time O(1) at known node; Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

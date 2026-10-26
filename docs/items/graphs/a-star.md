@@ -2,13 +2,18 @@
 
 Topic: **graphs** / `a-star`
 
-Shortest path length with nonnegative weights (heuristic h=0).
+## Overview
 
-**Complexity:** shortestPathLength: Time O(E log V); Space O(V).
+Shortest path length with nonnegative weights (heuristic h=0).
 
 **Worked example:** [Topic index](../../worked-examples.md#a-star) (summary) · run `npm run demo -- a-star` in all three languages.
 
-## Implementations
+## Complexity
+
+shortestPathLength: Time O(E log V); Space O(V).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

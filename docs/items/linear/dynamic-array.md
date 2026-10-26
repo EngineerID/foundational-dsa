@@ -2,17 +2,24 @@
 
 Topic: **linear** / `dynamic-array`
 
+## Overview
+
 Resizable array-backed list with amortized append.
 
-**Complexity:** append/get/set: Time O(1) amortized; resize O(n); Space O(n).
 
 Out-of-range `get` raises; empty structure has `size() == 0`.
+
 
 **Catalog edge themes:** covered in shared catalog tests (`EdgeCaseThemesTest`, `test_edge_case_themes.py`, `edgeCaseThemes.test.js`) for empty / single / duplicate / large / invalid cases.
 
 **Worked example:** [Topic index](../../worked-examples.md#dynamic-array) (summary) · run `npm run demo -- dynamic-array` in all three languages.
 
-## Implementations
+## Complexity
+
+append/get/set: Time O(1) amortized; resize O(n); Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

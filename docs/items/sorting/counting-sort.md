@@ -2,17 +2,24 @@
 
 Topic: **sorting** / `counting-sort`
 
+## Overview
+
 Stable sort for non-negative integers in bounded range.
 
-**Complexity:** sort/sortByDigit: Time O(n + k); Space O(k).
 
 **Non-negative keys only**; negative values raise.
+
 
 **Catalog edge themes:** covered in shared catalog tests (`EdgeCaseThemesTest`, `test_edge_case_themes.py`, `edgeCaseThemes.test.js`) for empty / single / duplicate / large / invalid cases.
 
 **Worked example:** [Topic index](../../worked-examples.md#counting-sort) (summary) · run `npm run demo -- counting-sort` in all three languages.
 
-## Implementations
+## Complexity
+
+sort/sortByDigit: Time O(n + k); Space O(k).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

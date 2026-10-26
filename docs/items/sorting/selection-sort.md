@@ -2,13 +2,18 @@
 
 Topic: **sorting** / `selection-sort`
 
-Sort an array in ascending order in place.
+## Overview
 
-**Complexity:** sort: Time O(n²); Space O(1).
+Sort an array in ascending order in place.
 
 **Worked example:** [Topic index](../../worked-examples.md#selection-sort) (summary) · run `npm run demo -- selection-sort` in all three languages.
 
-## Implementations
+## Complexity
+
+sort: Time O(n²); Space O(1).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

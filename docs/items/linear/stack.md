@@ -2,17 +2,24 @@
 
 Topic: **linear** / `stack`
 
+## Overview
+
 LIFO stack backed by dynamic array.
 
-**Complexity:** push/pop/peek: Time O(1) amortized; Space O(n).
 
 Pop/peek on empty stack raises.
+
 
 **Catalog edge themes:** covered in shared catalog tests (`EdgeCaseThemesTest`, `test_edge_case_themes.py`, `edgeCaseThemes.test.js`) for empty / single / duplicate / large / invalid cases.
 
 **Worked example:** [Topic index](../../worked-examples.md#stack) (summary) · run `npm run demo -- stack` in all three languages.
 
-## Implementations
+## Complexity
+
+push/pop/peek: Time O(1) amortized; Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

@@ -1,5 +1,6 @@
 from dsa.practice.coin_change import coin_change
 from dsa.practice.course_schedule import can_finish
+from dsa.practice.edit_distance_practice import edit_distance
 from dsa.practice.kth_largest import kth_largest
 from dsa.practice.level_order import level_order
 from dsa.practice.longest_substring import length_of_longest_substring
@@ -8,8 +9,12 @@ from dsa.practice.max_subarray import max_subarray
 from dsa.practice.meeting_rooms import min_meeting_rooms
 from dsa.practice.merge_intervals import merge_intervals
 from dsa.practice.mst_kruskal import mst_total_weight
+from dsa.practice.network_delay import network_delay
 from dsa.practice.num_islands import num_islands
+from dsa.practice.sliding_window_max import max_sliding_window
 from dsa.practice.top_k_frequent import top_k_frequent
+from dsa.practice.trapping_rain_water import trap
+from dsa.practice.tree_codec import deserialize, serialize
 from dsa.practice.two_sum import two_sum_sorted
 from dsa.practice.valid_parentheses import is_valid_parentheses
 from dsa.practice.word_search import word_search
@@ -90,3 +95,25 @@ def test_kth_largest():
 def test_mst_kruskal():
     edges = [[0, 1, 1], [1, 2, 2], [2, 3, 3], [0, 3, 4]]
     assert mst_total_weight(4, edges) == 6
+
+
+def test_trapping_rain_water():
+    assert trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]) == 6
+
+
+def test_edit_distance_practice():
+    assert edit_distance("kitten", "sitting") == 3
+
+
+def test_tree_codec_round_trip():
+    values = [3, 9, 20, None, None, 15, 7]
+    assert deserialize(serialize(values)) == values
+
+
+def test_network_delay():
+    times = [[1, 0, 1], [1, 2, 1], [2, 3, 1]]
+    assert network_delay(4, times, 1) == 2
+
+
+def test_sliding_window_max_practice():
+    assert max_sliding_window([1, 3, -1, -3, 5, 3, 6, 7], 3) == [3, 3, 5, 5, 6, 7]

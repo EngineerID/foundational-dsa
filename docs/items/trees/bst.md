@@ -2,15 +2,21 @@
 
 Topic: **trees** / `bst`
 
+## Overview
+
 Binary search tree for ordered key storage.
 
-**Complexity:** search/insert/delete: Time O(h) height; Space O(n).
 
 Duplicate keys typically follow left-or-right policy defined in the implementation.
 
 **Worked example:** [Topic index](../../worked-examples.md#bst) (summary) · run `npm run demo -- bst` in all three languages.
 
-## Implementations
+## Complexity
+
+search/insert/delete: Time O(h) height; Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

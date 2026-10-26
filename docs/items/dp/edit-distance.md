@@ -2,15 +2,21 @@
 
 Topic: **dp** / `edit-distance`
 
+## Overview
+
 Levenshtein edit distance between two strings.
 
-**Complexity:** distance: Time O(nm); Space O(min(n,m)).
 
 `null` strings treated as empty; classic Levenshtein DP.
 
 **Walkthrough:** [Worked examples — Edit Distance](../../worked-examples.md#edit-distance-kitten-to-sitting).
 
-## Implementations
+## Complexity
+
+distance: Time O(nm); Space O(min(n,m)).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

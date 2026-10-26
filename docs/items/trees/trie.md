@@ -2,15 +2,21 @@
 
 Topic: **trees** / `trie`
 
+## Overview
+
 Prefix tree for string keys with prefix search.
 
-**Complexity:** insert/search/startsWith: Time O(L) key length; Space O(total chars).
 
 Empty string key is stored at the root when inserted.
 
 **Worked example:** [Topic index](../../worked-examples.md#trie) (summary) · run `npm run demo -- trie` in all three languages.
 
-## Implementations
+## Complexity
+
+insert/search/startsWith: Time O(L) key length; Space O(total chars).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

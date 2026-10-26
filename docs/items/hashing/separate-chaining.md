@@ -2,15 +2,21 @@
 
 Topic: **hashing** / `separate-chaining`
 
+## Overview
+
 Hash map with linked-list buckets and load-factor resize.
 
-**Complexity:** put/get/remove: Time O(1) average; resize O(n); Space O(n).
 
 Resizes when load factor exceeds threshold (see implementation).
 
 **Worked example:** [Topic index](../../worked-examples.md#separate-chaining) (summary) · run `npm run demo -- separate-chaining` in all three languages.
 
-## Implementations
+## Complexity
+
+put/get/remove: Time O(1) average; resize O(n); Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

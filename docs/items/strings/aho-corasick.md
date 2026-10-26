@@ -2,13 +2,18 @@
 
 Topic: **strings** / `aho-corasick`
 
-Find all occurrences of multiple patterns in text.
+## Overview
 
-**Complexity:** search: Time O(n+m+z); Space O(m).
+Find all occurrences of multiple patterns in text.
 
 **Worked example:** [Topic index](../../worked-examples.md#aho-corasick) (summary) · run `npm run demo -- aho-corasick` in all three languages.
 
-## Implementations
+## Complexity
+
+search: Time O(n+m+z); Space O(m).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

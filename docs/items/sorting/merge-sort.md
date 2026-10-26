@@ -2,17 +2,24 @@
 
 Topic: **sorting** / `merge-sort`
 
+## Overview
+
 Return a stably sorted copy via top-down or bottom-up merge passes.
 
-**Complexity:** sort/sortBottomUp: Time O(n log n); Space O(n).
 
 Returns a **new sorted array** (stable); does not require in-place mutation of the input.
+
 
 **Catalog edge themes:** covered in shared catalog tests (`EdgeCaseThemesTest`, `test_edge_case_themes.py`, `edgeCaseThemes.test.js`) for empty / single / duplicate / large / invalid cases.
 
 **Walkthrough:** [Worked examples — Merge Sort](../../worked-examples.md#merge-sort-top-down).
 
-## Implementations
+## Complexity
+
+sort/sortBottomUp: Time O(n log n); Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

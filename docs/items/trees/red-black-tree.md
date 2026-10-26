@@ -2,13 +2,18 @@
 
 Topic: **trees** / `red-black-tree`
 
-Balanced BST with red-black invariants.
+## Overview
 
-**Complexity:** search/insert: Time O(log n); Space O(n).
+Balanced BST with red-black invariants.
 
 **Worked example:** [Topic index](../../worked-examples.md#red-black-tree) (summary) · run `npm run demo -- red-black-tree` in all three languages.
 
-## Implementations
+## Complexity
+
+search/insert: Time O(log n); Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

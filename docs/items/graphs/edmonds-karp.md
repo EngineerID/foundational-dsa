@@ -2,13 +2,18 @@
 
 Topic: **graphs** / `edmonds-karp`
 
-Maximum s-t flow in a capacitated network.
+## Overview
 
-**Complexity:** maxFlow: Time O(VE²); Space O(V²).
+Maximum s-t flow in a capacitated network.
 
 **Worked example:** [Topic index](../../worked-examples.md#edmonds-karp) (summary) · run `npm run demo -- edmonds-karp` in all three languages.
 
-## Implementations
+## Complexity
+
+maxFlow: Time O(VE²); Space O(V²).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

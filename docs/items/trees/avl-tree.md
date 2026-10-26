@@ -2,13 +2,18 @@
 
 Topic: **trees** / `avl-tree`
 
-Self-balancing BST with height-balance after insert/delete.
+## Overview
 
-**Complexity:** search/insert/delete: Time O(log n); Space O(n).
+Self-balancing BST with height-balance after insert/delete.
 
 **Worked example:** [Topic index](../../worked-examples.md#avl-tree) (summary) · run `npm run demo -- avl-tree` in all three languages.
 
-## Implementations
+## Complexity
+
+search/insert/delete: Time O(log n); Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

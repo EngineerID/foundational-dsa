@@ -119,4 +119,35 @@ class PracticeProblemsTest {
                 4, new int[][] { { 0, 1, 1 }, { 1, 2, 2 }, { 2, 3, 3 }, { 0, 3, 4 } });
         assertEquals(6, weight);
     }
+
+    @Test
+    void trappingRainWater() {
+        assertEquals(6, TrappingRainWater.trap(new int[] { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 }));
+    }
+
+    @Test
+    void editDistancePractice() {
+        assertEquals(3, EditDistancePractice.editDistance("kitten", "sitting"));
+    }
+
+    @Test
+    void treeCodecRoundTrip() {
+        Integer[] values = new Integer[] { 3, 9, 20, null, null, 15, 7 };
+        assertArrayEquals(values, TreeCodecPractice.deserialize(TreeCodecPractice.serialize(values)));
+    }
+
+    @Test
+    void networkDelay() {
+        assertEquals(
+                2,
+                NetworkDelay.networkDelay(
+                        4, new int[][] { { 1, 0, 1 }, { 1, 2, 1 }, { 2, 3, 1 } }, 1));
+    }
+
+    @Test
+    void slidingWindowMax() {
+        assertArrayEquals(
+                new int[] { 3, 3, 5, 5, 6, 7 },
+                SlidingWindowMax.maxSlidingWindow(new int[] { 1, 3, -1, -3, 5, 3, 6, 7 }, 3));
+    }
 }

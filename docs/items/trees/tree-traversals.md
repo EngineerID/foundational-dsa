@@ -2,13 +2,18 @@
 
 Topic: **trees** / `tree-traversals`
 
-In-order, pre-order, post-order, and level-order tree walks.
+## Overview
 
-**Complexity:** Each traversal: Time O(n); Space O(h) stack or O(w) queue.
+In-order, pre-order, post-order, and level-order tree walks.
 
 **Worked example:** [Topic index](../../worked-examples.md#tree-traversals) (summary) · run `npm run demo -- tree-traversals` in all three languages.
 
-## Implementations
+## Complexity
+
+Each traversal: Time O(n); Space O(h) stack or O(w) queue.
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

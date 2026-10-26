@@ -193,6 +193,15 @@ jobs:
       - run: npm run check:complexity-cheatsheet
         if: env.RUN_HEAVY == 'true'
 
+      - run: npm run check:item-doc-headings
+        if: env.RUN_HEAVY == 'true'
+
+      - run: npm run check:item-doc-complexity
+        if: env.RUN_HEAVY == 'true'
+
+      - run: npm run check:golden-parity
+        if: env.RUN_HEAVY == 'true'
+
       - run: npm run check:stubs
         if: env.RUN_HEAVY == 'true'
 

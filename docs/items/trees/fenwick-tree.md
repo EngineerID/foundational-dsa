@@ -2,13 +2,18 @@
 
 Topic: **trees** / `fenwick-tree`
 
-Prefix sums and range sums with point updates.
+## Overview
 
-**Complexity:** add/prefixSum/rangeSum: Time O(log n); Space O(n).
+Prefix sums and range sums with point updates.
 
 **Worked example:** [Topic index](../../worked-examples.md#fenwick-tree) (summary) · run `npm run demo -- fenwick-tree` in all three languages.
 
-## Implementations
+## Complexity
+
+add/prefixSum/rangeSum: Time O(log n); Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

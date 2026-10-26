@@ -2,13 +2,18 @@
 
 Topic: **graphs** / `boruvka-mst`
 
-Minimum spanning tree via repeated cheapest outgoing edge per component.
+## Overview
 
-**Complexity:** mstWeight: Time O(E log V); Space O(V).
+Minimum spanning tree via repeated cheapest outgoing edge per component.
 
 **Worked example:** [Topic index](../../worked-examples.md#boruvka-mst) (summary) · run `npm run demo -- boruvka-mst` in all three languages.
 
-## Implementations
+## Complexity
+
+mstWeight: Time O(E log V); Space O(V).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

@@ -2,13 +2,18 @@
 
 Topic: **dp** / `partition-equal-subset`
 
-Partition array into two equal-sum subsets.
+## Overview
 
-**Complexity:** canPartition: Time O(n·sum); Space O(sum).
+Partition array into two equal-sum subsets.
 
 **Worked example:** [Topic index](../../worked-examples.md#partition-equal-subset) (summary) · run `npm run demo -- partition-equal-subset` in all three languages.
 
-## Implementations
+## Complexity
+
+canPartition: Time O(n·sum); Space O(sum).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

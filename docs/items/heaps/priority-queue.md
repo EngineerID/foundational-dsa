@@ -2,13 +2,18 @@
 
 Topic: **heaps** / `priority-queue`
 
-Min-priority queue for scheduling by priority.
+## Overview
 
-**Complexity:** insert/extractMin/peek: Time O(log n); Space O(n).
+Min-priority queue for scheduling by priority.
 
 **Worked example:** [Topic index](../../worked-examples.md#priority-queue) (summary) · run `npm run demo -- priority-queue` in all three languages.
 
-## Implementations
+## Complexity
+
+insert/extractMin/peek: Time O(log n); Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

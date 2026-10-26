@@ -2,11 +2,13 @@
 
 Topic: **searching** / `linear-search`
 
+## Overview
+
 Find a target value in an array by sequential scan.
 
-**Complexity:** search: Time O(n); Space O(1).
 
 `indexOf` / `index_of` returns the **first** matching index, or `-1`. `null` array → `-1`.
+
 
 **Catalog edge themes:** covered in shared catalog tests (`EdgeCaseThemesTest`, `test_edge_case_themes.py`, `edgeCaseThemes.test.js`) for empty / single / duplicate / large / invalid cases.
 
@@ -16,7 +18,12 @@ Find a target value in an array by sequential scan.
 
 **Shared regression vectors:** [`tools/linear-search-goldens.json`](../../../tools/linear-search-goldens.json).
 
-## Implementations
+## Complexity
+
+search: Time O(n); Space O(1).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

@@ -2,17 +2,24 @@
 
 Topic: **graphs** / `bfs`
 
+## Overview
+
 Breadth-first traversal and unweighted shortest paths.
 
-**Complexity:** distances/traverse: Time O(V+E); Space O(V).
 
 Unweighted shortest-path distances; invalid source index raises.
+
 
 **Catalog edge themes:** covered in shared catalog tests (`EdgeCaseThemesTest`, `test_edge_case_themes.py`, `edgeCaseThemes.test.js`) for empty / single / duplicate / large / invalid cases.
 
 **Walkthrough:** [Worked examples — Bfs](../../worked-examples.md#bfs-unweighted-shortest-paths).
 
-## Implementations
+## Complexity
+
+distances/traverse: Time O(V+E); Space O(V).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

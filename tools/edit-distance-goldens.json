@@ -1,0 +1,6 @@
+[
+  { "a": "kitten", "b": "sitting", "expected": 3 },
+  { "a": "", "b": "abc", "expected": 3 },
+  { "a": "abc", "b": "abc", "expected": 0 },
+  { "a": "horse", "b": "ros", "expected": 3 }
+]

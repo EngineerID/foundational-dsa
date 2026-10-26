@@ -2,11 +2,13 @@
 
 Topic: **searching** / `binary-search`
 
+## Overview
+
 Find a key in a sorted array, including first/last duplicate boundaries.
 
-**Complexity:** search/firstOccurrence/lastOccurrence: Time O(log n); Space O(1).
 
 Requires a **sorted** array. `firstOccurrence` / `lastOccurrence` bound duplicate runs. `null` or empty → `-1`.
+
 
 **Catalog edge themes:** covered in shared catalog tests (`EdgeCaseThemesTest`, `test_edge_case_themes.py`, `edgeCaseThemes.test.js`) for empty / single / duplicate / large / invalid cases.
 
@@ -14,7 +16,12 @@ Requires a **sorted** array. `firstOccurrence` / `lastOccurrence` bound duplicat
 
 **Shared regression vectors:** [`tools/binary-search-goldens.json`](../../../tools/binary-search-goldens.json).
 
-## Implementations
+## Complexity
+
+search/firstOccurrence/lastOccurrence: Time O(log n); Space O(1).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

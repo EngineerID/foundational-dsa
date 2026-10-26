@@ -2,13 +2,18 @@
 
 Topic: **dp** / `knapsack`
 
-0/1 knapsack maximum value for a weight capacity.
+## Overview
 
-**Complexity:** maxValue: Time O(n·W); Space O(W).
+0/1 knapsack maximum value for a weight capacity.
 
 **Walkthrough:** [Worked examples — Knapsack](../../worked-examples.md#knapsack-01-classic).
 
-## Implementations
+## Complexity
+
+maxValue: Time O(n·W); Space O(W).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

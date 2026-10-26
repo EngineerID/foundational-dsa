@@ -1,0 +1,18 @@
+[
+  {
+    "n": 5,
+    "directed": false,
+    "weighted": false,
+    "edges": [[0, 1], [0, 2], [1, 3], [2, 4]],
+    "source": 0,
+    "distances": [0, 1, 1, 2, 2]
+  },
+  {
+    "n": 4,
+    "directed": true,
+    "weighted": false,
+    "edges": [[0, 1], [1, 2], [0, 3]],
+    "source": 0,
+    "distances": [0, 1, 2, 1]
+  }
+]

@@ -2,17 +2,24 @@
 
 Topic: **graphs** / `graph`
 
+## Overview
+
 Adjacency-list directed/undirected weighted graph representation.
 
-**Complexity:** addEdge/neighbors: Time O(1) amortized; Space O(V+E).
 
 Vertex ids are `0 .. n-1`. Invalid vertex indices raise when querying neighbors.
+
 
 **Catalog edge themes:** covered in shared catalog tests (`EdgeCaseThemesTest`, `test_edge_case_themes.py`, `edgeCaseThemes.test.js`) for empty / single / duplicate / large / invalid cases.
 
 **Worked example:** [Topic index](../../worked-examples.md#graph) (summary) · run `npm run demo -- graph` in all three languages.
 
-## Implementations
+## Complexity
+
+addEdge/neighbors: Time O(1) amortized; Space O(V+E).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

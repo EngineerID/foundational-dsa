@@ -2,15 +2,21 @@
 
 Topic: **graphs** / `topological-sort`
 
+## Overview
+
 Linear ordering of a DAG respecting all edges.
 
-**Complexity:** sort: Time O(V+E); Space O(V).
 
 **DAG only** — Kahn returns an **empty** list when a cycle is present.
 
 **Walkthrough:** [Worked examples — Topological Sort](../../worked-examples.md#topological-sort-kahn-course-schedule).
 
-## Implementations
+## Complexity
+
+sort: Time O(V+E); Space O(V).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

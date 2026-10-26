@@ -1,6 +1,6 @@
 # Practice problems (trilingual solutions)
 
-Fifteen interview-style problems with reference solutions in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`.
+Twenty interview-style problems with reference solutions in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`.
 
 | # | Problem | Signals | Catalog topics |
 |---|---------|---------|----------------|
@@ -19,6 +19,11 @@ Fifteen interview-style problems with reference solutions in Java, Python, and J
 | 13 | [Word search](#13-word-search) | Grid path, reuse | backtracking / `dfs` |
 | 14 | [Kth largest element](#14-kth-largest-element) | Order statistic | `quick-select` |
 | 15 | [MST (Kruskal)](#15-minimum-spanning-tree-kruskal) | Min total weight | `kruskal-mst`, `union-find` |
+| 16 | [Trapping rain water](#16-trapping-rain-water) | Two pointers, prefix max | two pointers |
+| 17 | [Edit distance](#17-edit-distance) | String transform, DP | `edit-distance` |
+| 18 | [Serialize binary tree](#18-serialize-and-deserialize-binary-tree) | Tree encoding | `tree-traversals`, BFS |
+| 19 | [Network delay time](#19-network-delay-time) | Weighted graph, farthest reach | `dijkstra` |
+| 20 | [Sliding window maximum](#20-sliding-window-maximum) | Window max, deque | `sliding-window-maximum` |
 
 Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --testPathPattern=practice`, Java `PracticeProblemsTest`.
 
@@ -113,3 +118,33 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 **Statement:** Given `n` vertices and undirected weighted edges `[u, v, w]`, return the total weight of the minimum spanning tree (assume the graph is connected).
 
 **Implementation:** `practice/mst_kruskal*` — catalog `kruskal-mst` + `union-find`.
+
+## 16. Trapping rain water
+
+**Statement:** Given non-negative bar heights, compute how much water can be trapped after raining.
+
+**Implementation:** `practice/trapping_rain_water*` / `trappingRainWater*` — two pointers from both ends.
+
+## 17. Edit distance
+
+**Statement:** Given strings `word1` and `word2`, return the minimum number of single-character insert, delete, or replace operations to transform `word1` into `word2`.
+
+**Implementation:** `practice/edit_distance_practice*` / `editDistancePractice*` — Levenshtein DP.
+
+## 18. Serialize and deserialize binary tree
+
+**Statement:** Encode a binary tree given in heap-style level order (`null` = missing child) into a compact string and decode back to the same level-order shape (trim trailing nulls).
+
+**Implementation:** `practice/tree_codec*` / `treeCodec*`.
+
+## 19. Network delay time
+
+**Statement:** There are `n` nodes `0 .. n-1` and directed edges `[u, v, w]` (travel time). Starting from node `k`, return the time until **all** nodes have received a signal, or `-1` if some node is unreachable.
+
+**Implementation:** `practice/network_delay*` / `networkDelay*` — catalog `dijkstra` + max distance.
+
+## 20. Sliding window maximum
+
+**Statement:** Given an integer array and window size `k`, return the maximum value in each sliding window of size `k`.
+
+**Implementation:** `practice/sliding_window_max*` / `slidingWindowMax*` — monotonic deque (same idea as catalog `sliding-window-maximum`).

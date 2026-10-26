@@ -2,15 +2,21 @@
 
 Topic: **hashing** / `open-addressing`
 
+## Overview
+
 Hash map with probing collision resolution and tombstones.
 
-**Complexity:** put/get/remove: Time O(1) average; Space O(n) slots.
 
 Deleted slots are **tombstoned**; load factor capped before resize.
 
 **Worked example:** [Topic index](../../worked-examples.md#open-addressing) (summary) · run `npm run demo -- open-addressing` in all three languages.
 
-## Implementations
+## Complexity
+
+put/get/remove: Time O(1) average; Space O(n) slots.
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

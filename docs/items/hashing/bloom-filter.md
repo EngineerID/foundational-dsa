@@ -2,15 +2,21 @@
 
 Topic: **hashing** / `bloom-filter`
 
+## Overview
+
 Probabilistic set membership with false positives possible.
 
-**Complexity:** add/mightContain: Time O(k); Space O(m) bits.
 
 **No false negatives**; false positives possible. Membership is probabilistic.
 
 **Worked example:** [Topic index](../../worked-examples.md#bloom-filter) (summary) · run `npm run demo -- bloom-filter` in all three languages.
 
-## Implementations
+## Complexity
+
+add/mightContain: Time O(k); Space O(m) bits.
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

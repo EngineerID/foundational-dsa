@@ -2,13 +2,18 @@
 
 Topic: **dp** / `rod-cutting`
 
-Maximum revenue cutting a rod of given length.
+## Overview
 
-**Complexity:** maxProfit: Time O(n·length); Space O(length).
+Maximum revenue cutting a rod of given length.
 
 **Worked example:** [Topic index](../../worked-examples.md#rod-cutting) (summary) · run `npm run demo -- rod-cutting` in all three languages.
 
-## Implementations
+## Complexity
+
+maxProfit: Time O(n·length); Space O(length).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

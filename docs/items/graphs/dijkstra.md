@@ -2,15 +2,21 @@
 
 Topic: **graphs** / `dijkstra`
 
+## Overview
+
 Single-source shortest paths on non-negative edge weights.
 
-**Complexity:** shortestPaths: Time O(E log V); Space O(V).
 
 Edge weights must be **non-negative**; uses a min-heap / priority queue.
 
 **Walkthrough:** [Worked examples — Dijkstra](../../worked-examples.md#dijkstra-non-negative-weights).
 
-## Implementations
+## Complexity
+
+shortestPaths: Time O(E log V); Space O(V).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

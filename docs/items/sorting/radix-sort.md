@@ -2,15 +2,21 @@
 
 Topic: **sorting** / `radix-sort`
 
+## Overview
+
 LSD radix sort for non-negative integers using counting sort per digit.
 
-**Complexity:** sort: Time O(d * n); Space O(n).
 
 **Non-negative integers**; behavior follows digit passes (see implementation).
 
 **Worked example:** [Topic index](../../worked-examples.md#radix-sort) (summary) · run `npm run demo -- radix-sort` in all three languages.
 
-## Implementations
+## Complexity
+
+sort: Time O(d * n); Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

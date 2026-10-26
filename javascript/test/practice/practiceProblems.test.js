@@ -13,6 +13,11 @@ const { levelOrder } = require('../../src/practice/levelOrder');
 const { wordSearch } = require('../../src/practice/wordSearch');
 const { kthLargest } = require('../../src/practice/kthLargest');
 const { mstTotalWeight } = require('../../src/practice/mstKruskal');
+const { trap } = require('../../src/practice/trappingRainWater');
+const { editDistance } = require('../../src/practice/editDistancePractice');
+const { serialize, deserialize } = require('../../src/practice/treeCodec');
+const { networkDelay } = require('../../src/practice/networkDelay');
+const { maxSlidingWindow } = require('../../src/practice/slidingWindowMax');
 
 describe('practice problems', () => {
   test('two sum sorted', () => {
@@ -117,5 +122,36 @@ describe('practice problems', () => {
         [0, 3, 4],
       ]),
     ).toBe(6);
+  });
+
+  test('trapping rain water', () => {
+    expect(trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1])).toBe(6);
+  });
+
+  test('edit distance', () => {
+    expect(editDistance('kitten', 'sitting')).toBe(3);
+  });
+
+  test('tree codec', () => {
+    const values = [3, 9, 20, null, null, 15, 7];
+    expect(deserialize(serialize(values))).toEqual(values);
+  });
+
+  test('network delay', () => {
+    expect(
+      networkDelay(
+        4,
+        [
+          [1, 0, 1],
+          [1, 2, 1],
+          [2, 3, 1],
+        ],
+        1,
+      ),
+    ).toBe(2);
+  });
+
+  test('sliding window max', () => {
+    expect(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3)).toEqual([3, 3, 5, 5, 6, 7]);
   });
 });

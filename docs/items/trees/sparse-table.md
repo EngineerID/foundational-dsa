@@ -2,13 +2,18 @@
 
 Topic: **trees** / `sparse-table`
 
-Static range minimum queries on an array.
+## Overview
 
-**Complexity:** query: Time O(1); Space O(n log n).
+Static range minimum queries on an array.
 
 **Worked example:** [Topic index](../../worked-examples.md#sparse-table) (summary) · run `npm run demo -- sparse-table` in all three languages.
 
-## Implementations
+## Complexity
+
+query: Time O(1); Space O(n log n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

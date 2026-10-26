@@ -2,13 +2,18 @@
 
 Topic: **trees** / `interval-tree`
 
-Store intervals and query overlaps with a point or interval.
+## Overview
 
-**Complexity:** insert/query: Time O(log n + k) reported; Space O(n).
+Store intervals and query overlaps with a point or interval.
 
 **Worked example:** [Topic index](../../worked-examples.md#interval-tree) (summary) · run `npm run demo -- interval-tree` in all three languages.
 
-## Implementations
+## Complexity
+
+insert/query: Time O(log n + k) reported; Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

@@ -2,15 +2,21 @@
 
 Topic: **linear** / `sliding-window-maximum`
 
+## Overview
+
 Maximum in each sliding window of size k.
 
-**Complexity:** maxSlidingWindow: Time O(n); Space O(k).
 
 Window size `k` must be **positive** and `k <= n`.
 
 **Walkthrough:** [Worked examples — Sliding Window Maximum](../../worked-examples.md#sliding-window-maximum).
 
-## Implementations
+## Complexity
+
+maxSlidingWindow: Time O(n); Space O(k).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

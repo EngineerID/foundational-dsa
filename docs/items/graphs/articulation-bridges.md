@@ -2,13 +2,18 @@
 
 Topic: **graphs** / `articulation-bridges`
 
-Articulation points and bridges in an undirected graph.
+## Overview
 
-**Complexity:** find: Time O(V+E); Space O(V).
+Articulation points and bridges in an undirected graph.
 
 **Worked example:** [Topic index](../../worked-examples.md#articulation-bridges) (summary) · run `npm run demo -- articulation-bridges` in all three languages.
 
-## Implementations
+## Complexity
+
+find: Time O(V+E); Space O(V).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

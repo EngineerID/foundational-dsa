@@ -2,15 +2,21 @@
 
 Topic: **sorting** / `quick-sort`
 
+## Overview
+
 Sort in place via Lomuto partition, optional random pivot, or 3-way partition.
 
-**Complexity:** sort/sort3Way: Time O(n log n) average; Space O(log n).
 
 Sorts **in place**; optional randomized pivot and 3-way partition variants.
 
 **Worked example:** [Topic index](../../worked-examples.md#quick-sort) (summary) · run `npm run demo -- quick-sort` in all three languages.
 
-## Implementations
+## Complexity
+
+sort/sort3Way: Time O(n log n) average; Space O(log n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

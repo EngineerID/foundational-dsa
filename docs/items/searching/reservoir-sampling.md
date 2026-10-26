@@ -2,13 +2,18 @@
 
 Topic: **searching** / `reservoir-sampling`
 
-Uniform random sample of size k from a stream.
+## Overview
 
-**Complexity:** sample: Time O(n); Space O(k).
+Uniform random sample of size k from a stream.
 
 **Worked example:** [Topic index](../../worked-examples.md#reservoir-sampling) (summary) · run `npm run demo -- reservoir-sampling` in all three languages.
 
-## Implementations
+## Complexity
+
+sample: Time O(n); Space O(k).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

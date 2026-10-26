@@ -2,13 +2,18 @@
 
 Topic: **strings** / `z-algorithm`
 
-Linear-time Z-array and pattern search.
+## Overview
 
-**Complexity:** zArray/search: Time O(n + m); Space O(n).
+Linear-time Z-array and pattern search.
 
 **Worked example:** [Topic index](../../worked-examples.md#z-algorithm) (summary) · run `npm run demo -- z-algorithm` in all three languages.
 
-## Implementations
+## Complexity
+
+zArray/search: Time O(n + m); Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

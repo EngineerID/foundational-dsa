@@ -2,13 +2,18 @@
 
 Topic: **graphs** / `tarjan-scc`
 
-Strongly connected components in a directed graph.
+## Overview
 
-**Complexity:** stronglyConnectedComponents: Time O(V+E); Space O(V).
+Strongly connected components in a directed graph.
 
 **Worked example:** [Topic index](../../worked-examples.md#tarjan-scc) (summary) · run `npm run demo -- tarjan-scc` in all three languages.
 
-## Implementations
+## Complexity
+
+stronglyConnectedComponents: Time O(V+E); Space O(V).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

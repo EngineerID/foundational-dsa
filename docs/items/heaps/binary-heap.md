@@ -2,15 +2,21 @@
 
 Topic: **heaps** / `binary-heap`
 
+## Overview
+
 Array-based binary heap (min or max) with heapify operations.
 
-**Complexity:** insert/extract/peek: Time O(log n); buildHeap O(n); Space O(n).
 
 **Catalog edge themes:** covered in shared catalog tests (`EdgeCaseThemesTest`, `test_edge_case_themes.py`, `edgeCaseThemes.test.js`) for empty / single / duplicate / large / invalid cases.
 
 **Worked example:** [Topic index](../../worked-examples.md#binary-heap) (summary) · run `npm run demo -- binary-heap` in all three languages.
 
-## Implementations
+## Complexity
+
+insert/extract/peek: Time O(log n); buildHeap O(n); Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

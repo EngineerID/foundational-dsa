@@ -2,13 +2,18 @@
 
 Topic: **dp** / `tsp-bitmask`
 
-Minimum Hamiltonian cycle from city 0 (small n).
+## Overview
 
-**Complexity:** minCost: Time O(n²·2^n); Space O(n·2^n).
+Minimum Hamiltonian cycle from city 0 (small n).
 
 **Worked example:** [Topic index](../../worked-examples.md#tsp-bitmask) (summary) · run `npm run demo -- tsp-bitmask` in all three languages.
 
-## Implementations
+## Complexity
+
+minCost: Time O(n²·2^n); Space O(n·2^n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

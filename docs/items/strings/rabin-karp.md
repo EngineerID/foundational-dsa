@@ -2,13 +2,18 @@
 
 Topic: **strings** / `rabin-karp`
 
-Substring search via rolling hash.
+## Overview
 
-**Complexity:** search: Time O(n + m) average; Space O(1).
+Substring search via rolling hash.
 
 **Worked example:** [Topic index](../../worked-examples.md#rabin-karp) (summary) · run `npm run demo -- rabin-karp` in all three languages.
 
-## Implementations
+## Complexity
+
+search: Time O(n + m) average; Space O(1).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

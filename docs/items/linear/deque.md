@@ -2,13 +2,18 @@
 
 Topic: **linear** / `deque`
 
-Double-ended queue with O(1) push/pop at both ends.
+## Overview
 
-**Complexity:** pushFront/pushBack/pop: Time O(1) amortized; Space O(n).
+Double-ended queue with O(1) push/pop at both ends.
 
 **Worked example:** [Topic index](../../worked-examples.md#deque) (summary) · run `npm run demo -- deque` in all three languages.
 
-## Implementations
+## Complexity
+
+pushFront/pushBack/pop: Time O(1) amortized; Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

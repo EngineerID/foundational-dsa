@@ -2,11 +2,13 @@
 
 Topic: **sorting** / `bubble-sort`
 
+## Overview
+
 Sort an array in ascending order in place.
 
-**Complexity:** sort: Time O(n²); Space O(1).
 
 Sorts **in place** ascending; empty array is a no-op.
+
 
 **Catalog edge themes:** covered in shared catalog tests (`EdgeCaseThemesTest`, `test_edge_case_themes.py`, `edgeCaseThemes.test.js`) for empty / single / duplicate / large / invalid cases.
 
@@ -14,7 +16,12 @@ Sorts **in place** ascending; empty array is a no-op.
 
 **More:** [Topic index](../../worked-examples.md#bubble-sort) · `npm run demo -- bubble-sort`
 
-## Implementations
+## Complexity
+
+sort: Time O(n²); Space O(1).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

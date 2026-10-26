@@ -2,13 +2,18 @@
 
 Topic: **graphs** / `kosaraju`
 
-Strongly connected components via two-pass DFS.
+## Overview
 
-**Complexity:** stronglyConnectedComponents: Time O(V+E); Space O(V).
+Strongly connected components via two-pass DFS.
 
 **Worked example:** [Topic index](../../worked-examples.md#kosaraju) (summary) · run `npm run demo -- kosaraju` in all three languages.
 
-## Implementations
+## Complexity
+
+stronglyConnectedComponents: Time O(V+E); Space O(V).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

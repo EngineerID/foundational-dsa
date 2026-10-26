@@ -2,13 +2,18 @@
 
 Topic: **sorting** / `heapsort`
 
-Sort an array in ascending order in place using a binary max-heap.
+## Overview
 
-**Complexity:** sort: Time O(n log n); Space O(1).
+Sort an array in ascending order in place using a binary max-heap.
 
 **Worked example:** [Topic index](../../worked-examples.md#heapsort) (summary) · run `npm run demo -- heapsort` in all three languages.
 
-## Implementations
+## Complexity
+
+sort: Time O(n log n); Space O(1).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

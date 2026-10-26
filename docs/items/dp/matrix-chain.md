@@ -2,13 +2,18 @@
 
 Topic: **dp** / `matrix-chain`
 
-Minimum scalar multiplications for a matrix product chain.
+## Overview
 
-**Complexity:** minMultiplications: Time O(n³); Space O(n²).
+Minimum scalar multiplications for a matrix product chain.
 
 **Worked example:** [Topic index](../../worked-examples.md#matrix-chain) (summary) · run `npm run demo -- matrix-chain` in all three languages.
 
-## Implementations
+## Complexity
+
+minMultiplications: Time O(n³); Space O(n²).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

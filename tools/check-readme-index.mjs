@@ -25,6 +25,11 @@ const PRACTICE_ANCHORS = [
   '13-word-search',
   '14-kth-largest-element',
   '15-minimum-spanning-tree-kruskal',
+  '16-trapping-rain-water',
+  '17-edit-distance',
+  '18-serialize-and-deserialize-binary-tree',
+  '19-network-delay-time',
+  '20-sliding-window-maximum',
 ];
 
 function main() {

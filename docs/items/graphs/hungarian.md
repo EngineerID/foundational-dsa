@@ -2,13 +2,18 @@
 
 Topic: **graphs** / `hungarian`
 
-Minimum-cost assignment on a square cost matrix.
+## Overview
 
-**Complexity:** minCost: Time O(n³); Space O(n²).
+Minimum-cost assignment on a square cost matrix.
 
 **Worked example:** [Topic index](../../worked-examples.md#hungarian) (summary) · run `npm run demo -- hungarian` in all three languages.
 
-## Implementations
+## Complexity
+
+minCost: Time O(n³); Space O(n²).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

@@ -2,15 +2,21 @@
 
 Topic: **graphs** / `floyd-warshall`
 
+## Overview
+
 All-pairs shortest paths via dynamic programming.
 
-**Complexity:** allPairs: Time O(V³); Space O(V²).
 
 All-pairs shortest paths; accepts negative edges when no negative cycles.
 
 **Worked example:** [Topic index](../../worked-examples.md#floyd-warshall) (summary) · run `npm run demo -- floyd-warshall` in all three languages.
 
-## Implementations
+## Complexity
+
+allPairs: Time O(V³); Space O(V²).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

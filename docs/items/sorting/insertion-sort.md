@@ -2,13 +2,18 @@
 
 Topic: **sorting** / `insertion-sort`
 
-Sort an array in ascending order in place (efficient on nearly sorted input).
+## Overview
 
-**Complexity:** sort: Time O(n²) worst, O(n) best; Space O(1).
+Sort an array in ascending order in place (efficient on nearly sorted input).
 
 **Worked example:** [Topic index](../../worked-examples.md#insertion-sort) (summary) · run `npm run demo -- insertion-sort` in all three languages.
 
-## Implementations
+## Complexity
+
+sort: Time O(n²) worst, O(n) best; Space O(1).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

@@ -2,13 +2,18 @@
 
 Topic: **linear** / `queue`
 
-FIFO queue backed by circular buffer.
+## Overview
 
-**Complexity:** enqueue/dequeue: Time O(1) amortized; Space O(n).
+FIFO queue backed by circular buffer.
 
 **Worked example:** [Topic index](../../worked-examples.md#queue) (summary) · run `npm run demo -- queue` in all three languages.
 
-## Implementations
+## Complexity
+
+enqueue/dequeue: Time O(1) amortized; Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

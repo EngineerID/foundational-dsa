@@ -2,11 +2,13 @@
 
 Topic: **searching** / `quick-select`
 
+## Overview
+
 Find the k-th smallest element in an unordered array.
 
-**Complexity:** select: Time O(n) average, O(n²) worst; Space O(1).
 
 **`k` is 1-based** (`k=1` is the minimum). Empty array or `k` outside `1..n` **raises** in all three languages. Input is not mutated (defensive copy).
+
 
 **Catalog edge themes:** covered in shared catalog tests (`EdgeCaseThemesTest`, `test_edge_case_themes.py`, `edgeCaseThemes.test.js`) for empty / single / duplicate / large / invalid cases.
 
@@ -14,7 +16,12 @@ Find the k-th smallest element in an unordered array.
 
 **More:** [Topic index](../../worked-examples.md#quick-select) · `npm run demo -- quick-select`
 
-## Implementations
+## Complexity
+
+select: Time O(n) average, O(n²) worst; Space O(1).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

@@ -2,13 +2,18 @@
 
 Topic: **graphs** / `kruskal-mst`
 
-Minimum spanning tree via sorted edges and union-find.
+## Overview
 
-**Complexity:** mstWeight: Time O(E log E); Space O(V).
+Minimum spanning tree via sorted edges and union-find.
 
 **Worked example:** [Topic index](../../worked-examples.md#kruskal-mst) (summary) · run `npm run demo -- kruskal-mst` in all three languages.
 
-## Implementations
+## Complexity
+
+mstWeight: Time O(E log E); Space O(V).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

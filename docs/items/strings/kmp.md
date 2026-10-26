@@ -2,11 +2,13 @@
 
 Topic: **strings** / `kmp`
 
+## Overview
+
 Find first occurrence of a pattern in text.
 
-**Complexity:** search: Time O(n + m); Space O(m).
 
 **Empty `pattern` returns `0`** (vacuous match, like `str.find` / `String.indexOf`). Empty `text` with non-empty `pattern` → `-1`. `null` → `-1`.
+
 
 **Catalog edge themes:** covered in shared catalog tests (`EdgeCaseThemesTest`, `test_edge_case_themes.py`, `edgeCaseThemes.test.js`) for empty / single / duplicate / large / invalid cases.
 
@@ -14,7 +16,12 @@ Find first occurrence of a pattern in text.
 
 **Shared regression vectors:** [`tools/kmp-goldens.json`](../../../tools/kmp-goldens.json).
 
-## Implementations
+## Complexity
+
+search: Time O(n + m); Space O(m).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

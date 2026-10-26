@@ -2,13 +2,18 @@
 
 Topic: **trees** / `b-tree`
 
-Disk-oriented multi-way search tree with bounded node fanout.
+## Overview
 
-**Complexity:** search/insert/delete: Time O(log_t n); Space O(n).
+Disk-oriented multi-way search tree with bounded node fanout.
 
 **Worked example:** [Topic index](../../worked-examples.md#b-tree) (summary) · run `npm run demo -- b-tree` in all three languages.
 
-## Implementations
+## Complexity
+
+search/insert/delete: Time O(log_t n); Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

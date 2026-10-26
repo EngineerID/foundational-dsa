@@ -2,13 +2,18 @@
 
 Topic: **graphs** / `bipartite-check`
 
-Test whether an undirected graph is 2-colorable.
+## Overview
 
-**Complexity:** isBipartite: Time O(V+E); Space O(V).
+Test whether an undirected graph is 2-colorable.
 
 **Worked example:** [Topic index](../../worked-examples.md#bipartite-check) (summary) · run `npm run demo -- bipartite-check` in all three languages.
 
-## Implementations
+## Complexity
+
+isBipartite: Time O(V+E); Space O(V).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

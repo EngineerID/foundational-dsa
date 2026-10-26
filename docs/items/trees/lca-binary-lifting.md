@@ -2,13 +2,18 @@
 
 Topic: **trees** / `lca-binary-lifting`
 
-Lowest common ancestor on a rooted tree.
+## Overview
 
-**Complexity:** query: Time O(log n); Space O(n log n).
+Lowest common ancestor on a rooted tree.
 
 **Worked example:** [Topic index](../../worked-examples.md#lca-binary-lifting) (summary) · run `npm run demo -- lca-binary-lifting` in all three languages.
 
-## Implementations
+## Complexity
+
+query: Time O(log n); Space O(n log n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

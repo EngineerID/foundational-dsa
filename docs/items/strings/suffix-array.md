@@ -2,13 +2,18 @@
 
 Topic: **strings** / `suffix-array`
 
-Lexicographically sorted suffix starting indices.
+## Overview
 
-**Complexity:** build: Time O(n log n); Space O(n).
+Lexicographically sorted suffix starting indices.
 
 **Worked example:** [Topic index](../../worked-examples.md#suffix-array) (summary) · run `npm run demo -- suffix-array` in all three languages.
 
-## Implementations
+## Complexity
+
+build: Time O(n log n); Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

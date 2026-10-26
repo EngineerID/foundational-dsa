@@ -2,13 +2,18 @@
 
 Topic: **strings** / `manacher`
 
-Longest palindromic substring length.
+## Overview
 
-**Complexity:** longestPalindromeLength: Time O(n); Space O(n).
+Longest palindromic substring length.
 
 **Worked example:** [Topic index](../../worked-examples.md#manacher) (summary) · run `npm run demo -- manacher` in all three languages.
 
-## Implementations
+## Complexity
+
+longestPalindromeLength: Time O(n); Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

@@ -2,13 +2,18 @@
 
 Topic: **trees** / `treap`
 
-Randomized BST via heap priorities on keys.
+## Overview
 
-**Complexity:** search/insert: Time O(log n); Space O(n).
+Randomized BST via heap priorities on keys.
 
 **Worked example:** [Topic index](../../worked-examples.md#treap) (summary) · run `npm run demo -- treap` in all three languages.
 
-## Implementations
+## Complexity
+
+search/insert: Time O(log n); Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

@@ -2,13 +2,18 @@
 
 Topic: **dp** / `lcs`
 
-Longest common subsequence length between two strings.
+## Overview
 
-**Complexity:** length: Time O(nm); Space O(min(n,m)).
+Longest common subsequence length between two strings.
 
 **Walkthrough:** [Worked examples — Lcs](../../worked-examples.md#longest-common-subsequence).
 
-## Implementations
+## Complexity
+
+length: Time O(nm); Space O(min(n,m)).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

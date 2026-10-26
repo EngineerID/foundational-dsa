@@ -2,17 +2,24 @@
 
 Topic: **unionfind** / `union-find`
 
+## Overview
+
 Disjoint-set connectivity with union and find.
 
-**Complexity:** find/union/connected: Time O(α(n)) amortized; Space O(n).
 
 Vertices `0 .. n-1`; out-of-range `find`/`union` raises.
+
 
 **Catalog edge themes:** covered in shared catalog tests (`EdgeCaseThemesTest`, `test_edge_case_themes.py`, `edgeCaseThemes.test.js`) for empty / single / duplicate / large / invalid cases.
 
 **Walkthrough:** [Worked examples — Union Find](../../worked-examples.md#union-find-connectivity).
 
-## Implementations
+## Complexity
+
+find/union/connected: Time O(α(n)) amortized; Space O(n).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

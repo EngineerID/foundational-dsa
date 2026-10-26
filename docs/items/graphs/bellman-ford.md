@@ -2,15 +2,21 @@
 
 Topic: **graphs** / `bellman-ford`
 
+## Overview
+
 Single-source shortest paths with negative edges; detect negative cycles.
 
-**Complexity:** shortestPaths: Time O(VE); Space O(V).
 
 Handles **negative** edge weights; detects reachable negative cycles.
 
 **Worked example:** [Topic index](../../worked-examples.md#bellman-ford) (summary) · run `npm run demo -- bellman-ford` in all three languages.
 
-## Implementations
+## Complexity
+
+shortestPaths: Time O(VE); Space O(V).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|

@@ -344,6 +344,11 @@ Every catalog topic links to its doc page under [docs/items/](docs/items/). Prac
 - [Word search](docs/practice-problems.md#13-word-search)
 - [Kth largest element](docs/practice-problems.md#14-kth-largest-element)
 - [Minimum spanning tree (Kruskal)](docs/practice-problems.md#15-minimum-spanning-tree-kruskal)
+- [Trapping rain water](docs/practice-problems.md#16-trapping-rain-water)
+- [Edit distance](docs/practice-problems.md#17-edit-distance)
+- [Serialize binary tree](docs/practice-problems.md#18-serialize-and-deserialize-binary-tree)
+- [Network delay time](docs/practice-problems.md#19-network-delay-time)
+- [Sliding window maximum](docs/practice-problems.md#20-sliding-window-maximum)
 
 See also the generated [complexity cheat sheet](docs/complexity-cheatsheet.md) for all **72** catalog topics.
 

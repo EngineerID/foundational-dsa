@@ -2,13 +2,18 @@
 
 Topic: **graphs** / `prim-mst`
 
-Minimum spanning tree growing from a start vertex.
+## Overview
 
-**Complexity:** mstWeight: Time O(E log V); Space O(V).
+Minimum spanning tree growing from a start vertex.
 
 **Worked example:** [Topic index](../../worked-examples.md#prim-mst) (summary) · run `npm run demo -- prim-mst` in all three languages.
 
-## Implementations
+## Complexity
+
+mstWeight: Time O(E log V); Space O(V).
+
+
+## Code links
 
 | Language | Source |
 |----------|--------|
