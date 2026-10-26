@@ -81,7 +81,7 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Statement:** Given coin denominations and an `amount`, return the **fewest** number of coins that sum to `amount`, or `-1` if impossible. Each coin may be used unlimited times.
 
-**Implementation:** `practice/coin_change*` — unbounded knapsack DP (same shape as catalog `coin-change`).
+**Implementation:** `practice/coin_change*` — unbounded knapsack DP (catalog [`coin-change`](items/dp/coin-change.md): `npm run demo -- coin-change`).
 
 ## 10. LRU cache design
 

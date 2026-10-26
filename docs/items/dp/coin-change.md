@@ -6,7 +6,7 @@ Topic: **dp** / `coin-change`
 
 Minimum coins to make an amount (unbounded supply).
 
-**Worked example:** [Topic index](../../worked-examples.md#coin-change) (summary) · run `npm run demo -- coin-change` in all three languages.
+**Practice:** [Coin change (problem 9)](../../practice-problems.md#9-coin-change) · **Worked example:** [Topic index](../../worked-examples.md#coin-change) (summary) · run `npm run demo -- coin-change` in all three languages.
 
 ## Complexity
 
