@@ -9,7 +9,7 @@ Levenshtein edit distance between two strings.
 
 `null` strings treated as empty; classic Levenshtein DP.
 
-**Walkthrough:** [Worked examples — Edit Distance](../../worked-examples.md#edit-distance-kitten-to-sitting).
+**Practice:** [Edit distance (problem 17)](../../practice-problems.md#17-edit-distance) · **Walkthrough:** [Worked examples — Edit Distance](../../worked-examples.md#edit-distance-kitten-to-sitting) · run `npm run demo -- edit-distance` in all three languages.
 
 ## Complexity
 
