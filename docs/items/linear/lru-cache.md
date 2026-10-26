@@ -9,7 +9,7 @@ Least-recently-used cache with O(1) get and put.
 
 Capacity must be **positive**; `get` returns **-1** for missing keys.
 
-**Walkthrough:** [Worked examples — Lru Cache](../../worked-examples.md#lru-cache-capacity-2).
+**Practice:** [LRU cache design (problem 10)](../../practice-problems.md#10-lru-cache-design) · **Walkthrough:** [Worked examples — Lru Cache](../../worked-examples.md#lru-cache-capacity-2) · run `npm run demo -- lru-cache` in all three languages.
 
 ## Complexity
 

@@ -87,7 +87,7 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Statement:** Design a cache with fixed capacity supporting `get(key)` (returns `-1` if missing) and `put(key, value)` in O(1) average time, evicting the least recently used entry when over capacity.
 
-**Implementation:** `practice/lru_design*` — wraps catalog `lru-cache`.
+**Implementation:** `practice/lru_design*` — wraps catalog [`lru-cache`](items/linear/lru-cache.md): `npm run demo -- lru-cache`).
 
 ## 11. Merge intervals
 
