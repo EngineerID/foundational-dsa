@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+import pytest
+
 from dsa.trees.b_tree import BTree
 
 GOLDENS = json.loads(

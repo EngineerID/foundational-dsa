@@ -1,5 +1,3 @@
-import pytest
-
 from dsa.dp.partition_equal_subset import can_partition
 from tests.golden_loader import load_golden_json
 
