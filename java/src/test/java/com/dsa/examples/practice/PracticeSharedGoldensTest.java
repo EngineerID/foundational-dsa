@@ -923,6 +923,230 @@ class PracticeSharedGoldensTest {
     }
 
     @Test
+    void orderStatisticTreePracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("order-statistic-tree-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            OrderStatisticTreePractice tree = new OrderStatisticTreePractice();
+            @SuppressWarnings("unchecked")
+            List<List<Object>> inserts = (List<List<Object>>) c.get("inserts");
+            if (inserts.isEmpty()) {
+                assertThrows(IllegalArgumentException.class, () -> tree.select(1));
+                assertEquals(((Number) c.get("rank5")).intValue(), tree.rank(5));
+                continue;
+            }
+            for (List<Object> pair : inserts) {
+                tree.insert(((Number) pair.get(0)).intValue(), (String) pair.get(1));
+            }
+            if (c.get("selectK") != null) {
+                assertEquals(
+                        ((Number) c.get("selectKey")).intValue(),
+                        tree.select(((Number) c.get("selectK")).intValue()));
+                assertEquals(1, tree.rank(((Number) c.get("rankKey")).intValue()));
+                continue;
+            }
+            assertEquals(((Number) c.get("select3")).intValue(), tree.select(3));
+            assertEquals(((Number) c.get("rank5")).intValue(), tree.rank(5));
+        }
+    }
+
+    @Test
+    void intervalTreePracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("interval-tree-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            if (Boolean.TRUE.equals(c.get("expectError"))) {
+                IntervalTreePractice tree = new IntervalTreePractice();
+                @SuppressWarnings("unchecked")
+                List<List<Object>> badInserts = (List<List<Object>>) c.get("inserts");
+                assertThrows(IllegalArgumentException.class, () -> {
+                    for (List<Object> iv : badInserts) {
+                        tree.insert(((Number) iv.get(0)).intValue(), ((Number) iv.get(1)).intValue());
+                    }
+                });
+                continue;
+            }
+            IntervalTreePractice tree = new IntervalTreePractice();
+            @SuppressWarnings("unchecked")
+            List<List<Object>> inserts = (List<List<Object>>) c.get("inserts");
+            for (List<Object> iv : inserts) {
+                tree.insert(((Number) iv.get(0)).intValue(), ((Number) iv.get(1)).intValue());
+            }
+            @SuppressWarnings("unchecked")
+            List<Object> q = (List<Object>) c.get("query");
+            @SuppressWarnings("unchecked")
+            List<List<Object>> expected = (List<List<Object>>) c.get("overlaps");
+            List<List<Integer>> exp =
+                    expected.stream()
+                            .map(row -> List.of(((Number) row.get(0)).intValue(), ((Number) row.get(1)).intValue()))
+                            .toList();
+            assertEquals(
+                    exp,
+                    tree.overlapSorted(((Number) q.get(0)).intValue(), ((Number) q.get(1)).intValue()));
+        }
+    }
+
+    @Test
+    void bTreePracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("b-tree-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            if (Boolean.TRUE.equals(c.get("expectError"))) {
+                assertThrows(IllegalArgumentException.class, () -> new BTreePractice(((Number) c.get("t")).intValue()));
+                continue;
+            }
+            BTreePractice tree = new BTreePractice(((Number) c.get("t")).intValue());
+            @SuppressWarnings("unchecked")
+            List<Object> inserts = (List<Object>) c.get("inserts");
+            for (Object key : inserts) {
+                tree.insert(((Number) key).intValue());
+            }
+            @SuppressWarnings("unchecked")
+            List<Map<String, Object>> searches = (List<Map<String, Object>>) c.get("searches");
+            for (Map<String, Object> spec : searches) {
+                assertEquals(spec.get("found"), tree.search(((Number) spec.get("key")).intValue()));
+            }
+        }
+    }
+
+    @Test
+    void bloomFilterPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("bloom-filter-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            BloomFilterPractice bf =
+                    new BloomFilterPractice(
+                            ((Number) c.get("expectedItems")).intValue(),
+                            ((Number) c.get("falsePositiveRate")).doubleValue());
+            @SuppressWarnings("unchecked")
+            List<String> add = (List<String>) c.get("add");
+            for (String item : add) {
+                bf.add(item);
+            }
+            @SuppressWarnings("unchecked")
+            List<Map<String, Object>> queries = (List<Map<String, Object>>) c.get("queries");
+            for (Map<String, Object> q : queries) {
+                assertEquals((Boolean) q.get("expected"), bf.mightContain((String) q.get("item")));
+            }
+        }
+    }
+
+    @Test
+    void boruvkaMstPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("boruvka-mst-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            int n = ((Number) c.get("n")).intValue();
+            int[][] edges = parseWeightedEdges(c.get("edges"));
+            assertEquals(((Number) c.get("totalWeight")).intValue(), BoruvkaMstPractice.totalWeight(n, edges));
+        }
+    }
+
+    @Test
+    void aStarPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("a-star-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            int n = ((Number) c.get("n")).intValue();
+            int[][] edges = parseWeightedEdges(c.get("edges"));
+            assertEquals(
+                    ((Number) c.get("length")).longValue(),
+                    AStarPractice.shortestPathLength(
+                            n, edges, ((Number) c.get("source")).intValue(), ((Number) c.get("goal")).intValue()));
+        }
+    }
+
+    @Test
+    void articulationBridgesPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("articulation-bridges-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            int n = ((Number) c.get("n")).intValue();
+            int[][] edges = parseEdgePairs(c.get("edges"));
+            ArticulationBridgesPractice.Result result = ArticulationBridgesPractice.find(n, edges);
+            @SuppressWarnings("unchecked")
+            List<Object> expectedAp = (List<Object>) c.get("articulationPoints");
+            assertEquals(expectedAp.stream().map(v -> ((Number) v).intValue()).toList(), result.articulationPoints());
+            @SuppressWarnings("unchecked")
+            List<List<Object>> expectedBr = (List<List<Object>>) c.get("bridges");
+            List<int[]> bridges = result.bridges();
+            assertEquals(expectedBr.size(), bridges.size());
+            for (int i = 0; i < expectedBr.size(); i++) {
+                assertEquals(((Number) expectedBr.get(i).get(0)).intValue(), bridges.get(i)[0]);
+                assertEquals(((Number) expectedBr.get(i).get(1)).intValue(), bridges.get(i)[1]);
+            }
+        }
+    }
+
+    @Test
+    void hungarianPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("hungarian-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            assertEquals(((Number) c.get("minCost")).intValue(), HungarianPractice.minCost(toIntMatrix(c.get("cost"))));
+        }
+    }
+
+    @Test
+    void lcaBinaryLiftingPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("lca-binary-lifting-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            @SuppressWarnings("unchecked")
+            List<Object> parentRaw = (List<Object>) c.get("parent");
+            int[] parent = parentRaw.stream().mapToInt(n -> ((Number) n).intValue()).toArray();
+            LcaBinaryLiftingPractice lca = new LcaBinaryLiftingPractice(parent);
+            @SuppressWarnings("unchecked")
+            List<List<Object>> queries = (List<List<Object>>) c.get("queries");
+            for (List<Object> q : queries) {
+                assertEquals(
+                        ((Number) q.get(2)).intValue(),
+                        lca.query(((Number) q.get(0)).intValue(), ((Number) q.get(1)).intValue()));
+            }
+        }
+    }
+
+    @Test
+    void sparseTablePracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("sparse-table-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            SparseTablePractice st = new SparseTablePractice(GoldenIntArrays.parse(c.get("initial")));
+            @SuppressWarnings("unchecked")
+            List<List<Object>> queries = (List<List<Object>>) c.get("queries");
+            for (List<Object> q : queries) {
+                assertEquals(
+                        ((Number) q.get(2)).intValue(),
+                        st.query(((Number) q.get(0)).intValue(), ((Number) q.get(1)).intValue()));
+            }
+        }
+    }
+
+    @Test
+    void tspBitmaskPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("tsp-bitmask-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            assertEquals(((Number) c.get("expected")).longValue(), TspBitmaskPractice.minCost(toIntMatrix(c.get("dist"))));
+        }
+    }
+
+    @Test
+    void reservoirSamplingPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("reservoir-sampling-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            int[] stream = GoldenIntArrays.parse(c.get("stream"));
+            int k = ((Number) c.get("k")).intValue();
+            int seed = ((Number) c.get("seed")).intValue();
+            @SuppressWarnings("unchecked")
+            List<Object> expectedRaw = (List<Object>) c.get("expected");
+            List<Integer> expected = expectedRaw.stream().map(n -> ((Number) n).intValue()).toList();
+            assertEquals(expected, ReservoirSamplingPractice.sample(stream, k, seed), c.toString());
+        }
+    }
+
+    @Test
     void bfsPracticeGoldens() throws Exception {
         List<Map<String, Object>> cases =
                 GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("practice-bfs-goldens.json")));
@@ -978,6 +1202,17 @@ class PracticeSharedGoldensTest {
             out[i][1] = ((Number) e.get(1)).intValue();
         }
         return out;
+    }
+
+    @SuppressWarnings("unchecked")
+    private static int[][] toIntMatrix(Object raw) {
+        List<List<Object>> rows = (List<List<Object>>) raw;
+        int[][] m = new int[rows.size()][];
+        for (int i = 0; i < rows.size(); i++) {
+            List<Object> row = rows.get(i);
+            m[i] = row.stream().mapToInt(n -> ((Number) n).intValue()).toArray();
+        }
+        return m;
     }
 
     @SuppressWarnings("unchecked")

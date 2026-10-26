@@ -88,6 +88,18 @@ export const PRACTICE_PROBLEMS = [
   { n: 73, docAnchor: '73-open-addressing', walkthroughSlug: 'open-addressing-hash-map', catalogTopic: 'open-addressing' },
   { n: 74, docAnchor: '74-suffix-array', walkthroughSlug: 'suffix-array-sorted-indices', catalogTopic: 'suffix-array' },
   { n: 75, docAnchor: '75-treap', walkthroughSlug: 'treap-seeded-insert-and-search', catalogTopic: 'treap' },
+  { n: 76, docAnchor: '76-order-statistic-tree', walkthroughSlug: 'order-statistic-tree-rank-and-select', catalogTopic: 'order-statistic-tree' },
+  { n: 77, docAnchor: '77-interval-tree', walkthroughSlug: 'interval-tree-overlap-query', catalogTopic: 'interval-tree' },
+  { n: 78, docAnchor: '78-b-tree', walkthroughSlug: 'b-tree-insert-and-search', catalogTopic: 'b-tree' },
+  { n: 79, docAnchor: '79-bloom-filter', walkthroughSlug: 'bloom-filter-membership', catalogTopic: 'bloom-filter' },
+  { n: 80, docAnchor: '80-boruvka-mst', walkthroughSlug: 'boruvka-mst-total-weight', catalogTopic: 'boruvka-mst' },
+  { n: 81, docAnchor: '81-a-star', walkthroughSlug: 'a-star-shortest-path-length', catalogTopic: 'a-star' },
+  { n: 82, docAnchor: '82-articulation-bridges', walkthroughSlug: 'articulation-points-and-bridges', catalogTopic: 'articulation-bridges' },
+  { n: 83, docAnchor: '83-hungarian', walkthroughSlug: 'hungarian-min-assignment-cost', catalogTopic: 'hungarian' },
+  { n: 84, docAnchor: '84-lca-binary-lifting', walkthroughSlug: 'lca-binary-lifting-queries', catalogTopic: 'lca-binary-lifting' },
+  { n: 85, docAnchor: '85-sparse-table', walkthroughSlug: 'sparse-table-range-minimum', catalogTopic: 'sparse-table' },
+  { n: 86, docAnchor: '86-tsp-bitmask', walkthroughSlug: 'tsp-bitmask-min-tour-cost', catalogTopic: 'tsp-bitmask' },
+  { n: 87, docAnchor: '87-reservoir-sampling', walkthroughSlug: 'reservoir-sampling-size-k', catalogTopic: 'reservoir-sampling' },
 ];
 
 export const PRACTICE_DOC_ANCHORS = PRACTICE_PROBLEMS.map((p) => p.docAnchor);

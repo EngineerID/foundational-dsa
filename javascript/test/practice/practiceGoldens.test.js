@@ -58,6 +58,18 @@ const { SeparateChainingPractice } = require('../../src/practice/separateChainin
 const { OpenAddressingPractice } = require('../../src/practice/openAddressingPractice');
 const { suffixArray } = require('../../src/practice/suffixArrayPractice');
 const { TreapPractice } = require('../../src/practice/treapPractice');
+const { OrderStatisticTreePractice } = require('../../src/practice/orderStatisticTreePractice');
+const { IntervalTreePractice } = require('../../src/practice/intervalTreePractice');
+const { BTreePractice } = require('../../src/practice/bTreePractice');
+const { BloomFilterPractice } = require('../../src/practice/bloomFilterPractice');
+const { mstTotalWeight: boruvkaMstTotalWeight } = require('../../src/practice/boruvkaMstPractice');
+const { pathLength: aStarPathLength } = require('../../src/practice/aStarPractice');
+const { articulationAndBridges } = require('../../src/practice/articulationBridgesPractice');
+const { assignmentMinCost } = require('../../src/practice/hungarianPractice');
+const { LcaBinaryLiftingPractice } = require('../../src/practice/lcaBinaryLiftingPractice');
+const { SparseTablePractice } = require('../../src/practice/sparseTablePractice');
+const { tspMinCost } = require('../../src/practice/tspBitmaskPractice');
+const { reservoirSample } = require('../../src/practice/reservoirSamplingPractice');
 
 const tools = path.join(__dirname, '../../../tools');
 
@@ -573,6 +585,122 @@ describe('practice shared goldens', () => {
       for (const { key, value } of row.searchResults ?? []) {
         expect(treap.search(key)).toBe(value);
       }
+    }
+  });
+
+  test('order statistic tree practice', () => {
+    for (const row of cases('order-statistic-tree-goldens.json')) {
+      const tree = new OrderStatisticTreePractice();
+      const inserts = row.inserts ?? [];
+      if (inserts.length === 0) {
+        expect(() => tree.select(1)).toThrow();
+        expect(tree.rank(5)).toBe(row.rank5);
+        continue;
+      }
+      for (const [key, value] of inserts) tree.insert(key, value);
+      if (row.selectK != null) {
+        expect(tree.select(row.selectK)).toBe(row.selectKey);
+        expect(tree.rank(row.rankKey)).toBe(1);
+        continue;
+      }
+      expect(tree.select(3)).toBe(row.select3);
+      expect(tree.rank(5)).toBe(row.rank5);
+    }
+  });
+
+  test('interval tree practice', () => {
+    for (const row of cases('interval-tree-goldens.json')) {
+      if (row.expectError) {
+        const tree = new IntervalTreePractice();
+        expect(() => {
+          for (const [low, high] of row.inserts) tree.insert(low, high);
+        }).toThrow();
+        continue;
+      }
+      const tree = new IntervalTreePractice();
+      for (const [low, high] of row.inserts ?? []) tree.insert(low, high);
+      expect(tree.overlapSorted(row.query[0], row.query[1])).toEqual(row.overlaps);
+    }
+  });
+
+  test('b-tree practice', () => {
+    for (const row of cases('b-tree-goldens.json')) {
+      if (row.expectError) {
+        expect(() => new BTreePractice(row.t)).toThrow();
+        continue;
+      }
+      const tree = new BTreePractice(row.t);
+      for (const key of row.inserts ?? []) tree.insert(key);
+      for (const spec of row.searches ?? []) {
+        expect(tree.search(spec.key)).toBe(spec.found);
+      }
+    }
+  });
+
+  test('bloom filter practice', () => {
+    for (const row of cases('bloom-filter-goldens.json')) {
+      const bf = new BloomFilterPractice(row.expectedItems, row.falsePositiveRate);
+      for (const item of row.add ?? []) bf.add(item);
+      for (const q of row.queries ?? []) {
+        expect(bf.mightContain(q.item)).toBe(q.expected);
+      }
+    }
+  });
+
+  test('boruvka MST practice', () => {
+    for (const row of cases('boruvka-mst-goldens.json')) {
+      expect(boruvkaMstTotalWeight(row.n, row.edges)).toBe(row.totalWeight);
+    }
+  });
+
+  test('a-star practice', () => {
+    for (const row of cases('a-star-goldens.json')) {
+      expect(aStarPathLength(row.n, row.edges, row.source, row.goal)).toBe(row.length);
+    }
+  });
+
+  test('articulation bridges practice', () => {
+    for (const row of cases('articulation-bridges-goldens.json')) {
+      const result = articulationAndBridges(row.n, row.edges);
+      expect(result.articulationPoints).toEqual(row.articulationPoints);
+      expect(result.bridges).toEqual(row.bridges);
+    }
+  });
+
+  test('hungarian practice', () => {
+    for (const row of cases('hungarian-goldens.json')) {
+      const got = assignmentMinCost(row.cost);
+      expect(Object.is(got, -0) ? 0 : got).toBe(row.minCost);
+    }
+  });
+
+  test('lca binary lifting practice', () => {
+    for (const row of cases('lca-binary-lifting-goldens.json')) {
+      const lca = new LcaBinaryLiftingPractice(row.parent);
+      for (const [u, v, expected] of row.queries ?? []) {
+        expect(lca.query(u, v)).toBe(expected);
+      }
+    }
+  });
+
+  test('sparse table practice', () => {
+    for (const row of cases('sparse-table-goldens.json')) {
+      const st = new SparseTablePractice(row.initial);
+      for (const [left, right, expected] of row.queries ?? []) {
+        expect(st.query(left, right)).toBe(expected);
+      }
+    }
+  });
+
+  test('tsp bitmask practice', () => {
+    for (const row of cases('tsp-bitmask-goldens.json')) {
+      expect(tspMinCost(row.dist)).toBe(row.expected);
+    }
+  });
+
+  test('reservoir sampling practice', () => {
+    for (const row of cases('reservoir-sampling-goldens.json')) {
+      expect(reservoirSample(row.stream, row.k, row.seed)).toEqual(row.expected);
     }
   });
 });

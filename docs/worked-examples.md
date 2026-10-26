@@ -1115,6 +1115,102 @@ Insert keys **5, 2, 7, 1** into a BST → **in-order** `[1,2,5,7]`, **pre-order*
 
 `npm run demo -- treap`
 
+## Order-statistic tree (rank and select)
+
+Insert keys **1, 2, 5, 8, 9** → **`select(3) = 5`**, **`rank(5) = 3`** (`order-statistic-tree-goldens.json`).
+
+**API:** augmented BST `select(k)`, `rank(key)` (see [order-statistic-tree](items/trees/order-statistic-tree.md)).
+
+`npm run demo -- order-statistic-tree`
+
+## Interval tree (overlap query)
+
+Intervals **`[15,20]`**, **`[10,12]`**, **`[1,5]`**; query point **`[11,11]`** → overlap **`[10,12]`** (`interval-tree-goldens.json`).
+
+**API:** `insert`, `overlapSearch` (see [interval-tree](items/trees/interval-tree.md)).
+
+`npm run demo -- interval-tree`
+
+## B-tree (insert and search)
+
+**t = 2**, insert keys from goldens → **`search(6)`** true, **`search(15)`** false (`b-tree-goldens.json`).
+
+**API:** `BTree(t)`, `insert`, `search` (see [b-tree](items/trees/b-tree.md)).
+
+`npm run demo -- b-tree`
+
+## Bloom filter (membership)
+
+Add **`alpha`**, **`beta`**, **`gamma`** → **`mightContain("alpha")`** true, **`delta`** false (`bloom-filter-goldens.json`).
+
+**API:** sized filter, `add`, `mightContain` (see [bloom-filter](items/hashing/bloom-filter.md)).
+
+`npm run demo -- bloom-filter`
+
+## Boruvka MST (total weight)
+
+4-node chain plus shortcut edge → MST weight **6** (`boruvka-mst-goldens.json`).
+
+**API:** `BoruvkaMST.totalWeight(graph)` (see [boruvka-mst](items/graphs/boruvka-mst.md)).
+
+`npm run demo -- boruvka-mst`
+
+## A-star shortest path length
+
+Sample directed graph, source **0**, goal **3** → path length **4** (`a-star-goldens.json`; h = 0).
+
+**API:** `shortestPathLength(graph, source, goal)` (see [a-star](items/graphs/a-star.md)).
+
+`npm run demo -- a-star`
+
+## Articulation points and bridges
+
+Undirected graph from goldens → articulation **`[1, 2]`**, bridges **`[[1,2],[0,1]]`** (`articulation-bridges-goldens.json`).
+
+**API:** `ArticulationBridges.find(graph)` (see [articulation-bridges](items/graphs/articulation-bridges.md)).
+
+`npm run demo -- articulation-bridges`
+
+## Hungarian (min assignment cost)
+
+3×3 cost matrix → minimum assignment cost **5** (`hungarian-goldens.json`).
+
+**API:** `Hungarian.minCost(matrix)` (see [hungarian](items/graphs/hungarian.md)).
+
+`npm run demo -- hungarian`
+
+## LCA binary lifting (queries)
+
+Parent array **`[0,0,0,1]`** → **`LCA(1,2)=0`**, **`LCA(1,3)=1`** (`lca-binary-lifting-goldens.json`).
+
+**API:** `LCABinaryLifting(parent)`, `query(u,v)` (see [lca-binary-lifting](items/trees/lca-binary-lifting.md)).
+
+`npm run demo -- lca-binary-lifting`
+
+## Sparse table (range minimum)
+
+Array **`[1,3,5,7,9,2]`** → range min queries match `sparse-table-goldens.json`.
+
+**API:** `SparseTable(arr)`, `query(l,r)` (see [sparse-table](items/trees/sparse-table.md)).
+
+`npm run demo -- sparse-table`
+
+## TSP bitmask (min tour cost)
+
+4-city distance matrix → minimum tour cost **80** starting from city 0 (`tsp-bitmask-goldens.json`).
+
+**API:** `TSPBitmask.minCost(dist)` (see [tsp-bitmask](items/dp/tsp-bitmask.md)).
+
+`npm run demo -- tsp-bitmask`
+
+## Reservoir sampling (size k)
+
+Stream **`[1..5]`**, **`k=0`** → **`[]`**; deterministic **`seed=0`** cases in `reservoir-sampling-goldens.json`.
+
+**API:** `sample(stream, k, seed)` (see [reservoir-sampling](items/searching/reservoir-sampling.md)).
+
+`npm run demo -- reservoir-sampling`
+
 ## Topic index
 
 One-line walkthroughs for every catalog topic. Step tables above cover interview-heavy patterns (search, graphs, DP, caches, strings).
@@ -1301,13 +1397,13 @@ See the [detailed walkthrough](#avl-tree-insert-and-search) above.
 
 ### order-statistic-tree
 
-BST augmented with subtree sizes for rank and select.
+See the [detailed walkthrough](#order-statistic-tree-rank-and-select) above.
 
 `npm run demo -- order-statistic-tree`
 
 ### interval-tree
 
-Store intervals and query overlaps with a point or interval.
+See the [detailed walkthrough](#interval-tree-overlap-query) above.
 
 `npm run demo -- interval-tree`
 
@@ -1319,7 +1415,7 @@ See the [detailed walkthrough](#trie-prefix-search) above.
 
 ### b-tree
 
-Disk-oriented multi-way search tree with bounded node fanout.
+See the [detailed walkthrough](#b-tree-insert-and-search) above.
 
 `npm run demo -- b-tree`
 
@@ -1403,7 +1499,7 @@ See the [detailed walkthrough](#open-addressing-hash-map) above.
 
 ### bloom-filter
 
-Probabilistic set membership with false positives possible.
+See the [detailed walkthrough](#bloom-filter-membership) above.
 
 `npm run demo -- bloom-filter`
 
@@ -1493,13 +1589,13 @@ See the [detailed walkthrough](#prim-mst-greedy-grow) above.
 
 ### boruvka-mst
 
-Minimum spanning tree via repeated cheapest outgoing edge per component.
+See the [detailed walkthrough](#boruvka-mst-total-weight) above.
 
 `npm run demo -- boruvka-mst`
 
 ### a-star
 
-Shortest path length with nonnegative weights (heuristic h=0).
+See the [detailed walkthrough](#a-star-shortest-path-length) above.
 
 `npm run demo -- a-star`
 
@@ -1523,7 +1619,7 @@ See the [detailed walkthrough](#bipartite-check-2-coloring) above.
 
 ### articulation-bridges
 
-Articulation points and bridges in an undirected graph.
+See the [detailed walkthrough](#articulation-points-and-bridges) above.
 
 `npm run demo -- articulation-bridges`
 
@@ -1535,7 +1631,7 @@ See the [detailed walkthrough](#edmonds-karp-max-flow) above.
 
 ### hungarian
 
-Minimum-cost assignment on a square cost matrix.
+See the [detailed walkthrough](#hungarian-min-assignment-cost) above.
 
 `npm run demo -- hungarian`
 
@@ -1547,7 +1643,7 @@ See the [detailed walkthrough](#red-black-tree-insert-and-search) above.
 
 ### lca-binary-lifting
 
-Lowest common ancestor on a rooted tree.
+See the [detailed walkthrough](#lca-binary-lifting-queries) above.
 
 `npm run demo -- lca-binary-lifting`
 
@@ -1559,7 +1655,7 @@ See the [detailed walkthrough](#treap-seeded-insert-and-search) above.
 
 ### sparse-table
 
-Static range minimum queries on an array.
+See the [detailed walkthrough](#sparse-table-range-minimum) above.
 
 `npm run demo -- sparse-table`
 
@@ -1607,13 +1703,13 @@ See the [detailed walkthrough](#rod-cutting-max-revenue) above.
 
 ### tsp-bitmask
 
-Minimum Hamiltonian cycle from city 0 (small n).
+See the [detailed walkthrough](#tsp-bitmask-min-tour-cost) above.
 
 `npm run demo -- tsp-bitmask`
 
 ### reservoir-sampling
 
-Uniform random sample of size k from a stream.
+See the [detailed walkthrough](#reservoir-sampling-size-k) above.
 
 `npm run demo -- reservoir-sampling`
 

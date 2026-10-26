@@ -60,6 +60,18 @@ from dsa.practice.separate_chaining_practice import SeparateChainingPractice
 from dsa.practice.open_addressing_practice import OpenAddressingPractice
 from dsa.practice.suffix_array_practice import suffix_array
 from dsa.practice.treap_practice import TreapPractice
+from dsa.practice.order_statistic_tree_practice import OrderStatisticTreePractice
+from dsa.practice.interval_tree_practice import IntervalTreePractice
+from dsa.practice.b_tree_practice import BTreePractice
+from dsa.practice.bloom_filter_practice import BloomFilterPractice
+from dsa.practice.boruvka_mst_practice import mst_total_weight as boruvka_mst_total_weight
+from dsa.practice.a_star_practice import path_length as a_star_path_length
+from dsa.practice.articulation_bridges_practice import articulation_and_bridges
+from dsa.practice.hungarian_practice import assignment_min_cost
+from dsa.practice.lca_binary_lifting_practice import LcaBinaryLiftingPractice
+from dsa.practice.sparse_table_practice import SparseTablePractice
+from dsa.practice.tsp_bitmask_practice import tsp_min_cost
+from dsa.practice.reservoir_sampling_practice import reservoir_sample
 
 TOOLS = Path(__file__).resolve().parents[3] / "tools"
 
@@ -492,3 +504,106 @@ def test_treap_practice_goldens():
             treap.insert(key, value)
         for result in row.get("searchResults", []):
             assert treap.search(result["key"]) == result["value"]
+
+
+def test_order_statistic_tree_practice_goldens():
+    for row in _cases("order-statistic-tree-goldens.json"):
+        tree = OrderStatisticTreePractice()
+        if not row["inserts"]:
+            with pytest.raises(ValueError):
+                tree.select(1)
+            assert tree.rank(5) == row["rank5"]
+            continue
+        for key, value in row["inserts"]:
+            tree.insert(key, value)
+        if "selectK" in row:
+            assert tree.select(row["selectK"]) == row["selectKey"]
+            assert tree.rank(row["rankKey"]) == 1
+            continue
+        assert tree.select(3) == row["select3"]
+        assert tree.rank(5) == row["rank5"]
+
+
+def test_interval_tree_practice_goldens():
+    for row in _cases("interval-tree-goldens.json"):
+        if row.get("expectError"):
+            tree = IntervalTreePractice()
+            with pytest.raises(ValueError):
+                for low, high in row["inserts"]:
+                    tree.insert(low, high)
+            continue
+        tree = IntervalTreePractice()
+        for low, high in row.get("inserts", []):
+            tree.insert(low, high)
+        q = row["query"]
+        assert tree.overlap_sorted(q[0], q[1]) == row["overlaps"]
+
+
+def test_b_tree_practice_goldens():
+    for row in _cases("b-tree-goldens.json"):
+        if row.get("expectError"):
+            with pytest.raises(ValueError):
+                BTreePractice(row["t"])
+            continue
+        tree = BTreePractice(row["t"])
+        for key in row.get("inserts", []):
+            tree.insert(key)
+        for spec in row.get("searches", []):
+            assert tree.search(spec["key"]) == spec["found"]
+
+
+def test_bloom_filter_practice_goldens():
+    for row in _cases("bloom-filter-goldens.json"):
+        bf = BloomFilterPractice(row["expectedItems"], row["falsePositiveRate"])
+        for item in row.get("add", []):
+            bf.add(item)
+        for q in row.get("queries", []):
+            assert bf.might_contain(q["item"]) == q["expected"]
+
+
+def test_boruvka_mst_practice_goldens():
+    for row in _cases("boruvka-mst-goldens.json"):
+        assert boruvka_mst_total_weight(row["n"], row["edges"]) == row["totalWeight"]
+
+
+def test_a_star_practice_goldens():
+    for row in _cases("a-star-goldens.json"):
+        assert (
+            a_star_path_length(row["n"], row["edges"], row["source"], row["goal"]) == row["length"]
+        )
+
+
+def test_articulation_bridges_practice_goldens():
+    for row in _cases("articulation-bridges-goldens.json"):
+        ap, bridges = articulation_and_bridges(row["n"], row["edges"])
+        assert ap == row["articulationPoints"]
+        assert bridges == row["bridges"]
+
+
+def test_hungarian_practice_goldens():
+    for row in _cases("hungarian-goldens.json"):
+        assert assignment_min_cost(row["cost"]) == row["minCost"]
+
+
+def test_lca_binary_lifting_practice_goldens():
+    for row in _cases("lca-binary-lifting-goldens.json"):
+        lca = LcaBinaryLiftingPractice(row["parent"])
+        for u, v, expected in row.get("queries", []):
+            assert lca.query(u, v) == expected
+
+
+def test_sparse_table_practice_goldens():
+    for row in _cases("sparse-table-goldens.json"):
+        st = SparseTablePractice(row["initial"])
+        for left, right, expected in row.get("queries", []):
+            assert st.query(left, right) == expected
+
+
+def test_tsp_bitmask_practice_goldens():
+    for row in _cases("tsp-bitmask-goldens.json"):
+        assert tsp_min_cost(row["dist"]) == row["expected"]
+
+
+def test_reservoir_sampling_practice_goldens():
+    for row in _cases("reservoir-sampling-goldens.json"):
+        assert reservoir_sample(row["stream"], row["k"], row["seed"]) == row["expected"]

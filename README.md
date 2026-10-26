@@ -426,6 +426,18 @@ Every catalog topic links to its doc page under [docs/items/](docs/items/). Prac
 - [Open addressing](docs/practice-problems.md#73-open-addressing)
 - [Suffix array](docs/practice-problems.md#74-suffix-array)
 - [Treap](docs/practice-problems.md#75-treap)
+- [Order-statistic tree](docs/practice-problems.md#76-order-statistic-tree)
+- [Interval tree](docs/practice-problems.md#77-interval-tree)
+- [B-tree](docs/practice-problems.md#78-b-tree)
+- [Bloom filter](docs/practice-problems.md#79-bloom-filter)
+- [Boruvka MST](docs/practice-problems.md#80-boruvka-mst)
+- [A-star path](docs/practice-problems.md#81-a-star)
+- [Articulation & bridges](docs/practice-problems.md#82-articulation-bridges)
+- [Hungarian assignment](docs/practice-problems.md#83-hungarian)
+- [LCA binary lifting](docs/practice-problems.md#84-lca-binary-lifting)
+- [Sparse table RMQ](docs/practice-problems.md#85-sparse-table)
+- [TSP bitmask](docs/practice-problems.md#86-tsp-bitmask)
+- [Reservoir sampling](docs/practice-problems.md#87-reservoir-sampling)
 
 See also the generated [complexity cheat sheet](docs/complexity-cheatsheet.md) for all **87** catalog topics.
 

@@ -1,6 +1,6 @@
 # Practice problems (trilingual solutions)
 
-Seventy-five interview-style problems with reference solutions in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`. Each problem below links to a step-table **[worked example](worked-examples.md)** (CI: `npm run check:practice-walkthrough`).
+Eighty-seven interview-style problems with reference solutions — one per catalog topic in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`. Each problem below links to a step-table **[worked example](worked-examples.md)** (CI: `npm run check:practice-walkthrough`).
 
 | # | Problem | Signals | Catalog topics |
 |---|---------|---------|----------------|
@@ -79,6 +79,18 @@ Seventy-five interview-style problems with reference solutions in Java, Python, 
 | 73 | [Open addressing](#73-open-addressing) | Linear probing map | `open-addressing` |
 | 74 | [Suffix array](#74-suffix-array) | Sorted suffix indices | `suffix-array` |
 | 75 | [Treap](#75-treap) | Seeded insert/search | `treap` |
+| 76 | [Order-statistic tree](#76-order-statistic-tree) | Rank / select | `order-statistic-tree` |
+| 77 | [Interval tree](#77-interval-tree) | Overlap query | `interval-tree` |
+| 78 | [B-tree](#78-b-tree) | Multi-way search | `b-tree` |
+| 79 | [Bloom filter](#79-bloom-filter) | Probabilistic set | `bloom-filter` |
+| 80 | [Boruvka MST](#80-boruvka-mst) | Component MST rounds | `boruvka-mst` |
+| 81 | [A-star path](#81-a-star) | Heuristic shortest path | `a-star` |
+| 82 | [Articulation & bridges](#82-articulation-bridges) | Cut vertices/edges | `articulation-bridges` |
+| 83 | [Hungarian assignment](#83-hungarian) | Min cost matching | `hungarian` |
+| 84 | [LCA binary lifting](#84-lca-binary-lifting) | Tree LCA queries | `lca-binary-lifting` |
+| 85 | [Sparse table RMQ](#85-sparse-table) | Static range min | `sparse-table` |
+| 86 | [TSP bitmask](#86-tsp-bitmask) | Small-n Hamiltonian tour | `tsp-bitmask` |
+| 87 | [Reservoir sampling](#87-reservoir-sampling) | Stream sample size k | `reservoir-sampling` |
 
 Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --testPathPattern=practice`, Java `PracticeProblemsTest`.
 
@@ -683,3 +695,99 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 **Implementation:** `practice/treap*` / `treapPractice*` — catalog [`treap`](items/trees/treap.md): `npm run demo -- treap`.
 
 **Walkthrough:** [Worked examples — Treap](worked-examples.md#treap-seeded-insert-and-search).
+
+## 76. Order-statistic tree
+
+**Statement:** After inserts, report `select(k)` and `rank(key)` per shared goldens.
+
+**Implementation:** `practice/order_statistic_tree*` / `orderStatisticTreePractice*` — [`order-statistic-tree`](items/trees/order-statistic-tree.md): `npm run demo -- order-statistic-tree`.
+
+**Walkthrough:** [Worked examples — Order-statistic tree](worked-examples.md#order-statistic-tree-rank-and-select).
+
+## 77. Interval tree
+
+**Statement:** Insert closed intervals and list overlaps with a query interval (sorted).
+
+**Implementation:** `practice/interval_tree*` / `intervalTreePractice*` — [`interval-tree`](items/trees/interval-tree.md): `npm run demo -- interval-tree`.
+
+**Walkthrough:** [Worked examples — Interval tree](worked-examples.md#interval-tree-overlap-query).
+
+## 78. B-tree
+
+**Statement:** Given minimum degree `t`, insert keys and answer membership searches.
+
+**Implementation:** `practice/b_tree*` / `bTreePractice*` — [`b-tree`](items/trees/b-tree.md): `npm run demo -- b-tree`.
+
+**Walkthrough:** [Worked examples — B-tree](worked-examples.md#b-tree-insert-and-search).
+
+## 79. Bloom filter
+
+**Statement:** Add strings and answer `mightContain` queries (no false negatives).
+
+**Implementation:** `practice/bloom_filter*` / `bloomFilterPractice*` — [`bloom-filter`](items/hashing/bloom-filter.md): `npm run demo -- bloom-filter`.
+
+**Walkthrough:** [Worked examples — Bloom filter](worked-examples.md#bloom-filter-membership).
+
+## 80. Boruvka MST
+
+**Statement:** Return total weight of the minimum spanning tree (undirected weighted graph).
+
+**Implementation:** `practice/boruvka_mst*` / `boruvkaMstPractice*` — [`boruvka-mst`](items/graphs/boruvka-mst.md): `npm run demo -- boruvka-mst`.
+
+**Walkthrough:** [Worked examples — Boruvka MST](worked-examples.md#boruvka-mst-total-weight).
+
+## 81. A-star
+
+**Statement:** Shortest path length from source to goal (non-negative weights; catalog uses h = 0).
+
+**Implementation:** `practice/a_star*` / `aStarPractice*` — [`a-star`](items/graphs/a-star.md): `npm run demo -- a-star`.
+
+**Walkthrough:** [Worked examples — A-star](worked-examples.md#a-star-shortest-path-length).
+
+## 82. Articulation bridges
+
+**Statement:** List articulation points and bridges for an undirected unweighted graph.
+
+**Implementation:** `practice/articulation_bridges*` / `articulationBridgesPractice*` — [`articulation-bridges`](items/graphs/articulation-bridges.md): `npm run demo -- articulation-bridges`.
+
+**Walkthrough:** [Worked examples — Articulation & bridges](worked-examples.md#articulation-points-and-bridges).
+
+## 83. Hungarian
+
+**Statement:** Minimum-cost perfect assignment on a square cost matrix.
+
+**Implementation:** `practice/hungarian*` / `hungarianPractice*` — [`hungarian`](items/graphs/hungarian.md): `npm run demo -- hungarian`.
+
+**Walkthrough:** [Worked examples — Hungarian](worked-examples.md#hungarian-min-assignment-cost).
+
+## 84. LCA binary lifting
+
+**Statement:** Answer LCA queries on a tree given the parent array.
+
+**Implementation:** `practice/lca_binary_lifting*` / `lcaBinaryLiftingPractice*` — [`lca-binary-lifting`](items/trees/lca-binary-lifting.md): `npm run demo -- lca-binary-lifting`.
+
+**Walkthrough:** [Worked examples — LCA binary lifting](worked-examples.md#lca-binary-lifting-queries).
+
+## 85. Sparse table
+
+**Statement:** Static array; answer range-minimum queries from goldens.
+
+**Implementation:** `practice/sparse_table*` / `sparseTablePractice*` — [`sparse-table`](items/trees/sparse-table.md): `npm run demo -- sparse-table`.
+
+**Walkthrough:** [Worked examples — Sparse table](worked-examples.md#sparse-table-range-minimum).
+
+## 86. TSP bitmask
+
+**Statement:** Minimum Hamiltonian cycle cost starting and ending at city 0.
+
+**Implementation:** `practice/tsp_bitmask*` / `tspBitmaskPractice*` — [`tsp-bitmask`](items/dp/tsp-bitmask.md): `npm run demo -- tsp-bitmask`.
+
+**Walkthrough:** [Worked examples — TSP bitmask](worked-examples.md#tsp-bitmask-min-tour-cost).
+
+## 87. Reservoir sampling
+
+**Statement:** Return a uniform random sample of size `k` from a stream (deterministic with `seed` in tests).
+
+**Implementation:** `practice/reservoir_sampling*` / `reservoirSamplingPractice*` — [`reservoir-sampling`](items/searching/reservoir-sampling.md): `npm run demo -- reservoir-sampling`.
+
+**Walkthrough:** [Worked examples — Reservoir sampling](worked-examples.md#reservoir-sampling-size-k).

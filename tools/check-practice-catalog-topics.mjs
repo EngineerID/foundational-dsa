@@ -80,6 +80,18 @@ export const PRACTICE_TOPIC_TARGET = [
   'open-addressing',
   'suffix-array',
   'treap',
+  'order-statistic-tree',
+  'interval-tree',
+  'b-tree',
+  'bloom-filter',
+  'boruvka-mst',
+  'a-star',
+  'articulation-bridges',
+  'hungarian',
+  'lca-binary-lifting',
+  'sparse-table',
+  'tsp-bitmask',
+  'reservoir-sampling',
 ];
 
 const itemIds = new Set(ITEMS.map((i) => i.id));

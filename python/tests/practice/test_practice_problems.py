@@ -75,6 +75,18 @@ from dsa.practice.separate_chaining_practice import SeparateChainingPractice
 from dsa.practice.open_addressing_practice import OpenAddressingPractice
 from dsa.practice.suffix_array_practice import suffix_array
 from dsa.practice.treap_practice import TreapPractice
+from dsa.practice.order_statistic_tree_practice import OrderStatisticTreePractice
+from dsa.practice.interval_tree_practice import IntervalTreePractice
+from dsa.practice.b_tree_practice import BTreePractice
+from dsa.practice.bloom_filter_practice import BloomFilterPractice
+from dsa.practice.boruvka_mst_practice import mst_total_weight as boruvka_mst_total_weight
+from dsa.practice.a_star_practice import path_length as a_star_path_length
+from dsa.practice.articulation_bridges_practice import articulation_and_bridges
+from dsa.practice.hungarian_practice import assignment_min_cost
+from dsa.practice.lca_binary_lifting_practice import LcaBinaryLiftingPractice
+from dsa.practice.sparse_table_practice import SparseTablePractice
+from dsa.practice.tsp_bitmask_practice import tsp_min_cost
+from dsa.practice.reservoir_sampling_practice import reservoir_sample
 
 
 def test_two_sum_sorted():
@@ -459,3 +471,65 @@ def test_treap_practice():
     treap = TreapPractice(0)
     treap.insert(3, 30)
     assert treap.search(3) == 30
+
+
+def test_order_statistic_tree_practice():
+    tree = OrderStatisticTreePractice()
+    tree.insert(5, "5")
+    tree.insert(2, "2")
+    assert tree.select(1) == 2
+
+
+def test_interval_tree_practice():
+    tree = IntervalTreePractice()
+    tree.insert(10, 12)
+    assert tree.overlap_sorted(11, 11) == [[10, 12]]
+
+
+def test_b_tree_practice():
+    tree = BTreePractice(2)
+    tree.insert(6)
+    assert tree.search(6) is True
+
+
+def test_bloom_filter_practice():
+    bf = BloomFilterPractice(100, 0.01)
+    bf.add("alpha")
+    assert bf.might_contain("alpha") is True
+
+
+def test_boruvka_mst_practice():
+    assert boruvka_mst_total_weight(4, [[0, 1, 1], [1, 2, 2], [2, 3, 3], [0, 3, 4]]) == 6
+
+
+def test_a_star_practice():
+    assert (
+        a_star_path_length(4, [[0, 1, 1], [0, 2, 4], [1, 2, 2], [1, 3, 5], [2, 3, 1]], 0, 3) == 4
+    )
+
+
+def test_articulation_bridges_practice():
+    ap, _ = articulation_and_bridges(5, [[0, 1], [1, 2], [2, 3], [3, 4], [2, 4]])
+    assert 1 in ap
+
+
+def test_hungarian_practice():
+    assert assignment_min_cost([[4, 1, 3], [2, 0, 5], [3, 2, 2]]) == 5
+
+
+def test_lca_binary_lifting_practice():
+    lca = LcaBinaryLiftingPractice([0, 0, 0, 1])
+    assert lca.query(1, 2) == 0
+
+
+def test_sparse_table_practice():
+    st = SparseTablePractice([1, 3, 5, 7, 9, 2])
+    assert st.query(0, 2) == 1
+
+
+def test_tsp_bitmask_practice():
+    assert tsp_min_cost([[0, 10, 15, 20], [10, 0, 35, 25], [15, 35, 0, 30], [20, 25, 30, 0]]) == 80
+
+
+def test_reservoir_sampling_practice():
+    assert reservoir_sample([7], 1, 0) == [7]

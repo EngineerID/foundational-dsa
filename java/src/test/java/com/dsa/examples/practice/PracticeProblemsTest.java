@@ -512,4 +512,83 @@ class PracticeProblemsTest {
         treap.insert(3, 30);
         assertEquals(30, treap.search(3));
     }
+
+    @Test
+    void orderStatisticTreePractice() {
+        OrderStatisticTreePractice tree = new OrderStatisticTreePractice();
+        tree.insert(5, "5");
+        tree.insert(2, "2");
+        assertEquals(2, tree.select(1));
+    }
+
+    @Test
+    void intervalTreePractice() {
+        IntervalTreePractice tree = new IntervalTreePractice();
+        tree.insert(10, 12);
+        assertEquals(List.of(List.of(10, 12)), tree.overlapSorted(11, 11));
+    }
+
+    @Test
+    void bTreePractice() {
+        BTreePractice tree = new BTreePractice(2);
+        tree.insert(6);
+        assertTrue(tree.search(6));
+    }
+
+    @Test
+    void bloomFilterPractice() {
+        BloomFilterPractice bf = new BloomFilterPractice(100, 0.01);
+        bf.add("alpha");
+        assertTrue(bf.mightContain("alpha"));
+    }
+
+    @Test
+    void boruvkaMstPractice() {
+        assertEquals(6, BoruvkaMstPractice.totalWeight(4, new int[][] {{0, 1, 1}, {1, 2, 2}, {2, 3, 3}, {0, 3, 4}}));
+    }
+
+    @Test
+    void aStarPractice() {
+        assertEquals(
+                4L,
+                AStarPractice.shortestPathLength(
+                        4, new int[][] {{0, 1, 1}, {0, 2, 4}, {1, 2, 2}, {1, 3, 5}, {2, 3, 1}}, 0, 3));
+    }
+
+    @Test
+    void articulationBridgesPractice() {
+        ArticulationBridgesPractice.Result r =
+                ArticulationBridgesPractice.find(5, new int[][] {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {2, 4}});
+        assertTrue(r.articulationPoints().contains(1));
+    }
+
+    @Test
+    void hungarianPractice() {
+        assertEquals(5, HungarianPractice.minCost(new int[][] {{4, 1, 3}, {2, 0, 5}, {3, 2, 2}}));
+    }
+
+    @Test
+    void lcaBinaryLiftingPractice() {
+        LcaBinaryLiftingPractice lca = new LcaBinaryLiftingPractice(new int[] {0, 0, 0, 1});
+        assertEquals(0, lca.query(1, 2));
+    }
+
+    @Test
+    void sparseTablePractice() {
+        SparseTablePractice st = new SparseTablePractice(new int[] {1, 3, 5, 7, 9, 2});
+        assertEquals(1, st.query(0, 2));
+    }
+
+    @Test
+    void tspBitmaskPractice() {
+        assertEquals(
+                80L,
+                TspBitmaskPractice.minCost(
+                        new int[][] {{0, 10, 15, 20}, {10, 0, 35, 25}, {15, 35, 0, 30}, {20, 25, 30, 0}}));
+    }
+
+    @Test
+    void reservoirSamplingPractice() {
+        assertEquals(List.of(7), ReservoirSamplingPractice.sample(new int[] {7}, 1, 0));
+    }
 }

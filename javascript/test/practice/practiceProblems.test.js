@@ -75,6 +75,18 @@ const { SeparateChainingPractice } = require('../../src/practice/separateChainin
 const { OpenAddressingPractice } = require('../../src/practice/openAddressingPractice');
 const { suffixArray } = require('../../src/practice/suffixArrayPractice');
 const { TreapPractice } = require('../../src/practice/treapPractice');
+const { OrderStatisticTreePractice } = require('../../src/practice/orderStatisticTreePractice');
+const { IntervalTreePractice } = require('../../src/practice/intervalTreePractice');
+const { BTreePractice } = require('../../src/practice/bTreePractice');
+const { BloomFilterPractice } = require('../../src/practice/bloomFilterPractice');
+const { mstTotalWeight: boruvkaMstTotalWeight } = require('../../src/practice/boruvkaMstPractice');
+const { pathLength: aStarPathLength } = require('../../src/practice/aStarPractice');
+const { articulationAndBridges } = require('../../src/practice/articulationBridgesPractice');
+const { assignmentMinCost } = require('../../src/practice/hungarianPractice');
+const { LcaBinaryLiftingPractice } = require('../../src/practice/lcaBinaryLiftingPractice');
+const { SparseTablePractice } = require('../../src/practice/sparseTablePractice');
+const { tspMinCost } = require('../../src/practice/tspBitmaskPractice');
+const { reservoirSample } = require('../../src/practice/reservoirSamplingPractice');
 
 describe('practice problems', () => {
   test('two sum sorted', () => {
@@ -583,5 +595,74 @@ describe('practice problems', () => {
     const treap = new TreapPractice(0);
     treap.insert(3, 30);
     expect(treap.search(3)).toBe(30);
+  });
+
+  test('order statistic tree practice', () => {
+    const tree = new OrderStatisticTreePractice();
+    tree.insert(5, '5');
+    tree.insert(2, '2');
+    expect(tree.select(1)).toBe(2);
+  });
+
+  test('interval tree practice', () => {
+    const tree = new IntervalTreePractice();
+    tree.insert(10, 12);
+    expect(tree.overlapSorted(11, 11)).toEqual([[10, 12]]);
+  });
+
+  test('b-tree practice', () => {
+    const tree = new BTreePractice(2);
+    tree.insert(6);
+    expect(tree.search(6)).toBe(true);
+  });
+
+  test('bloom filter practice', () => {
+    const bf = new BloomFilterPractice(100, 0.01);
+    bf.add('alpha');
+    expect(bf.mightContain('alpha')).toBe(true);
+  });
+
+  test('boruvka MST practice', () => {
+    expect(boruvkaMstTotalWeight(4, [[0, 1, 1], [1, 2, 2], [2, 3, 3], [0, 3, 4]])).toBe(6);
+  });
+
+  test('a-star practice', () => {
+    expect(
+      aStarPathLength(4, [[0, 1, 1], [0, 2, 4], [1, 2, 2], [1, 3, 5], [2, 3, 1]], 0, 3),
+    ).toBe(4);
+  });
+
+  test('articulation bridges practice', () => {
+    const r = articulationAndBridges(5, [[0, 1], [1, 2], [2, 3], [3, 4], [2, 4]]);
+    expect(r.articulationPoints).toContain(1);
+  });
+
+  test('hungarian practice', () => {
+    expect(assignmentMinCost([[4, 1, 3], [2, 0, 5], [3, 2, 2]])).toBe(5);
+  });
+
+  test('lca binary lifting practice', () => {
+    const lca = new LcaBinaryLiftingPractice([0, 0, 0, 1]);
+    expect(lca.query(1, 2)).toBe(0);
+  });
+
+  test('sparse table practice', () => {
+    const st = new SparseTablePractice([1, 3, 5, 7, 9, 2]);
+    expect(st.query(0, 2)).toBe(1);
+  });
+
+  test('tsp bitmask practice', () => {
+    expect(
+      tspMinCost([
+        [0, 10, 15, 20],
+        [10, 0, 35, 25],
+        [15, 35, 0, 30],
+        [20, 25, 30, 0],
+      ]),
+    ).toBe(80);
+  });
+
+  test('reservoir sampling practice', () => {
+    expect(reservoirSample([7], 1, 0)).toEqual([7]);
   });
 });
