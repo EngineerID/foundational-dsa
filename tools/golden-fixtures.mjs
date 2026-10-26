@@ -95,6 +95,13 @@ export const STATEFUL_GOLDENS = [
     java: 'java/src/test/java/com/dsa/examples/unionfind/UnionFindGoldensTest.java',
   },
   {
+    id: 'top-k-frequent-elements',
+    json: 'top-k-frequent-elements-goldens.json',
+    py: 'python/tests/heaps/test_top_k_frequent_elements_goldens.py',
+    js: 'javascript/test/heaps/topKFrequentElementsGoldens.test.js',
+    java: 'java/src/test/java/com/dsa/examples/heaps/TopKFrequentElementsGoldensTest.java',
+  },
+  {
     id: 'meeting-rooms-ii',
     json: 'meeting-rooms-ii-goldens.json',
     py: 'python/tests/heaps/test_meeting_rooms_ii_goldens.py',

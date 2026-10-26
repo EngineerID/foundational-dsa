@@ -5,6 +5,7 @@ import com.dsa.examples.hashing.BloomFilter;
 import com.dsa.examples.hashing.HashTableChaining;
 import com.dsa.examples.hashing.HashTableOpenAddressing;
 import com.dsa.examples.heaps.MeetingRoomsII;
+import com.dsa.examples.heaps.TopKFrequentElements;
 import com.dsa.examples.heaps.PriorityQueue;
 import com.dsa.examples.linear.*;
 import com.dsa.examples.dp.CoinChange;
@@ -213,6 +214,7 @@ class CatalogItemEdgesTest {
         assertArrayEquals(new int[][] {{1, 6}}, MergeIntervals.mergeIntervals(new int[][] {{1, 3}, {2, 6}}));
         assertEquals(1, TrappingRainWater.trap(new int[] {1, 0, 1}));
         assertEquals(1, MeetingRoomsII.minMeetingRooms(new int[][] {{1, 2}}));
+        assertEquals(java.util.List.of(1, 2), TopKFrequentElements.topKFrequent(new int[] {1, 1, 2}, 2));
     }
 
     @Test

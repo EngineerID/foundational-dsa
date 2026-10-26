@@ -36,7 +36,7 @@ from dsa.graphs import (
     topological_sort,
 )
 from dsa.hashing import bloom_filter, open_addressing, separate_chaining
-from dsa.heaps import meeting_rooms_ii, priority_queue
+from dsa.heaps import meeting_rooms_ii, priority_queue, top_k_frequent_elements
 from dsa.linear import (
     deque,
     doubly_linked_list,
@@ -259,6 +259,7 @@ def test_new_trees_strings_dp_edge_themes():
     assert merge_intervals.merge_intervals([[1, 3], [2, 6]]) == [[1, 6]]
     assert trapping_rain_water.trap([1, 0, 1]) == 1
     assert meeting_rooms_ii.min_meeting_rooms([[1, 2]]) == 1
+    assert top_k_frequent_elements.top_k_frequent([1, 1, 2], 2) == [1, 2]
 
 
 def test_graph_algorithms_edge_themes():

@@ -14,6 +14,7 @@ const { Queue } = require('../../src/linear/queue');
 const { Deque } = require('../../src/linear/deque');
 const { PriorityQueue } = require('../../src/heaps/priorityQueue');
 const { minMeetingRooms } = require('../../src/heaps/meetingRoomsII');
+const { topKFrequent } = require('../../src/heaps/topKFrequentElements');
 const { BST } = require('../../src/trees/bst');
 const { inOrderRecursive } = require('../../src/trees/treeTraversals');
 const { AVLTree } = require('../../src/trees/avlTree');
@@ -215,6 +216,7 @@ describe('catalog item edges', () => {
     expect(mergeIntervals([[1, 3], [2, 6]])).toEqual([[1, 6]]);
     expect(trap([1, 0, 1])).toBe(1);
     expect(minMeetingRooms([[1, 2]])).toBe(1);
+    expect(topKFrequent([1, 1, 2], 2)).toEqual([1, 2]);
   });
 
   test('graph algorithms', () => {

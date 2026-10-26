@@ -63,7 +63,7 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Statement:** Given an integer array and `k`, return the `k` most frequent elements. Break ties by **smaller value first** in the output order (after sorting by frequency descending).
 
-**Implementation:** `practice/top_k_frequent*` — count + size-`k` min-heap by frequency.
+**Implementation:** `practice/top_k_frequent*` — count + size-`k` min-heap (catalog [`top-k-frequent-elements`](items/heaps/top-k-frequent-elements.md): `npm run demo -- top-k-frequent-elements`).
 
 ## 7. Course schedule
 

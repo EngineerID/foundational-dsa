@@ -138,6 +138,12 @@ export const DOC_SPECS = {
     invariant: 'Parent <= children (min-heap) or >= (max-heap) at all indices.',
     complexity: 'insert/extract/peek: Time O(log n); buildHeap O(n); Space O(n).',
   },
+  'top-k-frequent-elements': {
+    purpose: 'K most frequent integers (by count, then value).',
+    technique: 'Size-k min-heap by frequency',
+    invariant: 'Heap holds the k best candidates seen so far.',
+    complexity: 'topKFrequent: Time O(n log k); Space O(n).',
+  },
   'meeting-rooms-ii': {
     purpose: 'Minimum conference rooms for overlapping meeting intervals.',
     technique: 'Sort by start + min-heap of end times',

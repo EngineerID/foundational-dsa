@@ -57,6 +57,7 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 | `binary-heap` | Time O(log n) | Space O(n) | insert/extract/peek: Time O(log n); buildHeap O(n); Space O(n). |
 | `meeting-rooms-ii` | Time O(n log n) | Space O(n) | minMeetingRooms: Time O(n log n); Space O(n). |
 | `priority-queue` | Time O(log n) | Space O(n) | insert/extractMin/peek: Time O(log n); Space O(n). |
+| `top-k-frequent-elements` | Time O(n log k) | Space O(n) | topKFrequent: Time O(n log k); Space O(n). |
 
 ## linear
 
@@ -134,5 +135,5 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 |----------|------|-------|----------|
 | `union-find` | Time O(α(n) | Space O(n) | find/union/connected: Time O(α(n)) amortized; Space O(n). |
 
-**Topics:** 80
+**Topics:** 81
 

@@ -148,6 +148,12 @@ export const API_MANIFEST = {
     python: ['min_meeting_rooms'],
     javascript: ['minMeetingRooms'],
   },
+  'top-k-frequent-elements': {
+    type: 'static',
+    java: ['topKFrequent'],
+    python: ['top_k_frequent'],
+    javascript: ['topKFrequent'],
+  },
   bst: {
     type: 'instance',
     java: ['insert', 'search', 'delete', 'successor', 'predecessor', 'inOrder', 'getRoot'],

@@ -357,6 +357,19 @@ Minimum conference rooms for overlapping meeting intervals.
 **Operations:**
 - `minMeetingRooms` → Python `min_meeting_rooms`, JS `minMeetingRooms`
 
+## top-k-frequent-elements
+
+K most frequent integers (by count, then value).
+
+| Language | Module |
+|----------|--------|
+| Java | `TopKFrequentElements` |
+| Python | `top_k_frequent_elements` |
+| JavaScript | `topKFrequentElements` |
+
+**Operations:**
+- `topKFrequent` → Python `top_k_frequent`, JS `topKFrequent`
+
 ## bst
 
 Binary search tree for ordered key storage.

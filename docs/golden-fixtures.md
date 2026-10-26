@@ -2,7 +2,7 @@
 
 Trilingual `*Goldens*` tests lock behavior against JSON under `tools/`. Registry: `tools/golden-fixtures.mjs` (`npm run check:golden-parity`).
 
-## Topics with shared goldens (81 catalog ids)
+## Topics with shared goldens (82 catalog ids)
 
 | Topic id | JSON |
 |----------|------|
@@ -77,6 +77,7 @@ Trilingual `*Goldens*` tests lock behavior against JSON under `tools/`. Registry
 | `stack` | `stack-goldens.json` |
 | `suffix-array` | `suffix-array-goldens.json` |
 | `tarjan-scc` | `tarjan-scc-goldens.json` |
+| `top-k-frequent-elements` | `top-k-frequent-elements-goldens.json` |
 | `topological-sort` | `topological-sort-goldens.json` |
 | `trapping-rain-water` | `trapping-rain-water-goldens.json` |
 | `treap` | `treap-goldens.json` |

@@ -47,6 +47,7 @@ const NEEDS_INVALID = new Set([
   'maximum-subarray',
   'monotonic-stack',
   'two-sum-ii',
+  'top-k-frequent-elements',
 ]);
 
 const NO_BOUNDARY = new Set(['hungarian', 'quick-select', 'two-sum-ii', 'trapping-rain-water']);
