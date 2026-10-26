@@ -71,6 +71,7 @@ Trilingual tests for these scenarios: `WorkedInterviewExamplesTest`, `test_worke
 |------------------|----------|------|
 | BST insert/search | `bst` | `npm run demo -- bst` |
 | Balanced BST | `avl-tree`, `red-black-tree` | `npm run demo -- avl-tree` |
+| Meeting rooms II (min rooms) | `meeting-rooms-ii` | `npm run demo -- meeting-rooms-ii` |
 | Heap / priority scheduling | `binary-heap`, `priority-queue` | `npm run demo -- priority-queue` |
 | Range sum / min on array | `fenwick-tree`, `segment-tree` | `npm run demo -- segment-tree` |
 | LCA on tree | `lca-binary-lifting` | `npm run demo -- lca-binary-lifting` |

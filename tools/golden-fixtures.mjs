@@ -95,6 +95,13 @@ export const STATEFUL_GOLDENS = [
     java: 'java/src/test/java/com/dsa/examples/unionfind/UnionFindGoldensTest.java',
   },
   {
+    id: 'meeting-rooms-ii',
+    json: 'meeting-rooms-ii-goldens.json',
+    py: 'python/tests/heaps/test_meeting_rooms_ii_goldens.py',
+    js: 'javascript/test/heaps/meetingRoomsIIGoldens.test.js',
+    java: 'java/src/test/java/com/dsa/examples/heaps/MeetingRoomsIIGoldensTest.java',
+  },
+  {
     id: 'binary-heap',
     json: 'binary-heap-goldens.json',
     py: 'python/tests/heaps/test_binary_heap_goldens.py',

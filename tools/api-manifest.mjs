@@ -142,6 +142,12 @@ export const API_MANIFEST = {
     python: ['insert', 'peek', 'extract_min', 'decrease_key', 'is_empty', 'size', 'heap'],
     javascript: ['insert', 'peek', 'extractMin', 'decreaseKey', 'isEmpty', 'size', 'heap'],
   },
+  'meeting-rooms-ii': {
+    type: 'static',
+    java: ['minMeetingRooms'],
+    python: ['min_meeting_rooms'],
+    javascript: ['minMeetingRooms'],
+  },
   bst: {
     type: 'instance',
     java: ['insert', 'search', 'delete', 'successor', 'predecessor', 'inOrder', 'getRoot'],

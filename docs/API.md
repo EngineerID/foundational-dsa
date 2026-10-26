@@ -344,6 +344,19 @@ Min-priority queue for scheduling by priority.
 - `size` → Python `size`, JS `size`
 - `heap` → Python `heap`, JS `heap`
 
+## meeting-rooms-ii
+
+Minimum conference rooms for overlapping meeting intervals.
+
+| Language | Module |
+|----------|--------|
+| Java | `MeetingRoomsII` |
+| Python | `meeting_rooms_ii` |
+| JavaScript | `meetingRoomsII` |
+
+**Operations:**
+- `minMeetingRooms` → Python `min_meeting_rooms`, JS `minMeetingRooms`
+
 ## bst
 
 Binary search tree for ordered key storage.

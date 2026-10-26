@@ -20,6 +20,7 @@ const REQUIRED_CASE_KEYS = {
   'two-sum-ii-goldens.json': ['nums', 'target', 'expected'],
   'merge-intervals-goldens.json': ['intervals', 'expected'],
   'trapping-rain-water-goldens.json': ['height', 'expected'],
+  'meeting-rooms-ii-goldens.json': ['intervals', 'expected'],
   'reservoir-sampling-goldens.json': ['stream', 'k', 'seed', 'expected'],
   'treap-goldens.json': ['seed', 'inserts', 'searchResults'],
 };

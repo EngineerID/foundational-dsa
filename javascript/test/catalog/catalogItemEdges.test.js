@@ -13,6 +13,7 @@ const { DoublyLinkedList } = require('../../src/linear/doublyLinkedList');
 const { Queue } = require('../../src/linear/queue');
 const { Deque } = require('../../src/linear/deque');
 const { PriorityQueue } = require('../../src/heaps/priorityQueue');
+const { minMeetingRooms } = require('../../src/heaps/meetingRoomsII');
 const { BST } = require('../../src/trees/bst');
 const { inOrderRecursive } = require('../../src/trees/treeTraversals');
 const { AVLTree } = require('../../src/trees/avlTree');
@@ -213,6 +214,7 @@ describe('catalog item edges', () => {
     expect(twoSumSorted([1, 2, 3], 3)).toEqual([1, 2]);
     expect(mergeIntervals([[1, 3], [2, 6]])).toEqual([[1, 6]]);
     expect(trap([1, 0, 1])).toBe(1);
+    expect(minMeetingRooms([[1, 2]])).toBe(1);
   });
 
   test('graph algorithms', () => {

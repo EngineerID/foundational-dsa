@@ -4,6 +4,7 @@ import com.dsa.examples.graphs.*;
 import com.dsa.examples.hashing.BloomFilter;
 import com.dsa.examples.hashing.HashTableChaining;
 import com.dsa.examples.hashing.HashTableOpenAddressing;
+import com.dsa.examples.heaps.MeetingRoomsII;
 import com.dsa.examples.heaps.PriorityQueue;
 import com.dsa.examples.linear.*;
 import com.dsa.examples.dp.CoinChange;
@@ -211,6 +212,7 @@ class CatalogItemEdgesTest {
         assertArrayEquals(new int[] {1, 2}, TwoSumII.twoSumSorted(new int[] {1, 2, 3}, 3));
         assertArrayEquals(new int[][] {{1, 6}}, MergeIntervals.mergeIntervals(new int[][] {{1, 3}, {2, 6}}));
         assertEquals(1, TrappingRainWater.trap(new int[] {1, 0, 1}));
+        assertEquals(1, MeetingRoomsII.minMeetingRooms(new int[][] {{1, 2}}));
     }
 
     @Test

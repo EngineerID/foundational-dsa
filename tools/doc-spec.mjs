@@ -138,6 +138,12 @@ export const DOC_SPECS = {
     invariant: 'Parent <= children (min-heap) or >= (max-heap) at all indices.',
     complexity: 'insert/extract/peek: Time O(log n); buildHeap O(n); Space O(n).',
   },
+  'meeting-rooms-ii': {
+    purpose: 'Minimum conference rooms for overlapping meeting intervals.',
+    technique: 'Sort by start + min-heap of end times',
+    invariant: 'Heap size equals concurrent meetings after processing each start.',
+    complexity: 'minMeetingRooms: Time O(n log n); Space O(n).',
+  },
   'priority-queue': {
     purpose: 'Min-priority queue for scheduling by priority.',
     technique: 'Binary min-heap priority queue',

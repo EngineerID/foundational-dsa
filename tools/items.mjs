@@ -23,6 +23,7 @@ export const ITEMS = [
   { topic: 'linear', id: 'deque', java: 'Deque', py: 'deque', js: 'deque' },
   { topic: 'heaps', id: 'binary-heap', java: 'BinaryHeap', py: 'binary_heap', js: 'binaryHeap' },
   { topic: 'heaps', id: 'priority-queue', java: 'PriorityQueue', py: 'priority_queue', js: 'priorityQueue' },
+  { topic: 'heaps', id: 'meeting-rooms-ii', java: 'MeetingRoomsII', py: 'meeting_rooms_ii', js: 'meetingRoomsII' },
   { topic: 'trees', id: 'bst', java: 'BST', py: 'bst', js: 'bst' },
   { topic: 'trees', id: 'tree-traversals', java: 'TreeTraversals', py: 'tree_traversals', js: 'treeTraversals' },
   { topic: 'trees', id: 'avl-tree', java: 'AVLTree', py: 'avl_tree', js: 'avlTree' },

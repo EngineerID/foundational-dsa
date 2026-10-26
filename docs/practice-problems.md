@@ -51,7 +51,7 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Statement:** Given meeting intervals `[start, end)`, return the minimum number of conference rooms required so no meetings overlap.
 
-**Implementation:** `practice/meeting_rooms*`.
+**Implementation:** `practice/meeting_rooms*` (catalog [`meeting-rooms-ii`](items/heaps/meeting-rooms-ii.md): `npm run demo -- meeting-rooms-ii`).
 
 ## 5. Number of islands
 
