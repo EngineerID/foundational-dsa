@@ -7,9 +7,7 @@ describe('TopologicalSort', () => {
     dag.addEdge(0, 1);
     dag.addEdge(0, 2);
     dag.addEdge(1, 3);
-    const order = kahn(dag);
-    expect(order).toHaveLength(4);
-    expect(order.indexOf(0)).toBeLessThan(order.indexOf(3));
+    expect(kahn(dag)).toEqual([0, 1, 2, 3]);
   });
 
   test('cycle returns empty', () => {

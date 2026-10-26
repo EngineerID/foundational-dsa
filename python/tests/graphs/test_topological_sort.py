@@ -8,8 +8,7 @@ def test_topo_dag_order():
     dag.add_edge(0, 2)
     dag.add_edge(1, 3)
     order = kahn(dag)
-    assert order == [0, 1, 2, 3] or order == [0, 2, 1, 3]
-    assert order.index(0) < order.index(3)
+    assert order == [0, 1, 2, 3]
 
 
 def test_cycle_returns_empty():

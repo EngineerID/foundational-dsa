@@ -1,6 +1,6 @@
 # Worked examples
 
-Short, language-neutral walkthroughs for six core topics. Implementations live under `java/`, `python/dsa/`, and `javascript/src/` with the same behavior. For a broader interview map, see [interview-prep.md](interview-prep.md).
+Short, language-neutral walkthroughs for nine interview-heavy topics. Implementations live under `java/`, `python/dsa/`, and `javascript/src/` with the same behavior. For a broader interview map, see [interview-prep.md](interview-prep.md). Trilingual tests for several scenarios live under each language’s `catalog` tests (`WorkedInterviewExamplesTest`, `test_worked_interview_examples.py`, `workedInterviewExamples.test.js`).
 
 ## Binary search on a sorted array
 
@@ -105,9 +105,65 @@ Classic LeetCode-style eviction (matches `LRUCacheTest.getAndPut`):
 
 `npm run demo -- lru-cache`
 
+## Topological sort (Kahn, course schedule)
+
+**DAG edges:** `0→1`, `0→2`, `1→3` (four vertices).
+
+| Step | Zero in-degree queue | Pop | Order so far |
+|------|----------------------|-----|--------------|
+| init | `[0]` | — | `[]` |
+| 1 | — | 0 | `[0]` → enqueue 1, 2 |
+| 2 | `[1, 2]` | 1 | `[0, 1]` → enqueue 3 |
+| 3 | `[2, 3]` | 2 | `[0, 1, 2]` |
+| 4 | `[3]` | 3 | `[0, 1, 2, 3]` |
+
+Any valid order must place **0** before **3**. If a cycle exists, Kahn’s algorithm returns an **empty** list.
+
+**API:** `kahn(graph)` → vertex order (see [topological-sort](items/graphs/topological-sort.md)).
+
+`npm run demo -- topological-sort`
+
+## Binary search on the answer
+
+**Pattern:** monotone predicate `feasible(x)` on an integer range; find the **minimum** `x` with `feasible(x) = true`.
+
+**Example:** ship with capacity `c` in `[1..10]`; `feasible(c)` true exactly when `c ≥ 6`.
+
+| Step | `lo` | `hi` | `mid` | `feasible(mid)` | Action |
+|------|------|------|-------|-----------------|--------|
+| 1 | 1 | 10 | 5 | false | answer > 5 → `lo = 6` |
+| 2 | 6 | 10 | 8 | true | try smaller → `hi = 7` |
+| 3 | 6 | 7 | 6 | true | try smaller → `hi = 6` |
+| 4 | 6 | 6 | — | — | minimum feasible **6** |
+
+When the “answer space” is a sorted array, the same boundary idea appears as **`firstOccurrence(sorted, key)`** — e.g. `[1, 3, 5, 7, 9, 11]` and key `7` → index **3**.
+
+**API:** predicate search is an interview pattern; boundary search uses `firstOccurrence` / `lastOccurrence` on sorted arrays (see [binary-search](items/searching/binary-search.md)).
+
+`npm run demo -- binary-search`
+
+## Sliding window maximum
+
+**Array:** `[1, 3, -1, -3, 5, 3, 6, 7]`, **window** `k = 3`.
+
+| Window indices | Values | Max |
+|----------------|--------|-----|
+| 0–2 | 1, 3, -1 | **3** |
+| 1–3 | 3, -1, -3 | **3** |
+| 2–4 | -1, -3, 5 | **5** |
+| 3–5 | -3, 5, 3 | **5** |
+| 4–6 | 5, 3, 6 | **6** |
+| 5–7 | 3, 6, 7 | **7** |
+
+**Output:** `[3, 3, 5, 5, 6, 7]`. A deque tracks candidates in decreasing value so each step is **O(1)** amortized.
+
+**API:** `maxSlidingWindow(nums, k)` (see [sliding-window-maximum](items/linear/sliding-window-maximum.md)).
+
+`npm run demo -- sliding-window-maximum`
+
 ## Topic index
 
-One-line walkthroughs for every catalog topic. Full tables above cover binary search, merge sort, KMP, Dijkstra, union–find, and LRU cache.
+One-line walkthroughs for every catalog topic. Full tables above cover binary search, merge sort, KMP, Dijkstra, union–find, LRU cache, topological sort, binary search on the answer, and sliding window maximum.
 
 ### linear-search
 
@@ -360,6 +416,8 @@ npm run demo -- kmp
 npm run demo -- dijkstra
 npm run demo -- union-find
 npm run demo -- lru-cache
+npm run demo -- topological-sort
+npm run demo -- sliding-window-maximum
 ```
 
 Optional language filter: `npm run demo -- kmp python`.

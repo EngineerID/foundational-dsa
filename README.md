@@ -11,6 +11,14 @@ Use it to study implementations side by side, prepare for interviews, or teach D
 **Maintainer:** [Ivan Damnjanovic](https://github.com/EngineerID)  
 **License:** Apache License 2.0 ([LICENSE](LICENSE))
 
+## Start here
+
+1. **Setup:** `bash .cursor/install.sh`, then `npm test` to confirm your machine matches CI.
+2. **Pick a topic:** [COVERAGE.md](COVERAGE.md) lists all 72 ids; run `npm run demo -- <id>` to execute tests for one algorithm in Java, Python, and JavaScript.
+3. **Interview map:** [docs/interview-prep.md](docs/interview-prep.md) links common prompts (LRU, course schedule, sliding window, and more) to those ids.
+4. **Walkthroughs:** [docs/worked-examples.md](docs/worked-examples.md) has step-by-step tables for binary search, graphs, caches, and other high-frequency patterns.
+5. **Contribute:** [CONTRIBUTING.md](CONTRIBUTING.md) describes good-first issues and the trilingual parity rules.
+
 ## Layout
 
 ```
