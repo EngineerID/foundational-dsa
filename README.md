@@ -2,10 +2,11 @@
 
 [![CI](https://github.com/EngineerID/foundational-dsa/actions/workflows/ci.yml/badge.svg)](https://github.com/EngineerID/foundational-dsa/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](./LICENSE)
+[![Sponsor](https://img.shields.io/badge/Sponsor-EngineerID-ea4aaa?logo=github-sponsors&logoColor=white)](https://github.com/sponsors/EngineerID)
 
 **foundational-dsa** is a trilingual reference library: **72 classic data structures and algorithms**, each with matching implementations in **Java**, **Python**, and **JavaScript** (216 implementations in total). Every topic ships with tests, a short doc page under [`docs/items/`](docs/items/), and entries in [`docs/API.md`](docs/API.md) so you can compare APIs and idioms across languages.
 
-Use it to study implementations side by side, prepare for interviews, or teach DSA with runnable code rather than pseudocode. Step-by-step walkthroughs for core algorithms are in [`docs/worked-examples.md`](docs/worked-examples.md).
+Use it to study implementations side by side, prepare for interviews, or teach DSA with runnable code rather than pseudocode. Step-by-step walkthroughs for core algorithms are in [`docs/worked-examples.md`](docs/worked-examples.md). Map common interview prompts to topic ids in [`docs/interview-prep.md`](docs/interview-prep.md).
 
 **Maintainer:** [Ivan Damnjanovic](https://github.com/EngineerID)  
 **License:** Apache License 2.0 ([LICENSE](LICENSE))
@@ -91,12 +92,13 @@ Topic ids are the first column of [COVERAGE.md](COVERAGE.md), such as `dijkstra`
 
 ### What `npm test` runs
 
-1. `npm run check:stubs` — fails if a source or test file still contains a stub marker.
-2. `npm run test:java` — `sh java/mvnw test` (JUnit 5).
-3. `npm run test:py` — pytest on `python/`.
-4. `npm run test:js` — Jest with `javascript/jest.config.js`.
-5. `npm run check:parity` — same topics exposed in all three languages.
-6. `npm run matrix:check` — [COVERAGE.md](COVERAGE.md) matches the tree.
+1. `npm run check:docs-links` — fails if a relative link in `docs/` or the root README is broken.
+2. `npm run check:stubs` — fails if a source or test file still contains a stub marker.
+3. `npm run test:java` — `sh java/mvnw test` (JUnit 5).
+4. `npm run test:py` — pytest on `python/`.
+5. `npm run test:js` — Jest with `javascript/jest.config.js`.
+6. `npm run check:parity` — same topics exposed in all three languages.
+7. `npm run matrix:check` — [COVERAGE.md](COVERAGE.md) matches the tree.
 
 After adding a topic, regenerate the matrix with `npm run matrix` (or `make matrix`). `npm run matrix:check` only verifies; it does not rewrite the file.
 
@@ -198,9 +200,13 @@ Typical time and auxiliary space for the main entry point of each topic (see mod
 
 Local asymptotic comparisons (not CI gates): `npm run bench` and [docs/benchmarks.md](docs/benchmarks.md).
 
-For step-by-step walkthroughs of binary search, merge sort, and KMP, see [docs/worked-examples.md](docs/worked-examples.md).
+For step-by-step walkthroughs of binary search, merge sort, KMP, Dijkstra, union–find, and LRU cache, see [docs/worked-examples.md](docs/worked-examples.md).
 
 To mirror the GitHub Actions job locally, see [docs/running-ci-locally.md](docs/running-ci-locally.md).
+
+## Sponsor
+
+If this reference helps your studies or team, consider [sponsoring on GitHub](https://github.com/sponsors/EngineerID). Sponsorship supports maintenance of the trilingual catalog, docs, and CI. You can also star the repo and open issues or pull requests — see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 

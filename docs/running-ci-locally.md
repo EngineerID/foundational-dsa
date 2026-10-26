@@ -33,6 +33,7 @@ When `run_heavy` is true, run these from the repository root in order:
 | Install Node deps | `npm ci` |
 | Install Python test/lint deps | `pip install pytest pytest-cov hypothesis ruff` |
 | Lint | `npm run lint` |
+| Docs link scan | `npm run check:docs-links` |
 | Stub scan | `npm run check:stubs` |
 | Java tests | `npm run test:java` |
 | Python tests (with coverage in CI) | `PYTEST_COV=1 npm run test:py` |

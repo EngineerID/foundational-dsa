@@ -1,6 +1,6 @@
 # Worked examples
 
-Short, language-neutral walkthroughs for three core topics. Implementations live under `java/`, `python/dsa/`, and `javascript/src/` with the same behavior.
+Short, language-neutral walkthroughs for six core topics. Implementations live under `java/`, `python/dsa/`, and `javascript/src/` with the same behavior. For a broader interview map, see [interview-prep.md](interview-prep.md).
 
 ## Binary search on a sorted array
 
@@ -45,9 +45,69 @@ Scan highlights:
 
 **API:** `search(text, pattern)` → first index or `-1` (see [kmp](items/strings/kmp.md)).
 
+## Dijkstra (non-negative weights)
+
+**Graph:** directed, weighted (same as `GraphsTest.dijkstra` in Java).
+
+| Edge | Weight |
+|------|--------|
+| 0 → 1 | 1 |
+| 1 → 2 | 2 |
+| 0 → 2 | 4 |
+
+**Source:** vertex `0`.
+
+| Step | Extract | Relax | `dist[0..2]` after |
+|------|---------|-------|---------------------|
+| init | — | — | `[0, ∞, ∞]` |
+| 1 | 0 | 0→1 (1), 0→2 (4) | `[0, 1, 4]` |
+| 2 | 1 | 1→2 (1+2=3) | `[0, 1, 3]` |
+| 3 | 2 | no improvement | `[0, 1, 3]` |
+
+Shortest distance to vertex **2** is **3** (path 0→1→2), better than the direct edge of weight 4.
+
+**API:** `shortestPaths(graph, source)` → distance array; unreachable vertices use a large sentinel (see [dijkstra](items/graphs/dijkstra.md)).
+
+`npm run demo -- dijkstra`
+
+## Union–find (connectivity)
+
+**Structure:** `n = 5` elements labeled `0..4`, all separate.
+
+| Operation | Effect | Components |
+|-----------|--------|------------|
+| `union(0, 1)` | merge {0} and {1} | 4 |
+| `union(2, 3)` | merge {2} and {3} | 3 |
+| `union(1, 2)` | merge {0,1} and {2,3} | 2 |
+| `connected(0, 3)` | same set as 1 and 2 | **true** |
+| `connected(0, 4)` | 4 still alone | **false** |
+
+Path compression flattens trees on `find`; union by rank keeps trees shallow. Amortized time per operation is **O(α(n))**.
+
+**API:** `find(x)`, `union(a, b)`, `connected(a, b)` (see [union-find](items/unionfind/union-find.md)).
+
+`npm run demo -- union-find`
+
+## LRU cache (capacity 2)
+
+Classic LeetCode-style eviction (matches `LRUCacheTest.getAndPut`):
+
+| Step | Action | Cache state (MRU → LRU) | `get` result |
+|------|--------|-------------------------|--------------|
+| 1 | `put(1,1)`, `put(2,2)` | `{1:1, 2:2}` | — |
+| 2 | `get(1)` | `{1:1, 2:2}` (1 promoted) | **1** |
+| 3 | `put(3,3)` | evicts key **2** → `{3:3, 1:1}` | — |
+| 4 | `get(2)` | — | **-1** (missing) |
+| 5 | `put(4,4)` | evicts key **1** → `{4:4, 3:3}` | — |
+| 6 | `get(1)`, `get(3)`, `get(4)` | — | **-1**, **3**, **4** |
+
+**API:** `get(key)`, `put(key, value)` in O(1) time (see [lru-cache](items/linear/lru-cache.md)).
+
+`npm run demo -- lru-cache`
+
 ## Topic index
 
-One-line walkthroughs for every catalog topic. Full tables above cover binary search, merge sort, and KMP.
+One-line walkthroughs for every catalog topic. Full tables above cover binary search, merge sort, KMP, Dijkstra, union–find, and LRU cache.
 
 ### linear-search
 
@@ -297,6 +357,9 @@ Run the demo runner (all three languages by default):
 npm run demo -- binary-search
 npm run demo -- merge-sort
 npm run demo -- kmp
+npm run demo -- dijkstra
+npm run demo -- union-find
+npm run demo -- lru-cache
 ```
 
 Optional language filter: `npm run demo -- kmp python`.
