@@ -7,7 +7,7 @@ npm run demo -- <topic-id>
 npm run demo -- <topic-id> python   # optional: java | python | js
 ```
 
-Full topic list: [COVERAGE.md](../COVERAGE.md). Step-by-step walkthroughs: [worked-examples.md](worked-examples.md). API names: [API.md](API.md). **Pattern signals → topics:** [pattern-recognition.md](pattern-recognition.md).
+Full topic list: [COVERAGE.md](../COVERAGE.md). Step-by-step walkthroughs: [worked-examples.md](worked-examples.md). **20 curated problems** with trilingual solutions: [practice-problems.md](practice-problems.md). API names: [API.md](API.md). **Pattern signals → topics:** [pattern-recognition.md](pattern-recognition.md).
 
 ## Detailed walkthroughs (step tables)
 
@@ -116,6 +116,7 @@ Trilingual tests for these scenarios: `WorkedInterviewExamplesTest`, `test_worke
 1. `binary-search`, `merge-sort`, `kmp` — see detailed tables in [worked-examples.md](worked-examples.md).
 2. `dijkstra`, `union-find`, `lru-cache` — same doc, graph/DS classics.
 3. One graph traversal pair: `bfs` + `dfs`, then one DP trio: `lis`, `knapsack`, `edit-distance`.
+4. Work through problems 1–20 in [practice-problems.md](practice-problems.md) (each maps to catalog topics above).
 
 Run the full local gate before interview practice sessions:
 
