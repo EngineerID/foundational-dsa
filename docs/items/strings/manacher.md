@@ -11,7 +11,9 @@ Longest palindromic substring length.
 ## Complexity
 
 longestPalindromeLength: Time O(n); Space O(n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n) | Space O(n) |
 
 ## Code links
 

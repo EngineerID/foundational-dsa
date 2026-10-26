@@ -11,7 +11,9 @@ Count 4-connected land components in a binary grid.
 ## Complexity
 
 numIslands: Time O(rows·cols); Space O(rows·cols).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(rows·cols) | Space O(rows·cols) |
 
 ## Code links
 

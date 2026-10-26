@@ -14,7 +14,9 @@ Capacity must be **positive**; `get` returns **-1** for missing keys.
 ## Complexity
 
 get/put: Time O(1); Space O(capacity).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(1) | Space O(capacity) |
 
 ## Code links
 

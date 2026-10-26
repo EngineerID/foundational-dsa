@@ -11,7 +11,9 @@ Largest sum of any contiguous subarray (Kadane).
 ## Complexity
 
 maxSubarray: Time O(n); Space O(1).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n) | Space O(1) |
 
 ## Code links
 

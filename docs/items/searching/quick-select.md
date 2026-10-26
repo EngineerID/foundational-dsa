@@ -19,7 +19,9 @@ Find the k-th smallest element in an unordered array.
 ## Complexity
 
 select: Time O(n) average, O(n²) worst; Space O(1).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n) | Space O(1) |
 
 ## Code links
 

@@ -11,7 +11,9 @@ Total water trapped between non-negative elevation bars.
 ## Complexity
 
 trap: Time O(n); Space O(1).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n) | Space O(1) |
 
 ## Code links
 

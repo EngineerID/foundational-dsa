@@ -11,7 +11,9 @@ Merge overlapping closed intervals after sorting by start.
 ## Complexity
 
 mergeIntervals: Time O(n log n); Space O(n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n log n) | Space O(n) |
 
 ## Code links
 

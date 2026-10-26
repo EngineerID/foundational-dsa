@@ -11,7 +11,9 @@ Can all courses be taken given prerequisite pairs?
 ## Complexity
 
 canFinish: Time O(V+E); Space O(V).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(V+E) | Space O(V) |
 
 ## Code links
 

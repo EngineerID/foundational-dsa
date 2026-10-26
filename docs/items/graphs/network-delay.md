@@ -11,7 +11,9 @@ Time for all nodes to receive a signal from a source (max Dijkstra distance).
 ## Complexity
 
 networkDelay: Time O((V+E) log V); Space O(V).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O((V+E) | Space O(V) |
 
 ## Code links
 

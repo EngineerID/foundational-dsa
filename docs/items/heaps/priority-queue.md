@@ -11,7 +11,9 @@ Min-priority queue for scheduling by priority.
 ## Complexity
 
 insert/extractMin/peek: Time O(log n); Space O(n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(log n) | Space O(n) |
 
 ## Code links
 

@@ -14,7 +14,9 @@ Duplicate keys typically follow left-or-right policy defined in the implementati
 ## Complexity
 
 search/insert/delete: Time O(h) height; Space O(n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(h) | Space O(n) |
 
 ## Code links
 

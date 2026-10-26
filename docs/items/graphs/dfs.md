@@ -11,7 +11,9 @@ Depth-first traversal, cycle detection, and connectivity.
 ## Complexity
 
 traverse/hasCycle: Time O(V+E); Space O(V).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(V+E) | Space O(V) |
 
 ## Code links
 

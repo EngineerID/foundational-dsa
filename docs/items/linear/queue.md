@@ -11,7 +11,9 @@ FIFO queue backed by circular buffer.
 ## Complexity
 
 enqueue/dequeue: Time O(1) amortized; Space O(n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(1) | Space O(n) |
 
 ## Code links
 

@@ -11,7 +11,9 @@ Partition array into two equal-sum subsets.
 ## Complexity
 
 canPartition: Time O(n·sum); Space O(sum).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n·sum) | Space O(sum) |
 
 ## Code links
 

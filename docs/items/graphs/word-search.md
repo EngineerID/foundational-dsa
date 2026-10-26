@@ -11,7 +11,9 @@ Find a word in a grid using adjacent cells without reuse.
 ## Complexity
 
 wordSearch: Time O(rows·cols·4^L); Space O(L).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(rows·cols·4^L) | Space O(L) |
 
 ## Code links
 

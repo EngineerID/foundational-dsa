@@ -11,7 +11,9 @@ BST augmented with subtree sizes for rank and select.
 ## Complexity
 
 rank/select/insert/delete: Time O(log n); Space O(n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(log n) | Space O(n) |
 
 ## Code links
 

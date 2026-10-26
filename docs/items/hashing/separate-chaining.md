@@ -14,7 +14,9 @@ Resizes when load factor exceeds threshold (see implementation).
 ## Complexity
 
 put/get/remove: Time O(1) average; resize O(n); Space O(n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(1) | Space O(n) |
 
 ## Code links
 

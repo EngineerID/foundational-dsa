@@ -11,7 +11,9 @@ Topic: **dp** / `knapsack`
 ## Complexity
 
 maxValue: Time O(n·W); Space O(W).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n·W) | Space O(W) |
 
 ## Code links
 

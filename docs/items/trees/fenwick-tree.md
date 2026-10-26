@@ -11,7 +11,9 @@ Prefix sums and range sums with point updates.
 ## Complexity
 
 add/prefixSum/rangeSum: Time O(log n); Space O(n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(log n) | Space O(n) |
 
 ## Code links
 

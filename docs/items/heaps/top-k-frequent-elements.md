@@ -11,7 +11,9 @@ K most frequent integers (by count, then value).
 ## Complexity
 
 topKFrequent: Time O(n log k); Space O(n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n log k) | Space O(n) |
 
 ## Code links
 

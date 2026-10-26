@@ -11,7 +11,9 @@ Next strictly greater element to the right for each index.
 ## Complexity
 
 nextGreaterElement: Time O(n); Space O(n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n) | Space O(n) |
 
 ## Code links
 

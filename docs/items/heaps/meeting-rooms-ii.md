@@ -11,7 +11,9 @@ Minimum conference rooms for overlapping meeting intervals.
 ## Complexity
 
 minMeetingRooms: Time O(n log n); Space O(n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n log n) | Space O(n) |
 
 ## Code links
 

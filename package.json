@@ -3,8 +3,8 @@
   "private": true,
   "description": "87 data structures and algorithms in Java, Python, and JavaScript",
   "scripts": {
-    "test": "npm run check:docs-links && npm run check:readme-index && npm run check:complexity-cheatsheet && npm run check:item-doc-headings && npm run check:item-doc-complexity && npm run check:golden-parity && npm run check:golden-fixtures-doc && npm run check:catalog-golden-coverage && npm run check:shared-golden-themes && npm run check:graph-sentinel && npm run check:complexity-sanity && npm run check:stubs && npm run test:java && npm run test:py && npm run test:js && npm run check:parity && npm run matrix:check",
-    "test:ci": "npm run check:ci-policy && npm run check:readme-complexity && npm run check:readme-index && npm run check:complexity-cheatsheet && npm run check:item-doc-headings && npm run check:golden-parity && npm run check:golden-fixtures-doc && npm run check:catalog-golden-coverage && npm run check:shared-golden-themes && npm run check:graph-sentinel && npm run check:complexity-sanity && npm run check:catalog-items && npm run api:check && npm run check:types-py && npm run check:types-js && npm run lint && npm run check:docs-links && npm run check:stubs && npm run test:java && PYTEST_COV=1 npm run test:py && npm run test:js && npm run check:parity && npm run check:edge-themes && node tools/coverage-report.mjs && npm run matrix && npm run matrix:check && npm run inventory:check",
+    "test": "npm run check:docs-links && npm run check:readme-index && npm run check:complexity-cheatsheet && npm run check:item-doc-headings && npm run check:item-doc-complexity && npm run check:item-doc-complexity-table && npm run check:golden-parity && npm run check:golden-fixtures-doc && npm run check:catalog-golden-coverage && npm run check:shared-golden-themes && npm run check:graph-sentinel && npm run check:complexity-sanity && npm run check:stubs && npm run test:java && npm run test:py && npm run test:js && npm run check:parity && npm run matrix:check",
+    "test:ci": "npm run check:ci-policy && npm run check:readme-complexity && npm run check:readme-index && npm run check:complexity-cheatsheet && npm run check:item-doc-headings && npm run check:item-doc-complexity && npm run check:item-doc-complexity-table && npm run check:golden-parity && npm run check:golden-fixtures-doc && npm run check:catalog-golden-coverage && npm run check:shared-golden-themes && npm run check:graph-sentinel && npm run check:complexity-sanity && npm run check:catalog-items && npm run api:check && npm run check:types-py && npm run check:types-js && npm run lint && npm run check:docs-links && npm run check:stubs && npm run test:java && PYTEST_COV=1 npm run test:py && npm run test:js && npm run check:parity && npm run check:edge-themes && node tools/coverage-report.mjs && npm run matrix && npm run matrix:check && npm run inventory:check",
     "test:java": "node tools/run-java-test.mjs",
     "test:py": "node tools/run-py-test.mjs",
     "test:js": "jest --config javascript/jest.config.js",
@@ -21,6 +21,7 @@
     "check:complexity-cheatsheet": "node tools/check-complexity-cheatsheet.mjs",
     "check:item-doc-headings": "node tools/check-item-doc-headings.mjs",
     "check:item-doc-complexity": "node tools/check-item-doc-complexity.mjs",
+    "check:item-doc-complexity-table": "node tools/check-item-doc-complexity-table.mjs",
     "check:stubs": "node tools/check-stubs.mjs",
     "check:parity": "node tools/parity.mjs",
     "check:edge-themes": "node tools/check-edge-themes.mjs",

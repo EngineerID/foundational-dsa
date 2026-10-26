@@ -11,7 +11,9 @@ Singly linked list with head insertion and traversal.
 ## Complexity
 
 prepend/search: Time O(1)/O(n); Space O(n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(1) | Space O(n) |
 
 ## Code links
 

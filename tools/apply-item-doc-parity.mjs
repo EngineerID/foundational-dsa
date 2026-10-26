@@ -7,6 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { complexityTableMarkdown } from './complexity-table.mjs';
 import { DOC_SPECS } from './doc-spec.mjs';
 import {
   EDGE_CATALOG_ITEMS,
@@ -149,7 +150,8 @@ function renderItem(item) {
   }
   lines.push('## Complexity', '');
   lines.push(`${spec.complexity}`, '');
-  lines.push('', '## Code links', '');
+  lines.push(complexityTableMarkdown(spec.complexity).trim(), '');
+  lines.push('## Code links', '');
   lines.push('| Language | Source |');
   lines.push('|----------|--------|');
   lines.push(`| Java | [\`${item.java}\`](${javaMain}) |`);

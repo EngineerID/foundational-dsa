@@ -11,7 +11,9 @@ Minimum coins to make an amount (unbounded supply).
 ## Complexity
 
 minCoins: Time O(n·amount); Space O(amount).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n·amount) | Space O(amount) |
 
 ## Code links
 

@@ -11,7 +11,9 @@ Double-ended queue with O(1) push/pop at both ends.
 ## Complexity
 
 pushFront/pushBack/pop: Time O(1) amortized; Space O(n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(1) | Space O(n) |
 
 ## Code links
 

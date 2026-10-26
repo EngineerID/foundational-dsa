@@ -14,7 +14,9 @@ Sorts **in place**; optional randomized pivot and 3-way partition variants.
 ## Complexity
 
 sort/sort3Way: Time O(n log n) average; Space O(log n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n log n) | Space O(log n) |
 
 ## Code links
 

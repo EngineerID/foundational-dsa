@@ -14,7 +14,9 @@ Empty string key is stored at the root when inserted.
 ## Complexity
 
 insert/search/startsWith: Time O(L) key length; Space O(total chars).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(L) | Space O(total chars) |
 
 ## Code links
 

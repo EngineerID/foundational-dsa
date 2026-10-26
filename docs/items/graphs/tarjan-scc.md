@@ -11,7 +11,9 @@ Strongly connected components in a directed graph.
 ## Complexity
 
 stronglyConnectedComponents: Time O(V+E); Space O(V).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(V+E) | Space O(V) |
 
 ## Code links
 

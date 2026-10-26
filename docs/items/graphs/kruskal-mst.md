@@ -11,7 +11,9 @@ Minimum spanning tree via sorted edges and union-find.
 ## Complexity
 
 mstWeight: Time O(E log E); Space O(V).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(E log E) | Space O(V) |
 
 ## Code links
 

@@ -19,7 +19,9 @@ Find first occurrence of a pattern in text.
 ## Complexity
 
 search: Time O(n + m); Space O(m).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n + m) | Space O(m) |
 
 ## Code links
 

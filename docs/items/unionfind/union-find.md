@@ -17,7 +17,9 @@ Vertices `0 .. n-1`; out-of-range `find`/`union` raises.
 ## Complexity
 
 find/union/connected: Time O(α(n)) amortized; Space O(n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(α(n) | Space O(n) |
 
 ## Code links
 

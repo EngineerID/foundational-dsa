@@ -14,7 +14,9 @@ Linear ordering of a DAG respecting all edges.
 ## Complexity
 
 sort: Time O(V+E); Space O(V).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(V+E) | Space O(V) |
 
 ## Code links
 

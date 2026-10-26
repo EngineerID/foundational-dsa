@@ -17,7 +17,9 @@ Stable sort for non-negative integers in bounded range.
 ## Complexity
 
 sort/sortByDigit: Time O(n + k); Space O(k).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n + k) | Space O(k) |
 
 ## Code links
 

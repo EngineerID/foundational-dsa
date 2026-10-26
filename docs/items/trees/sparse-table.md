@@ -11,7 +11,9 @@ Static range minimum queries on an array.
 ## Complexity
 
 query: Time O(1); Space O(n log n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(1) | Space O(n log n) |
 
 ## Code links
 

@@ -14,7 +14,9 @@ Levenshtein edit distance between two strings.
 ## Complexity
 
 distance: Time O(nm); Space O(min(n,m)).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(nm) | Space O(min(n,m) |
 
 ## Code links
 

@@ -14,7 +14,9 @@ All-pairs shortest paths; accepts negative edges when no negative cycles.
 ## Complexity
 
 allPairs: Time O(V³); Space O(V²).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(V³) | Space O(V²) |
 
 ## Code links
 

@@ -11,7 +11,9 @@ Lowest common ancestor on a rooted tree.
 ## Complexity
 
 query: Time O(log n); Space O(n log n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(log n) | Space O(n log n) |
 
 ## Code links
 

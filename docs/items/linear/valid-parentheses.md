@@ -11,7 +11,9 @@ Check balanced nesting of ()[]{} brackets.
 ## Complexity
 
 isValidParentheses: Time O(n); Space O(n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n) | Space O(n) |
 
 ## Code links
 

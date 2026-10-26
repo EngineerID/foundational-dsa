@@ -14,7 +14,9 @@ Deleted slots are **tombstoned**; load factor capped before resize.
 ## Complexity
 
 put/get/remove: Time O(1) average; Space O(n) slots.
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(1) | Space O(n) |
 
 ## Code links
 

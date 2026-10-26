@@ -11,7 +11,9 @@ Strongly connected components via two-pass DFS.
 ## Complexity
 
 stronglyConnectedComponents: Time O(V+E); Space O(V).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(V+E) | Space O(V) |
 
 ## Code links
 

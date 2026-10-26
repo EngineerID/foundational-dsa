@@ -11,7 +11,9 @@ Minimum spanning tree growing from a start vertex.
 ## Complexity
 
 mstWeight: Time O(E log V); Space O(V).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(E log V) | Space O(V) |
 
 ## Code links
 

@@ -11,7 +11,9 @@ Binary tree values grouped by level (heap-style array input).
 ## Complexity
 
 levelOrder: Time O(n); Space O(n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n) | Space O(n) |
 
 ## Code links
 

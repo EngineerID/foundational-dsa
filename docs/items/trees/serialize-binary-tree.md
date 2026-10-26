@@ -11,7 +11,9 @@ Encode and decode a binary tree in heap-style level order.
 ## Complexity
 
 serialize/deserialize: Time O(n); Space O(n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n) | Space O(n) |
 
 ## Code links
 

@@ -11,7 +11,9 @@ Sort an array in ascending order in place using a binary max-heap.
 ## Complexity
 
 sort: Time O(n log n); Space O(1).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n log n) | Space O(1) |
 
 ## Code links
 

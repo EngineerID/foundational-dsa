@@ -11,7 +11,9 @@ Topic: **searching** / `two-sum-ii`
 ## Complexity
 
 twoSumSorted: Time O(n); Space O(1).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n) | Space O(1) |
 
 ## Code links
 

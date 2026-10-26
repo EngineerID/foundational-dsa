@@ -11,7 +11,9 @@ Find all occurrences of multiple patterns in text.
 ## Complexity
 
 search: Time O(n+m+z); Space O(m).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n+m+z) | Space O(m) |
 
 ## Code links
 

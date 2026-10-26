@@ -11,7 +11,9 @@ Length of longest strictly increasing subsequence.
 ## Complexity
 
 length: Time O(n log n); Space O(n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n log n) | Space O(n) |
 
 ## Code links
 

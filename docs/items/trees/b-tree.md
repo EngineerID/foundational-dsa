@@ -11,7 +11,9 @@ Disk-oriented multi-way search tree with bounded node fanout.
 ## Complexity
 
 search/insert/delete: Time O(log_t n); Space O(n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(log_t n) | Space O(n) |
 
 ## Code links
 

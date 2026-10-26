@@ -11,7 +11,9 @@ Length of the longest substring with all distinct characters.
 ## Complexity
 
 lengthOfLongestSubstring: Time O(n); Space O(min(n, alphabet)).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n) | Space O(min(n, alphabet) |
 
 ## Code links
 

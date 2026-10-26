@@ -14,7 +14,9 @@ Array-based binary heap (min or max) with heapify operations.
 ## Complexity
 
 insert/extract/peek: Time O(log n); buildHeap O(n); Space O(n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(log n) | Space O(n) |
 
 ## Code links
 

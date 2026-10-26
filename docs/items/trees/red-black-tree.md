@@ -11,7 +11,9 @@ Balanced BST with red-black invariants.
 ## Complexity
 
 search/insert: Time O(log n); Space O(n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(log n) | Space O(n) |
 
 ## Code links
 

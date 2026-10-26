@@ -11,7 +11,9 @@ Store intervals and query overlaps with a point or interval.
 ## Complexity
 
 insert/query: Time O(log n + k) reported; Space O(n).
-
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(log n + k) | Space O(n) |
 
 ## Code links
 
