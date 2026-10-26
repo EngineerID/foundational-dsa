@@ -24,6 +24,7 @@ const REQUIRED_CASE_KEYS = {
   'top-k-frequent-elements-goldens.json': ['nums', 'k', 'expected'],
   'number-of-islands-goldens.json': ['grid', 'expected'],
   'course-schedule-goldens.json': ['numCourses', 'prerequisites', 'expected'],
+  'word-search-goldens.json': ['board', 'word', 'expected'],
   'reservoir-sampling-goldens.json': ['stream', 'k', 'seed', 'expected'],
   'treap-goldens.json': ['seed', 'inserts', 'searchResults'],
 };

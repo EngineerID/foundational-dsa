@@ -83,6 +83,7 @@ Trilingual tests for these scenarios: `WorkedInterviewExamplesTest`, `test_worke
 |------------------|----------|------|
 | BFS shortest path (unweighted) | `bfs` | `npm run demo -- bfs` |
 | Number of islands (grid components) | `number-of-islands` | `npm run demo -- number-of-islands` |
+| Word search on grid | `word-search` | `npm run demo -- word-search` |
 | DFS / cycle / components | `dfs` | `npm run demo -- dfs` |
 | Course schedule / topo order | `course-schedule`, `topological-sort` | `npm run demo -- course-schedule` |
 | Weighted SSSP, non-negative edges | `dijkstra` | `npm run demo -- dijkstra` |

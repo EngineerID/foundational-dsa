@@ -172,6 +172,13 @@ export const STATEFUL_GOLDENS = [
     java: 'java/src/test/java/com/dsa/examples/linear/SlidingWindowMaximumGoldensTest.java',
   },
   {
+    id: 'word-search',
+    json: 'word-search-goldens.json',
+    py: 'python/tests/graphs/test_word_search_goldens.py',
+    js: 'javascript/test/graphs/wordSearchGoldens.test.js',
+    java: 'java/src/test/java/com/dsa/examples/graphs/WordSearchGoldensTest.java',
+  },
+  {
     id: 'course-schedule',
     json: 'course-schedule-goldens.json',
     py: 'python/tests/graphs/test_course_schedule_goldens.py',

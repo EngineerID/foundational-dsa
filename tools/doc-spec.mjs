@@ -228,6 +228,12 @@ export const DOC_SPECS = {
     invariant: 'Edges stored from source to neighbors with weights.',
     complexity: 'addEdge/neighbors: Time O(1) amortized; Space O(V+E).',
   },
+  'word-search': {
+    purpose: 'Find a word in a grid using adjacent cells without reuse.',
+    technique: 'DFS backtracking',
+    invariant: 'Visited cells are marked for the current path only.',
+    complexity: 'wordSearch: Time O(rows·cols·4^L); Space O(L).',
+  },
   'course-schedule': {
     purpose: 'Can all courses be taken given prerequisite pairs?',
     technique: 'Kahn topological sort',

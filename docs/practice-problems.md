@@ -105,7 +105,7 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Statement:** Given a 2D board of letters and a word, return whether the word can be built from sequentially adjacent cells without reusing a cell.
 
-**Implementation:** `practice/word_search*`.
+**Implementation:** `practice/word_search*` (catalog [`word-search`](items/graphs/word-search.md): `npm run demo -- word-search`).
 
 ## 14. Kth largest element
 

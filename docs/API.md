@@ -745,6 +745,19 @@ Can all courses be taken given prerequisite pairs?
 **Operations:**
 - `canFinish` → Python `can_finish`, JS `canFinish`
 
+## word-search
+
+Find a word in a grid using adjacent cells without reuse.
+
+| Language | Module |
+|----------|--------|
+| Java | `WordSearch` |
+| Python | `word_search` |
+| JavaScript | `wordSearch` |
+
+**Operations:**
+- `wordSearch` → Python `word_search`, JS `wordSearch`
+
 ## dfs
 
 Depth-first traversal, cycle detection, and connectivity.

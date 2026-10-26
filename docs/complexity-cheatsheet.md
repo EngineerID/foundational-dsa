@@ -43,6 +43,7 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 | `prim-mst` | Time O(E log V) | Space O(V) | mstWeight: Time O(E log V); Space O(V). |
 | `tarjan-scc` | Time O(V+E) | Space O(V) | stronglyConnectedComponents: Time O(V+E); Space O(V). |
 | `topological-sort` | Time O(V+E) | Space O(V) | sort: Time O(V+E); Space O(V). |
+| `word-search` | Time O(rows·cols·4^L) | Space O(L) | wordSearch: Time O(rows·cols·4^L); Space O(L). |
 
 ## hashing
 
@@ -137,5 +138,5 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 |----------|------|-------|----------|
 | `union-find` | Time O(α(n) | Space O(n) | find/union/connected: Time O(α(n)) amortized; Space O(n). |
 
-**Topics:** 83
+**Topics:** 84
 

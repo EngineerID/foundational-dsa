@@ -29,6 +29,7 @@ const { Graph } = require('../../src/graphs/graph');
 const { traverseRecursive, traverseIterative } = require('../../src/graphs/dfs');
 const { kahn } = require('../../src/graphs/topologicalSort');
 const { canFinish } = require('../../src/graphs/courseSchedule');
+const { wordSearch } = require('../../src/graphs/wordSearch');
 const { shortestPaths: dijkstra } = require('../../src/graphs/dijkstra');
 const { shortestPaths: bellmanFord } = require('../../src/graphs/bellmanFord');
 const { allPairsShortestPaths } = require('../../src/graphs/floydWarshall');
@@ -221,6 +222,7 @@ describe('catalog item edges', () => {
     expect(topKFrequent([1, 1, 2], 2)).toEqual([1, 2]);
     expect(numIslands([['1']])).toBe(1);
     expect(canFinish(2, [[1, 0]])).toBe(true);
+    expect(wordSearch([['A']], 'A')).toBe(true);
   });
 
   test('graph algorithms', () => {

@@ -268,6 +268,12 @@ export const API_MANIFEST = {
     python: ['can_finish'],
     javascript: ['canFinish'],
   },
+  'word-search': {
+    type: 'static',
+    java: ['wordSearch'],
+    python: ['word_search'],
+    javascript: ['wordSearch'],
+  },
   dfs: {
     type: 'static',
     java: ['traverseRecursive', 'traverseIterative'],

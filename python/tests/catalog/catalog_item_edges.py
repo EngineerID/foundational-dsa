@@ -36,6 +36,7 @@ from dsa.graphs import (
     tarjan_scc,
     course_schedule,
     topological_sort,
+    word_search,
 )
 from dsa.hashing import bloom_filter, open_addressing, separate_chaining
 from dsa.heaps import meeting_rooms_ii, priority_queue, top_k_frequent_elements
@@ -264,6 +265,7 @@ def test_new_trees_strings_dp_edge_themes():
     assert top_k_frequent_elements.top_k_frequent([1, 1, 2], 2) == [1, 2]
     assert number_of_islands.num_islands([["1"]]) == 1
     assert course_schedule.can_finish(2, [[1, 0]]) is True
+    assert word_search.word_search([["A"]], "A") is True
 
 
 def test_graph_algorithms_edge_themes():

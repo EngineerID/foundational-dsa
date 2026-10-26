@@ -58,6 +58,7 @@ const ALIASES = {
   'top-k-frequent-elements': ['TopKFrequentElements', 'top_k_frequent_elements', 'topKFrequentElements'],
   'number-of-islands': ['NumberOfIslands', 'number_of_islands', 'numberOfIslands'],
   'course-schedule': ['CourseSchedule', 'course_schedule', 'courseSchedule'],
+  'word-search': ['WordSearch', 'word_search', 'wordSearch'],
   'longest-substring-without-repeating': [
     'LongestSubstringWithoutRepeating',
     'longest_substring_without_repeating',

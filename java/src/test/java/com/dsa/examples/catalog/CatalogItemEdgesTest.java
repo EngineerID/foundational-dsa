@@ -217,6 +217,7 @@ class CatalogItemEdgesTest {
         assertEquals(java.util.List.of(1, 2), TopKFrequentElements.topKFrequent(new int[] {1, 1, 2}, 2));
         assertEquals(1, NumberOfIslands.numIslands(new char[][] {{'1'}}));
         assertTrue(CourseSchedule.canFinish(2, new int[][] {{1, 0}}));
+        assertTrue(WordSearch.wordSearch(new char[][] {{'A'}}, "A"));
     }
 
     @Test
