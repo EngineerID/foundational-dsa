@@ -129,6 +129,7 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 | `order-statistic-tree` | Time O(log n) | Space O(n) | rank/select/insert/delete: Time O(log n); Space O(n). |
 | `red-black-tree` | Time O(log n) | Space O(n) | search/insert: Time O(log n); Space O(n). |
 | `segment-tree` | Time O(log n) | Space O(n) | update/rangeSum: Time O(log n); Space O(n). |
+| `serialize-binary-tree` | Time O(n) | Space O(n) | serialize/deserialize: Time O(n); Space O(n). |
 | `sparse-table` | Time O(1) | Space O(n log n) | query: Time O(1); Space O(n log n). |
 | `treap` | Time O(log n) | Space O(n) | search/insert: Time O(log n); Space O(n). |
 | `tree-traversals` | Time O(n) | Space O(h) | Each traversal: Time O(n); Space O(h) stack or O(w) queue. |
@@ -140,5 +141,5 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 |----------|------|-------|----------|
 | `union-find` | Time O(α(n) | Space O(n) | find/union/connected: Time O(α(n)) amortized; Space O(n). |
 
-**Topics:** 86
+**Topics:** 87
 

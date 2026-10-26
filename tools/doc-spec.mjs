@@ -168,6 +168,12 @@ export const DOC_SPECS = {
     invariant: 'Each queue layer is one tree level.',
     complexity: 'levelOrder: Time O(n); Space O(n).',
   },
+  'serialize-binary-tree': {
+    purpose: 'Encode and decode a binary tree in heap-style level order.',
+    technique: 'BFS level-order with comma-separated tokens',
+    invariant: 'Trailing null tokens trimmed; round-trip restores the level array.',
+    complexity: 'serialize/deserialize: Time O(n); Space O(n).',
+  },
   'tree-traversals': {
     purpose: 'In-order, pre-order, post-order, and level-order tree walks.',
     technique: 'DFS and BFS traversals',

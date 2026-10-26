@@ -18,6 +18,7 @@ const { topKFrequent } = require('../../src/heaps/topKFrequentElements');
 const { BST } = require('../../src/trees/bst');
 const { inOrderRecursive } = require('../../src/trees/treeTraversals');
 const { levelOrder } = require('../../src/trees/levelOrderTraversal');
+const { deserialize, serialize } = require('../../src/trees/serializeBinaryTree');
 const { AVLTree } = require('../../src/trees/avlTree');
 const { OrderStatisticTree } = require('../../src/trees/orderStatisticTree');
 const { IntervalTree, Interval } = require('../../src/trees/intervalTree');
@@ -227,6 +228,7 @@ describe('catalog item edges', () => {
     expect(wordSearch([['A']], 'A')).toBe(true);
     expect(levelOrder([1])).toEqual([[1]]);
     expect(networkDelay(4, [[1, 0, 1], [1, 2, 1], [2, 3, 1]], 1)).toBe(2);
+    expect(deserialize(serialize([1]))).toEqual([1]);
   });
 
   test('graph algorithms', () => {

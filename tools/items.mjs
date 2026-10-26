@@ -28,6 +28,13 @@ export const ITEMS = [
   { topic: 'trees', id: 'bst', java: 'BST', py: 'bst', js: 'bst' },
   { topic: 'trees', id: 'tree-traversals', java: 'TreeTraversals', py: 'tree_traversals', js: 'treeTraversals' },
   { topic: 'trees', id: 'level-order-traversal', java: 'LevelOrderTraversal', py: 'level_order_traversal', js: 'levelOrderTraversal' },
+  {
+    topic: 'trees',
+    id: 'serialize-binary-tree',
+    java: 'SerializeBinaryTree',
+    py: 'serialize_binary_tree',
+    js: 'serializeBinaryTree',
+  },
   { topic: 'trees', id: 'avl-tree', java: 'AVLTree', py: 'avl_tree', js: 'avlTree' },
   { topic: 'trees', id: 'order-statistic-tree', java: 'OrderStatisticTree', py: 'order_statistic_tree', js: 'orderStatisticTree' },
   { topic: 'trees', id: 'interval-tree', java: 'IntervalTree', py: 'interval_tree', js: 'intervalTree' },

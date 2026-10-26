@@ -222,6 +222,9 @@ class CatalogItemEdgesTest {
         assertTrue(WordSearch.wordSearch(new char[][] {{'A'}}, "A"));
         assertEquals(List.of(List.of(1)), LevelOrderTraversal.levelOrder(new Integer[] {1}));
         assertEquals(2, NetworkDelay.networkDelay(4, new int[][] {{1, 0, 1}, {1, 2, 1}, {2, 3, 1}}, 1));
+        assertArrayEquals(
+                new Integer[] {1},
+                SerializeBinaryTree.deserialize(SerializeBinaryTree.serialize(new Integer[] {1})));
     }
 
     @Test

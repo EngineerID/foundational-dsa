@@ -196,6 +196,12 @@ export const API_MANIFEST = {
     python: ['level_order'],
     javascript: ['levelOrder'],
   },
+  'serialize-binary-tree': {
+    type: 'static',
+    java: ['serialize', 'deserialize'],
+    python: ['serialize', 'deserialize'],
+    javascript: ['serialize', 'deserialize'],
+  },
   'avl-tree': {
     type: 'instance',
     java: ['insert', 'delete'],

@@ -421,6 +421,20 @@ Binary tree values grouped by level (heap-style array input).
 **Operations:**
 - `levelOrder` → Python `level_order`, JS `levelOrder`
 
+## serialize-binary-tree
+
+Encode and decode a binary tree in heap-style level order.
+
+| Language | Module |
+|----------|--------|
+| Java | `SerializeBinaryTree` |
+| Python | `serialize_binary_tree` |
+| JavaScript | `serializeBinaryTree` |
+
+**Operations:**
+- `serialize` → Python `serialize`, JS `serialize`
+- `deserialize` → Python `deserialize`, JS `deserialize`
+
 ## avl-tree
 
 Self-balancing BST with height-balance after insert/delete.

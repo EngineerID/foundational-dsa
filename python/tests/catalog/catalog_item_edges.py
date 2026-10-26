@@ -74,6 +74,7 @@ from dsa.trees import (
     sparse_table,
     treap,
     level_order_traversal,
+    serialize_binary_tree,
     tree_traversals,
     trie,
 )
@@ -270,6 +271,7 @@ def test_new_trees_strings_dp_edge_themes():
     assert word_search.word_search([["A"]], "A") is True
     assert level_order_traversal.level_order([1]) == [[1]]
     assert network_delay.network_delay(4, [[1, 0, 1], [1, 2, 1], [2, 3, 1]], 1) == 2
+    assert serialize_binary_tree.deserialize(serialize_binary_tree.serialize([1])) == [1]
 
 
 def test_graph_algorithms_edge_themes():

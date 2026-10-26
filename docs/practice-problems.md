@@ -21,7 +21,7 @@ Twenty interview-style problems with reference solutions in Java, Python, and Ja
 | 15 | [MST (Kruskal)](#15-minimum-spanning-tree-kruskal) | Min total weight | `kruskal-mst`, `union-find` |
 | 16 | [Trapping rain water](#16-trapping-rain-water) | Two pointers, prefix max | two pointers |
 | 17 | [Edit distance](#17-edit-distance) | String transform, DP | `edit-distance` |
-| 18 | [Serialize binary tree](#18-serialize-and-deserialize-binary-tree) | Tree encoding | `tree-traversals`, BFS |
+| 18 | [Serialize binary tree](#18-serialize-and-deserialize-binary-tree) | Tree encoding | `serialize-binary-tree` |
 | 19 | [Network delay time](#19-network-delay-time) | Weighted graph, farthest reach | `dijkstra` |
 | 20 | [Sliding window maximum](#20-sliding-window-maximum) | Window max, deque | `sliding-window-maximum` |
 
@@ -117,7 +117,7 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Statement:** Given `n` vertices and undirected weighted edges `[u, v, w]`, return the total weight of the minimum spanning tree (assume the graph is connected).
 
-**Implementation:** `practice/mst_kruskal*` — catalog [`kruskal-mst`](items/graphs/kruskal-mst.md) + [`union-find`](items/graphs/union-find.md): `npm run demo -- kruskal-mst`).
+**Implementation:** `practice/mst_kruskal*` — catalog [`kruskal-mst`](items/graphs/kruskal-mst.md) + [`union-find`](items/unionfind/union-find.md): `npm run demo -- kruskal-mst`).
 
 ## 16. Trapping rain water
 
@@ -135,7 +135,7 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Statement:** Encode a binary tree given in heap-style level order (`null` = missing child) into a compact string and decode back to the same level-order shape (trim trailing nulls).
 
-**Implementation:** `practice/tree_codec*` / `treeCodec*`.
+**Implementation:** `practice/tree_codec*` / `treeCodec*` (catalog [`serialize-binary-tree`](items/trees/serialize-binary-tree.md): `npm run demo -- serialize-binary-tree`).
 
 ## 19. Network delay time
 
