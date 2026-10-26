@@ -2,6 +2,7 @@
 
 Per-language public symbols are defined in `tools/api-manifest.mjs` (source of truth).
 Null/empty: arrays may be `null` (Java/JS) or `None` (Python); sorts no-op; searches return `-1` or empty.
+Weighted-graph unreachable distances use sentinel **536870911** (`GRAPH_UNREACHABLE` in `tools/graph-sentinel.mjs`). Unweighted **BFS** uses **`-1`**.
 
 ## linear-search
 
