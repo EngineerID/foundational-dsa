@@ -51,6 +51,11 @@ const ALIASES = {
   'edit-distance': ['EditDistance', 'edit_distance', 'editDistance'],
   'coin-change': ['CoinChange', 'coin_change', 'coinChange'],
   'maximum-subarray': ['MaxSubarray', 'max_subarray', 'maxSubarray'],
+  'longest-substring-without-repeating': [
+    'LongestSubstringWithoutRepeating',
+    'longest_substring_without_repeating',
+    'longestSubstringWithoutRepeating',
+  ],
   'a-star': ['AStar', 'a_star', 'aStar'],
   'tarjan-scc': ['TarjanSCC', 'tarjan_scc', 'tarjanScc'],
   kosaraju: ['Kosaraju', 'kosaraju', 'kosaraju'],

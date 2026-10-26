@@ -298,6 +298,12 @@ export const API_MANIFEST = {
     python: ['search'],
     javascript: ['search'],
   },
+  'longest-substring-without-repeating': {
+    type: 'static',
+    java: ['lengthOfLongestSubstring'],
+    python: ['length_of_longest_substring'],
+    javascript: ['lengthOfLongestSubstring'],
+  },
   lis: {
     type: 'static',
     java: ['length'],

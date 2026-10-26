@@ -503,6 +503,13 @@ export const STATEFUL_GOLDENS = [
     java: 'java/src/test/java/com/dsa/examples/strings/AhoCorasickGoldensTest.java',
   },
   {
+    id: 'longest-substring-without-repeating',
+    json: 'longest-substring-without-repeating-goldens.json',
+    py: 'python/tests/strings/test_longest_substring_without_repeating_goldens.py',
+    js: 'javascript/test/strings/longestSubstringWithoutRepeatingGoldens.test.js',
+    java: 'java/src/test/java/com/dsa/examples/strings/LongestSubstringWithoutRepeatingGoldensTest.java',
+  },
+  {
     id: 'maximum-subarray',
     json: 'maximum-subarray-goldens.json',
     py: 'python/tests/dp/test_max_subarray_goldens.py',

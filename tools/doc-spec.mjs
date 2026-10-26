@@ -276,6 +276,12 @@ export const DOC_SPECS = {
     invariant: 'Hash collision resolved by direct compare.',
     complexity: 'search: Time O(n + m) average; Space O(1).',
   },
+  'longest-substring-without-repeating': {
+    purpose: 'Length of the longest substring with all distinct characters.',
+    technique: 'Sliding window with last-seen index',
+    invariant: 'Window [start, i] has all distinct characters.',
+    complexity: 'lengthOfLongestSubstring: Time O(n); Space O(min(n, alphabet)).',
+  },
   lis: {
     purpose: 'Length of longest strictly increasing subsequence.',
     technique: 'Patience sorting / tails DP',

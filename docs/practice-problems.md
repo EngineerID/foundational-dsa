@@ -75,7 +75,7 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Statement:** Given a string, return the length of the longest substring with all distinct characters.
 
-**Implementation:** `practice/longest_substring*` — sliding window with last-seen index.
+**Implementation:** `practice/longest_substring*` (catalog [`longest-substring-without-repeating`](items/strings/longest-substring-without-repeating.md): `npm run demo -- longest-substring-without-repeating`).
 
 ## 9. Coin change
 

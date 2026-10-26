@@ -98,6 +98,7 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 |----------|------|-------|----------|
 | `aho-corasick` | Time O(n+m+z) | Space O(m) | search: Time O(n+m+z); Space O(m). |
 | `kmp` | Time O(n + m) | Space O(m) | search: Time O(n + m); Space O(m). |
+| `longest-substring-without-repeating` | Time O(n) | Space O(min(n, alphabet) | lengthOfLongestSubstring: Time O(n); Space O(min(n, alphabet)). |
 | `manacher` | Time O(n) | Space O(n) | longestPalindromeLength: Time O(n); Space O(n). |
 | `rabin-karp` | Time O(n + m) | Space O(1) | search: Time O(n + m) average; Space O(1). |
 | `suffix-array` | Time O(n log n) | Space O(n) | build: Time O(n log n); Space O(n). |
@@ -127,5 +128,5 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 |----------|------|-------|----------|
 | `union-find` | Time O(α(n) | Space O(n) | find/union/connected: Time O(α(n)) amortized; Space O(n). |
 
-**Topics:** 73
+**Topics:** 74
 

@@ -14,6 +14,7 @@ const REQUIRED_CASE_KEYS = {
   'binary-search-goldens.json': ['arr', 'key', 'expected'],
   'binary-search-boundary-goldens.json': ['arr', 'key', 'first', 'last'],
   'maximum-subarray-goldens.json': ['nums', 'expected'],
+  'longest-substring-without-repeating-goldens.json': ['s', 'expected'],
   'reservoir-sampling-goldens.json': ['stream', 'k', 'seed', 'expected'],
   'treap-goldens.json': ['seed', 'inserts', 'searchResults'],
 };

@@ -34,6 +34,7 @@ const { SegmentTree } = require('../../src/trees/segmentTree');
 const { FenwickTree } = require('../../src/trees/fenwickTree');
 const { search: zSearch } = require('../../src/strings/zAlgorithm');
 const { search: rkSearch } = require('../../src/strings/rabinKarp');
+const { lengthOfLongestSubstring } = require('../../src/strings/longestSubstringWithoutRepeating');
 const { length: lisLen } = require('../../src/dp/lis');
 const { length: lcsLen } = require('../../src/dp/lcs');
 const { maxValue: knapVal } = require('../../src/dp/knapsack');
@@ -195,6 +196,7 @@ describe('catalog item edges', () => {
     expect(ft.rangeSum(0, 1)).toBe(3);
     expect(zSearch('abc', '')).toBe(0);
     expect(rkSearch('abc', 'b')).toBe(1);
+    expect(lengthOfLongestSubstring('abc')).toBe(3);
     expect(lisLen([1, 2, 3])).toBe(3);
     expect(lcsLen('ab', 'a')).toBe(1);
     expect(knapVal([1], [5], 1)).toBe(5);

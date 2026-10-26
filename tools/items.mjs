@@ -31,6 +31,13 @@ export const ITEMS = [
   { topic: 'trees', id: 'fenwick-tree', java: 'FenwickTree', py: 'fenwick_tree', js: 'fenwickTree' },
   { topic: 'strings', id: 'z-algorithm', java: 'ZAlgorithm', py: 'z_algorithm', js: 'zAlgorithm' },
   { topic: 'strings', id: 'rabin-karp', java: 'RabinKarp', py: 'rabin_karp', js: 'rabinKarp' },
+  {
+    topic: 'strings',
+    id: 'longest-substring-without-repeating',
+    java: 'LongestSubstringWithoutRepeating',
+    py: 'longest_substring_without_repeating',
+    js: 'longestSubstringWithoutRepeating',
+  },
   { topic: 'dp', id: 'lis', java: 'LIS', py: 'lis', js: 'lis' },
   { topic: 'dp', id: 'lcs', java: 'LCS', py: 'lcs', js: 'lcs' },
   { topic: 'dp', id: 'knapsack', java: 'Knapsack01', py: 'knapsack', js: 'knapsack' },

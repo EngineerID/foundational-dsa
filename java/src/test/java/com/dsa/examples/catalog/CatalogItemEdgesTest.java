@@ -22,6 +22,7 @@ import com.dsa.examples.strings.AhoCorasick;
 import com.dsa.examples.strings.Manacher;
 import com.dsa.examples.strings.SuffixArray;
 import com.dsa.examples.searching.BinarySearch;
+import com.dsa.examples.strings.LongestSubstringWithoutRepeating;
 import com.dsa.examples.strings.RabinKarp;
 import com.dsa.examples.strings.ZAlgorithm;
 import com.dsa.examples.sorting.*;
@@ -196,6 +197,7 @@ class CatalogItemEdgesTest {
         assertEquals(3, ft.rangeSum(0, 1));
         assertEquals(0, ZAlgorithm.search("abc", ""));
         assertEquals(1, RabinKarp.search("abc", "b"));
+        assertEquals(3, LongestSubstringWithoutRepeating.lengthOfLongestSubstring("abc"));
         assertEquals(3, LIS.length(new int[] {1, 2, 3}));
         assertEquals(1, LCS.length("ab", "a"));
         assertEquals(5, Knapsack01.maxValue(new int[] {1}, new int[] {5}, 1));

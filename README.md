@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](./LICENSE)
 [![Sponsor](https://img.shields.io/badge/Sponsor-EngineerID-ea4aaa?logo=github-sponsors&logoColor=white)](https://github.com/sponsors/EngineerID)
 
-**foundational-dsa** is a trilingual reference library: **73 classic data structures and algorithms**, each with matching implementations in **Java**, **Python**, and **JavaScript** (219 implementations in total). Every topic ships with tests, a short doc page under [`docs/items/`](docs/items/), and entries in [`docs/API.md`](docs/API.md) so you can compare APIs and idioms across languages.
+**foundational-dsa** is a trilingual reference library: **74 classic data structures and algorithms**, each with matching implementations in **Java**, **Python**, and **JavaScript** (222 implementations in total). Every topic ships with tests, a short doc page under [`docs/items/`](docs/items/), and entries in [`docs/API.md`](docs/API.md) so you can compare APIs and idioms across languages.
 
 Use it to study implementations side by side, prepare for interviews, or teach DSA with runnable code rather than pseudocode. Step-by-step walkthroughs for core algorithms are in [`docs/worked-examples.md`](docs/worked-examples.md). Map common interview prompts to topic ids in [`docs/interview-prep.md`](docs/interview-prep.md).
 
@@ -17,7 +17,7 @@ Use it to study implementations side by side, prepare for interviews, or teach D
 |------|--------|
 | 1 | Clone the repo and run `bash .cursor/install.sh` once (Node 20+, Python 3.10+, JDK 17+). |
 | 2 | Run `npm test` from the root — docs link scan, complexity checks, then Java, Python, JavaScript, parity, and matrix. |
-| 3 | Explore a topic: [COVERAGE.md](COVERAGE.md) lists all 73 ids; `npm run demo -- <id>` runs that topic’s tests in all three languages. |
+| 3 | Explore a topic: [COVERAGE.md](COVERAGE.md) lists all 74 ids; `npm run demo -- <id>` runs that topic’s tests in all three languages. |
 | 4 | Interview study: [docs/interview-prep.md](docs/interview-prep.md) maps prompts to ids; [docs/worked-examples.md](docs/worked-examples.md) has step tables; [docs/practice-problems.md](docs/practice-problems.md) has 20 trilingual problems. |
 | 5 | First PR: read [CONTRIBUTING.md](CONTRIBUTING.md) (scope, `npm test` vs `npm run test:ci`, issue templates). |
 | 6 | Security reports: [SECURITY.md](SECURITY.md). |
@@ -121,13 +121,13 @@ After adding a topic, regenerate the matrix with `npm run matrix` (or `make matr
 
 Continuous integration uses a [CI-minutes policy](docs/ci.md): push to `main` and pull requests (draft PRs skip heavy work until marked ready). See [`.github/workflows/ci.yml`](.github/workflows/ci.yml) and [docs/running-ci-locally.md](docs/running-ci-locally.md).
 
-## Topics (73)
+## Topics (74)
 
 | Area | Topics |
 |------|--------|
 | Searching | linear-search, binary-search, quick-select, reservoir-sampling |
 | Sorting | bubble-sort, selection-sort, insertion-sort, merge-sort, quick-sort, heapsort, counting-sort, radix-sort |
-| Strings | kmp, z-algorithm, rabin-karp, manacher, suffix-array, aho-corasick |
+| Strings | kmp, z-algorithm, rabin-karp, longest-substring-without-repeating, manacher, suffix-array, aho-corasick |
 | Dynamic programming | lis, lcs, knapsack, edit-distance, coin-change, maximum-subarray, matrix-chain, longest-palindromic-subsequence, partition-equal-subset, rod-cutting, tsp-bitmask |
 | Linear | dynamic-array, singly-linked-list, doubly-linked-list, stack, queue, deque, sliding-window-maximum, lru-cache |
 | Heaps | binary-heap, priority-queue |
@@ -303,6 +303,7 @@ Every catalog topic links to its doc page under [docs/items/](docs/items/). Prac
 
 - [aho-corasick](docs/items/strings/aho-corasick.md)
 - [kmp](docs/items/strings/kmp.md)
+- [longest-substring-without-repeating](docs/items/strings/longest-substring-without-repeating.md)
 - [manacher](docs/items/strings/manacher.md)
 - [rabin-karp](docs/items/strings/rabin-karp.md)
 - [suffix-array](docs/items/strings/suffix-array.md)
@@ -351,7 +352,7 @@ Every catalog topic links to its doc page under [docs/items/](docs/items/). Prac
 - [Network delay time](docs/practice-problems.md#19-network-delay-time)
 - [Sliding window maximum](docs/practice-problems.md#20-sliding-window-maximum)
 
-See also the generated [complexity cheat sheet](docs/complexity-cheatsheet.md) for all **73** catalog topics.
+See also the generated [complexity cheat sheet](docs/complexity-cheatsheet.md) for all **74** catalog topics.
 
 ## Sponsor
 

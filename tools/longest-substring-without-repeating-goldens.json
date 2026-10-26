@@ -1,0 +1,26 @@
+[
+  {
+    "s": "abcabcbb",
+    "expected": 3
+  },
+  {
+    "s": "bbbbb",
+    "expected": 1
+  },
+  {
+    "s": "pwwkew",
+    "expected": 3
+  },
+  {
+    "s": "",
+    "expected": 0
+  },
+  {
+    "s": "a",
+    "expected": 1
+  },
+  {
+    "s": "abba",
+    "expected": 2
+  }
+]

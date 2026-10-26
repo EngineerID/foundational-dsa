@@ -47,7 +47,14 @@ from dsa.linear import (
 )
 from dsa.searching import binary_search, reservoir_sampling
 from dsa.sorting import heap_sort, insertion_sort, radix_sort, selection_sort
-from dsa.strings import aho_corasick, manacher, rabin_karp, suffix_array, z_algorithm
+from dsa.strings import (
+    aho_corasick,
+    longest_substring_without_repeating,
+    manacher,
+    rabin_karp,
+    suffix_array,
+    z_algorithm,
+)
 from dsa.trees import (
     avl_tree,
     b_tree,
@@ -237,6 +244,7 @@ def test_new_trees_strings_dp_edge_themes():
     assert ft.range_sum(0, 1) == 3
     assert z_algorithm.search("abc", "") == 0
     assert rabin_karp.search("abc", "b") == 1
+    assert longest_substring_without_repeating.length_of_longest_substring("abc") == 3
     assert lis.length([1, 2, 3]) == 3
     assert lcs.length("ab", "a") == 1
     assert knapsack.max_value([1], [5], 1) == 5

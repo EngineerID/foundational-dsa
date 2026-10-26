@@ -102,7 +102,12 @@ export function themesInCases(cases) {
   ) {
     found.add('single');
   }
-  if (/(\d+),\s*\1/.test(blob) || /"2"\s*,\s*"2"/.test(blob) || /"3"\s*,\s*"3"/.test(blob)) {
+  if (
+    /(\d+),\s*\1/.test(blob) ||
+    /"2"\s*,\s*"2"/.test(blob) ||
+    /"3"\s*,\s*"3"/.test(blob) ||
+    /"(text|pattern|s)"\s*:\s*"[^"]*(\w)\2[^"]*"/.test(blob)
+  ) {
     found.add('duplicate');
   }
   if (

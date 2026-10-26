@@ -471,6 +471,19 @@ Substring search via rolling hash.
 **Operations:**
 - `search` → Python `search`, JS `search`
 
+## longest-substring-without-repeating
+
+Length of the longest substring with all distinct characters.
+
+| Language | Module |
+|----------|--------|
+| Java | `LongestSubstringWithoutRepeating` |
+| Python | `longest_substring_without_repeating` |
+| JavaScript | `longestSubstringWithoutRepeating` |
+
+**Operations:**
+- `lengthOfLongestSubstring` → Python `length_of_longest_substring`, JS `lengthOfLongestSubstring`
+
 ## lis
 
 Length of longest strictly increasing subsequence.

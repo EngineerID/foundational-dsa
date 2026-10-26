@@ -47,6 +47,7 @@ Trilingual tests for these scenarios: `WorkedInterviewExamplesTest`, `test_worke
 | Substring search (linear) | `kmp` | `npm run demo -- kmp` |
 | Z-box / prefix function variant | `z-algorithm` | `npm run demo -- z-algorithm` |
 | Rolling hash substring | `rabin-karp` | `npm run demo -- rabin-karp` |
+| Longest substring without repeating | `longest-substring-without-repeating` | `npm run demo -- longest-substring-without-repeating` |
 | Longest palindromic substring | `manacher` | `npm run demo -- manacher` |
 | Multi-pattern dictionary | `aho-corasick` | `npm run demo -- aho-corasick` |
 | Prefix dictionary / autocomplete | `trie` | `npm run demo -- trie` |
