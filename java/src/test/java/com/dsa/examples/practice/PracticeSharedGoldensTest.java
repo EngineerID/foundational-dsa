@@ -1,5 +1,6 @@
 package com.dsa.examples.practice;
 
+import com.dsa.examples.graphs.BellmanFord;
 import com.dsa.examples.support.GoldenIntArrays;
 import com.dsa.examples.support.GoldenJson;
 import org.junit.jupiter.api.Test;
@@ -290,6 +291,146 @@ class PracticeSharedGoldensTest {
             assertArrayEquals(
                     GoldenIntArrays.parse(c.get("sorted")),
                     HeapSortPractice.sort(GoldenIntArrays.parse(c.get("input"))));
+        }
+    }
+
+    @Test
+    void queuePracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("queue-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            QueuePractice q = new QueuePractice();
+            @SuppressWarnings("unchecked")
+            List<Number> enqueue = (List<Number>) c.get("enqueue");
+            for (Number n : enqueue) {
+                q.enqueue(n.intValue());
+            }
+            @SuppressWarnings("unchecked")
+            List<Number> dequeues = (List<Number>) c.get("dequeueValues");
+            for (Number expected : dequeues) {
+                assertEquals(expected.intValue(), q.dequeue());
+            }
+            Object peek = c.get("peek");
+            if (peek == null || Boolean.TRUE.equals(c.get("empty"))) {
+                assertTrue(q.isEmpty());
+                assertThrows(IllegalStateException.class, q::peek);
+            } else {
+                assertEquals(((Number) peek).intValue(), q.peek());
+            }
+        }
+    }
+
+    @Test
+    void dequePracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("deque-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            DequePractice dq = new DequePractice();
+            @SuppressWarnings("unchecked")
+            List<Number> addLast = (List<Number>) c.get("addLast");
+            @SuppressWarnings("unchecked")
+            List<Number> addFirst = (List<Number>) c.get("addFirst");
+            if (Boolean.TRUE.equals(c.get("empty")) && addLast.isEmpty() && addFirst.isEmpty()) {
+                assertTrue(dq.isEmpty());
+                continue;
+            }
+            for (Number n : addLast) {
+                dq.addLast(n.intValue());
+            }
+            for (Number n : addFirst) {
+                dq.addFirst(n.intValue());
+            }
+            Object removeFirst = c.get("removeFirst");
+            if (removeFirst != null) {
+                assertEquals(((Number) removeFirst).intValue(), dq.removeFirst());
+            }
+            Object removeLast = c.get("removeLast");
+            if (removeLast != null) {
+                assertEquals(((Number) removeLast).intValue(), dq.removeLast());
+            }
+            Object remaining = c.get("remainingValue");
+            if (remaining != null) {
+                assertEquals(((Number) remaining).intValue(), dq.removeFirst());
+            }
+            assertTrue(dq.isEmpty());
+        }
+    }
+
+    @Test
+    void countingSortPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("counting-sort-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            assertArrayEquals(
+                    GoldenIntArrays.parse(c.get("sorted")),
+                    CountingSortPractice.sort(GoldenIntArrays.parse(c.get("input"))));
+        }
+    }
+
+    @Test
+    void radixSortPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("radix-sort-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            assertArrayEquals(
+                    GoldenIntArrays.parse(c.get("sorted")),
+                    RadixSortPractice.sort(GoldenIntArrays.parse(c.get("input"))));
+        }
+    }
+
+    @Test
+    void rabinKarpPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("rabin-karp-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            assertEquals(
+                    ((Number) c.get("expected")).intValue(),
+                    RabinKarpPractice.firstIndex((String) c.get("text"), (String) c.get("pattern")));
+        }
+    }
+
+    @Test
+    void bellmanFordPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("bellman-ford-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            int n = ((Number) c.get("n")).intValue();
+            int source = ((Number) c.get("source")).intValue();
+            int[][] edges = parseWeightedEdges(c.get("edges"));
+            BellmanFord.Result result = BellmanFordPractice.shortestPaths(n, edges, source);
+            assertEquals(c.get("hasNegativeCycle"), result.hasNegativeCycle());
+            if (c.containsKey("distances")) {
+                @SuppressWarnings("unchecked")
+                List<Number> exp = (List<Number>) c.get("distances");
+                int[] expected = exp.stream().mapToInt(Number::intValue).toArray();
+                assertArrayEquals(expected, result.distances());
+            }
+        }
+    }
+
+    @Test
+    void segmentTreePracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("segment-tree-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            SegmentTreePractice st = new SegmentTreePractice(GoldenIntArrays.parse(c.get("initial")));
+            @SuppressWarnings("unchecked")
+            List<Map<String, Object>> rangeSum = (List<Map<String, Object>>) c.get("rangeSum");
+            for (Map<String, Object> q : rangeSum) {
+                int left = ((Number) q.get("left")).intValue();
+                int right = ((Number) q.get("right")).intValue();
+                assertEquals(((Number) q.get("sum")).intValue(), st.rangeSum(left, right));
+            }
+            @SuppressWarnings("unchecked")
+            Map<String, Object> update = (Map<String, Object>) c.get("update");
+            st.update(((Number) update.get("index")).intValue(), ((Number) update.get("value")).intValue());
+            @SuppressWarnings("unchecked")
+            List<Map<String, Object>> after = (List<Map<String, Object>>) c.get("rangeSumAfter");
+            for (Map<String, Object> q : after) {
+                int left = ((Number) q.get("left")).intValue();
+                int right = ((Number) q.get("right")).intValue();
+                assertEquals(((Number) q.get("sum")).intValue(), st.rangeSum(left, right));
+            }
         }
     }
 

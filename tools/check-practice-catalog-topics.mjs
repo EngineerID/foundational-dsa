@@ -45,6 +45,13 @@ export const PRACTICE_TOPIC_TARGET = [
   'prim-mst',
   'stack',
   'heapsort',
+  'queue',
+  'deque',
+  'counting-sort',
+  'radix-sort',
+  'rabin-karp',
+  'bellman-ford',
+  'segment-tree',
 ];
 
 const itemIds = new Set(ITEMS.map((i) => i.id));

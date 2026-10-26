@@ -1,5 +1,6 @@
 package com.dsa.examples.practice;
 
+import com.dsa.examples.graphs.BellmanFord;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -281,5 +282,56 @@ class PracticeProblemsTest {
     @Test
     void heapSortPractice() {
         assertArrayEquals(new int[] { 1, 2, 2, 5, 8 }, HeapSortPractice.sort(new int[] { 5, 2, 8, 1, 2 }));
+    }
+
+    @Test
+    void queuePractice() {
+        QueuePractice q = new QueuePractice();
+        q.enqueue(1);
+        q.enqueue(2);
+        assertEquals(1, q.dequeue());
+        assertEquals(2, q.peek());
+    }
+
+    @Test
+    void dequePractice() {
+        DequePractice dq = new DequePractice();
+        dq.addLast(1);
+        dq.addFirst(0);
+        assertEquals(0, dq.removeFirst());
+        assertEquals(1, dq.removeLast());
+        assertTrue(dq.isEmpty());
+    }
+
+    @Test
+    void countingSortPractice() {
+        assertArrayEquals(new int[] { 0, 1, 2, 2, 2, 2, 3, 4 }, CountingSortPractice.sort(new int[] { 4, 2, 0, 2, 1, 3, 2, 2 }));
+    }
+
+    @Test
+    void radixSortPractice() {
+        assertArrayEquals(new int[] { 2, 24, 45 }, RadixSortPractice.sort(new int[] { 45, 2, 24 }));
+    }
+
+    @Test
+    void rabinKarpPractice() {
+        assertEquals(0, RabinKarpPractice.firstIndex("ababcababa", "aba"));
+    }
+
+    @Test
+    void bellmanFordPractice() {
+        BellmanFord.Result r =
+                BellmanFordPractice.shortestPaths(
+                        3, new int[][] { { 0, 1, 1 }, { 1, 2, -2 } }, 0);
+        assertFalse(r.hasNegativeCycle());
+        assertArrayEquals(new int[] { 0, 1, -1 }, r.distances());
+    }
+
+    @Test
+    void segmentTreePractice() {
+        SegmentTreePractice st = new SegmentTreePractice(new int[] { 1, 3, 5, 7 });
+        assertEquals(9, st.rangeSum(0, 2));
+        st.update(1, 10);
+        assertEquals(11, st.rangeSum(0, 1));
     }
 }

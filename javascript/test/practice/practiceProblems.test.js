@@ -38,6 +38,13 @@ const { BstPractice } = require('../../src/practice/bstPractice');
 const { mstTotalWeight: primMstTotalWeight } = require('../../src/practice/primMstPractice');
 const { StackPractice } = require('../../src/practice/stackPractice');
 const { heapSort } = require('../../src/practice/heapsortPractice');
+const { QueuePractice } = require('../../src/practice/queuePractice');
+const { DequePractice } = require('../../src/practice/dequePractice');
+const { countingSort } = require('../../src/practice/countingSortPractice');
+const { radixSort } = require('../../src/practice/radixSortPractice');
+const { firstIndex: rabinFirstIndex } = require('../../src/practice/rabinKarpPractice');
+const { bellmanFordResult } = require('../../src/practice/bellmanFordPractice');
+const { SegmentTreePractice } = require('../../src/practice/segmentTreePractice');
 
 describe('practice problems', () => {
   test('two sum sorted', () => {
@@ -319,5 +326,54 @@ describe('practice problems', () => {
 
   test('heapsort practice', () => {
     expect(heapSort([5, 2, 8, 1, 2])).toEqual([1, 2, 2, 5, 8]);
+  });
+
+  test('queue practice', () => {
+    const q = new QueuePractice();
+    q.enqueue(1);
+    q.enqueue(2);
+    expect(q.dequeue()).toBe(1);
+    expect(q.peek()).toBe(2);
+  });
+
+  test('deque practice', () => {
+    const dq = new DequePractice();
+    dq.addLast(1);
+    dq.addFirst(0);
+    expect(dq.removeFirst()).toBe(0);
+    expect(dq.removeLast()).toBe(1);
+    expect(dq.isEmpty()).toBe(true);
+  });
+
+  test('counting sort practice', () => {
+    expect(countingSort([4, 2, 0, 2, 1, 3, 2, 2])).toEqual([0, 1, 2, 2, 2, 2, 3, 4]);
+  });
+
+  test('radix sort practice', () => {
+    expect(radixSort([45, 2, 24])).toEqual([2, 24, 45]);
+  });
+
+  test('Rabin-Karp practice', () => {
+    expect(rabinFirstIndex('ababcababa', 'aba')).toBe(0);
+  });
+
+  test('Bellman-Ford practice', () => {
+    const result = bellmanFordResult(
+      3,
+      [
+        [0, 1, 1],
+        [1, 2, -2],
+      ],
+      0,
+    );
+    expect(result.hasNegativeCycle).toBe(false);
+    expect(result.distances).toEqual([0, 1, -1]);
+  });
+
+  test('segment tree practice', () => {
+    const st = new SegmentTreePractice([1, 3, 5, 7]);
+    expect(st.rangeSum(0, 2)).toBe(9);
+    st.update(1, 10);
+    expect(st.rangeSum(0, 1)).toBe(11);
   });
 });

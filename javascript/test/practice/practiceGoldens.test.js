@@ -21,6 +21,13 @@ const { BstPractice } = require('../../src/practice/bstPractice');
 const { mstTotalWeight: primMstTotalWeight } = require('../../src/practice/primMstPractice');
 const { StackPractice } = require('../../src/practice/stackPractice');
 const { heapSort } = require('../../src/practice/heapsortPractice');
+const { QueuePractice } = require('../../src/practice/queuePractice');
+const { DequePractice } = require('../../src/practice/dequePractice');
+const { countingSort } = require('../../src/practice/countingSortPractice');
+const { radixSort } = require('../../src/practice/radixSortPractice');
+const { firstIndex: rabinFirstIndex } = require('../../src/practice/rabinKarpPractice');
+const { bellmanFordResult } = require('../../src/practice/bellmanFordPractice');
+const { SegmentTreePractice } = require('../../src/practice/segmentTreePractice');
 
 const tools = path.join(__dirname, '../../../tools');
 
@@ -181,6 +188,93 @@ describe('practice shared goldens', () => {
   test('heapsort practice', () => {
     for (const row of cases('heapsort-goldens.json')) {
       expect(heapSort(row.input)).toEqual(row.sorted);
+    }
+  });
+
+  test('queue practice', () => {
+    for (const row of cases('queue-goldens.json')) {
+      const q = new QueuePractice();
+      for (const v of row.enqueue ?? []) {
+        q.enqueue(v);
+      }
+      for (const expected of row.dequeueValues ?? []) {
+        expect(q.dequeue()).toBe(expected);
+      }
+      if (row.peek == null || row.empty) {
+        expect(q.isEmpty()).toBe(true);
+        expect(() => q.peek()).toThrow();
+      } else {
+        expect(q.peek()).toBe(row.peek);
+      }
+    }
+  });
+
+  test('deque practice', () => {
+    for (const row of cases('deque-goldens.json')) {
+      const dq = new DequePractice();
+      const addLast = row.addLast ?? [];
+      const addFirst = row.addFirst ?? [];
+      if (row.empty && addLast.length === 0 && addFirst.length === 0) {
+        expect(dq.isEmpty()).toBe(true);
+        continue;
+      }
+      for (const v of addLast) {
+        dq.addLast(v);
+      }
+      for (const v of addFirst) {
+        dq.addFirst(v);
+      }
+      if (row.removeFirst != null) {
+        expect(dq.removeFirst()).toBe(row.removeFirst);
+      }
+      if (row.removeLast != null) {
+        expect(dq.removeLast()).toBe(row.removeLast);
+      }
+      if (row.remainingValue != null) {
+        expect(dq.removeFirst()).toBe(row.remainingValue);
+      }
+      expect(dq.isEmpty()).toBe(true);
+    }
+  });
+
+  test('counting sort practice', () => {
+    for (const row of cases('counting-sort-goldens.json')) {
+      expect(countingSort(row.input)).toEqual(row.sorted);
+    }
+  });
+
+  test('radix sort practice', () => {
+    for (const row of cases('radix-sort-goldens.json')) {
+      expect(radixSort(row.input)).toEqual(row.sorted);
+    }
+  });
+
+  test('Rabin-Karp practice', () => {
+    for (const row of cases('rabin-karp-goldens.json')) {
+      expect(rabinFirstIndex(row.text, row.pattern)).toBe(row.expected);
+    }
+  });
+
+  test('Bellman-Ford practice', () => {
+    for (const row of cases('bellman-ford-goldens.json')) {
+      const result = bellmanFordResult(row.n, row.edges, row.source);
+      expect(result.hasNegativeCycle).toBe(row.hasNegativeCycle);
+      if (row.distances !== undefined) {
+        expect(result.distances).toEqual(row.distances);
+      }
+    }
+  });
+
+  test('segment tree practice', () => {
+    for (const row of cases('segment-tree-goldens.json')) {
+      const st = new SegmentTreePractice(row.initial);
+      for (const q of row.rangeSum ?? []) {
+        expect(st.rangeSum(q.left, q.right)).toBe(q.sum);
+      }
+      st.update(row.update.index, row.update.value);
+      for (const q of row.rangeSumAfter ?? []) {
+        expect(st.rangeSum(q.left, q.right)).toBe(q.sum);
+      }
     }
   });
 });

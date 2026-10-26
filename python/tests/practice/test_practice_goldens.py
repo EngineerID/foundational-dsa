@@ -23,6 +23,13 @@ from dsa.practice.bst_practice import BstPractice
 from dsa.practice.prim_mst_practice import mst_total_weight
 from dsa.practice.stack_practice import StackPractice
 from dsa.practice.heapsort_practice import sort_nums as heapsort_practice
+from dsa.practice.queue_practice import QueuePractice
+from dsa.practice.deque_practice import DequePractice
+from dsa.practice.counting_sort_practice import sort_nums as counting_sort_practice
+from dsa.practice.radix_sort_practice import sort_nums as radix_sort_practice
+from dsa.practice.rabin_karp_practice import first_index as rabin_first_index
+from dsa.practice.bellman_ford_practice import shortest_paths_result
+from dsa.practice.segment_tree_practice import SegmentTreePractice
 
 TOOLS = Path(__file__).resolve().parents[3] / "tools"
 
@@ -162,3 +169,74 @@ def test_stack_practice_goldens():
 def test_heapsort_practice_goldens():
     for row in _cases("heapsort-goldens.json"):
         assert heapsort_practice(row["input"]) == row["sorted"]
+
+
+def test_queue_practice_goldens():
+    for row in _cases("queue-goldens.json"):
+        q = QueuePractice()
+        for v in row.get("enqueue", []):
+            q.enqueue(v)
+        for expected in row.get("dequeueValues", []):
+            assert q.dequeue() == expected
+        peek = row.get("peek")
+        if peek is None or row.get("empty"):
+            assert q.is_empty()
+            with pytest.raises(RuntimeError):
+                q.peek()
+        else:
+            assert q.peek() == peek
+
+
+def test_deque_practice_goldens():
+    for row in _cases("deque-goldens.json"):
+        dq = DequePractice()
+        add_last = row.get("addLast", [])
+        add_first = row.get("addFirst", [])
+        if row.get("empty") and not add_last and not add_first:
+            assert dq.is_empty()
+            continue
+        for v in add_last:
+            dq.add_last(v)
+        for v in add_first:
+            dq.add_first(v)
+        if row.get("removeFirst") is not None:
+            assert dq.remove_first() == row["removeFirst"]
+        if row.get("removeLast") is not None:
+            assert dq.remove_last() == row["removeLast"]
+        if row.get("remainingValue") is not None:
+            assert dq.remove_first() == row["remainingValue"]
+        assert dq.is_empty()
+
+
+def test_counting_sort_practice_goldens():
+    for row in _cases("counting-sort-goldens.json"):
+        assert counting_sort_practice(row["input"]) == row["sorted"]
+
+
+def test_radix_sort_practice_goldens():
+    for row in _cases("radix-sort-goldens.json"):
+        assert radix_sort_practice(row["input"]) == row["sorted"]
+
+
+def test_rabin_karp_practice_goldens():
+    for row in _cases("rabin-karp-goldens.json"):
+        assert rabin_first_index(row["text"], row["pattern"]) == row["expected"]
+
+
+def test_bellman_ford_practice_goldens():
+    for row in _cases("bellman-ford-goldens.json"):
+        result = shortest_paths_result(row["n"], row["edges"], row["source"])
+        assert result.has_negative_cycle == row["hasNegativeCycle"]
+        if "distances" in row:
+            assert result.distances == row["distances"]
+
+
+def test_segment_tree_practice_goldens():
+    for row in _cases("segment-tree-goldens.json"):
+        st = SegmentTreePractice(row["initial"])
+        for q in row.get("rangeSum", []):
+            assert st.range_sum(q["left"], q["right"]) == q["sum"]
+        upd = row["update"]
+        st.update(upd["index"], upd["value"])
+        for q in row.get("rangeSumAfter", []):
+            assert st.range_sum(q["left"], q["right"]) == q["sum"]

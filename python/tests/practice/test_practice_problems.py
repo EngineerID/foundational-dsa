@@ -38,6 +38,13 @@ from dsa.practice.bst_practice import BstPractice
 from dsa.practice.prim_mst_practice import mst_total_weight as prim_mst_total_weight
 from dsa.practice.stack_practice import StackPractice
 from dsa.practice.heapsort_practice import sort_nums as heapsort_practice
+from dsa.practice.queue_practice import QueuePractice
+from dsa.practice.deque_practice import DequePractice
+from dsa.practice.counting_sort_practice import sort_nums as counting_sort_practice
+from dsa.practice.radix_sort_practice import sort_nums as radix_sort_practice
+from dsa.practice.rabin_karp_practice import first_index as rabin_first_index
+from dsa.practice.bellman_ford_practice import shortest_paths_result
+from dsa.practice.segment_tree_practice import SegmentTreePractice
 
 
 def test_two_sum_sorted():
@@ -237,3 +244,45 @@ def test_stack_practice():
 
 def test_heapsort_practice():
     assert heapsort_practice([5, 2, 8, 1, 2]) == [1, 2, 2, 5, 8]
+
+
+def test_queue_practice():
+    q = QueuePractice()
+    q.enqueue(1)
+    q.enqueue(2)
+    assert q.dequeue() == 1
+    assert q.peek() == 2
+
+
+def test_deque_practice():
+    dq = DequePractice()
+    dq.add_last(1)
+    dq.add_first(0)
+    assert dq.remove_first() == 0
+    assert dq.remove_last() == 1
+    assert dq.is_empty()
+
+
+def test_counting_sort_practice():
+    assert counting_sort_practice([4, 2, 0, 2, 1, 3, 2, 2]) == [0, 1, 2, 2, 2, 2, 3, 4]
+
+
+def test_radix_sort_practice():
+    assert radix_sort_practice([45, 2, 24]) == [2, 24, 45]
+
+
+def test_rabin_karp_practice():
+    assert rabin_first_index("ababcababa", "aba") == 0
+
+
+def test_bellman_ford_practice():
+    result = shortest_paths_result(3, [[0, 1, 1], [1, 2, -2]], 0)
+    assert not result.has_negative_cycle
+    assert result.distances == [0, 1, -1]
+
+
+def test_segment_tree_practice():
+    st = SegmentTreePractice([1, 3, 5, 7])
+    assert st.range_sum(0, 2) == 9
+    st.update(1, 10)
+    assert st.range_sum(0, 1) == 11
