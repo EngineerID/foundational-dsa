@@ -1,6 +1,6 @@
 # Worked examples
 
-Short, language-neutral walkthroughs for thirty-eight interview-heavy topics. Implementations live under `java/`, `python/dsa/`, and `javascript/src/` with the same behavior. For a broader interview map, see [interview-prep.md](interview-prep.md). Trilingual **catalog tests** mirror the step-table scenarios above (`WorkedInterviewExamplesTest`, `test_worked_interview_examples.py`, `workedInterviewExamples.test.js`).
+Short, language-neutral walkthroughs for forty-seven interview-heavy topics. Implementations live under `java/`, `python/dsa/`, and `javascript/src/` with the same behavior. For a broader interview map, see [interview-prep.md](interview-prep.md). Trilingual **catalog tests** mirror the step-table scenarios above (`WorkedInterviewExamplesTest`, `test_worked_interview_examples.py`, `workedInterviewExamples.test.js`).
 
 ## Binary search on a sorted array
 
@@ -482,6 +482,23 @@ Sort by weight, greedily add if endpoints not yet connected:
 
 `npm run demo -- kruskal-mst`
 
+## Prim MST (greedy grow)
+
+Same undirected graph as [Kruskal](#kruskal-mst-union-find): edges `(0–1,1)`, `(1–2,2)`, `(2–3,3)`, `(0–3,4)`. Grow the tree from vertex **0** with a **min-priority queue** of `(weight, neighbor)` frontier edges:
+
+| Step | Tree vertices | Pop edge | Add to MST | Total weight |
+|------|---------------|----------|------------|--------------|
+| start | `{0}` | — | — | 0 |
+| 1 | `{0,1}` | 0–1 (1) | yes | **1** |
+| 2 | `{0,1,2}` | 1–2 (2) | yes | **3** |
+| 3 | `{0,1,2,3}` | 2–3 (3) | yes | **6** |
+
+Edge 0–3 (weight 4) enters the frontier but is never chosen because 3 is already connected. **MST weight = 6** (matches shared `mst-goldens.json` `primWeight`).
+
+**API:** `totalWeight(graph)` (see [prim-mst](items/graphs/prim-mst.md)).
+
+`npm run demo -- prim-mst`
+
 ## Level order traversal (heap array)
 
 **Level array:** `[3, 9, 20, null, null, 15, 7]` (`null` = missing child).
@@ -621,6 +638,24 @@ Order: **`[1, 3, 3, 5, 7]`**. Used by Dijkstra, Prim, and meeting-room scheduler
 
 `npm run demo -- priority-queue`
 
+## Heapsort (in-place)
+
+**Input:** `[5, 2, 8, 1, 2]` (sorted copy returned by practice code).
+
+Heapsort builds a **max-heap** on the active prefix, then repeatedly swaps the root with the last unsorted position and **siftDown** on the shrinking heap:
+
+| Phase | Idea | Result on this input |
+|-------|------|----------------------|
+| Heapify | Max-heap on full array | largest `8` at root |
+| Extract rounds | Swap root ↔ tail, heapify prefix | tail fills from the right: `…, 8`, then `…, 5, 8`, … |
+| Done | Prefix empty | sorted **`[1, 2, 2, 5, 8]`** |
+
+Empty input → `[]`; single element → unchanged. Same sorted outputs as [merge sort](#merge-sort-top-down) on these keys, but **O(1)** extra space aside from the copy.
+
+**API:** `sort(arr)` in place (see [heapsort](items/sorting/heapsort.md)).
+
+`npm run demo -- heapsort`
+
 ## Trie (prefix search)
 
 **Insert** words `cat`, `car`, `dog` (character edges from the root).
@@ -678,6 +713,127 @@ Two interview shapes share **two pointers** over a sequence:
 **API:** `maxSlidingWindow(nums, k)` ([sliding-window-maximum](items/linear/sliding-window-maximum.md)); `lengthOfLongestSubstring(s)` ([longest-substring-without-repeating](items/strings/longest-substring-without-repeating.md)).
 
 `npm run demo -- sliding-window-maximum`
+
+## Queue (FIFO enqueue and dequeue)
+
+**Operations:** start empty, **enqueue** `1, 2, 3`, **dequeue** twice, then **peek** the front.
+
+| Step | Queue (front → back) | Action |
+|------|----------------------|--------|
+| enqueue 1,2,3 | `1, 2, 3` | back insertions |
+| dequeue | `2, 3` | remove **1** |
+| dequeue | `3` | remove **2** |
+| peek | `3` | front is **3** |
+
+Empty queue: **dequeue/peek** throw. Matches shared `queue-goldens.json`.
+
+**API:** `enqueue`, `dequeue`, `peek` (see [queue](items/linear/queue.md)).
+
+`npm run demo -- queue`
+
+## Deque (two-ended operations)
+
+**Operations:** **addLast** `1, 2`, **addFirst** `0`, **removeFirst** → `0`, **removeLast** → `2`, one element **`1`** remains.
+
+| Step | Deque (front → back) |
+|------|----------------------|
+| addLast 1,2 | `1, 2` |
+| addFirst 0 | `0, 1, 2` |
+| removeFirst | `1, 2` |
+| removeLast | `1` |
+
+Empty deque: **removeFirst/removeLast** throw. Matches shared `deque-goldens.json`.
+
+**API:** `addFirst`, `addLast`, `removeFirst`, `removeLast` (see [deque](items/linear/deque.md)).
+
+`npm run demo -- deque`
+
+## Counting sort (non-negative keys)
+
+**Input:** `[4, 2, 0, 2, 1, 3, 2, 2]` — keys must be **non-negative**.
+
+Count occurrences, prefix-sum the buckets, then place keys stably:
+
+| Key | Count | After stable placement |
+|-----|-------|------------------------|
+| 0 | 1 | one `0` |
+| 1 | 1 | one `1` |
+| 2 | 4 | four `2`s |
+| 3 | 1 | one `3` |
+| 4 | 1 | one `4` |
+
+**Output:** `[0, 1, 2, 2, 2, 2, 3, 4]`. Time **O(n + k)** for max key `k`.
+
+**API:** `sort(arr)` in place (see [counting-sort](items/sorting/counting-sort.md)).
+
+`npm run demo -- counting-sort`
+
+## Radix sort (LSD by digit)
+
+**Input:** `[170, 45, 75, 90, 802, 24, 2, 66]` (non-negative integers).
+
+LSD passes use stable **counting sort by digit** (ones, then tens, …):
+
+| Pass | Ordering idea | After pass |
+|------|---------------|------------|
+| 1s digit | bucket by last digit | `2, 24, 45, 66, 75, 90, 170, 802` |
+| 10s digit | bucket by tens | … |
+| 100s digit | bucket by hundreds | **`[2, 24, 45, 66, 75, 90, 170, 802]`** |
+
+**API:** `sort(arr)` in place (see [radix-sort](items/sorting/radix-sort.md)).
+
+`npm run demo -- radix-sort`
+
+## Rabin-Karp (rolling hash)
+
+**Text:** `"ababcababa"`, **pattern:** `"aba"` (same shape as [KMP](#kmp-pattern-search)).
+
+Rolling hash compares pattern hash to each length-`m` window; confirm with character checks on collisions:
+
+| Window start | Match? |
+|--------------|--------|
+| 0 | **yes** → return **0** |
+| 1 | no |
+| 2 | yes (but first match already found) |
+
+**API:** `search(text, pattern)` → first index or **-1** (see [rabin-karp](items/strings/rabin-karp.md)).
+
+`npm run demo -- rabin-karp`
+
+## Bellman-Ford (negative edges)
+
+**Directed graph:** `0 → 1` weight **1**, `1 → 2` weight **-2**, source **0**.
+
+Relax all edges up to `n-1` rounds:
+
+| Round | dist[0] | dist[1] | dist[2] |
+|-------|---------|---------|---------|
+| init | 0 | ∞ | ∞ |
+| after relax | 0 | 1 | -1 |
+
+**Distances:** `[0, 1, -1]`. No negative cycle on this instance.
+
+If edges form a **negative cycle** reachable from the source (e.g. `0→1→2→0` with net negative weight), **`hasNegativeCycle`** is **true** and distances are undefined.
+
+**API:** `shortestPaths(graph, source)` (see [bellman-ford](items/graphs/bellman-ford.md)).
+
+`npm run demo -- bellman-ford`
+
+## Segment tree (range sum)
+
+**Initial array:** `[1, 3, 5, 7]`.
+
+| Query / update | Range / index | Result |
+|----------------|---------------|--------|
+| range sum | `[0, 2]` | **9** (`1+3+5`) |
+| point update | index **1** → **10** | array becomes `[1,10,5,7]` |
+| range sum | `[0, 1]` | **11** (`1+10`) |
+
+Build **O(n)**, query/update **O(log n)**. Matches shared `segment-tree-goldens.json`.
+
+**API:** `rangeSum(left, right)`, `update(index, value)` (see [segment-tree](items/trees/segment-tree.md)).
+
+`npm run demo -- segment-tree`
 
 ## Topic index
 
@@ -745,19 +901,19 @@ Sort in place via Lomuto partition, optional random pivot, or 3-way partition.
 
 ### heapsort
 
-Sort an array in ascending order in place using a binary max-heap.
+See the [detailed walkthrough](#heapsort-in-place) above.
 
 `npm run demo -- heapsort`
 
 ### counting-sort
 
-Stable sort for non-negative integers in bounded range.
+See the [detailed walkthrough](#counting-sort-non-negative-keys) above.
 
 `npm run demo -- counting-sort`
 
 ### radix-sort
 
-LSD radix sort for non-negative integers using counting sort per digit.
+See the [detailed walkthrough](#radix-sort-lsd-by-digit) above.
 
 `npm run demo -- radix-sort`
 
@@ -799,13 +955,13 @@ LIFO stack backed by dynamic array.
 
 ### queue
 
-FIFO queue backed by circular buffer.
+See the [detailed walkthrough](#queue-fifo-enqueue-and-dequeue) above.
 
 `npm run demo -- queue`
 
 ### deque
 
-Double-ended queue with O(1) push/pop at both ends.
+See the [detailed walkthrough](#deque-two-ended-operations) above.
 
 `npm run demo -- deque`
 
@@ -889,7 +1045,7 @@ Disk-oriented multi-way search tree with bounded node fanout.
 
 ### segment-tree
 
-Range aggregate queries with point updates on an array.
+See the [detailed walkthrough](#segment-tree-range-sum) above.
 
 `npm run demo -- segment-tree`
 
@@ -907,7 +1063,7 @@ Linear-time Z-array and pattern search.
 
 ### rabin-karp
 
-Substring search via rolling hash.
+See the [detailed walkthrough](#rabin-karp-rolling-hash) above.
 
 `npm run demo -- rabin-karp`
 
@@ -1033,7 +1189,7 @@ See the [detailed walkthrough](#network-delay-time) above.
 
 ### bellman-ford
 
-Single-source shortest paths with negative edges; detect negative cycles.
+See the [detailed walkthrough](#bellman-ford-negative-edges) above.
 
 `npm run demo -- bellman-ford`
 
@@ -1051,7 +1207,7 @@ See the [detailed walkthrough](#kruskal-mst-union-find) above.
 
 ### prim-mst
 
-Minimum spanning tree growing from a start vertex.
+See the [detailed walkthrough](#prim-mst-greedy-grow) above.
 
 `npm run demo -- prim-mst`
 

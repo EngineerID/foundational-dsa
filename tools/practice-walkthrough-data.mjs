@@ -50,9 +50,16 @@ export const PRACTICE_PROBLEMS = [
   { n: 35, docAnchor: '35-next-greater-element', walkthroughSlug: 'monotonic-stack', catalogTopic: 'monotonic-stack' },
   { n: 36, docAnchor: '36-quicksort', walkthroughSlug: 'quick-sort', catalogTopic: 'quick-sort' },
   { n: 37, docAnchor: '37-binary-search-tree', walkthroughSlug: 'bst-search-and-in-order-walk', catalogTopic: 'bst' },
-  { n: 38, docAnchor: '38-prim-mst-weight', walkthroughSlug: 'kruskal-mst-union-find', catalogTopic: 'prim-mst' },
+  { n: 38, docAnchor: '38-prim-mst-weight', walkthroughSlug: 'prim-mst-greedy-grow', catalogTopic: 'prim-mst' },
   { n: 39, docAnchor: '39-stack-operations', walkthroughSlug: 'valid-parentheses-stack', catalogTopic: 'stack' },
-  { n: 40, docAnchor: '40-heapsort', walkthroughSlug: 'binary-min-heap-insert-and-extract', catalogTopic: 'heapsort' },
+  { n: 40, docAnchor: '40-heapsort', walkthroughSlug: 'heapsort-in-place', catalogTopic: 'heapsort' },
+  { n: 41, docAnchor: '41-queue-operations', walkthroughSlug: 'queue-fifo-enqueue-and-dequeue', catalogTopic: 'queue' },
+  { n: 42, docAnchor: '42-deque-operations', walkthroughSlug: 'deque-two-ended-operations', catalogTopic: 'deque' },
+  { n: 43, docAnchor: '43-counting-sort', walkthroughSlug: 'counting-sort-non-negative-keys', catalogTopic: 'counting-sort' },
+  { n: 44, docAnchor: '44-radix-sort', walkthroughSlug: 'radix-sort-lsd-by-digit', catalogTopic: 'radix-sort' },
+  { n: 45, docAnchor: '45-rabin-karp-search', walkthroughSlug: 'rabin-karp-rolling-hash', catalogTopic: 'rabin-karp' },
+  { n: 46, docAnchor: '46-bellman-ford-paths', walkthroughSlug: 'bellman-ford-negative-edges', catalogTopic: 'bellman-ford' },
+  { n: 47, docAnchor: '47-segment-tree-range-sum', walkthroughSlug: 'segment-tree-range-sum', catalogTopic: 'segment-tree' },
 ];
 
 export const PRACTICE_DOC_ANCHORS = PRACTICE_PROBLEMS.map((p) => p.docAnchor);

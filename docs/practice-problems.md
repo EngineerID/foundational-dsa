@@ -1,6 +1,6 @@
 # Practice problems (trilingual solutions)
 
-Forty interview-style problems with reference solutions in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`. Each problem below links to a step-table **[worked example](worked-examples.md)** (CI: `npm run check:practice-walkthrough`).
+Forty-seven interview-style problems with reference solutions in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`. Each problem below links to a step-table **[worked example](worked-examples.md)** (CI: `npm run check:practice-walkthrough`).
 
 | # | Problem | Signals | Catalog topics |
 |---|---------|---------|----------------|
@@ -44,6 +44,13 @@ Forty interview-style problems with reference solutions in Java, Python, and Jav
 | 38 | [Prim MST weight](#38-prim-mst-weight) | Greedy MST | `prim-mst` |
 | 39 | [Stack operations](#39-stack-operations) | LIFO push/pop/peek | `stack` |
 | 40 | [Heapsort](#40-heapsort) | In-place heap sort | `heapsort` |
+| 41 | [Queue operations](#41-queue-operations) | FIFO enqueue/dequeue | `queue` |
+| 42 | [Deque operations](#42-deque-operations) | Two-ended queue | `deque` |
+| 43 | [Counting sort](#43-counting-sort) | Non-negative keys | `counting-sort` |
+| 44 | [Radix sort](#44-radix-sort) | LSD by digit | `radix-sort` |
+| 45 | [Rabin-Karp search](#45-rabin-karp-search) | Rolling hash | `rabin-karp` |
+| 46 | [Bellman-Ford paths](#46-bellman-ford-paths) | Negative edges | `bellman-ford` |
+| 47 | [Segment tree range sum](#47-segment-tree-range-sum) | Range query + update | `segment-tree` |
 
 Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --testPathPattern=practice`, Java `PracticeProblemsTest`.
 
@@ -351,7 +358,7 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Implementation:** `practice/prim_mst*` / `primMstPractice*` — catalog [`prim-mst`](items/graphs/prim-mst.md): `npm run demo -- prim-mst`.
 
-**Walkthrough:** [Worked examples — Kruskal MST](worked-examples.md#kruskal-mst-union-find) (same MST shape; see also [Prim topic](worked-examples.md#prim-mst)).
+**Walkthrough:** [Worked examples — Prim MST](worked-examples.md#prim-mst-greedy-grow).
 
 ## 39. Stack operations
 
@@ -367,4 +374,60 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Implementation:** `practice/heapsort*` / `heapsortPractice*` — catalog [`heapsort`](items/sorting/heapsort.md): `npm run demo -- heapsort`.
 
-**Walkthrough:** [Worked examples — Binary min-heap](worked-examples.md#binary-min-heap-insert-and-extract) (see also [heapsort topic](worked-examples.md#heapsort)).
+**Walkthrough:** [Worked examples — Heapsort](worked-examples.md#heapsort-in-place).
+
+## 41. Queue operations
+
+**Statement:** Implement a FIFO queue with `enqueue`, `dequeue`, and `peek` (error on empty dequeue/peek).
+
+**Implementation:** `practice/queue*` / `queuePractice*` — catalog [`queue`](items/linear/queue.md): `npm run demo -- queue`.
+
+**Walkthrough:** [Worked examples — Queue](worked-examples.md#queue-fifo-enqueue-and-dequeue).
+
+## 42. Deque operations
+
+**Statement:** Implement a double-ended queue with `addFirst`, `addLast`, `removeFirst`, and `removeLast`.
+
+**Implementation:** `practice/deque*` / `dequePractice*` — catalog [`deque`](items/linear/deque.md): `npm run demo -- deque`.
+
+**Walkthrough:** [Worked examples — Deque](worked-examples.md#deque-two-ended-operations).
+
+## 43. Counting sort
+
+**Statement:** Return a sorted copy of non-negative integers using counting sort.
+
+**Implementation:** `practice/counting_sort*` / `countingSortPractice*` — catalog [`counting-sort`](items/sorting/counting-sort.md): `npm run demo -- counting-sort`.
+
+**Walkthrough:** [Worked examples — Counting sort](worked-examples.md#counting-sort-non-negative-keys).
+
+## 44. Radix sort
+
+**Statement:** Return a sorted copy of non-negative integers using LSD radix sort.
+
+**Implementation:** `practice/radix_sort*` / `radixSortPractice*` — catalog [`radix-sort`](items/sorting/radix-sort.md): `npm run demo -- radix-sort`.
+
+**Walkthrough:** [Worked examples — Radix sort](worked-examples.md#radix-sort-lsd-by-digit).
+
+## 45. Rabin-Karp search
+
+**Statement:** Return the first index of `pattern` in `text`, or **-1** if absent (rolling hash).
+
+**Implementation:** `practice/rabin_karp*` / `rabinKarpPractice*` — catalog [`rabin-karp`](items/strings/rabin-karp.md): `npm run demo -- rabin-karp`.
+
+**Walkthrough:** [Worked examples — Rabin-Karp](worked-examples.md#rabin-karp-rolling-hash).
+
+## 46. Bellman-Ford paths
+
+**Statement:** Given a directed weighted graph and source, return shortest-path distances and whether a reachable negative cycle exists.
+
+**Implementation:** `practice/bellman_ford*` / `bellmanFordPractice*` — catalog [`bellman-ford`](items/graphs/bellman-ford.md): `npm run demo -- bellman-ford`.
+
+**Walkthrough:** [Worked examples — Bellman-Ford](worked-examples.md#bellman-ford-negative-edges).
+
+## 47. Segment tree range sum
+
+**Statement:** On an initial array, support point updates and inclusive range-sum queries.
+
+**Implementation:** `practice/segment_tree*` / `segmentTreePractice*` — catalog [`segment-tree`](items/trees/segment-tree.md): `npm run demo -- segment-tree`.
+
+**Walkthrough:** [Worked examples — Segment tree](worked-examples.md#segment-tree-range-sum).
