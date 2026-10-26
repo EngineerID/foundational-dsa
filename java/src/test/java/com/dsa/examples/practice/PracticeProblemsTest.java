@@ -2,6 +2,8 @@ package com.dsa.examples.practice;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -71,5 +73,50 @@ class PracticeProblemsTest {
         cache.put(3, 3);
         assertEquals(-1, cache.get(2));
         assertEquals(3, cache.get(3));
+    }
+
+    @Test
+    void mergeIntervals() {
+        int[][] merged = MergeIntervals.merge(new int[][] { { 1, 3 }, { 2, 6 }, { 8, 10 }, { 15, 18 } });
+        assertArrayEquals(new int[] { 1, 6 }, merged[0]);
+        assertArrayEquals(new int[] { 8, 10 }, merged[1]);
+        assertArrayEquals(new int[] { 15, 18 }, merged[2]);
+    }
+
+    @Test
+    void levelOrder() {
+        List<List<Integer>> levels = LevelOrderTraversal.levelOrder(
+                new Integer[] { 3, 9, 20, null, null, 15, 7 });
+        assertEquals(List.of(List.of(3), List.of(9, 20), List.of(15, 7)), levels);
+    }
+
+    @Test
+    void wordSearch() {
+        assertTrue(WordSearch.exists(
+                new char[][] {
+                        { 'A', 'B', 'C', 'E' },
+                        { 'S', 'F', 'C', 'S' },
+                        { 'A', 'D', 'E', 'E' },
+                },
+                "ABCCED"));
+        assertFalse(WordSearch.exists(
+                new char[][] {
+                        { 'A', 'B', 'C', 'E' },
+                        { 'S', 'F', 'C', 'S' },
+                        { 'A', 'D', 'E', 'E' },
+                },
+                "ABCD"));
+    }
+
+    @Test
+    void kthLargest() {
+        assertEquals(5, KthLargest.solve(new int[] { 3, 2, 1, 5, 6, 4 }, 2));
+    }
+
+    @Test
+    void mstKruskalPractice() {
+        int weight = MstKruskalPractice.totalWeight(
+                4, new int[][] { { 0, 1, 1 }, { 1, 2, 2 }, { 2, 3, 3 }, { 0, 3, 4 } });
+        assertEquals(6, weight);
     }
 }

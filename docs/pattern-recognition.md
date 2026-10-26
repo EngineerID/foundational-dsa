@@ -40,7 +40,7 @@ When extending an algorithm, add edge cases (empty, single element, duplicates, 
 
 ## Practice problems
 
-Ten standalone problems with trilingual solutions (Two Sum II through LRU cache design): [practice-problems.md](practice-problems.md).
+Fifteen standalone problems with trilingual solutions: [practice-problems.md](practice-problems.md). Full time/space table: [complexity-cheatsheet.md](complexity-cheatsheet.md).
 
 ## Next steps
 

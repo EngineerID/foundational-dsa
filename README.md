@@ -107,14 +107,15 @@ Topic ids are the first column of [COVERAGE.md](COVERAGE.md), such as `dijkstra`
 
 1. `npm run check:docs-links` — fails if a relative link or `#heading` anchor in docs is broken (and blocks forbidden private external URLs).
 2. `npm run check:readme-index` — fails if README is missing a link to any catalog topic or practice problem.
-3. `npm run check:item-doc-complexity` — fails if a `docs/items` **Complexity:** line diverges from `tools/doc-spec.mjs`.
-4. `npm run check:golden-parity` and `npm run check:complexity-sanity` — shared golden fixtures and fast timing bounds.
-5. `npm run check:stubs` — fails if a source or test file still contains a stub marker.
-6. `npm run test:java` — `sh java/mvnw test` (JUnit 5).
-7. `npm run test:py` — pytest on `python/`.
-8. `npm run test:js` — Jest with `javascript/jest.config.js`.
-9. `npm run check:parity` — same topics exposed in all three languages.
-10. `npm run matrix:check` — [COVERAGE.md](COVERAGE.md) matches the tree.
+3. `npm run check:complexity-cheatsheet` — fails if [docs/complexity-cheatsheet.md](docs/complexity-cheatsheet.md) is out of date with `doc-spec.mjs`.
+4. `npm run check:item-doc-complexity` — fails if a `docs/items` **Complexity:** line diverges from `tools/doc-spec.mjs`.
+5. `npm run check:golden-parity` and `npm run check:complexity-sanity` — shared golden fixtures and fast timing bounds.
+6. `npm run check:stubs` — fails if a source or test file still contains a stub marker.
+7. `npm run test:java` — `sh java/mvnw test` (JUnit 5).
+8. `npm run test:py` — pytest on `python/`.
+9. `npm run test:js` — Jest with `javascript/jest.config.js`.
+10. `npm run check:parity` — same topics exposed in all three languages.
+11. `npm run matrix:check` — [COVERAGE.md](COVERAGE.md) matches the tree.
 
 After adding a topic, regenerate the matrix with `npm run matrix` (or `make matrix`). `npm run matrix:check` only verifies; it does not rewrite the file.
 
@@ -338,6 +339,13 @@ Every catalog topic links to its doc page under [docs/items/](docs/items/). Prac
 - [Longest substring without repeating](docs/practice-problems.md#8-longest-substring-without-repeating-characters)
 - [Coin change](docs/practice-problems.md#9-coin-change)
 - [LRU cache design](docs/practice-problems.md#10-lru-cache-design)
+- [Merge intervals](docs/practice-problems.md#11-merge-intervals)
+- [Binary tree level order traversal](docs/practice-problems.md#12-binary-tree-level-order-traversal)
+- [Word search](docs/practice-problems.md#13-word-search)
+- [Kth largest element](docs/practice-problems.md#14-kth-largest-element)
+- [Minimum spanning tree (Kruskal)](docs/practice-problems.md#15-minimum-spanning-tree-kruskal)
+
+See also the generated [complexity cheat sheet](docs/complexity-cheatsheet.md) for all **72** catalog topics.
 
 ## Sponsor
 

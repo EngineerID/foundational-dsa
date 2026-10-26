@@ -20,6 +20,11 @@ const PRACTICE_ANCHORS = [
   '8-longest-substring-without-repeating-characters',
   '9-coin-change',
   '10-lru-cache-design',
+  '11-merge-intervals',
+  '12-binary-tree-level-order-traversal',
+  '13-word-search',
+  '14-kth-largest-element',
+  '15-minimum-spanning-tree-kruskal',
 ];
 
 function main() {

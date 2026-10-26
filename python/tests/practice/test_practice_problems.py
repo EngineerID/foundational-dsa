@@ -1,13 +1,18 @@
 from dsa.practice.coin_change import coin_change
 from dsa.practice.course_schedule import can_finish
+from dsa.practice.kth_largest import kth_largest
+from dsa.practice.level_order import level_order
 from dsa.practice.longest_substring import length_of_longest_substring
 from dsa.practice.lru_design import LRUCacheDesign
 from dsa.practice.max_subarray import max_subarray
 from dsa.practice.meeting_rooms import min_meeting_rooms
+from dsa.practice.merge_intervals import merge_intervals
+from dsa.practice.mst_kruskal import mst_total_weight
 from dsa.practice.num_islands import num_islands
 from dsa.practice.top_k_frequent import top_k_frequent
 from dsa.practice.two_sum import two_sum_sorted
 from dsa.practice.valid_parentheses import is_valid_parentheses
+from dsa.practice.word_search import word_search
 
 
 def test_two_sum_sorted():
@@ -62,3 +67,26 @@ def test_lru_design():
     cache.put(3, 3)
     assert cache.get(2) == -1
     assert cache.get(3) == 3
+
+
+def test_merge_intervals():
+    assert merge_intervals([[1, 3], [2, 6], [8, 10], [15, 18]]) == [[1, 6], [8, 10], [15, 18]]
+
+
+def test_level_order():
+    assert level_order([3, 9, 20, None, None, 15, 7]) == [[3], [9, 20], [15, 7]]
+
+
+def test_word_search():
+    board = [["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]]
+    assert word_search([row[:] for row in board], "ABCCED")
+    assert not word_search([row[:] for row in board], "ABCD")
+
+
+def test_kth_largest():
+    assert kth_largest([3, 2, 1, 5, 6, 4], 2) == 5
+
+
+def test_mst_kruskal():
+    edges = [[0, 1, 1], [1, 2, 2], [2, 3, 3], [0, 3, 4]]
+    assert mst_total_weight(4, edges) == 6

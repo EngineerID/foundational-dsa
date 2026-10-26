@@ -8,6 +8,11 @@ const { canFinish } = require('../../src/practice/courseSchedule');
 const { lengthOfLongestSubstring } = require('../../src/practice/longestSubstring');
 const { coinChange } = require('../../src/practice/coinChange');
 const { LRUCacheDesign } = require('../../src/practice/lruDesign');
+const { mergeIntervals } = require('../../src/practice/mergeIntervals');
+const { levelOrder } = require('../../src/practice/levelOrder');
+const { wordSearch } = require('../../src/practice/wordSearch');
+const { kthLargest } = require('../../src/practice/kthLargest');
+const { mstTotalWeight } = require('../../src/practice/mstKruskal');
 
 describe('practice problems', () => {
   test('two sum sorted', () => {
@@ -68,5 +73,49 @@ describe('practice problems', () => {
     cache.put(3, 3);
     expect(cache.get(2)).toBe(-1);
     expect(cache.get(3)).toBe(3);
+  });
+
+  test('merge intervals', () => {
+    expect(
+      mergeIntervals([
+        [1, 3],
+        [2, 6],
+        [8, 10],
+        [15, 18],
+      ]),
+    ).toEqual([
+      [1, 6],
+      [8, 10],
+      [15, 18],
+    ]);
+  });
+
+  test('level order', () => {
+    expect(levelOrder([3, 9, 20, null, null, 15, 7])).toEqual([[3], [9, 20], [15, 7]]);
+  });
+
+  test('word search', () => {
+    const board = [
+      ['A', 'B', 'C', 'E'],
+      ['S', 'F', 'C', 'S'],
+      ['A', 'D', 'E', 'E'],
+    ];
+    expect(wordSearch(board.map((r) => r.slice()), 'ABCCED')).toBe(true);
+    expect(wordSearch(board.map((r) => r.slice()), 'ABCD')).toBe(false);
+  });
+
+  test('kth largest', () => {
+    expect(kthLargest([3, 2, 1, 5, 6, 4], 2)).toBe(5);
+  });
+
+  test('mst kruskal', () => {
+    expect(
+      mstTotalWeight(4, [
+        [0, 1, 1],
+        [1, 2, 2],
+        [2, 3, 3],
+        [0, 3, 4],
+      ]),
+    ).toBe(6);
   });
 });

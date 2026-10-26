@@ -103,4 +103,25 @@ export const STATEFUL_GOLDENS = [
     js: 'javascript/test/trees/trieGoldens.test.js',
     java: 'java/src/test/java/com/dsa/examples/trees/TrieGoldensTest.java',
   },
+  {
+    id: 'fenwick-tree',
+    json: 'fenwick-tree-goldens.json',
+    py: 'python/tests/trees/test_fenwick_tree_goldens.py',
+    js: 'javascript/test/trees/fenwickTreeGoldens.test.js',
+    java: 'java/src/test/java/com/dsa/examples/trees/FenwickTreeGoldensTest.java',
+  },
+  {
+    id: 'kruskal-mst',
+    json: 'mst-goldens.json',
+    py: 'python/tests/graphs/test_mst_goldens.py',
+    js: 'javascript/test/graphs/mstGoldens.test.js',
+    java: 'java/src/test/java/com/dsa/examples/graphs/MstGoldensTest.java',
+  },
+  {
+    id: 'prim-mst',
+    json: 'mst-goldens.json',
+    py: 'python/tests/graphs/test_mst_goldens.py',
+    js: 'javascript/test/graphs/mstGoldens.test.js',
+    java: 'java/src/test/java/com/dsa/examples/graphs/MstGoldensTest.java',
+  },
 ];

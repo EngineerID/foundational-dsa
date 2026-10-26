@@ -1,0 +1,11 @@
+[
+  {
+    "n": 4,
+    "directed": false,
+    "weighted": true,
+    "edges": [[0, 1, 1], [1, 2, 2], [2, 3, 3], [0, 3, 4]],
+    "kruskalWeight": 6,
+    "kruskalEdgeCount": 3,
+    "primWeight": 6
+  }
+]

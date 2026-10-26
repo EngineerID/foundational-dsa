@@ -1,0 +1,10 @@
+[
+  {
+    "n": 5,
+    "adds": [[1, 3], [3, 2]],
+    "checks": [
+      { "prefixAt": 3, "expected": 5 },
+      { "rangeLeft": 1, "rangeRight": 3, "expected": 5 }
+    ]
+  }
+]
