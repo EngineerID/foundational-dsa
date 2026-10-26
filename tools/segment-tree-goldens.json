@@ -1,0 +1,8 @@
+[
+  {
+    "initial": [1, 3, 5, 7],
+    "rangeSum": [{ "left": 0, "right": 2, "sum": 9 }],
+    "update": { "index": 1, "value": 10 },
+    "rangeSumAfter": [{ "left": 0, "right": 1, "sum": 11 }]
+  }
+]

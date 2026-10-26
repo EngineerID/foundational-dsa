@@ -1,0 +1,4 @@
+[
+  { "s": "bbbab", "expected": 4 },
+  { "s": "cbbd", "expected": 2 }
+]

@@ -2,24 +2,29 @@
 
 Trilingual `*Goldens*` tests lock behavior against JSON under `tools/`. Registry: `tools/golden-fixtures.mjs` (`npm run check:golden-parity`).
 
-## Topics with shared goldens (43 catalog ids)
+## Topics with shared goldens (53 catalog ids)
 
 | Topic id | JSON |
 |----------|------|
+| `bellman-ford` | `bellman-ford-goldens.json` |
 | `bfs` | `bfs-goldens.json` |
 | `binary-heap` | `binary-heap-goldens.json` |
 | `binary-search` | `binary-search-goldens.json` |
 | `binary-search-boundary` | `binary-search-boundary-goldens.json` |
+| `bipartite-check` | `bipartite-check-goldens.json` |
 | `bloom-filter` | `bloom-filter-goldens.json` |
 | `bst` | `bst-goldens.json` |
 | `bubble-sort` | `bubble-sort-goldens.json` |
 | `coin-change` | `coin-change-goldens.json` |
 | `counting-sort` | `counting-sort-goldens.json` |
+| `deque` | `deque-goldens.json` |
 | `dfs` | `dfs-goldens.json` |
 | `dijkstra` | `dijkstra-goldens.json` |
+| `doubly-linked-list` | `doubly-linked-list-goldens.json` |
 | `dynamic-array` | `dynamic-array-goldens.json` |
 | `edit-distance` | `edit-distance-goldens.json` |
 | `fenwick-tree` | `fenwick-tree-goldens.json` |
+| `floyd-warshall` | `floyd-warshall-goldens.json` |
 | `graph` | `graph-goldens.json` |
 | `heapsort` | `heapsort-goldens.json` |
 | `insertion-sort` | `insertion-sort-goldens.json` |
@@ -29,16 +34,21 @@ Trilingual `*Goldens*` tests lock behavior against JSON under `tools/`. Registry
 | `lcs` | `lcs-goldens.json` |
 | `linear-search` | `linear-search-goldens.json` |
 | `lis` | `lis-goldens.json` |
+| `longest-palindromic-subsequence` | `longest-palindromic-subsequence-goldens.json` |
 | `lru-cache` | `lru-cache-goldens.json` |
+| `matrix-chain` | `matrix-chain-goldens.json` |
 | `merge-sort` | `merge-sort-goldens.json` |
 | `open-addressing` | `open-addressing-goldens.json` |
+| `partition-equal-subset` | `partition-equal-subset-goldens.json` |
 | `prim-mst` | `mst-goldens.json` |
+| `priority-queue` | `priority-queue-goldens.json` |
 | `queue` | `queue-goldens.json` |
 | `quick-select` | `quick-select-goldens.json` |
 | `quick-sort` | `quick-sort-goldens.json` |
 | `rabin-karp` | `rabin-karp-goldens.json` |
 | `radix-sort` | `radix-sort-goldens.json` |
 | `reservoir-sampling` | `reservoir-sampling-goldens.json` |
+| `segment-tree` | `segment-tree-goldens.json` |
 | `selection-sort` | `selection-sort-goldens.json` |
 | `separate-chaining` | `separate-chaining-goldens.json` |
 | `singly-linked-list` | `singly-linked-list-goldens.json` |
@@ -50,9 +60,9 @@ Trilingual `*Goldens*` tests lock behavior against JSON under `tools/`. Registry
 | `trie` | `trie-goldens.json` |
 | `union-find` | `union-find-goldens.json` |
 
-## Catalog topics still without shared goldens (30)
+## Catalog topics still without shared goldens (20)
 
 
-`doubly-linked-list`, `deque`, `priority-queue`, `avl-tree`, `order-statistic-tree`, `interval-tree`, `b-tree`, `segment-tree`, `z-algorithm`, `bellman-ford`, `floyd-warshall`, `boruvka-mst`, `a-star`, `tarjan-scc`, `kosaraju`, `bipartite-check`, `articulation-bridges`, `edmonds-karp`, `hungarian`, `red-black-tree`, `lca-binary-lifting`, `sparse-table`, `manacher`, `suffix-array`, `aho-corasick`, `matrix-chain`, `longest-palindromic-subsequence`, `partition-equal-subset`, `rod-cutting`, `tsp-bitmask`.
+`avl-tree`, `order-statistic-tree`, `interval-tree`, `b-tree`, `z-algorithm`, `boruvka-mst`, `a-star`, `tarjan-scc`, `kosaraju`, `articulation-bridges`, `edmonds-karp`, `hungarian`, `red-black-tree`, `lca-binary-lifting`, `sparse-table`, `manacher`, `suffix-array`, `aho-corasick`, `rod-cutting`, `tsp-bitmask`.
 
 Regenerate this page: `node tools/refresh-golden-fixtures-doc.mjs`. Gap list only: `node tools/list-golden-fixture-gaps.mjs`.

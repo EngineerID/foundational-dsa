@@ -1,0 +1,11 @@
+[
+  {
+    "addLast": [2, 3, 4],
+    "addFirst": [1],
+    "getIndex": 2,
+    "getValue": 3,
+    "removeIndex": 0,
+    "removeValue": 1,
+    "sizeAfter": 3
+  }
+]

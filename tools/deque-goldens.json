@@ -1,0 +1,9 @@
+[
+  {
+    "addLast": [1, 2],
+    "addFirst": [0],
+    "removeFirst": 0,
+    "removeLast": 2,
+    "remainingValue": 1
+  }
+]
