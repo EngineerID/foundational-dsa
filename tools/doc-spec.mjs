@@ -228,6 +228,12 @@ export const DOC_SPECS = {
     invariant: 'Edges stored from source to neighbors with weights.',
     complexity: 'addEdge/neighbors: Time O(1) amortized; Space O(V+E).',
   },
+  'number-of-islands': {
+    purpose: 'Count 4-connected land components in a binary grid.',
+    technique: 'BFS flood fill',
+    invariant: 'Each unvisited land cell starts one new component.',
+    complexity: 'numIslands: Time O(rows·cols); Space O(rows·cols).',
+  },
   bfs: {
     purpose: 'Breadth-first traversal and unweighted shortest paths.',
     technique: 'BFS',

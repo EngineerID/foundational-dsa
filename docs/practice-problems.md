@@ -57,7 +57,7 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Statement:** Given a grid of `'1'` (land) and `'0'` (water), count connected land components (4-directionally).
 
-**Implementation:** `practice/num_islands*`.
+**Implementation:** `practice/num_islands*` (catalog [`number-of-islands`](items/graphs/number-of-islands.md): `npm run demo -- number-of-islands`).
 
 ## 6. Top K frequent elements
 

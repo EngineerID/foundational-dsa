@@ -719,6 +719,19 @@ Breadth-first traversal and unweighted shortest paths.
 **Operations:**
 - `distances` → Python `distances`, JS `distances`
 
+## number-of-islands
+
+Count 4-connected land components in a binary grid.
+
+| Language | Module |
+|----------|--------|
+| Java | `NumberOfIslands` |
+| Python | `number_of_islands` |
+| JavaScript | `numberOfIslands` |
+
+**Operations:**
+- `numIslands` → Python `num_islands`, JS `numIslands`
+
 ## dfs
 
 Depth-first traversal, cycle detection, and connectivity.

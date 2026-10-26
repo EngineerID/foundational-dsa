@@ -31,6 +31,7 @@ from dsa.graphs import (
     hungarian,
     kosaraju,
     kruskal_mst,
+    number_of_islands,
     prim_mst,
     tarjan_scc,
     topological_sort,
@@ -260,6 +261,7 @@ def test_new_trees_strings_dp_edge_themes():
     assert trapping_rain_water.trap([1, 0, 1]) == 1
     assert meeting_rooms_ii.min_meeting_rooms([[1, 2]]) == 1
     assert top_k_frequent_elements.top_k_frequent([1, 1, 2], 2) == [1, 2]
+    assert number_of_islands.num_islands([["1"]]) == 1
 
 
 def test_graph_algorithms_edge_themes():

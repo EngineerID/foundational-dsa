@@ -256,6 +256,12 @@ export const API_MANIFEST = {
     python: ['distances'],
     javascript: ['distances'],
   },
+  'number-of-islands': {
+    type: 'static',
+    java: ['numIslands'],
+    python: ['num_islands'],
+    javascript: ['numIslands'],
+  },
   dfs: {
     type: 'static',
     java: ['traverseRecursive', 'traverseIterative'],

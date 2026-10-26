@@ -35,6 +35,7 @@ const { totalWeight: kruskalWeight } = require('../../src/graphs/kruskalMst');
 const { totalWeight: primWeight } = require('../../src/graphs/primMst');
 const { totalWeight: boruvkaWeight } = require('../../src/graphs/boruvkaMst');
 const { distances } = require('../../src/graphs/bfs');
+const { numIslands } = require('../../src/graphs/numberOfIslands');
 const { SegmentTree } = require('../../src/trees/segmentTree');
 const { FenwickTree } = require('../../src/trees/fenwickTree');
 const { search: zSearch } = require('../../src/strings/zAlgorithm');
@@ -217,6 +218,7 @@ describe('catalog item edges', () => {
     expect(trap([1, 0, 1])).toBe(1);
     expect(minMeetingRooms([[1, 2]])).toBe(1);
     expect(topKFrequent([1, 1, 2], 2)).toEqual([1, 2]);
+    expect(numIslands([['1']])).toBe(1);
   });
 
   test('graph algorithms', () => {

@@ -172,6 +172,13 @@ export const STATEFUL_GOLDENS = [
     java: 'java/src/test/java/com/dsa/examples/linear/SlidingWindowMaximumGoldensTest.java',
   },
   {
+    id: 'number-of-islands',
+    json: 'number-of-islands-goldens.json',
+    py: 'python/tests/graphs/test_number_of_islands_goldens.py',
+    js: 'javascript/test/graphs/numberOfIslandsGoldens.test.js',
+    java: 'java/src/test/java/com/dsa/examples/graphs/NumberOfIslandsGoldensTest.java',
+  },
+  {
     id: 'bfs',
     json: 'bfs-goldens.json',
     py: 'python/tests/graphs/test_bfs_goldens.py',

@@ -215,6 +215,7 @@ class CatalogItemEdgesTest {
         assertEquals(1, TrappingRainWater.trap(new int[] {1, 0, 1}));
         assertEquals(1, MeetingRoomsII.minMeetingRooms(new int[][] {{1, 2}}));
         assertEquals(java.util.List.of(1, 2), TopKFrequentElements.topKFrequent(new int[] {1, 1, 2}, 2));
+        assertEquals(1, NumberOfIslands.numIslands(new char[][] {{'1'}}));
     }
 
     @Test

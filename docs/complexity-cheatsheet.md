@@ -38,6 +38,7 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 | `hungarian` | Time O(n³) | Space O(n²) | minCost: Time O(n³); Space O(n²). |
 | `kosaraju` | Time O(V+E) | Space O(V) | stronglyConnectedComponents: Time O(V+E); Space O(V). |
 | `kruskal-mst` | Time O(E log E) | Space O(V) | mstWeight: Time O(E log E); Space O(V). |
+| `number-of-islands` | Time O(rows·cols) | Space O(rows·cols) | numIslands: Time O(rows·cols); Space O(rows·cols). |
 | `prim-mst` | Time O(E log V) | Space O(V) | mstWeight: Time O(E log V); Space O(V). |
 | `tarjan-scc` | Time O(V+E) | Space O(V) | stronglyConnectedComponents: Time O(V+E); Space O(V). |
 | `topological-sort` | Time O(V+E) | Space O(V) | sort: Time O(V+E); Space O(V). |
@@ -135,5 +136,5 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 |----------|------|-------|----------|
 | `union-find` | Time O(α(n) | Space O(n) | find/union/connected: Time O(α(n)) amortized; Space O(n). |
 
-**Topics:** 81
+**Topics:** 82
 
