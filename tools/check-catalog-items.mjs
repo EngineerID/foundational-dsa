@@ -53,6 +53,7 @@ const ALIASES = {
   'maximum-subarray': ['MaxSubarray', 'max_subarray', 'maxSubarray'],
   'two-sum-ii': ['TwoSumII', 'two_sum_ii', 'twoSumII'],
   'merge-intervals': ['MergeIntervals', 'merge_intervals', 'mergeIntervals'],
+  'trapping-rain-water': ['TrappingRainWater', 'trapping_rain_water', 'trappingRainWater'],
   'longest-substring-without-repeating': [
     'LongestSubstringWithoutRepeating',
     'longest_substring_without_repeating',

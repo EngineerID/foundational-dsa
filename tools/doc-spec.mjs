@@ -12,6 +12,12 @@ export const DOC_SPECS = {
     invariant: 'Scan index increases; all indices before current are not the target (if searching for first match).',
     complexity: 'search: Time O(n); Space O(1).',
   },
+  'trapping-rain-water': {
+    purpose: 'Total water trapped between non-negative elevation bars.',
+    technique: 'Two pointers',
+    invariant: 'Advance from the lower side of the window.',
+    complexity: 'trap: Time O(n); Space O(1).',
+  },
   'two-sum-ii': {
     purpose: '1-based indices of two numbers that sum to target in a sorted array.',
     technique: 'Two pointers',

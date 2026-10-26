@@ -22,6 +22,12 @@ export const API_MANIFEST = {
     python: ['two_sum_sorted'],
     javascript: ['twoSumSorted'],
   },
+  'trapping-rain-water': {
+    type: 'static',
+    java: ['trap'],
+    python: ['trap'],
+    javascript: ['trap'],
+  },
   'quick-select': {
     type: 'static',
     java: ['kthSmallest'],

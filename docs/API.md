@@ -45,6 +45,19 @@ Find a key in a sorted array, including first/last duplicate boundaries.
 **Operations:**
 - `twoSumSorted` → Python `two_sum_sorted`, JS `twoSumSorted`
 
+## trapping-rain-water
+
+Total water trapped between non-negative elevation bars.
+
+| Language | Module |
+|----------|--------|
+| Java | `TrappingRainWater` |
+| Python | `trapping_rain_water` |
+| JavaScript | `trappingRainWater` |
+
+**Operations:**
+- `trap` → Python `trap`, JS `trap`
+
 ## quick-select
 
 Find the k-th smallest element in an unordered array.

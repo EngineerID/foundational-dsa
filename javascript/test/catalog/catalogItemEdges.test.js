@@ -2,6 +2,7 @@ const LARGE_N = 256;
 
 const { firstOccurrence, lastOccurrence, search } = require('../../src/searching/binarySearch');
 const { twoSumSorted } = require('../../src/searching/twoSumII');
+const { trap } = require('../../src/searching/trappingRainWater');
 const { sort: selectionSort } = require('../../src/sorting/selectionSort');
 const { sort: insertionSort } = require('../../src/sorting/insertionSort');
 const { sort: heapSort } = require('../../src/sorting/heapSort');
@@ -211,6 +212,7 @@ describe('catalog item edges', () => {
     expect(isValidParentheses('()')).toBe(true);
     expect(twoSumSorted([1, 2, 3], 3)).toEqual([1, 2]);
     expect(mergeIntervals([[1, 3], [2, 6]])).toEqual([[1, 6]]);
+    expect(trap([1, 0, 1])).toBe(1);
   });
 
   test('graph algorithms', () => {

@@ -80,6 +80,7 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 | `linear-search` | Time O(n) | Space O(1) | search: Time O(n); Space O(1). |
 | `quick-select` | Time O(n) | Space O(1) | select: Time O(n) average, O(n²) worst; Space O(1). |
 | `reservoir-sampling` | Time O(n) | Space O(k) | sample: Time O(n); Space O(k). |
+| `trapping-rain-water` | Time O(n) | Space O(1) | trap: Time O(n); Space O(1). |
 | `two-sum-ii` | Time O(n) | Space O(1) | twoSumSorted: Time O(n); Space O(1). |
 
 ## sorting
@@ -132,5 +133,5 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 |----------|------|-------|----------|
 | `union-find` | Time O(α(n) | Space O(n) | find/union/connected: Time O(α(n)) amortized; Space O(n). |
 
-**Topics:** 78
+**Topics:** 79
 

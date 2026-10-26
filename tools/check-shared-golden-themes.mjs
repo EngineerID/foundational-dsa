@@ -19,6 +19,7 @@ const REQUIRED_CASE_KEYS = {
   'valid-parentheses-goldens.json': ['s', 'expected'],
   'two-sum-ii-goldens.json': ['nums', 'target', 'expected'],
   'merge-intervals-goldens.json': ['intervals', 'expected'],
+  'trapping-rain-water-goldens.json': ['height', 'expected'],
   'reservoir-sampling-goldens.json': ['stream', 'k', 'seed', 'expected'],
   'treap-goldens.json': ['seed', 'inserts', 'searchResults'],
 };

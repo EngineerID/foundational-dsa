@@ -123,7 +123,7 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Statement:** Given non-negative bar heights, compute how much water can be trapped after raining.
 
-**Implementation:** `practice/trapping_rain_water*` / `trappingRainWater*` — two pointers from both ends.
+**Implementation:** `practice/trapping_rain_water*` / `trappingRainWater*` — two pointers (catalog [`trapping-rain-water`](items/searching/trapping-rain-water.md): `npm run demo -- trapping-rain-water`).
 
 ## 17. Edit distance
 

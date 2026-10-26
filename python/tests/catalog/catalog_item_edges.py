@@ -47,7 +47,7 @@ from dsa.linear import (
     singly_linked_list,
     sliding_window_maximum,
 )
-from dsa.searching import binary_search, reservoir_sampling, two_sum_ii
+from dsa.searching import binary_search, reservoir_sampling, trapping_rain_water, two_sum_ii
 from dsa.sorting import heap_sort, insertion_sort, merge_intervals, radix_sort, selection_sort
 from dsa.strings import (
     aho_corasick,
@@ -257,6 +257,7 @@ def test_new_trees_strings_dp_edge_themes():
     assert valid_parentheses.is_valid_parentheses("()") is True
     assert two_sum_ii.two_sum_sorted([1, 2, 3], 3) == [1, 2]
     assert merge_intervals.merge_intervals([[1, 3], [2, 6]]) == [[1, 6]]
+    assert trapping_rain_water.trap([1, 0, 1]) == 1
 
 
 def test_graph_algorithms_edge_themes():
