@@ -7,7 +7,7 @@
  * allPairs: Time O(V³); Space O(V²).
  */
 
-const INF = Math.floor(2147483647 / 4);
+const { GRAPH_UNREACHABLE: INF } = require('./graphInf');
 
 function allPairsShortestPaths(graph) {
   const n = graph.vertices();

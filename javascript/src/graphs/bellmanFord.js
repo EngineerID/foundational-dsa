@@ -7,7 +7,7 @@
  * shortestPaths: Time O(VE); Space O(V).
  */
 
-const INF = Math.floor(Number.MAX_SAFE_INTEGER / 4);
+const { GRAPH_UNREACHABLE: INF } = require('./graphInf');
 
 function shortestPaths(graph, source) {
   const n = graph.vertices();

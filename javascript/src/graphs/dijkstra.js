@@ -9,7 +9,7 @@
 
 const { IndexedMinHeap } = require('../heaps/indexedMinHeap');
 
-const INF = Math.floor(2147483647 / 4);
+const { GRAPH_UNREACHABLE: INF } = require('./graphInf');
 
 function shortestPaths(graph, source) {
   const n = graph.vertices();

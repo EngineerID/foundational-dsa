@@ -57,5 +57,17 @@
       0
     ],
     "hasNegativeCycle": false
+  },
+  {
+    "n": 2,
+    "directed": true,
+    "weighted": true,
+    "edges": [],
+    "source": 0,
+    "distances": [
+      0,
+      536870911
+    ],
+    "hasNegativeCycle": false
   }
 ]
