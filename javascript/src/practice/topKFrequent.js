@@ -2,6 +2,9 @@
 
 /** @param {number[]} nums @param {number} k */
 function topKFrequent(nums, k) {
+  if (!nums || nums.length === 0 || k <= 0) {
+    throw new Error('invalid input');
+  }
   const counts = new Map();
   for (const n of nums) {
     counts.set(n, (counts.get(n) || 0) + 1);

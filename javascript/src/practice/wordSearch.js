@@ -5,6 +5,9 @@ function wordSearch(board, word) {
   if (!word) {
     return true;
   }
+  if (!board.length || !board[0].length) {
+    return false;
+  }
   const rows = board.length;
   const cols = board[0].length;
 

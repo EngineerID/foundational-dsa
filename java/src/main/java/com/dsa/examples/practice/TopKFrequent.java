@@ -14,6 +14,9 @@ public final class TopKFrequent {
     }
 
     public static List<Integer> solve(int[] nums, int k) {
+        if (nums == null || nums.length == 0 || k <= 0) {
+            throw new IllegalArgumentException("invalid input");
+        }
         Map<Integer, Integer> counts = new HashMap<>();
         for (int n : nums) {
             counts.merge(n, 1, Integer::sum);

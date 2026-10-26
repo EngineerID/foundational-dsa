@@ -8,6 +8,8 @@ def word_search(board: list[list[str]], word: str) -> bool:
     """
     if not word:
         return True
+    if not board or not board[0]:
+        return False
     rows, cols = len(board), len(board[0])
 
     def dfs(r: int, c: int, i: int) -> bool:

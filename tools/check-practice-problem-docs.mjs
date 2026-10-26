@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { DOC_SPECS } from './doc-spec.mjs';
 import { PRACTICE_PROBLEMS } from './practice-walkthrough-data.mjs';
 import { practiceGoldenJsonForTopic } from './practice-golden-map.mjs';
 
@@ -40,13 +41,16 @@ export function checkPracticeProblemDocs(options = {}) {
         errors.push(`#${row.n} ${row.docAnchor}: Edge cases must reference tools/${json}`);
       }
     }
+    if (!/^\*\*Complexity:\*\*/m.test(body) && DOC_SPECS[row.catalogTopic]?.complexity) {
+      errors.push(`#${row.n} ${row.docAnchor}: missing **Complexity:**`);
+    }
     if (!/^\*\*Implementation:\*\*/m.test(body)) {
       errors.push(`#${row.n} ${row.docAnchor}: missing **Implementation:**`);
     }
     if (!/^\*\*Walkthrough:\*\*/m.test(body)) {
       errors.push(`#${row.n} ${row.docAnchor}: missing **Walkthrough:**`);
     }
-    const order = ['Statement', 'Edge cases', 'Implementation', 'Walkthrough'];
+    const order = ['Statement', 'Edge cases', 'Complexity', 'Implementation', 'Walkthrough'];
     let last = -1;
     for (const label of order) {
       const idx = body.indexOf(`**${label}:**`);

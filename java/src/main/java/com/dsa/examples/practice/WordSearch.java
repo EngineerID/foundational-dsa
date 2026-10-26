@@ -11,6 +11,9 @@ public final class WordSearch {
         if (word.isEmpty()) {
             return true;
         }
+        if (board.length == 0 || board[0].length == 0) {
+            return false;
+        }
         int rows = board.length;
         int cols = board[0].length;
         for (int r = 0; r < rows; r++) {
