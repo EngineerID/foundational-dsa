@@ -16,5 +16,6 @@ def test_separate_chaining_shared_goldens():
             table.put(key, value)
         g = case["get"]
         assert table.get(g["key"]) == g["value"]
-        m = case["getMissing"]
-        assert table.get(m["key"]) == m["value"]
+        if "getMissing" in case:
+            m = case["getMissing"]
+            assert table.get(m["key"]) == m["value"]

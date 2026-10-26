@@ -8,7 +8,17 @@ describe('order statistic tree shared goldens', () => {
   for (const case_ of goldens) {
     test('rank/select', () => {
       const tree = new OrderStatisticTree();
+      if (case_.inserts.length === 0) {
+        expect(() => tree.select(1)).toThrow();
+        expect(tree.rank(5)).toBe(0);
+        return;
+      }
       for (const [key, value] of case_.inserts) tree.insert(key, value);
+      if (case_.selectK != null) {
+        expect(tree.select(case_.selectK)).toBe(case_.selectKey);
+        expect(tree.rank(case_.rankKey)).toBe(1);
+        return;
+      }
       expect(tree.select(3)).toBe(case_.select3);
       expect(tree.rank(5)).toBe(case_.rank5);
     });

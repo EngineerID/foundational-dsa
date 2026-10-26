@@ -2,5 +2,13 @@
   {
     "s": "babad",
     "expected": 3
+  },
+  {
+    "s": "",
+    "expected": 0
+  },
+  {
+    "s": "x",
+    "expected": 1
   }
 ]

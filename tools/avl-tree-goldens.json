@@ -30,5 +30,24 @@
     ],
     "searchKey": 2,
     "searchValue": "e"
+  },
+  {
+    "inserts": [],
+    "inOrderKeys": [],
+    "searchKey": 1,
+    "searchValue": null
+  },
+  {
+    "inserts": [
+      [
+        2,
+        "v"
+      ]
+    ],
+    "inOrderKeys": [
+      2
+    ],
+    "searchKey": 2,
+    "searchValue": "v"
   }
 ]

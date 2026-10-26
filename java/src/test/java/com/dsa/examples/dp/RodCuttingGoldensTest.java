@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class RodCuttingGoldensTest {
 
@@ -19,7 +20,11 @@ class RodCuttingGoldensTest {
         for (Map<String, Object> c : cases) {
             int[] prices = toIntArray(c.get("prices"));
             int length = ((Number) c.get("length")).intValue();
-            assertEquals(((Number) c.get("expected")).intValue(), RodCutting.maxProfit(prices, length));
+            if (Boolean.TRUE.equals(c.get("expectError"))) {
+                assertThrows(IllegalArgumentException.class, () -> RodCutting.maxProfit(prices, length));
+            } else {
+                assertEquals(((Number) c.get("expected")).intValue(), RodCutting.maxProfit(prices, length));
+            }
         }
     }
 

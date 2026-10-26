@@ -12,7 +12,12 @@ describe('queue shared goldens', () => {
       const q = new Queue();
       for (const v of case_.enqueue) q.enqueue(v);
       for (const expected of case_.dequeueValues) expect(q.dequeue()).toBe(expected);
-      expect(q.peek()).toBe(case_.peek);
+      if (case_.peek === null || case_.empty === true) {
+        expect(q.isEmpty()).toBe(true);
+        expect(() => q.peek()).toThrow(/empty/i);
+      } else {
+        expect(q.peek()).toBe(case_.peek);
+      }
     });
   }
 });

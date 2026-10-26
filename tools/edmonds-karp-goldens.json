@@ -31,5 +31,25 @@
     "source": 0,
     "sink": 3,
     "maxFlow": 5
+  },
+  {
+    "n": 2,
+    "edges": [
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "source": 0,
+    "sink": 1,
+    "maxFlow": 0
+  },
+  {
+    "n": 1,
+    "edges": [],
+    "source": 0,
+    "sink": 0,
+    "maxFlow": 0
   }
 ]

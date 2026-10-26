@@ -1,11 +1,41 @@
 [
   {
-    "inserts": [5, 2, 8, 1, 2],
-    "extractOrder": [1, 2, 2, 5, 8]
+    "inserts": [
+      5,
+      2,
+      8,
+      1,
+      2
+    ],
+    "extractOrder": [
+      1,
+      2,
+      2,
+      5,
+      8
+    ]
   },
   {
-    "heapify": [9, 4, 7, 1, 3],
+    "heapify": [
+      9,
+      4,
+      7,
+      1,
+      3
+    ],
     "peek": 1,
     "extractMin": 1
+  },
+  {
+    "inserts": [],
+    "extractOrder": []
+  },
+  {
+    "inserts": [
+      4
+    ],
+    "extractOrder": [
+      4
+    ]
   }
 ]

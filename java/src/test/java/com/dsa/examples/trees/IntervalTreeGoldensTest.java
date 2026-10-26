@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class IntervalTreeGoldensTest {
 
@@ -19,6 +20,17 @@ class IntervalTreeGoldensTest {
         Path json = Path.of("..", "tools", "interval-tree-goldens.json").toAbsolutePath().normalize();
         List<Map<String, Object>> cases = GoldenJson.parseArrayOfObjects(Files.readString(json));
         for (Map<String, Object> c : cases) {
+            if (Boolean.TRUE.equals(c.get("expectError"))) {
+                IntervalTree tree = new IntervalTree();
+                @SuppressWarnings("unchecked")
+                List<List<Object>> badInserts = (List<List<Object>>) c.get("inserts");
+                assertThrows(IllegalArgumentException.class, () -> {
+                    for (List<Object> iv : badInserts) {
+                        tree.insert(new Interval(((Number) iv.get(0)).intValue(), ((Number) iv.get(1)).intValue()));
+                    }
+                });
+                continue;
+            }
             IntervalTree tree = new IntervalTree();
             @SuppressWarnings("unchecked")
             List<List<Object>> inserts = (List<List<Object>>) c.get("inserts");

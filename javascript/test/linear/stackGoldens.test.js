@@ -15,7 +15,12 @@ describe('stack shared goldens', () => {
       }
       const pops = case_.popValues.map(() => stack.pop());
       expect(pops).toEqual(case_.popValues);
-      expect(stack.peek()).toBe(case_.peek);
+      if (case_.peek === null || case_.empty === true) {
+        expect(stack.isEmpty()).toBe(true);
+        expect(() => stack.peek()).toThrow(/empty/i);
+      } else {
+        expect(stack.peek()).toBe(case_.peek);
+      }
     });
   }
 });

@@ -24,5 +24,41 @@
         12
       ]
     ]
+  },
+  {
+    "inserts": [
+      [
+        1,
+        1
+      ]
+    ],
+    "query": [
+      1,
+      1
+    ],
+    "overlaps": [
+      [
+        1,
+        1
+      ]
+    ]
+  },
+  {
+    "inserts": [
+      [
+        5,
+        3
+      ]
+    ],
+    "expectError": true,
+    "errorType": "ValueError"
+  },
+  {
+    "inserts": [],
+    "query": [
+      0,
+      0
+    ],
+    "overlaps": []
   }
 ]

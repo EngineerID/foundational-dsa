@@ -19,15 +19,30 @@ class DequeGoldensTest {
         List<Map<String, Object>> cases = GoldenJson.parseArrayOfObjects(Files.readString(json));
         for (Map<String, Object> c : cases) {
             Deque<Integer> dq = new Deque<>();
-            for (Number n : intList(c.get("addLast"))) {
+            List<Number> addLast = intList(c.get("addLast"));
+            List<Number> addFirst = intList(c.get("addFirst"));
+            if (Boolean.TRUE.equals(c.get("empty")) && addLast.isEmpty() && addFirst.isEmpty()) {
+                assertTrue(dq.isEmpty());
+                continue;
+            }
+            for (Number n : addLast) {
                 dq.addLast(n.intValue());
             }
-            for (Number n : intList(c.get("addFirst"))) {
+            for (Number n : addFirst) {
                 dq.addFirst(n.intValue());
             }
-            assertEquals(((Number) c.get("removeFirst")).intValue(), dq.removeFirst());
-            assertEquals(((Number) c.get("removeLast")).intValue(), dq.removeLast());
-            assertEquals(((Number) c.get("remainingValue")).intValue(), dq.removeFirst());
+            Object removeFirst = c.get("removeFirst");
+            if (removeFirst != null) {
+                assertEquals(((Number) removeFirst).intValue(), dq.removeFirst());
+            }
+            Object removeLast = c.get("removeLast");
+            if (removeLast != null) {
+                assertEquals(((Number) removeLast).intValue(), dq.removeLast());
+            }
+            Object remaining = c.get("remainingValue");
+            if (remaining != null) {
+                assertEquals(((Number) remaining).intValue(), dq.removeFirst());
+            }
             assertTrue(dq.isEmpty());
         }
     }

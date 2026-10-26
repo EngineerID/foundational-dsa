@@ -18,7 +18,9 @@ describe('separate chaining shared goldens', () => {
         table.put(key, value);
       }
       expect(table.get(case_.get.key)).toBe(case_.get.value);
-      expect(table.get(case_.getMissing.key)).toBe(case_.getMissing.value);
+      if (case_.getMissing) {
+        expect(table.get(case_.getMissing.key)).toBe(case_.getMissing.value);
+      }
     });
   }
 });

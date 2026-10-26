@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+import pytest
+
 from dsa.trees.interval_tree import Interval, IntervalTree
 
 GOLDENS = json.loads(
@@ -10,6 +12,12 @@ GOLDENS = json.loads(
 
 def test_interval_tree_shared_goldens():
     for case in GOLDENS:
+        if case.get("expectError"):
+            tree = IntervalTree()
+            with pytest.raises(ValueError):
+                for low, high in case["inserts"]:
+                    tree.insert(Interval(low, high))
+            continue
         tree = IntervalTree()
         for low, high in case["inserts"]:
             tree.insert(Interval(low, high))

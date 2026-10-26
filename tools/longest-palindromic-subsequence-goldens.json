@@ -1,4 +1,18 @@
 [
-  { "s": "bbbab", "expected": 4 },
-  { "s": "cbbd", "expected": 2 }
+  {
+    "s": "bbbab",
+    "expected": 4
+  },
+  {
+    "s": "cbbd",
+    "expected": 2
+  },
+  {
+    "s": "",
+    "expected": 0
+  },
+  {
+    "s": "a",
+    "expected": 1
+  }
 ]

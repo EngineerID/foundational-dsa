@@ -22,6 +22,10 @@ class SinglyLinkedListGoldensTest {
             SinglyLinkedList<Integer> list = new SinglyLinkedList<>();
             @SuppressWarnings("unchecked")
             List<Number> addLast = (List<Number>) c.get("addLast");
+            if (addLast.isEmpty()) {
+                assertEquals(0, list.size());
+                continue;
+            }
             for (Number n : addLast) {
                 list.addLast(n.intValue());
             }

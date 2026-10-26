@@ -1,7 +1,37 @@
 [
   {
-    "append": [10, 20, 30],
-    "get": [{ "index": 0, "value": 10 }, { "index": 2, "value": 30 }],
+    "append": [
+      10,
+      20,
+      30
+    ],
+    "get": [
+      {
+        "index": 0,
+        "value": 10
+      },
+      {
+        "index": 2,
+        "value": 30
+      }
+    ],
     "size": 3
+  },
+  {
+    "append": [],
+    "get": [],
+    "size": 0
+  },
+  {
+    "append": [
+      4
+    ],
+    "get": [
+      {
+        "index": 0,
+        "value": 4
+      }
+    ],
+    "size": 1
   }
 ]

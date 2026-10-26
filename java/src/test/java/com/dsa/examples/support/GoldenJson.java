@@ -138,7 +138,11 @@ public final class GoldenJson {
             if (num.contains(".") || num.contains("e") || num.contains("E")) {
                 return Double.parseDouble(num);
             }
-            return Integer.parseInt(num);
+            long lv = Long.parseLong(num);
+            if (lv >= Integer.MIN_VALUE && lv <= Integer.MAX_VALUE) {
+                return (int) lv;
+            }
+            return lv;
         }
 
         void skipWs() {

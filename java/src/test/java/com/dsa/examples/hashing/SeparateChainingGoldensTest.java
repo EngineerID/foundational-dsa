@@ -28,10 +28,17 @@ class SeparateChainingGoldensTest {
             }
             @SuppressWarnings("unchecked")
             Map<String, Object> get = (Map<String, Object>) c.get("get");
-            assertEquals(((Number) get.get("value")).intValue(), table.get((String) get.get("key")));
-            @SuppressWarnings("unchecked")
-            Map<String, Object> missing = (Map<String, Object>) c.get("getMissing");
-            assertNull(table.get((String) missing.get("key")));
+            Object expectedValue = get.get("value");
+            if (expectedValue == null) {
+                assertNull(table.get((String) get.get("key")));
+            } else {
+                assertEquals(((Number) expectedValue).intValue(), table.get((String) get.get("key")));
+            }
+            if (c.get("getMissing") != null) {
+                @SuppressWarnings("unchecked")
+                Map<String, Object> missing = (Map<String, Object>) c.get("getMissing");
+                assertNull(table.get((String) missing.get("key")));
+            }
         }
     }
 }

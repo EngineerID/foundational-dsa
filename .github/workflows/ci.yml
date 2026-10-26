@@ -208,6 +208,9 @@ jobs:
       - run: npm run check:catalog-golden-coverage
         if: env.RUN_HEAVY == 'true'
 
+      - run: npm run check:shared-golden-themes
+        if: env.RUN_HEAVY == 'true'
+
       - run: npm run check:stubs
         if: env.RUN_HEAVY == 'true'
 

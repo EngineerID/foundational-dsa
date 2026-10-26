@@ -10,6 +10,10 @@ GOLDENS = json.loads(
 
 def test_b_tree_shared_goldens():
     for case in GOLDENS:
+        if case.get("expectError"):
+            with pytest.raises(ValueError):
+                BTree(case["t"])
+            continue
         tree = BTree(case["t"])
         for key in case["inserts"]:
             tree.insert(key)

@@ -1,13 +1,9 @@
-import json
-from pathlib import Path
+import pytest
 
 from dsa.dp.partition_equal_subset import can_partition
+from tests.golden_loader import load_golden_json
 
-GOLDENS = json.loads(
-    (
-        Path(__file__).resolve().parents[3] / "tools" / "partition-equal-subset-goldens.json"
-    ).read_text()
-)
+GOLDENS = load_golden_json("partition-equal-subset-goldens.json")
 
 
 def test_partition_equal_subset_shared_goldens():

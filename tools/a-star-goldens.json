@@ -33,5 +33,23 @@
     "source": 0,
     "goal": 3,
     "length": 4
+  },
+  {
+    "n": 1,
+    "directed": true,
+    "weighted": true,
+    "edges": [],
+    "source": 0,
+    "goal": 0,
+    "length": 0
+  },
+  {
+    "n": 2,
+    "directed": true,
+    "weighted": true,
+    "edges": [],
+    "source": 0,
+    "goal": 1,
+      "length": -1
   }
 ]

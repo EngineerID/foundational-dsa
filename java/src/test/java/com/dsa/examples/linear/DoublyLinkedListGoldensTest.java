@@ -20,10 +20,16 @@ class DoublyLinkedListGoldensTest {
         List<Map<String, Object>> cases = GoldenJson.parseArrayOfObjects(Files.readString(json));
         for (Map<String, Object> c : cases) {
             DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
-            for (Number n : intList(c.get("addLast"))) {
+            List<Number> addLast = intList(c.get("addLast"));
+            List<Number> addFirst = intList(c.get("addFirst"));
+            if (Boolean.TRUE.equals(c.get("empty")) && addLast.isEmpty() && addFirst.isEmpty()) {
+                assertEquals(0, list.size());
+                continue;
+            }
+            for (Number n : addLast) {
                 list.addLast(n.intValue());
             }
-            for (Number n : intList(c.get("addFirst"))) {
+            for (Number n : addFirst) {
                 list.addFirst(n.intValue());
             }
             assertEquals(((Number) c.get("getValue")).intValue(), list.get(((Number) c.get("getIndex")).intValue()));

@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class BTreeGoldensTest {
 
@@ -17,6 +18,10 @@ class BTreeGoldensTest {
         Path json = Path.of("..", "tools", "b-tree-goldens.json").toAbsolutePath().normalize();
         List<Map<String, Object>> cases = GoldenJson.parseArrayOfObjects(Files.readString(json));
         for (Map<String, Object> c : cases) {
+            if (Boolean.TRUE.equals(c.get("expectError"))) {
+                assertThrows(IllegalArgumentException.class, () -> new BTree(((Number) c.get("t")).intValue()));
+                continue;
+            }
             BTree tree = new BTree(((Number) c.get("t")).intValue());
             @SuppressWarnings("unchecked")
             List<Object> inserts = (List<Object>) c.get("inserts");

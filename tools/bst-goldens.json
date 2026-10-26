@@ -1,8 +1,53 @@
 [
   {
-    "inserts": [[5, "a"], [2, "b"], [7, "c"], [1, "d"], [2, "e"]],
-    "inOrderKeys": [1, 2, 5, 7],
+    "inserts": [
+      [
+        5,
+        "a"
+      ],
+      [
+        2,
+        "b"
+      ],
+      [
+        7,
+        "c"
+      ],
+      [
+        1,
+        "d"
+      ],
+      [
+        2,
+        "e"
+      ]
+    ],
+    "inOrderKeys": [
+      1,
+      2,
+      5,
+      7
+    ],
     "searchKey": 2,
     "searchValue": "e"
+  },
+  {
+    "inserts": [],
+    "inOrderKeys": [],
+    "searchKey": 1,
+    "searchValue": null
+  },
+  {
+    "inserts": [
+      [
+        2,
+        "v"
+      ]
+    ],
+    "inOrderKeys": [
+      2
+    ],
+    "searchKey": 2,
+    "searchValue": "v"
   }
 ]

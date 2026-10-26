@@ -15,4 +15,12 @@ def test_queue_shared_goldens():
             q.enqueue(v)
         for expected in case["dequeueValues"]:
             assert q.dequeue() == expected
-        assert q.peek() == case["peek"]
+        if case.get("peek") is None or case.get("empty"):
+            assert q.is_empty()
+            try:
+                q.peek()
+                raise AssertionError("expected empty queue peek to fail")
+            except Exception:
+                pass
+        else:
+            assert q.peek() == case["peek"]

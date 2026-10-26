@@ -7,7 +7,7 @@
  * allPairs: Time O(V³); Space O(V²).
  */
 
-const INF = Math.floor(Number.MAX_SAFE_INTEGER / 4);
+const INF = Math.floor(2147483647 / 4);
 
 function allPairsShortestPaths(graph) {
   const n = graph.vertices();

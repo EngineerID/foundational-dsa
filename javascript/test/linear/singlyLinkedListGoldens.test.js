@@ -13,6 +13,10 @@ describe('singly linked list shared goldens', () => {
   for (const case_ of goldens) {
     test('list ops', () => {
       const list = new SinglyLinkedList();
+      if (case_.addLast.length === 0) {
+        expect(list.size()).toBe(0);
+        return;
+      }
       for (const v of case_.addLast) list.addLast(v);
       expect(list.get(case_.getIndex)).toBe(case_.getValue);
       expect(list.remove(case_.removeIndex)).toBe(case_.removeValue);

@@ -1,7 +1,38 @@
 [
   {
-    "push": [1, 2, 3],
-    "popValues": [3, 2],
+    "push": [
+      1,
+      2,
+      3
+    ],
+    "popValues": [
+      3,
+      2
+    ],
     "peek": 1
+  },
+  {
+    "push": [],
+    "popValues": [],
+    "empty": true
+  },
+  {
+    "push": [
+      9
+    ],
+    "popValues": [
+      9
+    ],
+    "empty": true
+  },
+  {
+    "push": [
+      1
+    ],
+    "popValues": [
+      1
+    ],
+    "empty": true,
+    "peek": null
   }
 ]

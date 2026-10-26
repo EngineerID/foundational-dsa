@@ -21,5 +21,26 @@
     "componentSizes": [
       3
     ]
+  },
+  {
+    "n": 1,
+    "directed": true,
+    "weighted": false,
+    "edges": [],
+    "componentCount": 1,
+    "componentSizes": [
+      1
+    ]
+  },
+  {
+    "n": 2,
+    "directed": true,
+    "weighted": false,
+    "edges": [],
+    "componentCount": 2,
+    "componentSizes": [
+      1,
+      1
+    ]
   }
 ]

@@ -39,5 +39,21 @@
         1
       ]
     ]
+  },
+  {
+    "n": 1,
+    "directed": false,
+    "weighted": false,
+    "edges": [],
+    "articulationPoints": [],
+    "bridges": []
+  },
+  {
+    "n": 2,
+    "directed": false,
+    "weighted": false,
+    "edges": [],
+    "articulationPoints": [],
+    "bridges": []
   }
 ]

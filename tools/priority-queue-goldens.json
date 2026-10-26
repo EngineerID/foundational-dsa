@@ -1,6 +1,30 @@
 [
   {
-    "inserts": [5, 3, 7, 1, 3],
-    "extractOrder": [1, 3, 3, 5, 7]
+    "inserts": [
+      5,
+      3,
+      7,
+      1,
+      3
+    ],
+    "extractOrder": [
+      1,
+      3,
+      3,
+      5,
+      7
+    ]
+  },
+  {
+    "inserts": [],
+    "extractOrder": []
+  },
+  {
+    "inserts": [
+      4
+    ],
+    "extractOrder": [
+      4
+    ]
   }
 ]

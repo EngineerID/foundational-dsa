@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class QueueGoldensTest {
 
@@ -28,7 +30,13 @@ class QueueGoldensTest {
             for (Number expected : dequeues) {
                 assertEquals(expected.intValue(), q.dequeue());
             }
-            assertEquals(((Number) c.get("peek")).intValue(), q.peek());
+            Object peek = c.get("peek");
+            if (peek == null || Boolean.TRUE.equals(c.get("empty"))) {
+                assertTrue(q.isEmpty());
+                assertThrows(IllegalStateException.class, q::peek);
+            } else {
+                assertEquals(((Number) peek).intValue(), q.peek());
+            }
         }
     }
 }

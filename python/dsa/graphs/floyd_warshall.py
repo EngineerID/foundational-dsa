@@ -9,7 +9,7 @@ allPairs: Time O(V³); Space O(V²).
 
 from dsa.graphs.graph import Graph
 
-_INF = 2**30 - 1
+_INF = 2147483647 // 4
 
 
 def all_pairs_shortest_paths(graph: Graph) -> list[list[int]]:

@@ -1,0 +1,124 @@
+{
+  "z-algorithm-goldens.json": [
+    {
+      "text": "",
+      "pattern": "x",
+      "index": -1,
+      "z": []
+    }
+  ],
+  "interval-tree-goldens.json": [
+    {
+      "inserts": [],
+      "query": [0, 0],
+      "overlaps": []
+    }
+  ],
+  "red-black-tree-goldens.json": [
+    {
+      "inserts": [],
+      "searches": [],
+      "searchMiss": 42
+    },
+    {
+      "inserts": [[1, 10]],
+      "searches": [[1, 10]],
+      "searchMiss": 2
+    }
+  ],
+  "b-tree-goldens.json": [
+    {
+      "t": 2,
+      "inserts": [7],
+      "searches": [{ "key": 7, "found": true }, { "key": 99, "found": false }]
+    }
+  ],
+  "lca-binary-lifting-goldens.json": [
+    {
+      "parent": [0],
+      "queries": [[0, 0, 0]]
+    }
+  ],
+  "sparse-table-goldens.json": [
+    {
+      "initial": [9],
+      "queries": [[0, 0, 9]]
+    }
+  ],
+  "kosaraju-goldens.json": [
+    {
+      "n": 2,
+      "directed": true,
+      "weighted": false,
+      "edges": [],
+      "componentCount": 2,
+      "componentSizes": [1, 1]
+    }
+  ],
+  "tarjan-scc-goldens.json": [
+    {
+      "n": 2,
+      "directed": true,
+      "weighted": false,
+      "edges": [],
+      "componentCount": 2,
+      "componentSizes": [1, 1]
+    }
+  ],
+  "articulation-bridges-goldens.json": [
+    {
+      "n": 2,
+      "directed": false,
+      "weighted": false,
+      "edges": [],
+      "articulationPoints": [],
+      "bridges": []
+    }
+  ],
+  "boruvka-mst-goldens.json": [
+    {
+      "n": 2,
+      "directed": false,
+      "weighted": true,
+      "edges": [],
+      "totalWeight": 0
+    }
+  ],
+  "a-star-goldens.json": [
+    {
+      "n": 2,
+      "directed": true,
+      "weighted": true,
+      "edges": [],
+      "source": 0,
+      "goal": 1,
+      "length": -1
+    }
+  ],
+  "edmonds-karp-goldens.json": [
+    {
+      "n": 1,
+      "edges": [],
+      "source": 0,
+      "sink": 0,
+      "maxFlow": 0
+    }
+  ],
+  "hungarian-goldens.json": [
+    {
+      "cost": [[1, 2], [3, 4]],
+      "minCost": 5
+    }
+  ],
+  "dfs-goldens.json": [
+    {
+      "n": 2,
+      "directed": false,
+      "weighted": false,
+      "edges": [],
+      "source": 0,
+      "discovery": [0, -1],
+      "finish": [1, -1]
+    }
+  ]
+}

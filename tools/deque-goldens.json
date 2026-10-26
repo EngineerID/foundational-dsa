@@ -1,9 +1,28 @@
 [
   {
-    "addLast": [1, 2],
-    "addFirst": [0],
+    "addLast": [
+      1,
+      2
+    ],
+    "addFirst": [
+      0
+    ],
     "removeFirst": 0,
     "removeLast": 2,
     "remainingValue": 1
+  },
+  {
+    "addLast": [],
+    "addFirst": [],
+    "removeFirst": null,
+    "removeLast": null,
+    "remainingValue": null,
+    "empty": true
+  },
+  {
+    "addLast": [5],
+    "addFirst": [],
+    "removeFirst": 5,
+    "empty": true
   }
 ]

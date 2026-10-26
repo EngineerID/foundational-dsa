@@ -26,5 +26,19 @@
       ]
     ],
     "totalWeight": 6
+  },
+  {
+    "n": 1,
+    "directed": false,
+    "weighted": true,
+    "edges": [],
+    "totalWeight": 0
+  },
+  {
+    "n": 2,
+    "directed": false,
+    "weighted": true,
+    "edges": [],
+    "totalWeight": 0
   }
 ]

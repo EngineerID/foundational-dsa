@@ -1,10 +1,42 @@
 [
   {
     "n": 5,
-    "unions": [[0, 1], [2, 3], [1, 2]],
+    "unions": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        1,
+        2
+      ]
+    ],
     "connected": [
-      { "a": 0, "b": 3, "expected": true },
-      { "a": 0, "b": 4, "expected": false }
+      {
+        "a": 0,
+        "b": 3,
+        "expected": true
+      },
+      {
+        "a": 0,
+        "b": 4,
+        "expected": false
+      }
+    ]
+  },
+  {
+    "n": 1,
+    "unions": [],
+    "connected": [
+      {
+        "a": 0,
+        "b": 0,
+        "expected": true
+      }
     ]
   }
 ]

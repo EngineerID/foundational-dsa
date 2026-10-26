@@ -11,6 +11,9 @@ GOLDENS = json.loads(
 def test_singly_linked_list_shared_goldens():
     for case in GOLDENS:
         lst = SinglyLinkedList()
+        if not case["addLast"]:
+            assert lst.size() == 0
+            continue
         for v in case["addLast"]:
             lst.add_last(v)
         assert lst.get(case["getIndex"]) == case["getValue"]

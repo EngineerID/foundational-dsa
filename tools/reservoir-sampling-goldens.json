@@ -1,8 +1,81 @@
 [
-  { "stream": [1, 2, 3, 4, 5], "k": 0, "seed": 0, "expected": [] },
-  { "stream": [], "k": 3, "seed": 0, "expected": [] },
-  { "stream": [7], "k": 1, "seed": 0, "expected": [7] },
-  { "stream": [1, 1, 2], "k": 2, "seed": 0, "expected": [2, 1] },
-  { "stream": [1, 2, 3, 4, 5], "k": 2, "seed": 0, "expected": [5, 2] },
-  { "stream": [1, 2, 3], "k": 5, "seed": 0, "expected": [1, 2, 3] }
+  {
+    "stream": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "k": 0,
+    "seed": 0,
+    "expected": []
+  },
+  {
+    "stream": [],
+    "k": 3,
+    "seed": 0,
+    "expected": []
+  },
+  {
+    "stream": [
+      7
+    ],
+    "k": 1,
+    "seed": 0,
+    "expected": [
+      7
+    ]
+  },
+  {
+    "stream": [
+      1,
+      1,
+      2
+    ],
+    "k": 2,
+    "seed": 0,
+    "expected": [
+      2,
+      1
+    ]
+  },
+  {
+    "stream": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "k": 2,
+    "seed": 0,
+    "expected": [
+      5,
+      2
+    ]
+  },
+  {
+    "stream": [
+      1,
+      2,
+      3
+    ],
+    "k": 5,
+    "seed": 0,
+    "expected": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "stream": [
+      1
+    ],
+    "k": 1,
+    "expected": [
+      1
+    ]
+  }
 ]
