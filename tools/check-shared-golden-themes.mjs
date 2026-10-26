@@ -9,6 +9,10 @@ import { requiredThemes, themesInCases } from './shared-golden-themes.mjs';
 
 /** Stateful fixtures must include these keys on every case object. */
 const REQUIRED_CASE_KEYS = {
+  'kmp-goldens.json': ['text', 'pattern', 'expected'],
+  'linear-search-goldens.json': ['arr', 'target', 'expected'],
+  'binary-search-goldens.json': ['arr', 'key', 'expected'],
+  'binary-search-boundary-goldens.json': ['arr', 'key', 'first', 'last'],
   'reservoir-sampling-goldens.json': ['stream', 'k', 'seed', 'expected'],
   'treap-goldens.json': ['seed', 'inserts', 'searchResults'],
 };

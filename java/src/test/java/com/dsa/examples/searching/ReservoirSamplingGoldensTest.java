@@ -1,5 +1,6 @@
 package com.dsa.examples.searching;
 
+import com.dsa.examples.support.GoldenIntArrays;
 import com.dsa.examples.support.GoldenJson;
 import org.junit.jupiter.api.Test;
 
@@ -17,22 +18,12 @@ class ReservoirSamplingGoldensTest {
         Path json = Path.of("..", "tools", "reservoir-sampling-goldens.json").toAbsolutePath().normalize();
         List<Map<String, Object>> cases = GoldenJson.parseArrayOfObjects(Files.readString(json));
         for (Map<String, Object> c : cases) {
-            int[] stream = toIntArray(c.get("stream"));
+            int[] stream = GoldenIntArrays.parse(c.get("stream"));
             int k = ((Number) c.get("k")).intValue();
             int seed = ((Number) c.get("seed")).intValue();
             List<Integer> expected = toIntList(c.get("expected"));
             assertEquals(expected, ReservoirSampling.sample(stream, k, seed), c.toString());
         }
-    }
-
-    @SuppressWarnings("unchecked")
-    private static int[] toIntArray(Object raw) {
-        List<Object> rows = (List<Object>) raw;
-        int[] out = new int[rows.size()];
-        for (int i = 0; i < rows.size(); i++) {
-            out[i] = ((Number) rows.get(i)).intValue();
-        }
-        return out;
     }
 
     @SuppressWarnings("unchecked")

@@ -90,7 +90,7 @@ Worked walkthroughs: [`docs/worked-examples.md`](docs/worked-examples.md).
 - `javascript/test/catalog/edgeCaseThemes.test.js`
 - `java/src/test/java/com/dsa/examples/catalog/EdgeCaseThemesTest.java`
 
-**Shared regression JSON** (trilingual tests): `tools/kmp-goldens.json`, `tools/binary-search-goldens.json`, `tools/binary-search-boundary-goldens.json` (first/last occurrence).
+**Shared regression JSON** (trilingual tests): `tools/kmp-goldens.json`, `tools/binary-search-goldens.json`, `tools/binary-search-boundary-goldens.json` (first/last occurrence). Java `*GoldensTest` classes load these via `GoldenJson` / `GoldenIntArrays` under `java/.../support/` (no regex parsing).
 
 **Catalog edge themes** (cross-item): `python/tests/catalog/`, `javascript/test/catalog/`, `java/.../catalog/`; `npm run check:catalog-items` verifies all 41 topic ids are referenced.
 
