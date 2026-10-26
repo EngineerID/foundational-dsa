@@ -188,4 +188,51 @@ class PracticeProblemsTest {
                 new int[] { 0, 1, 1, 2, -1 },
                 BfsPractice.distances(5, new int[][] { { 0, 1 }, { 0, 2 }, { 1, 3 } }, 0));
     }
+
+    @Test
+    void unionFindPractice() {
+        assertTrue(UnionFindPractice.connected(5, new int[][] { { 0, 1 }, { 2, 3 }, { 1, 2 } }, 0, 3));
+        assertFalse(UnionFindPractice.connected(5, new int[][] { { 0, 1 }, { 2, 3 }, { 1, 2 } }, 0, 4));
+    }
+
+    @Test
+    void binaryHeapPractice() {
+        assertArrayEquals(new int[] { 1, 2, 2, 5, 8 }, BinaryHeapPractice.extractOrder(new int[] { 5, 2, 8, 1, 2 }));
+    }
+
+    @Test
+    void dijkstraPractice() {
+        assertArrayEquals(
+                new int[] { 0, 1, 3, 4 },
+                DijkstraPractice.shortestDistances(
+                        4,
+                        new int[][] {
+                            { 0, 1, 1 }, { 0, 2, 4 }, { 1, 2, 2 }, { 1, 3, 5 }, { 2, 3, 1 }
+                        },
+                        0));
+    }
+
+    @Test
+    void dfsPractice() {
+        DfsPractice.Times t =
+                DfsPractice.traverse(4, new int[][] { { 0, 1 }, { 0, 2 }, { 1, 3 } }, 0, false);
+        assertArrayEquals(new int[] { 0, 1, 5, 2 }, t.discovery());
+    }
+
+    @Test
+    void lisPractice() {
+        assertEquals(4, LisPractice.length(new int[] { 10, 9, 2, 5, 3, 7, 101, 18 }));
+    }
+
+    @Test
+    void mergeSortPractice() {
+        assertArrayEquals(new int[] { 1, 2, 2, 5, 8 }, MergeSortPractice.sort(new int[] { 5, 2, 8, 1, 2 }));
+    }
+
+    @Test
+    void topologicalSortPractice() {
+        assertEquals(
+                List.of(0, 1, 2, 3),
+                TopologicalSortPractice.order(4, new int[][] { { 0, 1 }, { 0, 2 }, { 1, 3 } }));
+    }
 }

@@ -1,6 +1,6 @@
 # Practice problems (trilingual solutions)
 
-Twenty-six interview-style problems with reference solutions in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`. Each problem below links to a step-table **[worked example](worked-examples.md)** (CI: `npm run check:practice-walkthrough`).
+Thirty-three interview-style problems with reference solutions in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`. Each problem below links to a step-table **[worked example](worked-examples.md)** (CI: `npm run check:practice-walkthrough`).
 
 | # | Problem | Signals | Catalog topics |
 |---|---------|---------|----------------|
@@ -30,6 +30,13 @@ Twenty-six interview-style problems with reference solutions in Java, Python, an
 | 24 | [KMP pattern search](#24-kmp-pattern-search) | Substring, linear | `kmp` |
 | 25 | [Trie prefix tree](#25-trie-prefix-tree) | Insert, search, prefix | `trie` |
 | 26 | [BFS shortest paths](#26-bfs-shortest-paths) | Unweighted graph | `bfs` |
+| 27 | [Union–find connectivity](#27-union-find-connectivity) | Dynamic connectivity | `union-find` |
+| 28 | [Binary min-heap](#28-binary-min-heap) | Insert / extractMin | `binary-heap` |
+| 29 | [Dijkstra shortest paths](#29-dijkstra-shortest-paths) | Non-negative weights | `dijkstra` |
+| 30 | [DFS discovery times](#30-dfs-discovery-times) | Graph traversal stamps | `dfs` |
+| 31 | [Longest increasing subsequence](#31-longest-increasing-subsequence) | Patience / DP | `lis` |
+| 32 | [Merge sort](#32-merge-sort) | Stable sort copy | `merge-sort` |
+| 33 | [Topological sort](#33-topological-sort) | DAG ordering | `topological-sort` |
 
 Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --testPathPattern=practice`, Java `PracticeProblemsTest`.
 
@@ -242,3 +249,59 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 **Implementation:** `practice/bfs*` / `bfsPractice*` — catalog [`bfs`](items/graphs/bfs.md): `npm run demo -- bfs`.
 
 **Walkthrough:** [Worked examples — BFS](worked-examples.md#bfs-unweighted-shortest-paths).
+
+## 27. Union–find connectivity
+
+**Statement:** Given `n` elements and a sequence of `union(a, b)` operations, answer whether `a` and `b` are in the same connected component after all unions.
+
+**Implementation:** `practice/union_find*` / `unionFindPractice*` — catalog [`union-find`](items/unionfind/union-find.md): `npm run demo -- union-find`.
+
+**Walkthrough:** [Worked examples — Union–find](worked-examples.md#union-find-connectivity).
+
+## 28. Binary min-heap
+
+**Statement:** Given a stream of insertions into a min-heap, return values in sorted order by repeatedly extracting the minimum.
+
+**Implementation:** `practice/binary_heap*` / `binaryHeapPractice*` — catalog [`binary-heap`](items/heaps/binary-heap.md): `npm run demo -- binary-heap`.
+
+**Walkthrough:** [Worked examples — Binary min-heap](worked-examples.md#binary-min-heap-insert-and-extract).
+
+## 29. Dijkstra shortest paths
+
+**Statement:** Given a directed weighted graph (non-negative edges) and source `s`, return shortest distances from `s` to every vertex (large sentinel if unreachable).
+
+**Implementation:** `practice/dijkstra*` / `dijkstraPractice*` — catalog [`dijkstra`](items/graphs/dijkstra.md): `npm run demo -- dijkstra`.
+
+**Walkthrough:** [Worked examples — Dijkstra](worked-examples.md#dijkstra-non-negative-weights).
+
+## 30. DFS discovery times
+
+**Statement:** On an undirected (or directed) graph, run DFS from `source` and return discovery and finish time arrays.
+
+**Implementation:** `practice/dfs*` / `dfsPractice*` — catalog [`dfs`](items/graphs/dfs.md): `npm run demo -- dfs`.
+
+**Walkthrough:** [Worked examples — DFS](worked-examples.md#dfs-discovery-times).
+
+## 31. Longest increasing subsequence
+
+**Statement:** Given an integer array, return the length of the longest strictly increasing subsequence.
+
+**Implementation:** `practice/lis*` / `lisPractice*` — catalog [`lis`](items/dp/lis.md): `npm run demo -- lis`.
+
+**Walkthrough:** [Worked examples — LIS](worked-examples.md#longest-increasing-subsequence).
+
+## 32. Merge sort
+
+**Statement:** Return a new array containing the input integers in ascending order using merge sort.
+
+**Implementation:** `practice/merge_sort*` / `mergeSortPractice*` — catalog [`merge-sort`](items/sorting/merge-sort.md): `npm run demo -- merge-sort`.
+
+**Walkthrough:** [Worked examples — Merge sort](worked-examples.md#merge-sort-top-down).
+
+## 33. Topological sort
+
+**Statement:** Given a DAG as directed edges, return a topological order of vertices, or an **empty** list if a cycle exists.
+
+**Implementation:** `practice/topological_sort*` / `topologicalSortPractice*` — catalog [`topological-sort`](items/graphs/topological-sort.md): `npm run demo -- topological-sort`.
+
+**Walkthrough:** [Worked examples — Topological sort](worked-examples.md#topological-sort-kahn-course-schedule).

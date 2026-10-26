@@ -7,6 +7,13 @@ const { firstIndex } = require('../../src/practice/kmpPractice');
 const { knapsackMaxValue } = require('../../src/practice/knapsackPractice');
 const { lcsLength } = require('../../src/practice/lcsPractice');
 const { TriePractice } = require('../../src/practice/triePractice');
+const { connected: ufConnected } = require('../../src/practice/unionFindPractice');
+const { extractOrder } = require('../../src/practice/binaryHeapPractice');
+const { shortestDistances } = require('../../src/practice/dijkstraPractice');
+const { traverse: dfsTraverse } = require('../../src/practice/dfsPractice');
+const { lisLength } = require('../../src/practice/lisPractice');
+const { mergeSort } = require('../../src/practice/mergeSortPractice');
+const { topologicalOrder } = require('../../src/practice/topologicalSortPractice');
 
 const tools = path.join(__dirname, '../../../tools');
 
@@ -57,6 +64,53 @@ describe('practice shared goldens', () => {
   test('bfs practice', () => {
     for (const row of cases('practice-bfs-goldens.json')) {
       expect(bfsDistances(row.n, row.edges, row.source)).toEqual(row.expected);
+    }
+  });
+
+  test('union–find practice', () => {
+    for (const row of cases('union-find-goldens.json')) {
+      for (const q of row.connected) {
+        expect(ufConnected(row.n, row.unions, q.a, q.b)).toBe(q.expected);
+      }
+    }
+  });
+
+  test('binary heap practice', () => {
+    for (const row of cases('binary-heap-goldens.json')) {
+      if (row.inserts === undefined) continue;
+      expect(extractOrder(row.inserts)).toEqual(row.extractOrder);
+    }
+  });
+
+  test('Dijkstra practice', () => {
+    for (const row of cases('dijkstra-goldens.json')) {
+      expect(shortestDistances(row.n, row.edges, row.source)).toEqual(row.distances);
+    }
+  });
+
+  test('DFS practice', () => {
+    for (const row of cases('dfs-goldens.json')) {
+      const t = dfsTraverse(row.n, row.edges, row.source, row.directed);
+      expect(t.discovery).toEqual(row.discovery);
+      expect(t.finish).toEqual(row.finish);
+    }
+  });
+
+  test('LIS practice', () => {
+    for (const row of cases('lis-goldens.json')) {
+      expect(lisLength(row.arr)).toBe(row.expected);
+    }
+  });
+
+  test('merge sort practice', () => {
+    for (const row of cases('merge-sort-goldens.json')) {
+      expect(mergeSort(row.input)).toEqual(row.sorted);
+    }
+  });
+
+  test('topological sort practice', () => {
+    for (const row of cases('topological-sort-goldens.json')) {
+      expect(topologicalOrder(row.n, row.edges)).toEqual(row.expectedOrder);
     }
   });
 });

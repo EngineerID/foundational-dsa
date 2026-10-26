@@ -24,6 +24,13 @@ from dsa.practice.lcs_practice import lcs_length
 from dsa.practice.kmp_practice import first_index
 from dsa.practice.trie_practice import TriePractice
 from dsa.practice.bfs_practice import distances as bfs_distances
+from dsa.practice.union_find_practice import connected as uf_connected
+from dsa.practice.binary_heap_practice import extract_order
+from dsa.practice.dijkstra_practice import shortest_distances
+from dsa.practice.dfs_practice import traverse as dfs_traverse
+from dsa.practice.lis_practice import length as lis_length
+from dsa.practice.merge_sort_practice import sort as merge_sort_practice
+from dsa.practice.topological_sort_practice import order as topo_order
 
 
 def test_two_sum_sorted():
@@ -153,3 +160,35 @@ def test_trie_practice():
 
 def test_bfs_practice():
     assert bfs_distances(5, [[0, 1], [0, 2], [1, 3]], 0) == [0, 1, 1, 2, -1]
+
+
+def test_union_find_practice():
+    unions = [[0, 1], [2, 3], [1, 2]]
+    assert uf_connected(5, unions, 0, 3)
+    assert not uf_connected(5, unions, 0, 4)
+
+
+def test_binary_heap_practice():
+    assert extract_order([5, 2, 8, 1, 2]) == [1, 2, 2, 5, 8]
+
+
+def test_dijkstra_practice():
+    edges = [[0, 1, 1], [0, 2, 4], [1, 2, 2], [1, 3, 5], [2, 3, 1]]
+    assert shortest_distances(4, edges, 0) == [0, 1, 3, 4]
+
+
+def test_dfs_practice():
+    times = dfs_traverse(4, [[0, 1], [0, 2], [1, 3]], 0, False)
+    assert times.discovery == [0, 1, 5, 2]
+
+
+def test_lis_practice():
+    assert lis_length([10, 9, 2, 5, 3, 7, 101, 18]) == 4
+
+
+def test_merge_sort_practice():
+    assert merge_sort_practice([5, 2, 8, 1, 2]) == [1, 2, 2, 5, 8]
+
+
+def test_topological_sort_practice():
+    assert topo_order(4, [[0, 1], [0, 2], [1, 3]]) == [0, 1, 2, 3]

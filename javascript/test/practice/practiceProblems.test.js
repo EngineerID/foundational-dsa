@@ -24,6 +24,13 @@ const { lcsLength } = require('../../src/practice/lcsPractice');
 const { firstIndex } = require('../../src/practice/kmpPractice');
 const { TriePractice } = require('../../src/practice/triePractice');
 const { bfsDistances } = require('../../src/practice/bfsPractice');
+const { connected: ufConnected } = require('../../src/practice/unionFindPractice');
+const { extractOrder } = require('../../src/practice/binaryHeapPractice');
+const { shortestDistances } = require('../../src/practice/dijkstraPractice');
+const { traverse: dfsTraverse } = require('../../src/practice/dfsPractice');
+const { lisLength } = require('../../src/practice/lisPractice');
+const { mergeSort } = require('../../src/practice/mergeSortPractice');
+const { topologicalOrder } = require('../../src/practice/topologicalSortPractice');
 
 describe('practice problems', () => {
   test('two sum sorted', () => {
@@ -199,5 +206,67 @@ describe('practice problems', () => {
         0,
       ),
     ).toEqual([0, 1, 1, 2, -1]);
+  });
+
+  test('union–find practice', () => {
+    const unions = [
+      [0, 1],
+      [2, 3],
+      [1, 2],
+    ];
+    expect(ufConnected(5, unions, 0, 3)).toBe(true);
+    expect(ufConnected(5, unions, 0, 4)).toBe(false);
+  });
+
+  test('binary heap practice', () => {
+    expect(extractOrder([5, 2, 8, 1, 2])).toEqual([1, 2, 2, 5, 8]);
+  });
+
+  test('Dijkstra practice', () => {
+    expect(
+      shortestDistances(
+        4,
+        [
+          [0, 1, 1],
+          [0, 2, 4],
+          [1, 2, 2],
+          [1, 3, 5],
+          [2, 3, 1],
+        ],
+        0,
+      ),
+    ).toEqual([0, 1, 3, 4]);
+  });
+
+  test('DFS practice', () => {
+    const t = dfsTraverse(
+      4,
+      [
+        [0, 1],
+        [0, 2],
+        [1, 3],
+      ],
+      0,
+      false,
+    );
+    expect(t.discovery).toEqual([0, 1, 5, 2]);
+  });
+
+  test('LIS practice', () => {
+    expect(lisLength([10, 9, 2, 5, 3, 7, 101, 18])).toBe(4);
+  });
+
+  test('merge sort practice', () => {
+    expect(mergeSort([5, 2, 8, 1, 2])).toEqual([1, 2, 2, 5, 8]);
+  });
+
+  test('topological sort practice', () => {
+    expect(
+      topologicalOrder(4, [
+        [0, 1],
+        [0, 2],
+        [1, 3],
+      ]),
+    ).toEqual([0, 1, 2, 3]);
   });
 });

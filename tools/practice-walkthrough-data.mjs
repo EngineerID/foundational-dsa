@@ -39,6 +39,13 @@ export const PRACTICE_PROBLEMS = [
   { n: 24, docAnchor: '24-kmp-pattern-search', walkthroughSlug: 'kmp-pattern-search', catalogTopic: 'kmp' },
   { n: 25, docAnchor: '25-trie-prefix-tree', walkthroughSlug: 'trie-prefix-search', catalogTopic: 'trie' },
   { n: 26, docAnchor: '26-bfs-shortest-paths', walkthroughSlug: 'bfs-unweighted-shortest-paths', catalogTopic: 'bfs' },
+  { n: 27, docAnchor: '27-union-find-connectivity', walkthroughSlug: 'union-find-connectivity', catalogTopic: 'union-find' },
+  { n: 28, docAnchor: '28-binary-min-heap', walkthroughSlug: 'binary-min-heap-insert-and-extract', catalogTopic: 'binary-heap' },
+  { n: 29, docAnchor: '29-dijkstra-shortest-paths', walkthroughSlug: 'dijkstra-non-negative-weights', catalogTopic: 'dijkstra' },
+  { n: 30, docAnchor: '30-dfs-discovery-times', walkthroughSlug: 'dfs-discovery-times', catalogTopic: 'dfs' },
+  { n: 31, docAnchor: '31-longest-increasing-subsequence', walkthroughSlug: 'longest-increasing-subsequence', catalogTopic: 'lis' },
+  { n: 32, docAnchor: '32-merge-sort', walkthroughSlug: 'merge-sort-top-down', catalogTopic: 'merge-sort' },
+  { n: 33, docAnchor: '33-topological-sort', walkthroughSlug: 'topological-sort-kahn-course-schedule', catalogTopic: 'topological-sort' },
 ];
 
 export const PRACTICE_DOC_ANCHORS = PRACTICE_PROBLEMS.map((p) => p.docAnchor);

@@ -31,6 +31,13 @@ export const PRACTICE_TOPIC_TARGET = [
   'kmp',
   'trie',
   'bfs',
+  'union-find',
+  'binary-heap',
+  'dijkstra',
+  'dfs',
+  'lis',
+  'merge-sort',
+  'topological-sort',
 ];
 
 const itemIds = new Set(ITEMS.map((i) => i.id));

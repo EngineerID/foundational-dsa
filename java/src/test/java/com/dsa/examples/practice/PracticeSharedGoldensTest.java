@@ -93,6 +93,101 @@ class PracticeSharedGoldensTest {
     }
 
     @Test
+    void unionFindPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("union-find-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            int n = ((Number) c.get("n")).intValue();
+            int[][] unions = parseEdgePairs(c.get("unions"));
+            @SuppressWarnings("unchecked")
+            List<Map<String, Object>> queries = (List<Map<String, Object>>) c.get("connected");
+            for (Map<String, Object> q : queries) {
+                int a = ((Number) q.get("a")).intValue();
+                int b = ((Number) q.get("b")).intValue();
+                assertEquals(
+                        (Boolean) q.get("expected"),
+                        UnionFindPractice.connected(n, unions, a, b));
+            }
+        }
+    }
+
+    @Test
+    void binaryHeapPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("binary-heap-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            if (!c.containsKey("inserts")) {
+                continue;
+            }
+            int[] inserts = GoldenIntArrays.parse(c.get("inserts"));
+            assertArrayEquals(GoldenIntArrays.parse(c.get("extractOrder")), BinaryHeapPractice.extractOrder(inserts));
+        }
+    }
+
+    @Test
+    void dijkstraPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("dijkstra-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            int n = ((Number) c.get("n")).intValue();
+            int source = ((Number) c.get("source")).intValue();
+            int[] expected = GoldenIntArrays.parse(c.get("distances"));
+            assertArrayEquals(expected, DijkstraPractice.shortestDistances(n, weightedEdges(c), source));
+        }
+    }
+
+    @Test
+    void dfsPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("dfs-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            int n = ((Number) c.get("n")).intValue();
+            boolean directed = (Boolean) c.get("directed");
+            int source = ((Number) c.get("source")).intValue();
+            int[][] edges = parseEdgePairs(c.get("edges"));
+            DfsPractice.Times t = DfsPractice.traverse(n, edges, source, directed);
+            assertArrayEquals(GoldenIntArrays.parse(c.get("discovery")), t.discovery());
+            assertArrayEquals(GoldenIntArrays.parse(c.get("finish")), t.finish());
+        }
+    }
+
+    @Test
+    void lisPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("lis-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            assertEquals(
+                    ((Number) c.get("expected")).intValue(),
+                    LisPractice.length(GoldenIntArrays.parse(c.get("arr"))));
+        }
+    }
+
+    @Test
+    void mergeSortPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("merge-sort-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            assertArrayEquals(
+                    GoldenIntArrays.parse(c.get("sorted")),
+                    MergeSortPractice.sort(GoldenIntArrays.parse(c.get("input"))));
+        }
+    }
+
+    @Test
+    void topologicalSortPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("topological-sort-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            int n = ((Number) c.get("n")).intValue();
+            int[][] edges = parseEdgePairs(c.get("edges"));
+            @SuppressWarnings("unchecked")
+            List<Object> expected = (List<Object>) c.get("expectedOrder");
+            List<Integer> exp = expected.stream().map(v -> ((Number) v).intValue()).toList();
+            assertEquals(exp, TopologicalSortPractice.order(n, edges));
+        }
+    }
+
+    @Test
     void bfsPracticeGoldens() throws Exception {
         List<Map<String, Object>> cases =
                 GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("practice-bfs-goldens.json")));
@@ -113,6 +208,19 @@ class PracticeSharedGoldensTest {
             List<Object> e = (List<Object>) rows.get(i);
             out[i][0] = ((Number) e.get(0)).intValue();
             out[i][1] = ((Number) e.get(1)).intValue();
+        }
+        return out;
+    }
+
+    @SuppressWarnings("unchecked")
+    private static int[][] weightedEdges(Map<String, Object> c) {
+        List<List<Object>> edges = (List<List<Object>>) c.get("edges");
+        int[][] out = new int[edges.size()][3];
+        for (int i = 0; i < edges.size(); i++) {
+            List<Object> e = edges.get(i);
+            out[i][0] = ((Number) e.get(0)).intValue();
+            out[i][1] = ((Number) e.get(1)).intValue();
+            out[i][2] = ((Number) e.get(2)).intValue();
         }
         return out;
     }

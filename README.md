@@ -18,7 +18,7 @@ Use it to study implementations side by side, prepare for interviews, or teach D
 | 1 | Clone the repo and run `bash .cursor/install.sh` once (Node 20+, Python 3.10+, JDK 17+). |
 | 2 | Run `npm test` from the root — docs link scan, complexity checks, then Java, Python, JavaScript, parity, and matrix. |
 | 3 | Explore a topic: [COVERAGE.md](COVERAGE.md) lists all 87 ids; `npm run demo -- <id>` runs that topic’s tests in all three languages. |
-| 4 | Interview study: [docs/interview-prep.md](docs/interview-prep.md) maps prompts to ids; [docs/worked-examples.md](docs/worked-examples.md) has step tables; [docs/practice-problems.md](docs/practice-problems.md) has 26 trilingual problems (expanding toward full catalog coverage). |
+| 4 | Interview study: [docs/interview-prep.md](docs/interview-prep.md) maps prompts to ids; [docs/worked-examples.md](docs/worked-examples.md) has step tables; [docs/practice-problems.md](docs/practice-problems.md) has 33 trilingual problems (expanding toward full catalog coverage). |
 | 5 | First PR: read [CONTRIBUTING.md](CONTRIBUTING.md) (scope, `npm test` vs `npm run test:ci`, issue templates). |
 | 6 | Security reports: [SECURITY.md](SECURITY.md). |
 
@@ -377,6 +377,13 @@ Every catalog topic links to its doc page under [docs/items/](docs/items/). Prac
 - [KMP pattern search](docs/practice-problems.md#24-kmp-pattern-search)
 - [Trie prefix tree](docs/practice-problems.md#25-trie-prefix-tree)
 - [BFS shortest paths](docs/practice-problems.md#26-bfs-shortest-paths)
+- [Union–find connectivity](docs/practice-problems.md#27-union-find-connectivity)
+- [Binary min-heap](docs/practice-problems.md#28-binary-min-heap)
+- [Dijkstra shortest paths](docs/practice-problems.md#29-dijkstra-shortest-paths)
+- [DFS discovery times](docs/practice-problems.md#30-dfs-discovery-times)
+- [Longest increasing subsequence](docs/practice-problems.md#31-longest-increasing-subsequence)
+- [Merge sort](docs/practice-problems.md#32-merge-sort)
+- [Topological sort](docs/practice-problems.md#33-topological-sort)
 
 See also the generated [complexity cheat sheet](docs/complexity-cheatsheet.md) for all **87** catalog topics.
 
