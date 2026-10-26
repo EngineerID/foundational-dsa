@@ -6,11 +6,12 @@ Topic: **trees** / `level-order-traversal`
 
 Binary tree values grouped by level (heap-style array input).
 
-**Practice:** [Level order traversal (problem 12)](../../practice-problems.md#12-binary-tree-level-order-traversal) · run `npm run demo -- level-order-traversal` in all three languages.
+**Walkthrough:** [Worked examples — Level Order Traversal](../../worked-examples.md#level-order-traversal-heap-array).
 
 ## Complexity
 
 levelOrder: Time O(n); Space O(n).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n) | Space O(n) |

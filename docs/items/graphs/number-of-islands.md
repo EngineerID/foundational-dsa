@@ -6,11 +6,12 @@ Topic: **graphs** / `number-of-islands`
 
 Count 4-connected land components in a binary grid.
 
-**Practice:** [Number of islands (problem 5)](../../practice-problems.md#5-number-of-islands) · run `npm run demo -- number-of-islands` in all three languages.
+**Walkthrough:** [Worked examples — Number Of Islands](../../worked-examples.md#number-of-islands-grid-dfs).
 
 ## Complexity
 
 numIslands: Time O(rows·cols); Space O(rows·cols).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(rows·cols) | Space O(rows·cols) |

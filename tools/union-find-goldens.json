@@ -38,5 +38,25 @@
         "expected": true
       }
     ]
+  },
+  {
+    "n": 3,
+    "unions": [
+      [0, 1],
+      [0, 1],
+      [1, 2]
+    ],
+    "connected": [
+      {
+        "a": 0,
+        "b": 2,
+        "expected": true
+      },
+      {
+        "a": 1,
+        "b": 1,
+        "expected": true
+      }
+    ]
   }
 ]

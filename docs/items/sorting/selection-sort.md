@@ -11,6 +11,7 @@ Sort an array in ascending order in place.
 ## Complexity
 
 sort: Time O(n²); Space O(1).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n²) | Space O(1) |

@@ -14,6 +14,7 @@ Handles **negative** edge weights; detects reachable negative cycles.
 ## Complexity
 
 shortestPaths: Time O(VE); Space O(V).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(VE) | Space O(V) |

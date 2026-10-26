@@ -14,6 +14,7 @@ Window size `k` must be **positive** and `k <= n`.
 ## Complexity
 
 maxSlidingWindow: Time O(n); Space O(k).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n) | Space O(k) |

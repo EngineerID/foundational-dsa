@@ -6,11 +6,12 @@ Topic: **graphs** / `network-delay`
 
 Time for all nodes to receive a signal from a source (max Dijkstra distance).
 
-**Practice:** [Network delay time (problem 19)](../../practice-problems.md#19-network-delay-time) · run `npm run demo -- network-delay` in all three languages.
+**Walkthrough:** [Worked examples — Network Delay](../../worked-examples.md#network-delay-time).
 
 ## Complexity
 
 networkDelay: Time O((V+E) log V); Space O(V).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O((V+E) | Space O(V) |

@@ -21,6 +21,7 @@ Find a target value in an array by sequential scan.
 ## Complexity
 
 search: Time O(n); Space O(1).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n) | Space O(1) |

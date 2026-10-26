@@ -11,6 +11,7 @@ Test whether an undirected graph is 2-colorable.
 ## Complexity
 
 isBipartite: Time O(V+E); Space O(V).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(V+E) | Space O(V) |

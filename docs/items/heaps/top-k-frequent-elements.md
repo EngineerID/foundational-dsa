@@ -6,11 +6,12 @@ Topic: **heaps** / `top-k-frequent-elements`
 
 K most frequent integers (by count, then value).
 
-**Practice:** [Top K frequent elements (problem 6)](../../practice-problems.md#6-top-k-frequent-elements) · run `npm run demo -- top-k-frequent-elements` in all three languages.
+**Walkthrough:** [Worked examples — Top K Frequent Elements](../../worked-examples.md#top-k-frequent-elements).
 
 ## Complexity
 
 topKFrequent: Time O(n log k); Space O(n).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n log k) | Space O(n) |

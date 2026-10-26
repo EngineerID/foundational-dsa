@@ -6,11 +6,12 @@ Topic: **trees** / `serialize-binary-tree`
 
 Encode and decode a binary tree in heap-style level order.
 
-**Practice:** [Serialize binary tree (problem 18)](../../practice-problems.md#18-serialize-and-deserialize-binary-tree) · run `npm run demo -- serialize-binary-tree` in all three languages.
+**Walkthrough:** [Worked examples — Serialize Binary Tree](../../worked-examples.md#serialize-binary-tree-level-order-codec).
 
 ## Complexity
 
 serialize/deserialize: Time O(n); Space O(n).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n) | Space O(n) |

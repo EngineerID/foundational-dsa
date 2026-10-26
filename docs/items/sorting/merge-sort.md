@@ -17,6 +17,7 @@ Returns a **new sorted array** (stable); does not require in-place mutation of t
 ## Complexity
 
 sort/sortBottomUp: Time O(n log n); Space O(n).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n log n) | Space O(n) |

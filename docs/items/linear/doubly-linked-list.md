@@ -11,6 +11,7 @@ Doubly linked list supporting O(1) removal given a node reference.
 ## Complexity
 
 prepend/append/remove: Time O(1) at known node; Space O(n).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(1) | Space O(n) |

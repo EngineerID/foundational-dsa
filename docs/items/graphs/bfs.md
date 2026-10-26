@@ -17,6 +17,7 @@ Unweighted shortest-path distances; invalid source index raises.
 ## Complexity
 
 distances/traverse: Time O(V+E); Space O(V).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(V+E) | Space O(V) |

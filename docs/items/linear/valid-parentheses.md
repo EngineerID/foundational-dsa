@@ -6,11 +6,12 @@ Topic: **linear** / `valid-parentheses`
 
 Check balanced nesting of ()[]{} brackets.
 
-**Practice:** [Valid parentheses (problem 3)](../../practice-problems.md#3-valid-parentheses) · run `npm run demo -- valid-parentheses` in all three languages.
+**Walkthrough:** [Worked examples — Valid Parentheses](../../worked-examples.md#valid-parentheses-stack).
 
 ## Complexity
 
 isValidParentheses: Time O(n); Space O(n).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n) | Space O(n) |

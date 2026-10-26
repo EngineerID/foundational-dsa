@@ -11,6 +11,7 @@ Uniform random sample of size k from a stream.
 ## Complexity
 
 sample: Time O(n); Space O(k).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n) | Space O(k) |

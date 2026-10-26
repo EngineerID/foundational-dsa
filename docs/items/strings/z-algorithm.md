@@ -11,6 +11,7 @@ Linear-time Z-array and pattern search.
 ## Complexity
 
 zArray/search: Time O(n + m); Space O(n).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n + m) | Space O(n) |

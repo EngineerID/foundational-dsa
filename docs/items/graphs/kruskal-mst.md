@@ -6,11 +6,12 @@ Topic: **graphs** / `kruskal-mst`
 
 Minimum spanning tree via sorted edges and union-find.
 
-**Practice:** [MST Kruskal (problem 15)](../../practice-problems.md#15-minimum-spanning-tree-kruskal) · **Worked example:** [Topic index](../../worked-examples.md#kruskal-mst) (summary) · run `npm run demo -- kruskal-mst` in all three languages.
+**Walkthrough:** [Worked examples — Kruskal Mst](../../worked-examples.md#kruskal-mst-union-find).
 
 ## Complexity
 
 mstWeight: Time O(E log E); Space O(V).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(E log E) | Space O(V) |

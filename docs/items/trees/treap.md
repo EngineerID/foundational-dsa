@@ -11,6 +11,7 @@ Randomized BST via heap priorities on keys.
 ## Complexity
 
 search/insert: Time O(log n); Space O(n).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(log n) | Space O(n) |

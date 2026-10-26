@@ -6,11 +6,12 @@ Topic: **graphs** / `dfs`
 
 Depth-first traversal, cycle detection, and connectivity.
 
-**Worked example:** [Topic index](../../worked-examples.md#dfs) (summary) · run `npm run demo -- dfs` in all three languages.
+**Walkthrough:** [Worked examples — Dfs](../../worked-examples.md#dfs-discovery-times).
 
 ## Complexity
 
 traverse/hasCycle: Time O(V+E); Space O(V).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(V+E) | Space O(V) |

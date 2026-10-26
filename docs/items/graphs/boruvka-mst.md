@@ -11,6 +11,7 @@ Minimum spanning tree via repeated cheapest outgoing edge per component.
 ## Complexity
 
 mstWeight: Time O(E log V); Space O(V).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(E log V) | Space O(V) |

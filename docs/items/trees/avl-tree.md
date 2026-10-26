@@ -11,6 +11,7 @@ Self-balancing BST with height-balance after insert/delete.
 ## Complexity
 
 search/insert/delete: Time O(log n); Space O(n).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(log n) | Space O(n) |

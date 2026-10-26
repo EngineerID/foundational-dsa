@@ -1,4 +1,4 @@
-# Two Sum II
+# Two Sum Ii
 
 Topic: **searching** / `two-sum-ii`
 
@@ -6,11 +6,12 @@ Topic: **searching** / `two-sum-ii`
 
 1-based indices of two numbers that sum to target in a sorted array.
 
-**Practice:** [Two Sum II (problem 1)](../../practice-problems.md#1-two-sum-ii) · run `npm run demo -- two-sum-ii` in all three languages.
+**Walkthrough:** [Worked examples — Two Sum Ii](../../worked-examples.md#two-sum-ii-sorted-pair).
 
 ## Complexity
 
 twoSumSorted: Time O(n); Space O(1).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n) | Space O(1) |

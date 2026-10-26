@@ -14,6 +14,7 @@ Edge weights must be **non-negative**; uses a min-heap / priority queue.
 ## Complexity
 
 shortestPaths: Time O(E log V); Space O(V).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(E log V) | Space O(V) |

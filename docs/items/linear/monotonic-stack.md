@@ -6,11 +6,12 @@ Topic: **linear** / `monotonic-stack`
 
 Next strictly greater element to the right for each index.
 
-**Practice:** [Sliding window maximum (problem 20)](../../practice-problems.md#20-sliding-window-maximum) (related monotonic deque pattern) · run `npm run demo -- monotonic-stack` in all three languages.
+**Worked example:** [Topic index](../../worked-examples.md#monotonic-stack) (summary) · run `npm run demo -- monotonic-stack` in all three languages.
 
 ## Complexity
 
 nextGreaterElement: Time O(n); Space O(n).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n) | Space O(n) |

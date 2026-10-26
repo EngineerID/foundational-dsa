@@ -11,6 +11,7 @@ Minimum scalar multiplications for a matrix product chain.
 ## Complexity
 
 minMultiplications: Time O(n³); Space O(n²).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n³) | Space O(n²) |

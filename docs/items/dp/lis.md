@@ -6,11 +6,12 @@ Topic: **dp** / `lis`
 
 Length of longest strictly increasing subsequence.
 
-**Worked example:** [Topic index](../../worked-examples.md#lis) (summary) · run `npm run demo -- lis` in all three languages.
+**Walkthrough:** [Worked examples — Lis](../../worked-examples.md#longest-increasing-subsequence).
 
 ## Complexity
 
 length: Time O(n log n); Space O(n).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n log n) | Space O(n) |

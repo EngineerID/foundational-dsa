@@ -11,6 +11,7 @@ Maximum s-t flow in a capacitated network.
 ## Complexity
 
 maxFlow: Time O(VE²); Space O(V²).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(VE²) | Space O(V²) |

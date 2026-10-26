@@ -11,6 +11,7 @@ Shortest path length with nonnegative weights (heuristic h=0).
 ## Complexity
 
 shortestPathLength: Time O(E log V); Space O(V).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(E log V) | Space O(V) |

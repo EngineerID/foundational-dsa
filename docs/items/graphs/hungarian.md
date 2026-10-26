@@ -11,6 +11,7 @@ Minimum-cost assignment on a square cost matrix.
 ## Complexity
 
 minCost: Time O(n³); Space O(n²).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n³) | Space O(n²) |

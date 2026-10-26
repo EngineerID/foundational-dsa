@@ -6,11 +6,12 @@ Topic: **graphs** / `course-schedule`
 
 Can all courses be taken given prerequisite pairs?
 
-**Practice:** [Course schedule (problem 7)](../../practice-problems.md#7-course-schedule) · run `npm run demo -- course-schedule` in all three languages.
+**Walkthrough:** [Worked examples — Course Schedule](../../worked-examples.md#course-schedule-canfinish).
 
 ## Complexity
 
 canFinish: Time O(V+E); Space O(V).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(V+E) | Space O(V) |

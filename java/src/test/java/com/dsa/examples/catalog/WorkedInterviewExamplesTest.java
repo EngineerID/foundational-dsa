@@ -20,8 +20,11 @@ import com.dsa.examples.searching.QuickSelect;
 import com.dsa.examples.trees.BST;
 import com.dsa.examples.trees.LevelOrderTraversal;
 import com.dsa.examples.trees.SerializeBinaryTree;
+import com.dsa.examples.heaps.BinaryHeap;
 import com.dsa.examples.heaps.MeetingRoomsII;
+import com.dsa.examples.heaps.PriorityQueue;
 import com.dsa.examples.heaps.TopKFrequentElements;
+import com.dsa.examples.trees.Trie;
 import com.dsa.examples.linear.LRUCache;
 import com.dsa.examples.linear.SlidingWindowMaximum;
 import com.dsa.examples.linear.ValidParentheses;
@@ -74,6 +77,18 @@ class WorkedInterviewExamplesTest {
     }
 
     @Test
+    void unionFindSingleElementAndRedundantUnion() {
+        UnionFind alone = new UnionFind(1);
+        assertTrue(alone.connected(0, 0));
+        UnionFind uf = new UnionFind(3);
+        uf.union(0, 1);
+        uf.union(0, 1);
+        uf.union(1, 2);
+        assertTrue(uf.connected(0, 2));
+        assertTrue(uf.connected(1, 1));
+    }
+
+    @Test
     void lruCacheCapacityTwoEvictionPattern() {
         LRUCache cache = new LRUCache(2);
         cache.put(1, 1);
@@ -101,6 +116,13 @@ class WorkedInterviewExamplesTest {
         assertEquals(
                 Arrays.asList(3, 3, 5, 5, 6, 7),
                 SlidingWindowMaximum.maxSlidingWindow(new int[] {1, 3, -1, -3, 5, 3, 6, 7}, 3));
+    }
+
+    @Test
+    void slidingWindowPatternFixedAndVariableEdges() {
+        assertEquals(List.of(1, 2), SlidingWindowMaximum.maxSlidingWindow(new int[] {1, 2}, 1));
+        assertEquals(0, LongestSubstringWithoutRepeating.lengthOfLongestSubstring(""));
+        assertEquals(1, LongestSubstringWithoutRepeating.lengthOfLongestSubstring("bbbbb"));
     }
 
     @Test
@@ -202,6 +224,52 @@ class WorkedInterviewExamplesTest {
         };
         assertTrue(WordSearch.wordSearch(board, "ABCCED"));
         assertFalse(WordSearch.wordSearch(board, "ABCD"));
+    }
+
+    @Test
+    void backtrackingWordSearchVacuousAndMissingPath() {
+        assertTrue(WordSearch.wordSearch(new char[][] {{'A'}}, ""));
+        assertTrue(WordSearch.wordSearch(new char[][] {{'A'}}, "A"));
+        char[][] grid = {
+            {'A', 'B', 'C'},
+            {'D', 'E', 'F'},
+            {'G', 'H', 'I'},
+        };
+        assertFalse(WordSearch.wordSearch(grid, "ABCG"));
+    }
+
+    @Test
+    void binaryMinHeapInsertExtractWalkthrough() {
+        BinaryHeap<Integer> heap = new BinaryHeap<>();
+        for (int v : new int[] {5, 2, 8, 1, 2}) {
+            heap.insert(v);
+        }
+        assertEquals(List.of(1, 2, 2, 5, 8), List.of(
+                heap.extractMin(), heap.extractMin(), heap.extractMin(), heap.extractMin(), heap.extractMin()));
+    }
+
+    @Test
+    void priorityQueueMinSchedulingWalkthrough() {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        for (int v : new int[] {5, 3, 7, 1, 3}) {
+            pq.insert(v);
+        }
+        assertEquals(List.of(1, 3, 3, 5, 7), List.of(
+                pq.extractMin(), pq.extractMin(), pq.extractMin(), pq.extractMin(), pq.extractMin()));
+    }
+
+    @Test
+    void triePrefixSearchWalkthrough() {
+        Trie trie = new Trie();
+        for (String w : List.of("cat", "car", "dog")) {
+            trie.insert(w);
+        }
+        assertTrue(trie.search("cat"));
+        assertFalse(trie.search("ca"));
+        assertTrue(trie.startsWith("ca"));
+        assertFalse(trie.search("cab"));
+        assertTrue(trie.startsWith("do"));
+        assertFalse(trie.startsWith("z"));
     }
 
     @Test

@@ -11,6 +11,7 @@ Articulation points and bridges in an undirected graph.
 ## Complexity
 
 find: Time O(V+E); Space O(V).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(V+E) | Space O(V) |

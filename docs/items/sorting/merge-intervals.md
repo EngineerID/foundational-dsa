@@ -6,11 +6,12 @@ Topic: **sorting** / `merge-intervals`
 
 Merge overlapping closed intervals after sorting by start.
 
-**Practice:** [Merge intervals (problem 11)](../../practice-problems.md#11-merge-intervals) · run `npm run demo -- merge-intervals` in all three languages.
+**Walkthrough:** [Worked examples — Merge Intervals](../../worked-examples.md#merge-intervals).
 
 ## Complexity
 
 mergeIntervals: Time O(n log n); Space O(n).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n log n) | Space O(n) |

@@ -6,11 +6,12 @@ Topic: **dp** / `coin-change`
 
 Minimum coins to make an amount (unbounded supply).
 
-**Practice:** [Coin change (problem 9)](../../practice-problems.md#9-coin-change) · **Worked example:** [Topic index](../../worked-examples.md#coin-change) (summary) · run `npm run demo -- coin-change` in all three languages.
+**Walkthrough:** [Worked examples — Coin Change](../../worked-examples.md#coin-change-min-coins).
 
 ## Complexity
 
 minCoins: Time O(n·amount); Space O(amount).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n·amount) | Space O(amount) |

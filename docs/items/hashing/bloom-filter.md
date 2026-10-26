@@ -14,6 +14,7 @@ Probabilistic set membership with false positives possible.
 ## Complexity
 
 add/mightContain: Time O(k); Space O(m) bits.
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(k) | Space O(m) |

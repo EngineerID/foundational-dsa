@@ -9,11 +9,12 @@ Array-based binary heap (min or max) with heapify operations.
 
 **Catalog edge themes:** covered in shared catalog tests (`EdgeCaseThemesTest`, `test_edge_case_themes.py`, `edgeCaseThemes.test.js`) for empty / single / duplicate / large / invalid cases.
 
-**Worked example:** [Topic index](../../worked-examples.md#binary-heap) (summary) · run `npm run demo -- binary-heap` in all three languages.
+**Walkthrough:** [Worked examples — Binary Heap](../../worked-examples.md#binary-min-heap-insert-and-extract).
 
 ## Complexity
 
 insert/extract/peek: Time O(log n); buildHeap O(n); Space O(n).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(log n) | Space O(n) |

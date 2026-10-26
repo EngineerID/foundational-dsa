@@ -11,6 +11,7 @@ Lexicographically sorted suffix starting indices.
 ## Complexity
 
 build: Time O(n log n); Space O(n).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n log n) | Space O(n) |

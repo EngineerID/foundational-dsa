@@ -9,11 +9,12 @@ Prefix tree for string keys with prefix search.
 
 Empty string key is stored at the root when inserted.
 
-**Worked example:** [Topic index](../../worked-examples.md#trie) (summary) · run `npm run demo -- trie` in all three languages.
+**Walkthrough:** [Worked examples — Trie](../../worked-examples.md#trie-prefix-search).
 
 ## Complexity
 
 insert/search/startsWith: Time O(L) key length; Space O(total chars).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(L) | Space O(total chars) |

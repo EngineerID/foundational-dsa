@@ -1,6 +1,6 @@
 # Worked examples
 
-Short, language-neutral walkthroughs for thirty-three interview-heavy topics. Implementations live under `java/`, `python/dsa/`, and `javascript/src/` with the same behavior. For a broader interview map, see [interview-prep.md](interview-prep.md). Trilingual **catalog tests** mirror the step-table scenarios above (`WorkedInterviewExamplesTest`, `test_worked_interview_examples.py`, `workedInterviewExamples.test.js`).
+Short, language-neutral walkthroughs for thirty-eight interview-heavy topics. Implementations live under `java/`, `python/dsa/`, and `javascript/src/` with the same behavior. For a broader interview map, see [interview-prep.md](interview-prep.md). Trilingual **catalog tests** mirror the step-table scenarios above (`WorkedInterviewExamplesTest`, `test_worked_interview_examples.py`, `workedInterviewExamples.test.js`).
 
 ## Binary search on a sorted array
 
@@ -579,9 +579,109 @@ In-order keys: **`[1, 2, 5, 7]`**; search **2** hits the left child of 5.
 
 `npm run demo -- bst`
 
+## Binary min-heap (insert and extract)
+
+**Operations:** start empty, **insert** `5, 2, 8, 1, 2` (duplicates allowed), then repeatedly **extractMin**.
+
+After inserts, the array heap satisfies **parent ≤ children** (min-heap). Extract always removes index `0`, moves the last leaf to the root, and **siftDown**:
+
+| Extract # | Removed | Remaining extract order |
+|-----------|---------|-------------------------|
+| 1 | **1** | — |
+| 2 | **2** | (second `2` may appear before or after the first depending on tie-breaking) |
+| 3 | **2** | |
+| 4 | **5** | |
+| 5 | **8** | done |
+
+Full sorted extract sequence: **`[1, 2, 2, 5, 8]`** (matches shared goldens).
+
+**Heapify** on `[9, 4, 7, 1, 3]` in one **O(n)** pass leaves **peek = 1** and **extractMin = 1**. Empty heap: **peek/extract** throw (invalid operation).
+
+**API:** `insert`, `extractMin`, `peek`, `heapify` (see [binary-heap](items/heaps/binary-heap.md)).
+
+`npm run demo -- binary-heap`
+
+## Priority queue (min scheduling)
+
+Same underlying min-heap as [binary-heap](#binary-min-heap-insert-and-extract), framed as **tasks ordered by priority** (the priority is the stored value).
+
+**Insert** priorities `5, 3, 7, 1, 3`, then drain with **extractMin**:
+
+| Step | extractMin | Interpretation |
+|------|------------|----------------|
+| 1 | **1** | highest-priority (smallest) task runs first |
+| 2 | **3** | next task |
+| 3 | **3** | duplicate priority OK |
+| 4 | **5** | |
+| 5 | **7** | queue empty |
+
+Order: **`[1, 3, 3, 5, 7]`**. Used by Dijkstra, Prim, and meeting-room schedulers in this repo.
+
+**API:** `insert`, `peek`, `extractMin`, `decreaseKey` (see [priority-queue](items/heaps/priority-queue.md)).
+
+`npm run demo -- priority-queue`
+
+## Trie (prefix search)
+
+**Insert** words `cat`, `car`, `dog` (character edges from the root).
+
+| Query | Type | Result | Why |
+|-------|------|--------|-----|
+| `cat` | `search` | **true** | full key ends at a word node |
+| `ca` | `search` | **false** | prefix exists but not a complete word |
+| `ca` | `startsWith` | **true** | `cat` / `car` share prefix |
+| `cab` | `search` | **false** | no such path |
+| `do` | `startsWith` | **true** | leads to `dog` |
+| `z` | `startsWith` | **false** | missing branch |
+
+Empty trie: every query is **false**. Single key `"a"`: both `search("a")` and `startsWith("a")` are **true**.
+
+**API:** `insert(word)`, `search(word)`, `startsWith(prefix)` (see [trie](items/trees/trie.md)).
+
+`npm run demo -- trie`
+
+## Backtracking (choose, explore, undo)
+
+**Template** for search problems (grid paths, subsets, permutations):
+
+1. **Choose** — pick a next decision (cell, element, …).
+2. **Explore** — recurse if constraints still satisfied.
+3. **Undo** — revert the choice (unmark visited, pop from path) before trying alternatives.
+
+**Word search** on the standard board (`ABCCED` walkthrough above) is one instance: at each step, choose a 4-neighbor matching the next character; on dead ends, undo the visited mark.
+
+| Check | Word | Expected |
+|-------|------|----------|
+| Full path | `ABCCED` | **true** |
+| Dead end at `(0,3)` | `ABCD` | **false** |
+| Single cell | `A` on `[["A"]]` | **true** |
+| Empty word | `""` | **true** (vacuous) |
+| No matching path | `ABCG` | **false** |
+
+**API:** `wordSearch(board, word)` (see [word-search](items/graphs/word-search.md)); tree/graph DFS uses the same undo discipline (see [dfs](items/graphs/dfs.md)).
+
+`npm run demo -- word-search`
+
+## Sliding window patterns (fixed and variable)
+
+Two interview shapes share **two pointers** over a sequence:
+
+| Pattern | Goal | Window size | Example in this repo |
+|---------|------|-------------|----------------------|
+| **Fixed** | aggregate per window of length `k` | constant `k` | [Sliding window maximum](#sliding-window-maximum) → `[3,3,5,5,6,7]` for `k=3` |
+| **Variable** | optimize subarray/substring with a constraint | grows/shrinks | [Longest substring without repeating](#longest-substring-without-repeating) → **3** for `"pwwkew"` |
+
+**Fixed-window edges:** `k = 1` on `[1,2]` → `[1,2]`; `k > n` → `[]`; empty `nums` → `[]`.
+
+**Variable-window edges:** `""` → length **0**; `"bbbbb"` → **1**; shrink left pointer when a duplicate would enter the set/map.
+
+**API:** `maxSlidingWindow(nums, k)` ([sliding-window-maximum](items/linear/sliding-window-maximum.md)); `lengthOfLongestSubstring(s)` ([longest-substring-without-repeating](items/strings/longest-substring-without-repeating.md)).
+
+`npm run demo -- sliding-window-maximum`
+
 ## Topic index
 
-One-line walkthroughs for every catalog topic. Step tables above cover interview-heavy patterns (search, graphs, DP, caches, strings, and practice-problem staples).
+One-line walkthroughs for every catalog topic. Step tables above cover interview-heavy patterns (search, graphs, DP, caches, strings).
 
 ### linear-search
 
@@ -594,6 +694,18 @@ Scan `[4, 2, 7, 2]` for `2`: index **1** (first occurrence). For `9` → **-1**.
 See the [detailed walkthrough](#binary-search-on-a-sorted-array) above.
 
 `npm run demo -- binary-search`
+
+### two-sum-ii
+
+See the [detailed walkthrough](#two-sum-ii-sorted-pair) above.
+
+`npm run demo -- two-sum-ii`
+
+### trapping-rain-water
+
+See the [detailed walkthrough](#trapping-rain-water-two-pointers) above.
+
+`npm run demo -- trapping-rain-water`
 
 ### quick-select
 
@@ -649,6 +761,12 @@ LSD radix sort for non-negative integers using counting sort per digit.
 
 `npm run demo -- radix-sort`
 
+### merge-intervals
+
+See the [detailed walkthrough](#merge-intervals) above.
+
+`npm run demo -- merge-intervals`
+
 ### kmp
 
 See the [detailed walkthrough](#kmp-pattern-search) above.
@@ -693,15 +811,27 @@ Double-ended queue with O(1) push/pop at both ends.
 
 ### binary-heap
 
-Array-based binary heap (min or max) with heapify operations.
+See the [detailed walkthrough](#binary-min-heap-insert-and-extract) above.
 
 `npm run demo -- binary-heap`
 
 ### priority-queue
 
-Min-priority queue for scheduling by priority.
+See the [detailed walkthrough](#priority-queue-min-scheduling) above.
 
 `npm run demo -- priority-queue`
+
+### meeting-rooms-ii
+
+See the [detailed walkthrough](#meeting-rooms-ii-min-heap) above.
+
+`npm run demo -- meeting-rooms-ii`
+
+### top-k-frequent-elements
+
+See the [detailed walkthrough](#top-k-frequent-elements) above.
+
+`npm run demo -- top-k-frequent-elements`
 
 ### bst
 
@@ -714,6 +844,18 @@ See the [detailed walkthrough](#bst-search-and-in-order-walk) above.
 In-order, pre-order, post-order, and level-order tree walks.
 
 `npm run demo -- tree-traversals`
+
+### level-order-traversal
+
+See the [detailed walkthrough](#level-order-traversal-heap-array) above.
+
+`npm run demo -- level-order-traversal`
+
+### serialize-binary-tree
+
+See the [detailed walkthrough](#serialize-binary-tree-level-order-codec) above.
+
+`npm run demo -- serialize-binary-tree`
 
 ### avl-tree
 
@@ -735,7 +877,7 @@ Store intervals and query overlaps with a point or interval.
 
 ### trie
 
-Prefix tree for string keys with prefix search.
+See the [detailed walkthrough](#trie-prefix-search) above.
 
 `npm run demo -- trie`
 
@@ -769,6 +911,12 @@ Substring search via rolling hash.
 
 `npm run demo -- rabin-karp`
 
+### longest-substring-without-repeating
+
+See the [detailed walkthrough](#longest-substring-without-repeating) above.
+
+`npm run demo -- longest-substring-without-repeating`
+
 ### lis
 
 See the [detailed walkthrough](#longest-increasing-subsequence) above.
@@ -798,6 +946,12 @@ See the [detailed walkthrough](#edit-distance-kitten-to-sitting) above.
 See the [detailed walkthrough](#coin-change-min-coins) above.
 
 `npm run demo -- coin-change`
+
+### maximum-subarray
+
+See the [detailed walkthrough](#maximum-subarray-kadane) above.
+
+`npm run demo -- maximum-subarray`
 
 ### separate-chaining
 
@@ -835,6 +989,24 @@ See the [detailed walkthrough](#bfs-unweighted-shortest-paths) above.
 
 `npm run demo -- bfs`
 
+### number-of-islands
+
+See the [detailed walkthrough](#number-of-islands-grid-dfs) above.
+
+`npm run demo -- number-of-islands`
+
+### course-schedule
+
+See the [detailed walkthrough](#course-schedule-canfinish) above.
+
+`npm run demo -- course-schedule`
+
+### word-search
+
+See the [detailed walkthrough](#word-search-grid-backtracking) above.
+
+`npm run demo -- word-search`
+
 ### dfs
 
 See the [detailed walkthrough](#dfs-discovery-times) above.
@@ -853,6 +1025,12 @@ See the [detailed walkthrough](#dijkstra-non-negative-weights) above.
 
 `npm run demo -- dijkstra`
 
+### network-delay
+
+See the [detailed walkthrough](#network-delay-time) above.
+
+`npm run demo -- network-delay`
+
 ### bellman-ford
 
 Single-source shortest paths with negative edges; detect negative cycles.
@@ -867,7 +1045,7 @@ All-pairs shortest paths via dynamic programming.
 
 ### kruskal-mst
 
-See the [detailed walkthrough](#kruskal-mst-unionfind) above.
+See the [detailed walkthrough](#kruskal-mst-union-find) above.
 
 `npm run demo -- kruskal-mst`
 
@@ -1002,6 +1180,18 @@ Minimum Hamiltonian cycle from city 0 (small n).
 Uniform random sample of size k from a stream.
 
 `npm run demo -- reservoir-sampling`
+
+### valid-parentheses
+
+See the [detailed walkthrough](#valid-parentheses-stack) above.
+
+`npm run demo -- valid-parentheses`
+
+### monotonic-stack
+
+Next strictly greater element to the right for each index.
+
+`npm run demo -- monotonic-stack`
 
 ### sliding-window-maximum
 

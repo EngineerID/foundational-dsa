@@ -11,6 +11,7 @@ Maximum revenue cutting a rod of given length.
 ## Complexity
 
 maxProfit: Time O(n·length); Space O(length).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n·length) | Space O(length) |

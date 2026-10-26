@@ -6,11 +6,12 @@ Topic: **strings** / `longest-substring-without-repeating`
 
 Length of the longest substring with all distinct characters.
 
-**Practice:** [Longest substring (problem 8)](../../practice-problems.md#8-longest-substring-without-repeating-characters) · run `npm run demo -- longest-substring-without-repeating` in all three languages.
+**Walkthrough:** [Worked examples — Longest Substring Without Repeating](../../worked-examples.md#longest-substring-without-repeating).
 
 ## Complexity
 
 lengthOfLongestSubstring: Time O(n); Space O(min(n, alphabet)).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n) | Space O(min(n, alphabet) |

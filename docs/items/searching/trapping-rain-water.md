@@ -6,11 +6,12 @@ Topic: **searching** / `trapping-rain-water`
 
 Total water trapped between non-negative elevation bars.
 
-**Practice:** [Trapping rain water (problem 16)](../../practice-problems.md#16-trapping-rain-water) · run `npm run demo -- trapping-rain-water` in all three languages.
+**Walkthrough:** [Worked examples — Trapping Rain Water](../../worked-examples.md#trapping-rain-water-two-pointers).
 
 ## Complexity
 
 trap: Time O(n); Space O(1).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n) | Space O(1) |

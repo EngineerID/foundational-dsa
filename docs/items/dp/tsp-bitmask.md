@@ -11,6 +11,7 @@ Minimum Hamiltonian cycle from city 0 (small n).
 ## Complexity
 
 minCost: Time O(n²·2^n); Space O(n·2^n).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n²·2^n) | Space O(n·2^n) |

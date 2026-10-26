@@ -6,11 +6,12 @@ Topic: **graphs** / `word-search`
 
 Find a word in a grid using adjacent cells without reuse.
 
-**Practice:** [Word search (problem 13)](../../practice-problems.md#13-word-search) · run `npm run demo -- word-search` in all three languages.
+**Walkthrough:** [Worked examples — Word Search](../../worked-examples.md#word-search-grid-backtracking).
 
 ## Complexity
 
 wordSearch: Time O(rows·cols·4^L); Space O(L).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(rows·cols·4^L) | Space O(L) |

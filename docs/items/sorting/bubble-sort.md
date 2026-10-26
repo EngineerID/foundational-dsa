@@ -19,6 +19,7 @@ Sorts **in place** ascending; empty array is a no-op.
 ## Complexity
 
 sort: Time O(n²); Space O(1).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n²) | Space O(1) |

@@ -21,8 +21,11 @@ const { levelOrder } = require('../../src/trees/levelOrderTraversal');
 const { deserialize, serialize } = require('../../src/trees/serializeBinaryTree');
 const { shortestPaths: dijkstraPaths } = require('../../src/graphs/dijkstra');
 const { kahn } = require('../../src/graphs/topologicalSort');
+const { BinaryHeap } = require('../../src/heaps/binaryHeap');
 const { minMeetingRooms } = require('../../src/heaps/meetingRoomsII');
+const { PriorityQueue } = require('../../src/heaps/priorityQueue');
 const { topKFrequent } = require('../../src/heaps/topKFrequentElements');
+const { Trie } = require('../../src/trees/trie');
 const { LRUCache } = require('../../src/linear/lruCache');
 const { maxSlidingWindow } = require('../../src/linear/slidingWindowMaximum');
 const { isValidParentheses } = require('../../src/linear/validParentheses');
@@ -59,6 +62,17 @@ describe('worked interview examples (docs parity)', () => {
     expect(uf.connected(0, 4)).toBe(false);
   });
 
+  test('union–find — single element and redundant union', () => {
+    const alone = new UnionFind(1);
+    expect(alone.connected(0, 0)).toBe(true);
+    const uf = new UnionFind(3);
+    uf.union(0, 1);
+    uf.union(0, 1);
+    uf.union(1, 2);
+    expect(uf.connected(0, 2)).toBe(true);
+    expect(uf.connected(1, 1)).toBe(true);
+  });
+
   test('LRU cache — capacity 2 eviction pattern', () => {
     const cache = new LRUCache(2);
     cache.put(1, 1);
@@ -84,6 +98,12 @@ describe('worked interview examples (docs parity)', () => {
     expect(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3)).toEqual([
       3, 3, 5, 5, 6, 7,
     ]);
+  });
+
+  test('sliding window patterns — fixed and variable edges', () => {
+    expect(maxSlidingWindow([1, 2], 1)).toEqual([1, 2]);
+    expect(lengthOfLongestSubstring('')).toBe(0);
+    expect(lengthOfLongestSubstring('bbbbb')).toBe(1);
   });
 
   test('BFS — unweighted distances from vertex 0', () => {
@@ -169,6 +189,58 @@ describe('worked interview examples (docs parity)', () => {
     ];
     expect(wordSearch(board, 'ABCCED')).toBe(true);
     expect(wordSearch(board, 'ABCD')).toBe(false);
+  });
+
+  test('backtracking — vacuous and missing path', () => {
+    expect(wordSearch([['A']], '')).toBe(true);
+    expect(wordSearch([['A']], 'A')).toBe(true);
+    const grid = [
+      ['A', 'B', 'C'],
+      ['D', 'E', 'F'],
+      ['G', 'H', 'I'],
+    ];
+    expect(wordSearch(grid, 'ABCG')).toBe(false);
+  });
+
+  test('binary min-heap — insert and extract walkthrough', () => {
+    const heap = new BinaryHeap();
+    for (const v of [5, 2, 8, 1, 2]) {
+      heap.insert(v);
+    }
+    expect([
+      heap.extractMin(),
+      heap.extractMin(),
+      heap.extractMin(),
+      heap.extractMin(),
+      heap.extractMin(),
+    ]).toEqual([1, 2, 2, 5, 8]);
+  });
+
+  test('priority queue — min scheduling walkthrough', () => {
+    const pq = new PriorityQueue();
+    for (const v of [5, 3, 7, 1, 3]) {
+      pq.insert(v);
+    }
+    expect([
+      pq.extractMin(),
+      pq.extractMin(),
+      pq.extractMin(),
+      pq.extractMin(),
+      pq.extractMin(),
+    ]).toEqual([1, 3, 3, 5, 7]);
+  });
+
+  test('trie — prefix search walkthrough', () => {
+    const trie = new Trie();
+    for (const w of ['cat', 'car', 'dog']) {
+      trie.insert(w);
+    }
+    expect(trie.search('cat')).toBe(true);
+    expect(trie.search('ca')).toBe(false);
+    expect(trie.startsWith('ca')).toBe(true);
+    expect(trie.search('cab')).toBe(false);
+    expect(trie.startsWith('do')).toBe(true);
+    expect(trie.startsWith('z')).toBe(false);
   });
 
   test('network delay — max distance from source', () => {

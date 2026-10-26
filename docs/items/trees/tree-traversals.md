@@ -11,6 +11,7 @@ In-order, pre-order, post-order, and level-order tree walks.
 ## Complexity
 
 Each traversal: Time O(n); Space O(h) stack or O(w) queue.
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n) | Space O(h) |

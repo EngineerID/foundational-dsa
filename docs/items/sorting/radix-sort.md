@@ -14,6 +14,7 @@ LSD radix sort for non-negative integers using counting sort per digit.
 ## Complexity
 
 sort: Time O(d * n); Space O(n).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(d * n) | Space O(n) |

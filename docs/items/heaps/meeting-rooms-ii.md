@@ -6,11 +6,12 @@ Topic: **heaps** / `meeting-rooms-ii`
 
 Minimum conference rooms for overlapping meeting intervals.
 
-**Practice:** [Meeting rooms II (problem 4)](../../practice-problems.md#4-meeting-rooms-ii) · run `npm run demo -- meeting-rooms-ii` in all three languages.
+**Walkthrough:** [Worked examples — Meeting Rooms Ii](../../worked-examples.md#meeting-rooms-ii-min-heap).
 
 ## Complexity
 
 minMeetingRooms: Time O(n log n); Space O(n).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n log n) | Space O(n) |

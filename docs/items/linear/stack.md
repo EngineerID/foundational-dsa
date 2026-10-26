@@ -17,6 +17,7 @@ Pop/peek on empty stack raises.
 ## Complexity
 
 push/pop/peek: Time O(1) amortized; Space O(n).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(1) | Space O(n) |

@@ -9,11 +9,12 @@ Levenshtein edit distance between two strings.
 
 `null` strings treated as empty; classic Levenshtein DP.
 
-**Practice:** [Edit distance (problem 17)](../../practice-problems.md#17-edit-distance) · **Walkthrough:** [Worked examples — Edit Distance](../../worked-examples.md#edit-distance-kitten-to-sitting) · run `npm run demo -- edit-distance` in all three languages.
+**Walkthrough:** [Worked examples — Edit Distance](../../worked-examples.md#edit-distance-kitten-to-sitting).
 
 ## Complexity
 
 distance: Time O(nm); Space O(min(n,m)).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(nm) | Space O(min(n,m) |

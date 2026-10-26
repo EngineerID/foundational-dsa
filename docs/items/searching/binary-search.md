@@ -19,6 +19,7 @@ Requires a **sorted** array. `firstOccurrence` / `lastOccurrence` bound duplicat
 ## Complexity
 
 search/firstOccurrence/lastOccurrence: Time O(log n); Space O(1).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(log n) | Space O(1) |

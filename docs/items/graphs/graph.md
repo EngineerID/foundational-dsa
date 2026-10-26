@@ -17,6 +17,7 @@ Vertex ids are `0 .. n-1`. Invalid vertex indices raise when querying neighbors.
 ## Complexity
 
 addEdge/neighbors: Time O(1) amortized; Space O(V+E).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(1) | Space O(V+E) |

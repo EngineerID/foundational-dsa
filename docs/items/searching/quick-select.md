@@ -12,13 +12,12 @@ Find the k-th smallest element in an unordered array.
 
 **Catalog edge themes:** covered in shared catalog tests (`EdgeCaseThemesTest`, `test_edge_case_themes.py`, `edgeCaseThemes.test.js`) for empty / single / duplicate / large / invalid cases.
 
-**Worked example:** Array `[3, 1, 4, 1, 5]`, `k=2` (1-based): partition around a pivot until rank `2` is found → **1** (second smallest).
-
-**More:** [Topic index](../../worked-examples.md#quick-select) · `npm run demo -- quick-select`
+**Walkthrough:** [Worked examples — Quick Select](../../worked-examples.md#quick-select-k-th-order-statistic).
 
 ## Complexity
 
 select: Time O(n) average, O(n²) worst; Space O(1).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n) | Space O(1) |

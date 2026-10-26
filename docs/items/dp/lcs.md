@@ -11,6 +11,7 @@ Longest common subsequence length between two strings.
 ## Complexity
 
 length: Time O(nm); Space O(min(n,m)).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(nm) | Space O(min(n,m) |

@@ -17,8 +17,11 @@ from dsa.trees.bst import BST
 from dsa.trees.level_order_traversal import level_order
 from dsa.trees.serialize_binary_tree import deserialize, serialize
 from dsa.graphs.topological_sort import kahn
+from dsa.heaps.binary_heap import BinaryHeap
 from dsa.heaps.meeting_rooms_ii import min_meeting_rooms
+from dsa.heaps.priority_queue import PriorityQueue
 from dsa.heaps.top_k_frequent_elements import top_k_frequent
+from dsa.trees.trie import Trie
 from dsa.linear.lru_cache import LRUCache
 from dsa.linear.sliding_window_maximum import max_sliding_window
 from dsa.linear.valid_parentheses import is_valid_parentheses
@@ -55,6 +58,17 @@ def test_union_find_connectivity_after_merges():
     assert uf.connected(0, 4) is False
 
 
+def test_union_find_single_element_and_redundant_union():
+    alone = UnionFind(1)
+    assert alone.connected(0, 0) is True
+    uf = UnionFind(3)
+    uf.union(0, 1)
+    uf.union(0, 1)
+    uf.union(1, 2)
+    assert uf.connected(0, 2) is True
+    assert uf.connected(1, 1) is True
+
+
 def test_lru_cache_capacity_two_eviction_pattern():
     cache = LRUCache(2)
     cache.put(1, 1)
@@ -78,6 +92,12 @@ def test_topological_sort_course_schedule_dag():
 
 def test_sliding_window_maximum_window_three():
     assert max_sliding_window([1, 3, -1, -3, 5, 3, 6, 7], 3) == [3, 3, 5, 5, 6, 7]
+
+
+def test_sliding_window_pattern_fixed_and_variable_edges():
+    assert max_sliding_window([1, 2], 1) == [1, 2]
+    assert length_of_longest_substring("") == 0
+    assert length_of_longest_substring("bbbbb") == 1
 
 
 def test_bfs_unweighted_distances_from_vertex_zero():
@@ -163,6 +183,43 @@ def test_word_search_abcced_on_board():
     ]
     assert word_search(board, "ABCCED") is True
     assert word_search(board, "ABCD") is False
+
+
+def test_backtracking_word_search_vacuous_and_missing_path():
+    assert word_search([["A"]], "") is True
+    assert word_search([["A"]], "A") is True
+    grid = [
+        ["A", "B", "C"],
+        ["D", "E", "F"],
+        ["G", "H", "I"],
+    ]
+    assert word_search(grid, "ABCG") is False
+
+
+def test_binary_min_heap_insert_extract_walkthrough():
+    heap = BinaryHeap()
+    for v in [5, 2, 8, 1, 2]:
+        heap.insert(v)
+    assert [heap.extract_min() for _ in range(5)] == [1, 2, 2, 5, 8]
+
+
+def test_priority_queue_min_scheduling_walkthrough():
+    pq = PriorityQueue()
+    for v in [5, 3, 7, 1, 3]:
+        pq.insert(v)
+    assert [pq.extract_min() for _ in range(5)] == [1, 3, 3, 5, 7]
+
+
+def test_trie_prefix_search_walkthrough():
+    trie = Trie()
+    for w in ["cat", "car", "dog"]:
+        trie.insert(w)
+    assert trie.search("cat") is True
+    assert trie.search("ca") is False
+    assert trie.starts_with("ca") is True
+    assert trie.search("cab") is False
+    assert trie.starts_with("do") is True
+    assert trie.starts_with("z") is False
 
 
 def test_network_delay_max_distance_from_source():

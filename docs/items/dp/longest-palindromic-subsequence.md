@@ -11,6 +11,7 @@ Longest palindromic subsequence length.
 ## Complexity
 
 length: Time O(n²); Space O(n²).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n²) | Space O(n²) |

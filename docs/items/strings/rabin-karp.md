@@ -11,6 +11,7 @@ Substring search via rolling hash.
 ## Complexity
 
 search: Time O(n + m) average; Space O(1).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n + m) | Space O(1) |

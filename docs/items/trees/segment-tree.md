@@ -11,6 +11,7 @@ Range aggregate queries with point updates on an array.
 ## Complexity
 
 update/rangeSum: Time O(log n); Space O(n).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(log n) | Space O(n) |

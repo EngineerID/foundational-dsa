@@ -9,11 +9,12 @@ Binary search tree for ordered key storage.
 
 Duplicate keys typically follow left-or-right policy defined in the implementation.
 
-**Worked example:** [Topic index](../../worked-examples.md#bst) (summary) · run `npm run demo -- bst` in all three languages.
+**Walkthrough:** [Worked examples — Bst](../../worked-examples.md#bst-search-and-in-order-walk).
 
 ## Complexity
 
 search/insert/delete: Time O(h) height; Space O(n).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(h) | Space O(n) |

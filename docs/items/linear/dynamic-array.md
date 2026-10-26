@@ -17,6 +17,7 @@ Out-of-range `get` raises; empty structure has `size() == 0`.
 ## Complexity
 
 append/get/set: Time O(1) amortized; resize O(n); Space O(n).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(1) | Space O(n) |

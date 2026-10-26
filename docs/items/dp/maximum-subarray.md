@@ -6,11 +6,12 @@ Topic: **dp** / `maximum-subarray`
 
 Largest sum of any contiguous subarray (Kadane).
 
-**Practice:** [Maximum subarray (problem 2)](../../practice-problems.md#2-maximum-subarray) · run `npm run demo -- maximum-subarray` in all three languages.
+**Walkthrough:** [Worked examples — Maximum Subarray](../../worked-examples.md#maximum-subarray-kadane).
 
 ## Complexity
 
 maxSubarray: Time O(n); Space O(1).
+
 | | Time | Space |
 |---|------|-------|
 | Primary | Time O(n) | Space O(1) |
