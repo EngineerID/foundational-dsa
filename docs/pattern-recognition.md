@@ -40,7 +40,7 @@ When extending an algorithm, add edge cases (empty, single element, duplicates, 
 
 ## Practice problems
 
-Fifteen standalone problems with trilingual solutions: [practice-problems.md](practice-problems.md). Full time/space table: [complexity-cheatsheet.md](complexity-cheatsheet.md).
+Twenty standalone problems with trilingual solutions: [practice-problems.md](practice-problems.md). Full time/space table: [complexity-cheatsheet.md](complexity-cheatsheet.md).
 
 ## Next steps
 

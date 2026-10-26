@@ -1,0 +1,11 @@
+[
+  {
+    "ops": [
+      ["put", "a", 1],
+      ["put", "b", 2],
+      ["put", "a", 3]
+    ],
+    "get": { "key": "a", "value": 3 },
+    "getMissing": { "key": "z", "value": null }
+  }
+]

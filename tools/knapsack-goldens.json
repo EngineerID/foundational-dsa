@@ -1,0 +1,5 @@
+[
+  { "weights": [1, 2, 3], "values": [6, 10, 12], "capacity": 5, "expected": 22 },
+  { "weights": [2], "values": [3], "capacity": 1, "expected": 0 },
+  { "weights": [1], "values": [5], "capacity": 0, "expected": 0 }
+]

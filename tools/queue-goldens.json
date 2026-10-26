@@ -1,0 +1,7 @@
+[
+  {
+    "enqueue": [1, 2, 3],
+    "dequeueValues": [1, 2],
+    "peek": 3
+  }
+]

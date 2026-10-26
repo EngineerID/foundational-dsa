@@ -1,0 +1,5 @@
+[
+  { "a": "abcde", "b": "ace", "expected": 3 },
+  { "a": "", "b": "abc", "expected": 0 },
+  { "a": "abc", "b": "abc", "expected": 3 }
+]

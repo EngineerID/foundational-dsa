@@ -1,0 +1,5 @@
+[
+  { "text": "ababcababa", "pattern": "aba", "expected": 0 },
+  { "text": "hello", "pattern": "ll", "expected": 2 },
+  { "text": "abc", "pattern": "d", "expected": -1 }
+]

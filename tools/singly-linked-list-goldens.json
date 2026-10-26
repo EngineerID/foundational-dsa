@@ -1,0 +1,10 @@
+[
+  {
+    "addLast": [2, 3, 4],
+    "getIndex": 1,
+    "getValue": 3,
+    "removeIndex": 0,
+    "removeValue": 2,
+    "sizeAfter": 2
+  }
+]

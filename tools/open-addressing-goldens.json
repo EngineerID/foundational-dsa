@@ -1,0 +1,12 @@
+[
+  {
+    "ops": [
+      ["put", 1, "one"],
+      ["put", 2, "two"],
+      ["put", 1, "ONE"]
+    ],
+    "get": { "key": 1, "value": "ONE" },
+    "remove": { "key": 2, "present": true },
+    "getAfterRemove": { "key": 2, "value": null }
+  }
+]
