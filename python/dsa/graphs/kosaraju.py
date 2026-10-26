@@ -1,10 +1,10 @@
 # Graphs — Kosaraju SCC
 
-"""Strongly connected components via Kosaraju (two-pass DFS).
+"""Strongly connected components via two-pass DFS.
 
 Technique: Kosaraju
 Invariant: Finish order on G, DFS on transpose yields SCCs.
-components: Time O(V+E); Space O(V).
+stronglyConnectedComponents: Time O(V+E); Space O(V).
 """
 
 from dsa.graphs.graph import Graph

@@ -1,10 +1,10 @@
 # Trees — Fenwick Tree (Binary Indexed Tree)
 
-"""Prefix sums with point updates via Fenwick tree.
+"""Prefix sums and range sums with point updates.
 
 Technique: Fenwick tree (binary indexed tree)
-Invariant: Each index stores sum of a responsible range.
-add/prefix_sum: Time O(log n); Space O(n).
+Invariant: BIT stores cumulative deltas for responsible ranges.
+add/prefixSum/rangeSum: Time O(log n); Space O(n).
 """
 
 

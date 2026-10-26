@@ -2,7 +2,21 @@
 
 Topic: **graphs** / `tarjan-scc`
 
-## Implementations
+## Overview
+
+Strongly connected components in a directed graph.
+
+**Worked example:** [Topic index](../../worked-examples.md#tarjan-scc) (summary) · run `npm run demo -- tarjan-scc` in all three languages.
+
+## Complexity
+
+stronglyConnectedComponents: Time O(V+E); Space O(V).
+
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(V+E) | Space O(V) |
+
+## Code links
 
 | Language | Source |
 |----------|--------|
@@ -16,5 +30,9 @@ Topic: **graphs** / `tarjan-scc`
 |----------|------|
 | Python | [`test_tarjan_scc`](../../../python/tests/graphs/test_tarjan_scc.py) |
 | JavaScript | [`tarjanScc.test.js`](../../../javascript/test/graphs/tarjanScc.test.js) |
+| Java | [`TarjanSCCTest.java`](../../../java/src/test/java/com/dsa/examples/graphs/TarjanSCCTest.java) |
 
-Java tests run via Maven in `java/src/test/java/com/dsa/examples/graphs/`.
+**Property-style checks:** Java [`PropertyGraphsTest`](../../../java/src/test/java/com/dsa/examples/property/PropertyGraphsTest.java); Python [`test_property_graphs`](../../../python/tests/test_property_graphs.py); JavaScript [`property/graphs.test.js`](../../../javascript/test/property/graphs.test.js).
+
+
+Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/graphs/`.

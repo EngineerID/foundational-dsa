@@ -2,13 +2,28 @@
 
 [![CI](https://github.com/EngineerID/foundational-dsa/actions/workflows/ci.yml/badge.svg)](https://github.com/EngineerID/foundational-dsa/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](./LICENSE)
+[![Sponsor](https://img.shields.io/badge/Sponsor-EngineerID-ea4aaa?logo=github-sponsors&logoColor=white)](https://github.com/sponsors/EngineerID)
 
-**foundational-dsa** is a trilingual reference library: **72 classic data structures and algorithms**, each with matching implementations in **Java**, **Python**, and **JavaScript** (216 implementations in total). Every topic ships with tests, a short doc page under [`docs/items/`](docs/items/), and entries in [`docs/API.md`](docs/API.md) so you can compare APIs and idioms across languages.
+**foundational-dsa** is a trilingual reference library: **87 classic data structures and algorithms**, each with matching implementations in **Java**, **Python**, and **JavaScript** (261 implementations in total). Every topic ships with tests, a short doc page under [`docs/items/`](docs/items/), and entries in [`docs/API.md`](docs/API.md) so you can compare APIs and idioms across languages.
 
-Use it to study implementations side by side, prepare for interviews, or teach DSA with runnable code rather than pseudocode. Step-by-step walkthroughs for core algorithms are in [`docs/worked-examples.md`](docs/worked-examples.md).
+Use it to study implementations side by side, prepare for interviews, or teach DSA with runnable code rather than pseudocode. Step-by-step walkthroughs for core algorithms are in [`docs/worked-examples.md`](docs/worked-examples.md). Map common interview prompts to topic ids in [`docs/interview-prep.md`](docs/interview-prep.md).
 
 **Maintainer:** [Ivan Damnjanovic](https://github.com/EngineerID)  
 **License:** Apache License 2.0 ([LICENSE](LICENSE))
+
+## Start here
+
+| Step | Action |
+|------|--------|
+| 1 | Clone the repo and run `bash .cursor/install.sh` once (Node 20+, Python 3.10+, JDK 17+). |
+| 2 | Run `npm test` from the root — docs link scan, complexity checks, then Java, Python, JavaScript, parity, and matrix. |
+| 3 | Explore a topic: [COVERAGE.md](COVERAGE.md) lists all 87 ids; `npm run demo -- <id>` runs that topic’s tests in all three languages. |
+| 4 | **Practice:** [docs/how-to-practice.md](docs/how-to-practice.md) — study loop, golden tests, and seeded property checks; [docs/practice-problems.md](docs/practice-problems.md) lists all **87** trilingual problems with walkthroughs. |
+| 5 | Interview study: [docs/interview-prep.md](docs/interview-prep.md) maps prompts to ids; [docs/worked-examples.md](docs/worked-examples.md) has step tables; [docs/pattern-recognition.md](docs/pattern-recognition.md) links signals to topics. |
+| 6 | First PR: read [CONTRIBUTING.md](CONTRIBUTING.md) (scope, `npm test` vs `npm run test:ci`, issue templates). |
+| 7 | Security reports: [SECURITY.md](SECURITY.md). |
+
+**Complexity notation:** README and [docs/items/](docs/items/) use `O(n log n)` style; some doc-spec strings use `·` for multiply (e.g. `O(n·W)` for knapsack capacity). Meaning is the same across languages.
 
 ## Layout
 
@@ -91,31 +106,47 @@ Topic ids are the first column of [COVERAGE.md](COVERAGE.md), such as `dijkstra`
 
 ### What `npm test` runs
 
-1. `npm run check:stubs` — fails if a source or test file still contains a stub marker.
-2. `npm run test:java` — `sh java/mvnw test` (JUnit 5).
-3. `npm run test:py` — pytest on `python/`.
-4. `npm run test:js` — Jest with `javascript/jest.config.js`.
-5. `npm run check:parity` — same topics exposed in all three languages.
-6. `npm run matrix:check` — [COVERAGE.md](COVERAGE.md) matches the tree.
+1. `npm run check:docs-links` — fails if a relative link or `#heading` anchor in docs is broken (and blocks forbidden private external URLs).
+2. `npm run check:readme-index` — fails if README is missing a link to any catalog topic or practice problem.
+3. `npm run check:complexity-cheatsheet` — fails if [docs/complexity-cheatsheet.md](docs/complexity-cheatsheet.md) is out of date with `doc-spec.mjs`.
+4. `npm run check:item-doc-complexity` — fails if a `docs/items` **Complexity:** line diverges from `tools/doc-spec.mjs`.
+5. `npm run check:golden-parity` and `npm run check:complexity-sanity` — shared golden fixtures and fast timing bounds.
+6. `npm run check:stubs` — fails if a source or test file still contains a stub marker.
+7. `npm run test:java` — `sh java/mvnw test` (JUnit 5).
+8. `npm run test:py` — pytest on `python/`.
+9. `npm run test:js` — Jest with `javascript/jest.config.js`.
+10. `npm run check:parity` — same topics exposed in all three languages.
+11. `npm run matrix:check` — [COVERAGE.md](COVERAGE.md) matches the tree.
 
 After adding a topic, regenerate the matrix with `npm run matrix` (or `make matrix`). `npm run matrix:check` only verifies; it does not rewrite the file.
 
 Continuous integration uses a [CI-minutes policy](docs/ci.md): push to `main` and pull requests (draft PRs skip heavy work until marked ready). See [`.github/workflows/ci.yml`](.github/workflows/ci.yml) and [docs/running-ci-locally.md](docs/running-ci-locally.md).
 
-## Topics (72)
+## How to practice
+
+See **[docs/how-to-practice.md](docs/how-to-practice.md)** for a step-by-step loop (read problem → demo catalog → edit `practice/` → run goldens and property tests). Phase-1 **property tests** compare practice code to brute-force references for sorting, searching, graphs, and DP (`check:practice-property-coverage`, seed **42**, **25** trials per test).
+
+Quick links:
+
+- [Practice problems (87)](docs/practice-problems.md)
+- [Worked examples / complexity walkthroughs](docs/worked-examples.md)
+- [Topic index by area (below)](#topics-87) and [full doc links](#full-algorithm-index)
+- Generated path index: [INVENTORY.md](INVENTORY.md) (`npm run inventory`)
+
+## Topics (87)
 
 | Area | Topics |
 |------|--------|
-| Searching | linear-search, binary-search, quick-select, reservoir-sampling |
-| Sorting | bubble-sort, selection-sort, insertion-sort, merge-sort, quick-sort, heapsort, counting-sort, radix-sort |
-| Strings | kmp, z-algorithm, rabin-karp, manacher, suffix-array, aho-corasick |
-| Dynamic programming | lis, lcs, knapsack, edit-distance, coin-change, matrix-chain, longest-palindromic-subsequence, partition-equal-subset, rod-cutting, tsp-bitmask |
-| Linear | dynamic-array, singly-linked-list, doubly-linked-list, stack, queue, deque, sliding-window-maximum, lru-cache |
-| Heaps | binary-heap, priority-queue |
-| Trees | bst, tree-traversals, avl-tree, order-statistic-tree, interval-tree, trie, b-tree, segment-tree, fenwick-tree, red-black-tree, lca-binary-lifting, treap, sparse-table |
+| Searching | linear-search, binary-search, two-sum-ii, trapping-rain-water, quick-select, reservoir-sampling |
+| Sorting | bubble-sort, selection-sort, insertion-sort, merge-sort, quick-sort, heapsort, counting-sort, radix-sort, merge-intervals |
+| Strings | kmp, z-algorithm, rabin-karp, longest-substring-without-repeating, manacher, suffix-array, aho-corasick |
+| Dynamic programming | lis, lcs, knapsack, edit-distance, coin-change, maximum-subarray, matrix-chain, longest-palindromic-subsequence, partition-equal-subset, rod-cutting, tsp-bitmask |
+| Linear | dynamic-array, singly-linked-list, doubly-linked-list, stack, queue, deque, valid-parentheses, monotonic-stack, sliding-window-maximum, lru-cache |
+| Heaps | binary-heap, priority-queue, meeting-rooms-ii, top-k-frequent-elements |
+| Trees | bst, tree-traversals, level-order-traversal, serialize-binary-tree, avl-tree, order-statistic-tree, interval-tree, trie, b-tree, segment-tree, fenwick-tree, red-black-tree, lca-binary-lifting, treap, sparse-table |
 | Hashing | separate-chaining, open-addressing, bloom-filter |
 | Union-Find | union-find |
-| Graphs | graph, bfs, dfs, topological-sort, dijkstra, bellman-ford, floyd-warshall, kruskal-mst, prim-mst, boruvka-mst, a-star, tarjan-scc, kosaraju, bipartite-check, articulation-bridges, edmonds-karp, hungarian |
+| Graphs | graph, bfs, number-of-islands, course-schedule, word-search, dfs, topological-sort, dijkstra, network-delay, bellman-ford, floyd-warshall, kruskal-mst, prim-mst, boruvka-mst, a-star, tarjan-scc, kosaraju, bipartite-check, articulation-bridges, edmonds-karp, hungarian |
 
 ## Complexity (primary operations)
 
@@ -125,6 +156,8 @@ Typical time and auxiliary space for the main entry point of each topic (see mod
 |-------|------|------|-------|
 | searching | linear-search | O(n) | O(1) |
 | searching | binary-search | O(log n) | O(1) |
+| searching | two-sum-ii | O(n) | O(1) |
+| searching | trapping-rain-water | O(n) | O(1) |
 | searching | quick-select | O(n) avg, O(n²) worst | O(1) |
 | searching | reservoir-sampling | O(n) | O(k) |
 | sorting | bubble-sort | O(n²) | O(1) |
@@ -135,6 +168,7 @@ Typical time and auxiliary space for the main entry point of each topic (see mod
 | sorting | heapsort | O(n log n) | O(1) |
 | sorting | counting-sort | O(n + k) | O(k) |
 | sorting | radix-sort | O(d · n) | O(n) |
+| sorting | merge-intervals | O(n log n) | O(n) |
 | strings | kmp | O(n + m) | O(m) |
 | linear | dynamic-array | O(1) amortized append/get | O(n) |
 | linear | singly-linked-list | O(1) prepend / O(n) search | O(n) |
@@ -142,10 +176,14 @@ Typical time and auxiliary space for the main entry point of each topic (see mod
 | linear | stack | O(1) amortized | O(n) |
 | linear | queue | O(1) amortized | O(n) |
 | linear | deque | O(1) amortized | O(n) |
+| linear | valid-parentheses | O(n) | O(n) |
+| linear | monotonic-stack | O(n) | O(n) |
 | linear | sliding-window-maximum | O(n) | O(k) |
 | linear | lru-cache | O(1) get/put | O(capacity) |
 | heaps | binary-heap | O(log n) insert/extract | O(n) |
 | heaps | priority-queue | O(log n) | O(n) |
+| heaps | meeting-rooms-ii | O(n log n) | O(n) |
+| heaps | top-k-frequent-elements | O(n log k) | O(n) |
 | trees | bst | O(h) | O(n) |
 | trees | tree-traversals | O(n) | O(h) or O(w) |
 | trees | avl-tree | O(log n) | O(n) |
@@ -198,9 +236,226 @@ Typical time and auxiliary space for the main entry point of each topic (see mod
 
 Local asymptotic comparisons (not CI gates): `npm run bench` and [docs/benchmarks.md](docs/benchmarks.md).
 
-For step-by-step walkthroughs of binary search, merge sort, and KMP, see [docs/worked-examples.md](docs/worked-examples.md).
+For step-by-step walkthroughs of binary search, merge sort, KMP, Dijkstra, union–find, and LRU cache, see [docs/worked-examples.md](docs/worked-examples.md).
 
 To mirror the GitHub Actions job locally, see [docs/running-ci-locally.md](docs/running-ci-locally.md).
+
+## Full algorithm index
+
+Every catalog topic links to its doc page under [docs/items/](docs/items/). Practice problems are in [docs/practice-problems.md](docs/practice-problems.md). Pattern signals: [docs/pattern-recognition.md](docs/pattern-recognition.md).
+
+### dp
+
+- [coin-change](docs/items/dp/coin-change.md)
+- [edit-distance](docs/items/dp/edit-distance.md)
+- [knapsack](docs/items/dp/knapsack.md)
+- [lcs](docs/items/dp/lcs.md)
+- [lis](docs/items/dp/lis.md)
+- [longest-palindromic-subsequence](docs/items/dp/longest-palindromic-subsequence.md)
+- [matrix-chain](docs/items/dp/matrix-chain.md)
+- [maximum-subarray](docs/items/dp/maximum-subarray.md)
+- [partition-equal-subset](docs/items/dp/partition-equal-subset.md)
+- [rod-cutting](docs/items/dp/rod-cutting.md)
+- [tsp-bitmask](docs/items/dp/tsp-bitmask.md)
+
+### graphs
+
+- [a-star](docs/items/graphs/a-star.md)
+- [articulation-bridges](docs/items/graphs/articulation-bridges.md)
+- [bellman-ford](docs/items/graphs/bellman-ford.md)
+- [bfs](docs/items/graphs/bfs.md)
+- [course-schedule](docs/items/graphs/course-schedule.md)
+- [word-search](docs/items/graphs/word-search.md)
+- [number-of-islands](docs/items/graphs/number-of-islands.md)
+- [bipartite-check](docs/items/graphs/bipartite-check.md)
+- [boruvka-mst](docs/items/graphs/boruvka-mst.md)
+- [dfs](docs/items/graphs/dfs.md)
+- [dijkstra](docs/items/graphs/dijkstra.md)
+- [network-delay](docs/items/graphs/network-delay.md)
+- [edmonds-karp](docs/items/graphs/edmonds-karp.md)
+- [floyd-warshall](docs/items/graphs/floyd-warshall.md)
+- [graph](docs/items/graphs/graph.md)
+- [hungarian](docs/items/graphs/hungarian.md)
+- [kosaraju](docs/items/graphs/kosaraju.md)
+- [kruskal-mst](docs/items/graphs/kruskal-mst.md)
+- [prim-mst](docs/items/graphs/prim-mst.md)
+- [tarjan-scc](docs/items/graphs/tarjan-scc.md)
+- [topological-sort](docs/items/graphs/topological-sort.md)
+
+### hashing
+
+- [bloom-filter](docs/items/hashing/bloom-filter.md)
+- [open-addressing](docs/items/hashing/open-addressing.md)
+- [separate-chaining](docs/items/hashing/separate-chaining.md)
+
+### heaps
+
+- [binary-heap](docs/items/heaps/binary-heap.md)
+- [meeting-rooms-ii](docs/items/heaps/meeting-rooms-ii.md)
+- [top-k-frequent-elements](docs/items/heaps/top-k-frequent-elements.md)
+- [priority-queue](docs/items/heaps/priority-queue.md)
+
+### linear
+
+- [deque](docs/items/linear/deque.md)
+- [doubly-linked-list](docs/items/linear/doubly-linked-list.md)
+- [dynamic-array](docs/items/linear/dynamic-array.md)
+- [lru-cache](docs/items/linear/lru-cache.md)
+- [monotonic-stack](docs/items/linear/monotonic-stack.md)
+- [valid-parentheses](docs/items/linear/valid-parentheses.md)
+- [queue](docs/items/linear/queue.md)
+- [singly-linked-list](docs/items/linear/singly-linked-list.md)
+- [sliding-window-maximum](docs/items/linear/sliding-window-maximum.md)
+- [stack](docs/items/linear/stack.md)
+
+### searching
+
+- [binary-search](docs/items/searching/binary-search.md)
+- [linear-search](docs/items/searching/linear-search.md)
+- [trapping-rain-water](docs/items/searching/trapping-rain-water.md)
+- [two-sum-ii](docs/items/searching/two-sum-ii.md)
+- [quick-select](docs/items/searching/quick-select.md)
+- [reservoir-sampling](docs/items/searching/reservoir-sampling.md)
+
+### sorting
+
+- [bubble-sort](docs/items/sorting/bubble-sort.md)
+- [counting-sort](docs/items/sorting/counting-sort.md)
+- [heapsort](docs/items/sorting/heapsort.md)
+- [insertion-sort](docs/items/sorting/insertion-sort.md)
+- [merge-intervals](docs/items/sorting/merge-intervals.md)
+- [merge-sort](docs/items/sorting/merge-sort.md)
+- [quick-sort](docs/items/sorting/quick-sort.md)
+- [radix-sort](docs/items/sorting/radix-sort.md)
+- [selection-sort](docs/items/sorting/selection-sort.md)
+
+### strings
+
+- [aho-corasick](docs/items/strings/aho-corasick.md)
+- [kmp](docs/items/strings/kmp.md)
+- [longest-substring-without-repeating](docs/items/strings/longest-substring-without-repeating.md)
+- [manacher](docs/items/strings/manacher.md)
+- [rabin-karp](docs/items/strings/rabin-karp.md)
+- [suffix-array](docs/items/strings/suffix-array.md)
+- [z-algorithm](docs/items/strings/z-algorithm.md)
+
+### trees
+
+- [avl-tree](docs/items/trees/avl-tree.md)
+- [b-tree](docs/items/trees/b-tree.md)
+- [bst](docs/items/trees/bst.md)
+- [fenwick-tree](docs/items/trees/fenwick-tree.md)
+- [interval-tree](docs/items/trees/interval-tree.md)
+- [lca-binary-lifting](docs/items/trees/lca-binary-lifting.md)
+- [order-statistic-tree](docs/items/trees/order-statistic-tree.md)
+- [red-black-tree](docs/items/trees/red-black-tree.md)
+- [segment-tree](docs/items/trees/segment-tree.md)
+- [sparse-table](docs/items/trees/sparse-table.md)
+- [treap](docs/items/trees/treap.md)
+- [level-order-traversal](docs/items/trees/level-order-traversal.md)
+- [serialize-binary-tree](docs/items/trees/serialize-binary-tree.md)
+- [tree-traversals](docs/items/trees/tree-traversals.md)
+- [trie](docs/items/trees/trie.md)
+
+### unionfind
+
+- [union-find](docs/items/unionfind/union-find.md)
+
+### Practice problems
+
+- [Two Sum II](docs/practice-problems.md#1-two-sum-ii)
+- [Maximum subarray](docs/practice-problems.md#2-maximum-subarray)
+- [Valid parentheses](docs/practice-problems.md#3-valid-parentheses)
+- [Meeting rooms II](docs/practice-problems.md#4-meeting-rooms-ii)
+- [Number of islands](docs/practice-problems.md#5-number-of-islands)
+- [Top K frequent elements](docs/practice-problems.md#6-top-k-frequent-elements)
+- [Course schedule](docs/practice-problems.md#7-course-schedule)
+- [Longest substring without repeating](docs/practice-problems.md#8-longest-substring-without-repeating-characters)
+- [Coin change](docs/practice-problems.md#9-coin-change)
+- [LRU cache design](docs/practice-problems.md#10-lru-cache-design)
+- [Merge intervals](docs/practice-problems.md#11-merge-intervals)
+- [Binary tree level order traversal](docs/practice-problems.md#12-binary-tree-level-order-traversal)
+- [Word search](docs/practice-problems.md#13-word-search)
+- [Kth largest element](docs/practice-problems.md#14-kth-largest-element)
+- [Minimum spanning tree (Kruskal)](docs/practice-problems.md#15-minimum-spanning-tree-kruskal)
+- [Trapping rain water](docs/practice-problems.md#16-trapping-rain-water)
+- [Edit distance](docs/practice-problems.md#17-edit-distance)
+- [Serialize binary tree](docs/practice-problems.md#18-serialize-and-deserialize-binary-tree)
+- [Network delay time](docs/practice-problems.md#19-network-delay-time)
+- [Sliding window maximum](docs/practice-problems.md#20-sliding-window-maximum)
+- [Binary search](docs/practice-problems.md#21-binary-search)
+- [0/1 Knapsack](docs/practice-problems.md#22-01-knapsack)
+- [Longest common subsequence](docs/practice-problems.md#23-longest-common-subsequence)
+- [KMP pattern search](docs/practice-problems.md#24-kmp-pattern-search)
+- [Trie prefix tree](docs/practice-problems.md#25-trie-prefix-tree)
+- [BFS shortest paths](docs/practice-problems.md#26-bfs-shortest-paths)
+- [Union–find connectivity](docs/practice-problems.md#27-union-find-connectivity)
+- [Binary min-heap](docs/practice-problems.md#28-binary-min-heap)
+- [Dijkstra shortest paths](docs/practice-problems.md#29-dijkstra-shortest-paths)
+- [DFS discovery times](docs/practice-problems.md#30-dfs-discovery-times)
+- [Longest increasing subsequence](docs/practice-problems.md#31-longest-increasing-subsequence)
+- [Merge sort](docs/practice-problems.md#32-merge-sort)
+- [Topological sort](docs/practice-problems.md#33-topological-sort)
+- [Priority queue scheduling](docs/practice-problems.md#34-priority-queue-scheduling)
+- [Next greater element](docs/practice-problems.md#35-next-greater-element)
+- [Quicksort](docs/practice-problems.md#36-quicksort)
+- [Binary search tree](docs/practice-problems.md#37-binary-search-tree)
+- [Prim MST weight](docs/practice-problems.md#38-prim-mst-weight)
+- [Stack operations](docs/practice-problems.md#39-stack-operations)
+- [Heapsort](docs/practice-problems.md#40-heapsort)
+- [Queue operations](docs/practice-problems.md#41-queue-operations)
+- [Deque operations](docs/practice-problems.md#42-deque-operations)
+- [Counting sort](docs/practice-problems.md#43-counting-sort)
+- [Radix sort](docs/practice-problems.md#44-radix-sort)
+- [Rabin-Karp search](docs/practice-problems.md#45-rabin-karp-search)
+- [Bellman-Ford paths](docs/practice-problems.md#46-bellman-ford-paths)
+- [Segment tree range sum](docs/practice-problems.md#47-segment-tree-range-sum)
+- [Floyd-Warshall distances](docs/practice-problems.md#48-floyd-warshall-distances)
+- [Fenwick tree prefix sums](docs/practice-problems.md#49-fenwick-tree-prefix-sums)
+- [Graph adjacency](docs/practice-problems.md#50-graph-adjacency)
+- [Bipartite check](docs/practice-problems.md#51-bipartite-check)
+- [Tarjan SCC sizes](docs/practice-problems.md#52-tarjan-scc-sizes)
+- [Kosaraju SCC sizes](docs/practice-problems.md#53-kosaraju-scc-sizes)
+- [Edmonds-Karp max flow](docs/practice-problems.md#54-edmonds-karp-max-flow)
+- [Matrix chain min cost](docs/practice-problems.md#55-matrix-chain-min-cost)
+- [Rod cutting max profit](docs/practice-problems.md#56-rod-cutting-max-profit)
+- [Partition equal subset](docs/practice-problems.md#57-partition-equal-subset)
+- [Longest palindromic subsequence](docs/practice-problems.md#58-longest-palindromic-subsequence)
+- [Dynamic array operations](docs/practice-problems.md#59-dynamic-array-operations)
+- [Linear search index](docs/practice-problems.md#60-linear-search-index)
+- [Bubble sort](docs/practice-problems.md#61-bubble-sort)
+- [Insertion sort](docs/practice-problems.md#62-insertion-sort)
+- [Selection sort](docs/practice-problems.md#63-selection-sort)
+- [Z-algorithm search](docs/practice-problems.md#64-z-algorithm)
+- [Manacher palindrome length](docs/practice-problems.md#65-manacher)
+- [Aho-Corasick hits](docs/practice-problems.md#66-aho-corasick)
+- [AVL tree](docs/practice-problems.md#67-avl-tree)
+- [Red-black tree](docs/practice-problems.md#68-red-black-tree)
+- [Singly linked list](docs/practice-problems.md#69-singly-linked-list)
+- [Doubly linked list](docs/practice-problems.md#70-doubly-linked-list)
+- [Tree traversals](docs/practice-problems.md#71-tree-traversals)
+- [Separate chaining](docs/practice-problems.md#72-separate-chaining)
+- [Open addressing](docs/practice-problems.md#73-open-addressing)
+- [Suffix array](docs/practice-problems.md#74-suffix-array)
+- [Treap](docs/practice-problems.md#75-treap)
+- [Order-statistic tree](docs/practice-problems.md#76-order-statistic-tree)
+- [Interval tree](docs/practice-problems.md#77-interval-tree)
+- [B-tree](docs/practice-problems.md#78-b-tree)
+- [Bloom filter](docs/practice-problems.md#79-bloom-filter)
+- [Boruvka MST](docs/practice-problems.md#80-boruvka-mst)
+- [A-star path](docs/practice-problems.md#81-a-star)
+- [Articulation & bridges](docs/practice-problems.md#82-articulation-bridges)
+- [Hungarian assignment](docs/practice-problems.md#83-hungarian)
+- [LCA binary lifting](docs/practice-problems.md#84-lca-binary-lifting)
+- [Sparse table RMQ](docs/practice-problems.md#85-sparse-table)
+- [TSP bitmask](docs/practice-problems.md#86-tsp-bitmask)
+- [Reservoir sampling](docs/practice-problems.md#87-reservoir-sampling)
+
+See also the generated [complexity cheat sheet](docs/complexity-cheatsheet.md) for all **87** catalog topics.
+
+## Sponsor
+
+If this reference helps your studies or team, consider [sponsoring on GitHub](https://github.com/sponsors/EngineerID). Sponsorship supports maintenance of the trilingual catalog, docs, and CI. You can also star the repo and open issues or pull requests — see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 

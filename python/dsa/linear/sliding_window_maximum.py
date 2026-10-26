@@ -1,10 +1,10 @@
 # Linear — Sliding window maximum
 
-"""Maximum in each window of size k using a deque.
+"""Maximum in each sliding window of size k.
 
 Technique: Monotonic deque
-Invariant: Deque stores indices with decreasing values.
-max_sliding_window: Time O(n); Space O(k).
+Invariant: Deque indices have decreasing values.
+maxSlidingWindow: Time O(n); Space O(k).
 """
 
 from collections import deque

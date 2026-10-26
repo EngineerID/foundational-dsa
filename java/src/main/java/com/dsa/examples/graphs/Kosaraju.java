@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Strongly connected components via Kosaraju (two-pass DFS).
+ * Strongly connected components via two-pass DFS.
+ * Technique: Kosaraju
+ * Invariant: Finish order on G, DFS on transpose yields SCCs.
  * stronglyConnectedComponents: Time O(V+E); Space O(V).
  */
 public final class Kosaraju {

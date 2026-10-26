@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Bridges and articulation points in undirected graphs.
+ * Articulation points and bridges in an undirected graph.
+ * Technique: Tarjan DFS lowlink
+ * Invariant: Bridge when low[v] > disc[u].
  * find: Time O(V+E); Space O(V).
  */
 public final class ArticulationBridges {

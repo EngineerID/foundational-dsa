@@ -16,6 +16,18 @@ export const API_MANIFEST = {
     python: ['search', 'first_occurrence', 'last_occurrence'],
     javascript: ['search', 'firstOccurrence', 'lastOccurrence'],
   },
+  'two-sum-ii': {
+    type: 'static',
+    java: ['twoSumSorted'],
+    python: ['two_sum_sorted'],
+    javascript: ['twoSumSorted'],
+  },
+  'trapping-rain-water': {
+    type: 'static',
+    java: ['trap'],
+    python: ['trap'],
+    javascript: ['trap'],
+  },
   'quick-select': {
     type: 'static',
     java: ['kthSmallest'],
@@ -69,6 +81,12 @@ export const API_MANIFEST = {
     java: ['sort'],
     python: ['sort'],
     javascript: ['sort'],
+  },
+  'merge-intervals': {
+    type: 'static',
+    java: ['mergeIntervals'],
+    python: ['merge_intervals'],
+    javascript: ['mergeIntervals'],
   },
   kmp: {
     type: 'static',
@@ -124,6 +142,18 @@ export const API_MANIFEST = {
     python: ['insert', 'peek', 'extract_min', 'decrease_key', 'is_empty', 'size', 'heap'],
     javascript: ['insert', 'peek', 'extractMin', 'decreaseKey', 'isEmpty', 'size', 'heap'],
   },
+  'meeting-rooms-ii': {
+    type: 'static',
+    java: ['minMeetingRooms'],
+    python: ['min_meeting_rooms'],
+    javascript: ['minMeetingRooms'],
+  },
+  'top-k-frequent-elements': {
+    type: 'static',
+    java: ['topKFrequent'],
+    python: ['top_k_frequent'],
+    javascript: ['topKFrequent'],
+  },
   bst: {
     type: 'instance',
     java: ['insert', 'search', 'delete', 'successor', 'predecessor', 'inOrder', 'getRoot'],
@@ -159,6 +189,18 @@ export const API_MANIFEST = {
       'postOrderIterative',
       'levelOrder',
     ],
+  },
+  'level-order-traversal': {
+    type: 'static',
+    java: ['levelOrder'],
+    python: ['level_order'],
+    javascript: ['levelOrder'],
+  },
+  'serialize-binary-tree': {
+    type: 'static',
+    java: ['serialize', 'deserialize'],
+    python: ['serialize', 'deserialize'],
+    javascript: ['serialize', 'deserialize'],
   },
   'avl-tree': {
     type: 'instance',
@@ -226,6 +268,24 @@ export const API_MANIFEST = {
     python: ['distances'],
     javascript: ['distances'],
   },
+  'number-of-islands': {
+    type: 'static',
+    java: ['numIslands'],
+    python: ['num_islands'],
+    javascript: ['numIslands'],
+  },
+  'course-schedule': {
+    type: 'static',
+    java: ['canFinish'],
+    python: ['can_finish'],
+    javascript: ['canFinish'],
+  },
+  'word-search': {
+    type: 'static',
+    java: ['wordSearch'],
+    python: ['word_search'],
+    javascript: ['wordSearch'],
+  },
   dfs: {
     type: 'static',
     java: ['traverseRecursive', 'traverseIterative'],
@@ -243,6 +303,12 @@ export const API_MANIFEST = {
     java: ['shortestPaths'],
     python: ['shortest_paths'],
     javascript: ['shortestPaths'],
+  },
+  'network-delay': {
+    type: 'static',
+    java: ['networkDelay'],
+    python: ['network_delay'],
+    javascript: ['networkDelay'],
   },
   'bellman-ford': {
     type: 'static',
@@ -298,6 +364,12 @@ export const API_MANIFEST = {
     python: ['search'],
     javascript: ['search'],
   },
+  'longest-substring-without-repeating': {
+    type: 'static',
+    java: ['lengthOfLongestSubstring'],
+    python: ['length_of_longest_substring'],
+    javascript: ['lengthOfLongestSubstring'],
+  },
   lis: {
     type: 'static',
     java: ['length'],
@@ -327,6 +399,12 @@ export const API_MANIFEST = {
     java: ['minCoins'],
     python: ['min_coins'],
     javascript: ['minCoins'],
+  },
+  'maximum-subarray': {
+    type: 'static',
+    java: ['maxSubarray'],
+    python: ['max_subarray'],
+    javascript: ['maxSubarray'],
   },
   'a-star': {
     type: 'static',
@@ -447,6 +525,18 @@ export const API_MANIFEST = {
     java: ['sample'],
     python: ['sample'],
     javascript: ['sample'],
+  },
+  'valid-parentheses': {
+    type: 'static',
+    java: ['isValidParentheses'],
+    python: ['is_valid_parentheses'],
+    javascript: ['isValidParentheses'],
+  },
+  'monotonic-stack': {
+    type: 'static',
+    java: ['nextGreaterElement'],
+    python: ['next_greater_element'],
+    javascript: ['nextGreaterElement'],
   },
   'sliding-window-maximum': {
     type: 'static',

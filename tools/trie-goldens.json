@@ -1,0 +1,91 @@
+[
+  {
+    "inserts": [
+      "cat",
+      "car",
+      "dog"
+    ],
+    "search": [
+      {
+        "word": "cat",
+        "expected": true
+      },
+      {
+        "word": "ca",
+        "expected": false
+      },
+      {
+        "word": "car",
+        "expected": true
+      },
+      {
+        "word": "cab",
+        "expected": false
+      }
+    ],
+    "startsWith": [
+      {
+        "prefix": "ca",
+        "expected": true
+      },
+      {
+        "prefix": "do",
+        "expected": true
+      },
+      {
+        "prefix": "z",
+        "expected": false
+      }
+    ]
+  },
+  {
+    "inserts": [],
+    "search": [
+      {
+        "word": "x",
+        "expected": false
+      }
+    ],
+    "startsWith": [
+      {
+        "prefix": "x",
+        "expected": false
+      }
+    ]
+  },
+  {
+    "inserts": [
+      "a"
+    ],
+    "search": [
+      {
+        "word": "a",
+        "expected": true
+      }
+    ],
+    "startsWith": [
+      {
+        "prefix": "a",
+        "expected": true
+      }
+    ]
+  },
+  {
+    "inserts": [
+      "dup",
+      "dup"
+    ],
+    "search": [
+      {
+        "word": "dup",
+        "expected": true
+      }
+    ],
+    "startsWith": [
+      {
+        "prefix": "du",
+        "expected": true
+      }
+    ]
+  }
+]

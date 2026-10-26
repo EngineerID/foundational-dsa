@@ -7,6 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { complexityTableMarkdown } from './complexity-table.mjs';
 import { DOC_SPECS } from './doc-spec.mjs';
 import {
   EDGE_CATALOG_ITEMS,
@@ -114,13 +115,14 @@ function renderItem(item) {
   const lines = [];
   lines.push(`# ${titleCase(item.id)}`, '');
   lines.push(`Topic: **${item.topic}** / \`${item.id}\``, '');
+  lines.push('## Overview', '');
   lines.push(`${spec.purpose}`, '');
-  lines.push(`**Complexity:** ${spec.complexity}`, '');
   if (EDGE_NOTES[item.id]) {
-    lines.push(EDGE_NOTES[item.id], '');
+    lines.push('', EDGE_NOTES[item.id], '');
   }
   if (EDGE_CATALOG_ITEMS.has(item.id)) {
     lines.push(
+      '',
       '**Catalog edge themes:** covered in shared catalog tests (`EdgeCaseThemesTest`, `test_edge_case_themes.py`, `edgeCaseThemes.test.js`) for empty / single / duplicate / large / invalid cases.',
       '',
     );
@@ -146,7 +148,10 @@ function renderItem(item) {
       '',
     );
   }
-  lines.push('## Implementations', '');
+  lines.push('## Complexity', '');
+  lines.push(`${spec.complexity}`, '');
+  lines.push(complexityTableMarkdown(spec.complexity).trim(), '');
+  lines.push('## Code links', '');
   lines.push('| Language | Source |');
   lines.push('|----------|--------|');
   lines.push(`| Java | [\`${item.java}\`](${javaMain}) |`);

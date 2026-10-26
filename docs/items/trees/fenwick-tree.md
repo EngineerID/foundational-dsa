@@ -2,7 +2,21 @@
 
 Topic: **trees** / `fenwick-tree`
 
-## Implementations
+## Overview
+
+Prefix sums and range sums with point updates.
+
+**Worked example:** [Topic index](../../worked-examples.md#fenwick-tree) (summary) · run `npm run demo -- fenwick-tree` in all three languages.
+
+## Complexity
+
+add/prefixSum/rangeSum: Time O(log n); Space O(n).
+
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(log n) | Space O(n) |
+
+## Code links
 
 | Language | Source |
 |----------|--------|
@@ -16,5 +30,9 @@ Topic: **trees** / `fenwick-tree`
 |----------|------|
 | Python | [`test_fenwick_tree`](../../../python/tests/trees/test_fenwick_tree.py) |
 | JavaScript | [`fenwickTree.test.js`](../../../javascript/test/trees/fenwickTree.test.js) |
+| Java | [`FenwickTreeTest.java`](../../../java/src/test/java/com/dsa/examples/trees/FenwickTreeTest.java) |
 
-Java tests run via Maven in `java/src/test/java/com/dsa/examples/trees/`.
+**Property-style checks:** Java [`PropertyTreesTest`](../../../java/src/test/java/com/dsa/examples/property/PropertyTreesTest.java); Python [`test_property_trees`](../../../python/tests/test_property_trees.py); JavaScript [`property/trees.test.js`](../../../javascript/test/property/trees.test.js).
+
+
+Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/trees/`.

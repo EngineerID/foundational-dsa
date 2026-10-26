@@ -4,6 +4,8 @@ package com.dsa.examples.dp;
 
 /**
  * Maximum revenue cutting a rod of given length.
+ * Technique: Unbounded knapsack DP
+ * Invariant: dp[l] is best revenue for length l.
  * maxProfit: Time O(n·length); Space O(length).
  */
 public final class RodCutting {

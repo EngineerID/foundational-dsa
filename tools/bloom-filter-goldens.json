@@ -1,0 +1,63 @@
+[
+  {
+    "expectedItems": 100,
+    "falsePositiveRate": 0.01,
+    "add": [
+      "alpha",
+      "beta",
+      "gamma"
+    ],
+    "queries": [
+      {
+        "item": "alpha",
+        "expected": true
+      },
+      {
+        "item": "delta",
+        "expected": false
+      },
+      {
+        "item": "beta",
+        "expected": true
+      }
+    ]
+  },
+  {
+    "expectedItems": 10,
+    "falsePositiveRate": 0.01,
+    "add": [],
+    "queries": [
+      {
+        "item": "x",
+        "expected": false
+      }
+    ]
+  },
+  {
+    "expectedItems": 10,
+    "falsePositiveRate": 0.01,
+    "add": [
+      "solo"
+    ],
+    "queries": [
+      {
+        "item": "solo",
+        "expected": true
+      }
+    ]
+  },
+  {
+    "expectedItems": 10,
+    "falsePositiveRate": 0.01,
+    "add": [
+      "dup",
+      "dup"
+    ],
+    "queries": [
+      {
+        "item": "dup",
+        "expected": true
+      }
+    ]
+  }
+]

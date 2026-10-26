@@ -2,7 +2,21 @@
 
 Topic: **trees** / `treap`
 
-## Implementations
+## Overview
+
+Randomized BST via heap priorities on keys.
+
+**Worked example:** [Topic index](../../worked-examples.md#treap) (summary) · run `npm run demo -- treap` in all three languages.
+
+## Complexity
+
+search/insert: Time O(log n); Space O(n).
+
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(log n) | Space O(n) |
+
+## Code links
 
 | Language | Source |
 |----------|--------|
@@ -16,5 +30,9 @@ Topic: **trees** / `treap`
 |----------|------|
 | Python | [`test_treap`](../../../python/tests/trees/test_treap.py) |
 | JavaScript | [`treap.test.js`](../../../javascript/test/trees/treap.test.js) |
+| Java | [`TreapTest.java`](../../../java/src/test/java/com/dsa/examples/trees/TreapTest.java) |
 
-Java tests run via Maven in `java/src/test/java/com/dsa/examples/trees/`.
+**Property-style checks:** Java [`PropertyTreesTest`](../../../java/src/test/java/com/dsa/examples/property/PropertyTreesTest.java); Python [`test_property_trees`](../../../python/tests/test_property_trees.py); JavaScript [`property/trees.test.js`](../../../javascript/test/property/trees.test.js).
+
+
+Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/trees/`.

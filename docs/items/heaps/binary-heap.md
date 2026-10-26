@@ -2,7 +2,24 @@
 
 Topic: **heaps** / `binary-heap`
 
-## Implementations
+## Overview
+
+Array-based binary heap (min or max) with heapify operations.
+
+
+**Catalog edge themes:** covered in shared catalog tests (`EdgeCaseThemesTest`, `test_edge_case_themes.py`, `edgeCaseThemes.test.js`) for empty / single / duplicate / large / invalid cases.
+
+**Walkthrough:** [Worked examples — Binary Heap](../../worked-examples.md#binary-min-heap-insert-and-extract).
+
+## Complexity
+
+insert/extract/peek: Time O(log n); buildHeap O(n); Space O(n).
+
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(log n) | Space O(n) |
+
+## Code links
 
 | Language | Source |
 |----------|--------|
@@ -16,5 +33,9 @@ Topic: **heaps** / `binary-heap`
 |----------|------|
 | Python | [`test_binary_heap`](../../../python/tests/heaps/test_binary_heap.py) |
 | JavaScript | [`binaryHeap.test.js`](../../../javascript/test/heaps/binaryHeap.test.js) |
+| Java | [`HeapTest.java`](../../../java/src/test/java/com/dsa/examples/heaps/HeapTest.java) |
 
-Java tests run via Maven in `java/src/test/java/com/dsa/examples/heaps/`.
+**Property-style checks:** Java [`PropertyHeapsTest`](../../../java/src/test/java/com/dsa/examples/property/PropertyHeapsTest.java); Python [`test_property_heaps`](../../../python/tests/test_property_heaps.py); JavaScript [`property/heaps.test.js`](../../../javascript/test/property/heaps.test.js).
+
+
+Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/heaps/`.

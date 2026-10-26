@@ -2,7 +2,21 @@
 
 Topic: **strings** / `suffix-array`
 
-## Implementations
+## Overview
+
+Lexicographically sorted suffix starting indices.
+
+**Worked example:** [Topic index](../../worked-examples.md#suffix-array) (summary) · run `npm run demo -- suffix-array` in all three languages.
+
+## Complexity
+
+build: Time O(n log n); Space O(n).
+
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n log n) | Space O(n) |
+
+## Code links
 
 | Language | Source |
 |----------|--------|
@@ -16,5 +30,6 @@ Topic: **strings** / `suffix-array`
 |----------|------|
 | Python | [`test_suffix_array`](../../../python/tests/strings/test_suffix_array.py) |
 | JavaScript | [`suffixArray.test.js`](../../../javascript/test/strings/suffixArray.test.js) |
+| Java | [`SuffixArrayTest.java`](../../../java/src/test/java/com/dsa/examples/strings/SuffixArrayTest.java) |
 
-Java tests run via Maven in `java/src/test/java/com/dsa/examples/strings/`.
+Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/strings/`.

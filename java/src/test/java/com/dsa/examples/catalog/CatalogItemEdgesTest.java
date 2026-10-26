@@ -4,9 +4,12 @@ import com.dsa.examples.graphs.*;
 import com.dsa.examples.hashing.BloomFilter;
 import com.dsa.examples.hashing.HashTableChaining;
 import com.dsa.examples.hashing.HashTableOpenAddressing;
+import com.dsa.examples.heaps.MeetingRoomsII;
+import com.dsa.examples.heaps.TopKFrequentElements;
 import com.dsa.examples.heaps.PriorityQueue;
 import com.dsa.examples.linear.*;
 import com.dsa.examples.dp.CoinChange;
+import com.dsa.examples.dp.MaxSubarray;
 import com.dsa.examples.dp.EditDistance;
 import com.dsa.examples.dp.Knapsack01;
 import com.dsa.examples.dp.LCS;
@@ -21,6 +24,9 @@ import com.dsa.examples.strings.AhoCorasick;
 import com.dsa.examples.strings.Manacher;
 import com.dsa.examples.strings.SuffixArray;
 import com.dsa.examples.searching.BinarySearch;
+import com.dsa.examples.searching.TrappingRainWater;
+import com.dsa.examples.searching.TwoSumII;
+import com.dsa.examples.strings.LongestSubstringWithoutRepeating;
 import com.dsa.examples.strings.RabinKarp;
 import com.dsa.examples.strings.ZAlgorithm;
 import com.dsa.examples.sorting.*;
@@ -28,6 +34,8 @@ import com.dsa.examples.trees.*;
 import com.dsa.examples.trees.FenwickTree;
 import com.dsa.examples.trees.SegmentTree;
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -195,11 +203,28 @@ class CatalogItemEdgesTest {
         assertEquals(3, ft.rangeSum(0, 1));
         assertEquals(0, ZAlgorithm.search("abc", ""));
         assertEquals(1, RabinKarp.search("abc", "b"));
+        assertEquals(3, LongestSubstringWithoutRepeating.lengthOfLongestSubstring("abc"));
         assertEquals(3, LIS.length(new int[] {1, 2, 3}));
         assertEquals(1, LCS.length("ab", "a"));
         assertEquals(5, Knapsack01.maxValue(new int[] {1}, new int[] {5}, 1));
         assertEquals(1, EditDistance.distance("a", "b"));
         assertEquals(0, CoinChange.minCoins(new int[] {1}, 0));
+        assertEquals(3, MaxSubarray.maxSubarray(new int[] {1, -2, 3}));
+        assertArrayEquals(new int[] {2, -1}, MonotonicStack.nextGreaterElement(new int[] {1, 2}));
+        assertTrue(ValidParentheses.isValidParentheses("()"));
+        assertArrayEquals(new int[] {1, 2}, TwoSumII.twoSumSorted(new int[] {1, 2, 3}, 3));
+        assertArrayEquals(new int[][] {{1, 6}}, MergeIntervals.mergeIntervals(new int[][] {{1, 3}, {2, 6}}));
+        assertEquals(1, TrappingRainWater.trap(new int[] {1, 0, 1}));
+        assertEquals(1, MeetingRoomsII.minMeetingRooms(new int[][] {{1, 2}}));
+        assertEquals(java.util.List.of(1, 2), TopKFrequentElements.topKFrequent(new int[] {1, 1, 2}, 2));
+        assertEquals(1, NumberOfIslands.numIslands(new char[][] {{'1'}}));
+        assertTrue(CourseSchedule.canFinish(2, new int[][] {{1, 0}}));
+        assertTrue(WordSearch.wordSearch(new char[][] {{'A'}}, "A"));
+        assertEquals(List.of(List.of(1)), LevelOrderTraversal.levelOrder(new Integer[] {1}));
+        assertEquals(2, NetworkDelay.networkDelay(4, new int[][] {{1, 0, 1}, {1, 2, 1}, {2, 3, 1}}, 1));
+        assertArrayEquals(
+                new Integer[] {1},
+                SerializeBinaryTree.deserialize(SerializeBinaryTree.serialize(new Integer[] {1})));
     }
 
     @Test

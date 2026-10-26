@@ -6,6 +6,7 @@ import pytest
 
 from dsa.dp import (
     coin_change,
+    max_subarray,
     edit_distance,
     knapsack,
     lcs,
@@ -30,23 +31,36 @@ from dsa.graphs import (
     hungarian,
     kosaraju,
     kruskal_mst,
+    network_delay,
+    number_of_islands,
     prim_mst,
     tarjan_scc,
+    course_schedule,
     topological_sort,
+    word_search,
 )
 from dsa.hashing import bloom_filter, open_addressing, separate_chaining
-from dsa.heaps import priority_queue
+from dsa.heaps import meeting_rooms_ii, priority_queue, top_k_frequent_elements
 from dsa.linear import (
     deque,
     doubly_linked_list,
     lru_cache,
+    monotonic_stack,
+    valid_parentheses,
     queue,
     singly_linked_list,
     sliding_window_maximum,
 )
-from dsa.searching import binary_search, reservoir_sampling
-from dsa.sorting import heap_sort, insertion_sort, radix_sort, selection_sort
-from dsa.strings import aho_corasick, manacher, rabin_karp, suffix_array, z_algorithm
+from dsa.searching import binary_search, reservoir_sampling, trapping_rain_water, two_sum_ii
+from dsa.sorting import heap_sort, insertion_sort, merge_intervals, radix_sort, selection_sort
+from dsa.strings import (
+    aho_corasick,
+    longest_substring_without_repeating,
+    manacher,
+    rabin_karp,
+    suffix_array,
+    z_algorithm,
+)
 from dsa.trees import (
     avl_tree,
     b_tree,
@@ -59,6 +73,8 @@ from dsa.trees import (
     segment_tree,
     sparse_table,
     treap,
+    level_order_traversal,
+    serialize_binary_tree,
     tree_traversals,
     trie,
 )
@@ -236,11 +252,26 @@ def test_new_trees_strings_dp_edge_themes():
     assert ft.range_sum(0, 1) == 3
     assert z_algorithm.search("abc", "") == 0
     assert rabin_karp.search("abc", "b") == 1
+    assert longest_substring_without_repeating.length_of_longest_substring("abc") == 3
     assert lis.length([1, 2, 3]) == 3
     assert lcs.length("ab", "a") == 1
     assert knapsack.max_value([1], [5], 1) == 5
     assert edit_distance.distance("a", "b") == 1
     assert coin_change.min_coins([1], 0) == 0
+    assert max_subarray.max_subarray([1, -2, 3]) == 3
+    assert monotonic_stack.next_greater_element([1, 2]) == [2, -1]
+    assert valid_parentheses.is_valid_parentheses("()") is True
+    assert two_sum_ii.two_sum_sorted([1, 2, 3], 3) == [1, 2]
+    assert merge_intervals.merge_intervals([[1, 3], [2, 6]]) == [[1, 6]]
+    assert trapping_rain_water.trap([1, 0, 1]) == 1
+    assert meeting_rooms_ii.min_meeting_rooms([[1, 2]]) == 1
+    assert top_k_frequent_elements.top_k_frequent([1, 1, 2], 2) == [1, 2]
+    assert number_of_islands.num_islands([["1"]]) == 1
+    assert course_schedule.can_finish(2, [[1, 0]]) is True
+    assert word_search.word_search([["A"]], "A") is True
+    assert level_order_traversal.level_order([1]) == [[1]]
+    assert network_delay.network_delay(4, [[1, 0, 1], [1, 2, 1], [2, 3, 1]], 1) == 2
+    assert serialize_binary_tree.deserialize(serialize_binary_tree.serialize([1])) == [1]
 
 
 def test_graph_algorithms_edge_themes():

@@ -3,10 +3,10 @@
 package com.dsa.examples.trees;
 
 /**
- * Prefix sums with point updates via Fenwick tree.
+ * Prefix sums and range sums with point updates.
  * Technique: Fenwick tree (binary indexed tree)
- * Invariant: Each index stores sum of a responsible range.
- * add/prefixSum: Time O(log n); Space O(n).
+ * Invariant: BIT stores cumulative deltas for responsible ranges.
+ * add/prefixSum/rangeSum: Time O(log n); Space O(n).
  */
 public class FenwickTree {
 

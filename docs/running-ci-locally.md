@@ -33,8 +33,11 @@ When `run_heavy` is true, run these from the repository root in order:
 | Install Node deps | `npm ci` |
 | Install Python test/lint deps | `pip install pytest pytest-cov hypothesis ruff` |
 | Lint | `npm run lint` |
+| Docs link scan | `npm run check:docs-links` |
+| Practice → walkthrough links | `npm run check:practice-walkthrough` |
+| Practice → catalog topic map | `npm run check:practice-catalog-topics` |
 | Stub scan | `npm run check:stubs` |
-| Java tests | `npm run test:java` |
+| Java tests | `npm run test:java` (JUnit 5 default **2m** per-test timeout via Surefire) |
 | Python tests (with coverage in CI) | `PYTEST_COV=1 npm run test:py` |
 | JavaScript tests | `npm run test:js` |
 | Cross-language parity | `npm run check:parity` |
@@ -47,6 +50,7 @@ When `run_heavy` is true, run these from the repository root in order:
 | API doc freshness | `npm run api:check` |
 | README complexity vs doc-spec | `npm run check:readme-complexity` |
 | Shared golden fixture parity | `npm run check:golden-parity` |
+| Graph unreachable sentinel parity | `npm run check:graph-sentinel` |
 | Catalog mentions all 72 items | `npm run check:catalog-items` |
 
 One-shot equivalent (matches CI except artifact upload):

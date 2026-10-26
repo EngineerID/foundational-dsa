@@ -1,7 +1,9 @@
 /**
  * Module-level documentation specs for canonical DSA items (purpose, technique, invariant, complexity).
- * Used by tools/apply-item-docs.mjs — do not copy textbook prose.
+ * Used by tools/apply-item-docs.mjs and item doc parity — do not copy textbook prose.
  */
+
+export { GRAPH_UNREACHABLE } from './graph-sentinel.mjs';
 
 export const DOC_SPECS = {
   'linear-search': {
@@ -9,6 +11,18 @@ export const DOC_SPECS = {
     technique: 'Linear search',
     invariant: 'Scan index increases; all indices before current are not the target (if searching for first match).',
     complexity: 'search: Time O(n); Space O(1).',
+  },
+  'trapping-rain-water': {
+    purpose: 'Total water trapped between non-negative elevation bars.',
+    technique: 'Two pointers',
+    invariant: 'Advance from the lower side of the window.',
+    complexity: 'trap: Time O(n); Space O(1).',
+  },
+  'two-sum-ii': {
+    purpose: '1-based indices of two numbers that sum to target in a sorted array.',
+    technique: 'Two pointers',
+    invariant: 'If a solution exists, both indices lie in the current window.',
+    complexity: 'twoSumSorted: Time O(n); Space O(1).',
   },
   'binary-search': {
     purpose: 'Find a key in a sorted array, including first/last duplicate boundaries.',
@@ -64,6 +78,12 @@ export const DOC_SPECS = {
     invariant: 'Prefix counts place keys in stable order.',
     complexity: 'sort/sortByDigit: Time O(n + k); Space O(k).',
   },
+  'merge-intervals': {
+    purpose: 'Merge overlapping closed intervals after sorting by start.',
+    technique: 'Sort by start, linear merge',
+    invariant: 'Merged output is sorted and pairwise non-overlapping.',
+    complexity: 'mergeIntervals: Time O(n log n); Space O(n).',
+  },
   'radix-sort': {
     purpose: 'LSD radix sort for non-negative integers using counting sort per digit.',
     technique: 'LSD radix sort',
@@ -118,6 +138,18 @@ export const DOC_SPECS = {
     invariant: 'Parent <= children (min-heap) or >= (max-heap) at all indices.',
     complexity: 'insert/extract/peek: Time O(log n); buildHeap O(n); Space O(n).',
   },
+  'top-k-frequent-elements': {
+    purpose: 'K most frequent integers (by count, then value).',
+    technique: 'Size-k min-heap by frequency',
+    invariant: 'Heap holds the k best candidates seen so far.',
+    complexity: 'topKFrequent: Time O(n log k); Space O(n).',
+  },
+  'meeting-rooms-ii': {
+    purpose: 'Minimum conference rooms for overlapping meeting intervals.',
+    technique: 'Sort by start + min-heap of end times',
+    invariant: 'Heap size equals concurrent meetings after processing each start.',
+    complexity: 'minMeetingRooms: Time O(n log n); Space O(n).',
+  },
   'priority-queue': {
     purpose: 'Min-priority queue for scheduling by priority.',
     technique: 'Binary min-heap priority queue',
@@ -129,6 +161,18 @@ export const DOC_SPECS = {
     technique: 'Binary search tree',
     invariant: 'Left subtree keys < node < right subtree keys.',
     complexity: 'search/insert/delete: Time O(h) height; Space O(n).',
+  },
+  'level-order-traversal': {
+    purpose: 'Binary tree values grouped by level (heap-style array input).',
+    technique: 'BFS with level boundaries',
+    invariant: 'Each queue layer is one tree level.',
+    complexity: 'levelOrder: Time O(n); Space O(n).',
+  },
+  'serialize-binary-tree': {
+    purpose: 'Encode and decode a binary tree in heap-style level order.',
+    technique: 'BFS level-order with comma-separated tokens',
+    invariant: 'Trailing null tokens trimmed; round-trip restores the level array.',
+    complexity: 'serialize/deserialize: Time O(n); Space O(n).',
   },
   'tree-traversals': {
     purpose: 'In-order, pre-order, post-order, and level-order tree walks.',
@@ -196,6 +240,24 @@ export const DOC_SPECS = {
     invariant: 'Edges stored from source to neighbors with weights.',
     complexity: 'addEdge/neighbors: Time O(1) amortized; Space O(V+E).',
   },
+  'word-search': {
+    purpose: 'Find a word in a grid using adjacent cells without reuse.',
+    technique: 'DFS backtracking',
+    invariant: 'Visited cells are marked for the current path only.',
+    complexity: 'wordSearch: Time O(rows·cols·4^L); Space O(L).',
+  },
+  'course-schedule': {
+    purpose: 'Can all courses be taken given prerequisite pairs?',
+    technique: 'Kahn topological sort',
+    invariant: 'Finishable iff topological order includes every course.',
+    complexity: 'canFinish: Time O(V+E); Space O(V).',
+  },
+  'number-of-islands': {
+    purpose: 'Count 4-connected land components in a binary grid.',
+    technique: 'BFS flood fill',
+    invariant: 'Each unvisited land cell starts one new component.',
+    complexity: 'numIslands: Time O(rows·cols); Space O(rows·cols).',
+  },
   bfs: {
     purpose: 'Breadth-first traversal and unweighted shortest paths.',
     technique: 'BFS',
@@ -213,6 +275,12 @@ export const DOC_SPECS = {
     technique: 'Kahn topological sort (BFS in-degree)',
     invariant: 'Output order: for each edge u->v, pos[u] < pos[v].',
     complexity: 'sort: Time O(V+E); Space O(V).',
+  },
+  'network-delay': {
+    purpose: 'Time for all nodes to receive a signal from a source (max Dijkstra distance).',
+    technique: 'Dijkstra single-source shortest paths',
+    invariant: 'Return -1 if any node is unreachable from the source.',
+    complexity: 'networkDelay: Time O((V+E) log V); Space O(V).',
   },
   dijkstra: {
     purpose: 'Single-source shortest paths on non-negative edge weights.',
@@ -274,6 +342,12 @@ export const DOC_SPECS = {
     invariant: 'Hash collision resolved by direct compare.',
     complexity: 'search: Time O(n + m) average; Space O(1).',
   },
+  'longest-substring-without-repeating': {
+    purpose: 'Length of the longest substring with all distinct characters.',
+    technique: 'Sliding window with last-seen index',
+    invariant: 'Window [start, i] has all distinct characters.',
+    complexity: 'lengthOfLongestSubstring: Time O(n); Space O(min(n, alphabet)).',
+  },
   lis: {
     purpose: 'Length of longest strictly increasing subsequence.',
     technique: 'Patience sorting / tails DP',
@@ -303,6 +377,12 @@ export const DOC_SPECS = {
     technique: 'Coin change DP',
     invariant: 'dp[a] is min coins for amount a.',
     complexity: 'minCoins: Time O(n·amount); Space O(amount).',
+  },
+  'maximum-subarray': {
+    purpose: 'Largest sum of any contiguous subarray (Kadane).',
+    technique: "Kadane's algorithm",
+    invariant: 'cur is the best sum ending at the current index.',
+    complexity: 'maxSubarray: Time O(n); Space O(1).',
   },
   'a-star': {
     purpose: 'Shortest path length with nonnegative weights (heuristic h=0).',
@@ -423,6 +503,18 @@ export const DOC_SPECS = {
     technique: 'Reservoir sampling',
     invariant: 'Reservoir is uniform k-subset of items seen.',
     complexity: 'sample: Time O(n); Space O(k).',
+  },
+  'valid-parentheses': {
+    purpose: 'Check balanced nesting of ()[]{} brackets.',
+    technique: 'Stack',
+    invariant: 'Stack holds unmatched open brackets in order.',
+    complexity: 'isValidParentheses: Time O(n); Space O(n).',
+  },
+  'monotonic-stack': {
+    purpose: 'Next strictly greater element to the right for each index.',
+    technique: 'Monotonic decreasing stack',
+    invariant: 'Stack holds indices with strictly decreasing values.',
+    complexity: 'nextGreaterElement: Time O(n); Space O(n).',
   },
   'sliding-window-maximum': {
     purpose: 'Maximum in each sliding window of size k.',

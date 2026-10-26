@@ -12,6 +12,16 @@ from __future__ import annotations
 import math
 
 
+def _java_string_hash(item: str) -> int:
+    """Java String.hashCode() (matches JavaScript hashString in bloomFilter.js)."""
+    h = 0
+    for ch in item:
+        h = ((31 * h) + ord(ch)) & 0xFFFFFFFF
+    if h & 0x80000000:
+        return h - 0x100000000
+    return h
+
+
 class BloomFilter:
     """Bloom filter for string keys."""
 
@@ -41,7 +51,7 @@ class BloomFilter:
         return all(self._bits[self._hash(item, i)] for i in range(self._num_hashes))
 
     def _hash(self, item: str, seed: int) -> int:
-        h = hash(item) ^ (seed * 0x9E3779B9)
+        h = _java_string_hash(item) ^ (seed * 0x9E3779B9)
         return h % self._size
 
 

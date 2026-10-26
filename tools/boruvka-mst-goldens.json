@@ -1,0 +1,57 @@
+[
+  {
+    "n": 4,
+    "directed": false,
+    "weighted": true,
+    "edges": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        2,
+        2
+      ],
+      [
+        2,
+        3,
+        3
+      ],
+      [
+        0,
+        3,
+        4
+      ]
+    ],
+    "totalWeight": 6
+  },
+  {
+    "n": 1,
+    "directed": false,
+    "weighted": true,
+    "edges": [],
+    "totalWeight": 0
+  },
+  {
+    "n": 2,
+    "directed": false,
+    "weighted": true,
+    "edges": [],
+    "totalWeight": 0
+  },
+  {
+    "n": 3,
+    "directed": false,
+    "weighted": true,
+    "edges": [
+      [
+        0,
+        1,
+        7
+      ]
+    ],
+    "totalWeight": 7
+  }
+]

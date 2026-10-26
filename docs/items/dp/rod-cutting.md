@@ -2,7 +2,21 @@
 
 Topic: **dp** / `rod-cutting`
 
-## Implementations
+## Overview
+
+Maximum revenue cutting a rod of given length.
+
+**Worked example:** [Topic index](../../worked-examples.md#rod-cutting) (summary) · run `npm run demo -- rod-cutting` in all three languages.
+
+## Complexity
+
+maxProfit: Time O(n·length); Space O(length).
+
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n·length) | Space O(length) |
+
+## Code links
 
 | Language | Source |
 |----------|--------|
@@ -16,5 +30,6 @@ Topic: **dp** / `rod-cutting`
 |----------|------|
 | Python | [`test_rod_cutting`](../../../python/tests/dp/test_rod_cutting.py) |
 | JavaScript | [`rodCutting.test.js`](../../../javascript/test/dp/rodCutting.test.js) |
+| Java | [`RodCuttingTest.java`](../../../java/src/test/java/com/dsa/examples/dp/RodCuttingTest.java) |
 
-Java tests run via Maven in `java/src/test/java/com/dsa/examples/dp/`.
+Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/dp/`.

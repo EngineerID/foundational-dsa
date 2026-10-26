@@ -2,7 +2,21 @@
 
 Topic: **graphs** / `a-star`
 
-## Implementations
+## Overview
+
+Shortest path length with nonnegative weights (heuristic h=0).
+
+**Worked example:** [Topic index](../../worked-examples.md#a-star) (summary) · run `npm run demo -- a-star` in all three languages.
+
+## Complexity
+
+shortestPathLength: Time O(E log V); Space O(V).
+
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(E log V) | Space O(V) |
+
+## Code links
 
 | Language | Source |
 |----------|--------|
@@ -16,5 +30,9 @@ Topic: **graphs** / `a-star`
 |----------|------|
 | Python | [`test_a_star`](../../../python/tests/graphs/test_a_star.py) |
 | JavaScript | [`aStar.test.js`](../../../javascript/test/graphs/aStar.test.js) |
+| Java | [`AStarTest.java`](../../../java/src/test/java/com/dsa/examples/graphs/AStarTest.java) |
 
-Java tests run via Maven in `java/src/test/java/com/dsa/examples/graphs/`.
+**Property-style checks:** Java [`PropertyGraphsTest`](../../../java/src/test/java/com/dsa/examples/property/PropertyGraphsTest.java); Python [`test_property_graphs`](../../../python/tests/test_property_graphs.py); JavaScript [`property/graphs.test.js`](../../../javascript/test/property/graphs.test.js).
+
+
+Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/graphs/`.

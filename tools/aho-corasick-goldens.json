@@ -1,0 +1,42 @@
+[
+  {
+    "text": "ushers",
+    "patterns": [
+      "he",
+      "she",
+      "his",
+      "hers"
+    ],
+    "hits": [
+      1,
+      2
+    ]
+  },
+  {
+    "text": "",
+    "patterns": [
+      "a"
+    ],
+    "hits": []
+  },
+  {
+    "text": "a",
+    "patterns": [
+      "a"
+    ],
+    "hits": [
+      0
+    ]
+  },
+  {
+    "text": "aa",
+    "patterns": [
+      "a",
+      "a"
+    ],
+    "hits": [
+      0,
+      1
+    ]
+  }
+]

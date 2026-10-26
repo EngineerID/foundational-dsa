@@ -2,7 +2,24 @@
 
 Topic: **sorting** / `quick-sort`
 
-## Implementations
+## Overview
+
+Sort in place via Lomuto partition, optional random pivot, or 3-way partition.
+
+
+Sorts **in place**; optional randomized pivot and 3-way partition variants.
+
+**Worked example:** [Topic index](../../worked-examples.md#quick-sort) (summary) · run `npm run demo -- quick-sort` in all three languages.
+
+## Complexity
+
+sort/sort3Way: Time O(n log n) average; Space O(log n).
+
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n log n) | Space O(log n) |
+
+## Code links
 
 | Language | Source |
 |----------|--------|
@@ -16,5 +33,9 @@ Topic: **sorting** / `quick-sort`
 |----------|------|
 | Python | [`test_quick_sort`](../../../python/tests/sorting/test_quick_sort.py) |
 | JavaScript | [`quickSort.test.js`](../../../javascript/test/sorting/quickSort.test.js) |
+| Java | [`SortingTest.java`](../../../java/src/test/java/com/dsa/examples/sorting/SortingTest.java) |
 
-Java tests run via Maven in `java/src/test/java/com/dsa/examples/sorting/`.
+**Property-style checks:** Java [`PropertySortsTest`](../../../java/src/test/java/com/dsa/examples/property/PropertySortsTest.java); Python [`test_property_sorts`](../../../python/tests/test_property_sorts.py); JavaScript [`property/sorts.test.js`](../../../javascript/test/property/sorts.test.js).
+
+
+Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/sorting/`.

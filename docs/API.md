@@ -2,6 +2,7 @@
 
 Per-language public symbols are defined in `tools/api-manifest.mjs` (source of truth).
 Null/empty: arrays may be `null` (Java/JS) or `None` (Python); sorts no-op; searches return `-1` or empty.
+Weighted-graph unreachable distances use sentinel **536870911** (`GRAPH_UNREACHABLE` in `tools/graph-sentinel.mjs`). Unweighted **BFS** uses **`-1`**.
 
 ## linear-search
 
@@ -30,6 +31,32 @@ Find a key in a sorted array, including first/last duplicate boundaries.
 - `search` → Python `search`, JS `search`
 - `firstOccurrence` → Python `first_occurrence`, JS `firstOccurrence`
 - `lastOccurrence` → Python `last_occurrence`, JS `lastOccurrence`
+
+## two-sum-ii
+
+1-based indices of two numbers that sum to target in a sorted array.
+
+| Language | Module |
+|----------|--------|
+| Java | `TwoSumII` |
+| Python | `two_sum_ii` |
+| JavaScript | `twoSumII` |
+
+**Operations:**
+- `twoSumSorted` → Python `two_sum_sorted`, JS `twoSumSorted`
+
+## trapping-rain-water
+
+Total water trapped between non-negative elevation bars.
+
+| Language | Module |
+|----------|--------|
+| Java | `TrappingRainWater` |
+| Python | `trapping_rain_water` |
+| JavaScript | `trappingRainWater` |
+
+**Operations:**
+- `trap` → Python `trap`, JS `trap`
 
 ## quick-select
 
@@ -150,6 +177,19 @@ LSD radix sort for non-negative integers using counting sort per digit.
 
 **Operations:**
 - `sort` → Python `sort`, JS `sort`
+
+## merge-intervals
+
+Merge overlapping closed intervals after sorting by start.
+
+| Language | Module |
+|----------|--------|
+| Java | `MergeIntervals` |
+| Python | `merge_intervals` |
+| JavaScript | `mergeIntervals` |
+
+**Operations:**
+- `mergeIntervals` → Python `merge_intervals`, JS `mergeIntervals`
 
 ## kmp
 
@@ -304,6 +344,32 @@ Min-priority queue for scheduling by priority.
 - `size` → Python `size`, JS `size`
 - `heap` → Python `heap`, JS `heap`
 
+## meeting-rooms-ii
+
+Minimum conference rooms for overlapping meeting intervals.
+
+| Language | Module |
+|----------|--------|
+| Java | `MeetingRoomsII` |
+| Python | `meeting_rooms_ii` |
+| JavaScript | `meetingRoomsII` |
+
+**Operations:**
+- `minMeetingRooms` → Python `min_meeting_rooms`, JS `minMeetingRooms`
+
+## top-k-frequent-elements
+
+K most frequent integers (by count, then value).
+
+| Language | Module |
+|----------|--------|
+| Java | `TopKFrequentElements` |
+| Python | `top_k_frequent_elements` |
+| JavaScript | `topKFrequentElements` |
+
+**Operations:**
+- `topKFrequent` → Python `top_k_frequent`, JS `topKFrequent`
+
 ## bst
 
 Binary search tree for ordered key storage.
@@ -341,6 +407,33 @@ In-order, pre-order, post-order, and level-order tree walks.
 - `preOrderIterative` → Python `pre_order_iterative`, JS `preOrderIterative`
 - `postOrderIterative` → Python `post_order_iterative`, JS `postOrderIterative`
 - `levelOrder` → Python `level_order`, JS `levelOrder`
+
+## level-order-traversal
+
+Binary tree values grouped by level (heap-style array input).
+
+| Language | Module |
+|----------|--------|
+| Java | `LevelOrderTraversal` |
+| Python | `level_order_traversal` |
+| JavaScript | `levelOrderTraversal` |
+
+**Operations:**
+- `levelOrder` → Python `level_order`, JS `levelOrder`
+
+## serialize-binary-tree
+
+Encode and decode a binary tree in heap-style level order.
+
+| Language | Module |
+|----------|--------|
+| Java | `SerializeBinaryTree` |
+| Python | `serialize_binary_tree` |
+| JavaScript | `serializeBinaryTree` |
+
+**Operations:**
+- `serialize` → Python `serialize`, JS `serialize`
+- `deserialize` → Python `deserialize`, JS `deserialize`
 
 ## avl-tree
 
@@ -470,6 +563,19 @@ Substring search via rolling hash.
 **Operations:**
 - `search` → Python `search`, JS `search`
 
+## longest-substring-without-repeating
+
+Length of the longest substring with all distinct characters.
+
+| Language | Module |
+|----------|--------|
+| Java | `LongestSubstringWithoutRepeating` |
+| Python | `longest_substring_without_repeating` |
+| JavaScript | `longestSubstringWithoutRepeating` |
+
+**Operations:**
+- `lengthOfLongestSubstring` → Python `length_of_longest_substring`, JS `lengthOfLongestSubstring`
+
 ## lis
 
 Length of longest strictly increasing subsequence.
@@ -534,6 +640,19 @@ Minimum coins to make an amount (unbounded supply).
 
 **Operations:**
 - `minCoins` → Python `min_coins`, JS `minCoins`
+
+## maximum-subarray
+
+Largest sum of any contiguous subarray (Kadane).
+
+| Language | Module |
+|----------|--------|
+| Java | `MaxSubarray` |
+| Python | `max_subarray` |
+| JavaScript | `maxSubarray` |
+
+**Operations:**
+- `maxSubarray` → Python `max_subarray`, JS `maxSubarray`
 
 ## separate-chaining
 
@@ -627,6 +746,45 @@ Breadth-first traversal and unweighted shortest paths.
 **Operations:**
 - `distances` → Python `distances`, JS `distances`
 
+## number-of-islands
+
+Count 4-connected land components in a binary grid.
+
+| Language | Module |
+|----------|--------|
+| Java | `NumberOfIslands` |
+| Python | `number_of_islands` |
+| JavaScript | `numberOfIslands` |
+
+**Operations:**
+- `numIslands` → Python `num_islands`, JS `numIslands`
+
+## course-schedule
+
+Can all courses be taken given prerequisite pairs?
+
+| Language | Module |
+|----------|--------|
+| Java | `CourseSchedule` |
+| Python | `course_schedule` |
+| JavaScript | `courseSchedule` |
+
+**Operations:**
+- `canFinish` → Python `can_finish`, JS `canFinish`
+
+## word-search
+
+Find a word in a grid using adjacent cells without reuse.
+
+| Language | Module |
+|----------|--------|
+| Java | `WordSearch` |
+| Python | `word_search` |
+| JavaScript | `wordSearch` |
+
+**Operations:**
+- `wordSearch` → Python `word_search`, JS `wordSearch`
+
 ## dfs
 
 Depth-first traversal, cycle detection, and connectivity.
@@ -666,6 +824,19 @@ Single-source shortest paths on non-negative edge weights.
 
 **Operations:**
 - `shortestPaths` → Python `shortest_paths`, JS `shortestPaths`
+
+## network-delay
+
+Time for all nodes to receive a signal from a source (max Dijkstra distance).
+
+| Language | Module |
+|----------|--------|
+| Java | `NetworkDelay` |
+| Python | `network_delay` |
+| JavaScript | `networkDelay` |
+
+**Operations:**
+- `networkDelay` → Python `network_delay`, JS `networkDelay`
 
 ## bellman-ford
 
@@ -994,6 +1165,32 @@ Uniform random sample of size k from a stream.
 
 **Operations:**
 - `sample` → Python `sample`, JS `sample`
+
+## valid-parentheses
+
+Check balanced nesting of ()[]{} brackets.
+
+| Language | Module |
+|----------|--------|
+| Java | `ValidParentheses` |
+| Python | `valid_parentheses` |
+| JavaScript | `validParentheses` |
+
+**Operations:**
+- `isValidParentheses` → Python `is_valid_parentheses`, JS `isValidParentheses`
+
+## monotonic-stack
+
+Next strictly greater element to the right for each index.
+
+| Language | Module |
+|----------|--------|
+| Java | `MonotonicStack` |
+| Python | `monotonic_stack` |
+| JavaScript | `monotonicStack` |
+
+**Operations:**
+- `nextGreaterElement` → Python `next_greater_element`, JS `nextGreaterElement`
 
 ## sliding-window-maximum
 

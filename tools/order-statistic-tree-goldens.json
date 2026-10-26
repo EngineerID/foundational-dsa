@@ -1,0 +1,64 @@
+[
+  {
+    "inserts": [
+      [
+        5,
+        "5"
+      ],
+      [
+        2,
+        "2"
+      ],
+      [
+        8,
+        "8"
+      ],
+      [
+        1,
+        "1"
+      ],
+      [
+        9,
+        "9"
+      ]
+    ],
+    "select3": 5,
+    "rank5": 3
+  },
+  {
+    "inserts": [],
+    "select3": null,
+    "rank5": 0
+  },
+  {
+    "inserts": [
+      [
+        3,
+        "3"
+      ]
+    ],
+    "selectK": 1,
+    "selectKey": 3,
+    "rankKey": 3,
+    "rank5": 1
+  },
+  {
+    "inserts": [
+      [
+        2,
+        "2"
+      ],
+      [
+        2,
+        "x"
+      ]
+    ],
+    "inOrderKeys": [
+      2
+    ],
+    "selectK": 1,
+    "selectKey": 2,
+    "rankKey": 2,
+    "rank5": 0
+  }
+]

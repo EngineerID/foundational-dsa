@@ -1,8 +1,8 @@
 # Linear — LRU cache
 
-"""Least-recently-used cache with O(1) get/put.
+"""Least-recently-used cache with O(1) get and put.
 
-Technique: Hash map + doubly linked list
+Technique: Hash map + linked order
 Invariant: MRU at head, LRU at tail.
 get/put: Time O(1); Space O(capacity).
 """

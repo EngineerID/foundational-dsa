@@ -1,0 +1,40 @@
+[
+  {
+    "enqueue": [],
+    "dequeueValues": [],
+    "peek": null,
+    "empty": true
+  },
+  {
+    "enqueue": [
+      1,
+      2,
+      3
+    ],
+    "dequeueValues": [
+      1,
+      2
+    ],
+    "peek": 3
+  },
+  {
+    "enqueue": [
+      8
+    ],
+    "dequeueValues": [
+      8
+    ],
+    "peek": null,
+    "empty": true
+  },
+  {
+    "enqueue": [
+      1
+    ],
+    "dequeueValues": [
+      1
+    ],
+    "peek": null,
+    "empty": true
+  }
+]

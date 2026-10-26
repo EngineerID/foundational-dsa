@@ -1,0 +1,84 @@
+[
+  {
+    "inserts": [
+      [
+        5,
+        "a"
+      ],
+      [
+        2,
+        "b"
+      ],
+      [
+        7,
+        "c"
+      ],
+      [
+        1,
+        "d"
+      ]
+    ],
+    "inOrder": [
+      1,
+      2,
+      5,
+      7
+    ],
+    "preOrder": [
+      5,
+      2,
+      1,
+      7
+    ],
+    "postOrder": [
+      1,
+      2,
+      7,
+      5
+    ]
+  },
+  {
+    "inserts": [],
+    "inOrder": [],
+    "preOrder": [],
+    "postOrder": []
+  },
+  {
+    "inserts": [
+      [
+        1,
+        "a"
+      ]
+    ],
+    "inOrder": [
+      1
+    ],
+    "preOrder": [
+      1
+    ],
+    "postOrder": [
+      1
+    ]
+  },
+  {
+    "inserts": [
+      [
+        2,
+        "b"
+      ],
+      [
+        2,
+        "c"
+      ]
+    ],
+    "inOrder": [
+      2
+    ],
+    "preOrder": [
+      2
+    ],
+    "postOrder": [
+      2
+    ]
+  }
+]

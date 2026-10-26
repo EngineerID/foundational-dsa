@@ -20,13 +20,26 @@ if (head.includes('## Topic index')) {
 }
 
 const marker = '## Topic index';
-const blocks = [marker, '', 'One-line walkthroughs for every catalog topic. Full tables above cover binary search, merge sort, and KMP.', ''];
+const blocks = [
+  marker,
+  '',
+  'One-line walkthroughs for every catalog topic. Step tables above cover interview-heavy patterns (search, graphs, DP, caches, strings).',
+  '',
+];
 
 for (const item of ITEMS) {
   const spec = DOC_SPECS[item.id];
   const custom = WORKED_EXAMPLES[item.id];
   if (custom?.detailed) {
-    blocks.push(`### ${item.id}`, '', `See [${custom.anchor ? custom.anchor : item.id}](#${custom.anchor}) above.`, '');
+    const anchor = custom.anchor ?? item.id;
+    blocks.push(
+      `### ${item.id}`,
+      '',
+      `See the [detailed walkthrough](#${anchor}) above.`,
+      '',
+      `\`npm run demo -- ${item.id}\``,
+      '',
+    );
     continue;
   }
   const body = custom?.body ?? spec?.purpose ?? '';
@@ -39,6 +52,8 @@ blocks.push('```bash');
 blocks.push('npm run demo -- binary-search');
 blocks.push('npm run demo -- merge-sort');
 blocks.push('npm run demo -- kmp');
+blocks.push('npm run demo -- dijkstra');
+blocks.push('npm run demo -- knapsack');
 blocks.push('```', '');
 blocks.push("Optional language filter: `npm run demo -- kmp python`.", '');
 blocks.push(

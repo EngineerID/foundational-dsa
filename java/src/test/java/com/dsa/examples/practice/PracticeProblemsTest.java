@@ -1,0 +1,594 @@
+package com.dsa.examples.practice;
+
+import com.dsa.examples.graphs.BellmanFord;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+class PracticeProblemsTest {
+
+    @Test
+    void twoSumSorted() {
+        assertArrayEquals(new int[] { 1, 2 }, TwoSumSorted.solve(new int[] { 2, 7, 11, 15 }, 9));
+    }
+
+    @Test
+    void maxSubarray() {
+        assertEquals(6, MaxSubarray.solve(new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 }));
+    }
+
+    @Test
+    void validParentheses() {
+        assertTrue(ValidParentheses.solve("()[]{}"));
+        assertFalse(ValidParentheses.solve("(]"));
+    }
+
+    @Test
+    void meetingRooms() {
+        assertEquals(2, MeetingRooms.minRooms(new int[][] { { 0, 30 }, { 5, 10 }, { 15, 20 } }));
+    }
+
+    @Test
+    void numIslands() {
+        char[][] grid = {
+                { '1', '1', '0', '0', '0' },
+                { '1', '1', '0', '0', '0' },
+                { '0', '0', '1', '0', '0' },
+                { '0', '0', '0', '1', '1' },
+        };
+        assertEquals(3, NumIslands.count(grid));
+    }
+
+    @Test
+    void topKFrequent() {
+        assertEquals(java.util.List.of(1, 2), TopKFrequent.solve(new int[] { 1, 1, 1, 2, 2, 3 }, 2));
+    }
+
+    @Test
+    void courseSchedule() {
+        assertTrue(CourseSchedule.canFinish(2, new int[][] { { 1, 0 } }));
+        assertFalse(CourseSchedule.canFinish(2, new int[][] { { 1, 0 }, { 0, 1 } }));
+    }
+
+    @Test
+    void longestSubstring() {
+        assertEquals(3, LongestSubstring.lengthOfLongestSubstring("abcabcbb"));
+    }
+
+    @Test
+    void coinChangePractice() {
+        assertEquals(3, CoinChangePractice.minCoins(new int[] { 1, 2, 5 }, 11));
+    }
+
+    @Test
+    void lruCacheDesign() {
+        LRUCacheDesign cache = new LRUCacheDesign(2);
+        cache.put(1, 1);
+        cache.put(2, 2);
+        assertEquals(1, cache.get(1));
+        cache.put(3, 3);
+        assertEquals(-1, cache.get(2));
+        assertEquals(3, cache.get(3));
+    }
+
+    @Test
+    void mergeIntervals() {
+        int[][] merged = MergeIntervals.merge(new int[][] { { 1, 3 }, { 2, 6 }, { 8, 10 }, { 15, 18 } });
+        assertArrayEquals(new int[] { 1, 6 }, merged[0]);
+        assertArrayEquals(new int[] { 8, 10 }, merged[1]);
+        assertArrayEquals(new int[] { 15, 18 }, merged[2]);
+    }
+
+    @Test
+    void levelOrder() {
+        List<List<Integer>> levels = LevelOrderTraversal.levelOrder(
+                new Integer[] { 3, 9, 20, null, null, 15, 7 });
+        assertEquals(List.of(List.of(3), List.of(9, 20), List.of(15, 7)), levels);
+    }
+
+    @Test
+    void wordSearch() {
+        assertTrue(WordSearch.exists(
+                new char[][] {
+                        { 'A', 'B', 'C', 'E' },
+                        { 'S', 'F', 'C', 'S' },
+                        { 'A', 'D', 'E', 'E' },
+                },
+                "ABCCED"));
+        assertFalse(WordSearch.exists(
+                new char[][] {
+                        { 'A', 'B', 'C', 'E' },
+                        { 'S', 'F', 'C', 'S' },
+                        { 'A', 'D', 'E', 'E' },
+                },
+                "ABCD"));
+    }
+
+    @Test
+    void kthLargest() {
+        assertEquals(5, KthLargest.solve(new int[] { 3, 2, 1, 5, 6, 4 }, 2));
+    }
+
+    @Test
+    void mstKruskalPractice() {
+        int weight = MstKruskalPractice.totalWeight(
+                4, new int[][] { { 0, 1, 1 }, { 1, 2, 2 }, { 2, 3, 3 }, { 0, 3, 4 } });
+        assertEquals(6, weight);
+    }
+
+    @Test
+    void trappingRainWater() {
+        assertEquals(6, TrappingRainWater.trap(new int[] { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 }));
+    }
+
+    @Test
+    void editDistancePractice() {
+        assertEquals(3, EditDistancePractice.editDistance("kitten", "sitting"));
+    }
+
+    @Test
+    void treeCodecRoundTrip() {
+        Integer[] values = new Integer[] { 3, 9, 20, null, null, 15, 7 };
+        assertArrayEquals(values, TreeCodecPractice.deserialize(TreeCodecPractice.serialize(values)));
+    }
+
+    @Test
+    void networkDelay() {
+        assertEquals(
+                2,
+                NetworkDelay.networkDelay(
+                        4, new int[][] { { 1, 0, 1 }, { 1, 2, 1 }, { 2, 3, 1 } }, 1));
+    }
+
+    @Test
+    void slidingWindowMax() {
+        assertArrayEquals(
+                new int[] { 3, 3, 5, 5, 6, 7 },
+                SlidingWindowMax.maxSlidingWindow(new int[] { 1, 3, -1, -3, 5, 3, 6, 7 }, 3));
+    }
+
+    @Test
+    void binarySearchPractice() {
+        assertEquals(3, BinarySearchPractice.findIndex(new int[] { 1, 3, 5, 7, 9, 11 }, 7));
+        assertEquals(-1, BinarySearchPractice.findIndex(new int[] { 1, 3, 5, 7, 9, 11 }, 8));
+    }
+
+    @Test
+    void knapsackPractice() {
+        assertEquals(22, KnapsackPractice.maxValue(new int[] { 1, 2, 3 }, new int[] { 6, 10, 12 }, 5));
+    }
+
+    @Test
+    void lcsPractice() {
+        assertEquals(3, LcsPractice.length("abcde", "ace"));
+    }
+
+    @Test
+    void kmpPractice() {
+        assertEquals(0, KmpPractice.firstIndex("ababcababa", "aba"));
+    }
+
+    @Test
+    void triePractice() {
+        TriePractice trie = new TriePractice();
+        trie.insert("cat");
+        trie.insert("car");
+        assertTrue(trie.search("cat"));
+        assertFalse(trie.search("ca"));
+        assertTrue(trie.startsWith("ca"));
+    }
+
+    @Test
+    void bfsPractice() {
+        assertArrayEquals(
+                new int[] { 0, 1, 1, 2, -1 },
+                BfsPractice.distances(5, new int[][] { { 0, 1 }, { 0, 2 }, { 1, 3 } }, 0));
+    }
+
+    @Test
+    void unionFindPractice() {
+        assertTrue(UnionFindPractice.connected(5, new int[][] { { 0, 1 }, { 2, 3 }, { 1, 2 } }, 0, 3));
+        assertFalse(UnionFindPractice.connected(5, new int[][] { { 0, 1 }, { 2, 3 }, { 1, 2 } }, 0, 4));
+    }
+
+    @Test
+    void binaryHeapPractice() {
+        assertArrayEquals(new int[] { 1, 2, 2, 5, 8 }, BinaryHeapPractice.extractOrder(new int[] { 5, 2, 8, 1, 2 }));
+    }
+
+    @Test
+    void dijkstraPractice() {
+        assertArrayEquals(
+                new int[] { 0, 1, 3, 4 },
+                DijkstraPractice.shortestDistances(
+                        4,
+                        new int[][] {
+                            { 0, 1, 1 }, { 0, 2, 4 }, { 1, 2, 2 }, { 1, 3, 5 }, { 2, 3, 1 }
+                        },
+                        0));
+    }
+
+    @Test
+    void dfsPractice() {
+        DfsPractice.Times t =
+                DfsPractice.traverse(4, new int[][] { { 0, 1 }, { 0, 2 }, { 1, 3 } }, 0, false);
+        assertArrayEquals(new int[] { 0, 1, 5, 2 }, t.discovery());
+    }
+
+    @Test
+    void lisPractice() {
+        assertEquals(4, LisPractice.length(new int[] { 10, 9, 2, 5, 3, 7, 101, 18 }));
+    }
+
+    @Test
+    void mergeSortPractice() {
+        assertArrayEquals(new int[] { 1, 2, 2, 5, 8 }, MergeSortPractice.sort(new int[] { 5, 2, 8, 1, 2 }));
+    }
+
+    @Test
+    void topologicalSortPractice() {
+        assertEquals(
+                List.of(0, 1, 2, 3),
+                TopologicalSortPractice.order(4, new int[][] { { 0, 1 }, { 0, 2 }, { 1, 3 } }));
+    }
+
+    @Test
+    void priorityQueuePractice() {
+        assertArrayEquals(new int[] { 1, 3, 3, 5, 7 }, PriorityQueuePractice.extractOrder(new int[] { 5, 3, 7, 1, 3 }));
+    }
+
+    @Test
+    void monotonicStackPractice() {
+        assertArrayEquals(new int[] { 4, 2, 4, -1, -1 }, MonotonicStackPractice.nextGreater(new int[] { 2, 1, 2, 4, 3 }));
+    }
+
+    @Test
+    void quickSortPractice() {
+        assertArrayEquals(new int[] { 1, 2, 3 }, QuickSortPractice.sort(new int[] { 3, 1, 2 }, false));
+    }
+
+    @Test
+    void bstPractice() {
+        BstPractice tree = new BstPractice();
+        tree.insert(5, "a");
+        tree.insert(2, "b");
+        tree.insert(7, "c");
+        assertEquals(List.of(2, 5, 7), tree.inOrderKeys());
+        assertEquals("b", tree.search(2));
+    }
+
+    @Test
+    void primMstPractice() {
+        assertEquals(
+                6,
+                PrimMstPractice.totalWeight(
+                        4, new int[][] { { 0, 1, 1 }, { 1, 2, 2 }, { 2, 3, 3 }, { 0, 3, 4 } }));
+    }
+
+    @Test
+    void stackPractice() {
+        StackPractice s = new StackPractice();
+        s.push(1);
+        s.push(2);
+        assertEquals(2, s.pop());
+        assertEquals(1, s.peek());
+    }
+
+    @Test
+    void heapSortPractice() {
+        assertArrayEquals(new int[] { 1, 2, 2, 5, 8 }, HeapSortPractice.sort(new int[] { 5, 2, 8, 1, 2 }));
+    }
+
+    @Test
+    void queuePractice() {
+        QueuePractice q = new QueuePractice();
+        q.enqueue(1);
+        q.enqueue(2);
+        assertEquals(1, q.dequeue());
+        assertEquals(2, q.peek());
+    }
+
+    @Test
+    void dequePractice() {
+        DequePractice dq = new DequePractice();
+        dq.addLast(1);
+        dq.addFirst(0);
+        assertEquals(0, dq.removeFirst());
+        assertEquals(1, dq.removeLast());
+        assertTrue(dq.isEmpty());
+    }
+
+    @Test
+    void countingSortPractice() {
+        assertArrayEquals(new int[] { 0, 1, 2, 2, 2, 2, 3, 4 }, CountingSortPractice.sort(new int[] { 4, 2, 0, 2, 1, 3, 2, 2 }));
+    }
+
+    @Test
+    void radixSortPractice() {
+        assertArrayEquals(new int[] { 2, 24, 45 }, RadixSortPractice.sort(new int[] { 45, 2, 24 }));
+    }
+
+    @Test
+    void rabinKarpPractice() {
+        assertEquals(0, RabinKarpPractice.firstIndex("ababcababa", "aba"));
+    }
+
+    @Test
+    void bellmanFordPractice() {
+        BellmanFord.Result r =
+                BellmanFordPractice.shortestPaths(
+                        3, new int[][] { { 0, 1, 1 }, { 1, 2, -2 } }, 0);
+        assertFalse(r.hasNegativeCycle());
+        assertArrayEquals(new int[] { 0, 1, -1 }, r.distances());
+    }
+
+    @Test
+    void segmentTreePractice() {
+        SegmentTreePractice st = new SegmentTreePractice(new int[] { 1, 3, 5, 7 });
+        assertEquals(9, st.rangeSum(0, 2));
+        st.update(1, 10);
+        assertEquals(11, st.rangeSum(0, 1));
+    }
+
+    @Test
+    void floydWarshallPractice() {
+        int[][] dist = FloydWarshallPractice.allPairsDistances(3, new int[][] { { 0, 1, 1 }, { 1, 2, 2 }, { 0, 2, 10 } });
+        assertEquals(3, dist[0][2]);
+    }
+
+    @Test
+    void fenwickTreePractice() {
+        FenwickTreePractice ft = new FenwickTreePractice(5);
+        ft.add(1, 3);
+        ft.add(3, 2);
+        assertEquals(5, ft.prefixSum(3));
+    }
+
+    @Test
+    void graphPractice() {
+        var g = GraphPractice.build(2, true, true, new int[][] { { 0, 1, 1 } });
+        assertEquals(2, g.vertices());
+        assertEquals(1, g.neighbors(0).size());
+    }
+
+    @Test
+    void bipartiteCheckPractice() {
+        assertTrue(BipartiteCheckPractice.isBipartite(4, new int[][] { { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 0 } }));
+    }
+
+    @Test
+    void tarjanSccPractice() {
+        assertEquals(List.of(3), TarjanSccPractice.componentSizesSorted(3, new int[][] { { 0, 1 }, { 1, 2 }, { 2, 0 } }));
+    }
+
+    @Test
+    void kosarajuPractice() {
+        assertEquals(List.of(3), KosarajuPractice.componentSizesSorted(3, new int[][] { { 0, 1 }, { 1, 2 }, { 2, 0 } }));
+    }
+
+    @Test
+    void edmondsKarpPractice() {
+        assertEquals(
+                5,
+                EdmondsKarpPractice.maxFlow(
+                        4,
+                        new int[][] {
+                            { 0, 1, 3 }, { 0, 2, 2 }, { 1, 2, 1 }, { 1, 3, 3 }, { 2, 3, 2 }
+                        },
+                        0,
+                        3));
+    }
+
+    @Test
+    void matrixChainPractice() {
+        assertEquals(4500L, MatrixChainPractice.minMultiplications(new int[] { 10, 30, 5, 60 }));
+    }
+
+    @Test
+    void rodCuttingPractice() {
+        assertEquals(10, RodCuttingPractice.maxProfit(new int[] { 1, 5, 8, 9, 10, 17, 17, 20 }, 4));
+    }
+
+    @Test
+    void partitionEqualSubsetPractice() {
+        assertTrue(PartitionEqualSubsetPractice.canPartition(new int[] { 1, 5, 11, 5 }));
+    }
+
+    @Test
+    void longestPalindromicSubsequencePractice() {
+        assertEquals(4, LongestPalindromicSubsequencePractice.length("bbbab"));
+    }
+
+    @Test
+    void dynamicArrayPractice() {
+        DynamicArrayPractice arr = new DynamicArrayPractice();
+        arr.add(10);
+        arr.add(20);
+        assertEquals(2, arr.size());
+        assertEquals(10, arr.get(0));
+    }
+
+    @Test
+    void linearSearchPractice() {
+        assertEquals(1, LinearSearchPractice.indexOf(new int[] { 1, 2, 3 }, 2));
+    }
+
+    @Test
+    void bubbleSortPractice() {
+        assertArrayEquals(new int[] { 1, 2, 2, 5, 8 }, BubbleSortPractice.sort(new int[] { 5, 2, 8, 1, 2 }));
+    }
+
+    @Test
+    void insertionSortPractice() {
+        assertArrayEquals(new int[] { 1, 2, 2, 5, 8 }, InsertionSortPractice.sort(new int[] { 5, 2, 8, 1, 2 }));
+    }
+
+    @Test
+    void selectionSortPractice() {
+        assertArrayEquals(new int[] { 1, 2, 2, 5, 8 }, SelectionSortPractice.sort(new int[] { 5, 2, 8, 1, 2 }));
+    }
+
+    @Test
+    void zAlgorithmPractice() {
+        assertEquals(0, ZAlgorithmPractice.search("aabaa", "aa"));
+    }
+
+    @Test
+    void manacherPractice() {
+        assertEquals(3, ManacherPractice.longestPalindromeLength("babad"));
+    }
+
+    @Test
+    void ahoCorasickPractice() {
+        assertEquals(List.of(1, 2), AhoCorasickPractice.search("ushers", List.of("he", "she", "his", "hers")));
+    }
+
+    @Test
+    void avlTreePractice() {
+        AvlTreePractice tree = new AvlTreePractice();
+        tree.insert(5, "a");
+        tree.insert(2, "b");
+        assertEquals("b", tree.search(2));
+    }
+
+    @Test
+    void redBlackTreePractice() {
+        RedBlackTreePractice tree = new RedBlackTreePractice();
+        tree.insert(1, 10);
+        assertEquals(10, tree.search(1));
+    }
+
+    @Test
+    void singlyLinkedListPractice() {
+        SinglyLinkedListPractice list = new SinglyLinkedListPractice();
+        list.addLast(2);
+        list.addLast(3);
+        assertEquals(3, list.get(1));
+    }
+
+    @Test
+    void doublyLinkedListPractice() {
+        DoublyLinkedListPractice list = new DoublyLinkedListPractice();
+        list.addLast(2);
+        list.addFirst(1);
+        assertEquals(2, list.get(1));
+    }
+
+    @Test
+    void treeTraversalsPractice() {
+        TreeTraversalsPractice tree = new TreeTraversalsPractice();
+        tree.insert(2, "b");
+        tree.insert(1, "a");
+        assertEquals(List.of(1, 2), tree.inOrder());
+    }
+
+    @Test
+    void separateChainingPractice() {
+        SeparateChainingPractice table = new SeparateChainingPractice();
+        table.put("a", 1);
+        assertEquals(1, table.get("a"));
+    }
+
+    @Test
+    void openAddressingPractice() {
+        OpenAddressingPractice table = new OpenAddressingPractice();
+        table.put(1, "one");
+        assertEquals("one", table.get(1));
+    }
+
+    @Test
+    void suffixArrayPractice() {
+        assertArrayEquals(new int[] { 5, 3, 1, 0, 4, 2 }, SuffixArrayPractice.build("banana"));
+    }
+
+    @Test
+    void treapPractice() {
+        TreapPractice treap = new TreapPractice(0);
+        treap.insert(3, 30);
+        assertEquals(30, treap.search(3));
+    }
+
+    @Test
+    void orderStatisticTreePractice() {
+        OrderStatisticTreePractice tree = new OrderStatisticTreePractice();
+        tree.insert(5, "5");
+        tree.insert(2, "2");
+        assertEquals(2, tree.select(1));
+    }
+
+    @Test
+    void intervalTreePractice() {
+        IntervalTreePractice tree = new IntervalTreePractice();
+        tree.insert(10, 12);
+        assertEquals(List.of(List.of(10, 12)), tree.overlapSorted(11, 11));
+    }
+
+    @Test
+    void bTreePractice() {
+        BTreePractice tree = new BTreePractice(2);
+        tree.insert(6);
+        assertTrue(tree.search(6));
+    }
+
+    @Test
+    void bloomFilterPractice() {
+        BloomFilterPractice bf = new BloomFilterPractice(100, 0.01);
+        bf.add("alpha");
+        assertTrue(bf.mightContain("alpha"));
+    }
+
+    @Test
+    void boruvkaMstPractice() {
+        assertEquals(6, BoruvkaMstPractice.totalWeight(4, new int[][] {{0, 1, 1}, {1, 2, 2}, {2, 3, 3}, {0, 3, 4}}));
+    }
+
+    @Test
+    void aStarPractice() {
+        assertEquals(
+                4L,
+                AStarPractice.shortestPathLength(
+                        4, new int[][] {{0, 1, 1}, {0, 2, 4}, {1, 2, 2}, {1, 3, 5}, {2, 3, 1}}, 0, 3));
+    }
+
+    @Test
+    void articulationBridgesPractice() {
+        ArticulationBridgesPractice.Result r =
+                ArticulationBridgesPractice.find(5, new int[][] {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {2, 4}});
+        assertTrue(r.articulationPoints().contains(1));
+    }
+
+    @Test
+    void hungarianPractice() {
+        assertEquals(5, HungarianPractice.minCost(new int[][] {{4, 1, 3}, {2, 0, 5}, {3, 2, 2}}));
+    }
+
+    @Test
+    void lcaBinaryLiftingPractice() {
+        LcaBinaryLiftingPractice lca = new LcaBinaryLiftingPractice(new int[] {0, 0, 0, 1});
+        assertEquals(0, lca.query(1, 2));
+    }
+
+    @Test
+    void sparseTablePractice() {
+        SparseTablePractice st = new SparseTablePractice(new int[] {1, 3, 5, 7, 9, 2});
+        assertEquals(1, st.query(0, 2));
+    }
+
+    @Test
+    void tspBitmaskPractice() {
+        assertEquals(
+                80L,
+                TspBitmaskPractice.minCost(
+                        new int[][] {{0, 10, 15, 20}, {10, 0, 35, 25}, {15, 35, 0, 30}, {20, 25, 30, 0}}));
+    }
+
+    @Test
+    void reservoirSamplingPractice() {
+        assertEquals(List.of(7), ReservoirSamplingPractice.sample(new int[] {7}, 1, 0));
+    }
+}

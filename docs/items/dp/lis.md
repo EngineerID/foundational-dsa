@@ -2,7 +2,21 @@
 
 Topic: **dp** / `lis`
 
-## Implementations
+## Overview
+
+Length of longest strictly increasing subsequence.
+
+**Walkthrough:** [Worked examples — Lis](../../worked-examples.md#longest-increasing-subsequence).
+
+## Complexity
+
+length: Time O(n log n); Space O(n).
+
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n log n) | Space O(n) |
+
+## Code links
 
 | Language | Source |
 |----------|--------|
@@ -16,5 +30,6 @@ Topic: **dp** / `lis`
 |----------|------|
 | Python | [`test_lis`](../../../python/tests/dp/test_lis.py) |
 | JavaScript | [`lis.test.js`](../../../javascript/test/dp/lis.test.js) |
+| Java | [`LISTest.java`](../../../java/src/test/java/com/dsa/examples/dp/LISTest.java) |
 
-Java tests run via Maven in `java/src/test/java/com/dsa/examples/dp/`.
+Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/dp/`.

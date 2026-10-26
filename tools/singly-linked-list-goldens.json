@@ -1,0 +1,43 @@
+[
+  {
+    "addLast": [
+      2,
+      3,
+      4
+    ],
+    "getIndex": 1,
+    "getValue": 3,
+    "removeIndex": 0,
+    "removeValue": 2,
+    "sizeAfter": 2
+  },
+  {
+    "addLast": [],
+    "getIndex": 0,
+    "getValue": null,
+    "removeIndex": 0,
+    "removeValue": null,
+    "sizeAfter": 0
+  },
+  {
+    "addLast": [
+      6
+    ],
+    "getIndex": 0,
+    "getValue": 6,
+    "removeIndex": 0,
+    "removeValue": 6,
+    "sizeAfter": 0
+  },
+  {
+    "addLast": [
+      1,
+      1
+    ],
+    "getIndex": 1,
+    "getValue": 1,
+    "removeIndex": 0,
+    "removeValue": 1,
+    "sizeAfter": 1
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "n": 4,
+    "directed": false,
+    "weighted": false,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "n": 3,
+    "directed": false,
+    "weighted": false,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "n": 1,
+    "directed": false,
+    "weighted": false,
+    "edges": [],
+    "expected": true
+  },
+  {
+    "n": 2,
+    "directed": false,
+    "weighted": false,
+    "edges": [
+      [
+        0,
+        1
+      ]
+    ],
+    "expected": true
+  }
+]

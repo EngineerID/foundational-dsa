@@ -2,7 +2,21 @@
 
 Topic: **dp** / `lcs`
 
-## Implementations
+## Overview
+
+Longest common subsequence length between two strings.
+
+**Walkthrough:** [Worked examples — Lcs](../../worked-examples.md#longest-common-subsequence).
+
+## Complexity
+
+length: Time O(nm); Space O(min(n,m)).
+
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(nm) | Space O(min(n,m) |
+
+## Code links
 
 | Language | Source |
 |----------|--------|
@@ -16,5 +30,6 @@ Topic: **dp** / `lcs`
 |----------|------|
 | Python | [`test_lcs`](../../../python/tests/dp/test_lcs.py) |
 | JavaScript | [`lcs.test.js`](../../../javascript/test/dp/lcs.test.js) |
+| Java | [`LCSTest.java`](../../../java/src/test/java/com/dsa/examples/dp/LCSTest.java) |
 
-Java tests run via Maven in `java/src/test/java/com/dsa/examples/dp/`.
+Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/dp/`.

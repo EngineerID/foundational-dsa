@@ -3,10 +3,10 @@
 package com.dsa.examples.trees;
 
 /**
- * Range-sum segment tree with point updates.
+ * Range aggregate queries with point updates on an array.
  * Technique: Segment tree
- * Invariant: Each node stores aggregate over its index interval.
- * build/update/query: Time O(log n); Space O(n).
+ * Invariant: Each node covers a disjoint index interval; parent stores sum of children.
+ * update/rangeSum: Time O(log n); Space O(n).
  */
 public class SegmentTree {
 

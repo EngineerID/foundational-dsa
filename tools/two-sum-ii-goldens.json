@@ -1,0 +1,42 @@
+[
+  {
+    "nums": [2, 7, 11, 15],
+    "target": 9,
+    "expected": [1, 2]
+  },
+  {
+    "nums": [1, 2, 3, 4, 5],
+    "target": 9,
+    "expected": [4, 5]
+  },
+  {
+    "nums": [1, 2],
+    "target": 3,
+    "expected": [1, 2]
+  },
+  {
+    "nums": [1, 1, 2, 3],
+    "target": 2,
+    "expected": [1, 2]
+  },
+  {
+    "nums": [5],
+    "target": 10,
+    "expectError": true
+  },
+  {
+    "nums": [],
+    "target": 0,
+    "expectError": true
+  },
+  {
+    "nums": [1, 2, 3],
+    "target": 10,
+    "expectError": true
+  },
+  {
+    "nums": [3, 4, 5],
+    "target": 7,
+    "expected": [1, 2]
+  }
+]

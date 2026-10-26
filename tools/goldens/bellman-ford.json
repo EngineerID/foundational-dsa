@@ -1,8 +1,0 @@
-{
-  "kind": "smoke",
-  "cases": [
-    {
-      "note": "dedicated tests cover behavior"
-    }
-  ]
-}

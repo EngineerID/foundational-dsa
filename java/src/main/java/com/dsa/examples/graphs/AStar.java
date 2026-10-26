@@ -5,8 +5,9 @@ package com.dsa.examples.graphs;
 import java.util.PriorityQueue;
 
 /**
- * A* search with nonnegative edge weights (h=0).
- * Technique: A* (best-first search)
+ * Shortest path length with nonnegative weights (heuristic h=0).
+ * Technique: A* search
+ * Invariant: Best-first expansion by path cost.
  * shortestPathLength: Time O(E log V); Space O(V).
  */
 public final class AStar {

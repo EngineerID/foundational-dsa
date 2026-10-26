@@ -17,3 +17,19 @@ def test_invalid():
     ft = FenwickTree(2)
     with pytest.raises(IndexError):
         ft.add(2, 1)
+
+
+def test_empty_single_duplicate_large():
+    empty = FenwickTree(0)
+    assert empty.prefix_sum(0) == 0
+    single = FenwickTree(1)
+    single.add(0, 4)
+    assert single.prefix_sum(0) == 4
+    dup = FenwickTree(2)
+    dup.add(0, 1)
+    dup.add(0, 2)
+    assert dup.prefix_sum(0) == 3
+    large = FenwickTree(200)
+    for i in range(200):
+        large.add(i, 1)
+    assert large.prefix_sum(199) == 200

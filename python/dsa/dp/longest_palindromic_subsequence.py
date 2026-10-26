@@ -4,7 +4,7 @@
 
 Technique: Interval DP
 Invariant: dp[i][j] is LPS length in s[i..j].
-length: Time O(n^2); Space O(n^2).
+length: Time O(n²); Space O(n²).
 """
 
 

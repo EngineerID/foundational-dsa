@@ -3,7 +3,9 @@
 package com.dsa.examples.dp;
 
 /**
- * Whether nums can be partitioned into two equal-sum subsets.
+ * Partition array into two equal-sum subsets.
+ * Technique: Subset-sum DP
+ * Invariant: dp[s] reachable with elements processed.
  * canPartition: Time O(n·sum); Space O(sum).
  */
 public final class PartitionEqualSubset {

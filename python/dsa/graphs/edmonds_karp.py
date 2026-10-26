@@ -1,10 +1,10 @@
 # Graphs — Edmonds-Karp max flow
 
-"""Maximum flow via BFS augmenting paths (Edmonds-Karp).
+"""Maximum s-t flow in a capacitated network.
 
 Technique: Edmonds-Karp
-Invariant: Residual capacities decrease until no s-t path.
-maxFlow: Time O(VE^2); Space O(V^2).
+Invariant: BFS augmenting paths until saturated.
+maxFlow: Time O(VE²); Space O(V²).
 """
 
 from collections import deque
@@ -17,6 +17,8 @@ def max_flow(n: int, edges: list[tuple[int, int, int]], source: int, sink: int) 
     """
     if source < 0 or sink < 0 or source >= n or sink >= n:
         raise IndexError(source)
+    if source == sink:
+        return 0
     cap = [[0] * n for _ in range(n)]
     for u, v, c in edges:
         if c < 0:

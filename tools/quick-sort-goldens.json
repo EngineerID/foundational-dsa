@@ -1,0 +1,42 @@
+[
+  {
+    "input": [
+      3,
+      1,
+      2
+    ],
+    "mode": "sort",
+    "expected": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "input": [
+      2,
+      2,
+      1
+    ],
+    "mode": "sort3Way",
+    "expected": [
+      1,
+      2,
+      2
+    ]
+  },
+  {
+    "input": [],
+    "mode": "sort",
+    "expected": []
+  },
+  {
+    "input": [
+      2
+    ],
+    "mode": "sort",
+    "expected": [
+      2
+    ]
+  }
+]

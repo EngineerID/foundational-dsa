@@ -28,8 +28,12 @@ bash .cursor/install.sh
 
 **Default agent check:** `npm test` (also `make test`). That runs, in order:
 
+- `npm run check:docs-links`
+- `npm run check:item-doc-headings`
+- `npm run check:item-doc-complexity`
+- `npm run check:golden-parity`, `check:golden-fixtures-doc`, `check:catalog-golden-coverage`, `check:shared-golden-themes`
 - `npm run check:stubs`
-- `npm run test:java` (JUnit 5 via Maven Wrapper)
+- `npm run test:java` (JUnit 5 via Maven Wrapper; default **2m per-test** timeout in `java/pom.xml` / `junit-platform.properties` so hangs fail with the test name)
 - `npm run test:py` (`python3 -m pytest`)
 - `npm run test:js` (Jest)
 - `npm run check:parity`
@@ -49,7 +53,11 @@ Additional checks:
 npm run lint
 npm run check:edge-themes
 npm run check:ci-policy
+npm run check:practice-walkthrough
+npm run check:practice-catalog-topics
 ```
+
+`check:practice-walkthrough` ensures every problem in `docs/practice-problems.md` links to a `worked-examples.md` walkthrough (or is listed in `tools/practice-walkthrough-data.mjs` `PRACTICE_WALKTHROUGH_EXEMPT`). `check:practice-walkthrough-complexity` requires a **Complexity:** line (from `tools/doc-spec.mjs`) in each practice walkthrough section. `check:practice-problem-complexity` requires the same **Complexity:** string in each `practice-problems.md` section (`tools/apply-practice-problem-complexity.mjs`). `check:practice-problem-docs` enforces **Statement**, **Edge cases**, **Complexity**, **Implementation**, and **Walkthrough** on every problem. `check:practice-edge-goldens` requires ≥3 edge-themed cases per practice golden file (`tools/practice-golden-map.mjs`). `check:practice-interview-golden-trilingual` ensures the 19 interview-style practice goldens are referenced in `practiceInterviewGoldens*` tests in all three languages. `check:practice-property-coverage` ensures practice property tests cover all 87 `PRACTICE_TOPIC_TARGET` ids (`tools/practice-property-topics.mjs`) in JS/Python/Java (phase 1 + phase 2 test files and `PracticeBruteforce*` helpers). `check:practice-catalog-topics` validates `catalogTopic` metadata and the expanding `PRACTICE_TOPIC_TARGET` list in the same data module.
 
 Optional local timing (not a CI gate): `npm run bench` (see `tools/micro-bench.mjs`).
 
@@ -86,7 +94,9 @@ Worked walkthroughs: [`docs/worked-examples.md`](docs/worked-examples.md).
 - `javascript/test/catalog/edgeCaseThemes.test.js`
 - `java/src/test/java/com/dsa/examples/catalog/EdgeCaseThemesTest.java`
 
-**Shared regression JSON** (trilingual tests): `tools/kmp-goldens.json`, `tools/binary-search-goldens.json`, `tools/binary-search-boundary-goldens.json` (first/last occurrence).
+**Shared regression JSON** (trilingual tests): `tools/kmp-goldens.json`, `tools/binary-search-goldens.json`, `tools/binary-search-boundary-goldens.json` (first/last occurrence). Java `*GoldensTest` classes load these via `GoldenJson` / `GoldenIntArrays` under `java/.../support/` (no regex parsing).
+
+**Graph unreachable sentinel:** `GRAPH_UNREACHABLE` (`536870911`) in `tools/graph-sentinel.mjs` / `doc-spec.mjs`; `npm run check:graph-sentinel`. Unweighted **BFS** goldens use **`-1`** for unreachable, not this sentinel.
 
 **Catalog edge themes** (cross-item): `python/tests/catalog/`, `javascript/test/catalog/`, `java/.../catalog/`; `npm run check:catalog-items` verifies all 41 topic ids are referenced.
 

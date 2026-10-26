@@ -2,7 +2,27 @@
 
 Topic: **unionfind** / `union-find`
 
-## Implementations
+## Overview
+
+Disjoint-set connectivity with union and find.
+
+
+Vertices `0 .. n-1`; out-of-range `find`/`union` raises.
+
+
+**Catalog edge themes:** covered in shared catalog tests (`EdgeCaseThemesTest`, `test_edge_case_themes.py`, `edgeCaseThemes.test.js`) for empty / single / duplicate / large / invalid cases.
+
+**Walkthrough:** [Worked examples — Union Find](../../worked-examples.md#union-find-connectivity).
+
+## Complexity
+
+find/union/connected: Time O(α(n)) amortized; Space O(n).
+
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(α(n) | Space O(n) |
+
+## Code links
 
 | Language | Source |
 |----------|--------|
@@ -16,5 +36,9 @@ Topic: **unionfind** / `union-find`
 |----------|------|
 | Python | [`test_union_find`](../../../python/tests/unionfind/test_union_find.py) |
 | JavaScript | [`unionFind.test.js`](../../../javascript/test/unionfind/unionFind.test.js) |
+| Java | [`UnionFindTest.java`](../../../java/src/test/java/com/dsa/examples/unionfind/UnionFindTest.java) |
 
-Java tests run via Maven in `java/src/test/java/com/dsa/examples/unionfind/`.
+**Property-style checks:** Java [`PropertyUnionFindTest`](../../../java/src/test/java/com/dsa/examples/property/PropertyUnionFindTest.java); Python [`test_property_unionfind`](../../../python/tests/test_property_unionfind.py); JavaScript [`property/unionfind.test.js`](../../../javascript/test/property/unionfind.test.js).
+
+
+Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/unionfind/`.

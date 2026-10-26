@@ -2,7 +2,21 @@
 
 Topic: **dp** / `tsp-bitmask`
 
-## Implementations
+## Overview
+
+Minimum Hamiltonian cycle from city 0 (small n).
+
+**Worked example:** [Topic index](../../worked-examples.md#tsp-bitmask) (summary) · run `npm run demo -- tsp-bitmask` in all three languages.
+
+## Complexity
+
+minCost: Time O(n²·2^n); Space O(n·2^n).
+
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n²·2^n) | Space O(n·2^n) |
+
+## Code links
 
 | Language | Source |
 |----------|--------|
@@ -16,5 +30,6 @@ Topic: **dp** / `tsp-bitmask`
 |----------|------|
 | Python | [`test_tsp_bitmask`](../../../python/tests/dp/test_tsp_bitmask.py) |
 | JavaScript | [`tspBitmask.test.js`](../../../javascript/test/dp/tspBitmask.test.js) |
+| Java | [`TSPBitmaskTest.java`](../../../java/src/test/java/com/dsa/examples/dp/TSPBitmaskTest.java) |
 
-Java tests run via Maven in `java/src/test/java/com/dsa/examples/dp/`.
+Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/dp/`.

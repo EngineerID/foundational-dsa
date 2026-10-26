@@ -1,0 +1,241 @@
+{
+  "manacher-goldens.json": [
+    {
+      "s": "",
+      "expected": 0
+    },
+    {
+      "s": "x",
+      "expected": 1
+    }
+  ],
+  "suffix-array-goldens.json": [
+    {
+      "s": "",
+      "sa": []
+    },
+    {
+      "s": "a",
+      "sa": [
+        0
+      ]
+    }
+  ],
+  "z-algorithm-goldens.json": [
+    {
+      "text": "a",
+      "pattern": "a",
+      "index": 0,
+      "z": [
+        1
+      ]
+    },
+    {
+      "text": "aaaa",
+      "pattern": "aa",
+      "index": 0,
+      "z": [
+        4,
+        3,
+        2,
+        1
+      ]
+    }
+  ],
+  "aho-corasick-goldens.json": [
+    {
+      "text": "",
+      "patterns": [
+        "a"
+      ],
+      "hits": []
+    },
+    {
+      "text": "a",
+      "patterns": [
+        "a"
+      ],
+      "hits": [
+        0
+      ]
+    }
+  ],
+  "boruvka-mst-goldens.json": [
+    {
+      "n": 1,
+      "directed": false,
+      "weighted": true,
+      "edges": [],
+      "totalWeight": 0
+    }
+  ],
+  "a-star-goldens.json": [
+    {
+      "n": 1,
+      "directed": true,
+      "weighted": true,
+      "edges": [],
+      "source": 0,
+      "goal": 0,
+      "length": 0
+    }
+  ],
+  "articulation-bridges-goldens.json": [
+    {
+      "n": 1,
+      "directed": false,
+      "weighted": false,
+      "edges": [],
+      "articulationPoints": [],
+      "bridges": []
+    }
+  ],
+  "edmonds-karp-goldens.json": [
+    {
+      "n": 2,
+      "edges": [
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "source": 0,
+      "sink": 1,
+      "maxFlow": 0
+    }
+  ],
+  "hungarian-goldens.json": [
+    {
+      "cost": [
+        [
+          0
+        ]
+      ],
+      "minCost": 0
+    }
+  ],
+  "floyd-warshall-goldens.json": [
+    {
+      "n": 1,
+      "directed": true,
+      "weighted": true,
+      "edges": [],
+      "pairs": [
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    }
+  ],
+  "interval-tree-goldens.json": [
+    {
+      "inserts": [
+        [
+          1,
+          1
+        ]
+      ],
+      "query": [
+        1,
+        1
+      ],
+      "overlaps": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "inserts": [
+        [
+          5,
+          3
+        ]
+      ],
+      "expectError": true,
+      "errorType": "ValueError"
+    }
+  ],
+  "rod-cutting-goldens.json": [
+    {
+      "prices": [
+        2
+      ],
+      "length": 1,
+      "expected": 2
+    },
+    {
+      "prices": [
+        2
+      ],
+      "length": 0,
+      "expected": 0
+    },
+    {
+      "prices": [
+        2
+      ],
+      "length": -1,
+      "expectError": true,
+      "errorType": "ValueError"
+    }
+  ],
+  "partition-equal-subset-goldens.json": [
+    {
+      "nums": [
+        -1
+      ],
+      "expectError": true,
+      "errorType": "ValueError"
+    }
+  ],
+  "b-tree-goldens.json": [
+    {
+      "t": 1,
+      "expectError": true,
+      "errorType": "ValueError"
+    }
+  ],
+  "stack-goldens.json": [
+    {
+      "push": [],
+      "popValues": [],
+      "empty": true
+    },
+    {
+      "push": [
+        9
+      ],
+      "popValues": [
+        9
+      ],
+      "empty": true
+    }
+  ],
+  "queue-goldens.json": [
+    {
+      "enqueue": [
+        8
+      ],
+      "dequeueValues": [
+        8
+      ],
+      "peek": null,
+      "empty": true
+    }
+  ],
+  "tsp-bitmask-goldens.json": [
+    {
+      "dist": [
+        [
+          0
+        ]
+      ],
+      "expected": 0
+    }
+  ]
+}

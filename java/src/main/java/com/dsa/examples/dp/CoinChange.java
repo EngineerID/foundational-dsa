@@ -3,8 +3,8 @@
 package com.dsa.examples.dp;
 
 /**
- * Minimum coins to make amount (or -1).
- * Technique: Unbounded knapsack DP
+ * Minimum coins to make an amount (unbounded supply).
+ * Technique: Coin change DP
  * Invariant: dp[a] is min coins for amount a.
  * minCoins: Time O(n·amount); Space O(amount).
  */

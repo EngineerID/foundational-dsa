@@ -10,7 +10,7 @@ const ROOT = process.env.CI_POLICY_ROOT
   ? process.env.CI_POLICY_ROOT
   : join(import.meta.dirname, '..');
 const WORKFLOWS_DIR = join(ROOT, '.github', 'workflows');
-const PATHS_FILTER_PIN = '7b450fff21473bca461d4b92ce414b9d0420d706';
+const PATHS_FILTER_PIN = 'ceb8a2b8f2d89434be7ff52d3de7ec3738c5cc9d';
 
 const errors = [];
 

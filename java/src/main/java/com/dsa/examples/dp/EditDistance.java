@@ -3,9 +3,9 @@
 package com.dsa.examples.dp;
 
 /**
- * Minimum insert/delete/replace ops to match strings.
- * Technique: Levenshtein DP
- * Invariant: dp[i][j] is edit distance between prefixes.
+ * Levenshtein edit distance between two strings.
+ * Technique: Edit distance DP
+ * Invariant: dp[i][j] is min edits for prefixes.
  * distance: Time O(nm); Space O(min(n,m)).
  */
 public final class EditDistance {

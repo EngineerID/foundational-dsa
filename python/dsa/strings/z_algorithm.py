@@ -1,10 +1,10 @@
 # Strings — Z-Algorithm
 
-"""Z-array construction and pattern search.
+"""Linear-time Z-array and pattern search.
 
 Technique: Z-algorithm
-Invariant: Z[i] is LCP of s[i:] and s.
-z_array/search: Time O(n + m); Space O(n).
+Invariant: Z[i] equals longest prefix match of s with s[i:].
+zArray/search: Time O(n + m); Space O(n).
 """
 
 

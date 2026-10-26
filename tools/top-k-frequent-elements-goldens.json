@@ -1,0 +1,37 @@
+[
+  {
+    "nums": [1, 1, 1, 2, 2, 3],
+    "k": 2,
+    "expected": [1, 2]
+  },
+  {
+    "nums": [1],
+    "k": 1,
+    "expected": [1]
+  },
+  {
+    "nums": [4, 4, 4, 5, 5, 6],
+    "k": 1,
+    "expected": [4]
+  },
+  {
+    "nums": [1, 1, 2],
+    "k": 2,
+    "expected": [1, 2]
+  },
+  {
+    "nums": [],
+    "k": 1,
+    "expectError": true
+  },
+  {
+    "nums": [1, 2],
+    "k": 0,
+    "expectError": true
+  },
+  {
+    "nums": [2, 2, 1, 1, 1, 2, 2],
+    "k": 1,
+    "expected": [2]
+  }
+]

@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { ITEMS } from './items.mjs';
 import { API_MANIFEST } from './api-manifest.mjs';
 import { DOC_SPECS } from './doc-spec.mjs';
+import { GRAPH_UNREACHABLE } from './graph-sentinel.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -13,6 +14,7 @@ const lines = [
   '',
   'Per-language public symbols are defined in `tools/api-manifest.mjs` (source of truth).',
   'Null/empty: arrays may be `null` (Java/JS) or `None` (Python); sorts no-op; searches return `-1` or empty.',
+  `Weighted-graph unreachable distances use sentinel **${GRAPH_UNREACHABLE}** (\`GRAPH_UNREACHABLE\` in \`tools/graph-sentinel.mjs\`). Unweighted **BFS** uses **\`-1\`**.`,
   '',
 ];
 

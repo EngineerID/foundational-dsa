@@ -9,7 +9,7 @@
 
 const { PriorityQueue } = require('../heaps/priorityQueue');
 
-const INF = Math.floor(Number.MAX_SAFE_INTEGER / 4);
+const { GRAPH_UNREACHABLE: INF } = require('./graphInf');
 
 function totalWeight(graph) {
   const n = graph.vertices();

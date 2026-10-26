@@ -1,0 +1,62 @@
+[
+  {
+    "capacity": 2,
+    "steps": [
+      {
+        "op": "put",
+        "key": 1,
+        "value": 1
+      },
+      {
+        "op": "put",
+        "key": 2,
+        "value": 2
+      },
+      {
+        "op": "get",
+        "key": 1,
+        "expected": 1
+      },
+      {
+        "op": "put",
+        "key": 3,
+        "value": 3
+      },
+      {
+        "op": "get",
+        "key": 2,
+        "expected": -1
+      },
+      {
+        "op": "get",
+        "key": 3,
+        "expected": 3
+      }
+    ]
+  },
+  {
+    "capacity": 1,
+    "steps": [
+      {
+        "op": "get",
+        "key": 1,
+        "expected": -1
+      }
+    ]
+  },
+  {
+    "capacity": 1,
+    "steps": [
+      {
+        "op": "put",
+        "key": 1,
+        "value": 1
+      },
+      {
+        "op": "get",
+        "key": 1,
+        "expected": 1
+      }
+    ]
+  }
+]

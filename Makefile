@@ -1,6 +1,6 @@
-.PHONY: test test-ci test-java test-py test-js demo matrix matrix-check inventory inventory-check check-stubs check-parity check-edge-themes check-ci-policy lint bench
+.PHONY: test test-ci test-java test-py test-js demo matrix matrix-check inventory inventory-check check-docs-links check-item-doc-complexity check-stubs check-parity check-edge-themes check-ci-policy lint bench
 
-test: check-stubs test-java test-py test-js check-parity matrix-check
+test: check-docs-links check-readme-index check-complexity-cheatsheet check-item-doc-headings check-item-doc-complexity check-stubs test-java test-py test-js check-parity matrix-check
 
 test-ci:
 	npm run test:ci
@@ -31,6 +31,21 @@ inventory:
 
 inventory-check:
 	node tools/inventory.mjs --check
+
+check-docs-links:
+	node tools/check-docs-links.mjs
+
+check-readme-index:
+	node tools/check-readme-index.mjs
+
+check-complexity-cheatsheet:
+	node tools/check-complexity-cheatsheet.mjs
+
+complexity-cheatsheet:
+	node tools/complexity-cheatsheet.mjs
+
+check-item-doc-complexity:
+	node tools/check-item-doc-complexity.mjs
 
 check-stubs:
 	node tools/check-stubs.mjs

@@ -12,7 +12,9 @@ import java.util.Queue;
 import java.util.Set;
 
 /**
- * Find all pattern occurrences in text.
+ * Find all occurrences of multiple patterns in text.
+ * Technique: Aho-Corasick automaton
+ * Invariant: Failure links preserve matched prefixes.
  * search: Time O(n+m+z); Space O(m).
  */
 public final class AhoCorasick {

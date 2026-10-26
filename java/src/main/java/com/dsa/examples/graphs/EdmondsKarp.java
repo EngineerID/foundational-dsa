@@ -8,10 +8,10 @@ import java.util.Deque;
 import java.util.List;
 
 /**
- * Maximum flow via BFS augmenting paths (Edmonds-Karp).
+ * Maximum s-t flow in a capacitated network.
  * Technique: Edmonds-Karp
- * Invariant: Residual capacities decrease until no s-t path.
- * maxFlow: Time O(VE^2); Space O(V^2).
+ * Invariant: BFS augmenting paths until saturated.
+ * maxFlow: Time O(VE²); Space O(V²).
  */
 public final class EdmondsKarp {
 
@@ -25,6 +25,9 @@ public final class EdmondsKarp {
     public static int maxFlow(int n, int[][] edges, int source, int sink) {
         if (source < 0 || sink < 0 || source >= n || sink >= n) {
             throw new IndexOutOfBoundsException(String.valueOf(source));
+        }
+        if (source == sink) {
+            return 0;
         }
         return maxFlowInternal(n, edges, source, sink);
     }

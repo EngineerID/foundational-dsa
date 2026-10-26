@@ -1,0 +1,62 @@
+[
+  {
+    "n": 3,
+    "directed": true,
+    "weighted": false,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "componentCount": 1,
+    "componentSizes": [
+      3
+    ]
+  },
+  {
+    "n": 1,
+    "directed": true,
+    "weighted": false,
+    "edges": [],
+    "componentCount": 1,
+    "componentSizes": [
+      1
+    ]
+  },
+  {
+    "n": 2,
+    "directed": true,
+    "weighted": false,
+    "edges": [],
+    "componentCount": 2,
+    "componentSizes": [
+      1,
+      1
+    ]
+  },
+  {
+    "n": 2,
+    "directed": true,
+    "weighted": false,
+    "edges": [
+      [
+        0,
+        1
+      ]
+    ],
+    "componentCount": 2,
+    "componentSizes": [
+      1,
+      1
+    ]
+  }
+]

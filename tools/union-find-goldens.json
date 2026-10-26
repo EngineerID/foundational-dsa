@@ -1,0 +1,62 @@
+[
+  {
+    "n": 5,
+    "unions": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "connected": [
+      {
+        "a": 0,
+        "b": 3,
+        "expected": true
+      },
+      {
+        "a": 0,
+        "b": 4,
+        "expected": false
+      }
+    ]
+  },
+  {
+    "n": 1,
+    "unions": [],
+    "connected": [
+      {
+        "a": 0,
+        "b": 0,
+        "expected": true
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "unions": [
+      [0, 1],
+      [0, 1],
+      [1, 2]
+    ],
+    "connected": [
+      {
+        "a": 0,
+        "b": 2,
+        "expected": true
+      },
+      {
+        "a": 1,
+        "b": 1,
+        "expected": true
+      }
+    ]
+  }
+]

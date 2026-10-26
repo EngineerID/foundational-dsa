@@ -1,0 +1,42 @@
+name: Good first issue candidate
+description: Propose scoped work suitable for new contributors
+title: "[good first issue]: "
+labels: ["good first issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Maintainers use this template to track bite-sized tasks. See [CONTRIBUTING.md](https://github.com/EngineerID/foundational-dsa/blob/main/CONTRIBUTING.md#good-first-issues).
+  - type: textarea
+    id: task
+    attributes:
+      label: Task summary
+      description: One or two sentences a newcomer can finish in a single PR
+    validations:
+      required: true
+  - type: input
+    id: topic-id
+    attributes:
+      label: Topic id (optional)
+      placeholder: union-find
+  - type: textarea
+    id: files
+    attributes:
+      label: Likely files or paths
+      placeholder: docs/items/graphs/dijkstra.md, tools/demo.mjs
+  - type: textarea
+    id: verify
+    attributes:
+      label: How to verify
+      placeholder: npm run demo -- dijkstra && npm test
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Triage
+      options:
+        - label: No secrets or live-service calls required
+          required: true
+        - label: Acceptance criteria are clear
+          required: true

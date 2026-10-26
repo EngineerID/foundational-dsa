@@ -4,7 +4,9 @@ package com.dsa.examples.dp;
 
 /**
  * Minimum scalar multiplications for a matrix product chain.
- * minMultiplications: Time O(n^3); Space O(n^2).
+ * Technique: Matrix-chain DP
+ * Invariant: dp[i][j] is optimal cost for subchain i..j.
+ * minMultiplications: Time O(n³); Space O(n²).
  */
 public final class MatrixChain {
 

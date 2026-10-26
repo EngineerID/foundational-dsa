@@ -32,8 +32,7 @@ class GraphsTest {
         assertEquals(4, DFS.traverseRecursive(dag, 0).discovery().length);
         assertEquals(4, DFS.traverseIterative(dag, 0).discovery().length);
         List<Integer> order = TopologicalSort.kahn(dag);
-        assertEquals(4, order.size());
-        assertEquals(0, order.get(0));
+        assertEquals(List.of(0, 1, 2, 3), order);
     }
 
     @Test

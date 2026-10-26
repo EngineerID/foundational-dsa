@@ -10,7 +10,7 @@ shortestPaths: Time O(E log V); Space O(V).
 from dsa.graphs.graph import Graph
 from dsa.heaps.indexed_min_heap import IndexedMinHeap
 
-_INF = 2**30 - 1
+_INF = 2147483647 // 4
 
 
 def shortest_paths(graph: Graph, source: int) -> list[int]:

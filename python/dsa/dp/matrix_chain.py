@@ -1,10 +1,10 @@
 # Dynamic Programming — Matrix chain multiplication
 
-"""Minimum scalar multiplications to multiply a chain of matrices.
+"""Minimum scalar multiplications for a matrix product chain.
 
 Technique: Matrix-chain DP
-Invariant: dp[i][j] is optimal cost for matrices i..j.
-min_multiplications: Time O(n^3); Space O(n^2).
+Invariant: dp[i][j] is optimal cost for subchain i..j.
+minMultiplications: Time O(n³); Space O(n²).
 """
 
 

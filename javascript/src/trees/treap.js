@@ -4,7 +4,7 @@
  * Randomized BST via heap priorities on keys.
  * Technique: Treap
  * Invariant: Heap order on priorities, BST order on keys.
- * search/insert: Time O(log n) expected; Space O(n).
+ * search/insert: Time O(log n); Space O(n).
  */
 
 class Treap {

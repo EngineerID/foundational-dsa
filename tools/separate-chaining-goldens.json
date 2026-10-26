@@ -1,0 +1,22 @@
+[
+  {
+    "ops": [["put", "a", 1], ["put", "b", 2], ["put", "a", 3]],
+    "get": { "key": "a", "value": 3 },
+    "getMissing": { "key": "z", "value": null }
+  },
+  {
+    "ops": [],
+    "get": { "key": "solo", "value": null },
+    "getMissing": { "key": "solo", "value": null }
+  },
+  {
+    "ops": [["put", "solo", 5]],
+    "get": { "key": "solo", "value": 5 },
+    "getMissing": { "key": "z", "value": null }
+  },
+  {
+    "ops": [["put", "dup", 1], ["put", "dup", 2]],
+    "get": { "key": "dup", "value": 2 },
+    "getMissing": { "key": "z", "value": null }
+  }
+]

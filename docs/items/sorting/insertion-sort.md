@@ -2,7 +2,21 @@
 
 Topic: **sorting** / `insertion-sort`
 
-## Implementations
+## Overview
+
+Sort an array in ascending order in place (efficient on nearly sorted input).
+
+**Worked example:** [Topic index](../../worked-examples.md#insertion-sort) (summary) · run `npm run demo -- insertion-sort` in all three languages.
+
+## Complexity
+
+sort: Time O(n²) worst, O(n) best; Space O(1).
+
+| | Time | Space |
+|---|------|-------|
+| Primary | Time O(n²) | Space O(1) |
+
+## Code links
 
 | Language | Source |
 |----------|--------|
@@ -16,5 +30,9 @@ Topic: **sorting** / `insertion-sort`
 |----------|------|
 | Python | [`test_insertion_sort`](../../../python/tests/sorting/test_insertion_sort.py) |
 | JavaScript | [`insertionSort.test.js`](../../../javascript/test/sorting/insertionSort.test.js) |
+| Java | [`SortingTest.java`](../../../java/src/test/java/com/dsa/examples/sorting/SortingTest.java) |
 
-Java tests run via Maven in `java/src/test/java/com/dsa/examples/sorting/`.
+**Property-style checks:** Java [`PropertySortsTest`](../../../java/src/test/java/com/dsa/examples/property/PropertySortsTest.java); Python [`test_property_sorts`](../../../python/tests/test_property_sorts.py); JavaScript [`property/sorts.test.js`](../../../javascript/test/property/sorts.test.js).
+
+
+Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/sorting/`.
