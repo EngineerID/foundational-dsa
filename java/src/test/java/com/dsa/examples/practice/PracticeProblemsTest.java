@@ -462,4 +462,54 @@ class PracticeProblemsTest {
         tree.insert(1, 10);
         assertEquals(10, tree.search(1));
     }
+
+    @Test
+    void singlyLinkedListPractice() {
+        SinglyLinkedListPractice list = new SinglyLinkedListPractice();
+        list.addLast(2);
+        list.addLast(3);
+        assertEquals(3, list.get(1));
+    }
+
+    @Test
+    void doublyLinkedListPractice() {
+        DoublyLinkedListPractice list = new DoublyLinkedListPractice();
+        list.addLast(2);
+        list.addFirst(1);
+        assertEquals(2, list.get(1));
+    }
+
+    @Test
+    void treeTraversalsPractice() {
+        TreeTraversalsPractice tree = new TreeTraversalsPractice();
+        tree.insert(2, "b");
+        tree.insert(1, "a");
+        assertEquals(List.of(1, 2), tree.inOrder());
+    }
+
+    @Test
+    void separateChainingPractice() {
+        SeparateChainingPractice table = new SeparateChainingPractice();
+        table.put("a", 1);
+        assertEquals(1, table.get("a"));
+    }
+
+    @Test
+    void openAddressingPractice() {
+        OpenAddressingPractice table = new OpenAddressingPractice();
+        table.put(1, "one");
+        assertEquals("one", table.get(1));
+    }
+
+    @Test
+    void suffixArrayPractice() {
+        assertArrayEquals(new int[] { 5, 3, 1, 0, 4, 2 }, SuffixArrayPractice.build("banana"));
+    }
+
+    @Test
+    void treapPractice() {
+        TreapPractice treap = new TreapPractice(0);
+        treap.insert(3, 30);
+        assertEquals(30, treap.search(3));
+    }
 }

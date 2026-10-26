@@ -419,6 +419,13 @@ Every catalog topic links to its doc page under [docs/items/](docs/items/). Prac
 - [Aho-Corasick hits](docs/practice-problems.md#66-aho-corasick)
 - [AVL tree](docs/practice-problems.md#67-avl-tree)
 - [Red-black tree](docs/practice-problems.md#68-red-black-tree)
+- [Singly linked list](docs/practice-problems.md#69-singly-linked-list)
+- [Doubly linked list](docs/practice-problems.md#70-doubly-linked-list)
+- [Tree traversals](docs/practice-problems.md#71-tree-traversals)
+- [Separate chaining](docs/practice-problems.md#72-separate-chaining)
+- [Open addressing](docs/practice-problems.md#73-open-addressing)
+- [Suffix array](docs/practice-problems.md#74-suffix-array)
+- [Treap](docs/practice-problems.md#75-treap)
 
 See also the generated [complexity cheat sheet](docs/complexity-cheatsheet.md) for all **87** catalog topics.
 

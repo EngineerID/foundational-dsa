@@ -51,6 +51,13 @@ const { longestPalindromeLength } = require('../../src/practice/manacherPractice
 const { findHits } = require('../../src/practice/ahoCorasickPractice');
 const { AvlTreePractice } = require('../../src/practice/avlTreePractice');
 const { RedBlackTreePractice } = require('../../src/practice/redBlackTreePractice');
+const { SinglyLinkedListPractice } = require('../../src/practice/singlyLinkedListPractice');
+const { DoublyLinkedListPractice } = require('../../src/practice/doublyLinkedListPractice');
+const { TreeTraversalsPractice } = require('../../src/practice/treeTraversalsPractice');
+const { SeparateChainingPractice } = require('../../src/practice/separateChainingPractice');
+const { OpenAddressingPractice } = require('../../src/practice/openAddressingPractice');
+const { suffixArray } = require('../../src/practice/suffixArrayPractice');
+const { TreapPractice } = require('../../src/practice/treapPractice');
 
 const tools = path.join(__dirname, '../../../tools');
 
@@ -474,6 +481,98 @@ describe('practice shared goldens', () => {
         expect(tree.search(key)).toBe(value);
       }
       expect(tree.search(row.searchMiss)).toBeNull();
+    }
+  });
+
+  test('singly linked list practice', () => {
+    for (const row of cases('singly-linked-list-goldens.json')) {
+      const list = new SinglyLinkedListPractice();
+      const addLast = row.addLast ?? [];
+      if (addLast.length === 0) {
+        expect(list.size()).toBe(0);
+        continue;
+      }
+      for (const n of addLast) list.addLast(n);
+      expect(list.get(row.getIndex)).toBe(row.getValue);
+      expect(list.remove(row.removeIndex)).toBe(row.removeValue);
+      expect(list.size()).toBe(row.sizeAfter);
+    }
+  });
+
+  test('doubly linked list practice', () => {
+    for (const row of cases('doubly-linked-list-goldens.json')) {
+      const list = new DoublyLinkedListPractice();
+      const addLast = row.addLast ?? [];
+      const addFirst = row.addFirst ?? [];
+      if (row.empty && addLast.length === 0 && addFirst.length === 0) {
+        expect(list.size()).toBe(0);
+        continue;
+      }
+      for (const n of addLast) list.addLast(n);
+      for (const n of addFirst) list.addFirst(n);
+      expect(list.get(row.getIndex)).toBe(row.getValue);
+      expect(list.remove(row.removeIndex)).toBe(row.removeValue);
+      expect(list.size()).toBe(row.sizeAfter);
+    }
+  });
+
+  test('tree traversals practice', () => {
+    for (const row of cases('tree-traversals-goldens.json')) {
+      const tree = new TreeTraversalsPractice();
+      for (const [key, value] of row.inserts ?? []) {
+        tree.insert(key, value);
+      }
+      expect(tree.inOrder()).toEqual(row.inOrder);
+      expect(tree.preOrder()).toEqual(row.preOrder);
+      expect(tree.postOrder()).toEqual(row.postOrder);
+    }
+  });
+
+  test('separate chaining practice', () => {
+    for (const row of cases('separate-chaining-goldens.json')) {
+      const table = new SeparateChainingPractice();
+      for (const op of row.ops ?? []) {
+        table.put(op[1], op[2]);
+      }
+      const expected = row.get.value;
+      if (expected == null) {
+        expect(table.get(row.get.key)).toBeNull();
+      } else {
+        expect(table.get(row.get.key)).toBe(expected);
+      }
+      if (row.getMissing) {
+        expect(table.get(row.getMissing.key)).toBeNull();
+      }
+    }
+  });
+
+  test('open addressing practice', () => {
+    for (const row of cases('open-addressing-goldens.json')) {
+      const table = new OpenAddressingPractice();
+      for (const op of row.ops ?? []) {
+        table.put(op[1], op[2]);
+      }
+      expect(table.get(row.get.key)).toBe(row.get.value);
+      expect(table.remove(row.remove.key)).toBe(row.remove.present);
+      expect(table.get(row.getAfterRemove.key)).toBeNull();
+    }
+  });
+
+  test('suffix array practice', () => {
+    for (const row of cases('suffix-array-goldens.json')) {
+      expect(suffixArray(row.s)).toEqual(row.sa);
+    }
+  });
+
+  test('treap practice', () => {
+    for (const row of cases('treap-goldens.json')) {
+      const treap = new TreapPractice(row.seed);
+      for (const [key, value] of row.inserts ?? []) {
+        treap.insert(key, value);
+      }
+      for (const { key, value } of row.searchResults ?? []) {
+        expect(treap.search(key)).toBe(value);
+      }
     }
   });
 });

@@ -765,6 +765,164 @@ class PracticeSharedGoldensTest {
     }
 
     @Test
+    void singlyLinkedListPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("singly-linked-list-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            SinglyLinkedListPractice list = new SinglyLinkedListPractice();
+            @SuppressWarnings("unchecked")
+            List<Number> addLast = (List<Number>) c.get("addLast");
+            if (addLast.isEmpty()) {
+                assertEquals(0, list.size());
+                continue;
+            }
+            for (Number n : addLast) {
+                list.addLast(n.intValue());
+            }
+            assertEquals(((Number) c.get("getValue")).intValue(), list.get(((Number) c.get("getIndex")).intValue()));
+            assertEquals(
+                    ((Number) c.get("removeValue")).intValue(),
+                    list.remove(((Number) c.get("removeIndex")).intValue()));
+            assertEquals(((Number) c.get("sizeAfter")).intValue(), list.size());
+        }
+    }
+
+    @Test
+    void doublyLinkedListPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("doubly-linked-list-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            DoublyLinkedListPractice list = new DoublyLinkedListPractice();
+            @SuppressWarnings("unchecked")
+            List<Number> addLast = (List<Number>) c.get("addLast");
+            @SuppressWarnings("unchecked")
+            List<Number> addFirst = (List<Number>) c.get("addFirst");
+            if (Boolean.TRUE.equals(c.get("empty")) && addLast.isEmpty() && addFirst.isEmpty()) {
+                assertEquals(0, list.size());
+                continue;
+            }
+            for (Number n : addLast) {
+                list.addLast(n.intValue());
+            }
+            for (Number n : addFirst) {
+                list.addFirst(n.intValue());
+            }
+            assertEquals(((Number) c.get("getValue")).intValue(), list.get(((Number) c.get("getIndex")).intValue()));
+            assertEquals(
+                    ((Number) c.get("removeValue")).intValue(),
+                    list.remove(((Number) c.get("removeIndex")).intValue()));
+            assertEquals(((Number) c.get("sizeAfter")).intValue(), list.size());
+        }
+    }
+
+    @Test
+    void treeTraversalsPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("tree-traversals-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            TreeTraversalsPractice tree = new TreeTraversalsPractice();
+            @SuppressWarnings("unchecked")
+            List<List<Object>> inserts = (List<List<Object>>) c.get("inserts");
+            for (List<Object> pair : inserts) {
+                tree.insert(((Number) pair.get(0)).intValue(), (String) pair.get(1));
+            }
+            assertEquals(
+                    ((List<?>) c.get("inOrder")).stream().map(v -> ((Number) v).intValue()).toList(),
+                    tree.inOrder());
+            assertEquals(
+                    ((List<?>) c.get("preOrder")).stream().map(v -> ((Number) v).intValue()).toList(),
+                    tree.preOrder());
+            assertEquals(
+                    ((List<?>) c.get("postOrder")).stream().map(v -> ((Number) v).intValue()).toList(),
+                    tree.postOrder());
+        }
+    }
+
+    @Test
+    void separateChainingPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("separate-chaining-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            SeparateChainingPractice table = new SeparateChainingPractice();
+            @SuppressWarnings("unchecked")
+            List<List<Object>> ops = (List<List<Object>>) c.get("ops");
+            for (List<Object> op : ops) {
+                table.put((String) op.get(1), ((Number) op.get(2)).intValue());
+            }
+            @SuppressWarnings("unchecked")
+            Map<String, Object> get = (Map<String, Object>) c.get("get");
+            Object expectedValue = get.get("value");
+            if (expectedValue == null) {
+                assertEquals(null, table.get((String) get.get("key")));
+            } else {
+                assertEquals(((Number) expectedValue).intValue(), table.get((String) get.get("key")));
+            }
+            if (c.get("getMissing") != null) {
+                @SuppressWarnings("unchecked")
+                Map<String, Object> missing = (Map<String, Object>) c.get("getMissing");
+                assertEquals(null, table.get((String) missing.get("key")));
+            }
+        }
+    }
+
+    @Test
+    void openAddressingPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("open-addressing-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            OpenAddressingPractice table = new OpenAddressingPractice();
+            @SuppressWarnings("unchecked")
+            List<List<Object>> ops = (List<List<Object>>) c.get("ops");
+            for (List<Object> op : ops) {
+                table.put(((Number) op.get(1)).intValue(), (String) op.get(2));
+            }
+            @SuppressWarnings("unchecked")
+            Map<String, Object> get = (Map<String, Object>) c.get("get");
+            assertEquals(get.get("value"), table.get(((Number) get.get("key")).intValue()));
+            @SuppressWarnings("unchecked")
+            Map<String, Object> remove = (Map<String, Object>) c.get("remove");
+            assertEquals((Boolean) remove.get("present"), table.remove(((Number) remove.get("key")).intValue()));
+            @SuppressWarnings("unchecked")
+            Map<String, Object> after = (Map<String, Object>) c.get("getAfterRemove");
+            assertEquals(null, table.get(((Number) after.get("key")).intValue()));
+        }
+    }
+
+    @Test
+    void suffixArrayPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("suffix-array-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            @SuppressWarnings("unchecked")
+            List<Object> expected = (List<Object>) c.get("sa");
+            int[] exp = expected.stream().mapToInt(n -> ((Number) n).intValue()).toArray();
+            assertArrayEquals(exp, SuffixArrayPractice.build((String) c.get("s")));
+        }
+    }
+
+    @Test
+    void treapPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("treap-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            long seed = ((Number) c.get("seed")).longValue();
+            TreapPractice treap = new TreapPractice(seed);
+            @SuppressWarnings("unchecked")
+            List<List<Object>> inserts = (List<List<Object>>) c.get("inserts");
+            for (List<Object> pair : inserts) {
+                treap.insert(((Number) pair.get(0)).intValue(), ((Number) pair.get(1)).intValue());
+            }
+            @SuppressWarnings("unchecked")
+            List<Map<String, Object>> searchResults = (List<Map<String, Object>>) c.get("searchResults");
+            for (Map<String, Object> row : searchResults) {
+                int key = ((Number) row.get("key")).intValue();
+                Object expected = row.get("value");
+                assertEquals(expected, treap.search(key));
+            }
+        }
+    }
+
+    @Test
     void bfsPracticeGoldens() throws Exception {
         List<Map<String, Object>> cases =
                 GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("practice-bfs-goldens.json")));

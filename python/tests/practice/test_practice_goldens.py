@@ -53,6 +53,13 @@ from dsa.practice.manacher_practice import longest_palindrome_len
 from dsa.practice.aho_corasick_practice import find_hits
 from dsa.practice.avl_tree_practice import AvlTreePractice
 from dsa.practice.red_black_tree_practice import RedBlackTreePractice
+from dsa.practice.singly_linked_list_practice import SinglyLinkedListPractice
+from dsa.practice.doubly_linked_list_practice import DoublyLinkedListPractice
+from dsa.practice.tree_traversals_practice import TreeTraversalsPractice
+from dsa.practice.separate_chaining_practice import SeparateChainingPractice
+from dsa.practice.open_addressing_practice import OpenAddressingPractice
+from dsa.practice.suffix_array_practice import suffix_array
+from dsa.practice.treap_practice import TreapPractice
 
 TOOLS = Path(__file__).resolve().parents[3] / "tools"
 
@@ -406,3 +413,82 @@ def test_red_black_tree_practice_goldens():
         for key, value in row.get("searches", []):
             assert tree.search(key) == value
         assert tree.search(row["searchMiss"]) is None
+
+
+def test_singly_linked_list_practice_goldens():
+    for row in _cases("singly-linked-list-goldens.json"):
+        lst = SinglyLinkedListPractice()
+        add_last = row.get("addLast", [])
+        if not add_last:
+            assert lst.size() == 0
+            continue
+        for n in add_last:
+            lst.add_last(n)
+        assert lst.get(row["getIndex"]) == row["getValue"]
+        assert lst.remove(row["removeIndex"]) == row["removeValue"]
+        assert lst.size() == row["sizeAfter"]
+
+
+def test_doubly_linked_list_practice_goldens():
+    for row in _cases("doubly-linked-list-goldens.json"):
+        lst = DoublyLinkedListPractice()
+        add_last = row.get("addLast", [])
+        add_first = row.get("addFirst", [])
+        if row.get("empty") and not add_last and not add_first:
+            assert lst.size() == 0
+            continue
+        for n in add_last:
+            lst.add_last(n)
+        for n in add_first:
+            lst.add_first(n)
+        assert lst.get(row["getIndex"]) == row["getValue"]
+        assert lst.remove(row["removeIndex"]) == row["removeValue"]
+        assert lst.size() == row["sizeAfter"]
+
+
+def test_tree_traversals_practice_goldens():
+    for row in _cases("tree-traversals-goldens.json"):
+        tree = TreeTraversalsPractice()
+        for key, value in row.get("inserts", []):
+            tree.insert(key, value)
+        assert tree.in_order() == row["inOrder"]
+        assert tree.pre_order() == row["preOrder"]
+        assert tree.post_order() == row["postOrder"]
+
+
+def test_separate_chaining_practice_goldens():
+    for row in _cases("separate-chaining-goldens.json"):
+        table = SeparateChainingPractice()
+        for op in row.get("ops", []):
+            table.put(op[1], op[2])
+        expected = row["get"]["value"]
+        if expected is None:
+            assert table.get(row["get"]["key"]) is None
+        else:
+            assert table.get(row["get"]["key"]) == expected
+        if row.get("getMissing"):
+            assert table.get(row["getMissing"]["key"]) is None
+
+
+def test_open_addressing_practice_goldens():
+    for row in _cases("open-addressing-goldens.json"):
+        table = OpenAddressingPractice()
+        for op in row.get("ops", []):
+            table.put(op[1], op[2])
+        assert table.get(row["get"]["key"]) == row["get"]["value"]
+        assert table.remove(row["remove"]["key"]) == row["remove"]["present"]
+        assert table.get(row["getAfterRemove"]["key"]) is None
+
+
+def test_suffix_array_practice_goldens():
+    for row in _cases("suffix-array-goldens.json"):
+        assert suffix_array(row["s"]) == row["sa"]
+
+
+def test_treap_practice_goldens():
+    for row in _cases("treap-goldens.json"):
+        treap = TreapPractice(row["seed"])
+        for key, value in row.get("inserts", []):
+            treap.insert(key, value)
+        for result in row.get("searchResults", []):
+            assert treap.search(result["key"]) == result["value"]

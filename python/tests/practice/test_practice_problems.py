@@ -68,6 +68,13 @@ from dsa.practice.manacher_practice import longest_palindrome_len
 from dsa.practice.aho_corasick_practice import find_hits
 from dsa.practice.avl_tree_practice import AvlTreePractice
 from dsa.practice.red_black_tree_practice import RedBlackTreePractice
+from dsa.practice.singly_linked_list_practice import SinglyLinkedListPractice
+from dsa.practice.doubly_linked_list_practice import DoublyLinkedListPractice
+from dsa.practice.tree_traversals_practice import TreeTraversalsPractice
+from dsa.practice.separate_chaining_practice import SeparateChainingPractice
+from dsa.practice.open_addressing_practice import OpenAddressingPractice
+from dsa.practice.suffix_array_practice import suffix_array
+from dsa.practice.treap_practice import TreapPractice
 
 
 def test_two_sum_sorted():
@@ -409,3 +416,46 @@ def test_red_black_tree_practice():
     tree = RedBlackTreePractice()
     tree.insert(1, 10)
     assert tree.search(1) == 10
+
+
+def test_singly_linked_list_practice():
+    lst = SinglyLinkedListPractice()
+    lst.add_last(2)
+    lst.add_last(3)
+    assert lst.get(1) == 3
+
+
+def test_doubly_linked_list_practice():
+    lst = DoublyLinkedListPractice()
+    lst.add_last(2)
+    lst.add_first(1)
+    assert lst.get(1) == 2
+
+
+def test_tree_traversals_practice():
+    tree = TreeTraversalsPractice()
+    tree.insert(2, "b")
+    tree.insert(1, "a")
+    assert tree.in_order() == [1, 2]
+
+
+def test_separate_chaining_practice():
+    table = SeparateChainingPractice()
+    table.put("a", 1)
+    assert table.get("a") == 1
+
+
+def test_open_addressing_practice():
+    table = OpenAddressingPractice()
+    table.put(1, "one")
+    assert table.get(1) == "one"
+
+
+def test_suffix_array_practice():
+    assert suffix_array("banana") == [5, 3, 1, 0, 4, 2]
+
+
+def test_treap_practice():
+    treap = TreapPractice(0)
+    treap.insert(3, 30)
+    assert treap.search(3) == 30

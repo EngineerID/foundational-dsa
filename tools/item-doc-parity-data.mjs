@@ -213,4 +213,11 @@ export const WORKED_EXAMPLES = {
   'aho-corasick': { anchor: 'aho-corasick-multi-pattern-hits', detailed: true },
   'avl-tree': { anchor: 'avl-tree-insert-and-search', detailed: true },
   'red-black-tree': { anchor: 'red-black-tree-insert-and-search', detailed: true },
+  'singly-linked-list': { anchor: 'singly-linked-list-add-get-remove', detailed: true },
+  'doubly-linked-list': { anchor: 'doubly-linked-list-add-first-and-last', detailed: true },
+  'tree-traversals': { anchor: 'tree-traversals-bst-key-orders', detailed: true },
+  'separate-chaining': { anchor: 'separate-chaining-hash-map', detailed: true },
+  'open-addressing': { anchor: 'open-addressing-hash-map', detailed: true },
+  'suffix-array': { anchor: 'suffix-array-sorted-indices', detailed: true },
+  treap: { anchor: 'treap-seeded-insert-and-search', detailed: true },
 };

@@ -1059,6 +1059,62 @@ Insert keys **1, 2, 5, 7** with paired values; all searches hit; **`search(9)`**
 
 `npm run demo -- red-black-tree`
 
+## Singly linked list (add, get, remove)
+
+**Ops:** `addLast(2,3,4)` → `get(1)` = **3** → `remove(0)` returns **2** → size **2** (see `singly-linked-list-goldens.json`).
+
+**API:** `addLast`, `get`, `remove`, `size` (see [singly-linked-list](items/linear/singly-linked-list.md)).
+
+`npm run demo -- singly-linked-list`
+
+## Doubly linked list (add first and last)
+
+**Ops:** `addLast(2,3,4)`, `addFirst(1)` → in-order index **2** is **3**; remove index **0** drops **1** (see `doubly-linked-list-goldens.json`).
+
+**API:** `addFirst`, `addLast`, `get`, `remove` (see [doubly-linked-list](items/linear/doubly-linked-list.md)).
+
+`npm run demo -- doubly-linked-list`
+
+## Tree traversals (BST key orders)
+
+Insert keys **5, 2, 7, 1** into a BST → **in-order** `[1,2,5,7]`, **pre-order** `[5,2,1,7]`, **post-order** `[1,2,7,5]` (`tree-traversals-goldens.json`).
+
+**API:** recursive traversals on `BST` root (see [tree-traversals](items/trees/tree-traversals.md)).
+
+`npm run demo -- tree-traversals`
+
+## Separate chaining hash map
+
+**Ops:** `put("a",1)`, `put("b",2)`, `put("a",3)` → `get("a")` = **3**; missing key → **null** (`separate-chaining-goldens.json`).
+
+**API:** `put`, `get` on `HashTableChaining` (see [separate-chaining](items/hashing/separate-chaining.md)).
+
+`npm run demo -- separate-chaining`
+
+## Open addressing hash map
+
+**Ops:** `put(1,"one")`, `put(2,"two")`, update `put(1,"ONE")` → `get(1)` = **`"ONE"`**; `remove(2)` then `get(2)` = **null** (`open-addressing-goldens.json`, linear probing).
+
+**API:** `put`, `get`, `remove` (see [open-addressing](items/hashing/open-addressing.md)).
+
+`npm run demo -- open-addressing`
+
+## Suffix array (sorted indices)
+
+**Input:** `"banana"` → suffix array **`[5, 3, 1, 0, 4, 2]`** (lexicographic order of suffixes).
+
+**API:** `build(s)` (see [suffix-array](items/strings/suffix-array.md)).
+
+`npm run demo -- suffix-array`
+
+## Treap (seeded insert and search)
+
+**Seed 0**, inserts `(3,30)`, `(1,10)`, `(5,50)`, overwrite `(1,99)` → searches hit **30**, **99**, **50**; key **9** → **null** (`treap-goldens.json`).
+
+**API:** `Treap(seed)`, `insert`, `search` (see [treap](items/trees/treap.md)).
+
+`npm run demo -- treap`
+
 ## Topic index
 
 One-line walkthroughs for every catalog topic. Step tables above cover interview-heavy patterns (search, graphs, DP, caches, strings).
@@ -1161,13 +1217,13 @@ See the [detailed walkthrough](#dynamic-array-append-and-get) above.
 
 ### singly-linked-list
 
-Singly linked list with head insertion and traversal.
+See the [detailed walkthrough](#singly-linked-list-add-get-remove) above.
 
 `npm run demo -- singly-linked-list`
 
 ### doubly-linked-list
 
-Doubly linked list supporting O(1) removal given a node reference.
+See the [detailed walkthrough](#doubly-linked-list-add-first-and-last) above.
 
 `npm run demo -- doubly-linked-list`
 
@@ -1221,7 +1277,7 @@ See the [detailed walkthrough](#bst-search-and-in-order-walk) above.
 
 ### tree-traversals
 
-In-order, pre-order, post-order, and level-order tree walks.
+See the [detailed walkthrough](#tree-traversals-bst-key-orders) above.
 
 `npm run demo -- tree-traversals`
 
@@ -1335,13 +1391,13 @@ See the [detailed walkthrough](#maximum-subarray-kadane) above.
 
 ### separate-chaining
 
-Hash map with linked-list buckets and load-factor resize.
+See the [detailed walkthrough](#separate-chaining-hash-map) above.
 
 `npm run demo -- separate-chaining`
 
 ### open-addressing
 
-Hash map with probing collision resolution and tombstones.
+See the [detailed walkthrough](#open-addressing-hash-map) above.
 
 `npm run demo -- open-addressing`
 
@@ -1497,7 +1553,7 @@ Lowest common ancestor on a rooted tree.
 
 ### treap
 
-Randomized BST via heap priorities on keys.
+See the [detailed walkthrough](#treap-seeded-insert-and-search) above.
 
 `npm run demo -- treap`
 
@@ -1515,7 +1571,7 @@ See the [detailed walkthrough](#manacher-longest-palindrome-length) above.
 
 ### suffix-array
 
-Lexicographically sorted suffix starting indices.
+See the [detailed walkthrough](#suffix-array-sorted-indices) above.
 
 `npm run demo -- suffix-array`
 

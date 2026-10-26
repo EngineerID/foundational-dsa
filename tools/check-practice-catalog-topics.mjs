@@ -73,6 +73,13 @@ export const PRACTICE_TOPIC_TARGET = [
   'aho-corasick',
   'avl-tree',
   'red-black-tree',
+  'singly-linked-list',
+  'doubly-linked-list',
+  'tree-traversals',
+  'separate-chaining',
+  'open-addressing',
+  'suffix-array',
+  'treap',
 ];
 
 const itemIds = new Set(ITEMS.map((i) => i.id));

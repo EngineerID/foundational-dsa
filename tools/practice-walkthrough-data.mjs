@@ -81,6 +81,13 @@ export const PRACTICE_PROBLEMS = [
   { n: 66, docAnchor: '66-aho-corasick', walkthroughSlug: 'aho-corasick-multi-pattern-hits', catalogTopic: 'aho-corasick' },
   { n: 67, docAnchor: '67-avl-tree', walkthroughSlug: 'avl-tree-insert-and-search', catalogTopic: 'avl-tree' },
   { n: 68, docAnchor: '68-red-black-tree', walkthroughSlug: 'red-black-tree-insert-and-search', catalogTopic: 'red-black-tree' },
+  { n: 69, docAnchor: '69-singly-linked-list', walkthroughSlug: 'singly-linked-list-add-get-remove', catalogTopic: 'singly-linked-list' },
+  { n: 70, docAnchor: '70-doubly-linked-list', walkthroughSlug: 'doubly-linked-list-add-first-and-last', catalogTopic: 'doubly-linked-list' },
+  { n: 71, docAnchor: '71-tree-traversals', walkthroughSlug: 'tree-traversals-bst-key-orders', catalogTopic: 'tree-traversals' },
+  { n: 72, docAnchor: '72-separate-chaining', walkthroughSlug: 'separate-chaining-hash-map', catalogTopic: 'separate-chaining' },
+  { n: 73, docAnchor: '73-open-addressing', walkthroughSlug: 'open-addressing-hash-map', catalogTopic: 'open-addressing' },
+  { n: 74, docAnchor: '74-suffix-array', walkthroughSlug: 'suffix-array-sorted-indices', catalogTopic: 'suffix-array' },
+  { n: 75, docAnchor: '75-treap', walkthroughSlug: 'treap-seeded-insert-and-search', catalogTopic: 'treap' },
 ];
 
 export const PRACTICE_DOC_ANCHORS = PRACTICE_PROBLEMS.map((p) => p.docAnchor);

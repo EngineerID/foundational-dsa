@@ -1,6 +1,6 @@
 # Practice problems (trilingual solutions)
 
-Sixty-eight interview-style problems with reference solutions in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`. Each problem below links to a step-table **[worked example](worked-examples.md)** (CI: `npm run check:practice-walkthrough`).
+Seventy-five interview-style problems with reference solutions in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`. Each problem below links to a step-table **[worked example](worked-examples.md)** (CI: `npm run check:practice-walkthrough`).
 
 | # | Problem | Signals | Catalog topics |
 |---|---------|---------|----------------|
@@ -72,6 +72,13 @@ Sixty-eight interview-style problems with reference solutions in Java, Python, a
 | 66 | [Aho-Corasick hits](#66-aho-corasick) | Multi-pattern scan | `aho-corasick` |
 | 67 | [AVL tree](#67-avl-tree) | Balanced BST insert/search | `avl-tree` |
 | 68 | [Red-black tree](#68-red-black-tree) | RB insert/search | `red-black-tree` |
+| 69 | [Singly linked list](#69-singly-linked-list) | addLast / get / remove | `singly-linked-list` |
+| 70 | [Doubly linked list](#70-doubly-linked-list) | addFirst / addLast | `doubly-linked-list` |
+| 71 | [Tree traversals](#71-tree-traversals) | in/pre/post-order keys | `tree-traversals` |
+| 72 | [Separate chaining](#72-separate-chaining) | Chained hash put/get | `separate-chaining` |
+| 73 | [Open addressing](#73-open-addressing) | Linear probing map | `open-addressing` |
+| 74 | [Suffix array](#74-suffix-array) | Sorted suffix indices | `suffix-array` |
+| 75 | [Treap](#75-treap) | Seeded insert/search | `treap` |
 
 Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --testPathPattern=practice`, Java `PracticeProblemsTest`.
 
@@ -620,3 +627,59 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 **Implementation:** `practice/red_black_tree*` / `redBlackTreePractice*` — catalog [`red-black-tree`](items/trees/red-black-tree.md): `npm run demo -- red-black-tree`.
 
 **Walkthrough:** [Worked examples — Red-black tree](worked-examples.md#red-black-tree-insert-and-search).
+
+## 69. Singly linked list
+
+**Statement:** Build a singly linked list with `addLast`, indexed `get`, and `remove`; match golden size and values.
+
+**Implementation:** `practice/singly_linked_list*` / `singlyLinkedListPractice*` — catalog [`singly-linked-list`](items/linear/singly-linked-list.md): `npm run demo -- singly-linked-list`.
+
+**Walkthrough:** [Worked examples — Singly linked list](worked-examples.md#singly-linked-list-add-get-remove).
+
+## 70. Doubly linked list
+
+**Statement:** Build a doubly linked list with `addFirst`/`addLast`, indexed access, and removal.
+
+**Implementation:** `practice/doubly_linked_list*` / `doublyLinkedListPractice*` — catalog [`doubly-linked-list`](items/linear/doubly-linked-list.md): `npm run demo -- doubly-linked-list`.
+
+**Walkthrough:** [Worked examples — Doubly linked list](worked-examples.md#doubly-linked-list-add-first-and-last).
+
+## 71. Tree traversals
+
+**Statement:** Insert into a BST and return in-order, pre-order, and post-order key lists.
+
+**Implementation:** `practice/tree_traversals*` / `treeTraversalsPractice*` — catalog [`tree-traversals`](items/trees/tree-traversals.md): `npm run demo -- tree-traversals`.
+
+**Walkthrough:** [Worked examples — Tree traversals](worked-examples.md#tree-traversals-bst-key-orders).
+
+## 72. Separate chaining
+
+**Statement:** Apply `put` operations on a chained hash table and verify `get` / missing keys.
+
+**Implementation:** `practice/separate_chaining*` / `separateChainingPractice*` — catalog [`separate-chaining`](items/hashing/separate-chaining.md): `npm run demo -- separate-chaining`.
+
+**Walkthrough:** [Worked examples — Separate chaining](worked-examples.md#separate-chaining-hash-map).
+
+## 73. Open addressing
+
+**Statement:** Linear-probing hash table: `put`, `get`, `remove`, and lookup after delete.
+
+**Implementation:** `practice/open_addressing*` / `openAddressingPractice*` — catalog [`open-addressing`](items/hashing/open-addressing.md): `npm run demo -- open-addressing`.
+
+**Walkthrough:** [Worked examples — Open addressing](worked-examples.md#open-addressing-hash-map).
+
+## 74. Suffix array
+
+**Statement:** Return the suffix-array (sorted starting indices) for a string.
+
+**Implementation:** `practice/suffix_array*` / `suffixArrayPractice*` — catalog [`suffix-array`](items/strings/suffix-array.md): `npm run demo -- suffix-array`.
+
+**Walkthrough:** [Worked examples — Suffix array](worked-examples.md#suffix-array-sorted-indices).
+
+## 75. Treap
+
+**Statement:** With a fixed RNG seed, insert key/value pairs and search (including misses).
+
+**Implementation:** `practice/treap*` / `treapPractice*` — catalog [`treap`](items/trees/treap.md): `npm run demo -- treap`.
+
+**Walkthrough:** [Worked examples — Treap](worked-examples.md#treap-seeded-insert-and-search).

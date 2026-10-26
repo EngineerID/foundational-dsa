@@ -68,6 +68,13 @@ const { longestPalindromeLength } = require('../../src/practice/manacherPractice
 const { findHits } = require('../../src/practice/ahoCorasickPractice');
 const { AvlTreePractice } = require('../../src/practice/avlTreePractice');
 const { RedBlackTreePractice } = require('../../src/practice/redBlackTreePractice');
+const { SinglyLinkedListPractice } = require('../../src/practice/singlyLinkedListPractice');
+const { DoublyLinkedListPractice } = require('../../src/practice/doublyLinkedListPractice');
+const { TreeTraversalsPractice } = require('../../src/practice/treeTraversalsPractice');
+const { SeparateChainingPractice } = require('../../src/practice/separateChainingPractice');
+const { OpenAddressingPractice } = require('../../src/practice/openAddressingPractice');
+const { suffixArray } = require('../../src/practice/suffixArrayPractice');
+const { TreapPractice } = require('../../src/practice/treapPractice');
 
 describe('practice problems', () => {
   test('two sum sorted', () => {
@@ -533,5 +540,48 @@ describe('practice problems', () => {
     const tree = new RedBlackTreePractice();
     tree.insert(1, 10);
     expect(tree.search(1)).toBe(10);
+  });
+
+  test('singly linked list practice', () => {
+    const list = new SinglyLinkedListPractice();
+    list.addLast(2);
+    list.addLast(3);
+    expect(list.get(1)).toBe(3);
+  });
+
+  test('doubly linked list practice', () => {
+    const list = new DoublyLinkedListPractice();
+    list.addLast(2);
+    list.addFirst(1);
+    expect(list.get(1)).toBe(2);
+  });
+
+  test('tree traversals practice', () => {
+    const tree = new TreeTraversalsPractice();
+    tree.insert(2, 'b');
+    tree.insert(1, 'a');
+    expect(tree.inOrder()).toEqual([1, 2]);
+  });
+
+  test('separate chaining practice', () => {
+    const table = new SeparateChainingPractice();
+    table.put('a', 1);
+    expect(table.get('a')).toBe(1);
+  });
+
+  test('open addressing practice', () => {
+    const table = new OpenAddressingPractice();
+    table.put(1, 'one');
+    expect(table.get(1)).toBe('one');
+  });
+
+  test('suffix array practice', () => {
+    expect(suffixArray('banana')).toEqual([5, 3, 1, 0, 4, 2]);
+  });
+
+  test('treap practice', () => {
+    const treap = new TreapPractice(0);
+    treap.insert(3, 30);
+    expect(treap.search(3)).toBe(30);
   });
 });
