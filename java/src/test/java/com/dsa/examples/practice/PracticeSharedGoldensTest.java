@@ -11,6 +11,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /** Practice implementations vs shared catalog golden JSON (plus practice-bfs-goldens). */
@@ -188,6 +189,111 @@ class PracticeSharedGoldensTest {
     }
 
     @Test
+    void priorityQueuePracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("priority-queue-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            int[] inserts = GoldenIntArrays.parse(c.get("inserts"));
+            assertArrayEquals(
+                    GoldenIntArrays.parse(c.get("extractOrder")), PriorityQueuePractice.extractOrder(inserts));
+        }
+    }
+
+    @Test
+    void monotonicStackPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("monotonic-stack-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            int[] nums = GoldenIntArrays.parse(c.get("nums"));
+            if (Boolean.TRUE.equals(c.get("expectError"))) {
+                assertThrows(IllegalArgumentException.class, () -> MonotonicStackPractice.nextGreater(nums));
+            } else {
+                assertArrayEquals(GoldenIntArrays.parse(c.get("expected")), MonotonicStackPractice.nextGreater(nums));
+            }
+        }
+    }
+
+    @Test
+    void quickSortPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("quick-sort-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            int[] input = GoldenIntArrays.parse(c.get("input"));
+            boolean threeWay = "sort3Way".equals(c.get("mode"));
+            assertArrayEquals(GoldenIntArrays.parse(c.get("expected")), QuickSortPractice.sort(input, threeWay));
+        }
+    }
+
+    @Test
+    void bstPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("bst-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            BstPractice tree = new BstPractice();
+            @SuppressWarnings("unchecked")
+            List<List<Object>> inserts = (List<List<Object>>) c.get("inserts");
+            for (List<Object> pair : inserts) {
+                tree.insert(((Number) pair.get(0)).intValue(), (String) pair.get(1));
+            }
+            assertEquals(
+                    ((List<?>) c.get("inOrderKeys"))
+                            .stream()
+                            .map(v -> ((Number) v).intValue())
+                            .toList(),
+                    tree.inOrderKeys());
+            assertEquals(c.get("searchValue"), tree.search(((Number) c.get("searchKey")).intValue()));
+        }
+    }
+
+    @Test
+    void primMstPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("mst-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            int n = ((Number) c.get("n")).intValue();
+            int[][] edges = parseWeightedEdges(c.get("edges"));
+            assertEquals(((Number) c.get("primWeight")).intValue(), PrimMstPractice.totalWeight(n, edges));
+        }
+    }
+
+    @Test
+    void stackPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("stack-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            StackPractice stack = new StackPractice();
+            @SuppressWarnings("unchecked")
+            List<Number> push = (List<Number>) c.get("push");
+            for (Number n : push) {
+                stack.push(n.intValue());
+            }
+            @SuppressWarnings("unchecked")
+            List<Number> popValues = (List<Number>) c.get("popValues");
+            for (Number expected : popValues) {
+                assertEquals(expected.intValue(), stack.pop());
+            }
+            Object peek = c.get("peek");
+            if (peek == null || Boolean.TRUE.equals(c.get("empty"))) {
+                assertTrue(stack.isEmpty());
+                assertThrows(IllegalStateException.class, stack::peek);
+            } else {
+                assertEquals(((Number) peek).intValue(), stack.peek());
+            }
+        }
+    }
+
+    @Test
+    void heapSortPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("heapsort-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            assertArrayEquals(
+                    GoldenIntArrays.parse(c.get("sorted")),
+                    HeapSortPractice.sort(GoldenIntArrays.parse(c.get("input"))));
+        }
+    }
+
+    @Test
     void bfsPracticeGoldens() throws Exception {
         List<Map<String, Object>> cases =
                 GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("practice-bfs-goldens.json")));
@@ -198,6 +304,19 @@ class PracticeSharedGoldensTest {
             int[] expected = GoldenIntArrays.parse(c.get("expected"));
             assertArrayEquals(expected, BfsPractice.distances(n, edges, source));
         }
+    }
+
+    @SuppressWarnings("unchecked")
+    private static int[][] parseWeightedEdges(Object raw) {
+        List<Object> rows = (List<Object>) raw;
+        int[][] out = new int[rows.size()][3];
+        for (int i = 0; i < rows.size(); i++) {
+            List<Object> e = (List<Object>) rows.get(i);
+            out[i][0] = ((Number) e.get(0)).intValue();
+            out[i][1] = ((Number) e.get(1)).intValue();
+            out[i][2] = ((Number) e.get(2)).intValue();
+        }
+        return out;
     }
 
     @SuppressWarnings("unchecked")

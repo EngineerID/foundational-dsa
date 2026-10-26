@@ -14,6 +14,13 @@ const { traverse: dfsTraverse } = require('../../src/practice/dfsPractice');
 const { lisLength } = require('../../src/practice/lisPractice');
 const { mergeSort } = require('../../src/practice/mergeSortPractice');
 const { topologicalOrder } = require('../../src/practice/topologicalSortPractice');
+const { extractOrder: pqExtractOrder } = require('../../src/practice/priorityQueuePractice');
+const { nextGreater } = require('../../src/practice/monotonicStackPractice');
+const { quickSort } = require('../../src/practice/quickSortPractice');
+const { BstPractice } = require('../../src/practice/bstPractice');
+const { mstTotalWeight: primMstTotalWeight } = require('../../src/practice/primMstPractice');
+const { StackPractice } = require('../../src/practice/stackPractice');
+const { heapSort } = require('../../src/practice/heapsortPractice');
 
 const tools = path.join(__dirname, '../../../tools');
 
@@ -111,6 +118,69 @@ describe('practice shared goldens', () => {
   test('topological sort practice', () => {
     for (const row of cases('topological-sort-goldens.json')) {
       expect(topologicalOrder(row.n, row.edges)).toEqual(row.expectedOrder);
+    }
+  });
+
+  test('priority queue practice', () => {
+    for (const row of cases('priority-queue-goldens.json')) {
+      expect(pqExtractOrder(row.inserts)).toEqual(row.extractOrder);
+    }
+  });
+
+  test('monotonic stack practice', () => {
+    for (const row of cases('monotonic-stack-goldens.json')) {
+      if (row.expectError) {
+        expect(() => nextGreater(row.nums)).toThrow();
+      } else {
+        expect(nextGreater(row.nums)).toEqual(row.expected);
+      }
+    }
+  });
+
+  test('quick sort practice', () => {
+    for (const row of cases('quick-sort-goldens.json')) {
+      expect(quickSort(row.input, row.mode === 'sort3Way')).toEqual(row.expected);
+    }
+  });
+
+  test('BST practice', () => {
+    for (const row of cases('bst-goldens.json')) {
+      const tree = new BstPractice();
+      for (const [key, value] of row.inserts ?? []) {
+        tree.insert(key, value);
+      }
+      expect(tree.inOrderKeys()).toEqual(row.inOrderKeys);
+      expect(tree.search(row.searchKey)).toBe(row.searchValue);
+    }
+  });
+
+  test('Prim MST practice', () => {
+    for (const row of cases('mst-goldens.json')) {
+      expect(primMstTotalWeight(row.n, row.edges)).toBe(row.primWeight);
+    }
+  });
+
+  test('stack practice', () => {
+    for (const row of cases('stack-goldens.json')) {
+      const stack = new StackPractice();
+      for (const v of row.push ?? []) {
+        stack.push(v);
+      }
+      for (const expected of row.popValues ?? []) {
+        expect(stack.pop()).toBe(expected);
+      }
+      if (row.peek == null || row.empty) {
+        expect(stack.isEmpty()).toBe(true);
+        expect(() => stack.peek()).toThrow();
+      } else {
+        expect(stack.peek()).toBe(row.peek);
+      }
+    }
+  });
+
+  test('heapsort practice', () => {
+    for (const row of cases('heapsort-goldens.json')) {
+      expect(heapSort(row.input)).toEqual(row.sorted);
     }
   });
 });

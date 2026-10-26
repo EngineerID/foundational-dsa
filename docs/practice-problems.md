@@ -1,6 +1,6 @@
 # Practice problems (trilingual solutions)
 
-Thirty-three interview-style problems with reference solutions in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`. Each problem below links to a step-table **[worked example](worked-examples.md)** (CI: `npm run check:practice-walkthrough`).
+Forty interview-style problems with reference solutions in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`. Each problem below links to a step-table **[worked example](worked-examples.md)** (CI: `npm run check:practice-walkthrough`).
 
 | # | Problem | Signals | Catalog topics |
 |---|---------|---------|----------------|
@@ -37,6 +37,13 @@ Thirty-three interview-style problems with reference solutions in Java, Python, 
 | 31 | [Longest increasing subsequence](#31-longest-increasing-subsequence) | Patience / DP | `lis` |
 | 32 | [Merge sort](#32-merge-sort) | Stable sort copy | `merge-sort` |
 | 33 | [Topological sort](#33-topological-sort) | DAG ordering | `topological-sort` |
+| 34 | [Priority queue scheduling](#34-priority-queue-scheduling) | Min-priority drain | `priority-queue` |
+| 35 | [Next greater element](#35-next-greater-element) | Monotonic stack | `monotonic-stack` |
+| 36 | [Quicksort](#36-quicksort) | In-place partition sort | `quick-sort` |
+| 37 | [Binary search tree](#37-binary-search-tree) | Insert / search / in-order | `bst` |
+| 38 | [Prim MST weight](#38-prim-mst-weight) | Greedy MST | `prim-mst` |
+| 39 | [Stack operations](#39-stack-operations) | LIFO push/pop/peek | `stack` |
+| 40 | [Heapsort](#40-heapsort) | In-place heap sort | `heapsort` |
 
 Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --testPathPattern=practice`, Java `PracticeProblemsTest`.
 
@@ -305,3 +312,59 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 **Implementation:** `practice/topological_sort*` / `topologicalSortPractice*` — catalog [`topological-sort`](items/graphs/topological-sort.md): `npm run demo -- topological-sort`.
 
 **Walkthrough:** [Worked examples — Topological sort](worked-examples.md#topological-sort-kahn-course-schedule).
+
+## 34. Priority queue scheduling
+
+**Statement:** Insert priorities into a min-priority queue and return them in nondecreasing order by repeatedly extracting the minimum.
+
+**Implementation:** `practice/priority_queue*` / `priorityQueuePractice*` — catalog [`priority-queue`](items/heaps/priority-queue.md): `npm run demo -- priority-queue`.
+
+**Walkthrough:** [Worked examples — Priority queue](worked-examples.md#priority-queue-min-scheduling).
+
+## 35. Next greater element
+
+**Statement:** For each index `i`, return the next strictly greater value to the right of `nums[i]`, or **-1** if none exists.
+
+**Implementation:** `practice/monotonic_stack*` / `monotonicStackPractice*` — catalog [`monotonic-stack`](items/linear/monotonic-stack.md): `npm run demo -- monotonic-stack`.
+
+**Walkthrough:** [Topic index — monotonic stack](worked-examples.md#monotonic-stack).
+
+## 36. Quicksort
+
+**Statement:** Return a sorted copy of the input array using in-place quicksort (standard or 3-way partition when duplicates dominate).
+
+**Implementation:** `practice/quick_sort*` / `quickSortPractice*` — catalog [`quick-sort`](items/sorting/quick-sort.md): `npm run demo -- quick-sort`.
+
+**Walkthrough:** [Topic index — quick sort](worked-examples.md#quick-sort) (see also [merge sort walkthrough](worked-examples.md#merge-sort-top-down)).
+
+## 37. Binary search tree
+
+**Statement:** Implement a BST with `insert(key, value)`, `search(key)`, and in-order key traversal.
+
+**Implementation:** `practice/bst*` / `bstPractice*` — catalog [`bst`](items/trees/bst.md): `npm run demo -- bst`.
+
+**Walkthrough:** [Worked examples — BST](worked-examples.md#bst-search-and-in-order-walk).
+
+## 38. Prim MST weight
+
+**Statement:** Given `n` vertices and undirected weighted edges `[u, v, w]`, return the total weight of the minimum spanning tree (assume connected).
+
+**Implementation:** `practice/prim_mst*` / `primMstPractice*` — catalog [`prim-mst`](items/graphs/prim-mst.md): `npm run demo -- prim-mst`.
+
+**Walkthrough:** [Worked examples — Kruskal MST](worked-examples.md#kruskal-mst-union-find) (same MST shape; see also [Prim topic](worked-examples.md#prim-mst)).
+
+## 39. Stack operations
+
+**Statement:** Implement a LIFO stack with `push`, `pop`, and `peek` (error on empty pop/peek).
+
+**Implementation:** `practice/stack*` / `stackPractice*` — catalog [`stack`](items/linear/stack.md): `npm run demo -- stack`.
+
+**Walkthrough:** [Worked examples — Valid parentheses (stack)](worked-examples.md#valid-parentheses-stack).
+
+## 40. Heapsort
+
+**Statement:** Return a sorted copy of the input using in-place heapsort on a clone.
+
+**Implementation:** `practice/heapsort*` / `heapsortPractice*` — catalog [`heapsort`](items/sorting/heapsort.md): `npm run demo -- heapsort`.
+
+**Walkthrough:** [Worked examples — Binary min-heap](worked-examples.md#binary-min-heap-insert-and-extract) (see also [heapsort topic](worked-examples.md#heapsort)).

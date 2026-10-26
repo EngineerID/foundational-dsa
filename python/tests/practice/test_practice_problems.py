@@ -31,6 +31,13 @@ from dsa.practice.dfs_practice import traverse as dfs_traverse
 from dsa.practice.lis_practice import length as lis_length
 from dsa.practice.merge_sort_practice import sort as merge_sort_practice
 from dsa.practice.topological_sort_practice import order as topo_order
+from dsa.practice.priority_queue_practice import extract_order as pq_extract_order
+from dsa.practice.monotonic_stack_practice import next_greater
+from dsa.practice.quick_sort_practice import sort_nums as quick_sort_practice
+from dsa.practice.bst_practice import BstPractice
+from dsa.practice.prim_mst_practice import mst_total_weight as prim_mst_total_weight
+from dsa.practice.stack_practice import StackPractice
+from dsa.practice.heapsort_practice import sort_nums as heapsort_practice
 
 
 def test_two_sum_sorted():
@@ -192,3 +199,41 @@ def test_merge_sort_practice():
 
 def test_topological_sort_practice():
     assert topo_order(4, [[0, 1], [0, 2], [1, 3]]) == [0, 1, 2, 3]
+
+
+def test_priority_queue_practice():
+    assert pq_extract_order([5, 3, 7, 1, 3]) == [1, 3, 3, 5, 7]
+
+
+def test_monotonic_stack_practice():
+    assert next_greater([2, 1, 2, 4, 3]) == [4, 2, 4, -1, -1]
+
+
+def test_quick_sort_practice():
+    assert quick_sort_practice([3, 1, 2]) == [1, 2, 3]
+
+
+def test_bst_practice():
+    tree = BstPractice()
+    tree.insert(5, "a")
+    tree.insert(2, "b")
+    tree.insert(7, "c")
+    assert tree.in_order_keys() == [2, 5, 7]
+    assert tree.search(2) == "b"
+
+
+def test_prim_mst_practice():
+    edges = [[0, 1, 1], [1, 2, 2], [2, 3, 3], [0, 3, 4]]
+    assert prim_mst_total_weight(4, edges) == 6
+
+
+def test_stack_practice():
+    s = StackPractice()
+    s.push(1)
+    s.push(2)
+    assert s.pop() == 2
+    assert s.peek() == 1
+
+
+def test_heapsort_practice():
+    assert heapsort_practice([5, 2, 8, 1, 2]) == [1, 2, 2, 5, 8]

@@ -235,4 +235,51 @@ class PracticeProblemsTest {
                 List.of(0, 1, 2, 3),
                 TopologicalSortPractice.order(4, new int[][] { { 0, 1 }, { 0, 2 }, { 1, 3 } }));
     }
+
+    @Test
+    void priorityQueuePractice() {
+        assertArrayEquals(new int[] { 1, 3, 3, 5, 7 }, PriorityQueuePractice.extractOrder(new int[] { 5, 3, 7, 1, 3 }));
+    }
+
+    @Test
+    void monotonicStackPractice() {
+        assertArrayEquals(new int[] { 4, 2, 4, -1, -1 }, MonotonicStackPractice.nextGreater(new int[] { 2, 1, 2, 4, 3 }));
+    }
+
+    @Test
+    void quickSortPractice() {
+        assertArrayEquals(new int[] { 1, 2, 3 }, QuickSortPractice.sort(new int[] { 3, 1, 2 }, false));
+    }
+
+    @Test
+    void bstPractice() {
+        BstPractice tree = new BstPractice();
+        tree.insert(5, "a");
+        tree.insert(2, "b");
+        tree.insert(7, "c");
+        assertEquals(List.of(2, 5, 7), tree.inOrderKeys());
+        assertEquals("b", tree.search(2));
+    }
+
+    @Test
+    void primMstPractice() {
+        assertEquals(
+                6,
+                PrimMstPractice.totalWeight(
+                        4, new int[][] { { 0, 1, 1 }, { 1, 2, 2 }, { 2, 3, 3 }, { 0, 3, 4 } }));
+    }
+
+    @Test
+    void stackPractice() {
+        StackPractice s = new StackPractice();
+        s.push(1);
+        s.push(2);
+        assertEquals(2, s.pop());
+        assertEquals(1, s.peek());
+    }
+
+    @Test
+    void heapSortPractice() {
+        assertArrayEquals(new int[] { 1, 2, 2, 5, 8 }, HeapSortPractice.sort(new int[] { 5, 2, 8, 1, 2 }));
+    }
 }

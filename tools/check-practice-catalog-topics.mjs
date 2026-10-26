@@ -38,6 +38,13 @@ export const PRACTICE_TOPIC_TARGET = [
   'lis',
   'merge-sort',
   'topological-sort',
+  'priority-queue',
+  'monotonic-stack',
+  'quick-sort',
+  'bst',
+  'prim-mst',
+  'stack',
+  'heapsort',
 ];
 
 const itemIds = new Set(ITEMS.map((i) => i.id));

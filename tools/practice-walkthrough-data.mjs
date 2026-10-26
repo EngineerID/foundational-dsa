@@ -46,6 +46,13 @@ export const PRACTICE_PROBLEMS = [
   { n: 31, docAnchor: '31-longest-increasing-subsequence', walkthroughSlug: 'longest-increasing-subsequence', catalogTopic: 'lis' },
   { n: 32, docAnchor: '32-merge-sort', walkthroughSlug: 'merge-sort-top-down', catalogTopic: 'merge-sort' },
   { n: 33, docAnchor: '33-topological-sort', walkthroughSlug: 'topological-sort-kahn-course-schedule', catalogTopic: 'topological-sort' },
+  { n: 34, docAnchor: '34-priority-queue-scheduling', walkthroughSlug: 'priority-queue-min-scheduling', catalogTopic: 'priority-queue' },
+  { n: 35, docAnchor: '35-next-greater-element', walkthroughSlug: 'monotonic-stack', catalogTopic: 'monotonic-stack' },
+  { n: 36, docAnchor: '36-quicksort', walkthroughSlug: 'quick-sort', catalogTopic: 'quick-sort' },
+  { n: 37, docAnchor: '37-binary-search-tree', walkthroughSlug: 'bst-search-and-in-order-walk', catalogTopic: 'bst' },
+  { n: 38, docAnchor: '38-prim-mst-weight', walkthroughSlug: 'kruskal-mst-union-find', catalogTopic: 'prim-mst' },
+  { n: 39, docAnchor: '39-stack-operations', walkthroughSlug: 'valid-parentheses-stack', catalogTopic: 'stack' },
+  { n: 40, docAnchor: '40-heapsort', walkthroughSlug: 'binary-min-heap-insert-and-extract', catalogTopic: 'heapsort' },
 ];
 
 export const PRACTICE_DOC_ANCHORS = PRACTICE_PROBLEMS.map((p) => p.docAnchor);

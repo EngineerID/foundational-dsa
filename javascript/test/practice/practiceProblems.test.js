@@ -31,6 +31,13 @@ const { traverse: dfsTraverse } = require('../../src/practice/dfsPractice');
 const { lisLength } = require('../../src/practice/lisPractice');
 const { mergeSort } = require('../../src/practice/mergeSortPractice');
 const { topologicalOrder } = require('../../src/practice/topologicalSortPractice');
+const { extractOrder: pqExtractOrder } = require('../../src/practice/priorityQueuePractice');
+const { nextGreater } = require('../../src/practice/monotonicStackPractice');
+const { quickSort } = require('../../src/practice/quickSortPractice');
+const { BstPractice } = require('../../src/practice/bstPractice');
+const { mstTotalWeight: primMstTotalWeight } = require('../../src/practice/primMstPractice');
+const { StackPractice } = require('../../src/practice/stackPractice');
+const { heapSort } = require('../../src/practice/heapsortPractice');
 
 describe('practice problems', () => {
   test('two sum sorted', () => {
@@ -268,5 +275,49 @@ describe('practice problems', () => {
         [1, 3],
       ]),
     ).toEqual([0, 1, 2, 3]);
+  });
+
+  test('priority queue practice', () => {
+    expect(pqExtractOrder([5, 3, 7, 1, 3])).toEqual([1, 3, 3, 5, 7]);
+  });
+
+  test('monotonic stack practice', () => {
+    expect(nextGreater([2, 1, 2, 4, 3])).toEqual([4, 2, 4, -1, -1]);
+  });
+
+  test('quick sort practice', () => {
+    expect(quickSort([3, 1, 2])).toEqual([1, 2, 3]);
+  });
+
+  test('BST practice', () => {
+    const tree = new BstPractice();
+    tree.insert(5, 'a');
+    tree.insert(2, 'b');
+    tree.insert(7, 'c');
+    expect(tree.inOrderKeys()).toEqual([2, 5, 7]);
+    expect(tree.search(2)).toBe('b');
+  });
+
+  test('Prim MST practice', () => {
+    expect(
+      primMstTotalWeight(4, [
+        [0, 1, 1],
+        [1, 2, 2],
+        [2, 3, 3],
+        [0, 3, 4],
+      ]),
+    ).toBe(6);
+  });
+
+  test('stack practice', () => {
+    const s = new StackPractice();
+    s.push(1);
+    s.push(2);
+    expect(s.pop()).toBe(2);
+    expect(s.peek()).toBe(1);
+  });
+
+  test('heapsort practice', () => {
+    expect(heapSort([5, 2, 8, 1, 2])).toEqual([1, 2, 2, 5, 8]);
   });
 });
