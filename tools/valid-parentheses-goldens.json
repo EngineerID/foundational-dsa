@@ -26,5 +26,9 @@
   {
     "s": "([)]",
     "expected": false
+  },
+  {
+    "s": "{[]}",
+    "expected": true
   }
 ]

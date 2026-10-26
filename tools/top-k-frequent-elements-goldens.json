@@ -28,5 +28,10 @@
     "nums": [1, 2],
     "k": 0,
     "expectError": true
+  },
+  {
+    "nums": [2, 2, 1, 1, 1, 2, 2],
+    "k": 1,
+    "expected": [2]
   }
 ]

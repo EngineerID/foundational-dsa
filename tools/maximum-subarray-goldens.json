@@ -39,5 +39,9 @@
   {
     "nums": [],
     "expectError": true
+  },
+  {
+    "nums": [1, 2, 3, 4],
+    "expected": 10
   }
 ]

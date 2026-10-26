@@ -33,5 +33,10 @@
     "nums": [1, 2, 3],
     "target": 10,
     "expectError": true
+  },
+  {
+    "nums": [3, 4, 5],
+    "target": 7,
+    "expected": [1, 2]
   }
 ]

@@ -22,5 +22,9 @@
   {
     "s": "abba",
     "expected": 2
+  },
+  {
+    "s": "dvdf",
+    "expected": 3
   }
 ]
