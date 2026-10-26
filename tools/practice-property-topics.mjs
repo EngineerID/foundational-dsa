@@ -1,12 +1,13 @@
 /**
- * Practice implementations compared to brute-force references in property tests (phase 1).
+ * Practice property-test topic ids (full 87 catalog topics with practice).
  * CI: check:practice-property-coverage
  */
+import { PRACTICE_TOPIC_TARGET } from './check-practice-catalog-topics.mjs';
 
 export const PRACTICE_PROPERTY_TRIALS = 25;
 export const PRACTICE_PROPERTY_SEED = 42;
 
-/** @type {readonly string[]} */
+/** @deprecated grouped ids — kept for docs; full list is {@link PRACTICE_PROPERTY_ALL}. */
 export const PRACTICE_PROPERTY_SORTING = [
   'bubble-sort',
   'selection-sort',
@@ -18,7 +19,6 @@ export const PRACTICE_PROPERTY_SORTING = [
   'radix-sort',
 ];
 
-/** @type {readonly string[]} */
 export const PRACTICE_PROPERTY_SEARCHING = [
   'linear-search',
   'binary-search',
@@ -27,7 +27,6 @@ export const PRACTICE_PROPERTY_SEARCHING = [
   'quick-select',
 ];
 
-/** @type {readonly string[]} */
 export const PRACTICE_PROPERTY_GRAPHS = [
   'bfs',
   'union-find',
@@ -43,7 +42,6 @@ export const PRACTICE_PROPERTY_GRAPHS = [
   'bipartite-check',
 ];
 
-/** @type {readonly string[]} */
 export const PRACTICE_PROPERTY_DP = [
   'maximum-subarray',
   'coin-change',
@@ -58,9 +56,5 @@ export const PRACTICE_PROPERTY_DP = [
   'tsp-bitmask',
 ];
 
-export const PRACTICE_PROPERTY_ALL = [
-  ...PRACTICE_PROPERTY_SORTING,
-  ...PRACTICE_PROPERTY_SEARCHING,
-  ...PRACTICE_PROPERTY_GRAPHS,
-  ...PRACTICE_PROPERTY_DP,
-];
+/** All catalog topics with practice implementations (87). */
+export const PRACTICE_PROPERTY_ALL = PRACTICE_TOPIC_TARGET;

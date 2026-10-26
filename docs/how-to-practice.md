@@ -16,17 +16,17 @@ This repo ships **87 trilingual practice problems** ([practice-problems.md](prac
 
 ## Property checks (practice vs brute force)
 
-For **sorting**, **searching**, **graphs**, and **dynamic programming** topics, seeded property tests compare each practice wrapper to a small-`n` brute-force reference (**25 trials**, seed **42**):
+All **87** practice catalog topics have seeded property tests that compare each practice wrapper to a small-`n` brute-force reference (**25 trials**, seed **42**):
 
-| Language | Test entrypoint |
-|----------|-----------------|
-| JavaScript | `javascript/test/practice/practiceProperty.test.js` |
-| Python | `python/tests/practice/test_practice_property.py` |
-| Java | `PracticePropertyTest` |
+| Language | Test entrypoints |
+|----------|------------------|
+| JavaScript | `practiceProperty.test.js`, `practicePropertyPhase2.test.js` |
+| Python | `test_practice_property.py`, `test_practice_property_phase2.py` |
+| Java | `PracticePropertyTest`, `PracticePropertyPhase2Test` |
 
-CI runs these via `npm test` (`check:practice-property-coverage` ensures every listed topic appears in all three files).
+Brute-force helpers live beside those tests (`practiceBruteforce*.js`, `practice_bruteforce*.py`, `PracticeBruteforce*.java`).
 
-Topic ids in scope: see `tools/practice-property-topics.mjs` (`PRACTICE_PROPERTY_SORTING`, `_SEARCHING`, `_GRAPHS`, `_DP`).
+CI runs these via `npm test` (`check:practice-property-coverage` ensures every topic id in `tools/practice-property-topics.mjs` appears in all three languages).
 
 ## Interview mapping
 
