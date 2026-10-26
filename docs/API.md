@@ -732,6 +732,19 @@ Count 4-connected land components in a binary grid.
 **Operations:**
 - `numIslands` → Python `num_islands`, JS `numIslands`
 
+## course-schedule
+
+Can all courses be taken given prerequisite pairs?
+
+| Language | Module |
+|----------|--------|
+| Java | `CourseSchedule` |
+| Python | `course_schedule` |
+| JavaScript | `courseSchedule` |
+
+**Operations:**
+- `canFinish` → Python `can_finish`, JS `canFinish`
+
 ## dfs
 
 Depth-first traversal, cycle detection, and connectivity.

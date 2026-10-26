@@ -30,6 +30,7 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 | `bfs` | Time O(V+E) | Space O(V) | distances/traverse: Time O(V+E); Space O(V). |
 | `bipartite-check` | Time O(V+E) | Space O(V) | isBipartite: Time O(V+E); Space O(V). |
 | `boruvka-mst` | Time O(E log V) | Space O(V) | mstWeight: Time O(E log V); Space O(V). |
+| `course-schedule` | Time O(V+E) | Space O(V) | canFinish: Time O(V+E); Space O(V). |
 | `dfs` | Time O(V+E) | Space O(V) | traverse/hasCycle: Time O(V+E); Space O(V). |
 | `dijkstra` | Time O(E log V) | Space O(V) | shortestPaths: Time O(E log V); Space O(V). |
 | `edmonds-karp` | Time O(VE²) | Space O(V²) | maxFlow: Time O(VE²); Space O(V²). |
@@ -136,5 +137,5 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 |----------|------|-------|----------|
 | `union-find` | Time O(α(n) | Space O(n) | find/union/connected: Time O(α(n)) amortized; Space O(n). |
 
-**Topics:** 82
+**Topics:** 83
 

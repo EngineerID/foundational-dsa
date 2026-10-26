@@ -1,0 +1,35 @@
+[
+  {
+    "board": [
+      ["A", "B", "C", "E"],
+      ["S", "F", "C", "S"],
+      ["A", "D", "E", "E"]
+    ],
+    "word": "ABCCED",
+    "expected": true
+  },
+  {
+    "board": [
+      ["A", "B", "C", "E"],
+      ["S", "F", "C", "S"],
+      ["A", "D", "E", "E"]
+    ],
+    "word": "ABCD",
+    "expected": false
+  },
+  {
+    "board": [["A"]],
+    "word": "A",
+    "expected": true
+  },
+  {
+    "board": [["A"]],
+    "word": "",
+    "expected": true
+  },
+  {
+    "board": [],
+    "word": "A",
+    "expected": false
+  }
+]

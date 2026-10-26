@@ -228,6 +228,12 @@ export const DOC_SPECS = {
     invariant: 'Edges stored from source to neighbors with weights.',
     complexity: 'addEdge/neighbors: Time O(1) amortized; Space O(V+E).',
   },
+  'course-schedule': {
+    purpose: 'Can all courses be taken given prerequisite pairs?',
+    technique: 'Kahn topological sort',
+    invariant: 'Finishable iff topological order includes every course.',
+    complexity: 'canFinish: Time O(V+E); Space O(V).',
+  },
   'number-of-islands': {
     purpose: 'Count 4-connected land components in a binary grid.',
     technique: 'BFS flood fill',

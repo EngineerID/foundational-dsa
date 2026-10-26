@@ -172,6 +172,13 @@ export const STATEFUL_GOLDENS = [
     java: 'java/src/test/java/com/dsa/examples/linear/SlidingWindowMaximumGoldensTest.java',
   },
   {
+    id: 'course-schedule',
+    json: 'course-schedule-goldens.json',
+    py: 'python/tests/graphs/test_course_schedule_goldens.py',
+    js: 'javascript/test/graphs/courseScheduleGoldens.test.js',
+    java: 'java/src/test/java/com/dsa/examples/graphs/CourseScheduleGoldensTest.java',
+  },
+  {
     id: 'number-of-islands',
     json: 'number-of-islands-goldens.json',
     py: 'python/tests/graphs/test_number_of_islands_goldens.py',

@@ -56,6 +56,7 @@ export const ITEMS = [
   { topic: 'graphs', id: 'graph', java: 'Graph', py: 'graph', js: 'graph' },
   { topic: 'graphs', id: 'bfs', java: 'BFS', py: 'bfs', js: 'bfs' },
   { topic: 'graphs', id: 'number-of-islands', java: 'NumberOfIslands', py: 'number_of_islands', js: 'numberOfIslands' },
+  { topic: 'graphs', id: 'course-schedule', java: 'CourseSchedule', py: 'course_schedule', js: 'courseSchedule' },
   { topic: 'graphs', id: 'dfs', java: 'DFS', py: 'dfs', js: 'dfs' },
   { topic: 'graphs', id: 'topological-sort', java: 'TopologicalSort', py: 'topological_sort', js: 'topologicalSort' },
   { topic: 'graphs', id: 'dijkstra', java: 'Dijkstra', py: 'dijkstra', js: 'dijkstra' },

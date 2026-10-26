@@ -262,6 +262,12 @@ export const API_MANIFEST = {
     python: ['num_islands'],
     javascript: ['numIslands'],
   },
+  'course-schedule': {
+    type: 'static',
+    java: ['canFinish'],
+    python: ['can_finish'],
+    javascript: ['canFinish'],
+  },
   dfs: {
     type: 'static',
     java: ['traverseRecursive', 'traverseIterative'],

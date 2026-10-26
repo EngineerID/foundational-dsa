@@ -69,7 +69,7 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Statement:** There are `numCourses` labeled `0 .. numCourses-1`. Each prerequisite `[course, prereq]` means you must take `prereq` before `course`. Return whether you can finish all courses (no cycle).
 
-**Implementation:** `practice/course_schedule*` — Kahn topological sort via catalog `graph` + `topological-sort`.
+**Implementation:** `practice/course_schedule*` (catalog [`course-schedule`](items/graphs/course-schedule.md): `npm run demo -- course-schedule`).
 
 ## 8. Longest substring without repeating characters
 
