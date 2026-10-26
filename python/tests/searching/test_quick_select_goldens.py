@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+import pytest
+
 from dsa.searching.quick_select import kth_smallest
 
 GOLDENS = json.loads(
@@ -10,4 +12,8 @@ GOLDENS = json.loads(
 
 def test_quick_select_shared_goldens():
     for case in GOLDENS:
-        assert kth_smallest(case["arr"], case["k"]) == case["expected"]
+        if case.get("expectError"):
+            with pytest.raises(ValueError):
+                kth_smallest(case["arr"], case["k"])
+        else:
+            assert kth_smallest(case["arr"], case["k"]) == case["expected"]

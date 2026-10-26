@@ -35,5 +35,10 @@
     ],
     "k": 1,
     "expected": 2
+  },
+  {
+    "arr": [],
+    "k": 1,
+    "expectError": true
   }
 ]

@@ -31,5 +31,14 @@
     "board": [],
     "word": "A",
     "expected": false
+  },
+  {
+    "board": [
+      ["A", "B", "C"],
+      ["D", "E", "F"],
+      ["G", "H", "I"]
+    ],
+    "word": "ABCG",
+    "expected": false
   }
 ]

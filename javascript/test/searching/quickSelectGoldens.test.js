@@ -7,9 +7,13 @@ const goldens = JSON.parse(
 );
 
 describe('quick select shared goldens', () => {
-  for (const { arr, k, expected } of goldens) {
-    test(`k=${k} on ${JSON.stringify(arr)}`, () => {
-      expect(kthSmallest(arr, k)).toBe(expected);
+  for (const case_ of goldens) {
+    test(`k=${case_.k} on ${JSON.stringify(case_.arr)}`, () => {
+      if (case_.expectError) {
+        expect(() => kthSmallest(case_.arr, case_.k)).toThrow();
+      } else {
+        expect(kthSmallest(case_.arr, case_.k)).toBe(case_.expected);
+      }
     });
   }
 });

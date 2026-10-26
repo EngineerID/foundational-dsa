@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class QuickSelectGoldensTest {
 
@@ -19,10 +20,14 @@ class QuickSelectGoldensTest {
         for (Map<String, Object> c : cases) {
             @SuppressWarnings("unchecked")
             List<Object> arrList = (List<Object>) c.get("arr");
-            int[] arr = arrList.stream().mapToInt(n -> ((Number) n).intValue()).toArray();
+            int[] arr = arrList == null ? new int[0] : arrList.stream().mapToInt(n -> ((Number) n).intValue()).toArray();
             int k = ((Number) c.get("k")).intValue();
-            int expected = ((Number) c.get("expected")).intValue();
-            assertEquals(expected, QuickSelect.kthSmallest(arr, k));
+            if (Boolean.TRUE.equals(c.get("expectError"))) {
+                assertThrows(IllegalArgumentException.class, () -> QuickSelect.kthSmallest(arr, k), c.toString());
+            } else {
+                int expected = ((Number) c.get("expected")).intValue();
+                assertEquals(expected, QuickSelect.kthSmallest(arr, k), c.toString());
+            }
         }
     }
 }
