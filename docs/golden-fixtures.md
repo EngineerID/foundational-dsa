@@ -85,4 +85,6 @@ Trilingual `*Goldens*` tests lock behavior against JSON under `tools/`. Registry
 
 None — every catalog topic has shared JSON goldens and trilingual `*Goldens*` tests.
 
+**Edge themes:** `npm run check:shared-golden-themes` requires standard empty/single/duplicate/boundary/invalid themes where applicable, and enforces required keys on stateful fixtures (for example every `reservoir-sampling-goldens.json` case must include `seed`).
+
 Regenerate this page: `node tools/refresh-golden-fixtures-doc.mjs`. Gap list only: `node tools/list-golden-fixture-gaps.mjs`.
