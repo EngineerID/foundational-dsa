@@ -18,6 +18,7 @@ Use it to study implementations side by side, prepare for interviews, or teach D
 3. **Interview map:** [docs/interview-prep.md](docs/interview-prep.md) links common prompts (LRU, course schedule, sliding window, and more) to those ids.
 4. **Walkthroughs:** [docs/worked-examples.md](docs/worked-examples.md) has step-by-step tables for binary search, graphs, caches, and other high-frequency patterns.
 5. **Contribute:** [CONTRIBUTING.md](CONTRIBUTING.md) describes good-first issues and the trilingual parity rules.
+6. **Security:** see [SECURITY.md](SECURITY.md) for supported versions and private reporting.
 
 ## Layout
 

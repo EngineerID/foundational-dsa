@@ -9,6 +9,15 @@ npm run demo -- <topic-id> python   # optional: java | python | js
 
 Full topic list: [COVERAGE.md](../COVERAGE.md). Step-by-step walkthroughs: [worked-examples.md](worked-examples.md). API names: [API.md](API.md).
 
+## Detailed walkthroughs (step tables)
+
+| Pattern | Doc section |
+|---------|-------------|
+| Binary search, merge sort, KMP | [worked-examples.md](worked-examples.md#binary-search-on-a-sorted-array) |
+| Dijkstra, union–find, LRU cache | [worked-examples.md](worked-examples.md#dijkstra-non-negative-weights) |
+| Course schedule (topo sort), sliding window, binary search on answer | [worked-examples.md](worked-examples.md#topological-sort-kahn-course-schedule) |
+| BFS unweighted, edit distance | [worked-examples.md](worked-examples.md#bfs-unweighted-shortest-paths) |
+
 ## Arrays and searching
 
 | Interview prompt | Topic id | Demo |

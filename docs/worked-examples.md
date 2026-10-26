@@ -1,6 +1,6 @@
 # Worked examples
 
-Short, language-neutral walkthroughs for nine interview-heavy topics. Implementations live under `java/`, `python/dsa/`, and `javascript/src/` with the same behavior. For a broader interview map, see [interview-prep.md](interview-prep.md). Trilingual tests for several scenarios live under each language’s `catalog` tests (`WorkedInterviewExamplesTest`, `test_worked_interview_examples.py`, `workedInterviewExamples.test.js`).
+Short, language-neutral walkthroughs for eleven interview-heavy topics. Implementations live under `java/`, `python/dsa/`, and `javascript/src/` with the same behavior. For a broader interview map, see [interview-prep.md](interview-prep.md). Trilingual tests for several scenarios live under each language’s `catalog` tests (`WorkedInterviewExamplesTest`, `test_worked_interview_examples.py`, `workedInterviewExamples.test.js`).
 
 ## Binary search on a sorted array
 
@@ -161,9 +161,39 @@ When the “answer space” is a sorted array, the same boundary idea appears as
 
 `npm run demo -- sliding-window-maximum`
 
+## BFS (unweighted shortest paths)
+
+**Graph:** undirected, unweighted, 5 vertices (same shape as `GraphsTest.bfsUnweighted`).
+
+**Edges:** `0—1`, `0—2`, `1—3` (vertex **4** isolated).
+
+**Source:** `0`.
+
+| Vertex | BFS distance from 0 | Why |
+|--------|---------------------|-----|
+| 0 | **0** | source |
+| 1 | **1** | edge 0—1 |
+| 2 | **1** | edge 0—2 |
+| 3 | **2** | path 0—1—3 |
+| 4 | **-1** | unreachable |
+
+**API:** `distances(graph, source)` → distance array; unreachable **-1** (see [bfs](items/graphs/bfs.md)).
+
+`npm run demo -- bfs`
+
+## Edit distance (kitten to sitting)
+
+**Strings:** `kitten` → `sitting` (Levenshtein). Classic answer: **3** edits (replace `k→s`, insert `g`, replace `e→i` — other optimal sequences exist).
+
+DP sketch (rows/cols = prefixes): fill table where cell = min of delete/insert/replace neighbors; bottom-right cell = **3**.
+
+**API:** `distance(a, b)` (see [edit-distance](items/dp/edit-distance.md)).
+
+`npm run demo -- edit-distance`
+
 ## Topic index
 
-One-line walkthroughs for every catalog topic. Full tables above cover binary search, merge sort, KMP, Dijkstra, union–find, LRU cache, topological sort, binary search on the answer, and sliding window maximum.
+One-line walkthroughs for every catalog topic. Full tables above cover binary search, merge sort, KMP, Dijkstra, union–find, LRU cache, topological sort, binary search on the answer, sliding window maximum, BFS, and edit distance.
 
 ### linear-search
 
@@ -418,6 +448,8 @@ npm run demo -- union-find
 npm run demo -- lru-cache
 npm run demo -- topological-sort
 npm run demo -- sliding-window-maximum
+npm run demo -- bfs
+npm run demo -- edit-distance
 ```
 
 Optional language filter: `npm run demo -- kmp python`.

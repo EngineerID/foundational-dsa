@@ -11,6 +11,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SCAN_ROOTS = [
   path.join(ROOT, 'README.md'),
   path.join(ROOT, 'CONTRIBUTING.md'),
+  path.join(ROOT, 'SECURITY.md'),
   path.join(ROOT, 'docs'),
 ];
 
