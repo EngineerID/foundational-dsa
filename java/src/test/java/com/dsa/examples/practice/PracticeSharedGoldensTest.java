@@ -1,6 +1,7 @@
 package com.dsa.examples.practice;
 
 import com.dsa.examples.graphs.BellmanFord;
+import com.dsa.examples.graphs.Graph;
 import com.dsa.examples.support.GoldenIntArrays;
 import com.dsa.examples.support.GoldenJson;
 import org.junit.jupiter.api.Test;
@@ -435,6 +436,135 @@ class PracticeSharedGoldensTest {
     }
 
     @Test
+    void graphPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("graph-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            int n = ((Number) c.get("n")).intValue();
+            boolean directed = (Boolean) c.get("directed");
+            boolean weighted = (Boolean) c.get("weighted");
+            Graph g = GraphPractice.build(n, directed, weighted, parseFlexEdges(c.get("edges")));
+            assertEquals(((Number) c.get("vertices")).intValue(), g.vertices());
+            @SuppressWarnings("unchecked")
+            Map<String, Number> counts = (Map<String, Number>) c.get("neighborCount");
+            for (Map.Entry<String, Number> entry : counts.entrySet()) {
+                assertEquals(entry.getValue().intValue(), g.neighbors(Integer.parseInt(entry.getKey())).size());
+            }
+            @SuppressWarnings("unchecked")
+            Map<String, List<Number>> edgeTo = (Map<String, List<Number>>) c.get("edgeTo");
+            for (Map.Entry<String, List<Number>> entry : edgeTo.entrySet()) {
+                int vertex = Integer.parseInt(entry.getKey());
+                List<Integer> expected = entry.getValue().stream().map(Number::intValue).toList();
+                List<Integer> actual =
+                        g.neighbors(vertex).stream().map(Graph.Edge::to).toList();
+                assertEquals(expected, actual);
+            }
+        }
+    }
+
+    @Test
+    void floydWarshallPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("floyd-warshall-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            int n = ((Number) c.get("n")).intValue();
+            int[][] dist = FloydWarshallPractice.allPairsDistances(n, parseWeightedEdges(c.get("edges")));
+            @SuppressWarnings("unchecked")
+            List<List<Object>> pairs = (List<List<Object>>) c.get("pairs");
+            for (List<Object> p : pairs) {
+                int i = ((Number) p.get(0)).intValue();
+                int j = ((Number) p.get(1)).intValue();
+                assertEquals(((Number) p.get(2)).intValue(), dist[i][j]);
+            }
+        }
+    }
+
+    @Test
+    void fenwickTreePracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("fenwick-tree-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            FenwickTreePractice ft = new FenwickTreePractice(((Number) c.get("n")).intValue());
+            @SuppressWarnings("unchecked")
+            List<List<Object>> adds = (List<List<Object>>) c.get("adds");
+            for (List<Object> add : adds) {
+                ft.add(((Number) add.get(0)).intValue(), ((Number) add.get(1)).intValue());
+            }
+            @SuppressWarnings("unchecked")
+            List<Map<String, Object>> checks = (List<Map<String, Object>>) c.get("checks");
+            for (Map<String, Object> row : checks) {
+                if (row.containsKey("prefixAt")) {
+                    assertEquals(
+                            ((Number) row.get("expected")).intValue(),
+                            ft.prefixSum(((Number) row.get("prefixAt")).intValue()));
+                }
+                if (row.containsKey("rangeLeft")) {
+                    assertEquals(
+                            ((Number) row.get("expected")).intValue(),
+                            ft.rangeSum(
+                                    ((Number) row.get("rangeLeft")).intValue(),
+                                    ((Number) row.get("rangeRight")).intValue()));
+                }
+            }
+        }
+    }
+
+    @Test
+    void bipartiteCheckPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("bipartite-check-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            int n = ((Number) c.get("n")).intValue();
+            assertEquals(
+                    c.get("expected"),
+                    BipartiteCheckPractice.isBipartite(n, parseFlexEdges(c.get("edges"))));
+        }
+    }
+
+    @Test
+    void tarjanSccPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("tarjan-scc-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            int n = ((Number) c.get("n")).intValue();
+            List<Integer> sizes = TarjanSccPractice.componentSizesSorted(n, parseFlexEdges(c.get("edges")));
+            assertEquals(((Number) c.get("componentCount")).intValue(), sizes.size());
+            @SuppressWarnings("unchecked")
+            List<Object> expected = (List<Object>) c.get("componentSizes");
+            assertEquals(expected.stream().map(v -> ((Number) v).intValue()).toList(), sizes);
+        }
+    }
+
+    @Test
+    void kosarajuPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("kosaraju-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            int n = ((Number) c.get("n")).intValue();
+            List<Integer> sizes = KosarajuPractice.componentSizesSorted(n, parseFlexEdges(c.get("edges")));
+            assertEquals(((Number) c.get("componentCount")).intValue(), sizes.size());
+            @SuppressWarnings("unchecked")
+            List<Object> expected = (List<Object>) c.get("componentSizes");
+            assertEquals(expected.stream().map(v -> ((Number) v).intValue()).toList(), sizes);
+        }
+    }
+
+    @Test
+    void edmondsKarpPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("edmonds-karp-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            assertEquals(
+                    ((Number) c.get("maxFlow")).intValue(),
+                    EdmondsKarpPractice.maxFlow(
+                            ((Number) c.get("n")).intValue(),
+                            parseWeightedEdges(c.get("edges")),
+                            ((Number) c.get("source")).intValue(),
+                            ((Number) c.get("sink")).intValue()));
+        }
+    }
+
+    @Test
     void bfsPracticeGoldens() throws Exception {
         List<Map<String, Object>> cases =
                 GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("practice-bfs-goldens.json")));
@@ -445,6 +575,26 @@ class PracticeSharedGoldensTest {
             int[] expected = GoldenIntArrays.parse(c.get("expected"));
             assertArrayEquals(expected, BfsPractice.distances(n, edges, source));
         }
+    }
+
+    @SuppressWarnings("unchecked")
+    private static int[][] parseFlexEdges(Object raw) {
+        List<Object> rows = (List<Object>) raw;
+        int[][] out = new int[rows.size()][];
+        for (int i = 0; i < rows.size(); i++) {
+            List<Object> e = (List<Object>) rows.get(i);
+            if (e.size() == 2) {
+                out[i] = new int[] { ((Number) e.get(0)).intValue(), ((Number) e.get(1)).intValue() };
+            } else {
+                out[i] =
+                        new int[] {
+                            ((Number) e.get(0)).intValue(),
+                            ((Number) e.get(1)).intValue(),
+                            ((Number) e.get(2)).intValue()
+                        };
+            }
+        }
+        return out;
     }
 
     @SuppressWarnings("unchecked")

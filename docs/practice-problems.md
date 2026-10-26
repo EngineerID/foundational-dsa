@@ -1,6 +1,6 @@
 # Practice problems (trilingual solutions)
 
-Forty-seven interview-style problems with reference solutions in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`. Each problem below links to a step-table **[worked example](worked-examples.md)** (CI: `npm run check:practice-walkthrough`).
+Fifty-four interview-style problems with reference solutions in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`. Each problem below links to a step-table **[worked example](worked-examples.md)** (CI: `npm run check:practice-walkthrough`).
 
 | # | Problem | Signals | Catalog topics |
 |---|---------|---------|----------------|
@@ -51,6 +51,13 @@ Forty-seven interview-style problems with reference solutions in Java, Python, a
 | 45 | [Rabin-Karp search](#45-rabin-karp-search) | Rolling hash | `rabin-karp` |
 | 46 | [Bellman-Ford paths](#46-bellman-ford-paths) | Negative edges | `bellman-ford` |
 | 47 | [Segment tree range sum](#47-segment-tree-range-sum) | Range query + update | `segment-tree` |
+| 48 | [Floyd-Warshall distances](#48-floyd-warshall-distances) | All-pairs shortest paths | `floyd-warshall` |
+| 49 | [Fenwick tree prefix sums](#49-fenwick-tree-prefix-sums) | Point add, prefix/range | `fenwick-tree` |
+| 50 | [Graph adjacency](#50-graph-adjacency) | Build & query neighbors | `graph` |
+| 51 | [Bipartite check](#51-bipartite-check) | 2-colorable? | `bipartite-check` |
+| 52 | [Tarjan SCC sizes](#52-tarjan-scc-sizes) | Strongly connected components | `tarjan-scc` |
+| 53 | [Kosaraju SCC sizes](#53-kosaraju-scc-sizes) | SCC via two-pass DFS | `kosaraju` |
+| 54 | [Edmonds-Karp max flow](#54-edmonds-karp-max-flow) | s–t max flow | `edmonds-karp` |
 
 Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --testPathPattern=practice`, Java `PracticeProblemsTest`.
 
@@ -431,3 +438,59 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 **Implementation:** `practice/segment_tree*` / `segmentTreePractice*` — catalog [`segment-tree`](items/trees/segment-tree.md): `npm run demo -- segment-tree`.
 
 **Walkthrough:** [Worked examples — Segment tree](worked-examples.md#segment-tree-range-sum).
+
+## 48. Floyd-Warshall distances
+
+**Statement:** Given a directed weighted graph, return the all-pairs shortest-path distance matrix.
+
+**Implementation:** `practice/floyd_warshall*` / `floydWarshallPractice*` — catalog [`floyd-warshall`](items/graphs/floyd-warshall.md): `npm run demo -- floyd-warshall`.
+
+**Walkthrough:** [Worked examples — Floyd-Warshall](worked-examples.md#floyd-warshall-all-pairs-shortest-paths).
+
+## 49. Fenwick tree prefix sums
+
+**Statement:** On a fixed-size array (initially zero), support point additions and prefix or range sum queries.
+
+**Implementation:** `practice/fenwick_tree*` / `fenwickTreePractice*` — catalog [`fenwick-tree`](items/trees/fenwick-tree.md): `npm run demo -- fenwick-tree`.
+
+**Walkthrough:** [Worked examples — Fenwick tree](worked-examples.md#fenwick-tree-prefix-sums).
+
+## 50. Graph adjacency
+
+**Statement:** Build a directed or undirected (weighted) graph and query vertex count and out-neighbor lists.
+
+**Implementation:** `practice/graph*` / `graphPractice*` — catalog [`graph`](items/graphs/graph.md): `npm run demo -- graph`.
+
+**Walkthrough:** [Worked examples — Graph adjacency](worked-examples.md#graph-adjacency-list).
+
+## 51. Bipartite check
+
+**Statement:** Given an undirected graph, return whether it is bipartite (2-colorable).
+
+**Implementation:** `practice/bipartite_check*` / `bipartiteCheckPractice*` — catalog [`bipartite-check`](items/graphs/bipartite-check.md): `npm run demo -- bipartite-check`.
+
+**Walkthrough:** [Worked examples — Bipartite check](worked-examples.md#bipartite-check-2-coloring).
+
+## 52. Tarjan SCC sizes
+
+**Statement:** Given a directed graph, return the sorted sizes of strongly connected components.
+
+**Implementation:** `practice/tarjan_scc*` / `tarjanSccPractice*` — catalog [`tarjan-scc`](items/graphs/tarjan-scc.md): `npm run demo -- tarjan-scc`.
+
+**Walkthrough:** [Worked examples — Tarjan SCC](worked-examples.md#tarjan-scc-strongly-connected-components).
+
+## 53. Kosaraju SCC sizes
+
+**Statement:** Same as #52 using Kosaraju’s two-pass algorithm.
+
+**Implementation:** `practice/kosaraju*` / `kosarajuPractice*` — catalog [`kosaraju`](items/graphs/kosaraju.md): `npm run demo -- kosaraju`.
+
+**Walkthrough:** [Worked examples — Kosaraju SCC](worked-examples.md#kosaraju-scc-strongly-connected-components).
+
+## 54. Edmonds-Karp max flow
+
+**Statement:** Given a capacitated flow network, source, and sink, return the maximum s–t flow value.
+
+**Implementation:** `practice/edmonds_karp*` / `edmondsKarpPractice*` — catalog [`edmonds-karp`](items/graphs/edmonds-karp.md): `npm run demo -- edmonds-karp`.
+
+**Walkthrough:** [Worked examples — Edmonds-Karp](worked-examples.md#edmonds-karp-max-flow).

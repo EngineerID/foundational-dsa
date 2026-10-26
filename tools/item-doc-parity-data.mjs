@@ -189,4 +189,11 @@ export const WORKED_EXAMPLES = {
   'binary-heap': { anchor: 'binary-min-heap-insert-and-extract', detailed: true },
   'priority-queue': { anchor: 'priority-queue-min-scheduling', detailed: true },
   trie: { anchor: 'trie-prefix-search', detailed: true },
+  'floyd-warshall': { anchor: 'floyd-warshall-all-pairs-shortest-paths', detailed: true },
+  'fenwick-tree': { anchor: 'fenwick-tree-prefix-sums', detailed: true },
+  graph: { anchor: 'graph-adjacency-list', detailed: true },
+  'bipartite-check': { anchor: 'bipartite-check-2-coloring', detailed: true },
+  'tarjan-scc': { anchor: 'tarjan-scc-strongly-connected-components', detailed: true },
+  kosaraju: { anchor: 'kosaraju-scc-strongly-connected-components', detailed: true },
+  'edmonds-karp': { anchor: 'edmonds-karp-max-flow', detailed: true },
 };

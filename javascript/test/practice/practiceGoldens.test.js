@@ -28,6 +28,13 @@ const { radixSort } = require('../../src/practice/radixSortPractice');
 const { firstIndex: rabinFirstIndex } = require('../../src/practice/rabinKarpPractice');
 const { bellmanFordResult } = require('../../src/practice/bellmanFordPractice');
 const { SegmentTreePractice } = require('../../src/practice/segmentTreePractice');
+const { buildGraph } = require('../../src/practice/graphPractice');
+const { allPairsDistances } = require('../../src/practice/floydWarshallPractice');
+const { FenwickTreePractice } = require('../../src/practice/fenwickTreePractice');
+const { checkBipartite } = require('../../src/practice/bipartiteCheckPractice');
+const { componentSizesSorted: tarjanComponentSizes } = require('../../src/practice/tarjanSccPractice');
+const { componentSizesSorted: kosarajuComponentSizes } = require('../../src/practice/kosarajuPractice');
+const { maxFlowValue } = require('../../src/practice/edmondsKarpPractice');
 
 const tools = path.join(__dirname, '../../../tools');
 
@@ -275,6 +282,74 @@ describe('practice shared goldens', () => {
       for (const q of row.rangeSumAfter ?? []) {
         expect(st.rangeSum(q.left, q.right)).toBe(q.sum);
       }
+    }
+  });
+
+  test('graph practice', () => {
+    for (const row of cases('graph-goldens.json')) {
+      const g = buildGraph(row.n, row.directed, row.weighted, row.edges);
+      expect(g.vertices()).toBe(row.vertices);
+      for (const [vStr, count] of Object.entries(row.neighborCount)) {
+        expect(g.neighbors(Number(vStr)).length).toBe(count);
+      }
+      for (const [vStr, expected] of Object.entries(row.edgeTo)) {
+        const actual = g.neighbors(Number(vStr)).map((e) => e.to);
+        expect(actual).toEqual(expected);
+      }
+    }
+  });
+
+  test('Floyd-Warshall practice', () => {
+    for (const row of cases('floyd-warshall-goldens.json')) {
+      const dist = allPairsDistances(row.n, row.edges);
+      for (const [i, j, expected] of row.pairs) {
+        expect(dist[i][j]).toBe(expected);
+      }
+    }
+  });
+
+  test('Fenwick tree practice', () => {
+    for (const row of cases('fenwick-tree-goldens.json')) {
+      const ft = new FenwickTreePractice(row.n);
+      for (const [idx, delta] of row.adds ?? []) {
+        ft.add(idx, delta);
+      }
+      for (const check of row.checks ?? []) {
+        if (check.prefixAt !== undefined) {
+          expect(ft.prefixSum(check.prefixAt)).toBe(check.expected);
+        }
+        if (check.rangeLeft !== undefined) {
+          expect(ft.rangeSum(check.rangeLeft, check.rangeRight)).toBe(check.expected);
+        }
+      }
+    }
+  });
+
+  test('bipartite check practice', () => {
+    for (const row of cases('bipartite-check-goldens.json')) {
+      expect(checkBipartite(row.n, row.edges)).toBe(row.expected);
+    }
+  });
+
+  test('Tarjan SCC practice', () => {
+    for (const row of cases('tarjan-scc-goldens.json')) {
+      const sizes = tarjanComponentSizes(row.n, row.edges);
+      expect(sizes.length).toBe(row.componentCount);
+      expect(sizes).toEqual([...row.componentSizes].sort((a, b) => a - b));
+    }
+  });
+
+  test('Kosaraju SCC practice', () => {
+    for (const row of cases('kosaraju-goldens.json')) {
+      const sizes = kosarajuComponentSizes(row.n, row.edges);
+      expect(sizes.length).toBe(row.componentCount);
+      expect(sizes).toEqual([...row.componentSizes].sort((a, b) => a - b));
+    }
+  });
+
+  test('Edmonds-Karp practice', () => {
+    for (const row of cases('edmonds-karp-goldens.json')) {
+      expect(maxFlowValue(row.n, row.edges, row.source, row.sink)).toBe(row.maxFlow);
     }
   });
 });

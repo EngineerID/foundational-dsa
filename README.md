@@ -18,7 +18,7 @@ Use it to study implementations side by side, prepare for interviews, or teach D
 | 1 | Clone the repo and run `bash .cursor/install.sh` once (Node 20+, Python 3.10+, JDK 17+). |
 | 2 | Run `npm test` from the root — docs link scan, complexity checks, then Java, Python, JavaScript, parity, and matrix. |
 | 3 | Explore a topic: [COVERAGE.md](COVERAGE.md) lists all 87 ids; `npm run demo -- <id>` runs that topic’s tests in all three languages. |
-| 4 | Interview study: [docs/interview-prep.md](docs/interview-prep.md) maps prompts to ids; [docs/worked-examples.md](docs/worked-examples.md) has step tables; [docs/practice-problems.md](docs/practice-problems.md) has 47 trilingual problems (expanding toward full catalog coverage). |
+| 4 | Interview study: [docs/interview-prep.md](docs/interview-prep.md) maps prompts to ids; [docs/worked-examples.md](docs/worked-examples.md) has step tables; [docs/practice-problems.md](docs/practice-problems.md) has 54 trilingual problems (expanding toward full catalog coverage). |
 | 5 | First PR: read [CONTRIBUTING.md](CONTRIBUTING.md) (scope, `npm test` vs `npm run test:ci`, issue templates). |
 | 6 | Security reports: [SECURITY.md](SECURITY.md). |
 
@@ -398,6 +398,13 @@ Every catalog topic links to its doc page under [docs/items/](docs/items/). Prac
 - [Rabin-Karp search](docs/practice-problems.md#45-rabin-karp-search)
 - [Bellman-Ford paths](docs/practice-problems.md#46-bellman-ford-paths)
 - [Segment tree range sum](docs/practice-problems.md#47-segment-tree-range-sum)
+- [Floyd-Warshall distances](docs/practice-problems.md#48-floyd-warshall-distances)
+- [Fenwick tree prefix sums](docs/practice-problems.md#49-fenwick-tree-prefix-sums)
+- [Graph adjacency](docs/practice-problems.md#50-graph-adjacency)
+- [Bipartite check](docs/practice-problems.md#51-bipartite-check)
+- [Tarjan SCC sizes](docs/practice-problems.md#52-tarjan-scc-sizes)
+- [Kosaraju SCC sizes](docs/practice-problems.md#53-kosaraju-scc-sizes)
+- [Edmonds-Karp max flow](docs/practice-problems.md#54-edmonds-karp-max-flow)
 
 See also the generated [complexity cheat sheet](docs/complexity-cheatsheet.md) for all **87** catalog topics.
 

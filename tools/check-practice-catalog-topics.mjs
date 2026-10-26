@@ -52,6 +52,13 @@ export const PRACTICE_TOPIC_TARGET = [
   'rabin-karp',
   'bellman-ford',
   'segment-tree',
+  'floyd-warshall',
+  'fenwick-tree',
+  'graph',
+  'bipartite-check',
+  'tarjan-scc',
+  'kosaraju',
+  'edmonds-karp',
 ];
 
 const itemIds = new Set(ITEMS.map((i) => i.id));

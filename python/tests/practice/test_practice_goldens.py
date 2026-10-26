@@ -30,6 +30,13 @@ from dsa.practice.radix_sort_practice import sort_nums as radix_sort_practice
 from dsa.practice.rabin_karp_practice import first_index as rabin_first_index
 from dsa.practice.bellman_ford_practice import shortest_paths_result
 from dsa.practice.segment_tree_practice import SegmentTreePractice
+from dsa.practice.graph_practice import build_graph
+from dsa.practice.floyd_warshall_practice import all_pairs_distances
+from dsa.practice.fenwick_tree_practice import FenwickTreePractice
+from dsa.practice.bipartite_check_practice import check_bipartite
+from dsa.practice.tarjan_scc_practice import component_sizes_sorted as tarjan_component_sizes
+from dsa.practice.kosaraju_practice import component_sizes_sorted as kosaraju_component_sizes
+from dsa.practice.edmonds_karp_practice import max_flow_value
 
 TOOLS = Path(__file__).resolve().parents[3] / "tools"
 
@@ -240,3 +247,57 @@ def test_segment_tree_practice_goldens():
         st.update(upd["index"], upd["value"])
         for q in row.get("rangeSumAfter", []):
             assert st.range_sum(q["left"], q["right"]) == q["sum"]
+
+
+def test_graph_practice_goldens():
+    for row in _cases("graph-goldens.json"):
+        g = build_graph(row["n"], row["directed"], row["weighted"], row["edges"])
+        assert g.vertices() == row["vertices"]
+        for v_str, count in row["neighborCount"].items():
+            assert len(g.neighbors(int(v_str))) == count
+        for v_str, expected in row["edgeTo"].items():
+            actual = [e.to for e in g.neighbors(int(v_str))]
+            assert actual == expected
+
+
+def test_floyd_warshall_practice_goldens():
+    for row in _cases("floyd-warshall-goldens.json"):
+        dist = all_pairs_distances(row["n"], row["edges"])
+        for i, j, expected in row["pairs"]:
+            assert dist[i][j] == expected
+
+
+def test_fenwick_tree_practice_goldens():
+    for row in _cases("fenwick-tree-goldens.json"):
+        ft = FenwickTreePractice(row["n"])
+        for idx, delta in row.get("adds", []):
+            ft.add(idx, delta)
+        for check in row.get("checks", []):
+            if "prefixAt" in check:
+                assert ft.prefix_sum(check["prefixAt"]) == check["expected"]
+            if "rangeLeft" in check:
+                assert ft.range_sum(check["rangeLeft"], check["rangeRight"]) == check["expected"]
+
+
+def test_bipartite_check_practice_goldens():
+    for row in _cases("bipartite-check-goldens.json"):
+        assert check_bipartite(row["n"], row["edges"]) == row["expected"]
+
+
+def test_tarjan_scc_practice_goldens():
+    for row in _cases("tarjan-scc-goldens.json"):
+        sizes = tarjan_component_sizes(row["n"], row["edges"])
+        assert len(sizes) == row["componentCount"]
+        assert sizes == sorted(row["componentSizes"])
+
+
+def test_kosaraju_practice_goldens():
+    for row in _cases("kosaraju-goldens.json"):
+        sizes = kosaraju_component_sizes(row["n"], row["edges"])
+        assert len(sizes) == row["componentCount"]
+        assert sizes == sorted(row["componentSizes"])
+
+
+def test_edmonds_karp_practice_goldens():
+    for row in _cases("edmonds-karp-goldens.json"):
+        assert max_flow_value(row["n"], row["edges"], row["source"], row["sink"]) == row["maxFlow"]

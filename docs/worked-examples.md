@@ -1,6 +1,6 @@
 # Worked examples
 
-Short, language-neutral walkthroughs for forty-seven interview-heavy topics. Implementations live under `java/`, `python/dsa/`, and `javascript/src/` with the same behavior. For a broader interview map, see [interview-prep.md](interview-prep.md). Trilingual **catalog tests** mirror the step-table scenarios above (`WorkedInterviewExamplesTest`, `test_worked_interview_examples.py`, `workedInterviewExamples.test.js`).
+Short, language-neutral walkthroughs for fifty-four interview-heavy topics. Implementations live under `java/`, `python/dsa/`, and `javascript/src/` with the same behavior. For a broader interview map, see [interview-prep.md](interview-prep.md). Trilingual **catalog tests** mirror the step-table scenarios above (`WorkedInterviewExamplesTest`, `test_worked_interview_examples.py`, `workedInterviewExamples.test.js`).
 
 ## Binary search on a sorted array
 
@@ -835,6 +835,94 @@ Build **O(n)**, query/update **O(log n)**. Matches shared `segment-tree-goldens.
 
 `npm run demo -- segment-tree`
 
+## Floyd-Warshall (all-pairs shortest paths)
+
+**Directed weighted graph:** `0→1 (1)`, `1→2 (2)`, `0→2 (10)`.
+
+DP table `dist[i][j]` after relaxation:
+
+| Pair | Shortest distance |
+|------|-------------------|
+| 0 → 0 | **0** |
+| 0 → 1 | **1** |
+| 0 → 2 | **3** (via 1, not direct 10) |
+| 1 → 2 | **2** |
+
+**O(V³)** all-pairs table; matches `floyd-warshall-goldens.json` `pairs`.
+
+**API:** `allPairsShortestPaths(graph)` (see [floyd-warshall](items/graphs/floyd-warshall.md)).
+
+`npm run demo -- floyd-warshall`
+
+## Fenwick tree (prefix sums)
+
+**Size `n = 5`**, point adds: index **1** +3, index **3** +2.
+
+| Query | Result |
+|-------|--------|
+| prefix through index **3** | **5** (`3+2`) |
+| range sum **[1, 3]** | **5** |
+
+**O(log n)** add and prefix/range sum. Matches `fenwick-tree-goldens.json`.
+
+**API:** `add(index, delta)`, `prefixSum(index)`, `rangeSum(left, right)` (see [fenwick-tree](items/trees/fenwick-tree.md)).
+
+`npm run demo -- fenwick-tree`
+
+## Graph (adjacency list)
+
+**4 vertices**, directed weighted edges `(0→1,2)`, `(1→2,3)`, `(0→3,1)`.
+
+| Vertex | Out-neighbors (to) | Out-degree |
+|--------|-------------------|------------|
+| 0 | 1, 3 | **2** |
+| 1 | 2 | 1 |
+| 2 | — | **0** |
+
+**API:** `vertices()`, `neighbors(v)` (see [graph](items/graphs/graph.md)).
+
+`npm run demo -- graph`
+
+## Bipartite check (2-coloring)
+
+**Undirected 4-cycle** `0—1—2—3—0`: alternate colors succeed → **bipartite**.
+
+**Triangle** on three vertices with all edges: odd cycle → **not bipartite**.
+
+**API:** `isBipartite(graph)` (see [bipartite-check](items/graphs/bipartite-check.md)).
+
+`npm run demo -- bipartite-check`
+
+## Tarjan SCC (strongly connected components)
+
+**Directed cycle** `0→1→2→0`: one SCC of size **3**.
+
+Two isolated vertices with no edges → **two** SCCs of size **1** each.
+
+**API:** `stronglyConnectedComponents(graph)` (see [tarjan-scc](items/graphs/tarjan-scc.md)).
+
+`npm run demo -- tarjan-scc`
+
+## Kosaraju SCC (strongly connected components)
+
+Same 3-cycle as [Tarjan](#tarjan-scc-strongly-connected-components): **one** component of size **3**; empty edges on two vertices → sizes **`[1, 1]`**.
+
+Two-pass DFS + reverse graph. Matches `kosaraju-goldens.json`.
+
+**API:** `stronglyConnectedComponents(graph)` (see [kosaraju](items/graphs/kosaraju.md)).
+
+`npm run demo -- kosaraju`
+
+## Edmonds-Karp (max flow)
+
+**Flow network** (source **0**, sink **3**) from shared goldens: augmenting BFS paths until no residual capacity.
+
+**Max flow value: 5** (matches `edmonds-karp-goldens.json`).
+
+**API:** `maxFlow(n, edges, source, sink)` (see [edmonds-karp](items/graphs/edmonds-karp.md)).
+
+`npm run demo -- edmonds-karp`
+
 ## Topic index
 
 One-line walkthroughs for every catalog topic. Step tables above cover interview-heavy patterns (search, graphs, DP, caches, strings).
@@ -1051,7 +1139,7 @@ See the [detailed walkthrough](#segment-tree-range-sum) above.
 
 ### fenwick-tree
 
-Prefix sums and range sums with point updates.
+See the [detailed walkthrough](#fenwick-tree-prefix-sums) above.
 
 `npm run demo -- fenwick-tree`
 
@@ -1135,7 +1223,7 @@ See the [detailed walkthrough](#union-find-connectivity) above.
 
 ### graph
 
-Adjacency-list directed/undirected weighted graph representation.
+See the [detailed walkthrough](#graph-adjacency-list) above.
 
 `npm run demo -- graph`
 
@@ -1195,7 +1283,7 @@ See the [detailed walkthrough](#bellman-ford-negative-edges) above.
 
 ### floyd-warshall
 
-All-pairs shortest paths via dynamic programming.
+See the [detailed walkthrough](#floyd-warshall-all-pairs-shortest-paths) above.
 
 `npm run demo -- floyd-warshall`
 
@@ -1225,19 +1313,19 @@ Shortest path length with nonnegative weights (heuristic h=0).
 
 ### tarjan-scc
 
-Strongly connected components in a directed graph.
+See the [detailed walkthrough](#tarjan-scc-strongly-connected-components) above.
 
 `npm run demo -- tarjan-scc`
 
 ### kosaraju
 
-Strongly connected components via two-pass DFS.
+See the [detailed walkthrough](#kosaraju-scc-strongly-connected-components) above.
 
 `npm run demo -- kosaraju`
 
 ### bipartite-check
 
-Test whether an undirected graph is 2-colorable.
+See the [detailed walkthrough](#bipartite-check-2-coloring) above.
 
 `npm run demo -- bipartite-check`
 
@@ -1249,7 +1337,7 @@ Articulation points and bridges in an undirected graph.
 
 ### edmonds-karp
 
-Maximum s-t flow in a capacitated network.
+See the [detailed walkthrough](#edmonds-karp-max-flow) above.
 
 `npm run demo -- edmonds-karp`
 

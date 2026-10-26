@@ -60,6 +60,13 @@ export const PRACTICE_PROBLEMS = [
   { n: 45, docAnchor: '45-rabin-karp-search', walkthroughSlug: 'rabin-karp-rolling-hash', catalogTopic: 'rabin-karp' },
   { n: 46, docAnchor: '46-bellman-ford-paths', walkthroughSlug: 'bellman-ford-negative-edges', catalogTopic: 'bellman-ford' },
   { n: 47, docAnchor: '47-segment-tree-range-sum', walkthroughSlug: 'segment-tree-range-sum', catalogTopic: 'segment-tree' },
+  { n: 48, docAnchor: '48-floyd-warshall-distances', walkthroughSlug: 'floyd-warshall-all-pairs-shortest-paths', catalogTopic: 'floyd-warshall' },
+  { n: 49, docAnchor: '49-fenwick-tree-prefix-sums', walkthroughSlug: 'fenwick-tree-prefix-sums', catalogTopic: 'fenwick-tree' },
+  { n: 50, docAnchor: '50-graph-adjacency', walkthroughSlug: 'graph-adjacency-list', catalogTopic: 'graph' },
+  { n: 51, docAnchor: '51-bipartite-check', walkthroughSlug: 'bipartite-check-2-coloring', catalogTopic: 'bipartite-check' },
+  { n: 52, docAnchor: '52-tarjan-scc-sizes', walkthroughSlug: 'tarjan-scc-strongly-connected-components', catalogTopic: 'tarjan-scc' },
+  { n: 53, docAnchor: '53-kosaraju-scc-sizes', walkthroughSlug: 'kosaraju-scc-strongly-connected-components', catalogTopic: 'kosaraju' },
+  { n: 54, docAnchor: '54-edmonds-karp-max-flow', walkthroughSlug: 'edmonds-karp-max-flow', catalogTopic: 'edmonds-karp' },
 ];
 
 export const PRACTICE_DOC_ANCHORS = PRACTICE_PROBLEMS.map((p) => p.docAnchor);

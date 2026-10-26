@@ -45,6 +45,13 @@ from dsa.practice.radix_sort_practice import sort_nums as radix_sort_practice
 from dsa.practice.rabin_karp_practice import first_index as rabin_first_index
 from dsa.practice.bellman_ford_practice import shortest_paths_result
 from dsa.practice.segment_tree_practice import SegmentTreePractice
+from dsa.practice.floyd_warshall_practice import all_pairs_distances
+from dsa.practice.fenwick_tree_practice import FenwickTreePractice
+from dsa.practice.graph_practice import build_graph
+from dsa.practice.bipartite_check_practice import check_bipartite
+from dsa.practice.tarjan_scc_practice import component_sizes_sorted as tarjan_component_sizes
+from dsa.practice.kosaraju_practice import component_sizes_sorted as kosaraju_component_sizes
+from dsa.practice.edmonds_karp_practice import max_flow_value
 
 
 def test_two_sum_sorted():
@@ -286,3 +293,38 @@ def test_segment_tree_practice():
     assert st.range_sum(0, 2) == 9
     st.update(1, 10)
     assert st.range_sum(0, 1) == 11
+
+
+def test_floyd_warshall_practice():
+    dist = all_pairs_distances(3, [[0, 1, 1], [1, 2, 2], [0, 2, 10]])
+    assert dist[0][2] == 3
+
+
+def test_fenwick_tree_practice():
+    ft = FenwickTreePractice(5)
+    ft.add(1, 3)
+    ft.add(3, 2)
+    assert ft.prefix_sum(3) == 5
+
+
+def test_graph_practice():
+    g = build_graph(2, True, True, [[0, 1, 1]])
+    assert g.vertices() == 2
+    assert len(g.neighbors(0)) == 1
+
+
+def test_bipartite_check_practice():
+    assert check_bipartite(4, [[0, 1], [1, 2], [2, 3], [3, 0]])
+
+
+def test_tarjan_scc_practice():
+    assert tarjan_component_sizes(3, [[0, 1], [1, 2], [2, 0]]) == [3]
+
+
+def test_kosaraju_practice():
+    assert kosaraju_component_sizes(3, [[0, 1], [1, 2], [2, 0]]) == [3]
+
+
+def test_edmonds_karp_practice():
+    edges = [[0, 1, 3], [0, 2, 2], [1, 2, 1], [1, 3, 3], [2, 3, 2]]
+    assert max_flow_value(4, edges, 0, 3) == 5

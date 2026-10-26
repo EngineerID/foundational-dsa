@@ -45,6 +45,13 @@ const { radixSort } = require('../../src/practice/radixSortPractice');
 const { firstIndex: rabinFirstIndex } = require('../../src/practice/rabinKarpPractice');
 const { bellmanFordResult } = require('../../src/practice/bellmanFordPractice');
 const { SegmentTreePractice } = require('../../src/practice/segmentTreePractice');
+const { buildGraph } = require('../../src/practice/graphPractice');
+const { allPairsDistances } = require('../../src/practice/floydWarshallPractice');
+const { FenwickTreePractice } = require('../../src/practice/fenwickTreePractice');
+const { checkBipartite } = require('../../src/practice/bipartiteCheckPractice');
+const { componentSizesSorted: tarjanComponentSizes } = require('../../src/practice/tarjanSccPractice');
+const { componentSizesSorted: kosarajuComponentSizes } = require('../../src/practice/kosarajuPractice');
+const { maxFlowValue } = require('../../src/practice/edmondsKarpPractice');
 
 describe('practice problems', () => {
   test('two sum sorted', () => {
@@ -375,5 +382,75 @@ describe('practice problems', () => {
     expect(st.rangeSum(0, 2)).toBe(9);
     st.update(1, 10);
     expect(st.rangeSum(0, 1)).toBe(11);
+  });
+
+  test('Floyd-Warshall practice', () => {
+    const dist = allPairsDistances(3, [
+      [0, 1, 1],
+      [1, 2, 2],
+      [0, 2, 10],
+    ]);
+    expect(dist[0][2]).toBe(3);
+  });
+
+  test('Fenwick tree practice', () => {
+    const ft = new FenwickTreePractice(5);
+    ft.add(1, 3);
+    ft.add(3, 2);
+    expect(ft.prefixSum(3)).toBe(5);
+  });
+
+  test('graph practice', () => {
+    const g = buildGraph(2, true, true, [[0, 1, 1]]);
+    expect(g.vertices()).toBe(2);
+    expect(g.neighbors(0).length).toBe(1);
+  });
+
+  test('bipartite check practice', () => {
+    expect(
+      checkBipartite(4, [
+        [0, 1],
+        [1, 2],
+        [2, 3],
+        [3, 0],
+      ]),
+    ).toBe(true);
+  });
+
+  test('Tarjan SCC practice', () => {
+    expect(
+      tarjanComponentSizes(3, [
+        [0, 1],
+        [1, 2],
+        [2, 0],
+      ]),
+    ).toEqual([3]);
+  });
+
+  test('Kosaraju SCC practice', () => {
+    expect(
+      kosarajuComponentSizes(3, [
+        [0, 1],
+        [1, 2],
+        [2, 0],
+      ]),
+    ).toEqual([3]);
+  });
+
+  test('Edmonds-Karp practice', () => {
+    expect(
+      maxFlowValue(
+        4,
+        [
+          [0, 1, 3],
+          [0, 2, 2],
+          [1, 2, 1],
+          [1, 3, 3],
+          [2, 3, 2],
+        ],
+        0,
+        3,
+      ),
+    ).toBe(5);
   });
 });
