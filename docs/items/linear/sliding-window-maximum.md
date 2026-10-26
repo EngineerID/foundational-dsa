@@ -2,6 +2,14 @@
 
 Topic: **linear** / `sliding-window-maximum`
 
+Maximum in each sliding window of size k.
+
+**Complexity:** maxSlidingWindow: Time O(n); Space O(k).
+
+Window size `k` must be **positive** and `k <= n`.
+
+**Walkthrough:** [Worked examples — Sliding Window Maximum](../../worked-examples.md#sliding-window-maximum).
+
 ## Implementations
 
 | Language | Source |
@@ -16,5 +24,9 @@ Topic: **linear** / `sliding-window-maximum`
 |----------|------|
 | Python | [`test_sliding_window_maximum`](../../../python/tests/linear/test_sliding_window_maximum.py) |
 | JavaScript | [`slidingWindowMaximum.test.js`](../../../javascript/test/linear/slidingWindowMaximum.test.js) |
+| Java | [`SlidingWindowMaximumTest.java`](../../../java/src/test/java/com/dsa/examples/linear/SlidingWindowMaximumTest.java) |
 
-Java tests run via Maven in `java/src/test/java/com/dsa/examples/linear/`.
+**Property-style checks:** Python [`test_search_sort_hypothesis`](../../../python/tests/property/test_search_sort_hypothesis.py); JavaScript [`property/searchSort.property.test.js`](../../../javascript/test/property/searchSort.property.test.js).
+
+
+Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/linear/`.

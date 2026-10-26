@@ -2,6 +2,12 @@
 
 Topic: **dp** / `coin-change`
 
+Minimum coins to make an amount (unbounded supply).
+
+**Complexity:** minCoins: Time O(n·amount); Space O(amount).
+
+**Worked example:** [Topic index](../../worked-examples.md#coin-change) (summary) · run `npm run demo -- coin-change` in all three languages.
+
 ## Implementations
 
 | Language | Source |
@@ -16,5 +22,6 @@ Topic: **dp** / `coin-change`
 |----------|------|
 | Python | [`test_coin_change`](../../../python/tests/dp/test_coin_change.py) |
 | JavaScript | [`coinChange.test.js`](../../../javascript/test/dp/coinChange.test.js) |
+| Java | [`CoinChangeTest.java`](../../../java/src/test/java/com/dsa/examples/dp/CoinChangeTest.java) |
 
-Java tests run via Maven in `java/src/test/java/com/dsa/examples/dp/`.
+Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/dp/`.

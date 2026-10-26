@@ -2,6 +2,12 @@
 
 Topic: **dp** / `knapsack`
 
+0/1 knapsack maximum value for a weight capacity.
+
+**Complexity:** maxValue: Time O(n·W); Space O(W).
+
+**Worked example:** [Topic index](../../worked-examples.md#knapsack) (summary) · run `npm run demo -- knapsack` in all three languages.
+
 ## Implementations
 
 | Language | Source |
@@ -16,5 +22,6 @@ Topic: **dp** / `knapsack`
 |----------|------|
 | Python | [`test_knapsack`](../../../python/tests/dp/test_knapsack.py) |
 | JavaScript | [`knapsack.test.js`](../../../javascript/test/dp/knapsack.test.js) |
+| Java | [`Knapsack01Test.java`](../../../java/src/test/java/com/dsa/examples/dp/Knapsack01Test.java) |
 
-Java tests run via Maven in `java/src/test/java/com/dsa/examples/dp/`.
+Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/dp/`.

@@ -2,6 +2,12 @@
 
 Topic: **dp** / `partition-equal-subset`
 
+Partition array into two equal-sum subsets.
+
+**Complexity:** canPartition: Time O(n·sum); Space O(sum).
+
+**Worked example:** [Topic index](../../worked-examples.md#partition-equal-subset) (summary) · run `npm run demo -- partition-equal-subset` in all three languages.
+
 ## Implementations
 
 | Language | Source |
@@ -16,5 +22,6 @@ Topic: **dp** / `partition-equal-subset`
 |----------|------|
 | Python | [`test_partition_equal_subset`](../../../python/tests/dp/test_partition_equal_subset.py) |
 | JavaScript | [`partitionEqualSubset.test.js`](../../../javascript/test/dp/partitionEqualSubset.test.js) |
+| Java | [`PartitionEqualSubsetTest.java`](../../../java/src/test/java/com/dsa/examples/dp/PartitionEqualSubsetTest.java) |
 
-Java tests run via Maven in `java/src/test/java/com/dsa/examples/dp/`.
+Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/dp/`.

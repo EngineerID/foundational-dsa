@@ -2,6 +2,12 @@
 
 Topic: **strings** / `manacher`
 
+Longest palindromic substring length.
+
+**Complexity:** longestPalindromeLength: Time O(n); Space O(n).
+
+**Worked example:** [Topic index](../../worked-examples.md#manacher) (summary) · run `npm run demo -- manacher` in all three languages.
+
 ## Implementations
 
 | Language | Source |
@@ -16,5 +22,6 @@ Topic: **strings** / `manacher`
 |----------|------|
 | Python | [`test_manacher`](../../../python/tests/strings/test_manacher.py) |
 | JavaScript | [`manacher.test.js`](../../../javascript/test/strings/manacher.test.js) |
+| Java | [`ManacherTest.java`](../../../java/src/test/java/com/dsa/examples/strings/ManacherTest.java) |
 
-Java tests run via Maven in `java/src/test/java/com/dsa/examples/strings/`.
+Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/strings/`.

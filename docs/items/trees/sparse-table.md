@@ -2,6 +2,12 @@
 
 Topic: **trees** / `sparse-table`
 
+Static range minimum queries on an array.
+
+**Complexity:** query: Time O(1); Space O(n log n).
+
+**Worked example:** [Topic index](../../worked-examples.md#sparse-table) (summary) · run `npm run demo -- sparse-table` in all three languages.
+
 ## Implementations
 
 | Language | Source |
@@ -16,5 +22,9 @@ Topic: **trees** / `sparse-table`
 |----------|------|
 | Python | [`test_sparse_table`](../../../python/tests/trees/test_sparse_table.py) |
 | JavaScript | [`sparseTable.test.js`](../../../javascript/test/trees/sparseTable.test.js) |
+| Java | [`SparseTableTest.java`](../../../java/src/test/java/com/dsa/examples/trees/SparseTableTest.java) |
 
-Java tests run via Maven in `java/src/test/java/com/dsa/examples/trees/`.
+**Property-style checks:** Java [`PropertyTreesTest`](../../../java/src/test/java/com/dsa/examples/property/PropertyTreesTest.java); Python [`test_property_trees`](../../../python/tests/test_property_trees.py); JavaScript [`property/trees.test.js`](../../../javascript/test/property/trees.test.js).
+
+
+Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/trees/`.

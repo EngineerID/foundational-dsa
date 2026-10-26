@@ -2,6 +2,12 @@
 
 Topic: **strings** / `aho-corasick`
 
+Find all occurrences of multiple patterns in text.
+
+**Complexity:** search: Time O(n+m+z); Space O(m).
+
+**Worked example:** [Topic index](../../worked-examples.md#aho-corasick) (summary) · run `npm run demo -- aho-corasick` in all three languages.
+
 ## Implementations
 
 | Language | Source |
@@ -16,5 +22,6 @@ Topic: **strings** / `aho-corasick`
 |----------|------|
 | Python | [`test_aho_corasick`](../../../python/tests/strings/test_aho_corasick.py) |
 | JavaScript | [`ahoCorasick.test.js`](../../../javascript/test/strings/ahoCorasick.test.js) |
+| Java | [`AhoCorasickTest.java`](../../../java/src/test/java/com/dsa/examples/strings/AhoCorasickTest.java) |
 
-Java tests run via Maven in `java/src/test/java/com/dsa/examples/strings/`.
+Java unit tests also run via Maven under `java/src/test/java/com/dsa/examples/strings/`.
