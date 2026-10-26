@@ -99,7 +99,7 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Statement:** Given a complete binary tree in heap-style array form (`null` = missing child), return values level by level (left to right).
 
-**Implementation:** `practice/level_order*` / `levelOrder*`.
+**Implementation:** `practice/level_order*` / `levelOrder*` (catalog [`level-order-traversal`](items/trees/level-order-traversal.md): `npm run demo -- level-order-traversal`).
 
 ## 13. Word search
 
@@ -111,7 +111,7 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Statement:** Given an unsorted array and `k`, return the **k-th largest** element (not the k-th distinct).
 
-**Implementation:** `practice/kth_largest*` — catalog `quick-select` on rank `n - k + 1`.
+**Implementation:** `practice/kth_largest*` — same order-statistic as catalog [`quick-select`](items/searching/quick-select.md) (`npm run demo -- quick-select`; rank `n - k + 1`).
 
 ## 15. Minimum spanning tree (Kruskal)
 

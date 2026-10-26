@@ -124,6 +124,7 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 | `fenwick-tree` | Time O(log n) | Space O(n) | add/prefixSum/rangeSum: Time O(log n); Space O(n). |
 | `interval-tree` | Time O(log n + k) | Space O(n) | insert/query: Time O(log n + k) reported; Space O(n). |
 | `lca-binary-lifting` | Time O(log n) | Space O(n log n) | query: Time O(log n); Space O(n log n). |
+| `level-order-traversal` | Time O(n) | Space O(n) | levelOrder: Time O(n); Space O(n). |
 | `order-statistic-tree` | Time O(log n) | Space O(n) | rank/select/insert/delete: Time O(log n); Space O(n). |
 | `red-black-tree` | Time O(log n) | Space O(n) | search/insert: Time O(log n); Space O(n). |
 | `segment-tree` | Time O(log n) | Space O(n) | update/rangeSum: Time O(log n); Space O(n). |
@@ -138,5 +139,5 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 |----------|------|-------|----------|
 | `union-find` | Time O(α(n) | Space O(n) | find/union/connected: Time O(α(n)) amortized; Space O(n). |
 
-**Topics:** 84
+**Topics:** 85
 

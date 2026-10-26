@@ -59,6 +59,7 @@ const ALIASES = {
   'number-of-islands': ['NumberOfIslands', 'number_of_islands', 'numberOfIslands'],
   'course-schedule': ['CourseSchedule', 'course_schedule', 'courseSchedule'],
   'word-search': ['WordSearch', 'word_search', 'wordSearch'],
+  'level-order-traversal': ['LevelOrderTraversal', 'level_order_traversal', 'levelOrderTraversal'],
   'longest-substring-without-repeating': [
     'LongestSubstringWithoutRepeating',
     'longest_substring_without_repeating',

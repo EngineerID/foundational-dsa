@@ -190,6 +190,12 @@ export const API_MANIFEST = {
       'levelOrder',
     ],
   },
+  'level-order-traversal': {
+    type: 'static',
+    java: ['levelOrder'],
+    python: ['level_order'],
+    javascript: ['levelOrder'],
+  },
   'avl-tree': {
     type: 'instance',
     java: ['insert', 'delete'],

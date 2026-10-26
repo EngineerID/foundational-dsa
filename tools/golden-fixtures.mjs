@@ -263,6 +263,13 @@ export const STATEFUL_GOLDENS = [
     java: 'java/src/test/java/com/dsa/examples/trees/BstGoldensTest.java',
   },
   {
+    id: 'level-order-traversal',
+    json: 'level-order-traversal-goldens.json',
+    py: 'python/tests/trees/test_level_order_traversal_goldens.py',
+    js: 'javascript/test/trees/levelOrderTraversalGoldens.test.js',
+    java: 'java/src/test/java/com/dsa/examples/trees/LevelOrderTraversalGoldensTest.java',
+  },
+  {
     id: 'tree-traversals',
     json: 'tree-traversals-goldens.json',
     py: 'python/tests/trees/test_tree_traversals_goldens.py',

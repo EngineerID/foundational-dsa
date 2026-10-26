@@ -408,6 +408,19 @@ In-order, pre-order, post-order, and level-order tree walks.
 - `postOrderIterative` → Python `post_order_iterative`, JS `postOrderIterative`
 - `levelOrder` → Python `level_order`, JS `levelOrder`
 
+## level-order-traversal
+
+Binary tree values grouped by level (heap-style array input).
+
+| Language | Module |
+|----------|--------|
+| Java | `LevelOrderTraversal` |
+| Python | `level_order_traversal` |
+| JavaScript | `levelOrderTraversal` |
+
+**Operations:**
+- `levelOrder` → Python `level_order`, JS `levelOrder`
+
 ## avl-tree
 
 Self-balancing BST with height-balance after insert/delete.

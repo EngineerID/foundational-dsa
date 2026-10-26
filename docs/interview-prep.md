@@ -69,6 +69,7 @@ Trilingual tests for these scenarios: `WorkedInterviewExamplesTest`, `test_worke
 
 | Interview prompt | Topic id | Demo |
 |------------------|----------|------|
+| Binary tree level order | `level-order-traversal` | `npm run demo -- level-order-traversal` |
 | BST insert/search | `bst` | `npm run demo -- bst` |
 | Balanced BST | `avl-tree`, `red-black-tree` | `npm run demo -- avl-tree` |
 | Top K frequent elements | `top-k-frequent-elements` | `npm run demo -- top-k-frequent-elements` |

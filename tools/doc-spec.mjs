@@ -162,6 +162,12 @@ export const DOC_SPECS = {
     invariant: 'Left subtree keys < node < right subtree keys.',
     complexity: 'search/insert/delete: Time O(h) height; Space O(n).',
   },
+  'level-order-traversal': {
+    purpose: 'Binary tree values grouped by level (heap-style array input).',
+    technique: 'BFS with level boundaries',
+    invariant: 'Each queue layer is one tree level.',
+    complexity: 'levelOrder: Time O(n); Space O(n).',
+  },
   'tree-traversals': {
     purpose: 'In-order, pre-order, post-order, and level-order tree walks.',
     technique: 'DFS and BFS traversals',

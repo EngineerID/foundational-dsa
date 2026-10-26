@@ -154,6 +154,8 @@ export function themesInCases(cases) {
     if (typeof c.s === 'string' && c.s.length === 1) found.add('single');
     if (typeof c.word === 'string' && c.word.length === 1) found.add('single');
     if (c.word === '') found.add('empty');
+    if (Array.isArray(c.values) && c.values.length === 0) found.add('empty');
+    if (Array.isArray(c.values) && c.values.length === 1) found.add('single');
     if (typeof c.text === 'string' && c.text.length === 1) found.add('single');
     if (Array.isArray(c.inserts) && c.inserts.length === 0) found.add('empty');
     if (Array.isArray(c.inserts) && c.inserts.length === 1) found.add('single');

@@ -17,6 +17,7 @@ const { minMeetingRooms } = require('../../src/heaps/meetingRoomsII');
 const { topKFrequent } = require('../../src/heaps/topKFrequentElements');
 const { BST } = require('../../src/trees/bst');
 const { inOrderRecursive } = require('../../src/trees/treeTraversals');
+const { levelOrder } = require('../../src/trees/levelOrderTraversal');
 const { AVLTree } = require('../../src/trees/avlTree');
 const { OrderStatisticTree } = require('../../src/trees/orderStatisticTree');
 const { IntervalTree, Interval } = require('../../src/trees/intervalTree');
@@ -223,6 +224,7 @@ describe('catalog item edges', () => {
     expect(numIslands([['1']])).toBe(1);
     expect(canFinish(2, [[1, 0]])).toBe(true);
     expect(wordSearch([['A']], 'A')).toBe(true);
+    expect(levelOrder([1])).toEqual([[1]]);
   });
 
   test('graph algorithms', () => {

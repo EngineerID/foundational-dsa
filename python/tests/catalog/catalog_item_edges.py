@@ -72,6 +72,7 @@ from dsa.trees import (
     segment_tree,
     sparse_table,
     treap,
+    level_order_traversal,
     tree_traversals,
     trie,
 )
@@ -266,6 +267,7 @@ def test_new_trees_strings_dp_edge_themes():
     assert number_of_islands.num_islands([["1"]]) == 1
     assert course_schedule.can_finish(2, [[1, 0]]) is True
     assert word_search.word_search([["A"]], "A") is True
+    assert level_order_traversal.level_order([1]) == [[1]]
 
 
 def test_graph_algorithms_edge_themes():

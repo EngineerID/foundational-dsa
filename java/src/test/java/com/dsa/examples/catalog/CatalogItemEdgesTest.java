@@ -35,6 +35,8 @@ import com.dsa.examples.trees.FenwickTree;
 import com.dsa.examples.trees.SegmentTree;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /** Catalog edge themes for items beyond EdgeCaseThemesTest. */
@@ -218,6 +220,7 @@ class CatalogItemEdgesTest {
         assertEquals(1, NumberOfIslands.numIslands(new char[][] {{'1'}}));
         assertTrue(CourseSchedule.canFinish(2, new int[][] {{1, 0}}));
         assertTrue(WordSearch.wordSearch(new char[][] {{'A'}}, "A"));
+        assertEquals(List.of(List.of(1)), LevelOrderTraversal.levelOrder(new Integer[] {1}));
     }
 
     @Test
