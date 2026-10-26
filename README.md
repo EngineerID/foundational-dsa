@@ -18,9 +18,10 @@ Use it to study implementations side by side, prepare for interviews, or teach D
 | 1 | Clone the repo and run `bash .cursor/install.sh` once (Node 20+, Python 3.10+, JDK 17+). |
 | 2 | Run `npm test` from the root — docs link scan, complexity checks, then Java, Python, JavaScript, parity, and matrix. |
 | 3 | Explore a topic: [COVERAGE.md](COVERAGE.md) lists all 87 ids; `npm run demo -- <id>` runs that topic’s tests in all three languages. |
-| 4 | Interview study: [docs/interview-prep.md](docs/interview-prep.md) maps prompts to ids; [docs/worked-examples.md](docs/worked-examples.md) has step tables; [docs/practice-problems.md](docs/practice-problems.md) has 61 trilingual problems (expanding toward full catalog coverage). |
-| 5 | First PR: read [CONTRIBUTING.md](CONTRIBUTING.md) (scope, `npm test` vs `npm run test:ci`, issue templates). |
-| 6 | Security reports: [SECURITY.md](SECURITY.md). |
+| 4 | **Practice:** [docs/how-to-practice.md](docs/how-to-practice.md) — study loop, golden tests, and seeded property checks; [docs/practice-problems.md](docs/practice-problems.md) lists all **87** trilingual problems with walkthroughs. |
+| 5 | Interview study: [docs/interview-prep.md](docs/interview-prep.md) maps prompts to ids; [docs/worked-examples.md](docs/worked-examples.md) has step tables; [docs/pattern-recognition.md](docs/pattern-recognition.md) links signals to topics. |
+| 6 | First PR: read [CONTRIBUTING.md](CONTRIBUTING.md) (scope, `npm test` vs `npm run test:ci`, issue templates). |
+| 7 | Security reports: [SECURITY.md](SECURITY.md). |
 
 **Complexity notation:** README and [docs/items/](docs/items/) use `O(n log n)` style; some doc-spec strings use `·` for multiply (e.g. `O(n·W)` for knapsack capacity). Meaning is the same across languages.
 
@@ -120,6 +121,17 @@ Topic ids are the first column of [COVERAGE.md](COVERAGE.md), such as `dijkstra`
 After adding a topic, regenerate the matrix with `npm run matrix` (or `make matrix`). `npm run matrix:check` only verifies; it does not rewrite the file.
 
 Continuous integration uses a [CI-minutes policy](docs/ci.md): push to `main` and pull requests (draft PRs skip heavy work until marked ready). See [`.github/workflows/ci.yml`](.github/workflows/ci.yml) and [docs/running-ci-locally.md](docs/running-ci-locally.md).
+
+## How to practice
+
+See **[docs/how-to-practice.md](docs/how-to-practice.md)** for a step-by-step loop (read problem → demo catalog → edit `practice/` → run goldens and property tests). Phase-1 **property tests** compare practice code to brute-force references for sorting, searching, graphs, and DP (`check:practice-property-coverage`, seed **42**, **25** trials per test).
+
+Quick links:
+
+- [Practice problems (87)](docs/practice-problems.md)
+- [Worked examples / complexity walkthroughs](docs/worked-examples.md)
+- [Topic index by area (below)](#topics-87) and [full doc links](#full-algorithm-index)
+- Generated path index: [INVENTORY.md](INVENTORY.md) (`npm run inventory`)
 
 ## Topics (87)
 
