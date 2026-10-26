@@ -1,5 +1,6 @@
 """Edge themes on practice wrappers (empty, single, duplicate, large, invalid)."""
 
+# practice-edge-theme-topics: binary-heap binary-search bubble-sort counting-sort dynamic-array linear-search maximum-subarray merge-sort monotonic-stack stack
 import pytest
 
 from dsa.practice.binary_heap_practice import extract_order

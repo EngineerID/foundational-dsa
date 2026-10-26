@@ -9,7 +9,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-/** Edge themes on practice wrappers (empty, single, duplicate, large, invalid). */
+/**
+ * Edge themes on practice wrappers (empty, single, duplicate, large, invalid).
+ *
+ * <p>practice-edge-theme-topics: binary-heap binary-search bubble-sort counting-sort dynamic-array linear-search maximum-subarray merge-sort monotonic-stack stack
+ */
 class PracticeEdgeThemesTest {
 
     private static final int LARGE_N = 256;

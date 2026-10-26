@@ -1,4 +1,4 @@
-/** Edge themes on practice wrappers (empty, single, duplicate, large, invalid). */
+// practice-edge-theme-topics: binary-heap binary-search bubble-sort counting-sort dynamic-array linear-search maximum-subarray merge-sort monotonic-stack stack
 const LARGE_N = 256;
 
 const { bubbleSort } = require('../../src/practice/bubbleSortPractice');
