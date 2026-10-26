@@ -53,7 +53,10 @@ Additional checks:
 npm run lint
 npm run check:edge-themes
 npm run check:ci-policy
+npm run check:practice-walkthrough
 ```
+
+`check:practice-walkthrough` ensures every problem in `docs/practice-problems.md` links to a `worked-examples.md` walkthrough (or is listed in `tools/practice-walkthrough-data.mjs` `PRACTICE_WALKTHROUGH_EXEMPT`).
 
 Optional local timing (not a CI gate): `npm run bench` (see `tools/micro-bench.mjs`).
 

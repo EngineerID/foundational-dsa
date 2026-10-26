@@ -5,32 +5,10 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { ITEMS } from './items.mjs';
+import { PRACTICE_DOC_ANCHORS } from './practice-walkthrough-data.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const README = path.join(ROOT, 'README.md');
-
-const PRACTICE_ANCHORS = [
-  '1-two-sum-ii',
-  '2-maximum-subarray',
-  '3-valid-parentheses',
-  '4-meeting-rooms-ii',
-  '5-number-of-islands',
-  '6-top-k-frequent-elements',
-  '7-course-schedule',
-  '8-longest-substring-without-repeating-characters',
-  '9-coin-change',
-  '10-lru-cache-design',
-  '11-merge-intervals',
-  '12-binary-tree-level-order-traversal',
-  '13-word-search',
-  '14-kth-largest-element',
-  '15-minimum-spanning-tree-kruskal',
-  '16-trapping-rain-water',
-  '17-edit-distance',
-  '18-serialize-and-deserialize-binary-tree',
-  '19-network-delay-time',
-  '20-sliding-window-maximum',
-];
 
 function main() {
   const text = fs.readFileSync(README, 'utf8');
@@ -45,7 +23,7 @@ function main() {
       errors.push(`missing item doc file ${rel}`);
     }
   }
-  for (const anchor of PRACTICE_ANCHORS) {
+  for (const anchor of PRACTICE_DOC_ANCHORS) {
     if (!text.includes(`docs/practice-problems.md#${anchor}`)) {
       errors.push(`README missing practice link #${anchor}`);
     }
@@ -55,7 +33,7 @@ function main() {
     for (const e of errors) console.error(`  - ${e}`);
     process.exit(1);
   }
-  console.log(`README index check passed (${ITEMS.length} topics, ${PRACTICE_ANCHORS.length} practice links).`);
+  console.log(`README index check passed (${ITEMS.length} topics, ${PRACTICE_DOC_ANCHORS.length} practice links).`);
 }
 
 main();

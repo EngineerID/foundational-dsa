@@ -1,6 +1,6 @@
 # Practice problems (trilingual solutions)
 
-Twenty interview-style problems with reference solutions in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`.
+Twenty interview-style problems with reference solutions in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`. Each problem below links to a step-table **[worked example](worked-examples.md)** (CI: `npm run check:practice-walkthrough`).
 
 | # | Problem | Signals | Catalog topics |
 |---|---------|---------|----------------|
@@ -35,11 +35,15 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Implementation:** `practice/two_sum*` — two pointers (catalog [`two-sum-ii`](items/searching/two-sum-ii.md): `npm run demo -- two-sum-ii`).
 
+**Walkthrough:** [Worked examples — Two Sum II](worked-examples.md#two-sum-ii-sorted-pair).
+
 ## 2. Maximum subarray
 
 **Statement:** Given an integer array, return the largest sum of any contiguous subarray (Kadane).
 
 **Implementation:** `practice/max_subarray*` (same algorithm as catalog [`maximum-subarray`](items/dp/maximum-subarray.md): `npm run demo -- maximum-subarray`).
+
+**Walkthrough:** [Worked examples — Maximum subarray](worked-examples.md#maximum-subarray-kadane).
 
 ## 3. Valid parentheses
 
@@ -47,11 +51,15 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Implementation:** `practice/valid_parentheses*` (catalog [`valid-parentheses`](items/linear/valid-parentheses.md): `npm run demo -- valid-parentheses`).
 
+**Walkthrough:** [Worked examples — Valid parentheses](worked-examples.md#valid-parentheses-stack).
+
 ## 4. Meeting rooms II
 
 **Statement:** Given meeting intervals `[start, end)`, return the minimum number of conference rooms required so no meetings overlap.
 
 **Implementation:** `practice/meeting_rooms*` (catalog [`meeting-rooms-ii`](items/heaps/meeting-rooms-ii.md): `npm run demo -- meeting-rooms-ii`).
+
+**Walkthrough:** [Worked examples — Meeting rooms II](worked-examples.md#meeting-rooms-ii-min-heap).
 
 ## 5. Number of islands
 
@@ -59,11 +67,15 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Implementation:** `practice/num_islands*` (catalog [`number-of-islands`](items/graphs/number-of-islands.md): `npm run demo -- number-of-islands`).
 
+**Walkthrough:** [Worked examples — Number of islands](worked-examples.md#number-of-islands-grid-dfs).
+
 ## 6. Top K frequent elements
 
 **Statement:** Given an integer array and `k`, return the `k` most frequent elements. Break ties by **smaller value first** in the output order (after sorting by frequency descending).
 
 **Implementation:** `practice/top_k_frequent*` — count + size-`k` min-heap (catalog [`top-k-frequent-elements`](items/heaps/top-k-frequent-elements.md): `npm run demo -- top-k-frequent-elements`).
+
+**Walkthrough:** [Worked examples — Top K frequent](worked-examples.md#top-k-frequent-elements).
 
 ## 7. Course schedule
 
@@ -71,11 +83,15 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Implementation:** `practice/course_schedule*` (catalog [`course-schedule`](items/graphs/course-schedule.md): `npm run demo -- course-schedule`).
 
+**Walkthrough:** [Worked examples — Course schedule](worked-examples.md#course-schedule-canfinish).
+
 ## 8. Longest substring without repeating characters
 
 **Statement:** Given a string, return the length of the longest substring with all distinct characters.
 
 **Implementation:** `practice/longest_substring*` (catalog [`longest-substring-without-repeating`](items/strings/longest-substring-without-repeating.md): `npm run demo -- longest-substring-without-repeating`).
+
+**Walkthrough:** [Worked examples — Longest substring](worked-examples.md#longest-substring-without-repeating) (see also [sliding window patterns](worked-examples.md#sliding-window-patterns-fixed-and-variable)).
 
 ## 9. Coin change
 
@@ -83,11 +99,15 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Implementation:** `practice/coin_change*` — unbounded knapsack DP (catalog [`coin-change`](items/dp/coin-change.md): `npm run demo -- coin-change`).
 
+**Walkthrough:** [Worked examples — Coin change](worked-examples.md#coin-change-min-coins).
+
 ## 10. LRU cache design
 
 **Statement:** Design a cache with fixed capacity supporting `get(key)` (returns `-1` if missing) and `put(key, value)` in O(1) average time, evicting the least recently used entry when over capacity.
 
 **Implementation:** `practice/lru_design*` — wraps catalog [`lru-cache`](items/linear/lru-cache.md): `npm run demo -- lru-cache`).
+
+**Walkthrough:** [Worked examples — LRU cache](worked-examples.md#lru-cache-capacity-2).
 
 ## 11. Merge intervals
 
@@ -95,11 +115,15 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Implementation:** `practice/merge_intervals*` (catalog [`merge-intervals`](items/sorting/merge-intervals.md): `npm run demo -- merge-intervals`).
 
+**Walkthrough:** [Worked examples — Merge intervals](worked-examples.md#merge-intervals).
+
 ## 12. Binary tree level order traversal
 
 **Statement:** Given a complete binary tree in heap-style array form (`null` = missing child), return values level by level (left to right).
 
 **Implementation:** `practice/level_order*` / `levelOrder*` (catalog [`level-order-traversal`](items/trees/level-order-traversal.md): `npm run demo -- level-order-traversal`).
+
+**Walkthrough:** [Worked examples — Level order](worked-examples.md#level-order-traversal-heap-array).
 
 ## 13. Word search
 
@@ -107,11 +131,15 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Implementation:** `practice/word_search*` (catalog [`word-search`](items/graphs/word-search.md): `npm run demo -- word-search`).
 
+**Walkthrough:** [Worked examples — Word search](worked-examples.md#word-search-grid-backtracking) (see also [backtracking template](worked-examples.md#backtracking-choose-explore-undo)).
+
 ## 14. Kth largest element
 
 **Statement:** Given an unsorted array and `k`, return the **k-th largest** element (not the k-th distinct).
 
 **Implementation:** `practice/kth_largest*` — same order-statistic as catalog [`quick-select`](items/searching/quick-select.md) (`npm run demo -- quick-select`; rank `n - k + 1`).
+
+**Walkthrough:** [Worked examples — Quick select](worked-examples.md#quick-select-k-th-order-statistic).
 
 ## 15. Minimum spanning tree (Kruskal)
 
@@ -119,11 +147,15 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Implementation:** `practice/mst_kruskal*` — catalog [`kruskal-mst`](items/graphs/kruskal-mst.md) + [`union-find`](items/unionfind/union-find.md): `npm run demo -- kruskal-mst`).
 
+**Walkthrough:** [Worked examples — Kruskal MST](worked-examples.md#kruskal-mst-union-find) (see also [union–find](worked-examples.md#union-find-connectivity)).
+
 ## 16. Trapping rain water
 
 **Statement:** Given non-negative bar heights, compute how much water can be trapped after raining.
 
 **Implementation:** `practice/trapping_rain_water*` / `trappingRainWater*` — two pointers (catalog [`trapping-rain-water`](items/searching/trapping-rain-water.md): `npm run demo -- trapping-rain-water`).
+
+**Walkthrough:** [Worked examples — Trapping rain water](worked-examples.md#trapping-rain-water-two-pointers).
 
 ## 17. Edit distance
 
@@ -131,11 +163,15 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Implementation:** `practice/edit_distance_practice*` / `editDistancePractice*` — Levenshtein DP (catalog [`edit-distance`](items/dp/edit-distance.md): `npm run demo -- edit-distance`).
 
+**Walkthrough:** [Worked examples — Edit distance](worked-examples.md#edit-distance-kitten-to-sitting).
+
 ## 18. Serialize and deserialize binary tree
 
 **Statement:** Encode a binary tree given in heap-style level order (`null` = missing child) into a compact string and decode back to the same level-order shape (trim trailing nulls).
 
 **Implementation:** `practice/tree_codec*` / `treeCodec*` (catalog [`serialize-binary-tree`](items/trees/serialize-binary-tree.md): `npm run demo -- serialize-binary-tree`).
+
+**Walkthrough:** [Worked examples — Serialize binary tree](worked-examples.md#serialize-binary-tree-level-order-codec).
 
 ## 19. Network delay time
 
@@ -143,8 +179,12 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Implementation:** `practice/network_delay*` / `networkDelay*` (catalog [`network-delay`](items/graphs/network-delay.md): `npm run demo -- network-delay`).
 
+**Walkthrough:** [Worked examples — Network delay](worked-examples.md#network-delay-time).
+
 ## 20. Sliding window maximum
 
 **Statement:** Given an integer array and window size `k`, return the maximum value in each sliding window of size `k`.
 
 **Implementation:** `practice/sliding_window_max*` / `slidingWindowMax*` — monotonic deque (catalog [`sliding-window-maximum`](items/linear/sliding-window-maximum.md): `npm run demo -- sliding-window-maximum`; related [`monotonic-stack`](items/linear/monotonic-stack.md): `npm run demo -- monotonic-stack`).
+
+**Walkthrough:** [Worked examples — Sliding window maximum](worked-examples.md#sliding-window-maximum) (see also [sliding window patterns](worked-examples.md#sliding-window-patterns-fixed-and-variable)).
