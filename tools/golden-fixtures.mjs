@@ -158,6 +158,13 @@ export const STATEFUL_GOLDENS = [
     java: 'java/src/test/java/com/dsa/examples/dp/EditDistanceGoldensTest.java',
   },
   {
+    id: 'network-delay',
+    json: 'network-delay-goldens.json',
+    py: 'python/tests/graphs/test_network_delay_goldens.py',
+    js: 'javascript/test/graphs/networkDelayGoldens.test.js',
+    java: 'java/src/test/java/com/dsa/examples/graphs/NetworkDelayGoldensTest.java',
+  },
+  {
     id: 'dijkstra',
     json: 'dijkstra-goldens.json',
     py: 'python/tests/graphs/test_dijkstra_goldens.py',

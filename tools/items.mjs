@@ -62,6 +62,7 @@ export const ITEMS = [
   { topic: 'graphs', id: 'dfs', java: 'DFS', py: 'dfs', js: 'dfs' },
   { topic: 'graphs', id: 'topological-sort', java: 'TopologicalSort', py: 'topological_sort', js: 'topologicalSort' },
   { topic: 'graphs', id: 'dijkstra', java: 'Dijkstra', py: 'dijkstra', js: 'dijkstra' },
+  { topic: 'graphs', id: 'network-delay', java: 'NetworkDelay', py: 'network_delay', js: 'networkDelay' },
   { topic: 'graphs', id: 'bellman-ford', java: 'BellmanFord', py: 'bellman_ford', js: 'bellmanFord' },
   { topic: 'graphs', id: 'floyd-warshall', java: 'FloydWarshall', py: 'floyd_warshall', js: 'floydWarshall' },
   { topic: 'graphs', id: 'kruskal-mst', java: 'KruskalMST', py: 'kruskal_mst', js: 'kruskalMst' },

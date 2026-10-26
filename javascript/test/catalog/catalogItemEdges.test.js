@@ -32,6 +32,7 @@ const { kahn } = require('../../src/graphs/topologicalSort');
 const { canFinish } = require('../../src/graphs/courseSchedule');
 const { wordSearch } = require('../../src/graphs/wordSearch');
 const { shortestPaths: dijkstra } = require('../../src/graphs/dijkstra');
+const { networkDelay } = require('../../src/graphs/networkDelay');
 const { shortestPaths: bellmanFord } = require('../../src/graphs/bellmanFord');
 const { allPairsShortestPaths } = require('../../src/graphs/floydWarshall');
 const { totalWeight: kruskalWeight } = require('../../src/graphs/kruskalMst');
@@ -225,6 +226,7 @@ describe('catalog item edges', () => {
     expect(canFinish(2, [[1, 0]])).toBe(true);
     expect(wordSearch([['A']], 'A')).toBe(true);
     expect(levelOrder([1])).toEqual([[1]]);
+    expect(networkDelay(4, [[1, 0, 1], [1, 2, 1], [2, 3, 1]], 1)).toBe(2);
   });
 
   test('graph algorithms', () => {

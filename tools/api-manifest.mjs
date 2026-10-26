@@ -298,6 +298,12 @@ export const API_MANIFEST = {
     python: ['shortest_paths'],
     javascript: ['shortestPaths'],
   },
+  'network-delay': {
+    type: 'static',
+    java: ['networkDelay'],
+    python: ['network_delay'],
+    javascript: ['networkDelay'],
+  },
   'bellman-ford': {
     type: 'static',
     java: ['shortestPaths'],

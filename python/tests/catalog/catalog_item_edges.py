@@ -31,6 +31,7 @@ from dsa.graphs import (
     hungarian,
     kosaraju,
     kruskal_mst,
+    network_delay,
     number_of_islands,
     prim_mst,
     tarjan_scc,
@@ -268,6 +269,7 @@ def test_new_trees_strings_dp_edge_themes():
     assert course_schedule.can_finish(2, [[1, 0]]) is True
     assert word_search.word_search([["A"]], "A") is True
     assert level_order_traversal.level_order([1]) == [[1]]
+    assert network_delay.network_delay(4, [[1, 0, 1], [1, 2, 1], [2, 3, 1]], 1) == 2
 
 
 def test_graph_algorithms_edge_themes():

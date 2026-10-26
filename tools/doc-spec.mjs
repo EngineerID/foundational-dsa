@@ -270,6 +270,12 @@ export const DOC_SPECS = {
     invariant: 'Output order: for each edge u->v, pos[u] < pos[v].',
     complexity: 'sort: Time O(V+E); Space O(V).',
   },
+  'network-delay': {
+    purpose: 'Time for all nodes to receive a signal from a source (max Dijkstra distance).',
+    technique: 'Dijkstra single-source shortest paths',
+    invariant: 'Return -1 if any node is unreachable from the source.',
+    complexity: 'networkDelay: Time O((V+E) log V); Space O(V).',
+  },
   dijkstra: {
     purpose: 'Single-source shortest paths on non-negative edge weights.',
     technique: "Dijkstra's algorithm (indexed min-heap)",

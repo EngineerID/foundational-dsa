@@ -173,6 +173,7 @@ export function themesInCases(cases) {
     if (Array.isArray(c.grid) && c.grid.length === 0) found.add('empty');
     if (Array.isArray(c.grid) && c.grid.length === 1) found.add('single');
     if (typeof c.numCourses === 'number' && c.numCourses === 1) found.add('single');
+    if (typeof c.n === 'number' && c.n === 1) found.add('single');
     if (Array.isArray(c.weights) && c.weights.length === 1) found.add('single');
     if (c.maxFlow === 0) found.add('boundary');
     if (Array.isArray(c.articulationPoints) && c.articulationPoints.length > 0) found.add('boundary');

@@ -141,7 +141,7 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Statement:** There are `n` nodes `0 .. n-1` and directed edges `[u, v, w]` (travel time). Starting from node `k`, return the time until **all** nodes have received a signal, or `-1` if some node is unreachable.
 
-**Implementation:** `practice/network_delay*` / `networkDelay*` — catalog `dijkstra` + max distance.
+**Implementation:** `practice/network_delay*` / `networkDelay*` (catalog [`network-delay`](items/graphs/network-delay.md): `npm run demo -- network-delay`).
 
 ## 20. Sliding window maximum
 

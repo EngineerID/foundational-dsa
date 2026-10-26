@@ -60,6 +60,7 @@ const ALIASES = {
   'course-schedule': ['CourseSchedule', 'course_schedule', 'courseSchedule'],
   'word-search': ['WordSearch', 'word_search', 'wordSearch'],
   'level-order-traversal': ['LevelOrderTraversal', 'level_order_traversal', 'levelOrderTraversal'],
+  'network-delay': ['NetworkDelay', 'network_delay', 'networkDelay'],
   'longest-substring-without-repeating': [
     'LongestSubstringWithoutRepeating',
     'longest_substring_without_repeating',

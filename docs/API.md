@@ -811,6 +811,19 @@ Single-source shortest paths on non-negative edge weights.
 **Operations:**
 - `shortestPaths` → Python `shortest_paths`, JS `shortestPaths`
 
+## network-delay
+
+Time for all nodes to receive a signal from a source (max Dijkstra distance).
+
+| Language | Module |
+|----------|--------|
+| Java | `NetworkDelay` |
+| Python | `network_delay` |
+| JavaScript | `networkDelay` |
+
+**Operations:**
+- `networkDelay` → Python `network_delay`, JS `networkDelay`
+
 ## bellman-ford
 
 Single-source shortest paths with negative edges; detect negative cycles.

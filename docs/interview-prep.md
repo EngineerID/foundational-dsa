@@ -88,6 +88,7 @@ Trilingual tests for these scenarios: `WorkedInterviewExamplesTest`, `test_worke
 | DFS / cycle / components | `dfs` | `npm run demo -- dfs` |
 | Course schedule / topo order | `course-schedule`, `topological-sort` | `npm run demo -- course-schedule` |
 | Weighted SSSP, non-negative edges | `dijkstra` | `npm run demo -- dijkstra` |
+| Network delay (max Dijkstra reach) | `network-delay` | `npm run demo -- network-delay` |
 | Negative edges / detect cycle | `bellman-ford` | `npm run demo -- bellman-ford` |
 | All-pairs shortest paths | `floyd-warshall` | `npm run demo -- floyd-warshall` |
 | Minimum spanning tree | `kruskal-mst`, `prim-mst` | `npm run demo -- kruskal-mst` |
