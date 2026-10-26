@@ -35,6 +35,15 @@ const { checkBipartite } = require('../../src/practice/bipartiteCheckPractice');
 const { componentSizesSorted: tarjanComponentSizes } = require('../../src/practice/tarjanSccPractice');
 const { componentSizesSorted: kosarajuComponentSizes } = require('../../src/practice/kosarajuPractice');
 const { maxFlowValue } = require('../../src/practice/edmondsKarpPractice');
+const { minCost: matrixMinCost } = require('../../src/practice/matrixChainPractice');
+const { maxRevenue: rodMaxRevenue } = require('../../src/practice/rodCuttingPractice');
+const { canSplitEqualSubset } = require('../../src/practice/partitionEqualSubsetPractice');
+const {
+  longestPalindromicSubsequenceLength,
+} = require('../../src/practice/longestPalindromicSubsequencePractice');
+const { DynamicArrayPractice } = require('../../src/practice/dynamicArrayPractice');
+const { findIndex: linearFindIndex } = require('../../src/practice/linearSearchPractice');
+const { bubbleSort } = require('../../src/practice/bubbleSortPractice');
 
 const tools = path.join(__dirname, '../../../tools');
 
@@ -350,6 +359,59 @@ describe('practice shared goldens', () => {
   test('Edmonds-Karp practice', () => {
     for (const row of cases('edmonds-karp-goldens.json')) {
       expect(maxFlowValue(row.n, row.edges, row.source, row.sink)).toBe(row.maxFlow);
+    }
+  });
+
+  test('matrix chain practice', () => {
+    for (const row of cases('matrix-chain-goldens.json')) {
+      expect(matrixMinCost(row.dimensions)).toBe(row.expected);
+    }
+  });
+
+  test('rod cutting practice', () => {
+    for (const row of cases('rod-cutting-goldens.json')) {
+      if (row.expectError) {
+        expect(() => rodMaxRevenue(row.prices, row.length)).toThrow();
+      } else {
+        expect(rodMaxRevenue(row.prices, row.length)).toBe(row.expected);
+      }
+    }
+  });
+
+  test('partition equal subset practice', () => {
+    for (const row of cases('partition-equal-subset-goldens.json')) {
+      expect(canSplitEqualSubset(row.nums)).toBe(row.expected);
+    }
+  });
+
+  test('longest palindromic subsequence practice', () => {
+    for (const row of cases('longest-palindromic-subsequence-goldens.json')) {
+      expect(longestPalindromicSubsequenceLength(row.s)).toBe(row.expected);
+    }
+  });
+
+  test('dynamic array practice', () => {
+    for (const row of cases('dynamic-array-goldens.json')) {
+      const arr = new DynamicArrayPractice();
+      for (const v of row.append ?? []) {
+        arr.add(v);
+      }
+      expect(arr.size()).toBe(row.size);
+      for (const pair of row.get ?? []) {
+        expect(arr.get(pair.index)).toBe(pair.value);
+      }
+    }
+  });
+
+  test('linear search practice', () => {
+    for (const row of cases('linear-search-goldens.json')) {
+      expect(linearFindIndex(row.arr, row.target)).toBe(row.expected);
+    }
+  });
+
+  test('bubble sort practice', () => {
+    for (const row of cases('bubble-sort-goldens.json')) {
+      expect(bubbleSort(row.input)).toEqual(row.sorted);
     }
   });
 });

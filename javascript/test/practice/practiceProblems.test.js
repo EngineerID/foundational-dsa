@@ -52,6 +52,15 @@ const { checkBipartite } = require('../../src/practice/bipartiteCheckPractice');
 const { componentSizesSorted: tarjanComponentSizes } = require('../../src/practice/tarjanSccPractice');
 const { componentSizesSorted: kosarajuComponentSizes } = require('../../src/practice/kosarajuPractice');
 const { maxFlowValue } = require('../../src/practice/edmondsKarpPractice');
+const { minCost: matrixMinCost } = require('../../src/practice/matrixChainPractice');
+const { maxRevenue: rodMaxRevenue } = require('../../src/practice/rodCuttingPractice');
+const { canSplitEqualSubset } = require('../../src/practice/partitionEqualSubsetPractice');
+const {
+  longestPalindromicSubsequenceLength,
+} = require('../../src/practice/longestPalindromicSubsequencePractice');
+const { DynamicArrayPractice } = require('../../src/practice/dynamicArrayPractice');
+const { findIndex: linearFindIndex } = require('../../src/practice/linearSearchPractice');
+const { bubbleSort } = require('../../src/practice/bubbleSortPractice');
 
 describe('practice problems', () => {
   test('two sum sorted', () => {
@@ -452,5 +461,37 @@ describe('practice problems', () => {
         3,
       ),
     ).toBe(5);
+  });
+
+  test('matrix chain practice', () => {
+    expect(matrixMinCost([10, 30, 5, 60])).toBe(4500);
+  });
+
+  test('rod cutting practice', () => {
+    expect(rodMaxRevenue([1, 5, 8, 9, 10, 17, 17, 20], 4)).toBe(10);
+  });
+
+  test('partition equal subset practice', () => {
+    expect(canSplitEqualSubset([1, 5, 11, 5])).toBe(true);
+  });
+
+  test('longest palindromic subsequence practice', () => {
+    expect(longestPalindromicSubsequenceLength('bbbab')).toBe(4);
+  });
+
+  test('dynamic array practice', () => {
+    const arr = new DynamicArrayPractice();
+    arr.add(10);
+    arr.add(20);
+    expect(arr.size()).toBe(2);
+    expect(arr.get(0)).toBe(10);
+  });
+
+  test('linear search practice', () => {
+    expect(linearFindIndex([1, 2, 3], 2)).toBe(1);
+  });
+
+  test('bubble sort practice', () => {
+    expect(bubbleSort([5, 2, 8, 1, 2])).toEqual([1, 2, 2, 5, 8]);
   });
 });

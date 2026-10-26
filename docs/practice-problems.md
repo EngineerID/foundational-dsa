@@ -1,6 +1,6 @@
 # Practice problems (trilingual solutions)
 
-Fifty-four interview-style problems with reference solutions in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`. Each problem below links to a step-table **[worked example](worked-examples.md)** (CI: `npm run check:practice-walkthrough`).
+Sixty-one interview-style problems with reference solutions in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`. Each problem below links to a step-table **[worked example](worked-examples.md)** (CI: `npm run check:practice-walkthrough`).
 
 | # | Problem | Signals | Catalog topics |
 |---|---------|---------|----------------|
@@ -58,6 +58,13 @@ Fifty-four interview-style problems with reference solutions in Java, Python, an
 | 52 | [Tarjan SCC sizes](#52-tarjan-scc-sizes) | Strongly connected components | `tarjan-scc` |
 | 53 | [Kosaraju SCC sizes](#53-kosaraju-scc-sizes) | SCC via two-pass DFS | `kosaraju` |
 | 54 | [Edmonds-Karp max flow](#54-edmonds-karp-max-flow) | s–t max flow | `edmonds-karp` |
+| 55 | [Matrix chain min cost](#55-matrix-chain-min-cost) | Optimal parenthesization | `matrix-chain` |
+| 56 | [Rod cutting max profit](#56-rod-cutting-max-profit) | Unbounded length DP | `rod-cutting` |
+| 57 | [Partition equal subset](#57-partition-equal-subset) | 0/1 subset sum | `partition-equal-subset` |
+| 58 | [Longest palindromic subsequence](#58-longest-palindromic-subsequence) | Interval DP | `longest-palindromic-subsequence` |
+| 59 | [Dynamic array operations](#59-dynamic-array-operations) | Append / get / size | `dynamic-array` |
+| 60 | [Linear search index](#60-linear-search-index) | First match scan | `linear-search` |
+| 61 | [Bubble sort](#61-bubble-sort) | Adjacent swap sort | `bubble-sort` |
 
 Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --testPathPattern=practice`, Java `PracticeProblemsTest`.
 
@@ -494,3 +501,59 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 **Implementation:** `practice/edmonds_karp*` / `edmondsKarpPractice*` — catalog [`edmonds-karp`](items/graphs/edmonds-karp.md): `npm run demo -- edmonds-karp`.
 
 **Walkthrough:** [Worked examples — Edmonds-Karp](worked-examples.md#edmonds-karp-max-flow).
+
+## 55. Matrix chain min cost
+
+**Statement:** Given matrix dimension chain `dimensions`, return the minimum scalar multiplication cost to multiply the chain.
+
+**Implementation:** `practice/matrix_chain*` / `matrixChainPractice*` — catalog [`matrix-chain`](items/dp/matrix-chain.md): `npm run demo -- matrix-chain`.
+
+**Walkthrough:** [Worked examples — Matrix chain](worked-examples.md#matrix-chain-min-scalar-multiplications).
+
+## 56. Rod cutting max profit
+
+**Statement:** Given piece prices and a rod length, return maximum revenue from cutting the rod into pieces.
+
+**Implementation:** `practice/rod_cutting*` / `rodCuttingPractice*` — catalog [`rod-cutting`](items/dp/rod-cutting.md): `npm run demo -- rod-cutting`.
+
+**Walkthrough:** [Worked examples — Rod cutting](worked-examples.md#rod-cutting-max-revenue).
+
+## 57. Partition equal subset
+
+**Statement:** Return whether the array can be partitioned into two subsets with equal sum.
+
+**Implementation:** `practice/partition_equal_subset*` / `partitionEqualSubsetPractice*` — catalog [`partition-equal-subset`](items/dp/partition-equal-subset.md): `npm run demo -- partition-equal-subset`.
+
+**Walkthrough:** [Worked examples — Partition equal subset](worked-examples.md#partition-equal-subset-01-knapsack).
+
+## 58. Longest palindromic subsequence
+
+**Statement:** Return the length of the longest palindromic subsequence of `s`.
+
+**Implementation:** `practice/longest_palindromic_subsequence*` / `longestPalindromicSubsequencePractice*` — catalog [`longest-palindromic-subsequence`](items/dp/longest-palindromic-subsequence.md): `npm run demo -- longest-palindromic-subsequence`.
+
+**Walkthrough:** [Worked examples — LPS](worked-examples.md#longest-palindromic-subsequence-length).
+
+## 59. Dynamic array operations
+
+**Statement:** Implement a resizable array with `add`, `get`, and `size`.
+
+**Implementation:** `practice/dynamic_array*` / `dynamicArrayPractice*` — catalog [`dynamic-array`](items/linear/dynamic-array.md): `npm run demo -- dynamic-array`.
+
+**Walkthrough:** [Worked examples — Dynamic array](worked-examples.md#dynamic-array-append-and-get).
+
+## 60. Linear search index
+
+**Statement:** Return the first index of `target` in `arr`, or **-1** if absent.
+
+**Implementation:** `practice/linear_search*` / `linearSearchPractice*` — catalog [`linear-search`](items/searching/linear-search.md): `npm run demo -- linear-search`.
+
+**Walkthrough:** [Worked examples — Linear search](worked-examples.md#linear-search-first-match-index).
+
+## 61. Bubble sort
+
+**Statement:** Return a sorted copy of the input using bubble sort.
+
+**Implementation:** `practice/bubble_sort*` / `bubbleSortPractice*` — catalog [`bubble-sort`](items/sorting/bubble-sort.md): `npm run demo -- bubble-sort`.
+
+**Walkthrough:** [Worked examples — Bubble sort](worked-examples.md#bubble-sort-in-place-ascending).

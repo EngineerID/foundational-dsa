@@ -383,4 +383,43 @@ class PracticeProblemsTest {
                         0,
                         3));
     }
+
+    @Test
+    void matrixChainPractice() {
+        assertEquals(4500L, MatrixChainPractice.minMultiplications(new int[] { 10, 30, 5, 60 }));
+    }
+
+    @Test
+    void rodCuttingPractice() {
+        assertEquals(10, RodCuttingPractice.maxProfit(new int[] { 1, 5, 8, 9, 10, 17, 17, 20 }, 4));
+    }
+
+    @Test
+    void partitionEqualSubsetPractice() {
+        assertTrue(PartitionEqualSubsetPractice.canPartition(new int[] { 1, 5, 11, 5 }));
+    }
+
+    @Test
+    void longestPalindromicSubsequencePractice() {
+        assertEquals(4, LongestPalindromicSubsequencePractice.length("bbbab"));
+    }
+
+    @Test
+    void dynamicArrayPractice() {
+        DynamicArrayPractice arr = new DynamicArrayPractice();
+        arr.add(10);
+        arr.add(20);
+        assertEquals(2, arr.size());
+        assertEquals(10, arr.get(0));
+    }
+
+    @Test
+    void linearSearchPractice() {
+        assertEquals(1, LinearSearchPractice.indexOf(new int[] { 1, 2, 3 }, 2));
+    }
+
+    @Test
+    void bubbleSortPractice() {
+        assertArrayEquals(new int[] { 1, 2, 2, 5, 8 }, BubbleSortPractice.sort(new int[] { 5, 2, 8, 1, 2 }));
+    }
 }

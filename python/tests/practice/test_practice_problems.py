@@ -52,6 +52,15 @@ from dsa.practice.bipartite_check_practice import check_bipartite
 from dsa.practice.tarjan_scc_practice import component_sizes_sorted as tarjan_component_sizes
 from dsa.practice.kosaraju_practice import component_sizes_sorted as kosaraju_component_sizes
 from dsa.practice.edmonds_karp_practice import max_flow_value
+from dsa.practice.matrix_chain_practice import min_cost as matrix_min_cost
+from dsa.practice.rod_cutting_practice import max_revenue as rod_max_revenue
+from dsa.practice.partition_equal_subset_practice import can_split_equal_subset
+from dsa.practice.longest_palindromic_subsequence_practice import (
+    longest_palindromic_subsequence_length,
+)
+from dsa.practice.dynamic_array_practice import DynamicArrayPractice
+from dsa.practice.linear_search_practice import find_index as linear_find_index
+from dsa.practice.bubble_sort_practice import sort_nums as bubble_sort_practice
 
 
 def test_two_sum_sorted():
@@ -328,3 +337,35 @@ def test_kosaraju_practice():
 def test_edmonds_karp_practice():
     edges = [[0, 1, 3], [0, 2, 2], [1, 2, 1], [1, 3, 3], [2, 3, 2]]
     assert max_flow_value(4, edges, 0, 3) == 5
+
+
+def test_matrix_chain_practice():
+    assert matrix_min_cost([10, 30, 5, 60]) == 4500
+
+
+def test_rod_cutting_practice():
+    assert rod_max_revenue([1, 5, 8, 9, 10, 17, 17, 20], 4) == 10
+
+
+def test_partition_equal_subset_practice():
+    assert can_split_equal_subset([1, 5, 11, 5])
+
+
+def test_longest_palindromic_subsequence_practice():
+    assert longest_palindromic_subsequence_length("bbbab") == 4
+
+
+def test_dynamic_array_practice():
+    arr = DynamicArrayPractice()
+    arr.add(10)
+    arr.add(20)
+    assert arr.size() == 2
+    assert arr.get(0) == 10
+
+
+def test_linear_search_practice():
+    assert linear_find_index([1, 2, 3], 2) == 1
+
+
+def test_bubble_sort_practice():
+    assert bubble_sort_practice([5, 2, 8, 1, 2]) == [1, 2, 2, 5, 8]

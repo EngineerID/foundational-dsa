@@ -196,4 +196,14 @@ export const WORKED_EXAMPLES = {
   'tarjan-scc': { anchor: 'tarjan-scc-strongly-connected-components', detailed: true },
   kosaraju: { anchor: 'kosaraju-scc-strongly-connected-components', detailed: true },
   'edmonds-karp': { anchor: 'edmonds-karp-max-flow', detailed: true },
+  'matrix-chain': { anchor: 'matrix-chain-min-scalar-multiplications', detailed: true },
+  'rod-cutting': { anchor: 'rod-cutting-max-revenue', detailed: true },
+  'partition-equal-subset': { anchor: 'partition-equal-subset-01-knapsack', detailed: true },
+  'longest-palindromic-subsequence': {
+    anchor: 'longest-palindromic-subsequence-length',
+    detailed: true,
+  },
+  'dynamic-array': { anchor: 'dynamic-array-append-and-get', detailed: true },
+  'linear-search': { anchor: 'linear-search-first-match-index', detailed: true },
+  'bubble-sort': { anchor: 'bubble-sort-in-place-ascending', detailed: true },
 };

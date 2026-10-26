@@ -1,6 +1,6 @@
 # Worked examples
 
-Short, language-neutral walkthroughs for fifty-four interview-heavy topics. Implementations live under `java/`, `python/dsa/`, and `javascript/src/` with the same behavior. For a broader interview map, see [interview-prep.md](interview-prep.md). Trilingual **catalog tests** mirror the step-table scenarios above (`WorkedInterviewExamplesTest`, `test_worked_interview_examples.py`, `workedInterviewExamples.test.js`).
+Short, language-neutral walkthroughs for sixty-one interview-heavy topics. Implementations live under `java/`, `python/dsa/`, and `javascript/src/` with the same behavior. For a broader interview map, see [interview-prep.md](interview-prep.md). Trilingual **catalog tests** mirror the step-table scenarios above (`WorkedInterviewExamplesTest`, `test_worked_interview_examples.py`, `workedInterviewExamples.test.js`).
 
 ## Binary search on a sorted array
 
@@ -923,13 +923,93 @@ Two-pass DFS + reverse graph. Matches `kosaraju-goldens.json`.
 
 `npm run demo -- edmonds-karp`
 
+## Matrix chain (min scalar multiplications)
+
+**Dimensions:** `[10, 30, 5, 60]` (three matrices **10×30**, **30×5**, **5×60**).
+
+Parenthesize to minimize scalar multiplications:
+
+| Split | Cost intuition |
+|-------|----------------|
+| Optimal grouping | **4500** total multiplications |
+
+Empty dimension list or single dimension → **0**. Matches `matrix-chain-goldens.json`.
+
+**API:** `minMultiplications(dimensions)` (see [matrix-chain](items/dp/matrix-chain.md)).
+
+`npm run demo -- matrix-chain`
+
+## Rod cutting (max revenue)
+
+**Prices** for lengths `1..8`: `[1,5,8,9,10,17,17,20]`, cut rod length **4**.
+
+Unbounded knapsack-style DP over length → best revenue **10** (matches goldens).
+
+Invalid negative length → error.
+
+**API:** `maxProfit(prices, length)` (see [rod-cutting](items/dp/rod-cutting.md)).
+
+`npm run demo -- rod-cutting`
+
+## Partition equal subset (0/1 knapsack)
+
+**Nums:** `[1, 5, 11, 5]` — total **22**, target half **11** → subset `{11}` vs `{1,5,5}` → **true**.
+
+`[1,2,3,5]` → total 11 (odd) → **false**. Empty array → **true**.
+
+**API:** `canPartition(nums)` (see [partition-equal-subset](items/dp/partition-equal-subset.md)).
+
+`npm run demo -- partition-equal-subset`
+
+## Longest palindromic subsequence (length)
+
+**String:** `"bbbab"` — longest palindromic **subsequence** (not substring) has length **4** (e.g. `"bbbb"`).
+
+`"cbbd"` → **2**; empty → **0**.
+
+**API:** `length(s)` (see [longest-palindromic-subsequence](items/dp/longest-palindromic-subsequence.md)).
+
+`npm run demo -- longest-palindromic-subsequence`
+
+## Dynamic array (append and get)
+
+**Append** `10, 20, 30` → **size 3**; **get(0)=10**, **get(2)=30**.
+
+Empty append → size **0**. Matches `dynamic-array-goldens.json`.
+
+**API:** `add(value)`, `get(index)`, `size()` (see [dynamic-array](items/linear/dynamic-array.md)).
+
+`npm run demo -- dynamic-array`
+
+## Linear search (first match index)
+
+Scan left-to-right for **first** index of `target`:
+
+| Array | Target | Result |
+|-------|--------|--------|
+| `[1,2,2,3]` | `2` | **1** (first `2`) |
+| `[4,5,6]` | `1` | **-1** |
+| `[]` | `1` | **-1** |
+
+**API:** `indexOf(arr, key)` (see [linear-search](items/searching/linear-search.md)).
+
+`npm run demo -- linear-search`
+
+## Bubble sort (in-place ascending)
+
+**Input:** `[5, 2, 8, 1, 2]` → sorted copy **`[1, 2, 2, 5, 8]`** after adjacent swaps (matches `bubble-sort-goldens.json`).
+
+**API:** `sort(arr)` in place on a copy (see [bubble-sort](items/sorting/bubble-sort.md)).
+
+`npm run demo -- bubble-sort`
+
 ## Topic index
 
 One-line walkthroughs for every catalog topic. Step tables above cover interview-heavy patterns (search, graphs, DP, caches, strings).
 
 ### linear-search
 
-Scan `[4, 2, 7, 2]` for `2`: index **1** (first occurrence). For `9` → **-1**.
+See the [detailed walkthrough](#linear-search-first-match-index) above.
 
 `npm run demo -- linear-search`
 
@@ -959,7 +1039,7 @@ See the [detailed walkthrough](#quick-select-k-th-order-statistic) above.
 
 ### bubble-sort
 
-Pass adjacent swaps on `[3, 1, 2]` → `[1, 2, 3]` in place after sufficient passes.
+See the [detailed walkthrough](#bubble-sort-in-place-ascending) above.
 
 `npm run demo -- bubble-sort`
 
@@ -1019,7 +1099,7 @@ See the [detailed walkthrough](#kmp-pattern-search) above.
 
 ### dynamic-array
 
-Resizable array-backed list with amortized append.
+See the [detailed walkthrough](#dynamic-array-append-and-get) above.
 
 `npm run demo -- dynamic-array`
 
@@ -1391,25 +1471,25 @@ Find all occurrences of multiple patterns in text.
 
 ### matrix-chain
 
-Minimum scalar multiplications for a matrix product chain.
+See the [detailed walkthrough](#matrix-chain-min-scalar-multiplications) above.
 
 `npm run demo -- matrix-chain`
 
 ### longest-palindromic-subsequence
 
-Longest palindromic subsequence length.
+See the [detailed walkthrough](#longest-palindromic-subsequence-length) above.
 
 `npm run demo -- longest-palindromic-subsequence`
 
 ### partition-equal-subset
 
-Partition array into two equal-sum subsets.
+See the [detailed walkthrough](#partition-equal-subset-01-knapsack) above.
 
 `npm run demo -- partition-equal-subset`
 
 ### rod-cutting
 
-Maximum revenue cutting a rod of given length.
+See the [detailed walkthrough](#rod-cutting-max-revenue) above.
 
 `npm run demo -- rod-cutting`
 

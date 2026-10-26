@@ -67,6 +67,13 @@ export const PRACTICE_PROBLEMS = [
   { n: 52, docAnchor: '52-tarjan-scc-sizes', walkthroughSlug: 'tarjan-scc-strongly-connected-components', catalogTopic: 'tarjan-scc' },
   { n: 53, docAnchor: '53-kosaraju-scc-sizes', walkthroughSlug: 'kosaraju-scc-strongly-connected-components', catalogTopic: 'kosaraju' },
   { n: 54, docAnchor: '54-edmonds-karp-max-flow', walkthroughSlug: 'edmonds-karp-max-flow', catalogTopic: 'edmonds-karp' },
+  { n: 55, docAnchor: '55-matrix-chain-min-cost', walkthroughSlug: 'matrix-chain-min-scalar-multiplications', catalogTopic: 'matrix-chain' },
+  { n: 56, docAnchor: '56-rod-cutting-max-profit', walkthroughSlug: 'rod-cutting-max-revenue', catalogTopic: 'rod-cutting' },
+  { n: 57, docAnchor: '57-partition-equal-subset', walkthroughSlug: 'partition-equal-subset-01-knapsack', catalogTopic: 'partition-equal-subset' },
+  { n: 58, docAnchor: '58-longest-palindromic-subsequence', walkthroughSlug: 'longest-palindromic-subsequence-length', catalogTopic: 'longest-palindromic-subsequence' },
+  { n: 59, docAnchor: '59-dynamic-array-operations', walkthroughSlug: 'dynamic-array-append-and-get', catalogTopic: 'dynamic-array' },
+  { n: 60, docAnchor: '60-linear-search-index', walkthroughSlug: 'linear-search-first-match-index', catalogTopic: 'linear-search' },
+  { n: 61, docAnchor: '61-bubble-sort', walkthroughSlug: 'bubble-sort-in-place-ascending', catalogTopic: 'bubble-sort' },
 ];
 
 export const PRACTICE_DOC_ANCHORS = PRACTICE_PROBLEMS.map((p) => p.docAnchor);

@@ -18,7 +18,7 @@ Use it to study implementations side by side, prepare for interviews, or teach D
 | 1 | Clone the repo and run `bash .cursor/install.sh` once (Node 20+, Python 3.10+, JDK 17+). |
 | 2 | Run `npm test` from the root — docs link scan, complexity checks, then Java, Python, JavaScript, parity, and matrix. |
 | 3 | Explore a topic: [COVERAGE.md](COVERAGE.md) lists all 87 ids; `npm run demo -- <id>` runs that topic’s tests in all three languages. |
-| 4 | Interview study: [docs/interview-prep.md](docs/interview-prep.md) maps prompts to ids; [docs/worked-examples.md](docs/worked-examples.md) has step tables; [docs/practice-problems.md](docs/practice-problems.md) has 54 trilingual problems (expanding toward full catalog coverage). |
+| 4 | Interview study: [docs/interview-prep.md](docs/interview-prep.md) maps prompts to ids; [docs/worked-examples.md](docs/worked-examples.md) has step tables; [docs/practice-problems.md](docs/practice-problems.md) has 61 trilingual problems (expanding toward full catalog coverage). |
 | 5 | First PR: read [CONTRIBUTING.md](CONTRIBUTING.md) (scope, `npm test` vs `npm run test:ci`, issue templates). |
 | 6 | Security reports: [SECURITY.md](SECURITY.md). |
 
@@ -405,6 +405,13 @@ Every catalog topic links to its doc page under [docs/items/](docs/items/). Prac
 - [Tarjan SCC sizes](docs/practice-problems.md#52-tarjan-scc-sizes)
 - [Kosaraju SCC sizes](docs/practice-problems.md#53-kosaraju-scc-sizes)
 - [Edmonds-Karp max flow](docs/practice-problems.md#54-edmonds-karp-max-flow)
+- [Matrix chain min cost](docs/practice-problems.md#55-matrix-chain-min-cost)
+- [Rod cutting max profit](docs/practice-problems.md#56-rod-cutting-max-profit)
+- [Partition equal subset](docs/practice-problems.md#57-partition-equal-subset)
+- [Longest palindromic subsequence](docs/practice-problems.md#58-longest-palindromic-subsequence)
+- [Dynamic array operations](docs/practice-problems.md#59-dynamic-array-operations)
+- [Linear search index](docs/practice-problems.md#60-linear-search-index)
+- [Bubble sort](docs/practice-problems.md#61-bubble-sort)
 
 See also the generated [complexity cheat sheet](docs/complexity-cheatsheet.md) for all **87** catalog topics.
 

@@ -565,6 +565,99 @@ class PracticeSharedGoldensTest {
     }
 
     @Test
+    void matrixChainPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("matrix-chain-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            assertEquals(
+                    ((Number) c.get("expected")).longValue(),
+                    MatrixChainPractice.minMultiplications(GoldenIntArrays.parse(c.get("dimensions"))));
+        }
+    }
+
+    @Test
+    void rodCuttingPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("rod-cutting-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            int[] prices = GoldenIntArrays.parse(c.get("prices"));
+            int length = ((Number) c.get("length")).intValue();
+            if (Boolean.TRUE.equals(c.get("expectError"))) {
+                assertThrows(IllegalArgumentException.class, () -> RodCuttingPractice.maxProfit(prices, length));
+            } else {
+                assertEquals(((Number) c.get("expected")).intValue(), RodCuttingPractice.maxProfit(prices, length));
+            }
+        }
+    }
+
+    @Test
+    void partitionEqualSubsetPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("partition-equal-subset-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            assertEquals(
+                    c.get("expected"),
+                    PartitionEqualSubsetPractice.canPartition(GoldenIntArrays.parse(c.get("nums"))));
+        }
+    }
+
+    @Test
+    void longestPalindromicSubsequencePracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(
+                        Files.readString(toolsJson("longest-palindromic-subsequence-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            assertEquals(
+                    ((Number) c.get("expected")).intValue(),
+                    LongestPalindromicSubsequencePractice.length((String) c.get("s")));
+        }
+    }
+
+    @Test
+    void dynamicArrayPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("dynamic-array-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            DynamicArrayPractice arr = new DynamicArrayPractice();
+            @SuppressWarnings("unchecked")
+            List<Number> append = (List<Number>) c.get("append");
+            for (Number n : append) {
+                arr.add(n.intValue());
+            }
+            assertEquals(((Number) c.get("size")).intValue(), arr.size());
+            @SuppressWarnings("unchecked")
+            List<Map<String, Object>> gets = (List<Map<String, Object>>) c.get("get");
+            for (Map<String, Object> pair : gets) {
+                assertEquals(
+                        ((Number) pair.get("value")).intValue(),
+                        arr.get(((Number) pair.get("index")).intValue()));
+            }
+        }
+    }
+
+    @Test
+    void linearSearchPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("linear-search-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            assertEquals(
+                    ((Number) c.get("expected")).intValue(),
+                    LinearSearchPractice.indexOf(GoldenIntArrays.parse(c.get("arr")), ((Number) c.get("target")).intValue()));
+        }
+    }
+
+    @Test
+    void bubbleSortPracticeGoldens() throws Exception {
+        List<Map<String, Object>> cases =
+                GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("bubble-sort-goldens.json")));
+        for (Map<String, Object> c : cases) {
+            assertArrayEquals(
+                    GoldenIntArrays.parse(c.get("sorted")),
+                    BubbleSortPractice.sort(GoldenIntArrays.parse(c.get("input"))));
+        }
+    }
+
+    @Test
     void bfsPracticeGoldens() throws Exception {
         List<Map<String, Object>> cases =
                 GoldenJson.parseArrayOfObjects(Files.readString(toolsJson("practice-bfs-goldens.json")));

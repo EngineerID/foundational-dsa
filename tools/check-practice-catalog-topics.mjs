@@ -59,6 +59,13 @@ export const PRACTICE_TOPIC_TARGET = [
   'tarjan-scc',
   'kosaraju',
   'edmonds-karp',
+  'matrix-chain',
+  'rod-cutting',
+  'partition-equal-subset',
+  'longest-palindromic-subsequence',
+  'dynamic-array',
+  'linear-search',
+  'bubble-sort',
 ];
 
 const itemIds = new Set(ITEMS.map((i) => i.id));

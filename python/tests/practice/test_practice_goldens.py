@@ -37,6 +37,15 @@ from dsa.practice.bipartite_check_practice import check_bipartite
 from dsa.practice.tarjan_scc_practice import component_sizes_sorted as tarjan_component_sizes
 from dsa.practice.kosaraju_practice import component_sizes_sorted as kosaraju_component_sizes
 from dsa.practice.edmonds_karp_practice import max_flow_value
+from dsa.practice.matrix_chain_practice import min_cost as matrix_min_cost
+from dsa.practice.rod_cutting_practice import max_revenue as rod_max_revenue
+from dsa.practice.partition_equal_subset_practice import can_split_equal_subset
+from dsa.practice.longest_palindromic_subsequence_practice import (
+    longest_palindromic_subsequence_length,
+)
+from dsa.practice.dynamic_array_practice import DynamicArrayPractice
+from dsa.practice.linear_search_practice import find_index as linear_find_index
+from dsa.practice.bubble_sort_practice import sort_nums as bubble_sort_practice
 
 TOOLS = Path(__file__).resolve().parents[3] / "tools"
 
@@ -301,3 +310,47 @@ def test_kosaraju_practice_goldens():
 def test_edmonds_karp_practice_goldens():
     for row in _cases("edmonds-karp-goldens.json"):
         assert max_flow_value(row["n"], row["edges"], row["source"], row["sink"]) == row["maxFlow"]
+
+
+def test_matrix_chain_practice_goldens():
+    for row in _cases("matrix-chain-goldens.json"):
+        assert matrix_min_cost(row["dimensions"]) == row["expected"]
+
+
+def test_rod_cutting_practice_goldens():
+    for row in _cases("rod-cutting-goldens.json"):
+        if row.get("expectError"):
+            with pytest.raises(ValueError):
+                rod_max_revenue(row["prices"], row["length"])
+        else:
+            assert rod_max_revenue(row["prices"], row["length"]) == row["expected"]
+
+
+def test_partition_equal_subset_practice_goldens():
+    for row in _cases("partition-equal-subset-goldens.json"):
+        assert can_split_equal_subset(row["nums"]) == row["expected"]
+
+
+def test_longest_palindromic_subsequence_practice_goldens():
+    for row in _cases("longest-palindromic-subsequence-goldens.json"):
+        assert longest_palindromic_subsequence_length(row["s"]) == row["expected"]
+
+
+def test_dynamic_array_practice_goldens():
+    for row in _cases("dynamic-array-goldens.json"):
+        arr = DynamicArrayPractice()
+        for v in row.get("append", []):
+            arr.add(v)
+        assert arr.size() == row["size"]
+        for pair in row.get("get", []):
+            assert arr.get(pair["index"]) == pair["value"]
+
+
+def test_linear_search_practice_goldens():
+    for row in _cases("linear-search-goldens.json"):
+        assert linear_find_index(row["arr"], row["target"]) == row["expected"]
+
+
+def test_bubble_sort_practice_goldens():
+    for row in _cases("bubble-sort-goldens.json"):
+        assert bubble_sort_practice(row["input"]) == row["sorted"]
