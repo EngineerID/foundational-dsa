@@ -165,6 +165,19 @@ LSD radix sort for non-negative integers using counting sort per digit.
 **Operations:**
 - `sort` → Python `sort`, JS `sort`
 
+## merge-intervals
+
+Merge overlapping closed intervals after sorting by start.
+
+| Language | Module |
+|----------|--------|
+| Java | `MergeIntervals` |
+| Python | `merge_intervals` |
+| JavaScript | `mergeIntervals` |
+
+**Operations:**
+- `mergeIntervals` → Python `merge_intervals`, JS `mergeIntervals`
+
 ## kmp
 
 Find first occurrence of a pattern in text.

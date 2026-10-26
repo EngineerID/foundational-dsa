@@ -76,6 +76,12 @@ export const API_MANIFEST = {
     python: ['sort'],
     javascript: ['sort'],
   },
+  'merge-intervals': {
+    type: 'static',
+    java: ['mergeIntervals'],
+    python: ['merge_intervals'],
+    javascript: ['mergeIntervals'],
+  },
   kmp: {
     type: 'static',
     java: ['search'],

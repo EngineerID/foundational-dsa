@@ -159,6 +159,13 @@ export const STATEFUL_GOLDENS = [
     java: 'java/src/test/java/com/dsa/examples/graphs/BfsGoldensTest.java',
   },
   {
+    id: 'merge-intervals',
+    json: 'merge-intervals-goldens.json',
+    py: 'python/tests/sorting/test_merge_intervals_goldens.py',
+    js: 'javascript/test/sorting/mergeIntervalsGoldens.test.js',
+    java: 'java/src/test/java/com/dsa/examples/sorting/MergeIntervalsGoldensTest.java',
+  },
+  {
     id: 'merge-sort',
     json: 'merge-sort-goldens.json',
     py: 'python/tests/sorting/test_merge_sort_goldens.py',

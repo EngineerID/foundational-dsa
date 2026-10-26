@@ -154,6 +154,8 @@ export function themesInCases(cases) {
     if (Array.isArray(c.enqueue) && c.enqueue.length === 1) found.add('single');
     if (Array.isArray(c.coins) && c.coins.length === 0) found.add('empty');
     if (Array.isArray(c.nums) && c.nums.length === 1) found.add('single');
+    if (Array.isArray(c.intervals) && c.intervals.length === 1) found.add('single');
+    if (Array.isArray(c.height) && c.height.length === 1) found.add('single');
     if (Array.isArray(c.weights) && c.weights.length === 1) found.add('single');
     if (c.maxFlow === 0) found.add('boundary');
     if (Array.isArray(c.articulationPoints) && c.articulationPoints.length > 0) found.add('boundary');

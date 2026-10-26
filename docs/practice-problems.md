@@ -93,7 +93,7 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Statement:** Given intervals `[start, end]` (inclusive), merge all overlapping intervals and return the result sorted by start.
 
-**Implementation:** `practice/merge_intervals*`.
+**Implementation:** `practice/merge_intervals*` (catalog [`merge-intervals`](items/sorting/merge-intervals.md): `npm run demo -- merge-intervals`).
 
 ## 12. Binary tree level order traversal
 

@@ -36,6 +36,7 @@ Trilingual tests for these scenarios: `WorkedInterviewExamplesTest`, `test_worke
 
 | Interview prompt | Topic id | Demo |
 |------------------|----------|------|
+| Merge overlapping intervals | `merge-intervals` | `npm run demo -- merge-intervals` |
 | Stable O(n log n) sort | `merge-sort` | `npm run demo -- merge-sort` |
 | In-place sort, average fast | `quick-sort` | `npm run demo -- quick-sort` |
 | O(n) sort, small integer range | `counting-sort` | `npm run demo -- counting-sort` |

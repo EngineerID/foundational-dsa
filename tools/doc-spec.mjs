@@ -72,6 +72,12 @@ export const DOC_SPECS = {
     invariant: 'Prefix counts place keys in stable order.',
     complexity: 'sort/sortByDigit: Time O(n + k); Space O(k).',
   },
+  'merge-intervals': {
+    purpose: 'Merge overlapping closed intervals after sorting by start.',
+    technique: 'Sort by start, linear merge',
+    invariant: 'Merged output is sorted and pairwise non-overlapping.',
+    complexity: 'mergeIntervals: Time O(n log n); Space O(n).',
+  },
   'radix-sort': {
     purpose: 'LSD radix sort for non-negative integers using counting sort per digit.',
     technique: 'LSD radix sort',

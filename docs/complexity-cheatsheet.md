@@ -90,6 +90,7 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 | `counting-sort` | Time O(n + k) | Space O(k) | sort/sortByDigit: Time O(n + k); Space O(k). |
 | `heapsort` | Time O(n log n) | Space O(1) | sort: Time O(n log n); Space O(1). |
 | `insertion-sort` | Time O(n²) | Space O(1) | sort: Time O(n²) worst, O(n) best; Space O(1). |
+| `merge-intervals` | Time O(n log n) | Space O(n) | mergeIntervals: Time O(n log n); Space O(n). |
 | `merge-sort` | Time O(n log n) | Space O(n) | sort/sortBottomUp: Time O(n log n); Space O(n). |
 | `quick-sort` | Time O(n log n) | Space O(log n) | sort/sort3Way: Time O(n log n) average; Space O(log n). |
 | `radix-sort` | Time O(d * n) | Space O(n) | sort: Time O(d * n); Space O(n). |
@@ -131,5 +132,5 @@ Primary operations from [`tools/doc-spec.mjs`](../tools/doc-spec.mjs). See also 
 |----------|------|-------|----------|
 | `union-find` | Time O(α(n) | Space O(n) | find/union/connected: Time O(α(n)) amortized; Space O(n). |
 
-**Topics:** 77
+**Topics:** 78
 

@@ -52,6 +52,7 @@ const ALIASES = {
   'coin-change': ['CoinChange', 'coin_change', 'coinChange'],
   'maximum-subarray': ['MaxSubarray', 'max_subarray', 'maxSubarray'],
   'two-sum-ii': ['TwoSumII', 'two_sum_ii', 'twoSumII'],
+  'merge-intervals': ['MergeIntervals', 'merge_intervals', 'mergeIntervals'],
   'longest-substring-without-repeating': [
     'LongestSubstringWithoutRepeating',
     'longest_substring_without_repeating',

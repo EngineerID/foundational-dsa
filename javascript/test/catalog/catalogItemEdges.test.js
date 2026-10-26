@@ -6,6 +6,7 @@ const { sort: selectionSort } = require('../../src/sorting/selectionSort');
 const { sort: insertionSort } = require('../../src/sorting/insertionSort');
 const { sort: heapSort } = require('../../src/sorting/heapSort');
 const { sort: radixSort } = require('../../src/sorting/radixSort');
+const { mergeIntervals } = require('../../src/sorting/mergeIntervals');
 const { SinglyLinkedList } = require('../../src/linear/singlyLinkedList');
 const { DoublyLinkedList } = require('../../src/linear/doublyLinkedList');
 const { Queue } = require('../../src/linear/queue');
@@ -209,6 +210,7 @@ describe('catalog item edges', () => {
     expect(nextGreaterElement([1, 2])).toEqual([2, -1]);
     expect(isValidParentheses('()')).toBe(true);
     expect(twoSumSorted([1, 2, 3], 3)).toEqual([1, 2]);
+    expect(mergeIntervals([[1, 3], [2, 6]])).toEqual([[1, 6]]);
   });
 
   test('graph algorithms', () => {

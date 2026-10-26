@@ -18,6 +18,7 @@ const REQUIRED_CASE_KEYS = {
   'monotonic-stack-goldens.json': ['nums', 'expected'],
   'valid-parentheses-goldens.json': ['s', 'expected'],
   'two-sum-ii-goldens.json': ['nums', 'target', 'expected'],
+  'merge-intervals-goldens.json': ['intervals', 'expected'],
   'reservoir-sampling-goldens.json': ['stream', 'k', 'seed', 'expected'],
   'treap-goldens.json': ['seed', 'inserts', 'searchResults'],
 };

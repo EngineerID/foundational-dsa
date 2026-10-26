@@ -208,6 +208,7 @@ class CatalogItemEdgesTest {
         assertArrayEquals(new int[] {2, -1}, MonotonicStack.nextGreaterElement(new int[] {1, 2}));
         assertTrue(ValidParentheses.isValidParentheses("()"));
         assertArrayEquals(new int[] {1, 2}, TwoSumII.twoSumSorted(new int[] {1, 2, 3}, 3));
+        assertArrayEquals(new int[][] {{1, 6}}, MergeIntervals.mergeIntervals(new int[][] {{1, 3}, {2, 6}}));
     }
 
     @Test

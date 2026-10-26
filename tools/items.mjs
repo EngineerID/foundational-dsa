@@ -12,6 +12,7 @@ export const ITEMS = [
   { topic: 'sorting', id: 'heapsort', java: 'HeapSort', py: 'heap_sort', js: 'heapSort' },
   { topic: 'sorting', id: 'counting-sort', java: 'CountingSort', py: 'counting_sort', js: 'countingSort' },
   { topic: 'sorting', id: 'radix-sort', java: 'RadixSort', py: 'radix_sort', js: 'radixSort' },
+  { topic: 'sorting', id: 'merge-intervals', java: 'MergeIntervals', py: 'merge_intervals', js: 'mergeIntervals' },
   { topic: 'strings', id: 'kmp', java: 'KMP', py: 'kmp', js: 'kmp' },
   { topic: 'linear', id: 'dynamic-array', java: 'DynamicArray', py: 'dynamic_array', js: 'dynamicArray' },
   { topic: 'linear', id: 'singly-linked-list', java: 'SinglyLinkedList', py: 'singly_linked_list', js: 'singlyLinkedList' },
