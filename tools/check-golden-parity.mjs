@@ -59,6 +59,15 @@ function main() {
   ]) {
     if (!fs.existsSync(path.join(ROOT, rel))) errors.push(`missing ${rel}`);
   }
+  const reservoirJson = path.join(ROOT, 'tools', 'reservoir-sampling-goldens.json');
+  if (!fs.existsSync(reservoirJson)) errors.push('missing tools/reservoir-sampling-goldens.json');
+  for (const rel of [
+    'python/tests/searching/test_reservoir_sampling_goldens.py',
+    'javascript/test/searching/reservoirSamplingGoldens.test.js',
+    'java/src/test/java/com/dsa/examples/searching/ReservoirSamplingGoldensTest.java',
+  ]) {
+    if (!fs.existsSync(path.join(ROOT, rel))) errors.push(`missing ${rel}`);
+  }
   if (errors.length) {
     console.error('Golden parity check failed:\n');
     for (const e of errors) console.error(`  - ${e}`);

@@ -7,7 +7,7 @@ npm run demo -- <topic-id>
 npm run demo -- <topic-id> python   # optional: java | python | js
 ```
 
-Full topic list: [COVERAGE.md](../COVERAGE.md). Step-by-step walkthroughs: [worked-examples.md](worked-examples.md). API names: [API.md](API.md).
+Full topic list: [COVERAGE.md](../COVERAGE.md). Step-by-step walkthroughs: [worked-examples.md](worked-examples.md). API names: [API.md](API.md). **Pattern signals → topics:** [pattern-recognition.md](pattern-recognition.md).
 
 ## Detailed walkthroughs (step tables)
 

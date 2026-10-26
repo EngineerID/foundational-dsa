@@ -2,14 +2,14 @@
 
 """Uniform random sample of size k from a stream (deterministic with seed).
 
+Uses the same LCG as the Java and JavaScript ports for cross-language goldens.
+
 Technique: Reservoir sampling
 Invariant: Reservoir holds uniform k-subset of items seen.
 sample: Time O(n); Space O(k).
 """
 
 from __future__ import annotations
-
-import random
 
 
 def sample(stream: list[int], k: int, seed: int = 0) -> list[int]:
@@ -21,10 +21,11 @@ def sample(stream: list[int], k: int, seed: int = 0) -> list[int]:
         raise ValueError("k must be non-negative")
     if k == 0:
         return []
-    rng = random.Random(seed)
+    state = seed
     res = list(stream[:k])
     for i in range(k, len(stream)):
-        j = rng.randrange(i + 1)
+        state = (state * 48271) % 2147483647
+        j = state % (i + 1)
         if j < k:
             res[j] = stream[i]
     return res

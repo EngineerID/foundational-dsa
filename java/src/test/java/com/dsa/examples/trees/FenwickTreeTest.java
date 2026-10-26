@@ -24,4 +24,22 @@ class FenwickTreeTest {
         FenwickTree ft = new FenwickTree(2);
         assertThrows(IndexOutOfBoundsException.class, () -> ft.add(2, 1));
     }
+
+    @Test
+    void emptySingleDuplicateLarge() {
+        FenwickTree empty = new FenwickTree(0);
+        assertEquals(0, empty.prefixSum(0));
+        FenwickTree single = new FenwickTree(1);
+        single.add(0, 4);
+        assertEquals(4, single.prefixSum(0));
+        FenwickTree dup = new FenwickTree(2);
+        dup.add(0, 1);
+        dup.add(0, 2);
+        assertEquals(3, dup.prefixSum(0));
+        FenwickTree large = new FenwickTree(200);
+        for (int i = 0; i < 200; i++) {
+            large.add(i, 1);
+        }
+        assertEquals(200, large.prefixSum(199));
+    }
 }
