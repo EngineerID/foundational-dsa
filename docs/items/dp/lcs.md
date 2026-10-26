@@ -6,7 +6,7 @@ Longest common subsequence length between two strings.
 
 **Complexity:** length: Time O(nm); Space O(min(n,m)).
 
-**Worked example:** [Topic index](../../worked-examples.md#lcs) (summary) · run `npm run demo -- lcs` in all three languages.
+**Walkthrough:** [Worked examples — Lcs](../../worked-examples.md#longest-common-subsequence).
 
 ## Implementations
 

@@ -6,6 +6,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { collectHeadingSlugs } from './github-heading-slug.mjs';
+
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 const SCAN_ROOTS = [
@@ -52,14 +54,25 @@ function resolveTarget(fromFile, href) {
   return { abs, outside: false };
 }
 
+const headingCache = new Map();
+
+function headingSlugsFor(absPath) {
+  if (!headingCache.has(absPath)) {
+    headingCache.set(absPath, collectHeadingSlugs(fs.readFileSync(absPath, 'utf8')));
+  }
+  return headingCache.get(absPath);
+}
+
 function main() {
   const missing = [];
+  const badAnchors = [];
   for (const file of collectMarkdownFiles()) {
     const text = fs.readFileSync(file, 'utf8');
     for (const m of text.matchAll(LINK_RE)) {
       const href = m[1].trim();
       if (isExternal(href)) continue;
-      const target = resolveTarget(file, href);
+      const [pathPart, hash] = href.split('#');
+      const target = resolveTarget(file, pathPart || href);
       if (!target || target.outside) continue;
       if (!fs.existsSync(target.abs)) {
         missing.push({
@@ -67,6 +80,19 @@ function main() {
           href,
           expected: path.relative(ROOT, target.abs),
         });
+        continue;
+      }
+      if (hash) {
+        const slug = hash.toLowerCase();
+        const slugs = headingSlugsFor(target.abs);
+        if (!slugs.has(slug)) {
+          badAnchors.push({
+            file: path.relative(ROOT, file),
+            href,
+            target: path.relative(ROOT, target.abs),
+            anchor: slug,
+          });
+        }
       }
     }
   }
@@ -74,6 +100,13 @@ function main() {
     console.error('Broken relative markdown links:');
     for (const row of missing) {
       console.error(`  ${row.file}: (${row.href}) → missing ${row.expected}`);
+    }
+    process.exit(1);
+  }
+  if (badAnchors.length) {
+    console.error('Broken markdown heading anchors:');
+    for (const row of badAnchors) {
+      console.error(`  ${row.file}: (${row.href}) → no heading #${row.anchor} in ${row.target}`);
     }
     process.exit(1);
   }

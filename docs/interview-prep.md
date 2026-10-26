@@ -13,10 +13,12 @@ Full topic list: [COVERAGE.md](../COVERAGE.md). Step-by-step walkthroughs: [work
 
 | Pattern | Doc section |
 |---------|-------------|
-| Binary search, merge sort, KMP | [worked-examples.md](worked-examples.md#binary-search-on-a-sorted-array) |
+| Binary search (index + binary search on answer), merge sort, KMP | [worked-examples.md](worked-examples.md#binary-search-on-a-sorted-array) |
 | Dijkstra, union–find, LRU cache | [worked-examples.md](worked-examples.md#dijkstra-non-negative-weights) |
-| Course schedule (topo sort), sliding window, binary search on answer | [worked-examples.md](worked-examples.md#topological-sort-kahn-course-schedule) |
-| BFS unweighted, edit distance | [worked-examples.md](worked-examples.md#bfs-unweighted-shortest-paths) |
+| Course schedule (topo sort), sliding window | [worked-examples.md](worked-examples.md#topological-sort-kahn-course-schedule) |
+| BFS unweighted, edit distance, knapsack, LCS | [worked-examples.md](worked-examples.md#bfs-unweighted-shortest-paths) |
+
+Trilingual tests for these scenarios: `WorkedInterviewExamplesTest`, `test_worked_interview_examples.py`, `workedInterviewExamples.test.js`.
 
 ## Arrays and searching
 

@@ -1,6 +1,6 @@
 # Worked examples
 
-Short, language-neutral walkthroughs for eleven interview-heavy topics. Implementations live under `java/`, `python/dsa/`, and `javascript/src/` with the same behavior. For a broader interview map, see [interview-prep.md](interview-prep.md). Trilingual tests for several scenarios live under each language’s `catalog` tests (`WorkedInterviewExamplesTest`, `test_worked_interview_examples.py`, `workedInterviewExamples.test.js`).
+Short, language-neutral walkthroughs for thirteen interview-heavy topics. Implementations live under `java/`, `python/dsa/`, and `javascript/src/` with the same behavior. For a broader interview map, see [interview-prep.md](interview-prep.md). Trilingual **catalog tests** mirror the step-table scenarios above (`WorkedInterviewExamplesTest`, `test_worked_interview_examples.py`, `workedInterviewExamples.test.js`).
 
 ## Binary search on a sorted array
 
@@ -191,9 +191,35 @@ DP sketch (rows/cols = prefixes): fill table where cell = min of delete/insert/r
 
 `npm run demo -- edit-distance`
 
+## Knapsack (0/1 classic)
+
+**Items:** weights `[1, 2, 3]`, values `[6, 10, 12]`, **capacity** `5` (same as `Knapsack01Test` in Java).
+
+| Item | Weight | Value | Take? |
+|------|--------|-------|-------|
+| A | 1 | 6 | optional |
+| B | 2 | 10 | **yes** |
+| C | 3 | 12 | **yes** |
+
+Best choice: B + C → weight **5**, total value **22**. Each item at most once; fill capacity with DP over weight.
+
+**API:** `maxValue(weights, values, capacity)` (see [knapsack](items/dp/knapsack.md)).
+
+`npm run demo -- knapsack`
+
+## Longest common subsequence
+
+**Strings:** `abcde` and `ace`.
+
+Longest subsequence appearing in both in order: **`ace`** (length **3**). Classic 2D DP fills prefix table; bottom-right cell is the answer.
+
+**API:** `length(a, b)` (see [lcs](items/dp/lcs.md)).
+
+`npm run demo -- lcs`
+
 ## Topic index
 
-One-line walkthroughs for every catalog topic. Full tables above cover binary search, merge sort, KMP, Dijkstra, union–find, LRU cache, topological sort, binary search on the answer, sliding window maximum, BFS, and edit distance.
+One-line walkthroughs for every catalog topic. Step tables above cover interview-heavy patterns (search, graphs, DP, caches, strings).
 
 ### linear-search
 
@@ -203,7 +229,9 @@ Scan `[4, 2, 7, 2]` for `2`: index **1** (first occurrence). For `9` → **-1**.
 
 ### binary-search
 
-See [binary-search-on-a-sorted-array](#binary-search-on-a-sorted-array) above.
+See the [detailed walkthrough](#binary-search-on-a-sorted-array) above.
+
+`npm run demo -- binary-search`
 
 ### quick-select
 
@@ -231,7 +259,9 @@ Sort an array in ascending order in place (efficient on nearly sorted input).
 
 ### merge-sort
 
-See [merge-sort-top-down](#merge-sort-top-down) above.
+See the [detailed walkthrough](#merge-sort-top-down) above.
+
+`npm run demo -- merge-sort`
 
 ### quick-sort
 
@@ -259,7 +289,9 @@ LSD radix sort for non-negative integers using counting sort per digit.
 
 ### kmp
 
-See [kmp-pattern-search](#kmp-pattern-search) above.
+See the [detailed walkthrough](#kmp-pattern-search) above.
+
+`npm run demo -- kmp`
 
 ### dynamic-array
 
@@ -351,6 +383,60 @@ Disk-oriented multi-way search tree with bounded node fanout.
 
 `npm run demo -- b-tree`
 
+### segment-tree
+
+Range aggregate queries with point updates on an array.
+
+`npm run demo -- segment-tree`
+
+### fenwick-tree
+
+Prefix sums and range sums with point updates.
+
+`npm run demo -- fenwick-tree`
+
+### z-algorithm
+
+Linear-time Z-array and pattern search.
+
+`npm run demo -- z-algorithm`
+
+### rabin-karp
+
+Substring search via rolling hash.
+
+`npm run demo -- rabin-karp`
+
+### lis
+
+Length of longest strictly increasing subsequence.
+
+`npm run demo -- lis`
+
+### lcs
+
+See the [detailed walkthrough](#longest-common-subsequence) above.
+
+`npm run demo -- lcs`
+
+### knapsack
+
+See the [detailed walkthrough](#knapsack-01-classic) above.
+
+`npm run demo -- knapsack`
+
+### edit-distance
+
+See the [detailed walkthrough](#edit-distance-kitten-to-sitting) above.
+
+`npm run demo -- edit-distance`
+
+### coin-change
+
+Minimum coins to make an amount (unbounded supply).
+
+`npm run demo -- coin-change`
+
 ### separate-chaining
 
 Hash map with linked-list buckets and load-factor resize.
@@ -371,7 +457,7 @@ Probabilistic set membership with false positives possible.
 
 ### union-find
 
-Disjoint-set connectivity with union and find.
+See the [detailed walkthrough](#union-find-connectivity) above.
 
 `npm run demo -- union-find`
 
@@ -383,7 +469,7 @@ Adjacency-list directed/undirected weighted graph representation.
 
 ### bfs
 
-Breadth-first traversal and unweighted shortest paths.
+See the [detailed walkthrough](#bfs-unweighted-shortest-paths) above.
 
 `npm run demo -- bfs`
 
@@ -395,13 +481,13 @@ Depth-first traversal, cycle detection, and connectivity.
 
 ### topological-sort
 
-Linear ordering of a DAG respecting all edges.
+See the [detailed walkthrough](#topological-sort-kahn-course-schedule) above.
 
 `npm run demo -- topological-sort`
 
 ### dijkstra
 
-Single-source shortest paths on non-negative edge weights.
+See the [detailed walkthrough](#dijkstra-non-negative-weights) above.
 
 `npm run demo -- dijkstra`
 
@@ -435,6 +521,138 @@ Minimum spanning tree via repeated cheapest outgoing edge per component.
 
 `npm run demo -- boruvka-mst`
 
+### a-star
+
+Shortest path length with nonnegative weights (heuristic h=0).
+
+`npm run demo -- a-star`
+
+### tarjan-scc
+
+Strongly connected components in a directed graph.
+
+`npm run demo -- tarjan-scc`
+
+### kosaraju
+
+Strongly connected components via two-pass DFS.
+
+`npm run demo -- kosaraju`
+
+### bipartite-check
+
+Test whether an undirected graph is 2-colorable.
+
+`npm run demo -- bipartite-check`
+
+### articulation-bridges
+
+Articulation points and bridges in an undirected graph.
+
+`npm run demo -- articulation-bridges`
+
+### edmonds-karp
+
+Maximum s-t flow in a capacitated network.
+
+`npm run demo -- edmonds-karp`
+
+### hungarian
+
+Minimum-cost assignment on a square cost matrix.
+
+`npm run demo -- hungarian`
+
+### red-black-tree
+
+Balanced BST with red-black invariants.
+
+`npm run demo -- red-black-tree`
+
+### lca-binary-lifting
+
+Lowest common ancestor on a rooted tree.
+
+`npm run demo -- lca-binary-lifting`
+
+### treap
+
+Randomized BST via heap priorities on keys.
+
+`npm run demo -- treap`
+
+### sparse-table
+
+Static range minimum queries on an array.
+
+`npm run demo -- sparse-table`
+
+### manacher
+
+Longest palindromic substring length.
+
+`npm run demo -- manacher`
+
+### suffix-array
+
+Lexicographically sorted suffix starting indices.
+
+`npm run demo -- suffix-array`
+
+### aho-corasick
+
+Find all occurrences of multiple patterns in text.
+
+`npm run demo -- aho-corasick`
+
+### matrix-chain
+
+Minimum scalar multiplications for a matrix product chain.
+
+`npm run demo -- matrix-chain`
+
+### longest-palindromic-subsequence
+
+Longest palindromic subsequence length.
+
+`npm run demo -- longest-palindromic-subsequence`
+
+### partition-equal-subset
+
+Partition array into two equal-sum subsets.
+
+`npm run demo -- partition-equal-subset`
+
+### rod-cutting
+
+Maximum revenue cutting a rod of given length.
+
+`npm run demo -- rod-cutting`
+
+### tsp-bitmask
+
+Minimum Hamiltonian cycle from city 0 (small n).
+
+`npm run demo -- tsp-bitmask`
+
+### reservoir-sampling
+
+Uniform random sample of size k from a stream.
+
+`npm run demo -- reservoir-sampling`
+
+### sliding-window-maximum
+
+See the [detailed walkthrough](#sliding-window-maximum) above.
+
+`npm run demo -- sliding-window-maximum`
+
+### lru-cache
+
+See the [detailed walkthrough](#lru-cache-capacity-2) above.
+
+`npm run demo -- lru-cache`
+
 ## Try it locally
 
 Run the demo runner (all three languages by default):
@@ -444,12 +662,7 @@ npm run demo -- binary-search
 npm run demo -- merge-sort
 npm run demo -- kmp
 npm run demo -- dijkstra
-npm run demo -- union-find
-npm run demo -- lru-cache
-npm run demo -- topological-sort
-npm run demo -- sliding-window-maximum
-npm run demo -- bfs
-npm run demo -- edit-distance
+npm run demo -- knapsack
 ```
 
 Optional language filter: `npm run demo -- kmp python`.

@@ -6,7 +6,7 @@ Topic: **dp** / `knapsack`
 
 **Complexity:** maxValue: Time O(n·W); Space O(W).
 
-**Worked example:** [Topic index](../../worked-examples.md#knapsack) (summary) · run `npm run demo -- knapsack` in all three languages.
+**Walkthrough:** [Worked examples — Knapsack](../../worked-examples.md#knapsack-01-classic).
 
 ## Implementations
 

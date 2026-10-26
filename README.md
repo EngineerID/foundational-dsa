@@ -13,12 +13,16 @@ Use it to study implementations side by side, prepare for interviews, or teach D
 
 ## Start here
 
-1. **Setup:** `bash .cursor/install.sh`, then `npm test` to confirm your machine matches CI.
-2. **Pick a topic:** [COVERAGE.md](COVERAGE.md) lists all 72 ids; run `npm run demo -- <id>` to execute tests for one algorithm in Java, Python, and JavaScript.
-3. **Interview map:** [docs/interview-prep.md](docs/interview-prep.md) links common prompts (LRU, course schedule, sliding window, and more) to those ids.
-4. **Walkthroughs:** [docs/worked-examples.md](docs/worked-examples.md) has step-by-step tables for binary search, graphs, caches, and other high-frequency patterns.
-5. **Contribute:** [CONTRIBUTING.md](CONTRIBUTING.md) describes good-first issues and the trilingual parity rules.
-6. **Security:** see [SECURITY.md](SECURITY.md) for supported versions and private reporting.
+| Step | Action |
+|------|--------|
+| 1 | Clone the repo and run `bash .cursor/install.sh` once (Node 20+, Python 3.10+, JDK 17+). |
+| 2 | Run `npm test` from the root — docs link scan, complexity checks, then Java, Python, JavaScript, parity, and matrix. |
+| 3 | Explore a topic: [COVERAGE.md](COVERAGE.md) lists all 72 ids; `npm run demo -- <id>` runs that topic’s tests in all three languages. |
+| 4 | Interview study: [docs/interview-prep.md](docs/interview-prep.md) maps prompts to ids; [docs/worked-examples.md](docs/worked-examples.md) has step tables (with matching catalog tests). |
+| 5 | First PR: read [CONTRIBUTING.md](CONTRIBUTING.md) (scope, `npm test` vs `npm run test:ci`, issue templates). |
+| 6 | Security reports: [SECURITY.md](SECURITY.md). |
+
+**Complexity notation:** README and [docs/items/](docs/items/) use `O(n log n)` style; some doc-spec strings use `·` for multiply (e.g. `O(n·W)` for knapsack capacity). Meaning is the same across languages.
 
 ## Layout
 
@@ -101,13 +105,14 @@ Topic ids are the first column of [COVERAGE.md](COVERAGE.md), such as `dijkstra`
 
 ### What `npm test` runs
 
-1. `npm run check:docs-links` — fails if a relative link in `docs/` or the root README is broken.
-2. `npm run check:stubs` — fails if a source or test file still contains a stub marker.
-3. `npm run test:java` — `sh java/mvnw test` (JUnit 5).
-4. `npm run test:py` — pytest on `python/`.
-5. `npm run test:js` — Jest with `javascript/jest.config.js`.
-6. `npm run check:parity` — same topics exposed in all three languages.
-7. `npm run matrix:check` — [COVERAGE.md](COVERAGE.md) matches the tree.
+1. `npm run check:docs-links` — fails if a relative link or `#heading` anchor in docs is broken.
+2. `npm run check:item-doc-complexity` — fails if a `docs/items` **Complexity:** line diverges from `tools/doc-spec.mjs`.
+3. `npm run check:stubs` — fails if a source or test file still contains a stub marker.
+4. `npm run test:java` — `sh java/mvnw test` (JUnit 5).
+5. `npm run test:py` — pytest on `python/`.
+6. `npm run test:js` — Jest with `javascript/jest.config.js`.
+7. `npm run check:parity` — same topics exposed in all three languages.
+8. `npm run matrix:check` — [COVERAGE.md](COVERAGE.md) matches the tree.
 
 After adding a topic, regenerate the matrix with `npm run matrix` (or `make matrix`). `npm run matrix:check` only verifies; it does not rewrite the file.
 

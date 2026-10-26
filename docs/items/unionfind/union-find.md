@@ -10,7 +10,7 @@ Vertices `0 .. n-1`; out-of-range `find`/`union` raises.
 
 **Catalog edge themes:** covered in shared catalog tests (`EdgeCaseThemesTest`, `test_edge_case_themes.py`, `edgeCaseThemes.test.js`) for empty / single / duplicate / large / invalid cases.
 
-**Walkthrough:** [Worked examples — Union Find](../../worked-examples.md#unionfind-connectivity).
+**Walkthrough:** [Worked examples — Union Find](../../worked-examples.md#union-find-connectivity).
 
 ## Implementations
 
