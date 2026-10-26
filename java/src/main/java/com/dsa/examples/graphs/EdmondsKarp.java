@@ -26,6 +26,9 @@ public final class EdmondsKarp {
         if (source < 0 || sink < 0 || source >= n || sink >= n) {
             throw new IndexOutOfBoundsException(String.valueOf(source));
         }
+        if (source == sink) {
+            return 0;
+        }
         return maxFlowInternal(n, edges, source, sink);
     }
 

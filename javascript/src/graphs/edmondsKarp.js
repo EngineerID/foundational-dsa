@@ -11,6 +11,9 @@ function maxFlow(n, edges, source, sink) {
   if (source < 0 || sink < 0 || source >= n || sink >= n) {
     throw new RangeError('vertex out of range');
   }
+  if (source === sink) {
+    return 0;
+  }
   const cap = Array.from({ length: n }, () => new Array(n).fill(0));
   for (const [u, v, c] of edges) {
     if (c < 0) throw new Error('negative capacity');
