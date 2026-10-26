@@ -82,4 +82,25 @@ export const STATEFUL_GOLDENS = [
     js: 'javascript/test/unionfind/unionFindGoldens.test.js',
     java: 'java/src/test/java/com/dsa/examples/unionfind/UnionFindGoldensTest.java',
   },
+  {
+    id: 'binary-heap',
+    json: 'binary-heap-goldens.json',
+    py: 'python/tests/heaps/test_binary_heap_goldens.py',
+    js: 'javascript/test/heaps/binaryHeapGoldens.test.js',
+    java: 'java/src/test/java/com/dsa/examples/heaps/BinaryHeapGoldensTest.java',
+  },
+  {
+    id: 'topological-sort',
+    json: 'topological-sort-goldens.json',
+    py: 'python/tests/graphs/test_topological_sort_goldens.py',
+    js: 'javascript/test/graphs/topologicalSortGoldens.test.js',
+    java: 'java/src/test/java/com/dsa/examples/graphs/TopologicalSortGoldensTest.java',
+  },
+  {
+    id: 'trie',
+    json: 'trie-goldens.json',
+    py: 'python/tests/trees/test_trie_goldens.py',
+    js: 'javascript/test/trees/trieGoldens.test.js',
+    java: 'java/src/test/java/com/dsa/examples/trees/TrieGoldensTest.java',
+  },
 ];

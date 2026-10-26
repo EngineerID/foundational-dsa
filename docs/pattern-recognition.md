@@ -40,7 +40,7 @@ When extending an algorithm, add edge cases (empty, single element, duplicates, 
 
 ## Practice problems
 
-Five standalone problems with trilingual solutions (Two Sum II, max subarray, valid parentheses, meeting rooms II, number of islands): [practice-problems.md](practice-problems.md).
+Ten standalone problems with trilingual solutions (Two Sum II through LRU cache design): [practice-problems.md](practice-problems.md).
 
 ## Next steps
 

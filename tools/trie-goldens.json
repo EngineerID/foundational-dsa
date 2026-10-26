@@ -1,0 +1,16 @@
+[
+  {
+    "inserts": ["cat", "car", "dog"],
+    "search": [
+      { "word": "cat", "expected": true },
+      { "word": "ca", "expected": false },
+      { "word": "car", "expected": true },
+      { "word": "cab", "expected": false }
+    ],
+    "startsWith": [
+      { "prefix": "ca", "expected": true },
+      { "prefix": "do", "expected": true },
+      { "prefix": "z", "expected": false }
+    ]
+  }
+]

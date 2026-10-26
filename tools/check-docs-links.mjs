@@ -40,8 +40,17 @@ function collectMarkdownFiles() {
   return files.sort();
 }
 
+const FORBIDDEN_EXTERNAL = [
+  /drive\.google\.com/i,
+  /docs\.google\.com\/(document|spreadsheets|presentation|forms|drive)/i,
+];
+
 function isExternal(href) {
   return /^(https?:|mailto:|#)/i.test(href);
+}
+
+function isForbiddenExternal(href) {
+  return FORBIDDEN_EXTERNAL.some((re) => re.test(href));
 }
 
 function resolveTarget(fromFile, href) {
@@ -66,10 +75,17 @@ function headingSlugsFor(absPath) {
 function main() {
   const missing = [];
   const badAnchors = [];
+  const forbidden = [];
   for (const file of collectMarkdownFiles()) {
     const text = fs.readFileSync(file, 'utf8');
     for (const m of text.matchAll(LINK_RE)) {
       const href = m[1].trim();
+      if (/^https?:/i.test(href)) {
+        if (isForbiddenExternal(href)) {
+          forbidden.push({ file: path.relative(ROOT, file), href });
+        }
+        continue;
+      }
       if (isExternal(href)) continue;
       const [pathPart, hash] = href.split('#');
       const target = resolveTarget(file, pathPart || href);
@@ -95,6 +111,13 @@ function main() {
         }
       }
     }
+  }
+  if (forbidden.length) {
+    console.error('Forbidden external links (use relative repo paths only):');
+    for (const row of forbidden) {
+      console.error(`  ${row.file}: ${row.href}`);
+    }
+    process.exit(1);
   }
   if (missing.length) {
     console.error('Broken relative markdown links:');

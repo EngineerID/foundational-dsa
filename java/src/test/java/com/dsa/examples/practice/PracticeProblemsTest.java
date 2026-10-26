@@ -40,4 +40,36 @@ class PracticeProblemsTest {
         };
         assertEquals(3, NumIslands.count(grid));
     }
+
+    @Test
+    void topKFrequent() {
+        assertEquals(java.util.List.of(1, 2), TopKFrequent.solve(new int[] { 1, 1, 1, 2, 2, 3 }, 2));
+    }
+
+    @Test
+    void courseSchedule() {
+        assertTrue(CourseSchedule.canFinish(2, new int[][] { { 1, 0 } }));
+        assertFalse(CourseSchedule.canFinish(2, new int[][] { { 1, 0 }, { 0, 1 } }));
+    }
+
+    @Test
+    void longestSubstring() {
+        assertEquals(3, LongestSubstring.lengthOfLongestSubstring("abcabcbb"));
+    }
+
+    @Test
+    void coinChangePractice() {
+        assertEquals(3, CoinChangePractice.minCoins(new int[] { 1, 2, 5 }, 11));
+    }
+
+    @Test
+    void lruCacheDesign() {
+        LRUCacheDesign cache = new LRUCacheDesign(2);
+        cache.put(1, 1);
+        cache.put(2, 2);
+        assertEquals(1, cache.get(1));
+        cache.put(3, 3);
+        assertEquals(-1, cache.get(2));
+        assertEquals(3, cache.get(3));
+    }
 }
