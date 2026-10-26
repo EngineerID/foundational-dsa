@@ -10,5 +10,9 @@
   {
     "s": "x",
     "expected": 1
+  },
+  {
+    "s": "aaa",
+    "expected": 3
   }
 ]

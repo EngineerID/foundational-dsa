@@ -17,5 +17,13 @@
       5
     ],
     "expected": 0
+  },
+  {
+    "dimensions": [
+      4,
+      4,
+      4
+    ],
+    "expected": 64
   }
 ]

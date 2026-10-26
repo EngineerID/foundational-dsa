@@ -69,5 +69,23 @@
         "expected": true
       }
     ]
+  },
+  {
+    "inserts": [
+      "dup",
+      "dup"
+    ],
+    "search": [
+      {
+        "word": "dup",
+        "expected": true
+      }
+    ],
+    "startsWith": [
+      {
+        "prefix": "du",
+        "expected": true
+      }
+    ]
   }
 ]

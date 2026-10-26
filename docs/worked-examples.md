@@ -4,6 +4,8 @@ Short, language-neutral walkthroughs for sixty-one interview-heavy topics. Imple
 
 ## Binary search on a sorted array
 
+**Complexity:** search/firstOccurrence/lastOccurrence: Time O(log n); Space O(1).
+
 **Goal:** Find index of key `7` in `[1, 3, 5, 7, 9, 11]`.
 
 | Step | `lo` | `hi` | `mid` | `arr[mid]` | Action |
@@ -18,6 +20,8 @@ If the key were `8`, step 2 would set `lo = 5`, step 3 would have `lo > hi` → 
 
 ## Merge sort (top-down)
 
+**Complexity:** sort/sortBottomUp: Time O(n log n); Space O(n).
+
 **Input:** `[38, 27, 43, 3]`
 
 1. Split: `[38, 27]` and `[43, 3]`
@@ -30,6 +34,8 @@ Merge of `[27, 38]` with `[3, 43]` compares fronts (`3` vs `27`, take `3`; …) 
 **API:** `sort(array)` returns a new sorted array (Python/JS) or sorts in place depending on algorithm module; merge sort returns a copy in all three ports.
 
 ## KMP pattern search
+
+**Complexity:** search: Time O(n + m); Space O(m).
 
 **Text:** `ababcababa`  
 **Pattern:** `aba`
@@ -46,6 +52,8 @@ Scan highlights:
 **API:** `search(text, pattern)` → first index or `-1` (see [kmp](items/strings/kmp.md)).
 
 ## Dijkstra (non-negative weights)
+
+**Complexity:** shortestPaths: Time O(E log V); Space O(V).
 
 **Graph:** directed, weighted (same as `GraphsTest.dijkstra` in Java).
 
@@ -72,6 +80,8 @@ Shortest distance to vertex **2** is **3** (path 0→1→2), better than the dir
 
 ## Union–find (connectivity)
 
+**Complexity:** find/union/connected: Time O(α(n)) amortized; Space O(n).
+
 **Structure:** `n = 5` elements labeled `0..4`, all separate.
 
 | Operation | Effect | Components |
@@ -90,6 +100,8 @@ Path compression flattens trees on `find`; union by rank keeps trees shallow. Am
 
 ## LRU cache (capacity 2)
 
+**Complexity:** get/put: Time O(1); Space O(capacity).
+
 Classic LeetCode-style eviction (matches `LRUCacheTest.getAndPut`):
 
 | Step | Action | Cache state (MRU → LRU) | `get` result |
@@ -106,6 +118,8 @@ Classic LeetCode-style eviction (matches `LRUCacheTest.getAndPut`):
 `npm run demo -- lru-cache`
 
 ## Topological sort (Kahn, course schedule)
+
+**Complexity:** sort: Time O(V+E); Space O(V).
 
 **DAG edges:** `0→1`, `0→2`, `1→3` (four vertices).
 
@@ -144,6 +158,8 @@ When the “answer space” is a sorted array, the same boundary idea appears as
 
 ## Sliding window maximum
 
+**Complexity:** maxSlidingWindow: Time O(n); Space O(k).
+
 **Array:** `[1, 3, -1, -3, 5, 3, 6, 7]`, **window** `k = 3`.
 
 | Window indices | Values | Max |
@@ -162,6 +178,8 @@ When the “answer space” is a sorted array, the same boundary idea appears as
 `npm run demo -- sliding-window-maximum`
 
 ## BFS (unweighted shortest paths)
+
+**Complexity:** distances/traverse: Time O(V+E); Space O(V).
 
 **Graph:** undirected, unweighted, 5 vertices (same shape as `GraphsTest.bfsUnweighted`).
 
@@ -183,6 +201,8 @@ When the “answer space” is a sorted array, the same boundary idea appears as
 
 ## Edit distance (kitten to sitting)
 
+**Complexity:** distance: Time O(nm); Space O(min(n,m)).
+
 **Strings:** `kitten` → `sitting` (Levenshtein). Classic answer: **3** edits (replace `k→s`, insert `g`, replace `e→i` — other optimal sequences exist).
 
 DP sketch (rows/cols = prefixes): fill table where cell = min of delete/insert/replace neighbors; bottom-right cell = **3**.
@@ -192,6 +212,8 @@ DP sketch (rows/cols = prefixes): fill table where cell = min of delete/insert/r
 `npm run demo -- edit-distance`
 
 ## Knapsack (0/1 classic)
+
+**Complexity:** maxValue: Time O(n·W); Space O(W).
 
 **Items:** weights `[1, 2, 3]`, values `[6, 10, 12]`, **capacity** `5` (same as `Knapsack01Test` in Java).
 
@@ -209,6 +231,8 @@ Best choice: B + C → weight **5**, total value **22**. Each item at most once;
 
 ## Longest common subsequence
 
+**Complexity:** length: Time O(nm); Space O(min(n,m)).
+
 **Strings:** `abcde` and `ace`.
 
 Longest subsequence appearing in both in order: **`ace`** (length **3**). Classic 2D DP fills prefix table; bottom-right cell is the answer.
@@ -218,6 +242,8 @@ Longest subsequence appearing in both in order: **`ace`** (length **3**). Classi
 `npm run demo -- lcs`
 
 ## Two Sum II (sorted pair)
+
+**Complexity:** twoSumSorted: Time O(n); Space O(1).
 
 **Input:** sorted `nums = [2, 7, 11, 15]`, `target = 9` (1-based indices in the answer).
 
@@ -234,6 +260,8 @@ Two pointers never cross; each index moves at most once → **O(n)** time, **O(1
 `npm run demo -- two-sum-ii`
 
 ## Maximum subarray (Kadane)
+
+**Complexity:** maxSubarray: Time O(n); Space O(1).
 
 **Input:** `[-2, 1, -3, 4, -1, 2, 1, -5, 4]`
 
@@ -259,6 +287,8 @@ Maximum contiguous sum is **6** (subarray `[4, -1, 2, 1]`).
 
 ## Valid parentheses (stack)
 
+**Complexity:** isValidParentheses: Time O(n); Space O(n).
+
 **Input:** `s = "({[]})"`
 
 | Step | Read | Stack (bottom → top) |
@@ -278,6 +308,8 @@ Stack empty at end → **valid**. For `"(]"`, step 2 leaves `(` vs `]` → **fal
 
 ## Meeting rooms II (min heap)
 
+**Complexity:** minMeetingRooms: Time O(n log n); Space O(n).
+
 **Intervals:** `[0,30)`, `[5,10)`, `[15,20)` (classic LeetCode shape).
 
 Sort by start. Min-heap stores **end times** of meetings still in progress:
@@ -295,6 +327,8 @@ Answer: **2** concurrent rooms.
 `npm run demo -- meeting-rooms-ii`
 
 ## Number of islands (grid DFS)
+
+**Complexity:** numIslands: Time O(rows·cols); Space O(rows·cols).
 
 **Grid (4×5):** land `1`, water `0`; count connected 4-neighbor land components.
 
@@ -319,6 +353,8 @@ Each unvisited `1` starts one DFS/BFS and marks its component.
 
 ## Top K frequent elements
 
+**Complexity:** topKFrequent: Time O(n log k); Space O(n).
+
 **Input:** `nums = [1,1,1,2,2,3]`, `k = 2`.
 
 | Phase | Result |
@@ -334,6 +370,8 @@ Frequency map is **O(n)**; heap operations **O(n log k)**.
 `npm run demo -- top-k-frequent-elements`
 
 ## Longest substring without repeating
+
+**Complexity:** lengthOfLongestSubstring: Time O(n); Space O(min(n, alphabet)).
 
 **Input:** `s = "pwwkew"`
 
@@ -352,6 +390,8 @@ Answer: **3** (`"wke"`).
 
 ## Merge intervals
 
+**Complexity:** mergeIntervals: Time O(n log n); Space O(n).
+
 **Input:** `[[1,3],[2,6],[8,10],[15,18]]` (sorted by start).
 
 | Step | Current merged | Next interval | Action |
@@ -368,6 +408,8 @@ Result: **`[[1,6],[8,10],[15,18]]`**.
 `npm run demo -- merge-intervals`
 
 ## Coin change (min coins)
+
+**Complexity:** minCoins: Time O(n·amount); Space O(amount).
 
 **Coins:** `[1, 2, 5]`, **amount:** `11`.
 
@@ -390,6 +432,8 @@ Impossible amounts stay at sentinel **-1** (e.g. coins `[2]`, amount `3`).
 
 ## Trapping rain water (two pointers)
 
+**Complexity:** trap: Time O(n); Space O(1).
+
 **Heights:** `[0,1,0,2,1,0,1,3,2,1,2,1]`
 
 Two pointers `left` / `right` with running prefix maxes; water at index `i` is `min(leftMax, rightMax) - height[i]` when positive.
@@ -408,6 +452,8 @@ Total trapped: **6** units (classic LeetCode trace).
 
 ## Course schedule (canFinish)
 
+**Complexity:** canFinish: Time O(V+E); Space O(V).
+
 **Input:** `numCourses = 2`, prerequisites `[[1,0],[0,1]]` (0 must come before 1 **and** 1 before 0).
 
 | Step | In-degree after build | Queue (zero in-degree) | Can finish all? |
@@ -422,6 +468,8 @@ For DAG `0→1`, in-degrees `[0,1]` → process `0`, then `1` → **true**.
 `npm run demo -- course-schedule`
 
 ## Word search (grid backtracking)
+
+**Complexity:** wordSearch: Time O(rows·cols·4^L); Space O(L).
 
 **Board:**
 
@@ -450,6 +498,8 @@ Backtrack unmarks on failure; `ABCD` dies at `(0,3)` → **false**.
 
 ## Network delay time
 
+**Complexity:** networkDelay: Time O((V+E) log V); Space O(V).
+
 **Graph:** `n = 4`, source **1**, edges `(1→0, w=1)`, `(1→2, w=1)`, `(2→3, w=1)`.
 
 | Node | Shortest time from 1 |
@@ -466,6 +516,8 @@ Answer: max distance **2** (all nodes reached). Unreachable node → **-1**.
 `npm run demo -- network-delay`
 
 ## Kruskal MST (union–find)
+
+**Complexity:** mstWeight: Time O(E log E); Space O(V).
 
 **Undirected weighted edges:** `(0–1,1)`, `(1–2,2)`, `(2–3,3)`, `(0–3,4)`.
 
@@ -484,6 +536,8 @@ Sort by weight, greedily add if endpoints not yet connected:
 
 ## Prim MST (greedy grow)
 
+**Complexity:** mstWeight: Time O(E log V); Space O(V).
+
 Same undirected graph as [Kruskal](#kruskal-mst-union-find): edges `(0–1,1)`, `(1–2,2)`, `(2–3,3)`, `(0–3,4)`. Grow the tree from vertex **0** with a **min-priority queue** of `(weight, neighbor)` frontier edges:
 
 | Step | Tree vertices | Pop edge | Add to MST | Total weight |
@@ -501,6 +555,8 @@ Edge 0–3 (weight 4) enters the frontier but is never chosen because 3 is alrea
 
 ## Level order traversal (heap array)
 
+**Complexity:** levelOrder: Time O(n); Space O(n).
+
 **Level array:** `[3, 9, 20, null, null, 15, 7]` (`null` = missing child).
 
 | Level | Values (left → right) |
@@ -517,6 +573,8 @@ BFS with level boundaries; empty or `values[0] == null` → `[]`.
 
 ## Serialize binary tree (level-order codec)
 
+**Complexity:** serialize/deserialize: Time O(n); Space O(n).
+
 **Input values:** `[1, 2, 3, null, null, 4, 5]`
 
 | Phase | Result |
@@ -531,6 +589,8 @@ Round-trip restores the same heap-style level array.
 `npm run demo -- serialize-binary-tree`
 
 ## Quick select (k-th order statistic)
+
+**Complexity:** select: Time O(n) average, O(n²) worst; Space O(1).
 
 **Array:** `[3, 1, 4, 1, 5]`, **k = 2** (1-based smallest rank).
 
@@ -547,6 +607,8 @@ For **k-th largest** with `k = 2`, use rank `n - k + 1 = 4` → **4** (second la
 `npm run demo -- quick-select`
 
 ## DFS discovery times
+
+**Complexity:** traverse/hasCycle: Time O(V+E); Space O(V).
 
 **Graph:** 4 vertices, edges `0–1`, `0–2`, `1–3`, source **0** (undirected).
 
@@ -565,6 +627,8 @@ Tree edges explore deeper before backtracking; matches `DFS.traverseRecursive` s
 
 ## Longest increasing subsequence
 
+**Complexity:** length: Time O(n log n); Space O(n).
+
 **Array:** `[10, 9, 2, 5, 3, 7, 101, 18]`
 
 Patience-sorting **tails** table (length of LIS ending with ≤ tail):
@@ -579,6 +643,8 @@ Patience-sorting **tails** table (length of LIS ending with ≤ tail):
 `npm run demo -- lis`
 
 ## BST search and in-order walk
+
+**Complexity:** search/insert/delete: Time O(h) height; Space O(n).
 
 Insert keys **5, 2, 7, 1** (values arbitrary):
 
@@ -597,6 +663,8 @@ In-order keys: **`[1, 2, 5, 7]`**; search **2** hits the left child of 5.
 `npm run demo -- bst`
 
 ## Binary min-heap (insert and extract)
+
+**Complexity:** insert/extract/peek: Time O(log n); buildHeap O(n); Space O(n).
 
 **Operations:** start empty, **insert** `5, 2, 8, 1, 2` (duplicates allowed), then repeatedly **extractMin**.
 
@@ -620,6 +688,8 @@ Full sorted extract sequence: **`[1, 2, 2, 5, 8]`** (matches shared goldens).
 
 ## Priority queue (min scheduling)
 
+**Complexity:** insert/extractMin/peek: Time O(log n); Space O(n).
+
 Same underlying min-heap as [binary-heap](#binary-min-heap-insert-and-extract), framed as **tasks ordered by priority** (the priority is the stored value).
 
 **Insert** priorities `5, 3, 7, 1, 3`, then drain with **extractMin**:
@@ -640,6 +710,8 @@ Order: **`[1, 3, 3, 5, 7]`**. Used by Dijkstra, Prim, and meeting-room scheduler
 
 ## Heapsort (in-place)
 
+**Complexity:** sort: Time O(n log n); Space O(1).
+
 **Input:** `[5, 2, 8, 1, 2]` (sorted copy returned by practice code).
 
 Heapsort builds a **max-heap** on the active prefix, then repeatedly swaps the root with the last unsorted position and **siftDown** on the shrinking heap:
@@ -657,6 +729,8 @@ Empty input → `[]`; single element → unchanged. Same sorted outputs as [merg
 `npm run demo -- heapsort`
 
 ## Trie (prefix search)
+
+**Complexity:** insert/search/startsWith: Time O(L) key length; Space O(total chars).
 
 **Insert** words `cat`, `car`, `dog` (character edges from the root).
 
@@ -716,6 +790,8 @@ Two interview shapes share **two pointers** over a sequence:
 
 ## Queue (FIFO enqueue and dequeue)
 
+**Complexity:** enqueue/dequeue: Time O(1) amortized; Space O(n).
+
 **Operations:** start empty, **enqueue** `1, 2, 3`, **dequeue** twice, then **peek** the front.
 
 | Step | Queue (front → back) | Action |
@@ -733,6 +809,8 @@ Empty queue: **dequeue/peek** throw. Matches shared `queue-goldens.json`.
 
 ## Deque (two-ended operations)
 
+**Complexity:** pushFront/pushBack/pop: Time O(1) amortized; Space O(n).
+
 **Operations:** **addLast** `1, 2`, **addFirst** `0`, **removeFirst** → `0`, **removeLast** → `2`, one element **`1`** remains.
 
 | Step | Deque (front → back) |
@@ -749,6 +827,8 @@ Empty deque: **removeFirst/removeLast** throw. Matches shared `deque-goldens.jso
 `npm run demo -- deque`
 
 ## Counting sort (non-negative keys)
+
+**Complexity:** sort/sortByDigit: Time O(n + k); Space O(k).
 
 **Input:** `[4, 2, 0, 2, 1, 3, 2, 2]` — keys must be **non-negative**.
 
@@ -770,6 +850,8 @@ Count occurrences, prefix-sum the buckets, then place keys stably:
 
 ## Radix sort (LSD by digit)
 
+**Complexity:** sort: Time O(d * n); Space O(n).
+
 **Input:** `[170, 45, 75, 90, 802, 24, 2, 66]` (non-negative integers).
 
 LSD passes use stable **counting sort by digit** (ones, then tens, …):
@@ -786,6 +868,8 @@ LSD passes use stable **counting sort by digit** (ones, then tens, …):
 
 ## Rabin-Karp (rolling hash)
 
+**Complexity:** search: Time O(n + m) average; Space O(1).
+
 **Text:** `"ababcababa"`, **pattern:** `"aba"` (same shape as [KMP](#kmp-pattern-search)).
 
 Rolling hash compares pattern hash to each length-`m` window; confirm with character checks on collisions:
@@ -801,6 +885,8 @@ Rolling hash compares pattern hash to each length-`m` window; confirm with chara
 `npm run demo -- rabin-karp`
 
 ## Bellman-Ford (negative edges)
+
+**Complexity:** shortestPaths: Time O(VE); Space O(V).
 
 **Directed graph:** `0 → 1` weight **1**, `1 → 2` weight **-2**, source **0**.
 
@@ -821,6 +907,8 @@ If edges form a **negative cycle** reachable from the source (e.g. `0→1→2→
 
 ## Segment tree (range sum)
 
+**Complexity:** update/rangeSum: Time O(log n); Space O(n).
+
 **Initial array:** `[1, 3, 5, 7]`.
 
 | Query / update | Range / index | Result |
@@ -836,6 +924,8 @@ Build **O(n)**, query/update **O(log n)**. Matches shared `segment-tree-goldens.
 `npm run demo -- segment-tree`
 
 ## Floyd-Warshall (all-pairs shortest paths)
+
+**Complexity:** allPairs: Time O(V³); Space O(V²).
 
 **Directed weighted graph:** `0→1 (1)`, `1→2 (2)`, `0→2 (10)`.
 
@@ -856,6 +946,8 @@ DP table `dist[i][j]` after relaxation:
 
 ## Fenwick tree (prefix sums)
 
+**Complexity:** add/prefixSum/rangeSum: Time O(log n); Space O(n).
+
 **Size `n = 5`**, point adds: index **1** +3, index **3** +2.
 
 | Query | Result |
@@ -871,6 +963,8 @@ DP table `dist[i][j]` after relaxation:
 
 ## Graph (adjacency list)
 
+**Complexity:** addEdge/neighbors: Time O(1) amortized; Space O(V+E).
+
 **4 vertices**, directed weighted edges `(0→1,2)`, `(1→2,3)`, `(0→3,1)`.
 
 | Vertex | Out-neighbors (to) | Out-degree |
@@ -885,6 +979,8 @@ DP table `dist[i][j]` after relaxation:
 
 ## Bipartite check (2-coloring)
 
+**Complexity:** isBipartite: Time O(V+E); Space O(V).
+
 **Undirected 4-cycle** `0—1—2—3—0`: alternate colors succeed → **bipartite**.
 
 **Triangle** on three vertices with all edges: odd cycle → **not bipartite**.
@@ -894,6 +990,8 @@ DP table `dist[i][j]` after relaxation:
 `npm run demo -- bipartite-check`
 
 ## Tarjan SCC (strongly connected components)
+
+**Complexity:** stronglyConnectedComponents: Time O(V+E); Space O(V).
 
 **Directed cycle** `0→1→2→0`: one SCC of size **3**.
 
@@ -905,6 +1003,8 @@ Two isolated vertices with no edges → **two** SCCs of size **1** each.
 
 ## Kosaraju SCC (strongly connected components)
 
+**Complexity:** stronglyConnectedComponents: Time O(V+E); Space O(V).
+
 Same 3-cycle as [Tarjan](#tarjan-scc-strongly-connected-components): **one** component of size **3**; empty edges on two vertices → sizes **`[1, 1]`**.
 
 Two-pass DFS + reverse graph. Matches `kosaraju-goldens.json`.
@@ -915,6 +1015,8 @@ Two-pass DFS + reverse graph. Matches `kosaraju-goldens.json`.
 
 ## Edmonds-Karp (max flow)
 
+**Complexity:** maxFlow: Time O(VE²); Space O(V²).
+
 **Flow network** (source **0**, sink **3**) from shared goldens: augmenting BFS paths until no residual capacity.
 
 **Max flow value: 5** (matches `edmonds-karp-goldens.json`).
@@ -924,6 +1026,8 @@ Two-pass DFS + reverse graph. Matches `kosaraju-goldens.json`.
 `npm run demo -- edmonds-karp`
 
 ## Matrix chain (min scalar multiplications)
+
+**Complexity:** minMultiplications: Time O(n³); Space O(n²).
 
 **Dimensions:** `[10, 30, 5, 60]` (three matrices **10×30**, **30×5**, **5×60**).
 
@@ -941,6 +1045,8 @@ Empty dimension list or single dimension → **0**. Matches `matrix-chain-golden
 
 ## Rod cutting (max revenue)
 
+**Complexity:** maxProfit: Time O(n·length); Space O(length).
+
 **Prices** for lengths `1..8`: `[1,5,8,9,10,17,17,20]`, cut rod length **4**.
 
 Unbounded knapsack-style DP over length → best revenue **10** (matches goldens).
@@ -953,6 +1059,8 @@ Invalid negative length → error.
 
 ## Partition equal subset (0/1 knapsack)
 
+**Complexity:** canPartition: Time O(n·sum); Space O(sum).
+
 **Nums:** `[1, 5, 11, 5]` — total **22**, target half **11** → subset `{11}` vs `{1,5,5}` → **true**.
 
 `[1,2,3,5]` → total 11 (odd) → **false**. Empty array → **true**.
@@ -962,6 +1070,8 @@ Invalid negative length → error.
 `npm run demo -- partition-equal-subset`
 
 ## Longest palindromic subsequence (length)
+
+**Complexity:** length: Time O(n²); Space O(n²).
 
 **String:** `"bbbab"` — longest palindromic **subsequence** (not substring) has length **4** (e.g. `"bbbb"`).
 
@@ -973,6 +1083,8 @@ Invalid negative length → error.
 
 ## Dynamic array (append and get)
 
+**Complexity:** append/get/set: Time O(1) amortized; resize O(n); Space O(n).
+
 **Append** `10, 20, 30` → **size 3**; **get(0)=10**, **get(2)=30**.
 
 Empty append → size **0**. Matches `dynamic-array-goldens.json`.
@@ -982,6 +1094,8 @@ Empty append → size **0**. Matches `dynamic-array-goldens.json`.
 `npm run demo -- dynamic-array`
 
 ## Linear search (first match index)
+
+**Complexity:** search: Time O(n); Space O(1).
 
 Scan left-to-right for **first** index of `target`:
 
@@ -997,6 +1111,8 @@ Scan left-to-right for **first** index of `target`:
 
 ## Bubble sort (in-place ascending)
 
+**Complexity:** sort: Time O(n²); Space O(1).
+
 **Input:** `[5, 2, 8, 1, 2]` → sorted copy **`[1, 2, 2, 5, 8]`** after adjacent swaps (matches `bubble-sort-goldens.json`).
 
 **API:** `sort(arr)` in place on a copy (see [bubble-sort](items/sorting/bubble-sort.md)).
@@ -1004,6 +1120,8 @@ Scan left-to-right for **first** index of `target`:
 `npm run demo -- bubble-sort`
 
 ## Insertion sort (sorted copy)
+
+**Complexity:** sort: Time O(n²) worst, O(n) best; Space O(1).
 
 **Input:** `[5, 2, 8, 1, 2]` → sorted copy **`[1, 2, 2, 5, 8]`** (matches `insertion-sort-goldens.json`).
 
@@ -1013,13 +1131,37 @@ Scan left-to-right for **first** index of `target`:
 
 ## Selection sort (sorted copy)
 
+**Complexity:** sort: Time O(n²); Space O(1).
+
 **Input:** `[5, 2, 8, 1, 2]` → sorted copy **`[1, 2, 2, 5, 8]`** (matches `selection-sort-goldens.json`).
 
 **API:** `sort(arr)` on a copy (see [selection-sort](items/sorting/selection-sort.md)).
 
 `npm run demo -- selection-sort`
 
+## Monotonic stack
+
+**Complexity:** nextGreaterElement: Time O(n); Space O(n).
+
+**Input:** `nums = [2, 1, 2, 4, 3]` → next greater to the right **`[4, 2, 4, -1, -1]`** (see `monotonic-stack-goldens.json`).
+
+**API:** `nextGreaterElements(nums)` (see [monotonic-stack](items/linear/monotonic-stack.md)).
+
+`npm run demo -- monotonic-stack`
+
+## Quick sort
+
+**Complexity:** sort/sort3Way: Time O(n log n) average; Space O(log n).
+
+**Input:** `[3, 1, 2]` → sorted copy **`[1, 2, 3]`**; duplicate-heavy inputs use 3-way partition (see `quick-sort-goldens.json`).
+
+**API:** `sort(arr)` / `sort3Way(arr)` on a copy (see [quick-sort](items/sorting/quick-sort.md)).
+
+`npm run demo -- quick-sort`
+
 ## Z-algorithm (pattern search)
+
+**Complexity:** zArray/search: Time O(n + m); Space O(n).
 
 **Text:** `"aabaa"`, **pattern:** `"aa"` → first index **0**; Z-array **`[5, 1, 0, 2, 1]`** (see `z-algorithm-goldens.json`).
 
@@ -1029,6 +1171,8 @@ Scan left-to-right for **first** index of `target`:
 
 ## Manacher (longest palindrome length)
 
+**Complexity:** longestPalindromeLength: Time O(n); Space O(n).
+
 **Input:** `"babad"` → longest palindromic substring length **3** (`"bab"` or `"aba"`).
 
 **API:** `longestPalindromeLength(s)` (see [manacher](items/strings/manacher.md)).
@@ -1036,6 +1180,8 @@ Scan left-to-right for **first** index of `target`:
 `npm run demo -- manacher`
 
 ## Aho-Corasick (multi-pattern hits)
+
+**Complexity:** search: Time O(n+m+z); Space O(m).
 
 **Text:** `"ushers"`, **patterns:** `he`, `she`, `his`, `hers` → hit start indices **`[1, 2]`** (matches `aho-corasick-goldens.json`).
 
@@ -1045,6 +1191,8 @@ Scan left-to-right for **first** index of `target`:
 
 ## AVL tree (insert and search)
 
+**Complexity:** search/insert/delete: Time O(log n); Space O(n).
+
 Insert `(5,"a")`, `(2,"b")`, `(7,"c")`, `(1,"d")`, overwrite `(2,"e")` → in-order keys **`[1, 2, 5, 7]`**, `search(2)` → **`"e"`** (see `avl-tree-goldens.json`).
 
 **API:** `insert`, `inOrder`, `search` on `AVLTree` (see [avl-tree](items/trees/avl-tree.md)).
@@ -1052,6 +1200,8 @@ Insert `(5,"a")`, `(2,"b")`, `(7,"c")`, `(1,"d")`, overwrite `(2,"e")` → in-or
 `npm run demo -- avl-tree`
 
 ## Red-black tree (insert and search)
+
+**Complexity:** search/insert: Time O(log n); Space O(n).
 
 Insert keys **1, 2, 5, 7** with paired values; all searches hit; **`search(9)`** → **null** (see `red-black-tree-goldens.json`).
 
@@ -1061,6 +1211,8 @@ Insert keys **1, 2, 5, 7** with paired values; all searches hit; **`search(9)`**
 
 ## Singly linked list (add, get, remove)
 
+**Complexity:** prepend/search: Time O(1)/O(n); Space O(n).
+
 **Ops:** `addLast(2,3,4)` → `get(1)` = **3** → `remove(0)` returns **2** → size **2** (see `singly-linked-list-goldens.json`).
 
 **API:** `addLast`, `get`, `remove`, `size` (see [singly-linked-list](items/linear/singly-linked-list.md)).
@@ -1068,6 +1220,8 @@ Insert keys **1, 2, 5, 7** with paired values; all searches hit; **`search(9)`**
 `npm run demo -- singly-linked-list`
 
 ## Doubly linked list (add first and last)
+
+**Complexity:** prepend/append/remove: Time O(1) at known node; Space O(n).
 
 **Ops:** `addLast(2,3,4)`, `addFirst(1)` → in-order index **2** is **3**; remove index **0** drops **1** (see `doubly-linked-list-goldens.json`).
 
@@ -1077,6 +1231,8 @@ Insert keys **1, 2, 5, 7** with paired values; all searches hit; **`search(9)`**
 
 ## Tree traversals (BST key orders)
 
+**Complexity:** Each traversal: Time O(n); Space O(h) stack or O(w) queue.
+
 Insert keys **5, 2, 7, 1** into a BST → **in-order** `[1,2,5,7]`, **pre-order** `[5,2,1,7]`, **post-order** `[1,2,7,5]` (`tree-traversals-goldens.json`).
 
 **API:** recursive traversals on `BST` root (see [tree-traversals](items/trees/tree-traversals.md)).
@@ -1084,6 +1240,8 @@ Insert keys **5, 2, 7, 1** into a BST → **in-order** `[1,2,5,7]`, **pre-order*
 `npm run demo -- tree-traversals`
 
 ## Separate chaining hash map
+
+**Complexity:** put/get/remove: Time O(1) average; resize O(n); Space O(n).
 
 **Ops:** `put("a",1)`, `put("b",2)`, `put("a",3)` → `get("a")` = **3**; missing key → **null** (`separate-chaining-goldens.json`).
 
@@ -1093,6 +1251,8 @@ Insert keys **5, 2, 7, 1** into a BST → **in-order** `[1,2,5,7]`, **pre-order*
 
 ## Open addressing hash map
 
+**Complexity:** put/get/remove: Time O(1) average; Space O(n) slots.
+
 **Ops:** `put(1,"one")`, `put(2,"two")`, update `put(1,"ONE")` → `get(1)` = **`"ONE"`**; `remove(2)` then `get(2)` = **null** (`open-addressing-goldens.json`, linear probing).
 
 **API:** `put`, `get`, `remove` (see [open-addressing](items/hashing/open-addressing.md)).
@@ -1100,6 +1260,8 @@ Insert keys **5, 2, 7, 1** into a BST → **in-order** `[1,2,5,7]`, **pre-order*
 `npm run demo -- open-addressing`
 
 ## Suffix array (sorted indices)
+
+**Complexity:** build: Time O(n log n); Space O(n).
 
 **Input:** `"banana"` → suffix array **`[5, 3, 1, 0, 4, 2]`** (lexicographic order of suffixes).
 
@@ -1109,6 +1271,8 @@ Insert keys **5, 2, 7, 1** into a BST → **in-order** `[1,2,5,7]`, **pre-order*
 
 ## Treap (seeded insert and search)
 
+**Complexity:** search/insert: Time O(log n); Space O(n).
+
 **Seed 0**, inserts `(3,30)`, `(1,10)`, `(5,50)`, overwrite `(1,99)` → searches hit **30**, **99**, **50**; key **9** → **null** (`treap-goldens.json`).
 
 **API:** `Treap(seed)`, `insert`, `search` (see [treap](items/trees/treap.md)).
@@ -1116,6 +1280,8 @@ Insert keys **5, 2, 7, 1** into a BST → **in-order** `[1,2,5,7]`, **pre-order*
 `npm run demo -- treap`
 
 ## Order-statistic tree (rank and select)
+
+**Complexity:** rank/select/insert/delete: Time O(log n); Space O(n).
 
 Insert keys **1, 2, 5, 8, 9** → **`select(3) = 5`**, **`rank(5) = 3`** (`order-statistic-tree-goldens.json`).
 
@@ -1125,6 +1291,8 @@ Insert keys **1, 2, 5, 8, 9** → **`select(3) = 5`**, **`rank(5) = 3`** (`order
 
 ## Interval tree (overlap query)
 
+**Complexity:** insert/query: Time O(log n + k) reported; Space O(n).
+
 Intervals **`[15,20]`**, **`[10,12]`**, **`[1,5]`**; query point **`[11,11]`** → overlap **`[10,12]`** (`interval-tree-goldens.json`).
 
 **API:** `insert`, `overlapSearch` (see [interval-tree](items/trees/interval-tree.md)).
@@ -1132,6 +1300,8 @@ Intervals **`[15,20]`**, **`[10,12]`**, **`[1,5]`**; query point **`[11,11]`** �
 `npm run demo -- interval-tree`
 
 ## B-tree (insert and search)
+
+**Complexity:** search/insert/delete: Time O(log_t n); Space O(n).
 
 **t = 2**, insert keys from goldens → **`search(6)`** true, **`search(15)`** false (`b-tree-goldens.json`).
 
@@ -1141,6 +1311,8 @@ Intervals **`[15,20]`**, **`[10,12]`**, **`[1,5]`**; query point **`[11,11]`** �
 
 ## Bloom filter (membership)
 
+**Complexity:** add/mightContain: Time O(k); Space O(m) bits.
+
 Add **`alpha`**, **`beta`**, **`gamma`** → **`mightContain("alpha")`** true, **`delta`** false (`bloom-filter-goldens.json`).
 
 **API:** sized filter, `add`, `mightContain` (see [bloom-filter](items/hashing/bloom-filter.md)).
@@ -1148,6 +1320,8 @@ Add **`alpha`**, **`beta`**, **`gamma`** → **`mightContain("alpha")`** true, *
 `npm run demo -- bloom-filter`
 
 ## Boruvka MST (total weight)
+
+**Complexity:** mstWeight: Time O(E log V); Space O(V).
 
 4-node chain plus shortcut edge → MST weight **6** (`boruvka-mst-goldens.json`).
 
@@ -1157,6 +1331,8 @@ Add **`alpha`**, **`beta`**, **`gamma`** → **`mightContain("alpha")`** true, *
 
 ## A-star shortest path length
 
+**Complexity:** shortestPathLength: Time O(E log V); Space O(V).
+
 Sample directed graph, source **0**, goal **3** → path length **4** (`a-star-goldens.json`; h = 0).
 
 **API:** `shortestPathLength(graph, source, goal)` (see [a-star](items/graphs/a-star.md)).
@@ -1164,6 +1340,8 @@ Sample directed graph, source **0**, goal **3** → path length **4** (`a-star-g
 `npm run demo -- a-star`
 
 ## Articulation points and bridges
+
+**Complexity:** find: Time O(V+E); Space O(V).
 
 Undirected graph from goldens → articulation **`[1, 2]`**, bridges **`[[1,2],[0,1]]`** (`articulation-bridges-goldens.json`).
 
@@ -1173,6 +1351,8 @@ Undirected graph from goldens → articulation **`[1, 2]`**, bridges **`[[1,2],[
 
 ## Hungarian (min assignment cost)
 
+**Complexity:** minCost: Time O(n³); Space O(n²).
+
 3×3 cost matrix → minimum assignment cost **5** (`hungarian-goldens.json`).
 
 **API:** `Hungarian.minCost(matrix)` (see [hungarian](items/graphs/hungarian.md)).
@@ -1180,6 +1360,8 @@ Undirected graph from goldens → articulation **`[1, 2]`**, bridges **`[[1,2],[
 `npm run demo -- hungarian`
 
 ## LCA binary lifting (queries)
+
+**Complexity:** query: Time O(log n); Space O(n log n).
 
 Parent array **`[0,0,0,1]`** → **`LCA(1,2)=0`**, **`LCA(1,3)=1`** (`lca-binary-lifting-goldens.json`).
 
@@ -1189,6 +1371,8 @@ Parent array **`[0,0,0,1]`** → **`LCA(1,2)=0`**, **`LCA(1,3)=1`** (`lca-binary
 
 ## Sparse table (range minimum)
 
+**Complexity:** query: Time O(1); Space O(n log n).
+
 Array **`[1,3,5,7,9,2]`** → range min queries match `sparse-table-goldens.json`.
 
 **API:** `SparseTable(arr)`, `query(l,r)` (see [sparse-table](items/trees/sparse-table.md)).
@@ -1197,6 +1381,8 @@ Array **`[1,3,5,7,9,2]`** → range min queries match `sparse-table-goldens.json
 
 ## TSP bitmask (min tour cost)
 
+**Complexity:** minCost: Time O(n²·2^n); Space O(n·2^n).
+
 4-city distance matrix → minimum tour cost **80** starting from city 0 (`tsp-bitmask-goldens.json`).
 
 **API:** `TSPBitmask.minCost(dist)` (see [tsp-bitmask](items/dp/tsp-bitmask.md)).
@@ -1204,6 +1390,8 @@ Array **`[1,3,5,7,9,2]`** → range min queries match `sparse-table-goldens.json
 `npm run demo -- tsp-bitmask`
 
 ## Reservoir sampling (size k)
+
+**Complexity:** sample: Time O(n); Space O(k).
 
 Stream **`[1..5]`**, **`k=0`** → **`[]`**; deterministic **`seed=0`** cases in `reservoir-sampling-goldens.json`.
 

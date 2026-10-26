@@ -59,5 +59,26 @@
     "postOrder": [
       1
     ]
+  },
+  {
+    "inserts": [
+      [
+        2,
+        "b"
+      ],
+      [
+        2,
+        "c"
+      ]
+    ],
+    "inOrder": [
+      2
+    ],
+    "preOrder": [
+      2
+    ],
+    "postOrder": [
+      2
+    ]
   }
 ]

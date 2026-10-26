@@ -49,5 +49,22 @@
     ],
     "searchKey": 2,
     "searchValue": "v"
+  },
+  {
+    "inserts": [
+      [
+        2,
+        "b"
+      ],
+      [
+        2,
+        "c"
+      ]
+    ],
+    "inOrderKeys": [
+      2
+    ],
+    "searchKey": 2,
+    "searchValue": "c"
   }
 ]

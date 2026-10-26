@@ -52,5 +52,20 @@
     "expectedOrder": [
       0
     ]
+  },
+  {
+    "n": 2,
+    "directed": true,
+    "weighted": false,
+    "edges": [
+      [
+        0,
+        1
+      ]
+    ],
+    "expectedOrder": [
+      0,
+      1
+    ]
   }
 ]

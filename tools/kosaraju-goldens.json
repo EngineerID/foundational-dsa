@@ -42,5 +42,21 @@
       1,
       1
     ]
+  },
+  {
+    "n": 2,
+    "directed": true,
+    "weighted": false,
+    "edges": [
+      [
+        0,
+        1
+      ]
+    ],
+    "componentCount": 2,
+    "componentSizes": [
+      1,
+      1
+    ]
   }
 ]

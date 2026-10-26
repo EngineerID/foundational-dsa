@@ -47,5 +47,20 @@
         "expected": 5
       }
     ]
+  },
+  {
+    "n": 3,
+    "adds": [],
+    "checks": [
+      {
+        "prefixAt": 2,
+        "expected": 0
+      },
+      {
+        "rangeLeft": 0,
+        "rangeRight": 2,
+        "expected": 0
+      }
+    ]
   }
 ]

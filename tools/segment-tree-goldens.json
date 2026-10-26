@@ -47,5 +47,54 @@
         "sum": 4
       }
     ]
+  },
+  {
+    "initial": [
+      2,
+      2,
+      2
+    ],
+    "rangeSum": [
+      {
+        "left": 0,
+        "right": 2,
+        "sum": 6
+      }
+    ],
+    "update": {
+      "index": 1,
+      "value": 3
+    },
+    "rangeSumAfter": [
+      {
+        "left": 0,
+        "right": 2,
+        "sum": 7
+      }
+    ]
+  },
+  {
+    "initial": [
+      1,
+      1
+    ],
+    "rangeSum": [
+      {
+        "left": 0,
+        "right": 1,
+        "sum": 2
+      }
+    ],
+    "update": {
+      "index": 0,
+      "value": 5
+    },
+    "rangeSumAfter": [
+      {
+        "left": 0,
+        "right": 1,
+        "sum": 6
+      }
+    ]
   }
 ]

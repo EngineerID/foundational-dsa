@@ -1,6 +1,6 @@
 # Practice problems (trilingual solutions)
 
-Eighty-seven interview-style problems with reference solutions — one per catalog topic in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`. Each problem below links to a step-table **[worked example](worked-examples.md)** (CI: `npm run check:practice-walkthrough`).
+Eighty-seven interview-style problems with reference solutions — one per catalog topic in Java, Python, and JavaScript. Use [pattern-recognition.md](pattern-recognition.md) to map each statement to catalog topics, then compare with these standalone implementations under `practice/`. Each problem below links to a step-table **[worked example](worked-examples.md)** with **Complexity** notes (CI: `npm run check:practice-walkthrough`, `check:practice-walkthrough-complexity`, `check:practice-problem-docs`, `check:practice-edge-goldens`).
 
 | # | Problem | Signals | Catalog topics |
 |---|---------|---------|----------------|
@@ -99,6 +99,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 1. Two Sum II
 
 **Statement:** Given a **sorted** array of integers and a target, return 1-based indices `[i, j]` (`i < j`) such that `nums[i-1] + nums[j-1] == target`. Exactly one solution exists.
+**Edge cases:** Regression JSON `tools/two-sum-ii-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/two_sum*` — two pointers (catalog [`two-sum-ii`](items/searching/two-sum-ii.md): `npm run demo -- two-sum-ii`).
 
@@ -107,6 +109,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 2. Maximum subarray
 
 **Statement:** Given an integer array, return the largest sum of any contiguous subarray (Kadane).
+**Edge cases:** Regression JSON `tools/maximum-subarray-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/max_subarray*` (same algorithm as catalog [`maximum-subarray`](items/dp/maximum-subarray.md): `npm run demo -- maximum-subarray`).
 
@@ -115,6 +119,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 3. Valid parentheses
 
 **Statement:** Given a string containing `(`, `)`, `{`, `}`, `[`, `]`, determine if brackets are balanced and correctly nested.
+**Edge cases:** Regression JSON `tools/valid-parentheses-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/valid_parentheses*` (catalog [`valid-parentheses`](items/linear/valid-parentheses.md): `npm run demo -- valid-parentheses`).
 
@@ -123,6 +129,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 4. Meeting rooms II
 
 **Statement:** Given meeting intervals `[start, end)`, return the minimum number of conference rooms required so no meetings overlap.
+**Edge cases:** Regression JSON `tools/meeting-rooms-ii-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/meeting_rooms*` (catalog [`meeting-rooms-ii`](items/heaps/meeting-rooms-ii.md): `npm run demo -- meeting-rooms-ii`).
 
@@ -131,6 +139,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 5. Number of islands
 
 **Statement:** Given a grid of `'1'` (land) and `'0'` (water), count connected land components (4-directionally).
+**Edge cases:** Regression JSON `tools/number-of-islands-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/num_islands*` (catalog [`number-of-islands`](items/graphs/number-of-islands.md): `npm run demo -- number-of-islands`).
 
@@ -139,6 +149,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 6. Top K frequent elements
 
 **Statement:** Given an integer array and `k`, return the `k` most frequent elements. Break ties by **smaller value first** in the output order (after sorting by frequency descending).
+**Edge cases:** Regression JSON `tools/top-k-frequent-elements-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/top_k_frequent*` — count + size-`k` min-heap (catalog [`top-k-frequent-elements`](items/heaps/top-k-frequent-elements.md): `npm run demo -- top-k-frequent-elements`).
 
@@ -147,6 +159,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 7. Course schedule
 
 **Statement:** There are `numCourses` labeled `0 .. numCourses-1`. Each prerequisite `[course, prereq]` means you must take `prereq` before `course`. Return whether you can finish all courses (no cycle).
+**Edge cases:** Regression JSON `tools/course-schedule-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/course_schedule*` (catalog [`course-schedule`](items/graphs/course-schedule.md): `npm run demo -- course-schedule`).
 
@@ -155,6 +169,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 8. Longest substring without repeating characters
 
 **Statement:** Given a string, return the length of the longest substring with all distinct characters.
+**Edge cases:** Regression JSON `tools/longest-substring-without-repeating-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/longest_substring*` (catalog [`longest-substring-without-repeating`](items/strings/longest-substring-without-repeating.md): `npm run demo -- longest-substring-without-repeating`).
 
@@ -163,6 +179,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 9. Coin change
 
 **Statement:** Given coin denominations and an `amount`, return the **fewest** number of coins that sum to `amount`, or `-1` if impossible. Each coin may be used unlimited times.
+**Edge cases:** Regression JSON `tools/coin-change-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/coin_change*` — unbounded knapsack DP (catalog [`coin-change`](items/dp/coin-change.md): `npm run demo -- coin-change`).
 
@@ -171,6 +189,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 10. LRU cache design
 
 **Statement:** Design a cache with fixed capacity supporting `get(key)` (returns `-1` if missing) and `put(key, value)` in O(1) average time, evicting the least recently used entry when over capacity.
+**Edge cases:** Regression JSON `tools/lru-cache-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). Capacity must be **positive**; `get` returns **-1** for missing keys.
+
 
 **Implementation:** `practice/lru_design*` — wraps catalog [`lru-cache`](items/linear/lru-cache.md): `npm run demo -- lru-cache`).
 
@@ -179,6 +199,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 11. Merge intervals
 
 **Statement:** Given intervals `[start, end]` (inclusive), merge all overlapping intervals and return the result sorted by start.
+**Edge cases:** Regression JSON `tools/merge-intervals-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/merge_intervals*` (catalog [`merge-intervals`](items/sorting/merge-intervals.md): `npm run demo -- merge-intervals`).
 
@@ -187,6 +209,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 12. Binary tree level order traversal
 
 **Statement:** Given a complete binary tree in heap-style array form (`null` = missing child), return values level by level (left to right).
+**Edge cases:** Regression JSON `tools/level-order-traversal-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/level_order*` / `levelOrder*` (catalog [`level-order-traversal`](items/trees/level-order-traversal.md): `npm run demo -- level-order-traversal`).
 
@@ -195,6 +219,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 13. Word search
 
 **Statement:** Given a 2D board of letters and a word, return whether the word can be built from sequentially adjacent cells without reusing a cell.
+**Edge cases:** Regression JSON `tools/word-search-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/word_search*` (catalog [`word-search`](items/graphs/word-search.md): `npm run demo -- word-search`).
 
@@ -203,6 +229,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 14. Kth largest element
 
 **Statement:** Given an unsorted array and `k`, return the **k-th largest** element (not the k-th distinct).
+**Edge cases:** Regression JSON `tools/quick-select-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). **`k` is 1-based** (`k=1` is the minimum). Empty array or `k` outside `1..n` **raises** in all three languages. Input is not mutated (defensive copy).
+
 
 **Implementation:** `practice/kth_largest*` — same order-statistic as catalog [`quick-select`](items/searching/quick-select.md) (`npm run demo -- quick-select`; rank `n - k + 1`).
 
@@ -211,6 +239,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 15. Minimum spanning tree (Kruskal)
 
 **Statement:** Given `n` vertices and undirected weighted edges `[u, v, w]`, return the total weight of the minimum spanning tree (assume the graph is connected).
+**Edge cases:** Regression JSON `tools/mst-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/mst_kruskal*` — catalog [`kruskal-mst`](items/graphs/kruskal-mst.md) + [`union-find`](items/unionfind/union-find.md): `npm run demo -- kruskal-mst`).
 
@@ -219,6 +249,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 16. Trapping rain water
 
 **Statement:** Given non-negative bar heights, compute how much water can be trapped after raining.
+**Edge cases:** Regression JSON `tools/trapping-rain-water-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/trapping_rain_water*` / `trappingRainWater*` — two pointers (catalog [`trapping-rain-water`](items/searching/trapping-rain-water.md): `npm run demo -- trapping-rain-water`).
 
@@ -227,6 +259,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 17. Edit distance
 
 **Statement:** Given strings `word1` and `word2`, return the minimum number of single-character insert, delete, or replace operations to transform `word1` into `word2`.
+**Edge cases:** Regression JSON `tools/edit-distance-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). `null` strings treated as empty; classic Levenshtein DP.
+
 
 **Implementation:** `practice/edit_distance_practice*` / `editDistancePractice*` — Levenshtein DP (catalog [`edit-distance`](items/dp/edit-distance.md): `npm run demo -- edit-distance`).
 
@@ -235,6 +269,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 18. Serialize and deserialize binary tree
 
 **Statement:** Encode a binary tree given in heap-style level order (`null` = missing child) into a compact string and decode back to the same level-order shape (trim trailing nulls).
+**Edge cases:** Regression JSON `tools/serialize-binary-tree-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/tree_codec*` / `treeCodec*` (catalog [`serialize-binary-tree`](items/trees/serialize-binary-tree.md): `npm run demo -- serialize-binary-tree`).
 
@@ -243,6 +279,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 19. Network delay time
 
 **Statement:** There are `n` nodes `0 .. n-1` and directed edges `[u, v, w]` (travel time). Starting from node `k`, return the time until **all** nodes have received a signal, or `-1` if some node is unreachable.
+**Edge cases:** Regression JSON `tools/network-delay-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/network_delay*` / `networkDelay*` (catalog [`network-delay`](items/graphs/network-delay.md): `npm run demo -- network-delay`).
 
@@ -251,6 +289,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 20. Sliding window maximum
 
 **Statement:** Given an integer array and window size `k`, return the maximum value in each sliding window of size `k`.
+**Edge cases:** Regression JSON `tools/sliding-window-maximum-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). Window size `k` must be **positive** and `k <= n`.
+
 
 **Implementation:** `practice/sliding_window_max*` / `slidingWindowMax*` — monotonic deque (catalog [`sliding-window-maximum`](items/linear/sliding-window-maximum.md): `npm run demo -- sliding-window-maximum`; related [`monotonic-stack`](items/linear/monotonic-stack.md): `npm run demo -- monotonic-stack`).
 
@@ -259,6 +299,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 21. Binary search
 
 **Statement:** Given a sorted integer array and a target, return the index of the target or **-1** if it is not present.
+**Edge cases:** Regression JSON `tools/binary-search-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). Requires a **sorted** array. `firstOccurrence` / `lastOccurrence` bound duplicate runs. `null` or empty → `-1`.
+
 
 **Implementation:** `practice/binary_search*` / `binarySearchPractice*` — catalog [`binary-search`](items/searching/binary-search.md): `npm run demo -- binary-search`.
 
@@ -267,6 +309,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 22. 0/1 Knapsack
 
 **Statement:** Given item weights, values, and a capacity, return the maximum total value using each item at most once.
+**Edge cases:** Regression JSON `tools/knapsack-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/knapsack*` / `knapsackPractice*` — catalog [`knapsack`](items/dp/knapsack.md): `npm run demo -- knapsack`.
 
@@ -275,6 +319,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 23. Longest common subsequence
 
 **Statement:** Given strings `text1` and `text2`, return the length of their longest common subsequence.
+**Edge cases:** Regression JSON `tools/lcs-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/lcs*` / `lcsPractice*` — catalog [`lcs`](items/dp/lcs.md): `npm run demo -- lcs`.
 
@@ -283,6 +329,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 24. KMP pattern search
 
 **Statement:** Given text and pattern, return the index of the first occurrence of pattern in text, or **-1**.
+**Edge cases:** Regression JSON `tools/kmp-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). **Empty `pattern` returns `0`** (vacuous match, like `str.find` / `String.indexOf`). Empty `text` with non-empty `pattern` → `-1`. `null` → `-1`.
+
 
 **Implementation:** `practice/kmp*` / `kmpPractice*` — catalog [`kmp`](items/strings/kmp.md): `npm run demo -- kmp`.
 
@@ -291,6 +339,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 25. Trie prefix tree
 
 **Statement:** Implement a trie supporting `insert(word)`, `search(word)`, and `startsWith(prefix)`.
+**Edge cases:** Regression JSON `tools/trie-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). Empty string key is stored at the root when inserted.
+
 
 **Implementation:** `practice/trie*` / `triePractice*` — catalog [`trie`](items/trees/trie.md): `npm run demo -- trie`.
 
@@ -299,6 +349,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 26. BFS shortest paths
 
 **Statement:** Given `n` nodes, undirected edges `[u, v]`, and a source, return the unweighted shortest distance from source to every node (**-1** if unreachable).
+**Edge cases:** Regression JSON `tools/practice-bfs-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). Unweighted shortest-path distances; invalid source index raises.
+
 
 **Implementation:** `practice/bfs*` / `bfsPractice*` — catalog [`bfs`](items/graphs/bfs.md): `npm run demo -- bfs`.
 
@@ -307,6 +359,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 27. Union–find connectivity
 
 **Statement:** Given `n` elements and a sequence of `union(a, b)` operations, answer whether `a` and `b` are in the same connected component after all unions.
+**Edge cases:** Regression JSON `tools/union-find-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). Vertices `0 .. n-1`; out-of-range `find`/`union` raises.
+
 
 **Implementation:** `practice/union_find*` / `unionFindPractice*` — catalog [`union-find`](items/unionfind/union-find.md): `npm run demo -- union-find`.
 
@@ -315,6 +369,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 28. Binary min-heap
 
 **Statement:** Given a stream of insertions into a min-heap, return values in sorted order by repeatedly extracting the minimum.
+**Edge cases:** Regression JSON `tools/binary-heap-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/binary_heap*` / `binaryHeapPractice*` — catalog [`binary-heap`](items/heaps/binary-heap.md): `npm run demo -- binary-heap`.
 
@@ -323,6 +379,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 29. Dijkstra shortest paths
 
 **Statement:** Given a directed weighted graph (non-negative edges) and source `s`, return shortest distances from `s` to every vertex (large sentinel if unreachable).
+**Edge cases:** Regression JSON `tools/dijkstra-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). Edge weights must be **non-negative**; uses a min-heap / priority queue.
+
 
 **Implementation:** `practice/dijkstra*` / `dijkstraPractice*` — catalog [`dijkstra`](items/graphs/dijkstra.md): `npm run demo -- dijkstra`.
 
@@ -331,6 +389,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 30. DFS discovery times
 
 **Statement:** On an undirected (or directed) graph, run DFS from `source` and return discovery and finish time arrays.
+**Edge cases:** Regression JSON `tools/dfs-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/dfs*` / `dfsPractice*` — catalog [`dfs`](items/graphs/dfs.md): `npm run demo -- dfs`.
 
@@ -339,6 +399,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 31. Longest increasing subsequence
 
 **Statement:** Given an integer array, return the length of the longest strictly increasing subsequence.
+**Edge cases:** Regression JSON `tools/lis-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/lis*` / `lisPractice*` — catalog [`lis`](items/dp/lis.md): `npm run demo -- lis`.
 
@@ -347,6 +409,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 32. Merge sort
 
 **Statement:** Return a new array containing the input integers in ascending order using merge sort.
+**Edge cases:** Regression JSON `tools/merge-sort-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). Returns a **new sorted array** (stable); does not require in-place mutation of the input.
+
 
 **Implementation:** `practice/merge_sort*` / `mergeSortPractice*` — catalog [`merge-sort`](items/sorting/merge-sort.md): `npm run demo -- merge-sort`.
 
@@ -355,6 +419,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 33. Topological sort
 
 **Statement:** Given a DAG as directed edges, return a topological order of vertices, or an **empty** list if a cycle exists.
+**Edge cases:** Regression JSON `tools/topological-sort-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). **DAG only** — Kahn returns an **empty** list when a cycle is present.
+
 
 **Implementation:** `practice/topological_sort*` / `topologicalSortPractice*` — catalog [`topological-sort`](items/graphs/topological-sort.md): `npm run demo -- topological-sort`.
 
@@ -363,6 +429,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 34. Priority queue scheduling
 
 **Statement:** Insert priorities into a min-priority queue and return them in nondecreasing order by repeatedly extracting the minimum.
+**Edge cases:** Regression JSON `tools/priority-queue-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/priority_queue*` / `priorityQueuePractice*` — catalog [`priority-queue`](items/heaps/priority-queue.md): `npm run demo -- priority-queue`.
 
@@ -371,6 +439,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 35. Next greater element
 
 **Statement:** For each index `i`, return the next strictly greater value to the right of `nums[i]`, or **-1** if none exists.
+**Edge cases:** Regression JSON `tools/monotonic-stack-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/monotonic_stack*` / `monotonicStackPractice*` — catalog [`monotonic-stack`](items/linear/monotonic-stack.md): `npm run demo -- monotonic-stack`.
 
@@ -379,6 +449,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 36. Quicksort
 
 **Statement:** Return a sorted copy of the input array using in-place quicksort (standard or 3-way partition when duplicates dominate).
+**Edge cases:** Regression JSON `tools/quick-sort-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). Sorts **in place**; optional randomized pivot and 3-way partition variants.
+
 
 **Implementation:** `practice/quick_sort*` / `quickSortPractice*` — catalog [`quick-sort`](items/sorting/quick-sort.md): `npm run demo -- quick-sort`.
 
@@ -387,6 +459,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 37. Binary search tree
 
 **Statement:** Implement a BST with `insert(key, value)`, `search(key)`, and in-order key traversal.
+**Edge cases:** Regression JSON `tools/bst-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). Duplicate keys typically follow left-or-right policy defined in the implementation.
+
 
 **Implementation:** `practice/bst*` / `bstPractice*` — catalog [`bst`](items/trees/bst.md): `npm run demo -- bst`.
 
@@ -395,6 +469,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 38. Prim MST weight
 
 **Statement:** Given `n` vertices and undirected weighted edges `[u, v, w]`, return the total weight of the minimum spanning tree (assume connected).
+**Edge cases:** Regression JSON `tools/mst-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/prim_mst*` / `primMstPractice*` — catalog [`prim-mst`](items/graphs/prim-mst.md): `npm run demo -- prim-mst`.
 
@@ -403,6 +479,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 39. Stack operations
 
 **Statement:** Implement a LIFO stack with `push`, `pop`, and `peek` (error on empty pop/peek).
+**Edge cases:** Regression JSON `tools/stack-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). Pop/peek on empty stack raises.
+
 
 **Implementation:** `practice/stack*` / `stackPractice*` — catalog [`stack`](items/linear/stack.md): `npm run demo -- stack`.
 
@@ -411,6 +489,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 40. Heapsort
 
 **Statement:** Return a sorted copy of the input using in-place heapsort on a clone.
+**Edge cases:** Regression JSON `tools/heapsort-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/heapsort*` / `heapsortPractice*` — catalog [`heapsort`](items/sorting/heapsort.md): `npm run demo -- heapsort`.
 
@@ -419,6 +499,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 41. Queue operations
 
 **Statement:** Implement a FIFO queue with `enqueue`, `dequeue`, and `peek` (error on empty dequeue/peek).
+**Edge cases:** Regression JSON `tools/queue-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/queue*` / `queuePractice*` — catalog [`queue`](items/linear/queue.md): `npm run demo -- queue`.
 
@@ -427,6 +509,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 42. Deque operations
 
 **Statement:** Implement a double-ended queue with `addFirst`, `addLast`, `removeFirst`, and `removeLast`.
+**Edge cases:** Regression JSON `tools/deque-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/deque*` / `dequePractice*` — catalog [`deque`](items/linear/deque.md): `npm run demo -- deque`.
 
@@ -435,6 +519,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 43. Counting sort
 
 **Statement:** Return a sorted copy of non-negative integers using counting sort.
+**Edge cases:** Regression JSON `tools/counting-sort-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). **Non-negative keys only**; negative values raise.
+
 
 **Implementation:** `practice/counting_sort*` / `countingSortPractice*` — catalog [`counting-sort`](items/sorting/counting-sort.md): `npm run demo -- counting-sort`.
 
@@ -443,6 +529,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 44. Radix sort
 
 **Statement:** Return a sorted copy of non-negative integers using LSD radix sort.
+**Edge cases:** Regression JSON `tools/radix-sort-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). **Non-negative integers**; behavior follows digit passes (see implementation).
+
 
 **Implementation:** `practice/radix_sort*` / `radixSortPractice*` — catalog [`radix-sort`](items/sorting/radix-sort.md): `npm run demo -- radix-sort`.
 
@@ -451,6 +539,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 45. Rabin-Karp search
 
 **Statement:** Return the first index of `pattern` in `text`, or **-1** if absent (rolling hash).
+**Edge cases:** Regression JSON `tools/rabin-karp-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/rabin_karp*` / `rabinKarpPractice*` — catalog [`rabin-karp`](items/strings/rabin-karp.md): `npm run demo -- rabin-karp`.
 
@@ -459,6 +549,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 46. Bellman-Ford paths
 
 **Statement:** Given a directed weighted graph and source, return shortest-path distances and whether a reachable negative cycle exists.
+**Edge cases:** Regression JSON `tools/bellman-ford-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). Handles **negative** edge weights; detects reachable negative cycles.
+
 
 **Implementation:** `practice/bellman_ford*` / `bellmanFordPractice*` — catalog [`bellman-ford`](items/graphs/bellman-ford.md): `npm run demo -- bellman-ford`.
 
@@ -467,6 +559,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 47. Segment tree range sum
 
 **Statement:** On an initial array, support point updates and inclusive range-sum queries.
+**Edge cases:** Regression JSON `tools/segment-tree-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/segment_tree*` / `segmentTreePractice*` — catalog [`segment-tree`](items/trees/segment-tree.md): `npm run demo -- segment-tree`.
 
@@ -475,6 +569,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 48. Floyd-Warshall distances
 
 **Statement:** Given a directed weighted graph, return the all-pairs shortest-path distance matrix.
+**Edge cases:** Regression JSON `tools/floyd-warshall-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). All-pairs shortest paths; accepts negative edges when no negative cycles.
+
 
 **Implementation:** `practice/floyd_warshall*` / `floydWarshallPractice*` — catalog [`floyd-warshall`](items/graphs/floyd-warshall.md): `npm run demo -- floyd-warshall`.
 
@@ -483,6 +579,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 49. Fenwick tree prefix sums
 
 **Statement:** On a fixed-size array (initially zero), support point additions and prefix or range sum queries.
+**Edge cases:** Regression JSON `tools/fenwick-tree-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/fenwick_tree*` / `fenwickTreePractice*` — catalog [`fenwick-tree`](items/trees/fenwick-tree.md): `npm run demo -- fenwick-tree`.
 
@@ -491,6 +589,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 50. Graph adjacency
 
 **Statement:** Build a directed or undirected (weighted) graph and query vertex count and out-neighbor lists.
+**Edge cases:** Regression JSON `tools/graph-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). Vertex ids are `0 .. n-1`. Invalid vertex indices raise when querying neighbors.
+
 
 **Implementation:** `practice/graph*` / `graphPractice*` — catalog [`graph`](items/graphs/graph.md): `npm run demo -- graph`.
 
@@ -499,6 +599,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 51. Bipartite check
 
 **Statement:** Given an undirected graph, return whether it is bipartite (2-colorable).
+**Edge cases:** Regression JSON `tools/bipartite-check-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/bipartite_check*` / `bipartiteCheckPractice*` — catalog [`bipartite-check`](items/graphs/bipartite-check.md): `npm run demo -- bipartite-check`.
 
@@ -507,6 +609,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 52. Tarjan SCC sizes
 
 **Statement:** Given a directed graph, return the sorted sizes of strongly connected components.
+**Edge cases:** Regression JSON `tools/tarjan-scc-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/tarjan_scc*` / `tarjanSccPractice*` — catalog [`tarjan-scc`](items/graphs/tarjan-scc.md): `npm run demo -- tarjan-scc`.
 
@@ -515,6 +619,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 53. Kosaraju SCC sizes
 
 **Statement:** Same as #52 using Kosaraju’s two-pass algorithm.
+**Edge cases:** Regression JSON `tools/kosaraju-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/kosaraju*` / `kosarajuPractice*` — catalog [`kosaraju`](items/graphs/kosaraju.md): `npm run demo -- kosaraju`.
 
@@ -523,6 +629,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 54. Edmonds-Karp max flow
 
 **Statement:** Given a capacitated flow network, source, and sink, return the maximum s–t flow value.
+**Edge cases:** Regression JSON `tools/edmonds-karp-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/edmonds_karp*` / `edmondsKarpPractice*` — catalog [`edmonds-karp`](items/graphs/edmonds-karp.md): `npm run demo -- edmonds-karp`.
 
@@ -531,6 +639,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 55. Matrix chain min cost
 
 **Statement:** Given matrix dimension chain `dimensions`, return the minimum scalar multiplication cost to multiply the chain.
+**Edge cases:** Regression JSON `tools/matrix-chain-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/matrix_chain*` / `matrixChainPractice*` — catalog [`matrix-chain`](items/dp/matrix-chain.md): `npm run demo -- matrix-chain`.
 
@@ -539,6 +649,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 56. Rod cutting max profit
 
 **Statement:** Given piece prices and a rod length, return maximum revenue from cutting the rod into pieces.
+**Edge cases:** Regression JSON `tools/rod-cutting-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/rod_cutting*` / `rodCuttingPractice*` — catalog [`rod-cutting`](items/dp/rod-cutting.md): `npm run demo -- rod-cutting`.
 
@@ -547,6 +659,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 57. Partition equal subset
 
 **Statement:** Return whether the array can be partitioned into two subsets with equal sum.
+**Edge cases:** Regression JSON `tools/partition-equal-subset-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/partition_equal_subset*` / `partitionEqualSubsetPractice*` — catalog [`partition-equal-subset`](items/dp/partition-equal-subset.md): `npm run demo -- partition-equal-subset`.
 
@@ -555,6 +669,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 58. Longest palindromic subsequence
 
 **Statement:** Return the length of the longest palindromic subsequence of `s`.
+**Edge cases:** Regression JSON `tools/longest-palindromic-subsequence-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/longest_palindromic_subsequence*` / `longestPalindromicSubsequencePractice*` — catalog [`longest-palindromic-subsequence`](items/dp/longest-palindromic-subsequence.md): `npm run demo -- longest-palindromic-subsequence`.
 
@@ -563,6 +679,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 59. Dynamic array operations
 
 **Statement:** Implement a resizable array with `add`, `get`, and `size`.
+**Edge cases:** Regression JSON `tools/dynamic-array-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). Out-of-range `get` raises; empty structure has `size() == 0`.
+
 
 **Implementation:** `practice/dynamic_array*` / `dynamicArrayPractice*` — catalog [`dynamic-array`](items/linear/dynamic-array.md): `npm run demo -- dynamic-array`.
 
@@ -571,6 +689,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 60. Linear search index
 
 **Statement:** Return the first index of `target` in `arr`, or **-1** if absent.
+**Edge cases:** Regression JSON `tools/linear-search-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). `indexOf` / `index_of` returns the **first** matching index, or `-1`. `null` array → `-1`.
+
 
 **Implementation:** `practice/linear_search*` / `linearSearchPractice*` — catalog [`linear-search`](items/searching/linear-search.md): `npm run demo -- linear-search`.
 
@@ -579,6 +699,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 61. Bubble sort
 
 **Statement:** Return a sorted copy of the input using bubble sort.
+**Edge cases:** Regression JSON `tools/bubble-sort-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). Sorts **in place** ascending; empty array is a no-op.
+
 
 **Implementation:** `practice/bubble_sort*` / `bubbleSortPractice*` — catalog [`bubble-sort`](items/sorting/bubble-sort.md): `npm run demo -- bubble-sort`.
 
@@ -587,6 +709,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 62. Insertion sort
 
 **Statement:** Return a sorted copy of the input using insertion sort.
+**Edge cases:** Regression JSON `tools/insertion-sort-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/insertion_sort*` / `insertionSortPractice*` — catalog [`insertion-sort`](items/sorting/insertion-sort.md): `npm run demo -- insertion-sort`.
 
@@ -595,6 +719,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 63. Selection sort
 
 **Statement:** Return a sorted copy of the input using selection sort.
+**Edge cases:** Regression JSON `tools/selection-sort-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/selection_sort*` / `selectionSortPractice*` — catalog [`selection-sort`](items/sorting/selection-sort.md): `npm run demo -- selection-sort`.
 
@@ -603,6 +729,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 64. Z-algorithm
 
 **Statement:** Given text and pattern, return the first match index (or **-1**) and validate the Z-array for the text.
+**Edge cases:** Regression JSON `tools/z-algorithm-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/z_algorithm*` / `zAlgorithmPractice*` — catalog [`z-algorithm`](items/strings/z-algorithm.md): `npm run demo -- z-algorithm`.
 
@@ -611,6 +739,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 65. Manacher
 
 **Statement:** Return the length of the longest palindromic substring in `s`.
+**Edge cases:** Regression JSON `tools/manacher-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/manacher*` / `manacherPractice*` — catalog [`manacher`](items/strings/manacher.md): `npm run demo -- manacher`.
 
@@ -619,6 +749,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 66. Aho-Corasick
 
 **Statement:** Given text and multiple patterns, return sorted start indices where any pattern ends (catalog hit list).
+**Edge cases:** Regression JSON `tools/aho-corasick-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/aho_corasick*` / `ahoCorasickPractice*` — catalog [`aho-corasick`](items/strings/aho-corasick.md): `npm run demo -- aho-corasick`.
 
@@ -627,6 +759,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 67. AVL tree
 
 **Statement:** Insert key/value pairs into an AVL tree; report in-order keys and search a key.
+**Edge cases:** Regression JSON `tools/avl-tree-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/avl_tree*` / `avlTreePractice*` — catalog [`avl-tree`](items/trees/avl-tree.md): `npm run demo -- avl-tree`.
 
@@ -635,6 +769,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 68. Red-black tree
 
 **Statement:** Insert integer key/value pairs; search present keys and confirm a miss returns null/none.
+**Edge cases:** Regression JSON `tools/red-black-tree-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/red_black_tree*` / `redBlackTreePractice*` — catalog [`red-black-tree`](items/trees/red-black-tree.md): `npm run demo -- red-black-tree`.
 
@@ -643,6 +779,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 69. Singly linked list
 
 **Statement:** Build a singly linked list with `addLast`, indexed `get`, and `remove`; match golden size and values.
+**Edge cases:** Regression JSON `tools/singly-linked-list-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/singly_linked_list*` / `singlyLinkedListPractice*` — catalog [`singly-linked-list`](items/linear/singly-linked-list.md): `npm run demo -- singly-linked-list`.
 
@@ -651,6 +789,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 70. Doubly linked list
 
 **Statement:** Build a doubly linked list with `addFirst`/`addLast`, indexed access, and removal.
+**Edge cases:** Regression JSON `tools/doubly-linked-list-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/doubly_linked_list*` / `doublyLinkedListPractice*` — catalog [`doubly-linked-list`](items/linear/doubly-linked-list.md): `npm run demo -- doubly-linked-list`.
 
@@ -659,6 +799,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 71. Tree traversals
 
 **Statement:** Insert into a BST and return in-order, pre-order, and post-order key lists.
+**Edge cases:** Regression JSON `tools/tree-traversals-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/tree_traversals*` / `treeTraversalsPractice*` — catalog [`tree-traversals`](items/trees/tree-traversals.md): `npm run demo -- tree-traversals`.
 
@@ -667,6 +809,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 72. Separate chaining
 
 **Statement:** Apply `put` operations on a chained hash table and verify `get` / missing keys.
+**Edge cases:** Regression JSON `tools/separate-chaining-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). Resizes when load factor exceeds threshold (see implementation).
+
 
 **Implementation:** `practice/separate_chaining*` / `separateChainingPractice*` — catalog [`separate-chaining`](items/hashing/separate-chaining.md): `npm run demo -- separate-chaining`.
 
@@ -675,6 +819,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 73. Open addressing
 
 **Statement:** Linear-probing hash table: `put`, `get`, `remove`, and lookup after delete.
+**Edge cases:** Regression JSON `tools/open-addressing-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). Deleted slots are **tombstoned**; load factor capped before resize.
+
 
 **Implementation:** `practice/open_addressing*` / `openAddressingPractice*` — catalog [`open-addressing`](items/hashing/open-addressing.md): `npm run demo -- open-addressing`.
 
@@ -683,6 +829,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 74. Suffix array
 
 **Statement:** Return the suffix-array (sorted starting indices) for a string.
+**Edge cases:** Regression JSON `tools/suffix-array-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/suffix_array*` / `suffixArrayPractice*` — catalog [`suffix-array`](items/strings/suffix-array.md): `npm run demo -- suffix-array`.
 
@@ -691,6 +839,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 75. Treap
 
 **Statement:** With a fixed RNG seed, insert key/value pairs and search (including misses).
+**Edge cases:** Regression JSON `tools/treap-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/treap*` / `treapPractice*` — catalog [`treap`](items/trees/treap.md): `npm run demo -- treap`.
 
@@ -698,7 +848,9 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 ## 76. Order-statistic tree
 
-**Statement:** After inserts, report `select(k)` and `rank(key)` per shared goldens.
+**Statement:** BST augmented with subtree sizes for rank and select.
+**Edge cases:** Regression JSON `tools/order-statistic-tree-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/order_statistic_tree*` / `orderStatisticTreePractice*` — [`order-statistic-tree`](items/trees/order-statistic-tree.md): `npm run demo -- order-statistic-tree`.
 
@@ -707,6 +859,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 77. Interval tree
 
 **Statement:** Insert closed intervals and list overlaps with a query interval (sorted).
+**Edge cases:** Regression JSON `tools/interval-tree-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/interval_tree*` / `intervalTreePractice*` — [`interval-tree`](items/trees/interval-tree.md): `npm run demo -- interval-tree`.
 
@@ -715,6 +869,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 78. B-tree
 
 **Statement:** Given minimum degree `t`, insert keys and answer membership searches.
+**Edge cases:** Regression JSON `tools/b-tree-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/b_tree*` / `bTreePractice*` — [`b-tree`](items/trees/b-tree.md): `npm run demo -- b-tree`.
 
@@ -723,6 +879,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 79. Bloom filter
 
 **Statement:** Add strings and answer `mightContain` queries (no false negatives).
+**Edge cases:** Regression JSON `tools/bloom-filter-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`). **No false negatives**; false positives possible. Membership is probabilistic.
+
 
 **Implementation:** `practice/bloom_filter*` / `bloomFilterPractice*` — [`bloom-filter`](items/hashing/bloom-filter.md): `npm run demo -- bloom-filter`.
 
@@ -731,6 +889,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 80. Boruvka MST
 
 **Statement:** Return total weight of the minimum spanning tree (undirected weighted graph).
+**Edge cases:** Regression JSON `tools/boruvka-mst-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/boruvka_mst*` / `boruvkaMstPractice*` — [`boruvka-mst`](items/graphs/boruvka-mst.md): `npm run demo -- boruvka-mst`.
 
@@ -739,6 +899,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 81. A-star
 
 **Statement:** Shortest path length from source to goal (non-negative weights; catalog uses h = 0).
+**Edge cases:** Regression JSON `tools/a-star-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/a_star*` / `aStarPractice*` — [`a-star`](items/graphs/a-star.md): `npm run demo -- a-star`.
 
@@ -747,6 +909,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 82. Articulation bridges
 
 **Statement:** List articulation points and bridges for an undirected unweighted graph.
+**Edge cases:** Regression JSON `tools/articulation-bridges-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/articulation_bridges*` / `articulationBridgesPractice*` — [`articulation-bridges`](items/graphs/articulation-bridges.md): `npm run demo -- articulation-bridges`.
 
@@ -755,6 +919,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 83. Hungarian
 
 **Statement:** Minimum-cost perfect assignment on a square cost matrix.
+**Edge cases:** Regression JSON `tools/hungarian-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/hungarian*` / `hungarianPractice*` — [`hungarian`](items/graphs/hungarian.md): `npm run demo -- hungarian`.
 
@@ -763,6 +929,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 84. LCA binary lifting
 
 **Statement:** Answer LCA queries on a tree given the parent array.
+**Edge cases:** Regression JSON `tools/lca-binary-lifting-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/lca_binary_lifting*` / `lcaBinaryLiftingPractice*` — [`lca-binary-lifting`](items/trees/lca-binary-lifting.md): `npm run demo -- lca-binary-lifting`.
 
@@ -771,6 +939,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 85. Sparse table
 
 **Statement:** Static array; answer range-minimum queries from goldens.
+**Edge cases:** Regression JSON `tools/sparse-table-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/sparse_table*` / `sparseTablePractice*` — [`sparse-table`](items/trees/sparse-table.md): `npm run demo -- sparse-table`.
 
@@ -779,6 +949,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 86. TSP bitmask
 
 **Statement:** Minimum Hamiltonian cycle cost starting and ending at city 0.
+**Edge cases:** Regression JSON `tools/tsp-bitmask-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/tsp_bitmask*` / `tspBitmaskPractice*` — [`tsp-bitmask`](items/dp/tsp-bitmask.md): `npm run demo -- tsp-bitmask`.
 
@@ -787,6 +959,8 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 ## 87. Reservoir sampling
 
 **Statement:** Return a uniform random sample of size `k` from a stream (deterministic with `seed` in tests).
+**Edge cases:** Regression JSON `tools/reservoir-sampling-goldens.json` (≥3 edge-themed cases; `npm run check:practice-edge-goldens`).
+
 
 **Implementation:** `practice/reservoir_sampling*` / `reservoirSamplingPractice*` — [`reservoir-sampling`](items/searching/reservoir-sampling.md): `npm run demo -- reservoir-sampling`.
 

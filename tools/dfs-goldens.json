@@ -63,9 +63,46 @@
     "n": 3,
     "directed": false,
     "weighted": false,
-    "edges": [[0, 1], [1, 2]],
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
     "source": 0,
-    "discovery": [0, 1, 2],
-    "finish": [5, 4, 3]
+    "discovery": [
+      0,
+      1,
+      2
+    ],
+    "finish": [
+      5,
+      4,
+      3
+    ]
+  },
+  {
+    "n": 2,
+    "directed": false,
+    "weighted": false,
+    "edges": [
+      [
+        0,
+        1
+      ]
+    ],
+    "source": 0,
+    "discovery": [
+      0,
+      1
+    ],
+    "finish": [
+      3,
+      2
+    ]
   }
 ]

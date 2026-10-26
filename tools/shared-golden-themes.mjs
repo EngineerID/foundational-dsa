@@ -229,6 +229,62 @@ export function themesInCases(cases) {
       found.add('boundary');
     }
     if (Array.isArray(c.discovery) && c.discovery.some((d) => d === -1)) found.add('boundary');
+    if (Array.isArray(c.expected) && c.expected.some((x) => x === -1)) found.add('boundary');
+    if (Array.isArray(c.connected) && c.connected.some((q) => q && q.expected === false)) {
+      found.add('boundary');
+    }
+    if (Array.isArray(c.unions) && c.unions.length >= 2) {
+      const keys = c.unions.map((u) => JSON.stringify(u));
+      if (new Set(keys).size < keys.length) found.add('duplicate');
+    }
+    if (Array.isArray(c.edges) && c.edges.length === 0) found.add('empty');
+    if (Array.isArray(c.edges) && c.edges.length === 1) found.add('single');
+    if (Array.isArray(c.unions) && c.unions.length === 0) found.add('empty');
+    if (Array.isArray(c.intervals) && c.intervals.length >= 2) {
+      const keys = c.intervals.map((iv) => JSON.stringify(iv));
+      if (new Set(keys).size < keys.length) found.add('duplicate');
+    }
+    if (
+      typeof c.a === 'string' &&
+      typeof c.b === 'string' &&
+      c.a.length > 0 &&
+      c.a === c.b
+    ) {
+      found.add('duplicate');
+    }
+    if (Array.isArray(c.initial) && c.initial.length >= 2) {
+      if (new Set(c.initial).size < c.initial.length) found.add('duplicate');
+    }
+    if (Array.isArray(c.inserts) && c.inserts.length >= 2) {
+      const keys = c.inserts.map((x) => JSON.stringify(x));
+      if (new Set(keys).size < keys.length) found.add('duplicate');
+      if (c.inserts.every((x) => Array.isArray(x) && x.length >= 1)) {
+        const numericKeys = c.inserts.map((x) => x[0]);
+        if (new Set(numericKeys).size < numericKeys.length) found.add('duplicate');
+      }
+    }
+    if (Array.isArray(c.words) && c.words.length >= 2) {
+      const keys = c.words.map(String);
+      if (new Set(keys).size < keys.length) found.add('duplicate');
+    }
+    if (Array.isArray(c.patterns) && c.patterns.length >= 2) {
+      const keys = c.patterns.map(String);
+      if (new Set(keys).size < keys.length) found.add('duplicate');
+    }
+    if (typeof c.s === 'string' && /(.)\1/.test(c.s)) found.add('duplicate');
+    if (typeof c.text === 'string' && /(.)\1/.test(c.text)) found.add('duplicate');
+    if (Array.isArray(c.parent) && c.parent.length === 1) found.add('single');
+    if (Array.isArray(c.dist) && c.dist.length === 1) found.add('single');
+    if (Array.isArray(c.dimensions) && c.dimensions.length === 0) found.add('empty');
   }
   return found;
+}
+
+/** Cases in a golden file that exercise at least one catalog edge theme. */
+export function edgeGoldenCaseCount(cases) {
+  let n = 0;
+  for (const c of cases) {
+    if (themesInCases([c]).size > 0) n += 1;
+  }
+  return n;
 }

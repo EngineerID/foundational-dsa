@@ -41,5 +41,24 @@
     "selectKey": 3,
     "rankKey": 3,
     "rank5": 1
+  },
+  {
+    "inserts": [
+      [
+        2,
+        "2"
+      ],
+      [
+        2,
+        "x"
+      ]
+    ],
+    "inOrderKeys": [
+      2
+    ],
+    "selectK": 1,
+    "selectKey": 2,
+    "rankKey": 2,
+    "rank5": 0
   }
 ]

@@ -28,5 +28,16 @@
     "removeIndex": 0,
     "removeValue": 6,
     "sizeAfter": 0
+  },
+  {
+    "addLast": [
+      1,
+      1
+    ],
+    "getIndex": 1,
+    "getValue": 1,
+    "removeIndex": 0,
+    "removeValue": 1,
+    "sizeAfter": 1
   }
 ]

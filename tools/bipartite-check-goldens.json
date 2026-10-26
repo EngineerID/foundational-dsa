@@ -49,5 +49,17 @@
     "weighted": false,
     "edges": [],
     "expected": true
+  },
+  {
+    "n": 2,
+    "directed": false,
+    "weighted": false,
+    "edges": [
+      [
+        0,
+        1
+      ]
+    ],
+    "expected": true
   }
 ]
