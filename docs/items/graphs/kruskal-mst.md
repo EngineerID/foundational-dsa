@@ -6,7 +6,7 @@ Topic: **graphs** / `kruskal-mst`
 
 Minimum spanning tree via sorted edges and union-find.
 
-**Worked example:** [Topic index](../../worked-examples.md#kruskal-mst) (summary) · run `npm run demo -- kruskal-mst` in all three languages.
+**Practice:** [MST Kruskal (problem 15)](../../practice-problems.md#15-minimum-spanning-tree-kruskal) · **Worked example:** [Topic index](../../worked-examples.md#kruskal-mst) (summary) · run `npm run demo -- kruskal-mst` in all three languages.
 
 ## Complexity
 

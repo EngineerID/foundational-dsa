@@ -117,7 +117,7 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Statement:** Given `n` vertices and undirected weighted edges `[u, v, w]`, return the total weight of the minimum spanning tree (assume the graph is connected).
 
-**Implementation:** `practice/mst_kruskal*` — catalog `kruskal-mst` + `union-find`.
+**Implementation:** `practice/mst_kruskal*` — catalog [`kruskal-mst`](items/graphs/kruskal-mst.md) + [`union-find`](items/graphs/union-find.md): `npm run demo -- kruskal-mst`).
 
 ## 16. Trapping rain water
 
@@ -129,7 +129,7 @@ Run tests: `npm run test:py -- python/tests/practice`, `npm run test:js -- --tes
 
 **Statement:** Given strings `word1` and `word2`, return the minimum number of single-character insert, delete, or replace operations to transform `word1` into `word2`.
 
-**Implementation:** `practice/edit_distance_practice*` / `editDistancePractice*` — Levenshtein DP.
+**Implementation:** `practice/edit_distance_practice*` / `editDistancePractice*` — Levenshtein DP (catalog [`edit-distance`](items/dp/edit-distance.md): `npm run demo -- edit-distance`).
 
 ## 18. Serialize and deserialize binary tree
 
