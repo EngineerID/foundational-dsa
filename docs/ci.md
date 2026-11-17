@@ -50,7 +50,7 @@ Caches are enabled only where a manifest exists: `package-lock.json` (npm), `jav
 
 ## Dependabot
 
-[`.github/dependabot.yml`](../.github/dependabot.yml) uses **grouped** weekly updates and a low **open-pull-requests-limit** (2 per ecosystem) to limit PR noise.
+Dependency updates are handled in regular work.
 
 ## Local parity
 
